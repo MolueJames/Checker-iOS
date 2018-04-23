@@ -1,0 +1,576 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1A1B889420864CE200C5F4D9 /* MolueAppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1B889320864CE200C5F4D9 /* MolueAppRouter.swift */; };
+		1A7D9B462086469200FA997D /* MolueNavigator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A7D9B3C2086469200FA997D /* MolueNavigator.framework */; };
+		1A7D9B4B2086469200FA997D /* MolueNavigatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7D9B4A2086469200FA997D /* MolueNavigatorTests.swift */; };
+		1A7D9B4D2086469200FA997D /* MolueNavigator.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A7D9B3F2086469200FA997D /* MolueNavigator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1AA53921208B9DCC0095E2B4 /* MolueNavigatorRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA53920208B9DCC0095E2B4 /* MolueNavigatorRouter.swift */; };
+		1AA53923208CCB310095E2B4 /* MolueAlertRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA53922208CCB310095E2B4 /* MolueAlertRouter.swift */; };
+		1AA53925208CCB580095E2B4 /* MolueWebsiteRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA53924208CCB580095E2B4 /* MolueWebsiteRouter.swift */; };
+		1AAD07362088D2A0008C4F7A /* MolueNavigatorQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAD07352088D2A0008C4F7A /* MolueNavigatorQuery.swift */; };
+		B119049A7D2F038518C38B72 /* Pods_MolueNavigatorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3239FC3B28A67C031DD54C0 /* Pods_MolueNavigatorTests.framework */; };
+		CB40B39E1CF66F381D200AA0 /* Pods_MolueNavigator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE00FCE280F42E325CC276E4 /* Pods_MolueNavigator.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1A7D9B472086469200FA997D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1A7D9B332086469100FA997D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1A7D9B3B2086469200FA997D;
+			remoteInfo = MolueNavigator;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1A1B889320864CE200C5F4D9 /* MolueAppRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MolueAppRouter.swift; sourceTree = "<group>"; };
+		1A7D9B3C2086469200FA997D /* MolueNavigator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MolueNavigator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A7D9B3F2086469200FA997D /* MolueNavigator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MolueNavigator.h; sourceTree = "<group>"; };
+		1A7D9B402086469200FA997D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A7D9B452086469200FA997D /* MolueNavigatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MolueNavigatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A7D9B4A2086469200FA997D /* MolueNavigatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueNavigatorTests.swift; sourceTree = "<group>"; };
+		1A7D9B4C2086469200FA997D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1AA53920208B9DCC0095E2B4 /* MolueNavigatorRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueNavigatorRouter.swift; sourceTree = "<group>"; };
+		1AA53922208CCB310095E2B4 /* MolueAlertRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueAlertRouter.swift; sourceTree = "<group>"; };
+		1AA53924208CCB580095E2B4 /* MolueWebsiteRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueWebsiteRouter.swift; sourceTree = "<group>"; };
+		1AAD07352088D2A0008C4F7A /* MolueNavigatorQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueNavigatorQuery.swift; sourceTree = "<group>"; };
+		5B53FD9CBA10883F7B2E73CC /* Pods-MolueNavigatorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueNavigatorTests.release.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueNavigatorTests/Pods-MolueNavigatorTests.release.xcconfig"; sourceTree = "<group>"; };
+		B5E46F1DED2681A903BE3ED9 /* Pods-MolueNavigator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueNavigator.release.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueNavigator/Pods-MolueNavigator.release.xcconfig"; sourceTree = "<group>"; };
+		BE37C8A822DBA77136F6BCE7 /* Pods-MolueNavigator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueNavigator.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueNavigator/Pods-MolueNavigator.debug.xcconfig"; sourceTree = "<group>"; };
+		E3239FC3B28A67C031DD54C0 /* Pods_MolueNavigatorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MolueNavigatorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F02F84E9F11E642A26AC8E3C /* Pods-MolueNavigatorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueNavigatorTests.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueNavigatorTests/Pods-MolueNavigatorTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FE00FCE280F42E325CC276E4 /* Pods_MolueNavigator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MolueNavigator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1A7D9B382086469200FA997D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB40B39E1CF66F381D200AA0 /* Pods_MolueNavigator.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A7D9B422086469200FA997D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A7D9B462086469200FA997D /* MolueNavigator.framework in Frameworks */,
+				B119049A7D2F038518C38B72 /* Pods_MolueNavigatorTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1A7D9B322086469100FA997D = {
+			isa = PBXGroup;
+			children = (
+				1A7D9B3E2086469200FA997D /* MolueNavigator */,
+				1A7D9B492086469200FA997D /* MolueNavigatorTests */,
+				1A7D9B3D2086469200FA997D /* Products */,
+				B2D69FE0E5910A7A6271A72B /* Pods */,
+				A51406A3D18D83853954D913 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		1A7D9B3D2086469200FA997D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1A7D9B3C2086469200FA997D /* MolueNavigator.framework */,
+				1A7D9B452086469200FA997D /* MolueNavigatorTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1A7D9B3E2086469200FA997D /* MolueNavigator */ = {
+			isa = PBXGroup;
+			children = (
+				1A1B889320864CE200C5F4D9 /* MolueAppRouter.swift */,
+				1A7D9B3F2086469200FA997D /* MolueNavigator.h */,
+				1A7D9B402086469200FA997D /* Info.plist */,
+				1AAD07352088D2A0008C4F7A /* MolueNavigatorQuery.swift */,
+				1AA53920208B9DCC0095E2B4 /* MolueNavigatorRouter.swift */,
+				1AA53922208CCB310095E2B4 /* MolueAlertRouter.swift */,
+				1AA53924208CCB580095E2B4 /* MolueWebsiteRouter.swift */,
+			);
+			path = MolueNavigator;
+			sourceTree = "<group>";
+		};
+		1A7D9B492086469200FA997D /* MolueNavigatorTests */ = {
+			isa = PBXGroup;
+			children = (
+				1A7D9B4A2086469200FA997D /* MolueNavigatorTests.swift */,
+				1A7D9B4C2086469200FA997D /* Info.plist */,
+			);
+			path = MolueNavigatorTests;
+			sourceTree = "<group>";
+		};
+		A51406A3D18D83853954D913 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FE00FCE280F42E325CC276E4 /* Pods_MolueNavigator.framework */,
+				E3239FC3B28A67C031DD54C0 /* Pods_MolueNavigatorTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B2D69FE0E5910A7A6271A72B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BE37C8A822DBA77136F6BCE7 /* Pods-MolueNavigator.debug.xcconfig */,
+				B5E46F1DED2681A903BE3ED9 /* Pods-MolueNavigator.release.xcconfig */,
+				F02F84E9F11E642A26AC8E3C /* Pods-MolueNavigatorTests.debug.xcconfig */,
+				5B53FD9CBA10883F7B2E73CC /* Pods-MolueNavigatorTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		1A7D9B392086469200FA997D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A7D9B4D2086469200FA997D /* MolueNavigator.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		1A7D9B3B2086469200FA997D /* MolueNavigator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1A7D9B502086469200FA997D /* Build configuration list for PBXNativeTarget "MolueNavigator" */;
+			buildPhases = (
+				E8CA4E0EBCD26F4ADF20AB2D /* [CP] Check Pods Manifest.lock */,
+				1A7D9B372086469200FA997D /* Sources */,
+				1A7D9B382086469200FA997D /* Frameworks */,
+				1A7D9B392086469200FA997D /* Headers */,
+				1A7D9B3A2086469200FA997D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MolueNavigator;
+			productName = MolueNavigator;
+			productReference = 1A7D9B3C2086469200FA997D /* MolueNavigator.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		1A7D9B442086469200FA997D /* MolueNavigatorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1A7D9B532086469200FA997D /* Build configuration list for PBXNativeTarget "MolueNavigatorTests" */;
+			buildPhases = (
+				43257229B24B3DFA9277433B /* [CP] Check Pods Manifest.lock */,
+				1A7D9B412086469200FA997D /* Sources */,
+				1A7D9B422086469200FA997D /* Frameworks */,
+				1A7D9B432086469200FA997D /* Resources */,
+				12435B19A887835CDF944D2C /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1A7D9B482086469200FA997D /* PBXTargetDependency */,
+			);
+			name = MolueNavigatorTests;
+			productName = MolueNavigatorTests;
+			productReference = 1A7D9B452086469200FA997D /* MolueNavigatorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1A7D9B332086469100FA997D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = MolueTech;
+				TargetAttributes = {
+					1A7D9B3B2086469200FA997D = {
+						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 0930;
+					};
+					1A7D9B442086469200FA997D = {
+						CreatedOnToolsVersion = 9.3;
+					};
+				};
+			};
+			buildConfigurationList = 1A7D9B362086469100FA997D /* Build configuration list for PBXProject "MolueNavigator" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1A7D9B322086469100FA997D;
+			productRefGroup = 1A7D9B3D2086469200FA997D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1A7D9B3B2086469200FA997D /* MolueNavigator */,
+				1A7D9B442086469200FA997D /* MolueNavigatorTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1A7D9B3A2086469200FA997D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A7D9B432086469200FA997D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		12435B19A887835CDF944D2C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/../Pods/Target Support Files/Pods-MolueNavigatorTests/Pods-MolueNavigatorTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/URLNavigator/URLNavigator.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/URLNavigator.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-MolueNavigatorTests/Pods-MolueNavigatorTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		43257229B24B3DFA9277433B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MolueNavigatorTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E8CA4E0EBCD26F4ADF20AB2D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MolueNavigator-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1A7D9B372086469200FA997D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1AA53923208CCB310095E2B4 /* MolueAlertRouter.swift in Sources */,
+				1A1B889420864CE200C5F4D9 /* MolueAppRouter.swift in Sources */,
+				1AA53925208CCB580095E2B4 /* MolueWebsiteRouter.swift in Sources */,
+				1AAD07362088D2A0008C4F7A /* MolueNavigatorQuery.swift in Sources */,
+				1AA53921208B9DCC0095E2B4 /* MolueNavigatorRouter.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A7D9B412086469200FA997D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A7D9B4B2086469200FA997D /* MolueNavigatorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1A7D9B482086469200FA997D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1A7D9B3B2086469200FA997D /* MolueNavigator */;
+			targetProxy = 1A7D9B472086469200FA997D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1A7D9B4E2086469200FA997D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		1A7D9B4F2086469200FA997D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		1A7D9B512086469200FA997D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE37C8A822DBA77136F6BCE7 /* Pods-MolueNavigator.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = MolueNavigator/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Molue.MolueNavigator;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1A7D9B522086469200FA997D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5E46F1DED2681A903BE3ED9 /* Pods-MolueNavigator.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = MolueNavigator/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Molue.MolueNavigator;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		1A7D9B542086469200FA997D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F02F84E9F11E642A26AC8E3C /* Pods-MolueNavigatorTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MolueNavigatorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Molue.MolueNavigatorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1A7D9B552086469200FA997D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B53FD9CBA10883F7B2E73CC /* Pods-MolueNavigatorTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MolueNavigatorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Molue.MolueNavigatorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1A7D9B362086469100FA997D /* Build configuration list for PBXProject "MolueNavigator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A7D9B4E2086469200FA997D /* Debug */,
+				1A7D9B4F2086469200FA997D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1A7D9B502086469200FA997D /* Build configuration list for PBXNativeTarget "MolueNavigator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A7D9B512086469200FA997D /* Debug */,
+				1A7D9B522086469200FA997D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1A7D9B532086469200FA997D /* Build configuration list for PBXNativeTarget "MolueNavigatorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A7D9B542086469200FA997D /* Debug */,
+				1A7D9B552086469200FA997D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1A7D9B332086469100FA997D /* Project object */;
+}

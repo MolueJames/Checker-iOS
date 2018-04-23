@@ -1,0 +1,6 @@
+framework module Pods_MolueNetwork {
+  umbrella header "Pods-MolueNetwork-umbrella.h"
+
+  export *
+  module * { export * }
+}

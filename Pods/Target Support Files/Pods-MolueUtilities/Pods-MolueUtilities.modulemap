@@ -1,0 +1,6 @@
+framework module Pods_MolueUtilities {
+  umbrella header "Pods-MolueUtilities-umbrella.h"
+
+  export *
+  module * { export * }
+}

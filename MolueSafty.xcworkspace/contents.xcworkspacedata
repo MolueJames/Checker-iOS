@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:MolueHomePart/MolueHomePart.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:MolueMinePart/MolueMinePart.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:MolueSafty/MolueSafty.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:MolueCommon/MolueCommon.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:MolueUtilities/MolueUtilities.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:MolueNetwork/MolueNetwork.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:MolueNavigator/MolueNavigator.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:MolueFoundation/MolueFoundation.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:MolueDatabase/MolueDatabase.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Pods/Pods.xcodeproj">
+   </FileRef>
+</Workspace>

@@ -1,0 +1,6 @@
+framework module Pods_MolueNavigator {
+  umbrella header "Pods-MolueNavigator-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,700 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1A7D9A832084E73500FA997D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7D9A822084E73500FA997D /* AppDelegate.swift */; };
+		1A7D9A852084E73500FA997D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7D9A842084E73500FA997D /* ViewController.swift */; };
+		1A7D9A882084E73500FA997D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A7D9A862084E73500FA997D /* Main.storyboard */; };
+		1A7D9A8A2084E73600FA997D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A7D9A892084E73600FA997D /* Assets.xcassets */; };
+		1A7D9A8D2084E73600FA997D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A7D9A8B2084E73600FA997D /* LaunchScreen.storyboard */; };
+		1A7D9A982084E73600FA997D /* MolueSaftyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7D9A972084E73600FA997D /* MolueSaftyTests.swift */; };
+		1A7D9AA32084E73600FA997D /* MolueSaftyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7D9AA22084E73600FA997D /* MolueSaftyUITests.swift */; };
+		1AA5391F208A423F0095E2B4 /* AppDelegate+JPush.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA5391E208A423F0095E2B4 /* AppDelegate+JPush.swift */; };
+		AF72CC297DA0D5A6239684B6 /* Pods_MolueSafty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF222F92DB201F01537C480 /* Pods_MolueSafty.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1A7D9A942084E73600FA997D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1A7D9A772084E73400FA997D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1A7D9A7E2084E73500FA997D;
+			remoteInfo = MolueSafty;
+		};
+		1A7D9A9F2084E73600FA997D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1A7D9A772084E73400FA997D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1A7D9A7E2084E73500FA997D;
+			remoteInfo = MolueSafty;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1A7D9A7F2084E73500FA997D /* MolueSafty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MolueSafty.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A7D9A822084E73500FA997D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1A7D9A842084E73500FA997D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1A7D9A872084E73500FA997D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1A7D9A892084E73600FA997D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1A7D9A8C2084E73600FA997D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1A7D9A8E2084E73600FA997D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A7D9A932084E73600FA997D /* MolueSaftyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MolueSaftyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A7D9A972084E73600FA997D /* MolueSaftyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueSaftyTests.swift; sourceTree = "<group>"; };
+		1A7D9A992084E73600FA997D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A7D9A9E2084E73600FA997D /* MolueSaftyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MolueSaftyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A7D9AA22084E73600FA997D /* MolueSaftyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueSaftyUITests.swift; sourceTree = "<group>"; };
+		1A7D9AA42084E73600FA997D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1AA538F6208A21440095E2B4 /* Objective-C-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Objective-C-Bridging-Header.h"; sourceTree = "<group>"; };
+		1AA5391E208A423F0095E2B4 /* AppDelegate+JPush.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+JPush.swift"; sourceTree = "<group>"; };
+		3CF222F92DB201F01537C480 /* Pods_MolueSafty.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MolueSafty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A9C45BEDD9571E14C89E0F8 /* Pods_MolueSaftyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MolueSaftyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A45A4A4FA66C0AB59D83B270 /* Pods_MolueSaftyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MolueSaftyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1101899D8BB4F0B413F8CE1 /* Pods-MolueSafty.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueSafty.release.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueSafty/Pods-MolueSafty.release.xcconfig"; sourceTree = "<group>"; };
+		F456BA4D9799A7B589E89FF9 /* Pods-MolueSafty.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueSafty.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueSafty/Pods-MolueSafty.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1A7D9A7C2084E73500FA997D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF72CC297DA0D5A6239684B6 /* Pods_MolueSafty.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A7D9A902084E73600FA997D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A7D9A9B2084E73600FA997D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1A7D9A762084E73400FA997D = {
+			isa = PBXGroup;
+			children = (
+				1A7D9A812084E73500FA997D /* MolueSafty */,
+				1A7D9A962084E73600FA997D /* MolueSaftyTests */,
+				1A7D9AA12084E73600FA997D /* MolueSaftyUITests */,
+				1A7D9A802084E73500FA997D /* Products */,
+				B09D39C51847581290F626C5 /* Pods */,
+				83E91D7A2F4B97501AC8DD7E /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		1A7D9A802084E73500FA997D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1A7D9A7F2084E73500FA997D /* MolueSafty.app */,
+				1A7D9A932084E73600FA997D /* MolueSaftyTests.xctest */,
+				1A7D9A9E2084E73600FA997D /* MolueSaftyUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1A7D9A812084E73500FA997D /* MolueSafty */ = {
+			isa = PBXGroup;
+			children = (
+				1A7D9A822084E73500FA997D /* AppDelegate.swift */,
+				1A7D9A842084E73500FA997D /* ViewController.swift */,
+				1A7D9A862084E73500FA997D /* Main.storyboard */,
+				1A7D9A892084E73600FA997D /* Assets.xcassets */,
+				1A7D9A8B2084E73600FA997D /* LaunchScreen.storyboard */,
+				1A7D9A8E2084E73600FA997D /* Info.plist */,
+				1AA538F6208A21440095E2B4 /* Objective-C-Bridging-Header.h */,
+				1AA5391E208A423F0095E2B4 /* AppDelegate+JPush.swift */,
+			);
+			path = MolueSafty;
+			sourceTree = "<group>";
+		};
+		1A7D9A962084E73600FA997D /* MolueSaftyTests */ = {
+			isa = PBXGroup;
+			children = (
+				1A7D9A972084E73600FA997D /* MolueSaftyTests.swift */,
+				1A7D9A992084E73600FA997D /* Info.plist */,
+			);
+			path = MolueSaftyTests;
+			sourceTree = "<group>";
+		};
+		1A7D9AA12084E73600FA997D /* MolueSaftyUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1A7D9AA22084E73600FA997D /* MolueSaftyUITests.swift */,
+				1A7D9AA42084E73600FA997D /* Info.plist */,
+			);
+			path = MolueSaftyUITests;
+			sourceTree = "<group>";
+		};
+		83E91D7A2F4B97501AC8DD7E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3CF222F92DB201F01537C480 /* Pods_MolueSafty.framework */,
+				7A9C45BEDD9571E14C89E0F8 /* Pods_MolueSaftyTests.framework */,
+				A45A4A4FA66C0AB59D83B270 /* Pods_MolueSaftyUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B09D39C51847581290F626C5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C1101899D8BB4F0B413F8CE1 /* Pods-MolueSafty.release.xcconfig */,
+				F456BA4D9799A7B589E89FF9 /* Pods-MolueSafty.debug.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1A7D9A7E2084E73500FA997D /* MolueSafty */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1A7D9AA72084E73600FA997D /* Build configuration list for PBXNativeTarget "MolueSafty" */;
+			buildPhases = (
+				7D2CD630E5C3643BDA4F2585 /* [CP] Check Pods Manifest.lock */,
+				1A7D9A7B2084E73500FA997D /* Sources */,
+				1A7D9A7C2084E73500FA997D /* Frameworks */,
+				1A7D9A7D2084E73500FA997D /* Resources */,
+				93ACA222656BBB64E109AC6D /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MolueSafty;
+			productName = MolueSafty;
+			productReference = 1A7D9A7F2084E73500FA997D /* MolueSafty.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1A7D9A922084E73600FA997D /* MolueSaftyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1A7D9AAA2084E73600FA997D /* Build configuration list for PBXNativeTarget "MolueSaftyTests" */;
+			buildPhases = (
+				1A7D9A8F2084E73600FA997D /* Sources */,
+				1A7D9A902084E73600FA997D /* Frameworks */,
+				1A7D9A912084E73600FA997D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1A7D9A952084E73600FA997D /* PBXTargetDependency */,
+			);
+			name = MolueSaftyTests;
+			productName = MolueSaftyTests;
+			productReference = 1A7D9A932084E73600FA997D /* MolueSaftyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1A7D9A9D2084E73600FA997D /* MolueSaftyUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1A7D9AAD2084E73600FA997D /* Build configuration list for PBXNativeTarget "MolueSaftyUITests" */;
+			buildPhases = (
+				1A7D9A9A2084E73600FA997D /* Sources */,
+				1A7D9A9B2084E73600FA997D /* Frameworks */,
+				1A7D9A9C2084E73600FA997D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1A7D9AA02084E73600FA997D /* PBXTargetDependency */,
+			);
+			name = MolueSaftyUITests;
+			productName = MolueSaftyUITests;
+			productReference = 1A7D9A9E2084E73600FA997D /* MolueSaftyUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1A7D9A772084E73400FA997D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = MolueTech;
+				TargetAttributes = {
+					1A7D9A7E2084E73500FA997D = {
+						CreatedOnToolsVersion = 9.3;
+					};
+					1A7D9A922084E73600FA997D = {
+						CreatedOnToolsVersion = 9.3;
+						TestTargetID = 1A7D9A7E2084E73500FA997D;
+					};
+					1A7D9A9D2084E73600FA997D = {
+						CreatedOnToolsVersion = 9.3;
+						TestTargetID = 1A7D9A7E2084E73500FA997D;
+					};
+				};
+			};
+			buildConfigurationList = 1A7D9A7A2084E73400FA997D /* Build configuration list for PBXProject "MolueSafty" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1A7D9A762084E73400FA997D;
+			productRefGroup = 1A7D9A802084E73500FA997D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1A7D9A7E2084E73500FA997D /* MolueSafty */,
+				1A7D9A922084E73600FA997D /* MolueSaftyTests */,
+				1A7D9A9D2084E73600FA997D /* MolueSaftyUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1A7D9A7D2084E73500FA997D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A7D9A8D2084E73600FA997D /* LaunchScreen.storyboard in Resources */,
+				1A7D9A8A2084E73600FA997D /* Assets.xcassets in Resources */,
+				1A7D9A882084E73500FA997D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A7D9A912084E73600FA997D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A7D9A9C2084E73600FA997D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7D2CD630E5C3643BDA4F2585 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MolueSafty-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		93ACA222656BBB64E109AC6D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/../Pods/Target Support Files/Pods-MolueSafty/Pods-MolueSafty-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/URLNavigator/URLNavigator.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLite.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/URLNavigator.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-MolueSafty/Pods-MolueSafty-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1A7D9A7B2084E73500FA997D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A7D9A852084E73500FA997D /* ViewController.swift in Sources */,
+				1A7D9A832084E73500FA997D /* AppDelegate.swift in Sources */,
+				1AA5391F208A423F0095E2B4 /* AppDelegate+JPush.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A7D9A8F2084E73600FA997D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A7D9A982084E73600FA997D /* MolueSaftyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A7D9A9A2084E73600FA997D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A7D9AA32084E73600FA997D /* MolueSaftyUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1A7D9A952084E73600FA997D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1A7D9A7E2084E73500FA997D /* MolueSafty */;
+			targetProxy = 1A7D9A942084E73600FA997D /* PBXContainerItemProxy */;
+		};
+		1A7D9AA02084E73600FA997D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1A7D9A7E2084E73500FA997D /* MolueSafty */;
+			targetProxy = 1A7D9A9F2084E73600FA997D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1A7D9A862084E73500FA997D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1A7D9A872084E73500FA997D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1A7D9A8B2084E73600FA997D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1A7D9A8C2084E73600FA997D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1AAD072D20879962008C4F7A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Release;
+		};
+		1AAD072E20879962008C4F7A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C1101899D8BB4F0B413F8CE1 /* Pods-MolueSafty.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = NO;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2VPAZ758WR;
+				ENABLE_BITCODE = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
+				GCC_WARN_ABOUT_INVALID_OFFSETOF_MACRO = YES;
+				GCC_WARN_INHIBIT_ALL_WARNINGS = NO;
+				INFOPLIST_FILE = MolueSafty/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks $(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"\"${PODS_ROOT}/JCore\"",
+					"\"${PODS_ROOT}/JPush\"",
+					"$(inherited)",
+				);
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CPLUSPLUSFLAGS = "$(OTHER_CFLAGS)";
+				PRODUCT_BUNDLE_IDENTIFIER = Molue.SaftyDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "./MolueSafty/Objective-C-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		1AAD072F20879962008C4F7A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MolueSaftyTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Molue.MolueSaftyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MolueSafty.app/MolueSafty";
+			};
+			name = Release;
+		};
+		1AAD073020879962008C4F7A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MolueSaftyUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Molue.MolueSaftyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MolueSafty;
+			};
+			name = Release;
+		};
+		1AAD073120879977008C4F7A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1AAD073220879977008C4F7A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F456BA4D9799A7B589E89FF9 /* Pods-MolueSafty.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = NO;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2VPAZ758WR;
+				ENABLE_BITCODE = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
+				GCC_WARN_ABOUT_INVALID_OFFSETOF_MACRO = YES;
+				GCC_WARN_INHIBIT_ALL_WARNINGS = NO;
+				INFOPLIST_FILE = MolueSafty/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks $(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"\"${PODS_ROOT}/JCore\"",
+					"\"${PODS_ROOT}/JPush\"",
+					"$(inherited)",
+				);
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CPLUSPLUSFLAGS = "$(OTHER_CFLAGS)";
+				PRODUCT_BUNDLE_IDENTIFIER = Molue.SaftyDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "./MolueSafty/Objective-C-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1AAD073320879977008C4F7A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MolueSaftyTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Molue.MolueSaftyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MolueSafty.app/MolueSafty";
+			};
+			name = Debug;
+		};
+		1AAD073420879977008C4F7A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MolueSaftyUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Molue.MolueSaftyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MolueSafty;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1A7D9A7A2084E73400FA997D /* Build configuration list for PBXProject "MolueSafty" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1AAD072D20879962008C4F7A /* Release */,
+				1AAD073120879977008C4F7A /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1A7D9AA72084E73600FA997D /* Build configuration list for PBXNativeTarget "MolueSafty" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1AAD072E20879962008C4F7A /* Release */,
+				1AAD073220879977008C4F7A /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1A7D9AAA2084E73600FA997D /* Build configuration list for PBXNativeTarget "MolueSaftyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1AAD072F20879962008C4F7A /* Release */,
+				1AAD073320879977008C4F7A /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1A7D9AAD2084E73600FA997D /* Build configuration list for PBXNativeTarget "MolueSaftyUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1AAD073020879962008C4F7A /* Release */,
+				1AAD073420879977008C4F7A /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1A7D9A772084E73400FA997D /* Project object */;
+}

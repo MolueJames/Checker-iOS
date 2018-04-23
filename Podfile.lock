@@ -1,0 +1,61 @@
+PODS:
+  - Alamofire (4.7.2)
+  - IQKeyboardManagerSwift (5.0.0)
+  - JCore (1.1.9)
+  - JPush (3.0.9):
+    - JCore (~> 1.1.7)
+  - Kingfisher (4.7.0)
+  - Moya (11.0.2):
+    - Moya/Core (= 11.0.2)
+  - Moya/Core (11.0.2):
+    - Alamofire (~> 4.1)
+    - Result (~> 3.0)
+  - ObjectMapper (3.1.0)
+  - Result (3.2.4)
+  - SnapKit (4.0.0)
+  - SQLite.swift (0.11.5):
+    - SQLite.swift/standard (= 0.11.5)
+  - SQLite.swift/standard (0.11.5)
+  - URLNavigator (2.0.4)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.7)
+  - IQKeyboardManagerSwift (= 5.0.0)
+  - JPush (~> 3.0.9)
+  - Kingfisher (~> 4.0)
+  - Moya (~> 11.0)
+  - ObjectMapper (~> 3.1)
+  - SnapKit (~> 4.0.0)
+  - SQLite.swift (~> 0.11.4)
+  - URLNavigator
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - IQKeyboardManagerSwift
+    - JCore
+    - JPush
+    - Kingfisher
+    - Moya
+    - ObjectMapper
+    - Result
+    - SnapKit
+    - SQLite.swift
+    - URLNavigator
+
+SPEC CHECKSUMS:
+  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  IQKeyboardManagerSwift: 3f340202ebe1a7076279b9b9b3c817243ddb3aab
+  JCore: 27598485098d0db99d2812cba048003457d08cfb
+  JPush: 003d9eaef8ba2df76de32573d0c8aa62b92b3c82
+  Kingfisher: da6b005aa96d37698e3e4f1ccfe96a5b9bbf27d6
+  Moya: a725035953bc1c0eb1be505ab903984501d82440
+  ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
+  Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
+  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
+  SQLite.swift: 6e5356850bb1791459f8c16d6ee9195b28714a2e
+  URLNavigator: af5582fbbb3586c958be16835d799bfdb23a4793
+
+PODFILE CHECKSUM: 06123a8a22047c1adc71e33cfca209c924ab775c
+
+COCOAPODS: 1.5.0
