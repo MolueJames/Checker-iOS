@@ -170,6 +170,7 @@
 				1A7D9A7C2084E73500FA997D /* Frameworks */,
 				1A7D9A7D2084E73500FA997D /* Resources */,
 				93ACA222656BBB64E109AC6D /* [CP] Embed Pods Frameworks */,
+				DCE51C25D418643C0931B26A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -337,6 +338,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-MolueSafty/Pods-MolueSafty-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DCE51C25D418643C0931B26A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/../Pods/Target Support Files/Pods-MolueSafty/Pods-MolueSafty-resources.sh",
+				"${PODS_ROOT}/AMap3DMap/MAMapKit.framework/AMap.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AMap.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-MolueSafty/Pods-MolueSafty-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

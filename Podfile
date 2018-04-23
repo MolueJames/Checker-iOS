@@ -24,8 +24,8 @@ target 'MolueSafty' do
         pod 'Moya', '~> 11.0'
         pod 'ObjectMapper', '~> 3.1'
         pod 'JPush', '~> 3.0.9'
-#        pod 'AMapSearch', '~> 5.7.0'
-#        pod 'AMap3DMap', '~> 5.7.0'
+        pod 'AMapSearch', '~> 5.7.0'
+        pod 'AMap3DMap', '~> 5.7.0'
 end
 
 target 'MolueCommon' do
