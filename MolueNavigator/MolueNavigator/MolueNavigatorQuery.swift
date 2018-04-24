@@ -8,7 +8,7 @@
 
 import Foundation
 public class QueryUtilities {
-    public func query(_ parameters: [String: Any]) -> String {
+    public static func query(_ parameters: [String: Any]) -> String {
         var components: [(String, String)] = []
         
         for key in parameters.keys.sorted(by: <) {
@@ -18,16 +18,7 @@ public class QueryUtilities {
         return components.map { "\($0)=\($1)" }.joined(separator: "&")
     }
     
-    public func toQueryParameters(_ parameters: [String: Any]) -> [String: String] {
-        var components: [(String, String)] = []
-        for key in parameters.keys.sorted(by: <) {
-            let value = parameters[key]!
-            components += queryComponents(fromKey: key, value: value)
-        }
-        return components.toDictionary(with:{$0.0}, selectValue: {$0.1})
-    }
-    
-    private func queryComponents(fromKey key: String, value: Any) -> [(String, String)] {
+    private static func queryComponents(fromKey key: String, value: Any) -> [(String, String)] {
         var components: [(String, String)] = []
         
         if let dictionary = value as? [String: Any] {
@@ -52,7 +43,7 @@ public class QueryUtilities {
         return components
     }
     
-    private func escape(_ string: String) -> String {
+    private static func escape(_ string: String) -> String {
         let generalDelimitersToEncode = ":#[]@" // does not include "?" or "/" due to RFC 3986 - Section 3.4
         let subDelimitersToEncode = "!$&'()*+,;="
         
@@ -82,14 +73,4 @@ public class QueryUtilities {
 
 extension NSNumber {
     fileprivate var isBool: Bool { return CFBooleanGetTypeID() == CFGetTypeID(self) }
-}
-
-extension Array {
-    fileprivate func toDictionary<Key: Hashable, T>(with selectKey: (Element) -> Key, selectValue: (Element) ->T) -> [Key:T] {
-        var dictionary = [Key:T]()
-        for element in self {
-            dictionary[selectKey(element)] = selectValue(element)
-        }
-        return dictionary
-    }
 }

@@ -29,20 +29,18 @@ class MolueNavigatorTests: XCTestCase {
     }
     
     func testWebsiteURLIsValidate() {
-        
+//        let path = MolueNavigatorRouter.init(.Home).toPath("<path>")
+        let newquery = QueryUtilities.query(["name":"james","key":"Value"])
+        let apath = MolueNavigatorRouter.init(.Home, path: "/<path>",query: newquery).toString()
+        print(apath ?? "a")
     }
     
-    func testDictionaryToQuery() {
-        let string = QueryUtilities().query(["xxx":222])
-        XCTAssertNotNil(string)
+    func testViewControllerWithParameter()  {
+        let url = URL(string: "https://www.baidu.com?key=value")
+        let aurl = MolueAppRouter.sharedInstance.updateURL(url!, parameters: ["name":"james","key":"Value"])
+        let hope = "https://www.baidu.com?key=value&key=Value&name=james"
+        XCTAssert(aurl.urlStringValue == hope, "the url is validate")
     }
-    
-//    func testViewControllerWithParameter()  {
-//        let url = URL(string: "https://www.baidu.com?key=value")
-//        let aurl = MolueAppRouter.sharedInstance.updateURL(url!, parameters: ["name":"james","key":"Value"])
-//        let hope = "https://www.baidu.com?key=Value&name=james"
-//        XCTAssert(aurl.urlStringValue == hope, "the url is validate")
-//    }
     func testNavigatorRouter() {
         let string = MolueNavigatorRouter.init(.Home, path: "<path>").toString()
         let hope = "navigator://MolueHomePart/<path>"
@@ -68,11 +66,4 @@ class MolueNavigatorTests: XCTestCase {
             MolueAppRouter.sharedInstance.navigator.viewController(for:url)
         }
     }
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class MolueNavigatorRouter {
+public class MolueNavigatorRouter:MolueRouterProtocol {
     var components = URLComponents()
     
     enum RouterHost: String {
@@ -16,13 +16,12 @@ public class MolueNavigatorRouter {
         case Home = "MolueHomePart"
     }
     
-    init(_ host: RouterHost, path: String) {
+    init(_ host: RouterHost, path: String, query: String? = nil) {
         self.components.scheme = "navigator"
         self.components.host = host.rawValue
         let urlPath = path.hasPrefix("/") ? path : "/" + path
-        if let path =  urlPath.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed){
-            self.components.percentEncodedPath = path
-        }
+        self.components.path = urlPath
+        self.components.query = query
     }
     
     func toString() -> String? {

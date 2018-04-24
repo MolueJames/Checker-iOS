@@ -8,6 +8,11 @@
 
 import Foundation
 import URLNavigator
+protocol MolueRouterProtocol {
+    func toString() -> String?
+    var components: URLComponents {get set}
+}
+
 let single = MolueAppRouter()
 public class MolueAppRouter {
     let navigator = Navigator()
@@ -47,17 +52,15 @@ public class MolueAppRouter {
         }
     }
     
-    func updateURL(_ url: URLConvertible, parameters: [String: Any]?) -> URLConvertible {
-        if let parameters = parameters {
-            let queryUtilities = QueryUtilities()
-            var newParameters = url.queryParameters
-            newParameters.merge(parmater: queryUtilities.toQueryParameters(parameters))
-            let newUrl = url.urlValue?.absoluteString
-            let url = String(url.urlStringValue + "?" + queryUtilities.query(newParameters))
-            return url
-        } else {
-            return url
-        }
+//    func updateURL(_ url: URLConvertible, parameters: [String: Any]?) -> URLConvertible {
+//        guard let parameters = parameters else { return url }
+//        let newQuery = QueryUtilities.query(parameters)
+//        let connect = url.queryItems == nil ? "?" : "&"
+//        return url.urlStringValue + connect + newQuery
+//    }
+//
+    func viewController(_ router: MolueRouterProtocol) {
+        
     }
 }
 
