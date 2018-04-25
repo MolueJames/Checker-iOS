@@ -40,16 +40,16 @@ public class MolueAppRouter {
 //                return nil
 //            }
 //        }
-        if let httpRouter = MolueWebsiteRouter.init(.HTTP, path: "<path:_>").toString() {
-            navigator.handle(httpRouter) { (url, values, context) -> Bool in
-                return true
-            }
-        }
-        if let httpsRouter = MolueWebsiteRouter.init(.HTTPS, path: "<path:_>").toString() {
-            navigator.handle(httpsRouter) { (url, values, context) -> Bool in
-                return true
-            }
-        }
+//        if let httpRouter = MolueWebsiteRouter.init(.HTTP, path: "<path:_>").toString() {
+//            navigator.handle(httpRouter) { (url, values, context) -> Bool in
+//                return true
+//            }
+//        }
+//        if let httpsRouter = MolueWebsiteRouter.init(.HTTPS, path: "<path:_>").toString() {
+//            navigator.handle(httpsRouter) { (url, values, context) -> Bool in
+//                return true
+//            }
+//        }
     }
     
 //    func updateURL(_ url: URLConvertible, parameters: [String: Any]?) -> URLConvertible {

@@ -35,12 +35,6 @@ class MolueNavigatorTests: XCTestCase {
         print(apath ?? "a")
     }
     
-    func testViewControllerWithParameter()  {
-        let url = URL(string: "https://www.baidu.com?key=value")
-        let aurl = MolueAppRouter.sharedInstance.updateURL(url!, parameters: ["name":"james","key":"Value"])
-        let hope = "https://www.baidu.com?key=value&key=Value&name=james"
-        XCTAssert(aurl.urlStringValue == hope, "the url is validate")
-    }
     func testNavigatorRouter() {
         let string = MolueNavigatorRouter.init(.Home, path: "<path>").toString()
         let hope = "navigator://MolueHomePart/<path>"
@@ -49,15 +43,18 @@ class MolueNavigatorTests: XCTestCase {
     }
     
     func testWebsiteRouter() {
-        let string = MolueWebsiteRouter.init(.HTTPS, path: "/<path:_>").toString()
+        let string = MolueWebsiteRouter.init(.HTTPS, path: "<path:_>").toPath()
         let hope = "https://<path:_>"
         XCTAssert(string! == hope, "the url is validate")
     }
     
     func testWebsiteRouter1() {
-        let string = MolueWebsiteRouter.init(.HTTP, url: "www.baidu.com").toString()
-        print(string)
-        
+//        let string = MolueWebsiteRouter.init(.HTTPS, url: "https://www.baidu.com").toString()
+//        print(string ?? "nil")
+        let path = MolueWebsiteRouter.init(.HTTPS, path: "<path:_>").toPath()
+        print(path)
+        let url = MolueWebsiteRouter.init(url: "http://www.baidu.com/vdad").toString()
+        print(url ?? "nil")
     }
     
     func testAppRouter() {
