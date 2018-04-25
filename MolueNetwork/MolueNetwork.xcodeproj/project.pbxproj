@@ -14,6 +14,7 @@
 		1A7D9ADA208645B800FA997D /* MolueNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A7D9AD0208645B800FA997D /* MolueNetwork.framework */; };
 		1A7D9ADF208645B800FA997D /* MolueNetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7D9ADE208645B800FA997D /* MolueNetworkTests.swift */; };
 		1A7D9AE1208645B800FA997D /* MolueNetwork.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A7D9AD3208645B800FA997D /* MolueNetwork.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1AADF84420906D5A0020527B /* MolueNetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AADF84320906D5A0020527B /* MolueNetworkProvider.swift */; };
 		BC189391F27A554850E68EE3 /* Pods_MolueNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26543693E5EB9CE1B9CB8CAF /* Pods_MolueNetwork.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +39,7 @@
 		1A7D9AD9208645B800FA997D /* MolueNetworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MolueNetworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A7D9ADE208645B800FA997D /* MolueNetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueNetworkTests.swift; sourceTree = "<group>"; };
 		1A7D9AE0208645B800FA997D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1AADF84320906D5A0020527B /* MolueNetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueNetworkProvider.swift; sourceTree = "<group>"; };
 		26543693E5EB9CE1B9CB8CAF /* Pods_MolueNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MolueNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5102C4172D88E1753D4AF8A5 /* Pods_MolueNetworkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MolueNetworkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A9AF264A257D3583F8ECB32 /* Pods-MolueNetwork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueNetwork.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueNetwork/Pods-MolueNetwork.debug.xcconfig"; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				1A1B888B20864CD100C5F4D9 /* MolueUserService.swift */,
 				1A7D9AD3208645B800FA997D /* MolueNetwork.h */,
 				1A7D9AD4208645B800FA997D /* Info.plist */,
+				1AADF84320906D5A0020527B /* MolueNetworkProvider.swift */,
 			);
 			path = MolueNetwork;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 			files = (
 				1A1B889220864CD200C5F4D9 /* MolueNetworkConfigure.swift in Sources */,
 				1A1B889020864CD200C5F4D9 /* MolueResponseResult.swift in Sources */,
+				1AADF84420906D5A0020527B /* MolueNetworkProvider.swift in Sources */,
 				1A1B888F20864CD200C5F4D9 /* MolueUserService.swift in Sources */,
 				1A1B889120864CD200C5F4D9 /* MolueUserProvider.swift in Sources */,
 			);
@@ -414,7 +418,11 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = MolueNetwork/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Molue.MolueNetwork;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -437,7 +445,11 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = MolueNetwork/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Molue.MolueNetwork;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -452,7 +464,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MolueNetworkTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Molue.MolueNetworkTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -466,7 +482,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MolueNetworkTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Molue.MolueNetworkTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

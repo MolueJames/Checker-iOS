@@ -26,6 +26,7 @@ target 'MolueSafty' do
         pod 'JPush', '~> 3.0.9'
         pod 'AMapSearch', '~> 5.7.0'
         pod 'AMap3DMap', '~> 5.7.0'
+        pod 'CryptoSwift'
 end
 
 target 'MolueCommon' do
@@ -34,6 +35,10 @@ end
 
 target 'MolueUtilities' do
     project 'MolueUtilities/MolueUtilities.xcodeproj'
+        pod 'CryptoSwift'
+    target 'MolueUtilitiesTests' do
+        inherit! :search_paths
+    end
 end
 
 target 'MolueNetwork' do
@@ -47,7 +52,6 @@ target 'MolueNavigator' do
         pod 'URLNavigator'
     target 'MolueNavigatorTests' do
         inherit! :search_paths
-        pod 'URLNavigator'
     end
 end
 

@@ -51,23 +51,9 @@ public class MolueAppRouter {
 //            }
 //        }
     }
-    
-//    func updateURL(_ url: URLConvertible, parameters: [String: Any]?) -> URLConvertible {
-//        guard let parameters = parameters else { return url }
-//        let newQuery = QueryUtilities.query(parameters)
-//        let connect = url.queryItems == nil ? "?" : "&"
-//        return url.urlStringValue + connect + newQuery
-//    }
+
 //
     func viewController(_ router: MolueRouterProtocol) {
         
-    }
-}
-
-extension Dictionary {
-    fileprivate mutating func merge(parmater:Dictionary) {
-        for (key,value) in parmater {
-            self.updateValue(value, forKey:key)
-        }
     }
 }

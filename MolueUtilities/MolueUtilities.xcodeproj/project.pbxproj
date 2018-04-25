@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1A1B888920864CBD00C5F4D9 /* MolueNameSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1B888720864CBC00C5F4D9 /* MolueNameSpace.swift */; };
-		1A1B888A20864CBD00C5F4D9 /* MoluePrint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1B888820864CBD00C5F4D9 /* MoluePrint.swift */; };
 		1A7D9BB22086475C00FA997D /* MolueUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A7D9BA82086475C00FA997D /* MolueUtilities.framework */; };
 		1A7D9BB72086475C00FA997D /* MolueUtilitiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7D9BB62086475C00FA997D /* MolueUtilitiesTests.swift */; };
 		1A7D9BB92086475C00FA997D /* MolueUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A7D9BAB2086475C00FA997D /* MolueUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1AADF847209079E10020527B /* MolueAsync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AADF846209079E10020527B /* MolueAsync.swift */; };
+		1AADF84A20907E810020527B /* MolueNameSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AADF84920907E810020527B /* MolueNameSpace.swift */; };
+		1AADF84F2090B1630020527B /* MolueLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AADF84E2090B1630020527B /* MolueLogger.swift */; };
+		31664C34AE41C0D5DC65CC0A /* Pods_MolueUtilitiesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8323136335963F49DA4C5E25 /* Pods_MolueUtilitiesTests.framework */; };
 		334A49C5F6399723A9409DBE /* Pods_MolueUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AA1EA8647EAB7A4D37FDFDF /* Pods_MolueUtilities.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,15 +28,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1A1B888720864CBC00C5F4D9 /* MolueNameSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MolueNameSpace.swift; sourceTree = "<group>"; };
-		1A1B888820864CBD00C5F4D9 /* MoluePrint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoluePrint.swift; sourceTree = "<group>"; };
 		1A7D9BA82086475C00FA997D /* MolueUtilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MolueUtilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A7D9BAB2086475C00FA997D /* MolueUtilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MolueUtilities.h; sourceTree = "<group>"; };
 		1A7D9BAC2086475C00FA997D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A7D9BB12086475C00FA997D /* MolueUtilitiesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MolueUtilitiesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A7D9BB62086475C00FA997D /* MolueUtilitiesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueUtilitiesTests.swift; sourceTree = "<group>"; };
 		1A7D9BB82086475C00FA997D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1AADF846209079E10020527B /* MolueAsync.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MolueAsync.swift; sourceTree = "<group>"; };
+		1AADF84920907E810020527B /* MolueNameSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MolueNameSpace.swift; sourceTree = "<group>"; };
+		1AADF84E2090B1630020527B /* MolueLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueLogger.swift; sourceTree = "<group>"; };
 		3DAA8FC00FCE1977EB6E8A10 /* Pods-MolueUtilities.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueUtilities.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueUtilities/Pods-MolueUtilities.debug.xcconfig"; sourceTree = "<group>"; };
+		4B2F200F3E32E7C937521A28 /* Pods-MolueUtilitiesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueUtilitiesTests.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueUtilitiesTests/Pods-MolueUtilitiesTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8323136335963F49DA4C5E25 /* Pods_MolueUtilitiesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MolueUtilitiesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		953F0358EB78EFA1E5D327C3 /* Pods-MolueUtilitiesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueUtilitiesTests.release.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueUtilitiesTests/Pods-MolueUtilitiesTests.release.xcconfig"; sourceTree = "<group>"; };
 		9AA1EA8647EAB7A4D37FDFDF /* Pods_MolueUtilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MolueUtilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B99464FCEEBDA4B9D10F2E66 /* Pods-MolueUtilities.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueUtilities.release.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueUtilities/Pods-MolueUtilities.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -53,6 +59,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A7D9BB22086475C00FA997D /* MolueUtilities.framework in Frameworks */,
+				31664C34AE41C0D5DC65CC0A /* Pods_MolueUtilitiesTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				9AA1EA8647EAB7A4D37FDFDF /* Pods_MolueUtilities.framework */,
+				8323136335963F49DA4C5E25 /* Pods_MolueUtilitiesTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -90,8 +98,9 @@
 		1A7D9BAA2086475C00FA997D /* MolueUtilities */ = {
 			isa = PBXGroup;
 			children = (
-				1A1B888720864CBC00C5F4D9 /* MolueNameSpace.swift */,
-				1A1B888820864CBD00C5F4D9 /* MoluePrint.swift */,
+				1AADF84D2090B1440020527B /* Logger */,
+				1AADF84820907E810020527B /* NameSpace */,
+				1AADF845209079E10020527B /* GCDAsync */,
 				1A7D9BAB2086475C00FA997D /* MolueUtilities.h */,
 				1A7D9BAC2086475C00FA997D /* Info.plist */,
 			);
@@ -107,11 +116,37 @@
 			path = MolueUtilitiesTests;
 			sourceTree = "<group>";
 		};
+		1AADF845209079E10020527B /* GCDAsync */ = {
+			isa = PBXGroup;
+			children = (
+				1AADF846209079E10020527B /* MolueAsync.swift */,
+			);
+			path = GCDAsync;
+			sourceTree = "<group>";
+		};
+		1AADF84820907E810020527B /* NameSpace */ = {
+			isa = PBXGroup;
+			children = (
+				1AADF84920907E810020527B /* MolueNameSpace.swift */,
+			);
+			path = NameSpace;
+			sourceTree = "<group>";
+		};
+		1AADF84D2090B1440020527B /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				1AADF84E2090B1630020527B /* MolueLogger.swift */,
+			);
+			path = Logger;
+			sourceTree = "<group>";
+		};
 		1B0BDCBE1EC9EA8CC5A167C8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				3DAA8FC00FCE1977EB6E8A10 /* Pods-MolueUtilities.debug.xcconfig */,
 				B99464FCEEBDA4B9D10F2E66 /* Pods-MolueUtilities.release.xcconfig */,
+				4B2F200F3E32E7C937521A28 /* Pods-MolueUtilitiesTests.debug.xcconfig */,
+				953F0358EB78EFA1E5D327C3 /* Pods-MolueUtilitiesTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -153,9 +188,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1A7D9BBF2086475C00FA997D /* Build configuration list for PBXNativeTarget "MolueUtilitiesTests" */;
 			buildPhases = (
+				E69F8618F92B0729539EBC84 /* [CP] Check Pods Manifest.lock */,
 				1A7D9BAD2086475C00FA997D /* Sources */,
 				1A7D9BAE2086475C00FA997D /* Frameworks */,
 				1A7D9BAF2086475C00FA997D /* Resources */,
+				9C036E6D5F8FA6EC808542A5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -222,6 +259,42 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		9C036E6D5F8FA6EC808542A5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/../Pods/Target Support Files/Pods-MolueUtilitiesTests/Pods-MolueUtilitiesTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-MolueUtilitiesTests/Pods-MolueUtilitiesTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E69F8618F92B0729539EBC84 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MolueUtilitiesTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		F39C86391D939F815E0A833D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -247,8 +320,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A1B888A20864CBD00C5F4D9 /* MoluePrint.swift in Sources */,
-				1A1B888920864CBD00C5F4D9 /* MolueNameSpace.swift in Sources */,
+				1AADF84A20907E810020527B /* MolueNameSpace.swift in Sources */,
+				1AADF84F2090B1630020527B /* MolueLogger.swift in Sources */,
+				1AADF847209079E10020527B /* MolueAsync.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,6 +478,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = MolueUtilities/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -431,6 +506,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = MolueUtilities/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -446,6 +522,7 @@
 		};
 		1A7D9BC02086475C00FA997D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B2F200F3E32E7C937521A28 /* Pods-MolueUtilitiesTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -464,6 +541,7 @@
 		};
 		1A7D9BC12086475C00FA997D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 953F0358EB78EFA1E5D327C3 /* Pods-MolueUtilitiesTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

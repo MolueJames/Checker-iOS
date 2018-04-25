@@ -7,6 +7,7 @@
 //
 
 import XCTest
+
 @testable import MolueUtilities
 
 class MolueUtilitiesTests: XCTestCase {
@@ -14,6 +15,12 @@ class MolueUtilitiesTests: XCTestCase {
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        MolueLogger.enable = false
+    }
+    func testLogger() {
+        MolueLogger.success.message("xxxxx")
+        MolueLogger.failure.message("xxxxx")
+        MolueLogger.warning.message("xxxxx")
     }
     
     override func tearDown() {
@@ -25,12 +32,5 @@ class MolueUtilitiesTests: XCTestCase {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
+
 }

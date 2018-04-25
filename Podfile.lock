@@ -5,6 +5,7 @@ PODS:
   - AMapFoundation (1.4.3)
   - AMapSearch (5.7.0):
     - AMapFoundation (~> 1.4)
+  - CryptoSwift (0.9.0)
   - IQKeyboardManagerSwift (5.0.0)
   - JCore (1.1.9)
   - JPush (3.0.9):
@@ -27,6 +28,7 @@ DEPENDENCIES:
   - Alamofire (~> 4.7)
   - AMap3DMap (~> 5.7.0)
   - AMapSearch (~> 5.7.0)
+  - CryptoSwift
   - IQKeyboardManagerSwift (= 5.0.0)
   - JPush (~> 3.0.9)
   - Kingfisher (~> 4.0)
@@ -42,6 +44,7 @@ SPEC REPOS:
     - AMap3DMap
     - AMapFoundation
     - AMapSearch
+    - CryptoSwift
     - IQKeyboardManagerSwift
     - JCore
     - JPush
@@ -58,6 +61,7 @@ SPEC CHECKSUMS:
   AMap3DMap: 97afc57b88628237d916991ac31795eb7bde3f63
   AMapFoundation: 973682cfe60b92efd73a8ef8f1144fa0fa8e1296
   AMapSearch: 314f75e9ce282b53dbf66455efa416c39f12b5b1
+  CryptoSwift: bca8c5b653dcc2d9734409242a070ff53bafac86
   IQKeyboardManagerSwift: 3f340202ebe1a7076279b9b9b3c817243ddb3aab
   JCore: 27598485098d0db99d2812cba048003457d08cfb
   JPush: 003d9eaef8ba2df76de32573d0c8aa62b92b3c82
@@ -69,6 +73,6 @@ SPEC CHECKSUMS:
   SQLite.swift: 6e5356850bb1791459f8c16d6ee9195b28714a2e
   URLNavigator: af5582fbbb3586c958be16835d799bfdb23a4793
 
-PODFILE CHECKSUM: 2089bcee475816ec691ec48c2ef8e645f9355de4
+PODFILE CHECKSUM: 7dfe4dd8ce32b02642dfbfddb92aa32974e2a182
 
 COCOAPODS: 1.5.0
