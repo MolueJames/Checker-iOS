@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_MolueUtilitiesTestsVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_MolueUtilitiesTestsVersionString[];
+FOUNDATION_EXPORT double Pods_MolueCommonTestsVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_MolueCommonTestsVersionString[];
 

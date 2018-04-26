@@ -9,14 +9,16 @@
 import Foundation
 
 public enum MolueLogger: String {
-    public static var enable: Bool = false
+    public static var enable: Bool = true
     case warning = "⚠️"
     case success = "✅"
     case failure = "❎"
+    case network = "⛅"
+    case database = "📚"
     
     public func message<T>(_ message: T, file: String = #file, method: String = #function, line: Int = #line) {
         if MolueLogger.enable {
-            print("\((file as NSString).lastPathComponent) Line:\(line), Method:\(method) \(self.rawValue): \(message)")
+            print("\((file as NSString).lastPathComponent)-Line:\(line)-Method:\(method) \(self.rawValue): \(message)")
         }
     }
 }

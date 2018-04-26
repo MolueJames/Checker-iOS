@@ -7,6 +7,8 @@
 //
 
 import XCTest
+import Moya
+import MolueUtilities
 @testable import MolueNetwork
 
 class MolueNetworkTests: XCTestCase {
@@ -14,6 +16,28 @@ class MolueNetworkTests: XCTestCase {
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        
+    }
+    
+    func testNetworkProvider() {
+        let expectation = self.expectation(description: "request should succeed")
+        AccountService.appVersion(device: "iOS", version: "1.1.0").start(success: { (map) in
+            MolueLogger.network.message(map)
+            expectation.fulfill()
+        }, failure: { (error) in
+            MolueLogger.failure.message(error)
+            expectation.fulfill()
+        })
+        
+        AccountService.appVersion(device: "iOS", version: "1.1.0").start(MoyaProvider<MolueNetworkProvider>(), success: { (map) in
+            MolueLogger.network.message(map)
+            expectation.fulfill()
+        }, failure: { (error) in
+            MolueLogger.failure.message(error)
+            expectation.fulfill()
+        })
+        waitForExpectations(timeout: 30, handler: nil)
+        
     }
     
     override func tearDown() {

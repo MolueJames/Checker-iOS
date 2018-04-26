@@ -11,6 +11,8 @@
 		1A7D9B6A2086470300FA997D /* MolueCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A7D9B602086470200FA997D /* MolueCommon.framework */; };
 		1A7D9B6F2086470300FA997D /* MolueCommonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7D9B6E2086470300FA997D /* MolueCommonTests.swift */; };
 		1A7D9B712086470300FA997D /* MolueCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A7D9B632086470300FA997D /* MolueCommon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1AEB87DB209218D3002230A3 /* MolueCryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEB87DA209218D3002230A3 /* MolueCryption.swift */; };
+		44CDCBC278886564183928A8 /* Pods_MolueCommonTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCC4653C34129E915BF6180A /* Pods_MolueCommonTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,7 +33,11 @@
 		1A7D9B692086470300FA997D /* MolueCommonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MolueCommonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A7D9B6E2086470300FA997D /* MolueCommonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueCommonTests.swift; sourceTree = "<group>"; };
 		1A7D9B702086470300FA997D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1AEB87DA209218D3002230A3 /* MolueCryption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MolueCryption.swift; sourceTree = "<group>"; };
 		35A07F602272B6C2B8044368 /* Pods-MolueCommon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueCommon.release.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueCommon/Pods-MolueCommon.release.xcconfig"; sourceTree = "<group>"; };
+		418FC30C5B9BCC635305D211 /* Pods-MolueCommonTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueCommonTests.release.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueCommonTests/Pods-MolueCommonTests.release.xcconfig"; sourceTree = "<group>"; };
+		DC9DD27BB9DE6C0833D7E5B9 /* Pods-MolueCommonTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueCommonTests.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueCommonTests/Pods-MolueCommonTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DCC4653C34129E915BF6180A /* Pods_MolueCommonTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MolueCommonTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F64AC0DDC4B2457896DB8640 /* Pods_MolueCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MolueCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -49,6 +55,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A7D9B6A2086470300FA997D /* MolueCommon.framework in Frameworks */,
+				44CDCBC278886564183928A8 /* Pods_MolueCommonTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +85,7 @@
 		1A7D9B622086470200FA997D /* MolueCommon */ = {
 			isa = PBXGroup;
 			children = (
+				1AEB87D9209218D3002230A3 /* Encryption */,
 				1A7D9B632086470300FA997D /* MolueCommon.h */,
 				1A7D9B642086470300FA997D /* Info.plist */,
 			);
@@ -93,10 +101,19 @@
 			path = MolueCommonTests;
 			sourceTree = "<group>";
 		};
+		1AEB87D9209218D3002230A3 /* Encryption */ = {
+			isa = PBXGroup;
+			children = (
+				1AEB87DA209218D3002230A3 /* MolueCryption.swift */,
+			);
+			path = Encryption;
+			sourceTree = "<group>";
+		};
 		7DBC480713B54D37639897AC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				F64AC0DDC4B2457896DB8640 /* Pods_MolueCommon.framework */,
+				DCC4653C34129E915BF6180A /* Pods_MolueCommonTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -106,6 +123,8 @@
 			children = (
 				0B3FA8D5CD50C93A81938144 /* Pods-MolueCommon.debug.xcconfig */,
 				35A07F602272B6C2B8044368 /* Pods-MolueCommon.release.xcconfig */,
+				DC9DD27BB9DE6C0833D7E5B9 /* Pods-MolueCommonTests.debug.xcconfig */,
+				418FC30C5B9BCC635305D211 /* Pods-MolueCommonTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -147,9 +166,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1A7D9B772086470300FA997D /* Build configuration list for PBXNativeTarget "MolueCommonTests" */;
 			buildPhases = (
+				D2CF027EDED85C043C0FD8E4 /* [CP] Check Pods Manifest.lock */,
 				1A7D9B652086470300FA997D /* Sources */,
 				1A7D9B662086470300FA997D /* Frameworks */,
 				1A7D9B672086470300FA997D /* Resources */,
+				84E97DB22420B6826F5A7762 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -215,6 +236,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		84E97DB22420B6826F5A7762 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/../Pods/Target Support Files/Pods-MolueCommonTests/Pods-MolueCommonTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-MolueCommonTests/Pods-MolueCommonTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		C4DC74232B014A95D09C429B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -233,6 +272,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D2CF027EDED85C043C0FD8E4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MolueCommonTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -240,6 +297,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AEB87DB209218D3002230A3 /* MolueCryption.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,7 +484,9 @@
 		};
 		1A7D9B782086470300FA997D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC9DD27BB9DE6C0833D7E5B9 /* Pods-MolueCommonTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MolueCommonTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -439,7 +499,9 @@
 		};
 		1A7D9B792086470300FA997D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 418FC30C5B9BCC635305D211 /* Pods-MolueCommonTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MolueCommonTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

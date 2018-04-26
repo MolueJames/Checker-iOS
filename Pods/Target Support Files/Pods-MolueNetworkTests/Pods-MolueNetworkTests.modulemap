@@ -1,0 +1,6 @@
+framework module Pods_MolueNetworkTests {
+  umbrella header "Pods-MolueNetworkTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

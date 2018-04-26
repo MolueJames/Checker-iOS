@@ -31,20 +31,23 @@ end
 
 target 'MolueCommon' do
     project 'MolueCommon/MolueCommon.xcodeproj'
+        pod 'CryptoSwift'
+    target 'MolueCommonTests' do
+        inherit! :search_paths
+    end
 end
 
 target 'MolueUtilities' do
     project 'MolueUtilities/MolueUtilities.xcodeproj'
-        pod 'CryptoSwift'
-    target 'MolueUtilitiesTests' do
-        inherit! :search_paths
-    end
 end
 
 target 'MolueNetwork' do
     project 'MolueNetwork/MolueNetwork.xcodeproj'
         pod 'Alamofire', '~> 4.7'
         pod 'Moya', '~> 11.0'
+    target 'MolueNetworkTests' do
+        inherit! :search_paths
+    end
 end
 
 target 'MolueNavigator' do
