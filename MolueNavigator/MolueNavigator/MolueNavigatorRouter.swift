@@ -9,14 +9,14 @@
 import Foundation
 
 public class MolueNavigatorRouter:MolueRouterProtocol {
-    var components = URLComponents()
+    private var components = URLComponents()
     
-    enum RouterHost: String {
+    public enum RouterHost: String {
         case Mine = "MolueMinePart"
         case Home = "MolueHomePart"
     }
     
-    init(_ host: RouterHost, path: String, query: String? = nil) {
+    public init(_ host: RouterHost, path: String, query: String? = nil) {
         self.components.scheme = "navigator"
         self.components.host = host.rawValue
         let urlPath = path.hasPrefix("/") ? path : "/" + path
@@ -24,7 +24,7 @@ public class MolueNavigatorRouter:MolueRouterProtocol {
         self.components.query = query
     }
     
-    func toString() -> String? {
+    public func toString() -> String? {
         if let string = self.components.url?.absoluteString {
             return string.removingPercentEncoding
         }

@@ -9,7 +9,7 @@
 import Foundation
 
 public class MolueWebsiteRouter:MolueRouterProtocol {
-    var components = URLComponents()
+    private var components = URLComponents()
     var scheme: String?
     var path: String?
     
@@ -35,7 +35,7 @@ public class MolueWebsiteRouter:MolueRouterProtocol {
         self.path = path
     }
     
-    func toString() -> String? {
+    public func toString() -> String? {
         guard self.scheme == self.components.scheme else {return nil}
         guard let url = self.components.url else {return nil}
         return url.absoluteString.isEmpty ? nil : url.absoluteString

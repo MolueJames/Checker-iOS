@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1A7D9A832084E73500FA997D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7D9A822084E73500FA997D /* AppDelegate.swift */; };
-		1A7D9A852084E73500FA997D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7D9A842084E73500FA997D /* ViewController.swift */; };
-		1A7D9A882084E73500FA997D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A7D9A862084E73500FA997D /* Main.storyboard */; };
 		1A7D9A8A2084E73600FA997D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A7D9A892084E73600FA997D /* Assets.xcassets */; };
 		1A7D9A8D2084E73600FA997D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A7D9A8B2084E73600FA997D /* LaunchScreen.storyboard */; };
 		1A7D9A982084E73600FA997D /* MolueSaftyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7D9A972084E73600FA997D /* MolueSaftyTests.swift */; };
@@ -17,7 +15,14 @@
 		1AA5391F208A423F0095E2B4 /* AppDelegate+JPush.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA5391E208A423F0095E2B4 /* AppDelegate+JPush.swift */; };
 		1AADF85D2090B8250020527B /* MolueUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AADF85C2090B8250020527B /* MolueUtilities.framework */; };
 		1AADF85F2090B8300020527B /* MolueUtilities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1AADF85C2090B8250020527B /* MolueUtilities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		AF72CC297DA0D5A6239684B6 /* Pods_MolueSafty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF222F92DB201F01537C480 /* Pods_MolueSafty.framework */; };
+		1AEB87E32092CA94002230A3 /* Appdelegate+UILogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEB87E22092CA94002230A3 /* Appdelegate+UILogic.swift */; };
+		1AEB87E52092CB05002230A3 /* MolueNavigator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AEB87E42092CB05002230A3 /* MolueNavigator.framework */; };
+		1AEB87E62092CB19002230A3 /* Pods_MolueSafty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF222F92DB201F01537C480 /* Pods_MolueSafty.framework */; };
+		1AEB87E72092CB19002230A3 /* Pods_MolueSafty.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF222F92DB201F01537C480 /* Pods_MolueSafty.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1AEB87E92092CB25002230A3 /* MolueNavigator.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1AEB87E42092CB05002230A3 /* MolueNavigator.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1AEB886F2092FF3D002230A3 /* MolueMinePart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AEB886E2092FF3D002230A3 /* MolueMinePart.framework */; };
+		1AEB88702092FF45002230A3 /* MolueMinePart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AEB886E2092FF3D002230A3 /* MolueMinePart.framework */; };
+		1AEB88712092FF45002230A3 /* MolueMinePart.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1AEB886E2092FF3D002230A3 /* MolueMinePart.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +50,9 @@
 			dstSubfolderSpec = 10;
 			files = (
 				1AADF85F2090B8300020527B /* MolueUtilities.framework in Embed Frameworks */,
+				1AEB88712092FF45002230A3 /* MolueMinePart.framework in Embed Frameworks */,
+				1AEB87E92092CB25002230A3 /* MolueNavigator.framework in Embed Frameworks */,
+				1AEB87E72092CB19002230A3 /* Pods_MolueSafty.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -54,8 +62,6 @@
 /* Begin PBXFileReference section */
 		1A7D9A7F2084E73500FA997D /* MolueSafty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MolueSafty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A7D9A822084E73500FA997D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1A7D9A842084E73500FA997D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		1A7D9A872084E73500FA997D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1A7D9A892084E73600FA997D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1A7D9A8C2084E73600FA997D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1A7D9A8E2084E73600FA997D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -68,6 +74,9 @@
 		1AA538F6208A21440095E2B4 /* Objective-C-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Objective-C-Bridging-Header.h"; sourceTree = "<group>"; };
 		1AA5391E208A423F0095E2B4 /* AppDelegate+JPush.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+JPush.swift"; sourceTree = "<group>"; };
 		1AADF85C2090B8250020527B /* MolueUtilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueUtilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AEB87E22092CA94002230A3 /* Appdelegate+UILogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Appdelegate+UILogic.swift"; sourceTree = "<group>"; };
+		1AEB87E42092CB05002230A3 /* MolueNavigator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueNavigator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AEB886E2092FF3D002230A3 /* MolueMinePart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueMinePart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CF222F92DB201F01537C480 /* Pods_MolueSafty.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MolueSafty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A9C45BEDD9571E14C89E0F8 /* Pods_MolueSaftyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MolueSaftyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A45A4A4FA66C0AB59D83B270 /* Pods_MolueSaftyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MolueSaftyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,8 +89,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AEB886F2092FF3D002230A3 /* MolueMinePart.framework in Frameworks */,
+				1AEB87E52092CB05002230A3 /* MolueNavigator.framework in Frameworks */,
 				1AADF85D2090B8250020527B /* MolueUtilities.framework in Frameworks */,
-				AF72CC297DA0D5A6239684B6 /* Pods_MolueSafty.framework in Frameworks */,
+				1AEB88702092FF45002230A3 /* MolueMinePart.framework in Frameworks */,
+				1AEB87E62092CB19002230A3 /* Pods_MolueSafty.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,13 +140,12 @@
 			isa = PBXGroup;
 			children = (
 				1A7D9A822084E73500FA997D /* AppDelegate.swift */,
-				1A7D9A842084E73500FA997D /* ViewController.swift */,
-				1A7D9A862084E73500FA997D /* Main.storyboard */,
 				1A7D9A892084E73600FA997D /* Assets.xcassets */,
 				1A7D9A8B2084E73600FA997D /* LaunchScreen.storyboard */,
 				1A7D9A8E2084E73600FA997D /* Info.plist */,
 				1AA538F6208A21440095E2B4 /* Objective-C-Bridging-Header.h */,
 				1AA5391E208A423F0095E2B4 /* AppDelegate+JPush.swift */,
+				1AEB87E22092CA94002230A3 /* Appdelegate+UILogic.swift */,
 			);
 			path = MolueSafty;
 			sourceTree = "<group>";
@@ -160,6 +171,8 @@
 		83E91D7A2F4B97501AC8DD7E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1AEB886E2092FF3D002230A3 /* MolueMinePart.framework */,
+				1AEB87E42092CB05002230A3 /* MolueNavigator.framework */,
 				1AADF85C2090B8250020527B /* MolueUtilities.framework */,
 				3CF222F92DB201F01537C480 /* Pods_MolueSafty.framework */,
 				7A9C45BEDD9571E14C89E0F8 /* Pods_MolueSaftyTests.framework */,
@@ -287,7 +300,6 @@
 			files = (
 				1A7D9A8D2084E73600FA997D /* LaunchScreen.storyboard in Resources */,
 				1A7D9A8A2084E73600FA997D /* Assets.xcassets in Resources */,
-				1A7D9A882084E73500FA997D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,7 +399,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A7D9A852084E73500FA997D /* ViewController.swift in Sources */,
+				1AEB87E32092CA94002230A3 /* Appdelegate+UILogic.swift in Sources */,
 				1A7D9A832084E73500FA997D /* AppDelegate.swift in Sources */,
 				1AA5391F208A423F0095E2B4 /* AppDelegate+JPush.swift in Sources */,
 			);
@@ -425,14 +437,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		1A7D9A862084E73500FA997D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1A7D9A872084E73500FA997D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		1A7D9A8B2084E73600FA997D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -523,7 +527,10 @@
 				GCC_WARN_INHIBIT_ALL_WARNINGS = NO;
 				INFOPLIST_FILE = MolueSafty/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks $(inherited)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/Frameworks",
+					"$(inherited)",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"\"${PODS_ROOT}/JCore\"",
 					"\"${PODS_ROOT}/JPush\"",
@@ -546,7 +553,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MolueSaftyTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Molue.MolueSaftyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -561,7 +572,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MolueSaftyUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Molue.MolueSaftyUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -649,7 +664,10 @@
 				GCC_WARN_INHIBIT_ALL_WARNINGS = NO;
 				INFOPLIST_FILE = MolueSafty/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks $(inherited)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/Frameworks",
+					"$(inherited)",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"\"${PODS_ROOT}/JCore\"",
 					"\"${PODS_ROOT}/JPush\"",
@@ -673,7 +691,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MolueSaftyTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Molue.MolueSaftyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -688,7 +710,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MolueSaftyUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Molue.MolueSaftyUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
