@@ -11,6 +11,9 @@
 		1A50149D20944DA500DB931E /* MolueHomePart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A50149C20944DA500DB931E /* MolueHomePart.framework */; };
 		1A50149F20944DB300DB931E /* MolueHomePart.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1A50149C20944DA500DB931E /* MolueHomePart.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1A5014A020944DD900DB931E /* MolueHomePart.framework in Resources */ = {isa = PBXBuildFile; fileRef = 1A50149C20944DA500DB931E /* MolueHomePart.framework */; };
+		1A5014AF2094B4F700DB931E /* MolueCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5014AE2094B4F700DB931E /* MolueCommon.framework */; };
+		1A5014B02094B51000DB931E /* MolueCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5014AE2094B4F700DB931E /* MolueCommon.framework */; };
+		1A5014B12094B51000DB931E /* MolueCommon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5014AE2094B4F700DB931E /* MolueCommon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1A7D9A832084E73500FA997D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7D9A822084E73500FA997D /* AppDelegate.swift */; };
 		1A7D9A8A2084E73600FA997D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A7D9A892084E73600FA997D /* Assets.xcassets */; };
 		1A7D9A8D2084E73600FA997D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A7D9A8B2084E73600FA997D /* LaunchScreen.storyboard */; };
@@ -52,6 +55,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				1A5014B12094B51000DB931E /* MolueCommon.framework in Embed Frameworks */,
 				1A50149F20944DB300DB931E /* MolueHomePart.framework in Embed Frameworks */,
 				1AADF85F2090B8300020527B /* MolueUtilities.framework in Embed Frameworks */,
 				1AEB88712092FF45002230A3 /* MolueMinePart.framework in Embed Frameworks */,
@@ -65,6 +69,7 @@
 
 /* Begin PBXFileReference section */
 		1A50149C20944DA500DB931E /* MolueHomePart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueHomePart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A5014AE2094B4F700DB931E /* MolueCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A7D9A7F2084E73500FA997D /* MolueSafty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MolueSafty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A7D9A822084E73500FA997D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A7D9A892084E73600FA997D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -94,6 +99,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A5014B02094B51000DB931E /* MolueCommon.framework in Frameworks */,
+				1A5014AF2094B4F700DB931E /* MolueCommon.framework in Frameworks */,
 				1A50149D20944DA500DB931E /* MolueHomePart.framework in Frameworks */,
 				1AEB886F2092FF3D002230A3 /* MolueMinePart.framework in Frameworks */,
 				1AEB87E52092CB05002230A3 /* MolueNavigator.framework in Frameworks */,
@@ -176,6 +183,7 @@
 		83E91D7A2F4B97501AC8DD7E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1A5014AE2094B4F700DB931E /* MolueCommon.framework */,
 				1A50149C20944DA500DB931E /* MolueHomePart.framework */,
 				1AEB886E2092FF3D002230A3 /* MolueMinePart.framework */,
 				1AEB87E42092CB05002230A3 /* MolueNavigator.framework */,
@@ -359,6 +367,7 @@
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Permission/Permission.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
@@ -372,6 +381,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Permission.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLite.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",

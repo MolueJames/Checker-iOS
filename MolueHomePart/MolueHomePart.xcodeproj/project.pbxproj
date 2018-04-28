@@ -12,6 +12,7 @@
 		1A1B88D420864D9500C5F4D9 /* MolueHomePart.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A1B88C620864D9500C5F4D9 /* MolueHomePart.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1A5014A220944DF000DB931E /* HomeInforViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A5014A120944DF000DB931E /* HomeInforViewController.storyboard */; };
 		1A5014A420944DFE00DB931E /* HomeInforViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5014A320944DFE00DB931E /* HomeInforViewController.swift */; };
+		1A5014AD2094B13400DB931E /* MolueCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5014AC2094B13400DB931E /* MolueCommon.framework */; };
 		EF01F517C22ED0361C323767 /* Pods_MolueHomePart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 010F6973D5E1725577EE6B03 /* Pods_MolueHomePart.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		1A1B88D320864D9500C5F4D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A5014A120944DF000DB931E /* HomeInforViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeInforViewController.storyboard; sourceTree = "<group>"; };
 		1A5014A320944DFE00DB931E /* HomeInforViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInforViewController.swift; sourceTree = "<group>"; };
+		1A5014AC2094B13400DB931E /* MolueCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9468AE17912D4AEEBE6E1EFA /* Pods-MolueHomePart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueHomePart.release.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueHomePart/Pods-MolueHomePart.release.xcconfig"; sourceTree = "<group>"; };
 		C7C163FB01CFAE81C039463E /* Pods-MolueHomePart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueHomePart.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueHomePart/Pods-MolueHomePart.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -44,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A5014AD2094B13400DB931E /* MolueCommon.framework in Frameworks */,
 				EF01F517C22ED0361C323767 /* Pods_MolueHomePart.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -110,6 +113,7 @@
 		56076729037BEB2CEBACE6F0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1A5014AC2094B13400DB931E /* MolueCommon.framework */,
 				010F6973D5E1725577EE6B03 /* Pods_MolueHomePart.framework */,
 			);
 			name = Frameworks;
@@ -412,6 +416,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = MolueHomePart/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -439,6 +444,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = MolueHomePart/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

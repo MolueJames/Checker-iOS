@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import MolueUtilities
 @testable import MolueCommon
 
 class MolueCommonTests: XCTestCase {
@@ -21,9 +22,13 @@ class MolueCommonTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
+    func testFilePath() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let s = FilePath.home.HomePart
+        MolueLogger.success.message(s)
+        let c = CommonColor.home.red
+        MolueLogger.success.message(c)
     }
     
     func testPerformanceExample() {

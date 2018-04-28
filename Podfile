@@ -27,11 +27,17 @@ target 'MolueSafty' do
         pod 'AMapSearch', '~> 5.7.0'
         pod 'AMap3DMap', '~> 5.7.0'
         pod 'CryptoSwift'
+        pod 'Permission/Camera'
+        pod 'Permission/Location'
+        pod 'Permission/Notifications'
 end
 
 target 'MolueCommon' do
     project 'MolueCommon/MolueCommon.xcodeproj'
         pod 'CryptoSwift'
+        pod 'Permission/Camera'
+        pod 'Permission/Location'
+        pod 'Permission/Notifications'
     target 'MolueCommonTests' do
         inherit! :search_paths
     end
@@ -39,6 +45,9 @@ end
 
 target 'MolueUtilities' do
     project 'MolueUtilities/MolueUtilities.xcodeproj'
+    target 'MolueUtilitiesTests' do
+        inherit! :search_paths
+    end
 end
 
 target 'MolueNetwork' do
@@ -69,12 +78,20 @@ end
 
 target 'MolueMinePart' do
     project 'MolueMinePart/MolueMinePart.xcodeproj'
+        pod 'CryptoSwift'
+        pod 'Permission/Camera'
+        pod 'Permission/Location'
+        pod 'Permission/Notifications'
         pod 'SnapKit', '~> 4.0.0'
         pod 'Kingfisher', '~> 4.0'
 end
 
 target 'MolueHomePart' do
     project 'MolueHomePart/MolueHomePart.xcodeproj'
+        pod 'CryptoSwift'
+        pod 'Permission/Camera'
+        pod 'Permission/Location'
+        pod 'Permission/Notifications'
         pod 'SnapKit', '~> 4.0.0'
         pod 'Kingfisher', '~> 4.0'
 end

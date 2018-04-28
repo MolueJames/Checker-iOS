@@ -7,13 +7,24 @@
 //
 
 import UIKit
-
+import MolueUtilities
+import MolueCommon
+import Permission
 class HomeInforViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        let button = UIButton.init(frame: CGRect.init(x: 40, y: 80, width: self.view.frame.size.width - 80, height: 45))
+        button.addTarget(self, action: #selector(buttonClicked), for: .touchUpInside)
+        button.backgroundColor = UIColor.red
+        self.view.addSubview(button)
+    }
+    
+    @IBAction func buttonClicked(button: Any?) {
+        MoluePermission.camera { (status) in
+            MolueLogger.success.message(status)
+        }
     }
 
     override func didReceiveMemoryWarning() {

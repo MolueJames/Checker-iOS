@@ -17,6 +17,13 @@ PODS:
     - Alamofire (~> 4.1)
     - Result (~> 3.0)
   - ObjectMapper (3.1.0)
+  - Permission/Camera (2.0.4):
+    - Permission/Core
+  - Permission/Core (2.0.4)
+  - Permission/Location (2.0.4):
+    - Permission/Core
+  - Permission/Notifications (2.0.4):
+    - Permission/Core
   - Result (3.2.4)
   - SnapKit (4.0.0)
   - SQLite.swift (0.11.5):
@@ -34,6 +41,9 @@ DEPENDENCIES:
   - Kingfisher (~> 4.0)
   - Moya (~> 11.0)
   - ObjectMapper (~> 3.1)
+  - Permission/Camera
+  - Permission/Location
+  - Permission/Notifications
   - SnapKit (~> 4.0.0)
   - SQLite.swift (~> 0.11.4)
   - URLNavigator
@@ -51,6 +61,7 @@ SPEC REPOS:
     - Kingfisher
     - Moya
     - ObjectMapper
+    - Permission
     - Result
     - SnapKit
     - SQLite.swift
@@ -68,11 +79,12 @@ SPEC CHECKSUMS:
   Kingfisher: da6b005aa96d37698e3e4f1ccfe96a5b9bbf27d6
   Moya: a725035953bc1c0eb1be505ab903984501d82440
   ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
+  Permission: 6853b9694e66a6c9197468c66d1935c3629cbf9c
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SQLite.swift: 6e5356850bb1791459f8c16d6ee9195b28714a2e
   URLNavigator: af5582fbbb3586c958be16835d799bfdb23a4793
 
-PODFILE CHECKSUM: d5de4b3a511fe8b800a9fdb0298334a49b8b7370
+PODFILE CHECKSUM: 42a4c329b903efeecccb0e7122dd19e98bdddd6c
 
 COCOAPODS: 1.5.0
