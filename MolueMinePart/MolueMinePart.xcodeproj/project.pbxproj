@@ -11,6 +11,7 @@
 		1A1B88AE20864D8500C5F4D9 /* MolueMinePartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1B88AD20864D8500C5F4D9 /* MolueMinePartTests.swift */; };
 		1A1B88B020864D8500C5F4D9 /* MolueMinePart.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A1B88A220864D8500C5F4D9 /* MolueMinePart.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1A501495209414A600DB931E /* MolueNavigator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A501494209414A600DB931E /* MolueNavigator.framework */; };
+		1A50149920943A6B00DB931E /* MineInforViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A50149820943A6B00DB931E /* MineInforViewController.storyboard */; };
 		1AEB87E12092CA3F002230A3 /* MineInforViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEB87E02092CA3F002230A3 /* MineInforViewController.swift */; };
 		A1B2025363B9BFEEB3CA22AC /* Pods_MolueMinePart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E94F0281829CA034AC7E0935 /* Pods_MolueMinePart.framework */; };
 /* End PBXBuildFile section */
@@ -33,6 +34,7 @@
 		1A1B88AD20864D8500C5F4D9 /* MolueMinePartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueMinePartTests.swift; sourceTree = "<group>"; };
 		1A1B88AF20864D8500C5F4D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A501494209414A600DB931E /* MolueNavigator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueNavigator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A50149820943A6B00DB931E /* MineInforViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MineInforViewController.storyboard; sourceTree = "<group>"; };
 		1AEB87E02092CA3F002230A3 /* MineInforViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineInforViewController.swift; sourceTree = "<group>"; };
 		23650B8EF1C713F76417DF5C /* Pods-MolueMinePart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueMinePart.release.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueMinePart/Pods-MolueMinePart.release.xcconfig"; sourceTree = "<group>"; };
 		CCE1C3C7822940047D1B665E /* Pods-MolueMinePart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueMinePart.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueMinePart/Pods-MolueMinePart.debug.xcconfig"; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				1AEB87E02092CA3F002230A3 /* MineInforViewController.swift */,
+				1A50149820943A6B00DB931E /* MineInforViewController.storyboard */,
 			);
 			path = MineInfor;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A50149920943A6B00DB931E /* MineInforViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +416,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = MolueMinePart/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -439,6 +444,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = MolueMinePart/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

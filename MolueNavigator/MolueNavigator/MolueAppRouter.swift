@@ -81,11 +81,18 @@ public class MolueAppRouter {
     private func createViewController(_ url: URLConvertible, filename: String, context: Any?) -> UIViewController? {
         guard let components = URLComponents.init(string: url.urlStringValue) else {return nil}
         guard let module = components.host else {return nil}
-        var classname = module + "." + filename
-        classname = classname.replacingOccurrences(of: "/", with: "")
-        guard let Class : AnyClass = NSClassFromString(classname) else {return nil}
+        let viewController = self.instantiateViewController(module: module, filename: filename)
+        self.updateViewController(viewController, params: url.queryParameters, context: context)
+        return viewController
+    }
+    
+    private func instantiateViewController(module: String, filename: String) -> UIViewController? {
+        guard let path = Bundle.main.path(forResource: module, ofType: "framework")  else {return nil}
+        guard let bundle = Bundle.init(path: path) else {return nil}
+        let storyboard = UIStoryboard.init(name: filename, bundle: bundle)
+        guard let Class : AnyClass = NSClassFromString(module + "." + filename) else {return nil}
         guard let targetClass = Class as? UIViewController.Type else {return nil}
-        return targetClass.init()
+        return storyboard.instantiateViewController(withClass:targetClass.self)
     }
     
     private func updateViewController(_ viewController: UIViewController?, params:Dictionary<String,String>, context: Any?) {
@@ -102,7 +109,9 @@ public class MolueAppRouter {
         let connector = (URL.init(string: url)?.query) == nil  ? "?" : "&"
         return url + connector + query
     }
-    
+}
+
+extension MolueAppRouter {
     public func viewController(_ router: MolueNavigatorRouter, parameters: [String: Any]? = nil, context: Any? = nil) -> UIViewController? {
         guard let url = router.toString() else {return nil}
         let newURL = self.updateRouterURL(url, parameters: parameters)
@@ -127,6 +136,7 @@ public class MolueAppRouter {
         let newURL = self.updateRouterURL(url, parameters: parameters)
         return navigator.handler(for: newURL, context: context)
     }
+    
     @discardableResult
     public func showAlert(_ router: MolueDoAlertRouter, actions:[UIAlertAction]? = nil, wrap: UINavigationController.Type? = nil, from: UIViewControllerType? = nil, animated: Bool = true, completion: (() -> Void)? = nil) -> UIViewController?{
         guard let url = router.toString() else {return nil}

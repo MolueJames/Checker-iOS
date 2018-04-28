@@ -15,17 +15,26 @@ class MineInforViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
         // Do any additional setup after loading the view.
-        let button = UIButton.init(frame: CGRect.init(x: 40, y: 80, width: self.view.frame.width - 80, height: 45))
-        button.backgroundColor = UIColor.red
-        button.addTarget(self, action: #selector(testAlert), for: .touchUpInside)
-        self.view.addSubview(button)
+        let alertButton = UIButton.init(frame: CGRect.init(x: 40, y: 80, width: self.view.frame.width - 80, height: 45))
+        alertButton.backgroundColor = UIColor.red
+        alertButton.addTarget(self, action: #selector(alertButtonClicked), for: .touchUpInside)
+        self.view.addSubview(alertButton)
+        
+        let navigatorButton = UIButton.init(frame: CGRect.init(x: 40, y: 140, width: self.view.frame.width - 80, height: 45))
+        navigatorButton.backgroundColor = UIColor.red
+        navigatorButton.addTarget(self, action: #selector(navigatorButtonClicked), for: .touchUpInside)
+        self.view.addSubview(navigatorButton)
     }
     
-    @IBAction func testAlert(button: AnyObject) {
+    @IBAction func alertButtonClicked(button: Any?) {
         let action = UIAlertAction.init(title: "ok", style: .default) { (action) in
             MolueLogger.success.message(action)
         }
         MolueAppRouter.sharedInstance.showAlert(MolueDoAlertRouter.init(.alert, title: "title", message: "message"), actions:[action])
+    }
+    
+    @IBAction func navigatorButtonClicked(button: Any?) {
+        MolueAppRouter.sharedInstance.presentRouter(MolueNavigatorRouter.init(.Home, path: "HomeInforViewController"))
     }
 
     override func didReceiveMemoryWarning() {

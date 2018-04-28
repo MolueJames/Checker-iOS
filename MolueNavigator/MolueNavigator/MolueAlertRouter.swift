@@ -10,15 +10,10 @@ import Foundation
 public class MolueDoAlertRouter {
     private var components = URLComponents()
     
-    public enum MolyeAlertStyle :String {
-        case sheet = "/sheet"
-        case alert = "/alert"
-    }
-    
-    public init(_ style: MolyeAlertStyle, title: String? = nil, message: String? = nil) {
+    public init(_ style: UIAlertControllerStyle, title: String? = nil, message: String? = nil) {
         self.components.scheme = "navigator"
         self.components.host = "alert"
-        self.components.path = style.rawValue
+        self.components.path = style.toString()
         guard let title = title, let message = message else {return}
         self.components.query = QueryUtilities.query(["title": title, "message": message])
     }
@@ -41,5 +36,15 @@ public class MolueDoAlertRouter {
         guard let string = self.components.url?.absoluteString else {return nil}
         return string.removingPercentEncoding
     }
+}
 
+extension UIAlertControllerStyle {
+    fileprivate func toString() -> String {
+        switch self {
+        case .alert:
+            return "/alert"
+        case .actionSheet:
+            return "/sheet"
+        }
+    }
 }

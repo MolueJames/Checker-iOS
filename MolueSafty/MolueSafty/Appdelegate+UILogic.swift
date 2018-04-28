@@ -8,6 +8,7 @@
 
 import Foundation
 import MolueNavigator
+import MolueMinePart
 extension AppDelegate {
     func setDefaultRootViewController() {
         self.window = UIWindow.init(frame: UIScreen.main.bounds)
