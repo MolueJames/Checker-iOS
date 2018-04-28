@@ -14,6 +14,7 @@ public enum MolueLogger: String {
     case success = "✅"
     case failure = "❎"
     case network = "⛅"
+    case dealloc = "♻️"
     case database = "📚"
     
     public func message<T>(_ message: T, file: String = #file, method: String = #function, line: Int = #line) {

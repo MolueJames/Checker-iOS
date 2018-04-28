@@ -8,13 +8,7 @@
 
 import Foundation
 import URLNavigator
-public protocol MolueRouterProtocol {
-    /// to create router url
-    ///
-    /// - Returns: router url
-    func toString() -> String?
-}
-
+import MolueUtilities
 public protocol MolueNavigatorProtocol {
     /// transfer parameters
     ///
@@ -48,30 +42,42 @@ public class MolueAppRouter {
                 return viewcontroller
             }
         }
-        
+        if let httpRouter = MolueWebsiteRouter.init(.HTTP, path: "<path:_>").toString() {
+            navigator.register(httpRouter) { (url, values, context) -> UIViewController? in
+                return self.createWebController(url, values: values, context: context)
+            }
+        }
+        if let httpsRouter = MolueWebsiteRouter.init(.HTTPS, path: "<path:_>").toString() {
+            navigator.register(httpsRouter) { (url, values, context) -> UIViewController? in
+                return self.createWebController(url, values: values, context: context)
+            }
+        }
+        if let alertRouter = MolueDoAlertRouter.init("<style>").toPath() {
+            navigator.register(alertRouter) { (url, values, context) -> UIViewController? in
+                guard let style = values["style"] as? String else { return nil }
+                let alertStyle: UIAlertControllerStyle = style == "alert" ? .alert : .actionSheet
+                let title = url.queryParameters["title"]
+                let message = url.queryParameters["message"]
+                return self.createAlertController(url, style: alertStyle, title: title, message: message, context: context)
+            }
+        }
     }
-        
-//        if let alertRouter = MolueRouterPattern.navigator(.alert).toString() {
-//            navigator.register(alertRouter) { (url, values, context) -> UIViewController? in
-//                guard let title = values["title"] as? String else {return nil}
-//                guard let message = values["message"] as? String else {return nil}
-//                return nil
-//            }
-//        }
-//        if let httpRouter = MolueWebsiteRouter.init(.HTTP, path: "<path:_>").toString() {
-//            navigator.handle(httpRouter) { (url, values, context) -> Bool in
-//                return true
-//            }
-//        }
-//        if let httpsRouter = MolueWebsiteRouter.init(.HTTPS, path: "<path:_>").toString() {
-//            navigator.handle(httpsRouter) { (url, values, context) -> Bool in
-//                return true
-//            }
-//        }
-//    }
-
-//
-        
+    
+    private func createAlertController(_ url: URLConvertible, style: UIAlertControllerStyle, title: String?, message: String?, context: Any?) -> UIViewController? {
+        guard let title = title else { return nil }
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: style)
+        if let actions:[UIAlertAction] = context as? [UIAlertAction] {
+            alertController.addActions(actions)
+        } else {
+            alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        }
+        return alertController
+    }
+    
+    private func createWebController(_ url: URLConvertible, values: [String: Any]?, context: Any?) -> UIViewController? {
+        return nil
+    }
+    
     private func createViewController(_ url: URLConvertible, filename: String, context: Any?) -> UIViewController? {
         guard let components = URLComponents.init(string: url.urlStringValue) else {return nil}
         guard let module = components.host else {return nil}
@@ -97,9 +103,34 @@ public class MolueAppRouter {
         return url + connector + query
     }
     
-    public func viewController(_ router: MolueRouterProtocol, parameters: [String: Any]? = nil, context: Any? = nil) -> UIViewController? {
+    public func viewController(_ router: MolueNavigatorRouter, parameters: [String: Any]? = nil, context: Any? = nil) -> UIViewController? {
         guard let url = router.toString() else {return nil}
         let newURL = self.updateRouterURL(url, parameters: parameters)
         return navigator.viewController(for: newURL, context: context)
+    }
+    
+    @discardableResult
+    public func pushRouter(_ router: MolueNavigatorRouter, parameters: [String: Any]? = nil, context: Any? = nil, from: UINavigationControllerType? = nil, animated: Bool = true) -> UIViewController? {
+        guard let viewController = self.viewController(router, parameters: parameters, context: context) else { return nil }
+        return navigator.pushViewController(viewController, from: from, animated: animated)
+    }
+    
+    @discardableResult
+    public func presentRouter(_ router: MolueNavigatorRouter, parameters: [String: Any]? = nil, context: Any? = nil, wrap: UINavigationController.Type? = nil, from: UIViewControllerType? = nil, animated: Bool = true, completion: (() -> Void)? = nil) -> UIViewController? {
+        guard let viewController = self.viewController(router, parameters: parameters, context: context) else { return nil }
+        return navigator.presentViewController(viewController, wrap: wrap, from: from, animated: animated, completion: completion)
+    }
+    
+    @discardableResult
+    public func handler(for router: MolueWebsiteRouter,  parameters: [String: Any]? = nil, context: Any?) -> URLOpenHandler? {
+        guard let url = router.toString() else {return nil}
+        let newURL = self.updateRouterURL(url, parameters: parameters)
+        return navigator.handler(for: newURL, context: context)
+    }
+    @discardableResult
+    public func showAlert(_ router: MolueDoAlertRouter, actions:[UIAlertAction]? = nil, wrap: UINavigationController.Type? = nil, from: UIViewControllerType? = nil, animated: Bool = true, completion: (() -> Void)? = nil) -> UIViewController?{
+        guard let url = router.toString() else {return nil}
+        guard let viewcontroller = navigator.viewController(for: url, context: actions) else {return nil}
+        return navigator.present(viewcontroller, wrap: wrap, from: from, animated: animated, completion: completion)
     }
 }

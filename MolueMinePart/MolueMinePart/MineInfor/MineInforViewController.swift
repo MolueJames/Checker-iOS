@@ -7,13 +7,25 @@
 //
 
 import UIKit
-
+import MolueUtilities
+import MolueNavigator
 class MineInforViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
         // Do any additional setup after loading the view.
+        let button = UIButton.init(frame: CGRect.init(x: 40, y: 80, width: self.view.frame.width - 80, height: 45))
+        button.backgroundColor = UIColor.red
+        button.addTarget(self, action: #selector(testAlert), for: .touchUpInside)
+        self.view.addSubview(button)
+    }
+    
+    @IBAction func testAlert(button: AnyObject) {
+        let action = UIAlertAction.init(title: "ok", style: .default) { (action) in
+            MolueLogger.success.message(action)
+        }
+        MolueAppRouter.sharedInstance.showAlert(MolueDoAlertRouter.init(.alert, title: "title", message: "message"), actions:[action])
     }
 
     override func didReceiveMemoryWarning() {

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1A1B889420864CE200C5F4D9 /* MolueAppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1B889320864CE200C5F4D9 /* MolueAppRouter.swift */; };
+		1A50149720941BE300DB931E /* MolueUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A50149620941BE300DB931E /* MolueUtilities.framework */; };
 		1A7D9B462086469200FA997D /* MolueNavigator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A7D9B3C2086469200FA997D /* MolueNavigator.framework */; };
 		1A7D9B4B2086469200FA997D /* MolueNavigatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7D9B4A2086469200FA997D /* MolueNavigatorTests.swift */; };
 		1A7D9B4D2086469200FA997D /* MolueNavigator.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A7D9B3F2086469200FA997D /* MolueNavigator.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -31,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		1A1B889320864CE200C5F4D9 /* MolueAppRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MolueAppRouter.swift; sourceTree = "<group>"; };
+		1A50149620941BE300DB931E /* MolueUtilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueUtilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A7D9B3C2086469200FA997D /* MolueNavigator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MolueNavigator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A7D9B3F2086469200FA997D /* MolueNavigator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MolueNavigator.h; sourceTree = "<group>"; };
 		1A7D9B402086469200FA997D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -54,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A50149720941BE300DB931E /* MolueUtilities.framework in Frameworks */,
 				CB40B39E1CF66F381D200AA0 /* Pods_MolueNavigator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -116,6 +119,7 @@
 		A51406A3D18D83853954D913 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1A50149620941BE300DB931E /* MolueUtilities.framework */,
 				FE00FCE280F42E325CC276E4 /* Pods_MolueNavigator.framework */,
 				E3239FC3B28A67C031DD54C0 /* Pods_MolueNavigatorTests.framework */,
 			);

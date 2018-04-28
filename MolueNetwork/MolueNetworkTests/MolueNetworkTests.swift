@@ -28,14 +28,6 @@ class MolueNetworkTests: XCTestCase {
             MolueLogger.failure.message(error)
             expectation.fulfill()
         })
-        
-        AccountService.appVersion(device: "iOS", version: "1.1.0").start(MoyaProvider<MolueNetworkProvider>(), success: { (map) in
-            MolueLogger.network.message(map)
-            expectation.fulfill()
-        }, failure: { (error) in
-            MolueLogger.failure.message(error)
-            expectation.fulfill()
-        })
         waitForExpectations(timeout: 30, handler: nil)
         
     }

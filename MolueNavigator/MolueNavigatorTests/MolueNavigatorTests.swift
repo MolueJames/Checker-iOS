@@ -57,6 +57,14 @@ class MolueNavigatorTests: XCTestCase {
         print(url ?? "nil")
     }
     
+    func testAlertRouter() {
+        let string = MolueDoAlertRouter.init("<path>").toPath()
+        print(string);
+        let astring = MolueDoAlertRouter.init(.alert, title: "warning", message: "message").toString()
+        print(astring)
+        
+    }
+    
     func testAppRouter() {
         MolueAppRouter.sharedInstance.initialize()
         if let url = MolueNavigatorRouter.init(.Home, path: "userviewcontroller").toString() {

@@ -57,7 +57,12 @@ public extension UIAlertController {
 			}
 		}
 	}
-	
+    
+    public func addActions(_ actions: [UIAlertAction]) {
+        for action in actions {
+            self.addAction(action)
+        }
+    }
 }
 
 // MARK: - Initializers
@@ -94,6 +99,5 @@ public extension UIAlertController {
 			view.tintColor = color
 		}
 	}
-	
 }
 #endif

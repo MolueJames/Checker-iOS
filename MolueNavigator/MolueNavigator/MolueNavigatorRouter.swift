@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class MolueNavigatorRouter:MolueRouterProtocol {
+public class MolueNavigatorRouter {
     private var components = URLComponents()
     
     public enum RouterHost: String {

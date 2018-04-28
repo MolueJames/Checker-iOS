@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class MolueWebsiteRouter:MolueRouterProtocol {
+public class MolueWebsiteRouter {
     private var components = URLComponents()
     var scheme: String?
     var path: String?
