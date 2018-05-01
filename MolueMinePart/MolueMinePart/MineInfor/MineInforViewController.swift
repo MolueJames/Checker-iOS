@@ -9,6 +9,7 @@
 import UIKit
 import MolueUtilities
 import MolueNavigator
+import MolueCommon
 class MineInforViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -34,7 +35,7 @@ class MineInforViewController: UIViewController {
     }
     
     @IBAction func navigatorButtonClicked(button: Any?) {
-        MolueAppRouter.sharedInstance.presentRouter(MolueNavigatorRouter.init(.Home, path: "HomeInforViewController"))
+        MolueAppRouter.sharedInstance.presentRouter(MolueNavigatorRouter.init(.Home, path: FilePath.home.HomeInfor))
     }
 
     override func didReceiveMemoryWarning() {

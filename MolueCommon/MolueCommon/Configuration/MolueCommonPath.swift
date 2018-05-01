@@ -15,7 +15,7 @@ extension FilePath: HomePartCompatible {
 }
 
 extension MolueKit where Base == FilePath {
-    public static let HomePart = "HomePartViewController"
+    public static let HomeInfor = "HomeInforViewController"
 }
 
 extension FilePath: MinePartCompatible {
@@ -23,5 +23,5 @@ extension FilePath: MinePartCompatible {
 }
 
 extension MolueKit where Base == FilePath {
-    public static let MinePart = "MinePartViewController"
+    public static let MineInfor = "MineInforViewController"
 }

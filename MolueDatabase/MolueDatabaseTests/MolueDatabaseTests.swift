@@ -7,6 +7,8 @@
 //
 
 import XCTest
+import SQLite
+import MolueUtilities
 @testable import MolueDatabase
 
 class MolueDatabaseTests: XCTestCase {
@@ -24,6 +26,15 @@ class MolueDatabaseTests: XCTestCase {
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+//        do {
+//            try MolueDBManager.shared.doConnection("xxx")
+//            try MolueDBManager.shared.runCreateOperator("xxxx")
+//        } catch {
+//            MolueLogger.failure.message(error)
+//        }
+//
+//       users.init().name = "xxx"
+        
     }
     
     func testPerformanceExample() {

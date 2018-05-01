@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MolueDatabase
 import MolueUtilities
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         self.registerJPushWithlaunchOptions(launchOptions)
         self.setDefaultRootViewController()
+        self.initializeIQKeyBoardConfigure()
+        
+        
         return true
     }
 

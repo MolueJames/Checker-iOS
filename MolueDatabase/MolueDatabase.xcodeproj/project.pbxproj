@@ -7,9 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A5014C020962F3B00DB931E /* MolueDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5014BF20962F3B00DB931E /* MolueDBManager.swift */; };
+		1A5014E22097603700DB931E /* MolueUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5014E12097603700DB931E /* MolueUtilities.framework */; };
+		1A5014E32097612900DB931E /* MolueUtilities.framework in Resources */ = {isa = PBXBuildFile; fileRef = 1A5014E12097603700DB931E /* MolueUtilities.framework */; };
+		1A5014E5209765EE00DB931E /* MolueUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5014E4209765EE00DB931E /* MolueUser.swift */; };
 		1A7D9AFE208645E800FA997D /* MolueDatabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A7D9AF4208645E800FA997D /* MolueDatabase.framework */; };
 		1A7D9B03208645E800FA997D /* MolueDatabaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7D9B02208645E800FA997D /* MolueDatabaseTests.swift */; };
 		1A7D9B05208645E800FA997D /* MolueDatabase.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A7D9AF7208645E800FA997D /* MolueDatabase.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		40BAA5E8DF0E54FEC81A04E0 /* Pods_MolueDatabaseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53148C896FCBA82B3938A885 /* Pods_MolueDatabaseTests.framework */; };
 		C6822FACF45A7CE4669977DB /* Pods_MolueDatabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 270B602989F00AF398B5B781 /* Pods_MolueDatabase.framework */; };
 /* End PBXBuildFile section */
 
@@ -24,6 +29,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A5014BF20962F3B00DB931E /* MolueDBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueDBManager.swift; sourceTree = "<group>"; };
+		1A5014E12097603700DB931E /* MolueUtilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueUtilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A5014E4209765EE00DB931E /* MolueUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueUser.swift; sourceTree = "<group>"; };
 		1A7D9AF4208645E800FA997D /* MolueDatabase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MolueDatabase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A7D9AF7208645E800FA997D /* MolueDatabase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MolueDatabase.h; sourceTree = "<group>"; };
 		1A7D9AF8208645E800FA997D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -33,7 +41,9 @@
 		23DA8BE3C023F19C0E4D3A97 /* Pods-MolueDatabase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueDatabase.release.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueDatabase/Pods-MolueDatabase.release.xcconfig"; sourceTree = "<group>"; };
 		270B602989F00AF398B5B781 /* Pods_MolueDatabase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MolueDatabase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		53148C896FCBA82B3938A885 /* Pods_MolueDatabaseTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MolueDatabaseTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B57BE395BB2756652379BCB /* Pods-MolueDatabaseTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueDatabaseTests.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueDatabaseTests/Pods-MolueDatabaseTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AD7F5DFF8FE6F7690909A737 /* Pods-MolueDatabase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueDatabase.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueDatabase/Pods-MolueDatabase.debug.xcconfig"; sourceTree = "<group>"; };
+		BAD76A241D0F08E05751A5B4 /* Pods-MolueDatabaseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueDatabaseTests.release.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueDatabaseTests/Pods-MolueDatabaseTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A5014E22097603700DB931E /* MolueUtilities.framework in Frameworks */,
 				C6822FACF45A7CE4669977DB /* Pods_MolueDatabase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -50,6 +61,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A7D9AFE208645E800FA997D /* MolueDatabase.framework in Frameworks */,
+				40BAA5E8DF0E54FEC81A04E0 /* Pods_MolueDatabaseTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +93,8 @@
 			children = (
 				1A7D9AF7208645E800FA997D /* MolueDatabase.h */,
 				1A7D9AF8208645E800FA997D /* Info.plist */,
+				1A5014BF20962F3B00DB931E /* MolueDBManager.swift */,
+				1A5014E4209765EE00DB931E /* MolueUser.swift */,
 			);
 			path = MolueDatabase;
 			sourceTree = "<group>";
@@ -99,6 +113,8 @@
 			children = (
 				AD7F5DFF8FE6F7690909A737 /* Pods-MolueDatabase.debug.xcconfig */,
 				23DA8BE3C023F19C0E4D3A97 /* Pods-MolueDatabase.release.xcconfig */,
+				5B57BE395BB2756652379BCB /* Pods-MolueDatabaseTests.debug.xcconfig */,
+				BAD76A241D0F08E05751A5B4 /* Pods-MolueDatabaseTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -106,6 +122,7 @@
 		7DEF7C10413A7A75C137D0F4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1A5014E12097603700DB931E /* MolueUtilities.framework */,
 				270B602989F00AF398B5B781 /* Pods_MolueDatabase.framework */,
 				53148C896FCBA82B3938A885 /* Pods_MolueDatabaseTests.framework */,
 			);
@@ -149,9 +166,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1A7D9B0B208645E800FA997D /* Build configuration list for PBXNativeTarget "MolueDatabaseTests" */;
 			buildPhases = (
+				26F594D5153C707A218565E1 /* [CP] Check Pods Manifest.lock */,
 				1A7D9AF9208645E800FA997D /* Sources */,
 				1A7D9AFA208645E800FA997D /* Frameworks */,
 				1A7D9AFB208645E800FA997D /* Resources */,
+				CFB9A01180401CB81ECD677F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -175,6 +194,7 @@
 				TargetAttributes = {
 					1A7D9AF3208645E800FA997D = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 0930;
 					};
 					1A7D9AFC208645E800FA997D = {
 						CreatedOnToolsVersion = 9.3;
@@ -204,6 +224,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A5014E32097612900DB931E /* MolueUtilities.framework in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,6 +238,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		26F594D5153C707A218565E1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MolueDatabaseTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		C3D98B8E0067B767547933A8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -235,6 +274,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		CFB9A01180401CB81ECD677F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/../Pods/Target Support Files/Pods-MolueDatabaseTests/Pods-MolueDatabaseTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLite.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-MolueDatabaseTests/Pods-MolueDatabaseTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -242,6 +299,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A5014C020962F3B00DB931E /* MolueDBManager.swift in Sources */,
+				1A5014E5209765EE00DB931E /* MolueUser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,6 +447,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AD7F5DFF8FE6F7690909A737 /* Pods-MolueDatabase.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -396,10 +456,16 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = MolueDatabase/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Molue.MolueDatabase;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -409,6 +475,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 23DA8BE3C023F19C0E4D3A97 /* Pods-MolueDatabase.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -417,7 +484,12 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = MolueDatabase/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Molue.MolueDatabase;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -428,10 +500,16 @@
 		};
 		1A7D9B0C208645E800FA997D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B57BE395BB2756652379BCB /* Pods-MolueDatabaseTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MolueDatabaseTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Molue.MolueDatabaseTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -441,10 +519,16 @@
 		};
 		1A7D9B0D208645E800FA997D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BAD76A241D0F08E05751A5B4 /* Pods-MolueDatabaseTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MolueDatabaseTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Molue.MolueDatabaseTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

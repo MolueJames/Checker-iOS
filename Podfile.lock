@@ -6,16 +6,21 @@ PODS:
   - AMapSearch (5.7.0):
     - AMapFoundation (~> 1.4)
   - CryptoSwift (0.9.0)
+  - ESPullToRefresh (2.7)
   - IQKeyboardManagerSwift (5.0.0)
   - JCore (1.1.9)
   - JPush (3.0.9):
     - JCore (~> 1.1.7)
+  - KeychainAccess (3.1.1)
   - Kingfisher (4.7.0)
   - Moya (11.0.2):
     - Moya/Core (= 11.0.2)
   - Moya/Core (11.0.2):
     - Alamofire (~> 4.1)
     - Result (~> 3.0)
+  - NVActivityIndicatorView (4.2.0):
+    - NVActivityIndicatorView/Presenter (= 4.2.0)
+  - NVActivityIndicatorView/Presenter (4.2.0)
   - ObjectMapper (3.1.0)
   - Permission/Camera (2.0.4):
     - Permission/Core
@@ -24,29 +29,36 @@ PODS:
     - Permission/Core
   - Permission/Notifications (2.0.4):
     - Permission/Core
+  - PKHUD (5.0.0)
   - Result (3.2.4)
   - SnapKit (4.0.0)
   - SQLite.swift (0.11.5):
     - SQLite.swift/standard (= 0.11.5)
   - SQLite.swift/standard (0.11.5)
   - URLNavigator (2.0.4)
+  - ViewAnimator (2.0.1)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
   - AMap3DMap (~> 5.7.0)
   - AMapSearch (~> 5.7.0)
-  - CryptoSwift
-  - IQKeyboardManagerSwift (= 5.0.0)
+  - CryptoSwift (~> 0.9.0)
+  - ESPullToRefresh (~> 2.7)
+  - IQKeyboardManagerSwift (~> 5.0.0)
   - JPush (~> 3.0.9)
+  - KeychainAccess (~> 3.1.1)
   - Kingfisher (~> 4.0)
   - Moya (~> 11.0)
+  - NVActivityIndicatorView (~> 4.2.0)
   - ObjectMapper (~> 3.1)
-  - Permission/Camera
-  - Permission/Location
-  - Permission/Notifications
+  - Permission/Camera (~> 2.0.4)
+  - Permission/Location (~> 2.0.4)
+  - Permission/Notifications (~> 2.0.4)
+  - PKHUD (~> 5.0)
   - SnapKit (~> 4.0.0)
   - SQLite.swift (~> 0.11.4)
-  - URLNavigator
+  - URLNavigator (~> 2.0.4)
+  - ViewAnimator (~> 2.0.1)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -55,17 +67,22 @@ SPEC REPOS:
     - AMapFoundation
     - AMapSearch
     - CryptoSwift
+    - ESPullToRefresh
     - IQKeyboardManagerSwift
     - JCore
     - JPush
+    - KeychainAccess
     - Kingfisher
     - Moya
+    - NVActivityIndicatorView
     - ObjectMapper
     - Permission
+    - PKHUD
     - Result
     - SnapKit
     - SQLite.swift
     - URLNavigator
+    - ViewAnimator
 
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
@@ -73,18 +90,23 @@ SPEC CHECKSUMS:
   AMapFoundation: 973682cfe60b92efd73a8ef8f1144fa0fa8e1296
   AMapSearch: 314f75e9ce282b53dbf66455efa416c39f12b5b1
   CryptoSwift: bca8c5b653dcc2d9734409242a070ff53bafac86
+  ESPullToRefresh: 119e2710b82b75536aab2bbe4883ba119fca35c8
   IQKeyboardManagerSwift: 3f340202ebe1a7076279b9b9b3c817243ddb3aab
   JCore: 27598485098d0db99d2812cba048003457d08cfb
   JPush: 003d9eaef8ba2df76de32573d0c8aa62b92b3c82
+  KeychainAccess: 7bd430028059754a3debab3cfc0bd1fc7fb85df3
   Kingfisher: da6b005aa96d37698e3e4f1ccfe96a5b9bbf27d6
   Moya: a725035953bc1c0eb1be505ab903984501d82440
+  NVActivityIndicatorView: 75c9634073e03b31d7e2748cd2417feab1206195
   ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
   Permission: 6853b9694e66a6c9197468c66d1935c3629cbf9c
+  PKHUD: 3c001512c6e002091184197a8de7a20420786e3b
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SQLite.swift: 6e5356850bb1791459f8c16d6ee9195b28714a2e
   URLNavigator: af5582fbbb3586c958be16835d799bfdb23a4793
+  ViewAnimator: 0c70ee4e1dfbe9d4f129407f81db91f6948900aa
 
-PODFILE CHECKSUM: 42a4c329b903efeecccb0e7122dd19e98bdddd6c
+PODFILE CHECKSUM: ba6c2ae86a792d009fe13a624fe44267bee0bb2b
 
 COCOAPODS: 1.5.0

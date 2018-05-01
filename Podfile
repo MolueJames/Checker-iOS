@@ -15,8 +15,8 @@ project 'MolueHomePart/MolueHomePart.xcodeproj'
 
 target 'MolueSafty' do
     project 'MolueSafty/MolueSafty.xcodeproj'
-        pod 'URLNavigator'
-        pod 'IQKeyboardManagerSwift', '5.0.0'
+        pod 'URLNavigator', '~> 2.0.4'
+        pod 'IQKeyboardManagerSwift', '~> 5.0.0'
         pod 'Kingfisher', '~> 4.0'
         pod 'Alamofire', '~> 4.7'
         pod 'SnapKit', '~> 4.0.0'
@@ -26,18 +26,31 @@ target 'MolueSafty' do
         pod 'JPush', '~> 3.0.9'
         pod 'AMapSearch', '~> 5.7.0'
         pod 'AMap3DMap', '~> 5.7.0'
-        pod 'CryptoSwift'
-        pod 'Permission/Camera'
-        pod 'Permission/Location'
-        pod 'Permission/Notifications'
+        pod 'CryptoSwift', '~> 0.9.0'
+        pod 'Permission/Camera', '~> 2.0.4'
+        pod 'Permission/Location', '~> 2.0.4'
+        pod 'Permission/Notifications', '~> 2.0.4'
+        pod 'KeychainAccess', '~> 3.1.1'
+        pod 'PKHUD', '~> 5.0'
+        pod 'NVActivityIndicatorView', '~> 4.2.0'
+        pod 'ViewAnimator', '~> 2.0.1'
+        pod 'ESPullToRefresh', '~> 2.7'
+    target 'MolueMinePart' do
+        project 'MolueMinePart/MolueMinePart.xcodeproj'
+        inherit! :search_paths
+    end
+    target 'MolueHomePart' do
+        project 'MolueHomePart/MolueHomePart.xcodeproj'
+        inherit! :search_paths
+    end
 end
 
 target 'MolueCommon' do
     project 'MolueCommon/MolueCommon.xcodeproj'
-        pod 'CryptoSwift'
-        pod 'Permission/Camera'
-        pod 'Permission/Location'
-        pod 'Permission/Notifications'
+        pod 'CryptoSwift', '~> 0.9.0'
+        pod 'Permission/Camera', '~> 2.0.4'
+        pod 'Permission/Location', '~> 2.0.4'
+        pod 'Permission/Notifications', '~> 2.0.4'
     target 'MolueCommonTests' do
         inherit! :search_paths
     end
@@ -61,7 +74,7 @@ end
 
 target 'MolueNavigator' do
     project 'MolueNavigator/MolueNavigator.xcodeproj'
-        pod 'URLNavigator'
+        pod 'URLNavigator', '~> 2.0.4'
     target 'MolueNavigatorTests' do
         inherit! :search_paths
     end
@@ -74,26 +87,9 @@ end
 target 'MolueDatabase' do
     project 'MolueDatabase/MolueDatabase.xcodeproj'
         pod 'SQLite.swift', '~> 0.11.4'
-end
-
-target 'MolueMinePart' do
-    project 'MolueMinePart/MolueMinePart.xcodeproj'
-        pod 'CryptoSwift'
-        pod 'Permission/Camera'
-        pod 'Permission/Location'
-        pod 'Permission/Notifications'
-        pod 'SnapKit', '~> 4.0.0'
-        pod 'Kingfisher', '~> 4.0'
-end
-
-target 'MolueHomePart' do
-    project 'MolueHomePart/MolueHomePart.xcodeproj'
-        pod 'CryptoSwift'
-        pod 'Permission/Camera'
-        pod 'Permission/Location'
-        pod 'Permission/Notifications'
-        pod 'SnapKit', '~> 4.0.0'
-        pod 'Kingfisher', '~> 4.0'
+    target 'MolueDatabaseTests' do
+        inherit! :search_paths
+    end
 end
 
 post_install do |installer|

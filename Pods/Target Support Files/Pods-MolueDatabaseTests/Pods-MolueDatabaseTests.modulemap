@@ -1,0 +1,6 @@
+framework module Pods_MolueDatabaseTests {
+  umbrella header "Pods-MolueDatabaseTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
