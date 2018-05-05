@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1A5014C020962F3B00DB931E /* MolueDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5014BF20962F3B00DB931E /* MolueDBManager.swift */; };
+		1A5014C020962F3B00DB931E /* MolueDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5014BF20962F3B00DB931E /* MolueDatabaseManager.swift */; };
 		1A5014E22097603700DB931E /* MolueUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5014E12097603700DB931E /* MolueUtilities.framework */; };
 		1A5014E32097612900DB931E /* MolueUtilities.framework in Resources */ = {isa = PBXBuildFile; fileRef = 1A5014E12097603700DB931E /* MolueUtilities.framework */; };
 		1A5014E5209765EE00DB931E /* MolueUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5014E4209765EE00DB931E /* MolueUser.swift */; };
+		1A5014E8209953C000DB931E /* MolueDatabaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5014E7209953C000DB931E /* MolueDatabaseProtocol.swift */; };
+		1A5BE085209D8CE400160243 /* MolueDatabaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5BE084209D8CE400160243 /* MolueDatabaseTests.swift */; };
+		1A5BE087209D914700160243 /* MolueDatabaseOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5BE086209D914700160243 /* MolueDatabaseOperation.swift */; };
 		1A7D9AFE208645E800FA997D /* MolueDatabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A7D9AF4208645E800FA997D /* MolueDatabase.framework */; };
-		1A7D9B03208645E800FA997D /* MolueDatabaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7D9B02208645E800FA997D /* MolueDatabaseTests.swift */; };
 		1A7D9B05208645E800FA997D /* MolueDatabase.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A7D9AF7208645E800FA997D /* MolueDatabase.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		40BAA5E8DF0E54FEC81A04E0 /* Pods_MolueDatabaseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53148C896FCBA82B3938A885 /* Pods_MolueDatabaseTests.framework */; };
 		C6822FACF45A7CE4669977DB /* Pods_MolueDatabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 270B602989F00AF398B5B781 /* Pods_MolueDatabase.framework */; };
@@ -29,14 +31,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1A5014BF20962F3B00DB931E /* MolueDBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueDBManager.swift; sourceTree = "<group>"; };
+		1A5014BF20962F3B00DB931E /* MolueDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueDatabaseManager.swift; sourceTree = "<group>"; };
 		1A5014E12097603700DB931E /* MolueUtilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueUtilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A5014E4209765EE00DB931E /* MolueUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueUser.swift; sourceTree = "<group>"; };
+		1A5014E7209953C000DB931E /* MolueDatabaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueDatabaseProtocol.swift; sourceTree = "<group>"; };
+		1A5BE084209D8CE400160243 /* MolueDatabaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueDatabaseTests.swift; sourceTree = "<group>"; };
+		1A5BE086209D914700160243 /* MolueDatabaseOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueDatabaseOperation.swift; sourceTree = "<group>"; };
 		1A7D9AF4208645E800FA997D /* MolueDatabase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MolueDatabase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A7D9AF7208645E800FA997D /* MolueDatabase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MolueDatabase.h; sourceTree = "<group>"; };
 		1A7D9AF8208645E800FA997D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A7D9AFD208645E800FA997D /* MolueDatabaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MolueDatabaseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1A7D9B02208645E800FA997D /* MolueDatabaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueDatabaseTests.swift; sourceTree = "<group>"; };
 		1A7D9B04208645E800FA997D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		23DA8BE3C023F19C0E4D3A97 /* Pods-MolueDatabase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueDatabase.release.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueDatabase/Pods-MolueDatabase.release.xcconfig"; sourceTree = "<group>"; };
 		270B602989F00AF398B5B781 /* Pods_MolueDatabase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MolueDatabase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,8 +97,10 @@
 			children = (
 				1A7D9AF7208645E800FA997D /* MolueDatabase.h */,
 				1A7D9AF8208645E800FA997D /* Info.plist */,
-				1A5014BF20962F3B00DB931E /* MolueDBManager.swift */,
+				1A5014BF20962F3B00DB931E /* MolueDatabaseManager.swift */,
 				1A5014E4209765EE00DB931E /* MolueUser.swift */,
+				1A5014E7209953C000DB931E /* MolueDatabaseProtocol.swift */,
+				1A5BE086209D914700160243 /* MolueDatabaseOperation.swift */,
 			);
 			path = MolueDatabase;
 			sourceTree = "<group>";
@@ -102,8 +108,8 @@
 		1A7D9B01208645E800FA997D /* MolueDatabaseTests */ = {
 			isa = PBXGroup;
 			children = (
-				1A7D9B02208645E800FA997D /* MolueDatabaseTests.swift */,
 				1A7D9B04208645E800FA997D /* Info.plist */,
+				1A5BE084209D8CE400160243 /* MolueDatabaseTests.swift */,
 			);
 			path = MolueDatabaseTests;
 			sourceTree = "<group>";
@@ -198,6 +204,7 @@
 					};
 					1A7D9AFC208645E800FA997D = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 0930;
 					};
 				};
 			};
@@ -299,8 +306,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A5014C020962F3B00DB931E /* MolueDBManager.swift in Sources */,
+				1A5014C020962F3B00DB931E /* MolueDatabaseManager.swift in Sources */,
 				1A5014E5209765EE00DB931E /* MolueUser.swift in Sources */,
+				1A5014E8209953C000DB931E /* MolueDatabaseProtocol.swift in Sources */,
+				1A5BE087209D914700160243 /* MolueDatabaseOperation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,7 +317,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A7D9B03208645E800FA997D /* MolueDatabaseTests.swift in Sources */,
+				1A5BE085209D8CE400160243 /* MolueDatabaseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,6 +512,7 @@
 			baseConfigurationReference = 5B57BE395BB2756652379BCB /* Pods-MolueDatabaseTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MolueDatabaseTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -512,6 +522,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Molue.MolueDatabaseTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -522,6 +534,7 @@
 			baseConfigurationReference = BAD76A241D0F08E05751A5B4 /* Pods-MolueDatabaseTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MolueDatabaseTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -531,6 +544,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Molue.MolueDatabaseTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MolueDatabaseTests/MolueDatabaseTests-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

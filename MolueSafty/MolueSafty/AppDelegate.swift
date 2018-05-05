@@ -20,7 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.setDefaultRootViewController()
         self.initializeIQKeyBoardConfigure()
         
-        
         return true
     }
 

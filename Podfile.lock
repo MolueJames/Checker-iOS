@@ -7,6 +7,7 @@ PODS:
     - AMapFoundation (~> 1.4)
   - CryptoSwift (0.9.0)
   - ESPullToRefresh (2.7)
+  - ImagePicker (3.0.0)
   - IQKeyboardManagerSwift (5.0.0)
   - JCore (1.1.9)
   - JPush (3.0.9):
@@ -44,6 +45,7 @@ DEPENDENCIES:
   - AMapSearch (~> 5.7.0)
   - CryptoSwift (~> 0.9.0)
   - ESPullToRefresh (~> 2.7)
+  - ImagePicker (~> 3.0.0)
   - IQKeyboardManagerSwift (~> 5.0.0)
   - JPush (~> 3.0.9)
   - KeychainAccess (~> 3.1.1)
@@ -68,6 +70,7 @@ SPEC REPOS:
     - AMapSearch
     - CryptoSwift
     - ESPullToRefresh
+    - ImagePicker
     - IQKeyboardManagerSwift
     - JCore
     - JPush
@@ -91,6 +94,7 @@ SPEC CHECKSUMS:
   AMapSearch: 314f75e9ce282b53dbf66455efa416c39f12b5b1
   CryptoSwift: bca8c5b653dcc2d9734409242a070ff53bafac86
   ESPullToRefresh: 119e2710b82b75536aab2bbe4883ba119fca35c8
+  ImagePicker: 973953c25960fe04729a7082a56194321c6762d2
   IQKeyboardManagerSwift: 3f340202ebe1a7076279b9b9b3c817243ddb3aab
   JCore: 27598485098d0db99d2812cba048003457d08cfb
   JPush: 003d9eaef8ba2df76de32573d0c8aa62b92b3c82
@@ -107,6 +111,6 @@ SPEC CHECKSUMS:
   URLNavigator: af5582fbbb3586c958be16835d799bfdb23a4793
   ViewAnimator: 0c70ee4e1dfbe9d4f129407f81db91f6948900aa
 
-PODFILE CHECKSUM: ba6c2ae86a792d009fe13a624fe44267bee0bb2b
+PODFILE CHECKSUM: e229b6d303d1f4d1eb47b9ba71d5364d367f69d5
 
 COCOAPODS: 1.5.0

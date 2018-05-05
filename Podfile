@@ -1,5 +1,5 @@
 workspace 'MolueSafty.xcworkspace'
-platform :ios, '8.0'
+platform :ios, '9.0'
 use_frameworks!
 inhibit_all_warnings!
 
@@ -35,6 +35,7 @@ target 'MolueSafty' do
         pod 'NVActivityIndicatorView', '~> 4.2.0'
         pod 'ViewAnimator', '~> 2.0.1'
         pod 'ESPullToRefresh', '~> 2.7'
+        pod 'ImagePicker', '~> 3.0.0'
     target 'MolueMinePart' do
         project 'MolueMinePart/MolueMinePart.xcodeproj'
         inherit! :search_paths
