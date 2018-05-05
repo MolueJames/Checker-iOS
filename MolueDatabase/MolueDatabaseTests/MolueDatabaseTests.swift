@@ -51,4 +51,8 @@ class MolueDatabaseTests: XCTestCase {
         MolueLogger.database.message(auserlist)
     }
     
+    func testProtocol () {
+        MLDatabaseRegister.addDatabaseTarget(users.self)
+    }
+    
 }
