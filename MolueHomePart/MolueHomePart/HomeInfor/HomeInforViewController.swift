@@ -10,15 +10,51 @@ import UIKit
 import MolueUtilities
 import MolueCommon
 import Permission
-class HomeInforViewController: UIViewController {
+import ESPullToRefresh
+import MolueNetwork
+import NVActivityIndicatorView
 
+class HomeInforViewController: UIViewController, NVActivityIndicatorViewable {
+    
+    @IBOutlet weak var tableview: UITableView! {
+        didSet {
+            tableview.delegate = self
+            tableview.dataSource = self
+            tableview.register(UITableViewCell.self, forCellReuseIdentifier: "identifier")
+            let header = MLRefreshHeaderAnimator.init(frame: CGRect.zero)
+            tableview.es.addPullToRefresh(animator: header) { [unowned self] in
+                self .loadData()
+            }
+            tableview.es.addInfiniteScrolling() { [weak self] in
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+                    self?.tableview.es.stopLoadingMore()
+                }
+            }
+        }
+    }
+    
+    func loadData()  {
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+            let size = CGSize(width: 30, height: 30)
+            self.startAnimating(size, message: "加载数据中...", type: NVActivityIndicatorType.lineScaleParty)
+            AccountService.appVersion(device: "iOS", version: "1.0.0").start(success: { [weak self] (map) in
+                MolueLogger.network.message(map)
+                self?.tableview.es.stopPullToRefresh()
+                NVActivityIndicatorPresenter.sharedInstance.setMessage("加载数据中...")
+                }, failure: { [weak self] (error) in
+                    MolueLogger.failure.message(error)
+                    self?.tableview.es.stopPullToRefresh(ignoreDate: true, ignoreFooter: false)
+                    NVActivityIndicatorPresenter.sharedInstance.setMessage("加载数据中...")
+            })
+        }
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        let button = UIButton.init(frame: CGRect.init(x: 40, y: 80, width: self.view.frame.size.width - 80, height: 45))
-        button.addTarget(self, action: #selector(buttonClicked), for: .touchUpInside)
-        button.backgroundColor = UIColor.red
-        self.view.addSubview(button)
+        self.automaticallyAdjustsScrollViewInsets = false;
+        self.edgesForExtendedLayout = .all;
     }
     
     @IBAction func buttonClicked(button: Any?) {
@@ -31,16 +67,23 @@ class HomeInforViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+}
+
+extension HomeInforViewController: UITableViewDelegate {
     
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+extension HomeInforViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
     }
-    */
-
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "identifier", for: indexPath)
+        cell.textLabel?.text = "indexPath.row = \(indexPath.row)"
+        cell.imageView?.image = UIImage.init(named: "common_icon_refresh")
+        return cell
+    }
+    
+    
 }

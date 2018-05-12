@@ -12,85 +12,117 @@ import MolueUtilities
 
 public typealias databaseClosure<T> = (Table) -> T
 
+public typealias databaseCompletion<T> = (T) -> Void
+
+private let databaseQueue = DispatchQueue(label: "MLDatabaseQueue")
+
+private let completionQueue = DispatchQueue(label: "MLDBOperationQueue")
+
 public protocol MLDatabaseProtocol {
     
     static var table_name: Table { get set }
     
     static func createOperation()
-    
-    static func insertOperation(_ closure: databaseClosure<Insert>) -> Bool
-    
-    static func insertOperation<T: Codable>(_ object: T) -> Bool
-    
-    static func updateObjectOperation<T: Codable>(_ object: T) -> Bool
-    
-    static func updateOperation(_ closure: databaseClosure<Update>) -> Bool
-    
-    static func deleteOperation(_ closure: databaseClosure<Delete>) -> Bool
-    
-    static func selectObjectOperation<Target: Codable>(_ closure: databaseClosure<QueryType>?) -> [Target]
-    
-    static func selectOperation(_ closure: databaseClosure<QueryType>?) -> AnySequence<Row>?
 }
 
 extension MLDatabaseProtocol {
+    public static func selectObjectOperation<Target: Codable>(_ closure: databaseClosure<QueryType>? = nil, completion: @escaping databaseCompletion<[Target]>, queue: DispatchQueue = DispatchQueue.main) {
+        selectOperation(closure, complection: { (sequence) in
+            guard let list = sequence else { return }
+            do {
+                completion( try list.map({ try $0.decode() }))
+            } catch {
+                MolueLogger.failure.message(error)
+            }
+        }, queue: queue)
+    }
     
-    public static func selectObjectOperation<Target: Codable>(_ closure: databaseClosure<QueryType>? = nil) -> [Target] {
-        var result = [Target]()
-        let sequence = selectOperation(closure)
-        guard let list = sequence else { return result }
-        do {
-            result = try list.map({ try $0.decode() })
-        } catch {
-            MolueLogger.failure.message(error)
+    private static func selectOperation(_ closure: databaseClosure<QueryType>? = nil, complection: @escaping databaseCompletion<AnySequence<Row>?>, queue: DispatchQueue = DispatchQueue.main) {
+        databaseQueue.sync {
+            var query: QueryType = table_name
+            if let closure = closure {
+                query = closure(table_name)
+            }
+            let operation = MLDatabaseOperation.select(operation: query, complectionClosure: complection)
+            operation.excuteDatabaseOperation(queue: queue)
         }
-        return result
     }
     
-    public static func selectOperation(_ closure: databaseClosure<QueryType>? = nil) -> AnySequence<Row>? {
-        var query: QueryType = table_name
-        if let closure = closure {
-            query = closure(table_name)
+    public static func insertOperation<T: Codable>(_ object: T, complection: databaseCompletion<Bool>? = nil, queue: DispatchQueue = DispatchQueue.main) {
+        databaseQueue.sync {
+            do {
+                let insert = try table_name.insert(object)
+                let operation = MLDatabaseOperation.insert(operation: insert, complectionClosure: complection)
+                operation.excuteDatabaseOperation(queue: queue)
+            } catch {
+                MolueLogger.failure.message(error)
+            }
         }
-        return MLDatabaseManager.shared.runSelectOperator(query)
     }
     
-    @discardableResult
-    public static func insertOperation<T: Codable>(_ object: T) -> Bool {
-        var isSuccess = false
-        do {
-            let insert = try table_name.insert(object)
-            isSuccess = MLDatabaseManager.shared.runInsertOperator(insert)
-        } catch {
-            MolueLogger.failure.message(error)
+    public static func insertOperation(_ closure: @escaping databaseClosure<Insert>, complection: databaseCompletion<Bool>? = nil, queue: DispatchQueue = DispatchQueue.main) {
+        databaseQueue.sync {
+            let insert = closure(table_name)
+            let operation = MLDatabaseOperation.insert(operation: insert, complectionClosure: complection)
+            operation.excuteDatabaseOperation(queue: queue)
         }
-        return isSuccess
     }
     
-    @discardableResult
-    public static func insertOperation(_ closure: databaseClosure<Insert>) -> Bool {
-        return MLDatabaseManager.shared.runInsertOperator(closure(table_name))
-    }
-    
-    @discardableResult
-    public static func deleteOperation(_ closure: databaseClosure<Delete>) -> Bool {
-        return MLDatabaseManager.shared.runDeleteOperator(closure(table_name))
-    }
-    
-    @discardableResult
-    public static func updateOperation(_ closure: databaseClosure<Update>) -> Bool {
-        return MLDatabaseManager.shared.runUpdataOperator(closure(table_name))
-    }
-    
-    @discardableResult
-    public static func updateObjectOperation<T: Codable>(_ object: T) -> Bool {
-        var isSuccess = false
-        do {
-            let update = try table_name.update(object)
-            isSuccess = MLDatabaseManager.shared.runUpdataOperator(update)
-        } catch {
-            MolueLogger.failure.message(error)
+    public static func deleteOperation(_ closure: @escaping databaseClosure<Delete>, complection: databaseCompletion<Bool>? = nil, queue: DispatchQueue = DispatchQueue.main) {
+        databaseQueue.sync {
+            let delete = closure(table_name)
+            let operation = MLDatabaseOperation.delete(operation: delete, complectionClosure: complection)
+            operation.excuteDatabaseOperation(queue: queue)
         }
-        return isSuccess
+    }
+    
+    public static func updateOperation(_ closure: @escaping databaseClosure<Update>, complection: databaseCompletion<Bool>? = nil, queue: DispatchQueue = DispatchQueue.main) {
+        databaseQueue.sync {
+            let update = closure(table_name)
+            let operation = MLDatabaseOperation.update(operation: update, complectionClosure: complection)
+            operation.excuteDatabaseOperation(queue: queue)
+        }
+    }
+    
+    public static func updateObjectOperation<T: Codable>(_ object: T, complection: databaseCompletion<Bool>? = nil, queue: DispatchQueue = DispatchQueue.main) {
+        databaseQueue.sync {
+            do {
+                let update = try table_name.update(object)
+                let operation = MLDatabaseOperation.update(operation: update, complectionClosure: complection)
+                operation.excuteDatabaseOperation(queue: queue)
+            } catch {
+                MolueLogger.failure.message(error)
+            }
+        }
+    }
+}
+
+fileprivate enum MLDatabaseOperation {
+    case insert(operation: Insert, complectionClosure: databaseCompletion<Bool>?)
+    case delete(operation: Delete, complectionClosure: databaseCompletion<Bool>?)
+    case update(operation: Update, complectionClosure: databaseCompletion<Bool>?)
+    case select(operation: QueryType, complectionClosure: databaseCompletion<AnySequence<Row>?>?)
+    
+    fileprivate func excuteDatabaseOperation(queue: DispatchQueue) {
+        completionQueue.async {
+            switch self {
+            case .select (let operation, let closure):
+                let sequence = MLDatabaseManager.shared.runSelectOperator(operation)
+                self.completionOperation(closure, resultValue: sequence, queue: queue)
+            case .insert (let operation, let closure):
+                let isSuccess = MLDatabaseManager.shared.runInsertOperator(operation)
+                self.completionOperation(closure, resultValue: isSuccess, queue: queue)
+            case .delete (let operation, let closure):
+                let isSuccess = MLDatabaseManager.shared.runDeleteOperator(operation)
+                self.completionOperation(closure, resultValue: isSuccess, queue: queue)
+            case .update (let operation, let closure):
+                let isSuccess = MLDatabaseManager.shared.runUpdataOperator(operation)
+                self.completionOperation(closure, resultValue: isSuccess, queue: queue)
+            }
+        }
+    }
+    private func completionOperation<T> (_ closure: databaseCompletion<T>?, resultValue: T, queue currentQueue: DispatchQueue) {
+        guard let closure = closure else {return}
+        currentQueue.sync { closure(resultValue) }
     }
 }

@@ -40,6 +40,7 @@ class MolueDatabaseTests: XCTestCase {
         user.name = "james"
         user.email = "james@qq.com"
 //        users.insertOperation(user)
+        users.updateObjectOperation(user)
         
         let userlist:[users] = users.selectObjectOperation()
         MolueLogger.database.message(userlist)

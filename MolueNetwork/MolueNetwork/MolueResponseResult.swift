@@ -10,6 +10,12 @@ import Foundation
 import Moya
 import Result
 
+public enum ResponseEnum {
+    case success
+    case failure
+    case error
+}
+
 public typealias ResultClosure<ResultType> = (ResultType) -> Void
 
 public protocol ResultResponseProtocol {
@@ -37,7 +43,7 @@ extension ResultResponseProtocol {
                 fatalError("the result value is not result Type")
             }
         }
-        if case let .failure(error) = result{
+        if case let .failure(error) = result {
             if let closure = errorClosure {
                 closure(error)
             } else {

@@ -9,8 +9,8 @@
 import Foundation
 import SQLite
 import MolueUtilities
-
-public class users: Codable {
+import MolueDatabase
+public class MolueUsers: Codable, MLDatabaseProtocol {
     var name: String?
     var email: String?
     var id: String?
@@ -19,7 +19,7 @@ public class users: Codable {
     }
 }
 
-extension users: MLDatabaseProtocol {
+extension MolueUsers {
     public static var table_name = Table("users")
     
     private static let id = Expression<String>("id")      //主键
@@ -34,4 +34,9 @@ extension users: MLDatabaseProtocol {
         }
         MLDatabaseManager.shared.runCreateOperator(operation)
     }
+    
+    
 }
+
+
+

@@ -8,8 +8,9 @@
 
 import UIKit
 
-class MLBaseViewController: UIViewController {
-
+class MLViewController: UIViewController {
+    public var networkcount = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

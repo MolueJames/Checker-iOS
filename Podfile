@@ -31,7 +31,6 @@ target 'MolueSafty' do
         pod 'Permission/Location', '~> 2.0.4'
         pod 'Permission/Notifications', '~> 2.0.4'
         pod 'KeychainAccess', '~> 3.1.1'
-        pod 'PKHUD', '~> 5.0'
         pod 'NVActivityIndicatorView', '~> 4.2.0'
         pod 'ViewAnimator', '~> 2.0.1'
         pod 'ESPullToRefresh', '~> 2.7'
@@ -52,6 +51,7 @@ target 'MolueCommon' do
         pod 'Permission/Camera', '~> 2.0.4'
         pod 'Permission/Location', '~> 2.0.4'
         pod 'Permission/Notifications', '~> 2.0.4'
+        pod 'ESPullToRefresh', '~> 2.7'
     target 'MolueCommonTests' do
         inherit! :search_paths
     end

@@ -21,7 +21,8 @@ class MolueNetworkTests: XCTestCase {
     
     func testNetworkProvider() {
         let expectation = self.expectation(description: "request should succeed")
-        AccountService.appVersion(device: "iOS", version: "1.1.0").start(success: { (map) in
+        AccountService.appVersion(device: "iOS", version: "1.0.0").start(success: { (map) in
+            
             MolueLogger.network.message(map)
             expectation.fulfill()
         }, failure: { (error) in

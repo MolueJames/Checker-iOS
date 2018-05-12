@@ -13,6 +13,7 @@ enum DatabaseError : Error {
     case databasePath
     case unconnection
 }
+private let databaseQueue = DispatchQueue(label: "MLConnectionQueue")
 
 let single = MLDatabaseManager()
 public class MLDatabaseManager {
@@ -25,20 +26,20 @@ public class MLDatabaseManager {
     
     @discardableResult
     public func doConnection(_ fileName: String) -> Bool {
-        databaseLock.lock()
         guard let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first else {
             return handleDatabaseError(DatabaseError.databasePath)
         }
         var isSuccess = false
         do {
+            defer {
+                databaseLock.unlock()
+            }
+            databaseLock.lock()
             connection = try Connection("\(path)/\(fileName).sqlite3")
             MolueLogger.database.message("file path: \(path)/\(fileName).sqlite3")
             isSuccess = true
         } catch {
             return handleDatabaseError(error)
-        }
-        defer {
-            databaseLock.unlock()
         }
         return isSuccess
     }
@@ -48,95 +49,105 @@ extension MLDatabaseManager {
     
     @discardableResult
     public func runUpdataOperator(_ operation: Update) -> Bool {
-        databaseLock.lock()
-        guard let connection = self.connection else {
-            return handleDatabaseError(DatabaseError.unconnection)
-        }
-        var isSuccess = false
-        do {
-            try connection.run(operation)
-            isSuccess = true
-        } catch {
-            return handleDatabaseError(error)
-        }
-        defer {
-            databaseLock.unlock()
-        }
-        return isSuccess
+//        return databaseQueue.sync {
+            guard let connection = self.connection else {
+                return handleDatabaseError(DatabaseError.unconnection)
+            }
+            var isSuccess = false
+            do {
+                defer {
+                    databaseLock.unlock()
+                }
+                databaseLock.lock()
+                try connection.run(operation)
+                isSuccess = true
+            } catch {
+                return handleDatabaseError(error)
+            }
+            return isSuccess
+//        }
     }
     
     @discardableResult
     public func runInsertOperator(_ operation: Insert) -> Bool {
-        databaseLock.lock()
-        guard let connection = self.connection else {
-            return handleDatabaseError(DatabaseError.unconnection)
+        return databaseQueue.sync {
+            guard let connection = self.connection else {
+                return handleDatabaseError(DatabaseError.unconnection)
+            }
+            var isSuccess = false
+            do {
+                defer {
+                    databaseLock.unlock()
+                }
+                databaseLock.lock()
+                try connection.run(operation)
+                isSuccess = true
+            } catch {
+                return handleDatabaseError(error)
+            }
+            return isSuccess
         }
-        var isSuccess = false
-        do {
-            try connection.run(operation)
-            isSuccess = true
-        } catch {
-            return handleDatabaseError(error)
-        }
-        defer {
-            databaseLock.unlock()
-        }
-        return isSuccess
     }
     
     @discardableResult
     public func runDeleteOperator(_ operation: Delete) -> Bool {
-        databaseLock.lock()
-        guard let connection = self.connection else {
-            return handleDatabaseError(DatabaseError.unconnection)
+        return databaseQueue.sync {
+            guard let connection = self.connection else {
+                return handleDatabaseError(DatabaseError.unconnection)
+            }
+            var isSuccess = false
+            do {
+                defer {
+                    databaseLock.unlock()
+                }
+                databaseLock.lock()
+                try connection.run(operation)
+                isSuccess = true
+            } catch {
+                return handleDatabaseError(error)
+            }
+            return isSuccess
         }
-        var isSuccess = false
-        do {
-            try connection.run(operation)
-            isSuccess = true
-        } catch {
-            return handleDatabaseError(error)
-        }
-        defer {
-            databaseLock.unlock()
-        }
-        return isSuccess
     }
     
     @discardableResult
     public func runCreateOperator(_ operation: String) -> Bool {
-        databaseLock.lock()
-        guard let connection = self.connection else {
-            return handleDatabaseError(DatabaseError.unconnection)
+        return databaseQueue.sync {
+            guard let connection = self.connection else {
+                return handleDatabaseError(DatabaseError.unconnection)
+            }
+            var isSuccess = false
+            do {
+                defer {
+                    databaseLock.unlock()
+                }
+                databaseLock.lock()
+                try connection.run(operation)
+                isSuccess = true
+            } catch {
+                return handleDatabaseError(error)
+            }
+            return isSuccess
         }
-        var isSuccess = false
-        do {
-            try connection.run(operation)
-            isSuccess = true
-        } catch {
-            return handleDatabaseError(error)
-        }
-        defer {
-            databaseLock.unlock()
-        }
-        return isSuccess
     }
     
     public func runSelectOperator(_ operation: QueryType) -> AnySequence<Row>? {
-        databaseLock.lock()
-        guard let connection = self.connection else {
-            return handleDatabaseError(DatabaseError.unconnection)
+        return databaseQueue.sync {
+            guard let connection = self.connection else {
+                return handleDatabaseError(DatabaseError.unconnection)
+            }
+            var sequence: AnySequence<Row>?
+            do {
+                defer {
+                    databaseLock.unlock()
+                }
+                databaseLock.lock()
+                sequence = try connection.prepare(operation)
+            } catch {
+                return handleDatabaseError(error)
+            }
+            return sequence
         }
-        var sequence: AnySequence<Row>?
-        do {
-            sequence = try connection.prepare(operation)
-        } catch {
-            return handleDatabaseError(error)
-        }
-        defer {
-            databaseLock.unlock()
-        }
-        return sequence
     }
 }
 

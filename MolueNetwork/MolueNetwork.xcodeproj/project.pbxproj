@@ -11,6 +11,7 @@
 		1A1B889020864CD200C5F4D9 /* MolueResponseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1B888C20864CD200C5F4D9 /* MolueResponseResult.swift */; };
 		1A1B889120864CD200C5F4D9 /* MolueUserProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1B888D20864CD200C5F4D9 /* MolueUserProvider.swift */; };
 		1A1B889220864CD200C5F4D9 /* MolueNetworkConfigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1B888E20864CD200C5F4D9 /* MolueNetworkConfigure.swift */; };
+		1A5BE08B209EC8CA00160243 /* MolueUtilities.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1AEB87D72092173C002230A3 /* MolueUtilities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1A7D9ADA208645B800FA997D /* MolueNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A7D9AD0208645B800FA997D /* MolueNetwork.framework */; };
 		1A7D9ADF208645B800FA997D /* MolueNetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7D9ADE208645B800FA997D /* MolueNetworkTests.swift */; };
 		1A7D9AE1208645B800FA997D /* MolueNetwork.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A7D9AD3208645B800FA997D /* MolueNetwork.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -29,6 +30,19 @@
 			remoteInfo = MolueNetwork;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1A5BE08A209EC8B800160243 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1A5BE08B209EC8CA00160243 /* MolueUtilities.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1A1B888B20864CD100C5F4D9 /* MolueUserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MolueUserService.swift; sourceTree = "<group>"; };
@@ -160,6 +174,7 @@
 				1A7D9ACC208645B800FA997D /* Frameworks */,
 				1A7D9ACD208645B800FA997D /* Headers */,
 				1A7D9ACE208645B800FA997D /* Resources */,
+				1A5BE08A209EC8B800160243 /* CopyFiles */,
 			);
 			buildRules = (
 			);

@@ -14,6 +14,7 @@ public class MolueNavigatorRouter {
     public enum RouterHost: String {
         case Mine = "MolueMinePart"
         case Home = "MolueHomePart"
+        case Base = "MolueFoundation"
     }
     
     public init(_ host: RouterHost, path: String, query: String? = nil) {

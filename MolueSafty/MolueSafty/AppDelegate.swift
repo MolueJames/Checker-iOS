@@ -20,6 +20,45 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.setDefaultRootViewController()
         self.initializeIQKeyBoardConfigure()
         
+        MLDatabaseManager.shared.doConnection("ssddf")
+        MolueUsers.createOperation()
+        let user = MolueUsers()
+        user.id = "12338789"
+        user.name = "james"
+        user.email = "jame@qq.com"
+
+        MolueUsers.updateObjectOperation(user)
+//
+//        MolueUsers.updateObjectOperation(user) { (isSuccess) in
+//            MolueLogger.database.message(Thread.current)
+//            MolueLogger.database.message(isSuccess)
+//        }
+        
+        MolueUsers.selectObjectOperation(completion: { (users:[MolueUsers]) in
+            MolueLogger.database.message(OperationQueue.current)
+            MolueLogger.database.message(users.item(at: 0)?.name)
+        })
+        let queue = DispatchQueue.init(label: "test")
+        user.name = "alice"
+        MolueUsers.updateObjectOperation(user, complection: { (isSuccess) in
+            MolueLogger.database.message(OperationQueue.current)
+            MolueLogger.database.message(isSuccess)
+        }, queue: queue)
+        
+        MolueUsers.selectObjectOperation(completion: { (users:[MolueUsers]) in
+            DispatchQueue.main.sync {
+                MolueLogger.database.message(OperationQueue.current)
+                MolueLogger.database.message(users.item(at: 0)?.name)
+            }
+        }, queue: DispatchQueue.global())
+
+        
+  
+//        MolueUsers.updateObjectOperation(user)
+//        let b:[MolueUsers] = MolueUsers.selectObjectOperation()
+//        MolueLogger.database.message(b.item(at: 0)?.name)
+       
+        
         return true
     }
 

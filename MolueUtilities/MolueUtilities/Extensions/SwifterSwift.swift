@@ -15,7 +15,7 @@
 
 // MARK: - Properties
 /// SwifterSwift: Common usefull properties and methods.
-public struct SwifterSwift {
+public struct MLConfigure {
 	
 	#if !os(macOS)
 	/// SwifterSwift: App's name (if applicable).
@@ -257,7 +257,7 @@ public struct SwifterSwift {
 }
 
 // MARK: - Methods
-public extension SwifterSwift {
+public extension MLConfigure {
 	
 	/// SwifterSwift: Delay function or closure call.
 	///
