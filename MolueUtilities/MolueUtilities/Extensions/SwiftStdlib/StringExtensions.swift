@@ -1015,4 +1015,9 @@ public extension String {
 		return (self as NSString).appendingPathExtension(str)
 	}
 	
+    public func separateTypeName() -> (module: String?,file: String?) {
+        let module = self.components(separatedBy: ".").first
+        let file = self.components(separatedBy: ".").last
+        return (module, file)
+    }
 }

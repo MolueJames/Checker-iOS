@@ -8,20 +8,20 @@
 
 import Foundation
 import MolueUtilities
-public class FilePath {}
 
-extension FilePath: HomePartCompatible {
-    
+public struct HomeFilePath {
+    public static let HomeInfo = "HomeInforViewController"
 }
 
-extension MolueKit where Base == FilePath {
-    public static let HomeInfor = "HomeInforViewController"
+public struct MineFilePath {
+    public static let MineInfo = "MineInforViewController"
 }
 
-extension FilePath: MinePartCompatible {
-    
+public struct RiskFilePath {
+    public static let RiskInfo = "RiskInfoViewController"
 }
 
-extension MolueKit where Base == FilePath {
-    public static let MineInfor = "MineInforViewController"
+public struct DocumentPath {
+    public static let DocumentInfo = "DocumentInfoViewController"
 }
+

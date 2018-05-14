@@ -42,6 +42,20 @@ public class MolueAppRouter {
                 return viewcontroller
             }
         }
+        if let riskRouter = MolueNavigatorRouter(.Risk, path: "<fileName>").toString() {
+            navigator.register(riskRouter) { [unowned self] (url, values, context) -> UIViewController? in
+                guard let fileName = values["fileName"] as? String else { return nil }
+                let viewcontroller = self.createViewController(url, filename: fileName, context: context)
+                return viewcontroller
+            }
+        }
+        if let documentRouter = MolueNavigatorRouter(.Document, path: "<fileName>").toString() {
+            navigator.register(documentRouter) { [unowned self] (url, values, context) -> UIViewController? in
+                guard let fileName = values["fileName"] as? String else { return nil }
+                let viewcontroller = self.createViewController(url, filename: fileName, context: context)
+                return viewcontroller
+            }
+        }
         if let httpRouter = MolueWebsiteRouter.init(.HTTP, path: "<path:_>").toString() {
             navigator.register(httpRouter) { (url, values, context) -> UIViewController? in
                 return self.createWebController(url, values: values, context: context)
@@ -87,8 +101,7 @@ public class MolueAppRouter {
     }
     
     private func instantiateViewController(module: String, filename: String) -> UIViewController? {
-        guard let path = Bundle.main.path(forResource: module, ofType: "framework")  else {return nil}
-        guard let bundle = Bundle.init(path: path) else {return nil}
+        guard let bundle = Bundle.create(module: module) else {return nil}
         let storyboard = UIStoryboard.init(name: filename, bundle: bundle)
         guard let Class : AnyClass = NSClassFromString(module + "." + filename) else {return nil}
         guard let targetClass = Class as? UIViewController.Type else {return nil}
@@ -112,10 +125,10 @@ public class MolueAppRouter {
 }
 
 extension MolueAppRouter {
-    public func viewController(_ router: MolueNavigatorRouter, parameters: [String: Any]? = nil, context: Any? = nil) -> UIViewController? {
+    public func viewController<T: UIViewController>(_ router: MolueNavigatorRouter, parameters: [String: Any]? = nil, context: Any? = nil) -> T? {
         guard let url = router.toString() else {return nil}
         let newURL = self.updateRouterURL(url, parameters: parameters)
-        return navigator.viewController(for: newURL, context: context)
+        return navigator.viewController(for: newURL, context: context) as? T
     }
     
     @discardableResult

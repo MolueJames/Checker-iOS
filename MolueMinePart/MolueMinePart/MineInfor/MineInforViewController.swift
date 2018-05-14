@@ -35,7 +35,7 @@ class MineInforViewController: UIViewController {
     }
     
     @IBAction func navigatorButtonClicked(button: Any?) {
-        MolueAppRouter.sharedInstance.presentRouter(MolueNavigatorRouter.init(.Home, path: FilePath.home.HomeInfor))
+        MolueAppRouter.sharedInstance.pushRouter(MolueNavigatorRouter.init(.Home, path: HomeFilePath.HomeInfo))
     }
 
     override func didReceiveMemoryWarning() {

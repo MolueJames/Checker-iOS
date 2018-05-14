@@ -10,6 +10,6 @@ import Foundation
 
 protocol MLControllerProtocol {}
 
-extension MLControllerProtocol where Self: MLViewController {
+extension MLControllerProtocol where Self: MLBaseViewController {
     
 }

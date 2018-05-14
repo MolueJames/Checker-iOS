@@ -1,0 +1,6 @@
+framework module Pods_MolueRiskPart {
+  umbrella header "Pods-MolueRiskPart-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -504,6 +504,15 @@ public extension UIView {
 		anchorCenterXToSuperview()
 		anchorCenterYToSuperview()
 	}
-	
+}
+
+public extension UIView {
+    public static func createFromXib<T: UIView>() -> T? {
+        let info = NSStringFromClass(self).separateTypeName()
+        guard let module = info.module, let nib = info.file else {return nil}
+        guard let bundle = Bundle.create(module: module) else {return nil}
+        let views = bundle.loadNibNamed(nib, owner: nil, options: nil)
+        return views?.last as? T
+    }
 }
 #endif

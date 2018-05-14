@@ -7,21 +7,39 @@
 //
 
 import UIKit
+protocol MLNavigationProtocol {
+    var customBackBarButtonItem: UIBarButtonItem {get}
+}
+extension MLNavigationProtocol {
+    var customBackBarButtonItem: UIBarButtonItem { get {
+            return UIBarButtonItem.init(title: "返回", style: .plain, target: nil, action: nil)
+        }
+    }
+}
+open class MLNavigationController: UINavigationController {
 
-class MLNavigationController: UINavigationController {
-
-    override func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
+    override open func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    open override var preferredStatusBarStyle: UIStatusBarStyle {
+        get {
+            return.lightContent
+        }
+    }
 
+    open override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+        if let controller = viewController as? MLNavigationProtocol {
+            self.topViewController?.navigationItem.backBarButtonItem = controller.customBackBarButtonItem
+        }
+        super.pushViewController(viewController, animated: animated)
+    }
     /*
     // MARK: - Navigation
 

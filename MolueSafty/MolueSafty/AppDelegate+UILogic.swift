@@ -9,6 +9,9 @@
 import Foundation
 import MolueNavigator
 import MolueMinePart
+import MolueFoundation
+import MolueCommon
+
 extension AppDelegate {
     func setDefaultRootViewController() {
         self.window = UIWindow.init(frame: UIScreen.main.bounds)
@@ -17,10 +20,22 @@ extension AppDelegate {
         self.window?.makeKeyAndVisible()
     }
     
-    private func rootViewController() -> UIViewController? {
+    private func rootViewController() -> UIViewController {
         MolueAppRouter.sharedInstance.initialize()
-        let mineInforRouter = MolueNavigatorRouter.init(.Mine, path: "MineInforViewController")
-        let mineInforviewcontroller = MolueAppRouter.sharedInstance.viewController(mineInforRouter)
-        return mineInforviewcontroller
+        var viewControllers = [MLNavigationController]()
+        self.addNavigationController(module: .Home, path: HomeFilePath.HomeInfo, viewControllers: &viewControllers)
+        self.addNavigationController(module: .Mine, path: MineFilePath.MineInfo, viewControllers: &viewControllers)
+        self.addNavigationController(module: .Risk, path: RiskFilePath.RiskInfo, viewControllers: &viewControllers)
+        self.addNavigationController(module: .Document, path: DocumentPath.DocumentInfo, viewControllers: &viewControllers)
+        
+        let tabbarController = MLTabBarController.init()
+        tabbarController.viewControllers = viewControllers
+        return tabbarController
+    }
+    
+    private func addNavigationController(module: MolueNavigatorRouter.RouterHost, path: String, viewControllers: inout [MLNavigationController]){
+        let homeInfoRouter = MolueNavigatorRouter.init(module, path: path)
+        guard let homeInfoViewController = MolueAppRouter.sharedInstance.viewController(homeInfoRouter) else { return }
+        viewControllers.append(MLNavigationController.init(rootViewController: homeInfoViewController))
     }
 }

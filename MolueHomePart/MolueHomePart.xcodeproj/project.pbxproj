@@ -18,6 +18,8 @@
 		1A5014C62097495B00DB931E /* MolueNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5014C52097495B00DB931E /* MolueNetwork.framework */; };
 		1A5014C82097496300DB931E /* MolueUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5014C72097496300DB931E /* MolueUtilities.framework */; };
 		1A5014D42097499500DB931E /* MolueFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5014D32097499500DB931E /* MolueFoundation.framework */; };
+		1A602F8520A87D58003AD583 /* HomeInfoTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A602F8420A87D58003AD583 /* HomeInfoTableHeaderView.swift */; };
+		1A602F8C20A88095003AD583 /* HomeInfoTableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A602F8B20A88095003AD583 /* HomeInfoTableHeaderView.xib */; };
 		EF01F517C22ED0361C323767 /* Pods_MolueHomePart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 010F6973D5E1725577EE6B03 /* Pods_MolueHomePart.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +49,8 @@
 		1A5014C52097495B00DB931E /* MolueNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A5014C72097496300DB931E /* MolueUtilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueUtilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A5014D32097499500DB931E /* MolueFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A602F8420A87D58003AD583 /* HomeInfoTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInfoTableHeaderView.swift; sourceTree = "<group>"; };
+		1A602F8B20A88095003AD583 /* HomeInfoTableHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeInfoTableHeaderView.xib; sourceTree = "<group>"; };
 		9468AE17912D4AEEBE6E1EFA /* Pods-MolueHomePart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueHomePart.release.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueHomePart/Pods-MolueHomePart.release.xcconfig"; sourceTree = "<group>"; };
 		C7C163FB01CFAE81C039463E /* Pods-MolueHomePart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueHomePart.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueHomePart/Pods-MolueHomePart.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,10 +123,28 @@
 		1A50149B20944D7A00DB931E /* HomeInfor */ = {
 			isa = PBXGroup;
 			children = (
+				1A602F8320A87D37003AD583 /* Models */,
+				1A602F8220A87D37003AD583 /* Views */,
 				1A5014A320944DFE00DB931E /* HomeInforViewController.swift */,
 				1A5014A120944DF000DB931E /* HomeInforViewController.storyboard */,
 			);
 			path = HomeInfor;
+			sourceTree = "<group>";
+		};
+		1A602F8220A87D37003AD583 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1A602F8420A87D58003AD583 /* HomeInfoTableHeaderView.swift */,
+				1A602F8B20A88095003AD583 /* HomeInfoTableHeaderView.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1A602F8320A87D37003AD583 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		56076729037BEB2CEBACE6F0 /* Frameworks */ = {
@@ -242,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A5014A220944DF000DB931E /* HomeInforViewController.storyboard in Resources */,
+				1A602F8C20A88095003AD583 /* HomeInfoTableHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +304,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A5014A420944DFE00DB931E /* HomeInforViewController.swift in Sources */,
+				1A602F8520A87D58003AD583 /* HomeInfoTableHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

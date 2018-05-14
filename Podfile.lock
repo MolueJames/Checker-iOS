@@ -30,7 +30,6 @@ PODS:
     - Permission/Core
   - Permission/Notifications (2.0.4):
     - Permission/Core
-  - PKHUD (5.0.0)
   - Result (3.2.4)
   - SnapKit (4.0.0)
   - SQLite.swift (0.11.5):
@@ -56,7 +55,6 @@ DEPENDENCIES:
   - Permission/Camera (~> 2.0.4)
   - Permission/Location (~> 2.0.4)
   - Permission/Notifications (~> 2.0.4)
-  - PKHUD (~> 5.0)
   - SnapKit (~> 4.0.0)
   - SQLite.swift (~> 0.11.4)
   - URLNavigator (~> 2.0.4)
@@ -80,7 +78,6 @@ SPEC REPOS:
     - NVActivityIndicatorView
     - ObjectMapper
     - Permission
-    - PKHUD
     - Result
     - SnapKit
     - SQLite.swift
@@ -104,13 +101,12 @@ SPEC CHECKSUMS:
   NVActivityIndicatorView: 75c9634073e03b31d7e2748cd2417feab1206195
   ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
   Permission: 6853b9694e66a6c9197468c66d1935c3629cbf9c
-  PKHUD: 3c001512c6e002091184197a8de7a20420786e3b
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SQLite.swift: 6e5356850bb1791459f8c16d6ee9195b28714a2e
   URLNavigator: af5582fbbb3586c958be16835d799bfdb23a4793
   ViewAnimator: 0c70ee4e1dfbe9d4f129407f81db91f6948900aa
 
-PODFILE CHECKSUM: 488bff026fbcac573d4a869aafa1cef2e9aec929
+PODFILE CHECKSUM: 8695779ba7cc0c2d73067e2ecf69689ca0f03a39
 
 COCOAPODS: 1.5.0

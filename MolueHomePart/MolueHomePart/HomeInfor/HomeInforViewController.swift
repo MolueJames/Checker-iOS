@@ -13,23 +13,24 @@ import Permission
 import ESPullToRefresh
 import MolueNetwork
 import NVActivityIndicatorView
+import MolueFoundation
 
-class HomeInforViewController: UIViewController, NVActivityIndicatorViewable {
+class HomeInforViewController: MLBaseViewController, NVActivityIndicatorViewable {
     
     @IBOutlet weak var tableview: UITableView! {
         didSet {
             tableview.delegate = self
             tableview.dataSource = self
             tableview.register(UITableViewCell.self, forCellReuseIdentifier: "identifier")
-            let header = MLRefreshHeaderAnimator.init(frame: CGRect.zero)
-            tableview.es.addPullToRefresh(animator: header) { [unowned self] in
-                self .loadData()
-            }
-            tableview.es.addInfiniteScrolling() { [weak self] in
-                DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-                    self?.tableview.es.stopLoadingMore()
-                }
-            }
+//            let header = MLRefreshHeaderAnimator.init(frame: CGRect.zero)
+//            tableview.es.addPullToRefresh(animator: header) { [unowned self] in
+//                self .loadData()
+//            }
+//            tableview.es.addInfiniteScrolling() { [weak self] in
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+//                    self?.tableview.es.stopLoadingMore()
+//                }
+//            }
         }
     }
     
@@ -48,13 +49,17 @@ class HomeInforViewController: UIViewController, NVActivityIndicatorViewable {
                     NVActivityIndicatorPresenter.sharedInstance.setMessage("加载数据中...")
             })
         }
-        
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "安监通"
         // Do any additional setup after loading the view.
         self.automaticallyAdjustsScrollViewInsets = false;
         self.edgesForExtendedLayout = .all;
+        
+        let view = HomeInfoTableHeaderView.createFromXib()
+        print(view)
     }
     
     @IBAction func buttonClicked(button: Any?) {

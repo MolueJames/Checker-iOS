@@ -43,6 +43,13 @@ target 'MolueSafty' do
         project 'MolueHomePart/MolueHomePart.xcodeproj'
         inherit! :search_paths
     end
+    target 'MolueRiskPart' do
+        project 'MolueRiskPart/MolueRiskPart.xcodeproj'
+        inherit! :search_paths
+    end
+    target 'MolueDocumentPart' do
+        project 'MolueDocumentPart/MolueDocumentPart.xcodeproj'
+    end
 end
 
 target 'MolueCommon' do
@@ -83,6 +90,7 @@ end
 
 target 'MolueFoundation' do
     project 'MolueFoundation/MolueFoundation.xcodeproj'
+        pod 'SnapKit', '~> 4.0.0'
 end
 
 target 'MolueDatabase' do

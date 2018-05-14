@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MLWebViewController: MLViewController {
+class MLWebViewController: MLBaseViewController {
 
     
 

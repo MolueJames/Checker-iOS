@@ -23,6 +23,7 @@
 		1A5014DC20974C2600DB931E /* MolueDatabase.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5014D520974C0100DB931E /* MolueDatabase.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1A5014DE20974C2600DB931E /* MolueFoundation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5014D720974C0100DB931E /* MolueFoundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1A5014E020974C2600DB931E /* MolueNetwork.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5014D920974C0100DB931E /* MolueNetwork.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1A602F1520A6D660003AD583 /* Appdelegate+Interface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A602F1420A6D660003AD583 /* Appdelegate+Interface.swift */; };
 		1A7D9A832084E73500FA997D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7D9A822084E73500FA997D /* AppDelegate.swift */; };
 		1A7D9A8D2084E73600FA997D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A7D9A8B2084E73600FA997D /* LaunchScreen.storyboard */; };
 		1A7D9A982084E73600FA997D /* MolueSaftyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7D9A972084E73600FA997D /* MolueSaftyTests.swift */; };
@@ -88,6 +89,7 @@
 		1A5014D520974C0100DB931E /* MolueDatabase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueDatabase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A5014D720974C0100DB931E /* MolueFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A5014D920974C0100DB931E /* MolueNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A602F1420A6D660003AD583 /* Appdelegate+Interface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Appdelegate+Interface.swift"; sourceTree = "<group>"; };
 		1A7D9A7F2084E73500FA997D /* MolueSafty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MolueSafty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A7D9A822084E73500FA997D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A7D9A8C2084E73600FA997D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -183,12 +185,13 @@
 			children = (
 				1A9A6BBB20A1D1BE00A94535 /* MolueUser.swift */,
 				1A7D9A822084E73500FA997D /* AppDelegate.swift */,
+				1A602F1420A6D660003AD583 /* Appdelegate+Interface.swift */,
 				1A5014BC2095647B00DB931E /* AppDelegate+ThirdPart.swift */,
+				1AA5391E208A423F0095E2B4 /* AppDelegate+JPush.swift */,
+				1AEB87E22092CA94002230A3 /* AppDelegate+UILogic.swift */,
 				1A7D9A8B2084E73600FA997D /* LaunchScreen.storyboard */,
 				1A7D9A8E2084E73600FA997D /* Info.plist */,
 				1AA538F6208A21440095E2B4 /* Objective-C-Bridging-Header.h */,
-				1AA5391E208A423F0095E2B4 /* AppDelegate+JPush.swift */,
-				1AEB87E22092CA94002230A3 /* AppDelegate+UILogic.swift */,
 			);
 			path = MolueSafty;
 			sourceTree = "<group>";
@@ -407,7 +410,6 @@
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
-				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Permission/Permission.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework",
@@ -427,7 +429,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Permission.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLite.framework",
@@ -469,6 +470,7 @@
 				1A9A6BBC20A1D1BE00A94535 /* MolueUser.swift in Sources */,
 				1A5014BD2095647B00DB931E /* AppDelegate+ThirdPart.swift in Sources */,
 				1A7D9A832084E73500FA997D /* AppDelegate.swift in Sources */,
+				1A602F1520A6D660003AD583 /* Appdelegate+Interface.swift in Sources */,
 				1AA5391F208A423F0095E2B4 /* AppDelegate+JPush.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

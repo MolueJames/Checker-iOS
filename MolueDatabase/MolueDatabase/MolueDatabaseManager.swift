@@ -49,7 +49,7 @@ extension MLDatabaseManager {
     
     @discardableResult
     public func runUpdataOperator(_ operation: Update) -> Bool {
-//        return databaseQueue.sync {
+        return databaseQueue.sync {
             guard let connection = self.connection else {
                 return handleDatabaseError(DatabaseError.unconnection)
             }
@@ -65,7 +65,7 @@ extension MLDatabaseManager {
                 return handleDatabaseError(error)
             }
             return isSuccess
-//        }
+        }
     }
     
     @discardableResult

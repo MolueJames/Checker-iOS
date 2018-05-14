@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A602F8E20A88B09003AD583 /* BundelExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A602F8D20A88B09003AD583 /* BundelExtensions.swift */; };
 		1A7D9BB22086475C00FA997D /* MolueUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A7D9BA82086475C00FA997D /* MolueUtilities.framework */; };
 		1A7D9BB72086475C00FA997D /* MolueUtilitiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7D9BB62086475C00FA997D /* MolueUtilitiesTests.swift */; };
 		1A7D9BB92086475C00FA997D /* MolueUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A7D9BAB2086475C00FA997D /* MolueUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -88,6 +89,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A602F8D20A88B09003AD583 /* BundelExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundelExtensions.swift; sourceTree = "<group>"; };
 		1A7D9BA82086475C00FA997D /* MolueUtilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MolueUtilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A7D9BAB2086475C00FA997D /* MolueUtilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MolueUtilities.h; sourceTree = "<group>"; };
 		1A7D9BAC2086475C00FA997D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -332,6 +334,7 @@
 				1AEB88112092CFE3002230A3 /* DateExtensions.swift */,
 				1AEB88122092CFE3002230A3 /* NSAttributedStringExtensions.swift */,
 				1AEB88132092CFE3002230A3 /* CalendarExtensions.swift */,
+				1A602F8D20A88B09003AD583 /* BundelExtensions.swift */,
 				1AEB88142092CFE3002230A3 /* Deprecated */,
 			);
 			path = Foundation;
@@ -628,6 +631,7 @@
 				1AEB883D2092CFE3002230A3 /* UIStoryboardExtensions.swift in Sources */,
 				1AEB885F2092CFE3002230A3 /* DictionaryExtensions.swift in Sources */,
 				1AEB88662092CFE3002230A3 /* OptionalExtensions.swift in Sources */,
+				1A602F8E20A88B09003AD583 /* BundelExtensions.swift in Sources */,
 				1AEB88382092CFE3002230A3 /* UINavigationItemExtensions.swift in Sources */,
 				1AEB88542092CFE3002230A3 /* DateExtensions.swift in Sources */,
 				1AEB885C2092CFE3002230A3 /* StringProtocolExtensions.swift in Sources */,
@@ -788,7 +792,11 @@
 				INFOPLIST_FILE = MolueUtilities/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Molue.MolueUtilities;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -812,7 +820,11 @@
 				INFOPLIST_FILE = MolueUtilities/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Molue.MolueUtilities;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -828,7 +840,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MolueUtilitiesTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Molue.MolueUtilitiesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -843,7 +859,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MolueUtilitiesTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Molue.MolueUtilitiesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

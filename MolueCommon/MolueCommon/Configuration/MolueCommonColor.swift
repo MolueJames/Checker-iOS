@@ -10,18 +10,3 @@ import Foundation
 import MolueUtilities
 public class CommonColor {}
 
-extension CommonColor: HomePartCompatible {
-    
-}
-
-extension MolueKit where Base == CommonColor {
-    public static let red = UIColor.red
-}
-
-extension CommonColor: MinePartCompatible {
-    
-}
-
-extension MolueKit where Base == CommonColor {
-    
-}
