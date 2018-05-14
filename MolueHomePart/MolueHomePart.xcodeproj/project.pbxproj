@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A06557D20A9EE020016CA86 /* HomeInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A06557B20A9EE020016CA86 /* HomeInfoTableViewCell.swift */; };
+		1A06557E20A9EE020016CA86 /* HomeInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A06557C20A9EE020016CA86 /* HomeInfoTableViewCell.xib */; };
 		1A1B88CD20864D9500C5F4D9 /* MolueHomePart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A1B88C320864D9500C5F4D9 /* MolueHomePart.framework */; };
 		1A1B88D220864D9500C5F4D9 /* MolueHomePartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1B88D120864D9500C5F4D9 /* MolueHomePartTests.swift */; };
 		1A1B88D420864D9500C5F4D9 /* MolueHomePart.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A1B88C620864D9500C5F4D9 /* MolueHomePart.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1A5014A220944DF000DB931E /* HomeInforViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A5014A120944DF000DB931E /* HomeInforViewController.storyboard */; };
-		1A5014A420944DFE00DB931E /* HomeInforViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5014A320944DFE00DB931E /* HomeInforViewController.swift */; };
+		1A5014A220944DF000DB931E /* HomeInfoViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A5014A120944DF000DB931E /* HomeInfoViewController.storyboard */; };
+		1A5014A420944DFE00DB931E /* HomeInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5014A320944DFE00DB931E /* HomeInfoViewController.swift */; };
 		1A5014AD2094B13400DB931E /* MolueCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5014AC2094B13400DB931E /* MolueCommon.framework */; };
 		1A5014C22097494600DB931E /* MolueDatabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5014C12097494600DB931E /* MolueDatabase.framework */; };
 		1A5014C42097495300DB931E /* MolueNavigator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5014C32097495300DB931E /* MolueNavigator.framework */; };
@@ -20,6 +22,7 @@
 		1A5014D42097499500DB931E /* MolueFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5014D32097499500DB931E /* MolueFoundation.framework */; };
 		1A602F8520A87D58003AD583 /* HomeInfoTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A602F8420A87D58003AD583 /* HomeInfoTableHeaderView.swift */; };
 		1A602F8C20A88095003AD583 /* HomeInfoTableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A602F8B20A88095003AD583 /* HomeInfoTableHeaderView.xib */; };
+		1AA7357020A9CFE800DF7CD0 /* MolueHome.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AA7356F20A9CFE800DF7CD0 /* MolueHome.xcassets */; };
 		EF01F517C22ED0361C323767 /* Pods_MolueHomePart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 010F6973D5E1725577EE6B03 /* Pods_MolueHomePart.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,14 +38,16 @@
 
 /* Begin PBXFileReference section */
 		010F6973D5E1725577EE6B03 /* Pods_MolueHomePart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MolueHomePart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A06557B20A9EE020016CA86 /* HomeInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInfoTableViewCell.swift; sourceTree = "<group>"; };
+		1A06557C20A9EE020016CA86 /* HomeInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeInfoTableViewCell.xib; sourceTree = "<group>"; };
 		1A1B88C320864D9500C5F4D9 /* MolueHomePart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MolueHomePart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A1B88C620864D9500C5F4D9 /* MolueHomePart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MolueHomePart.h; sourceTree = "<group>"; };
 		1A1B88C720864D9500C5F4D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A1B88CC20864D9500C5F4D9 /* MolueHomePartTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MolueHomePartTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A1B88D120864D9500C5F4D9 /* MolueHomePartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueHomePartTests.swift; sourceTree = "<group>"; };
 		1A1B88D320864D9500C5F4D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1A5014A120944DF000DB931E /* HomeInforViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeInforViewController.storyboard; sourceTree = "<group>"; };
-		1A5014A320944DFE00DB931E /* HomeInforViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInforViewController.swift; sourceTree = "<group>"; };
+		1A5014A120944DF000DB931E /* HomeInfoViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeInfoViewController.storyboard; sourceTree = "<group>"; };
+		1A5014A320944DFE00DB931E /* HomeInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInfoViewController.swift; sourceTree = "<group>"; };
 		1A5014AC2094B13400DB931E /* MolueCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A5014C12097494600DB931E /* MolueDatabase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueDatabase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A5014C32097495300DB931E /* MolueNavigator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueNavigator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,6 +56,7 @@
 		1A5014D32097499500DB931E /* MolueFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A602F8420A87D58003AD583 /* HomeInfoTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInfoTableHeaderView.swift; sourceTree = "<group>"; };
 		1A602F8B20A88095003AD583 /* HomeInfoTableHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeInfoTableHeaderView.xib; sourceTree = "<group>"; };
+		1AA7356F20A9CFE800DF7CD0 /* MolueHome.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MolueHome.xcassets; sourceTree = "<group>"; };
 		9468AE17912D4AEEBE6E1EFA /* Pods-MolueHomePart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueHomePart.release.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueHomePart/Pods-MolueHomePart.release.xcconfig"; sourceTree = "<group>"; };
 		C7C163FB01CFAE81C039463E /* Pods-MolueHomePart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueHomePart.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueHomePart/Pods-MolueHomePart.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -104,9 +110,10 @@
 		1A1B88C520864D9500C5F4D9 /* MolueHomePart */ = {
 			isa = PBXGroup;
 			children = (
-				1A50149B20944D7A00DB931E /* HomeInfor */,
+				1A50149B20944D7A00DB931E /* HomeInfo */,
 				1A1B88C620864D9500C5F4D9 /* MolueHomePart.h */,
 				1A1B88C720864D9500C5F4D9 /* Info.plist */,
+				1AA7356F20A9CFE800DF7CD0 /* MolueHome.xcassets */,
 			);
 			path = MolueHomePart;
 			sourceTree = "<group>";
@@ -120,15 +127,15 @@
 			path = MolueHomePartTests;
 			sourceTree = "<group>";
 		};
-		1A50149B20944D7A00DB931E /* HomeInfor */ = {
+		1A50149B20944D7A00DB931E /* HomeInfo */ = {
 			isa = PBXGroup;
 			children = (
 				1A602F8320A87D37003AD583 /* Models */,
 				1A602F8220A87D37003AD583 /* Views */,
-				1A5014A320944DFE00DB931E /* HomeInforViewController.swift */,
-				1A5014A120944DF000DB931E /* HomeInforViewController.storyboard */,
+				1A5014A320944DFE00DB931E /* HomeInfoViewController.swift */,
+				1A5014A120944DF000DB931E /* HomeInfoViewController.storyboard */,
 			);
-			path = HomeInfor;
+			path = HomeInfo;
 			sourceTree = "<group>";
 		};
 		1A602F8220A87D37003AD583 /* Views */ = {
@@ -136,6 +143,8 @@
 			children = (
 				1A602F8420A87D58003AD583 /* HomeInfoTableHeaderView.swift */,
 				1A602F8B20A88095003AD583 /* HomeInfoTableHeaderView.xib */,
+				1A06557B20A9EE020016CA86 /* HomeInfoTableViewCell.swift */,
+				1A06557C20A9EE020016CA86 /* HomeInfoTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -263,8 +272,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A5014A220944DF000DB931E /* HomeInforViewController.storyboard in Resources */,
+				1A5014A220944DF000DB931E /* HomeInfoViewController.storyboard in Resources */,
 				1A602F8C20A88095003AD583 /* HomeInfoTableHeaderView.xib in Resources */,
+				1A06557E20A9EE020016CA86 /* HomeInfoTableViewCell.xib in Resources */,
+				1AA7357020A9CFE800DF7CD0 /* MolueHome.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,8 +314,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A5014A420944DFE00DB931E /* HomeInforViewController.swift in Sources */,
+				1A5014A420944DFE00DB931E /* HomeInfoViewController.swift in Sources */,
 				1A602F8520A87D58003AD583 /* HomeInfoTableHeaderView.swift in Sources */,
+				1A06557D20A9EE020016CA86 /* HomeInfoTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,6 +15,7 @@
 		1A7D9B222086460100FA997D /* MolueFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A7D9B182086460100FA997D /* MolueFoundation.framework */; };
 		1A7D9B272086460100FA997D /* MolueFoundationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7D9B262086460100FA997D /* MolueFoundationTests.swift */; };
 		1A7D9B292086460100FA997D /* MolueFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A7D9B1B2086460100FA997D /* MolueFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1AA7356E20A9CC5F00DF7CD0 /* MolueUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA7356D20A9CC5F00DF7CD0 /* MolueUtilities.framework */; };
 		2AE00B6FE82E4B4295A00FC8 /* Pods_MolueFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59F83AF9345B6D7476E8CBA9 /* Pods_MolueFoundation.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,7 @@
 		1A7D9B212086460100FA997D /* MolueFoundationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MolueFoundationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A7D9B262086460100FA997D /* MolueFoundationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueFoundationTests.swift; sourceTree = "<group>"; };
 		1A7D9B282086460100FA997D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1AA7356D20A9CC5F00DF7CD0 /* MolueUtilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueUtilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E9AC032042B4F8088E50751 /* Pods-MolueFoundation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueFoundation.release.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueFoundation/Pods-MolueFoundation.release.xcconfig"; sourceTree = "<group>"; };
 		59F83AF9345B6D7476E8CBA9 /* Pods_MolueFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MolueFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9EB5D76F9F3405531151153 /* Pods-MolueFoundation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueFoundation.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueFoundation/Pods-MolueFoundation.debug.xcconfig"; sourceTree = "<group>"; };
@@ -50,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AA7356E20A9CC5F00DF7CD0 /* MolueUtilities.framework in Frameworks */,
 				2AE00B6FE82E4B4295A00FC8 /* Pods_MolueFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -111,6 +114,7 @@
 		891EBD64ACB051831317B91B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1AA7356D20A9CC5F00DF7CD0 /* MolueUtilities.framework */,
 				59F83AF9345B6D7476E8CBA9 /* Pods_MolueFoundation.framework */,
 			);
 			name = Frameworks;

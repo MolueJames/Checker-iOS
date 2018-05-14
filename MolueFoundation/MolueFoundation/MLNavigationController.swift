@@ -23,6 +23,8 @@ open class MLNavigationController: UINavigationController {
 
         // Do any additional setup after loading the view.
     }
+    
+    
 
     override open func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -33,7 +35,20 @@ open class MLNavigationController: UINavigationController {
             return.lightContent
         }
     }
+    
+    open override var prefersStatusBarHidden: Bool {
+        get {
+            return false
+        }
+    }
 
+ 
+    open override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
+        get {
+            return .slide
+        }
+    }
+    
     open override func pushViewController(_ viewController: UIViewController, animated: Bool) {
         if let controller = viewController as? MLNavigationProtocol {
             self.topViewController?.navigationItem.backBarButtonItem = controller.customBackBarButtonItem

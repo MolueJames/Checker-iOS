@@ -11,30 +11,54 @@ import SnapKit
 import MolueUtilities
 open class MLBaseViewController: UIViewController, MLNavigationProtocol {
     
-    
-    
     public var networkcount = 0
     
-    lazy var navBackgroundView: UIView! = {
+    private lazy var navBackgroundView: UIView! = {
         let view = UIView()
         view.backgroundColor = UIColor.init(hex: 0xB82D2)
         self.view.insertSubview(view, at: 0)
         return view
     }()
-    
+
     open override func loadView() {
         super.loadView()
-        guard let _ = self.navigationController else { return }
-        self.navBackgroundView.snp.makeConstraints { (make) in
-            make.top.leading.trailing.equalTo(0)
-            make.height.equalTo(88)
-        }
+        self.updateNavBackgroundView()
+    }
+    
+    private func updateNavBackgroundView() {
+        guard let navController = self.navigationController else { return }
+        guard let view = navController.navigationBar.subviews.first else { return }
+        self.navBackgroundView.frame = CGRect.init(x: 0, y: 0, width: view.width, height: view.height)
+    }
+    
+    override open func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.updateNavBackgroundView()
     }
     
     open override var preferredStatusBarStyle: UIStatusBarStyle {
         get {
-            return.lightContent
+            return .lightContent
         }
+    }
+    
+    open override var prefersStatusBarHidden: Bool {
+        get {
+            return false
+        }
+    }
+    
+    open override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
+        get {
+            return .slide
+        }
+    }
+    
+    open override func viewDidLoad() {
+        super.viewDidLoad()
+        self.automaticallyAdjustsScrollViewInsets = false;
+        self.edgesForExtendedLayout = .all;
+        self.view.backgroundColor = UIColor.init(hex: 0xf5f5f9)
     }
     /*
     // MARK: - Navigation

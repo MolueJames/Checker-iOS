@@ -31,29 +31,25 @@ public class MolueAppRouter {
         if let homeRouter = MolueNavigatorRouter(.Home, path: "<fileName>").toString() {
             navigator.register(homeRouter) { [unowned self] (url, values, context) -> UIViewController? in
                 guard let fileName = values["fileName"] as? String else { return nil }
-                let viewcontroller = self.createViewController(url, filename: fileName, context: context)
-                return viewcontroller
+                return self.createViewController(url, filename: fileName, context: context)
             }
         }
         if let mineRouter = MolueNavigatorRouter(.Mine, path: "<fileName>").toString() {
             navigator.register(mineRouter) { [unowned self] (url, values, context) -> UIViewController? in
                 guard let fileName = values["fileName"] as? String else { return nil }
-                let viewcontroller = self.createViewController(url, filename: fileName, context: context)
-                return viewcontroller
+                return self.createViewController(url, filename: fileName, context: context)
             }
         }
         if let riskRouter = MolueNavigatorRouter(.Risk, path: "<fileName>").toString() {
             navigator.register(riskRouter) { [unowned self] (url, values, context) -> UIViewController? in
                 guard let fileName = values["fileName"] as? String else { return nil }
-                let viewcontroller = self.createViewController(url, filename: fileName, context: context)
-                return viewcontroller
+                return self.createViewController(url, filename: fileName, context: context)
             }
         }
-        if let documentRouter = MolueNavigatorRouter(.Document, path: "<fileName>").toString() {
+        if let documentRouter = MolueNavigatorRouter(.Book, path: "<fileName>").toString() {
             navigator.register(documentRouter) { [unowned self] (url, values, context) -> UIViewController? in
                 guard let fileName = values["fileName"] as? String else { return nil }
-                let viewcontroller = self.createViewController(url, filename: fileName, context: context)
-                return viewcontroller
+                return self.createViewController(url, filename: fileName, context: context)
             }
         }
         if let httpRouter = MolueWebsiteRouter.init(.HTTP, path: "<path:_>").toString() {

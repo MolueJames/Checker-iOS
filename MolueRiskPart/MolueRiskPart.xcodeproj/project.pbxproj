@@ -11,6 +11,15 @@
 		1A602F4E20A810DF003AD583 /* MolueRiskPart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A602F4420A810DF003AD583 /* MolueRiskPart.framework */; };
 		1A602F5320A810DF003AD583 /* MolueRiskPartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A602F5220A810DF003AD583 /* MolueRiskPartTests.swift */; };
 		1A602F5520A810DF003AD583 /* MolueRiskPart.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A602F4720A810DF003AD583 /* MolueRiskPart.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1AA7354020A9C25200DF7CD0 /* RiskInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA7353F20A9C25200DF7CD0 /* RiskInfoViewController.swift */; };
+		1AA7354220A9C26400DF7CD0 /* RiskInfoViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AA7354120A9C26400DF7CD0 /* RiskInfoViewController.storyboard */; };
+		1AA7355420A9C37100DF7CD0 /* MolueCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA7355320A9C37100DF7CD0 /* MolueCommon.framework */; };
+		1AA7355620A9C37100DF7CD0 /* MolueDatabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA7355520A9C37100DF7CD0 /* MolueDatabase.framework */; };
+		1AA7355820A9C37100DF7CD0 /* MolueFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA7355720A9C37100DF7CD0 /* MolueFoundation.framework */; };
+		1AA7355A20A9C37100DF7CD0 /* MolueNavigator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA7355920A9C37100DF7CD0 /* MolueNavigator.framework */; };
+		1AA7355C20A9C37100DF7CD0 /* MolueNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA7355B20A9C37100DF7CD0 /* MolueNetwork.framework */; };
+		1AA7355E20A9C37100DF7CD0 /* MolueUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA7355D20A9C37100DF7CD0 /* MolueUtilities.framework */; };
+		1AA7357420A9E03900DF7CD0 /* MolueRisk.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AA7357320A9E03900DF7CD0 /* MolueRisk.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +39,15 @@
 		1A602F4D20A810DF003AD583 /* MolueRiskPartTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MolueRiskPartTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A602F5220A810DF003AD583 /* MolueRiskPartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueRiskPartTests.swift; sourceTree = "<group>"; };
 		1A602F5420A810DF003AD583 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1AA7353F20A9C25200DF7CD0 /* RiskInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskInfoViewController.swift; sourceTree = "<group>"; };
+		1AA7354120A9C26400DF7CD0 /* RiskInfoViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RiskInfoViewController.storyboard; sourceTree = "<group>"; };
+		1AA7355320A9C37100DF7CD0 /* MolueCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AA7355520A9C37100DF7CD0 /* MolueDatabase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueDatabase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AA7355720A9C37100DF7CD0 /* MolueFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AA7355920A9C37100DF7CD0 /* MolueNavigator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueNavigator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AA7355B20A9C37100DF7CD0 /* MolueNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AA7355D20A9C37100DF7CD0 /* MolueUtilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueUtilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AA7357320A9E03900DF7CD0 /* MolueRisk.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MolueRisk.xcassets; sourceTree = "<group>"; };
 		1F7303D743A6A3BDD8783D8D /* Pods-MolueRiskPart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueRiskPart.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueRiskPart/Pods-MolueRiskPart.debug.xcconfig"; sourceTree = "<group>"; };
 		CF9033C8D71A897E2F825131 /* Pods_MolueRiskPart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MolueRiskPart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3274AE2F9F635301421FE61 /* Pods-MolueRiskPart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueRiskPart.release.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueRiskPart/Pods-MolueRiskPart.release.xcconfig"; sourceTree = "<group>"; };
@@ -40,6 +58,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AA7355420A9C37100DF7CD0 /* MolueCommon.framework in Frameworks */,
+				1AA7355620A9C37100DF7CD0 /* MolueDatabase.framework in Frameworks */,
+				1AA7355820A9C37100DF7CD0 /* MolueFoundation.framework in Frameworks */,
+				1AA7355A20A9C37100DF7CD0 /* MolueNavigator.framework in Frameworks */,
+				1AA7355C20A9C37100DF7CD0 /* MolueNetwork.framework in Frameworks */,
+				1AA7355E20A9C37100DF7CD0 /* MolueUtilities.framework in Frameworks */,
 				12AED625921729CFA62DF59A /* Pods_MolueRiskPart.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -78,8 +102,10 @@
 		1A602F4620A810DF003AD583 /* MolueRiskPart */ = {
 			isa = PBXGroup;
 			children = (
+				1AA7353E20A9C0D700DF7CD0 /* RiskInfo */,
 				1A602F4720A810DF003AD583 /* MolueRiskPart.h */,
 				1A602F4820A810DF003AD583 /* Info.plist */,
+				1AA7357320A9E03900DF7CD0 /* MolueRisk.xcassets */,
 			);
 			path = MolueRiskPart;
 			sourceTree = "<group>";
@@ -93,9 +119,24 @@
 			path = MolueRiskPartTests;
 			sourceTree = "<group>";
 		};
+		1AA7353E20A9C0D700DF7CD0 /* RiskInfo */ = {
+			isa = PBXGroup;
+			children = (
+				1AA7353F20A9C25200DF7CD0 /* RiskInfoViewController.swift */,
+				1AA7354120A9C26400DF7CD0 /* RiskInfoViewController.storyboard */,
+			);
+			path = RiskInfo;
+			sourceTree = "<group>";
+		};
 		646AC1F75E92D0DD827B0A4A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1AA7355320A9C37100DF7CD0 /* MolueCommon.framework */,
+				1AA7355520A9C37100DF7CD0 /* MolueDatabase.framework */,
+				1AA7355720A9C37100DF7CD0 /* MolueFoundation.framework */,
+				1AA7355920A9C37100DF7CD0 /* MolueNavigator.framework */,
+				1AA7355B20A9C37100DF7CD0 /* MolueNetwork.framework */,
+				1AA7355D20A9C37100DF7CD0 /* MolueUtilities.framework */,
 				CF9033C8D71A897E2F825131 /* Pods_MolueRiskPart.framework */,
 			);
 			name = Frameworks;
@@ -173,6 +214,7 @@
 				TargetAttributes = {
 					1A602F4320A810DF003AD583 = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 0930;
 					};
 					1A602F4C20A810DF003AD583 = {
 						CreatedOnToolsVersion = 9.3;
@@ -202,6 +244,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AA7354220A9C26400DF7CD0 /* RiskInfoViewController.storyboard in Resources */,
+				1AA7357420A9E03900DF7CD0 /* MolueRisk.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,6 +284,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AA7354020A9C25200DF7CD0 /* RiskInfoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,6 +431,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1F7303D743A6A3BDD8783D8D /* Pods-MolueRiskPart.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -395,10 +441,15 @@
 				INFOPLIST_FILE = MolueRiskPart/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Molue.MolueRiskPart;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -408,6 +459,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E3274AE2F9F635301421FE61 /* Pods-MolueRiskPart.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -417,7 +469,11 @@
 				INFOPLIST_FILE = MolueRiskPart/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Molue.MolueRiskPart;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -429,9 +485,14 @@
 		1A602F5C20A810DF003AD583 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MolueRiskPartTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Molue.MolueRiskPartTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -442,9 +503,14 @@
 		1A602F5D20A810DF003AD583 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MolueRiskPartTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Molue.MolueRiskPartTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

@@ -1,0 +1,552 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		171B05F503793690274822B1 /* Pods_MolueBookPart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C88D5F32B4F80735FC8D514 /* Pods_MolueBookPart.framework */; };
+		1A06556420A9E2D50016CA86 /* MolueBook.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A06556320A9E2D50016CA86 /* MolueBook.xcassets */; };
+		1A06556A20A9E30F0016CA86 /* MolueCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A06556920A9E30F0016CA86 /* MolueCommon.framework */; };
+		1A06556C20A9E30F0016CA86 /* MolueDatabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A06556B20A9E30F0016CA86 /* MolueDatabase.framework */; };
+		1A06556E20A9E30F0016CA86 /* MolueFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A06556D20A9E30F0016CA86 /* MolueFoundation.framework */; };
+		1A06557020A9E30F0016CA86 /* MolueNavigator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A06556F20A9E30F0016CA86 /* MolueNavigator.framework */; };
+		1A06557220A9E30F0016CA86 /* MolueNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A06557120A9E30F0016CA86 /* MolueNetwork.framework */; };
+		1A06557420A9E30F0016CA86 /* MolueUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A06557320A9E30F0016CA86 /* MolueUtilities.framework */; };
+		1A06557820A9E3E90016CA86 /* BookInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A06557720A9E3E90016CA86 /* BookInfoViewController.swift */; };
+		1A06557A20A9E4070016CA86 /* BookInfoViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A06557920A9E4070016CA86 /* BookInfoViewController.storyboard */; };
+		1AA7358D20A9E19700DF7CD0 /* MolueBookPart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA7358320A9E19700DF7CD0 /* MolueBookPart.framework */; };
+		1AA7359220A9E19700DF7CD0 /* MolueBookPartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA7359120A9E19700DF7CD0 /* MolueBookPartTests.swift */; };
+		1AA7359420A9E19700DF7CD0 /* MolueBookPart.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AA7358620A9E19700DF7CD0 /* MolueBookPart.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1AA7358E20A9E19700DF7CD0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1AA7357A20A9E19700DF7CD0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1AA7358220A9E19700DF7CD0;
+			remoteInfo = MolueBookPart;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1A06556320A9E2D50016CA86 /* MolueBook.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MolueBook.xcassets; sourceTree = "<group>"; };
+		1A06556920A9E30F0016CA86 /* MolueCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A06556B20A9E30F0016CA86 /* MolueDatabase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueDatabase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A06556D20A9E30F0016CA86 /* MolueFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A06556F20A9E30F0016CA86 /* MolueNavigator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueNavigator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A06557120A9E30F0016CA86 /* MolueNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A06557320A9E30F0016CA86 /* MolueUtilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueUtilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A06557720A9E3E90016CA86 /* BookInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookInfoViewController.swift; sourceTree = "<group>"; };
+		1A06557920A9E4070016CA86 /* BookInfoViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BookInfoViewController.storyboard; sourceTree = "<group>"; };
+		1AA7358320A9E19700DF7CD0 /* MolueBookPart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MolueBookPart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AA7358620A9E19700DF7CD0 /* MolueBookPart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MolueBookPart.h; sourceTree = "<group>"; };
+		1AA7358720A9E19700DF7CD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1AA7358C20A9E19700DF7CD0 /* MolueBookPartTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MolueBookPartTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AA7359120A9E19700DF7CD0 /* MolueBookPartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueBookPartTests.swift; sourceTree = "<group>"; };
+		1AA7359320A9E19700DF7CD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7C88D5F32B4F80735FC8D514 /* Pods_MolueBookPart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MolueBookPart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A468DFCF0D321CE150E7D810 /* Pods-MolueBookPart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueBookPart.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueBookPart/Pods-MolueBookPart.debug.xcconfig"; sourceTree = "<group>"; };
+		E415763495A3003D73C405D7 /* Pods-MolueBookPart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueBookPart.release.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueBookPart/Pods-MolueBookPart.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1AA7357F20A9E19700DF7CD0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A06556A20A9E30F0016CA86 /* MolueCommon.framework in Frameworks */,
+				1A06556C20A9E30F0016CA86 /* MolueDatabase.framework in Frameworks */,
+				1A06556E20A9E30F0016CA86 /* MolueFoundation.framework in Frameworks */,
+				1A06557020A9E30F0016CA86 /* MolueNavigator.framework in Frameworks */,
+				1A06557220A9E30F0016CA86 /* MolueNetwork.framework in Frameworks */,
+				1A06557420A9E30F0016CA86 /* MolueUtilities.framework in Frameworks */,
+				171B05F503793690274822B1 /* Pods_MolueBookPart.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1AA7358920A9E19700DF7CD0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1AA7358D20A9E19700DF7CD0 /* MolueBookPart.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1A06556720A9E2F70016CA86 /* MolueBookInfo */ = {
+			isa = PBXGroup;
+			children = (
+				1A06557720A9E3E90016CA86 /* BookInfoViewController.swift */,
+				1A06557920A9E4070016CA86 /* BookInfoViewController.storyboard */,
+			);
+			path = MolueBookInfo;
+			sourceTree = "<group>";
+		};
+		1A06556820A9E30F0016CA86 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1A06556920A9E30F0016CA86 /* MolueCommon.framework */,
+				1A06556B20A9E30F0016CA86 /* MolueDatabase.framework */,
+				1A06556D20A9E30F0016CA86 /* MolueFoundation.framework */,
+				1A06556F20A9E30F0016CA86 /* MolueNavigator.framework */,
+				1A06557120A9E30F0016CA86 /* MolueNetwork.framework */,
+				1A06557320A9E30F0016CA86 /* MolueUtilities.framework */,
+				7C88D5F32B4F80735FC8D514 /* Pods_MolueBookPart.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1AA7357920A9E19700DF7CD0 = {
+			isa = PBXGroup;
+			children = (
+				1AA7358520A9E19700DF7CD0 /* MolueBookPart */,
+				1AA7359020A9E19700DF7CD0 /* MolueBookPartTests */,
+				1AA7358420A9E19700DF7CD0 /* Products */,
+				1A06556820A9E30F0016CA86 /* Frameworks */,
+				3759730AAC667F9195A924AD /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		1AA7358420A9E19700DF7CD0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1AA7358320A9E19700DF7CD0 /* MolueBookPart.framework */,
+				1AA7358C20A9E19700DF7CD0 /* MolueBookPartTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1AA7358520A9E19700DF7CD0 /* MolueBookPart */ = {
+			isa = PBXGroup;
+			children = (
+				1A06556720A9E2F70016CA86 /* MolueBookInfo */,
+				1AA7358620A9E19700DF7CD0 /* MolueBookPart.h */,
+				1AA7358720A9E19700DF7CD0 /* Info.plist */,
+				1A06556320A9E2D50016CA86 /* MolueBook.xcassets */,
+			);
+			path = MolueBookPart;
+			sourceTree = "<group>";
+		};
+		1AA7359020A9E19700DF7CD0 /* MolueBookPartTests */ = {
+			isa = PBXGroup;
+			children = (
+				1AA7359120A9E19700DF7CD0 /* MolueBookPartTests.swift */,
+				1AA7359320A9E19700DF7CD0 /* Info.plist */,
+			);
+			path = MolueBookPartTests;
+			sourceTree = "<group>";
+		};
+		3759730AAC667F9195A924AD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A468DFCF0D321CE150E7D810 /* Pods-MolueBookPart.debug.xcconfig */,
+				E415763495A3003D73C405D7 /* Pods-MolueBookPart.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		1AA7358020A9E19700DF7CD0 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1AA7359420A9E19700DF7CD0 /* MolueBookPart.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		1AA7358220A9E19700DF7CD0 /* MolueBookPart */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1AA7359720A9E19700DF7CD0 /* Build configuration list for PBXNativeTarget "MolueBookPart" */;
+			buildPhases = (
+				590BF75DE281B9528A70D8B4 /* [CP] Check Pods Manifest.lock */,
+				1AA7357E20A9E19700DF7CD0 /* Sources */,
+				1AA7357F20A9E19700DF7CD0 /* Frameworks */,
+				1AA7358020A9E19700DF7CD0 /* Headers */,
+				1AA7358120A9E19700DF7CD0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MolueBookPart;
+			productName = MolueBookPart;
+			productReference = 1AA7358320A9E19700DF7CD0 /* MolueBookPart.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		1AA7358B20A9E19700DF7CD0 /* MolueBookPartTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1AA7359A20A9E19700DF7CD0 /* Build configuration list for PBXNativeTarget "MolueBookPartTests" */;
+			buildPhases = (
+				1AA7358820A9E19700DF7CD0 /* Sources */,
+				1AA7358920A9E19700DF7CD0 /* Frameworks */,
+				1AA7358A20A9E19700DF7CD0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1AA7358F20A9E19700DF7CD0 /* PBXTargetDependency */,
+			);
+			name = MolueBookPartTests;
+			productName = MolueBookPartTests;
+			productReference = 1AA7358C20A9E19700DF7CD0 /* MolueBookPartTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1AA7357A20A9E19700DF7CD0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = MolueTech;
+				TargetAttributes = {
+					1AA7358220A9E19700DF7CD0 = {
+						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 0930;
+					};
+					1AA7358B20A9E19700DF7CD0 = {
+						CreatedOnToolsVersion = 9.3;
+					};
+				};
+			};
+			buildConfigurationList = 1AA7357D20A9E19700DF7CD0 /* Build configuration list for PBXProject "MolueBookPart" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1AA7357920A9E19700DF7CD0;
+			productRefGroup = 1AA7358420A9E19700DF7CD0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1AA7358220A9E19700DF7CD0 /* MolueBookPart */,
+				1AA7358B20A9E19700DF7CD0 /* MolueBookPartTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1AA7358120A9E19700DF7CD0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A06557A20A9E4070016CA86 /* BookInfoViewController.storyboard in Resources */,
+				1A06556420A9E2D50016CA86 /* MolueBook.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1AA7358A20A9E19700DF7CD0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		590BF75DE281B9528A70D8B4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MolueBookPart-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1AA7357E20A9E19700DF7CD0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A06557820A9E3E90016CA86 /* BookInfoViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1AA7358820A9E19700DF7CD0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1AA7359220A9E19700DF7CD0 /* MolueBookPartTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1AA7358F20A9E19700DF7CD0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1AA7358220A9E19700DF7CD0 /* MolueBookPart */;
+			targetProxy = 1AA7358E20A9E19700DF7CD0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1AA7359520A9E19700DF7CD0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		1AA7359620A9E19700DF7CD0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		1AA7359820A9E19700DF7CD0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A468DFCF0D321CE150E7D810 /* Pods-MolueBookPart.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = MolueBookPart/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Molue.MolueBookPart;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1AA7359920A9E19700DF7CD0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E415763495A3003D73C405D7 /* Pods-MolueBookPart.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = MolueBookPart/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Molue.MolueBookPart;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		1AA7359B20A9E19700DF7CD0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MolueBookPartTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Molue.MolueBookPartTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1AA7359C20A9E19700DF7CD0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MolueBookPartTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Molue.MolueBookPartTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1AA7357D20A9E19700DF7CD0 /* Build configuration list for PBXProject "MolueBookPart" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1AA7359520A9E19700DF7CD0 /* Debug */,
+				1AA7359620A9E19700DF7CD0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1AA7359720A9E19700DF7CD0 /* Build configuration list for PBXNativeTarget "MolueBookPart" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1AA7359820A9E19700DF7CD0 /* Debug */,
+				1AA7359920A9E19700DF7CD0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1AA7359A20A9E19700DF7CD0 /* Build configuration list for PBXNativeTarget "MolueBookPartTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1AA7359B20A9E19700DF7CD0 /* Debug */,
+				1AA7359C20A9E19700DF7CD0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1AA7357A20A9E19700DF7CD0 /* Project object */;
+}

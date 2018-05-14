@@ -10,8 +10,6 @@ project 'MolueNetwork/MolueNetwork.xcodeproj'
 project 'MolueNavigator/MolueNavigator.xcodeproj'
 project 'MolueFoundation/MolueFoundation.xcodeproj'
 project 'MolueDatabase/MolueDatabase.xcodeproj'
-project 'MolueMinePart/MolueMinePart.xcodeproj'
-project 'MolueHomePart/MolueHomePart.xcodeproj'
 
 target 'MolueSafty' do
     project 'MolueSafty/MolueSafty.xcodeproj'
@@ -47,8 +45,9 @@ target 'MolueSafty' do
         project 'MolueRiskPart/MolueRiskPart.xcodeproj'
         inherit! :search_paths
     end
-    target 'MolueDocumentPart' do
-        project 'MolueDocumentPart/MolueDocumentPart.xcodeproj'
+    target 'MolueBookPart' do
+        project 'MolueBookPart/MolueBookPart.xcodeproj'
+        inherit! :search_paths
     end
 end
 

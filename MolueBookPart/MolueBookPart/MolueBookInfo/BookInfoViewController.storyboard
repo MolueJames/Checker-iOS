@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Book Info View Controller-->
+        <scene sceneID="gx8-mm-KoB">
+            <objects>
+                <viewController storyboardIdentifier="BookInfoViewController" id="kam-Tb-aim" customClass="BookInfoViewController" customModule="MolueBookPart" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2UL-jg-cry">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lgo-Lc-h1g">
+                                <rect key="frame" x="83" y="291" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="lgo-Lc-h1g" firstAttribute="top" secondItem="w8w-ey-zH3" secondAttribute="top" constant="271" id="Cyb-VG-gc7"/>
+                            <constraint firstItem="w8w-ey-zH3" firstAttribute="trailing" secondItem="lgo-Lc-h1g" secondAttribute="trailing" constant="52" id="TI9-Vd-wq8"/>
+                            <constraint firstItem="w8w-ey-zH3" firstAttribute="bottom" secondItem="lgo-Lc-h1g" secondAttribute="bottom" constant="248" id="gtA-7A-B0O"/>
+                            <constraint firstItem="lgo-Lc-h1g" firstAttribute="leading" secondItem="w8w-ey-zH3" secondAttribute="leading" constant="83" id="pQp-ce-uRQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="w8w-ey-zH3"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eA9-B6-YuL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="265" y="173"/>
+        </scene>
+    </scenes>
+</document>

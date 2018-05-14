@@ -139,7 +139,6 @@
 		1A7D9B622086470200FA997D /* MolueCommon */ = {
 			isa = PBXGroup;
 			children = (
-				1A2D443120A088C400BA947A /* MolueCommon.xcassets */,
 				1A2D443B20A0977A00BA947A /* InterfaceConfigure */,
 				1A2D441920A07E9900BA947A /* RefreshAnimator */,
 				1A5014B22094B8ED00DB931E /* Configuration */,
@@ -147,6 +146,7 @@
 				1AEB87D9209218D3002230A3 /* Encryption */,
 				1A7D9B632086470300FA997D /* MolueCommon.h */,
 				1A7D9B642086470300FA997D /* Info.plist */,
+				1A2D443120A088C400BA947A /* MolueCommon.xcassets */,
 			);
 			path = MolueCommon;
 			sourceTree = "<group>";

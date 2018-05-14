@@ -10,18 +10,18 @@ import Foundation
 import MolueUtilities
 
 public struct HomeFilePath {
-    public static let HomeInfo = "HomeInforViewController"
+    public static let HomeInfo = "HomeInfoViewController"
 }
 
 public struct MineFilePath {
-    public static let MineInfo = "MineInforViewController"
+    public static let MineInfo = "MineInfoViewController"
 }
 
 public struct RiskFilePath {
     public static let RiskInfo = "RiskInfoViewController"
 }
 
-public struct DocumentPath {
-    public static let DocumentInfo = "DocumentInfoViewController"
+public struct BookFilePath {
+    public static let BookInfo = "BookInfoViewController"
 }
 
