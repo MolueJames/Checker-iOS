@@ -32,7 +32,7 @@ extension MLDatabaseProtocol {
             do {
                 completion( try list.map({ try $0.decode() }))
             } catch {
-                MolueLogger.failure.message(error)
+                MolueLogger.failure.error(error)
             }
         }, queue: queue)
     }
@@ -55,7 +55,7 @@ extension MLDatabaseProtocol {
                 let operation = MLDatabaseOperation.insert(operation: insert, complectionClosure: complection)
                 operation.excuteDatabaseOperation(queue: queue)
             } catch {
-                MolueLogger.failure.message(error)
+                MolueLogger.failure.error(error)
             }
         }
     }
@@ -91,7 +91,7 @@ extension MLDatabaseProtocol {
                 let operation = MLDatabaseOperation.update(operation: update, complectionClosure: complection)
                 operation.excuteDatabaseOperation(queue: queue)
             } catch {
-                MolueLogger.failure.message(error)
+                MolueLogger.failure.error(error)
             }
         }
     }

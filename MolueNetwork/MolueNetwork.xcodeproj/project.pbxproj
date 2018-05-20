@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A00445E20B14C5500AA717D /* MolueNetwokTestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A00445D20B14C5500AA717D /* MolueNetwokTestModel.swift */; };
 		1A1B888F20864CD200C5F4D9 /* MolueUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1B888B20864CD100C5F4D9 /* MolueUserService.swift */; };
 		1A1B889020864CD200C5F4D9 /* MolueResponseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1B888C20864CD200C5F4D9 /* MolueResponseResult.swift */; };
-		1A1B889120864CD200C5F4D9 /* MolueUserProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1B888D20864CD200C5F4D9 /* MolueUserProvider.swift */; };
 		1A1B889220864CD200C5F4D9 /* MolueNetworkConfigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1B888E20864CD200C5F4D9 /* MolueNetworkConfigure.swift */; };
 		1A5BE08B209EC8CA00160243 /* MolueUtilities.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1AEB87D72092173C002230A3 /* MolueUtilities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1A7D9ADA208645B800FA997D /* MolueNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A7D9AD0208645B800FA997D /* MolueNetwork.framework */; };
@@ -45,9 +45,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1A00445D20B14C5500AA717D /* MolueNetwokTestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueNetwokTestModel.swift; sourceTree = "<group>"; };
 		1A1B888B20864CD100C5F4D9 /* MolueUserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MolueUserService.swift; sourceTree = "<group>"; };
 		1A1B888C20864CD200C5F4D9 /* MolueResponseResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MolueResponseResult.swift; sourceTree = "<group>"; };
-		1A1B888D20864CD200C5F4D9 /* MolueUserProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MolueUserProvider.swift; sourceTree = "<group>"; };
 		1A1B888E20864CD200C5F4D9 /* MolueNetworkConfigure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MolueNetworkConfigure.swift; sourceTree = "<group>"; };
 		1A7D9AD0208645B800FA997D /* MolueNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MolueNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A7D9AD3208645B800FA997D /* MolueNetwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MolueNetwork.h; sourceTree = "<group>"; };
@@ -112,11 +112,11 @@
 			children = (
 				1A1B888E20864CD200C5F4D9 /* MolueNetworkConfigure.swift */,
 				1A1B888C20864CD200C5F4D9 /* MolueResponseResult.swift */,
-				1A1B888D20864CD200C5F4D9 /* MolueUserProvider.swift */,
 				1A1B888B20864CD100C5F4D9 /* MolueUserService.swift */,
 				1A7D9AD3208645B800FA997D /* MolueNetwork.h */,
 				1A7D9AD4208645B800FA997D /* Info.plist */,
 				1AADF84320906D5A0020527B /* MolueNetworkProvider.swift */,
+				1A00445D20B14C5500AA717D /* MolueNetwokTestModel.swift */,
 			);
 			path = MolueNetwork;
 			sourceTree = "<group>";
@@ -269,12 +269,14 @@
 				"${SRCROOT}/../Pods/Target Support Files/Pods-MolueNetworkTests/Pods-MolueNetworkTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -326,10 +328,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A1B889220864CD200C5F4D9 /* MolueNetworkConfigure.swift in Sources */,
+				1A00445E20B14C5500AA717D /* MolueNetwokTestModel.swift in Sources */,
 				1A1B889020864CD200C5F4D9 /* MolueResponseResult.swift in Sources */,
 				1AADF84420906D5A0020527B /* MolueNetworkProvider.swift in Sources */,
 				1A1B888F20864CD200C5F4D9 /* MolueUserService.swift in Sources */,
-				1A1B889120864CD200C5F4D9 /* MolueUserProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

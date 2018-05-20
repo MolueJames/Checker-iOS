@@ -17,7 +17,7 @@ public struct MolueProviderModel {
     fileprivate let task: Task
     fileprivate let sampleData: Data
     
-    init(_ baseURL: String? = HTTPConfigure().baseURL, path: String, method: Method, header: [String: String]? = nil, task: Task, sampleData: Data? = "sample data".data(using: String.Encoding.utf8)!) {
+    init(_ baseURL: String? = HTTPConfigure().baseURL, path: String, method: Method, header: [String: String]? = nil, task: Task, sampleData: Data? = "sample data is nil".data(using: String.Encoding.utf8)!) {
         self.baseURL = baseURL!
         self.path = path
         self.method = method

@@ -21,16 +21,16 @@ class MolueNetworkTests: XCTestCase {
     
     func testNetworkProvider() {
         let expectation = self.expectation(description: "request should succeed")
-        AccountService.appVersion(device: "iOS", version: "1.0.0").start(success: { (map) in
-            
-            MolueLogger.network.message(map)
+        AccountService.appVersion(device: "iOS", version: "1.0.0").start { (response:ResponseEnum<MolueNetworkTestModel>) in
+            if case .dictResult(let response) = response {
+                MolueLogger.network.message(response)
+            }
+            if case .listResult(let response) = response {
+                MolueLogger.network.message(response)
+            }
             expectation.fulfill()
-        }, failure: { (error) in
-            MolueLogger.failure.message(error)
-            expectation.fulfill()
-        })
+        }
         waitForExpectations(timeout: 30, handler: nil)
-        
     }
     
     override func tearDown() {

@@ -16,10 +16,17 @@ public enum MolueLogger: String {
     case network = "⛅"
     case dealloc = "♻️"
     case database = "📚"
+    case UIModule = "🎬"
     
     public func message<T>(_ message: T, file: String = #file, method: String = #function, line: Int = #line) {
         if MolueLogger.enable {
             print("\((file as NSString).lastPathComponent)-Line:\(line)-Method:\(method) \(self.rawValue): \(message)")
+        }
+    }
+    
+    public func error<T>(_ message: T, file: String = #file, method: String = #function, line: Int = #line) {
+        if MolueLogger.enable {
+            fatalError("\((file as NSString).lastPathComponent)-Line:\(line)-Method:\(method) \(self.rawValue): \(message)")
         }
     }
 }

@@ -9,72 +9,81 @@
 import Foundation
 import Moya
 import Result
+import ObjectMapper
+import MolueUtilities
 
-public enum ResponseEnum {
-    case success
-    case failure
-    case error
+public typealias responseClosure<Target:Mappable> = (ResponseEnum<Target>) -> Void
+
+fileprivate enum HandleResponseError: Error {
+    case responseTargetError
+    case responseMapperError
 }
 
-public typealias ResultClosure<ResultType> = (ResultType) -> Void
-
-public protocol ResultResponseProtocol {
+public enum ResponseEnum <Target: Mappable>{
+    case dictResult(response: Target)
+    case listResult(response: [Target])
+    case infoResult(response: String)
+    case errorResult(response: Error)
     
-    associatedtype resultType
-    
-    var successClosure: ResultClosure<resultType>? {get set}
-    var errorClosure: ResultClosure<Error>? {get set}
-    
-    func defaultHanldeResult(result: Result<Moya.Response, MoyaError>)
-}
-
-extension ResultResponseProtocol {
-    
-    public func defaultHanldeResult(result: Result<Moya.Response, MoyaError>)  {
-        if case let .success(response) = result {
-            let json = try? response.mapJSON()
-            if let result = json as? resultType {
-                if let closure = successClosure {
-                    closure(result)
-                } else {
-                    fatalError("the succssClosure should not be nil")
-                }
-            } else {
-                fatalError("the result value is not result Type")
-            }
-        }
-        if case let .failure(error) = result {
-            if let closure = errorClosure {
-                closure(error)
-            } else {
-                fatalError("the errorClosure should not be nil")
-            }
+    static func handleNetworkResponse(result: Result<Moya.Response, MoyaError>) -> ResponseEnum {
+        switch result {
+        case let .success(response):
+            return handleSuccessResponse(response: response)
+        case let .failure(error):
+            return ResponseEnum.errorResult(response: error)
         }
     }
-}
 
-public class DefaultResponseResult<SuccessResult>:ResultResponseProtocol  {
+    private static func handleSuccessResponse(response: Moya.Response) -> ResponseEnum  {
+        do {
+            let responseJson = try response.mapJSON()
+            return handleJsonResponse(responseJson: responseJson)
+        } catch {
+            return ResponseEnum.errorResult(response: error)
+        }
+    }
     
-    public typealias resultType = SuccessResult
+    private static func handleJsonResponse(responseJson: Any) -> ResponseEnum {
+        if let response = responseJson as? [String: Any] {
+            return handleDictResponse(response)
+        } else if let response = responseJson as? [[String: Any]] {
+            return handleListResponse(response)
+        } else if let string = responseJson as? String {
+            return ResponseEnum.infoResult(response: string)
+        }
+        return ResponseEnum.errorResult(response: HandleResponseError.responseTargetError)
+    }
     
-    public var successClosure: ResultClosure<resultType>?
+    private static func handleDictResponse(_ responseJson: [String: Any]) -> ResponseEnum {
+        guard let object = Mapper<Target>().map(JSONObject: responseJson) else {
+            return ResponseEnum.errorResult(response: HandleResponseError.responseMapperError)
+        }
+        return ResponseEnum.dictResult(response: object)
+    }
     
-    public var errorClosure: ResultClosure<Error>?
-    
-    public init(success: @escaping ResultClosure<SuccessResult>, error: @escaping ResultClosure<Error>) {
-        self.successClosure = success
-        self.errorClosure = error
+    private static func handleListResponse(_ response: [[String: Any]]) -> ResponseEnum {
+        let list = Mapper<Target>().mapArray(JSONArray: response)
+        return ResponseEnum.listResult(response: list)
     }
 }
 
 public extension MoyaProvider {
     @discardableResult
-    public func request<T:ResultResponseProtocol>(_ target: Target,
-                                                  callbackQueue: DispatchQueue? = .none,
-                                                  progress: ProgressBlock? = .none,
-                                                  responseResult: T) -> Cancellable {
+    public func doRequest<T: Mappable>(_ target: Target, callbackQueue: DispatchQueue? = .none, progress: ProgressBlock? = .none, response: @escaping responseClosure<T>) -> Cancellable {
         return self.request(target, callbackQueue: callbackQueue, progress: progress, completion: { (result) in
-            responseResult.defaultHanldeResult(result: result)
+            response(ResponseEnum<T>.handleNetworkResponse(result: result))
         })
+    }
+}
+
+protocol MolueServiceProtocol {
+    func start<T:Mappable>(_ provider: MoyaProvider<MolueNetworkProvider>, result: @escaping responseClosure<T>)
+    func providerModel() -> MolueProviderModel
+}
+
+extension MolueServiceProtocol {
+    func start<T>(_ provider: MoyaProvider<MolueNetworkProvider> = MoyaProvider<MolueNetworkProvider>(), result: @escaping responseClosure<T>) where T : Mappable {
+        let target = MolueNetworkProvider(self.providerModel())
+        provider.doRequest(target, response: result)
     }
 }

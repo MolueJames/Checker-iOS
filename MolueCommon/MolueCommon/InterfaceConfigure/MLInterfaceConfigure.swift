@@ -8,7 +8,7 @@
 
 import Foundation
 import MolueUtilities
-import MolueFoundation
+
 public class MLInterfaceConfigure {
     private static func navigationBarAppearance() {
         let navigationBar = UINavigationBar.appearance()
@@ -33,7 +33,7 @@ public class MLInterfaceConfigure {
     }
     
     private static func updateUITabBarAppearance() {
-        let tabBar = UITabBar.appearance(whenContainedInInstancesOf: [MLTabBarController.self])
+        let tabBar = UITabBar.appearance(whenContainedInInstancesOf: [UITabBarController.self])
         tabBar.tintColor = UIColor.init(hex: 0x1B82D2)
         tabBar.backgroundImage = UIImage.init(color: .white, size: CGSize.init(width: MLConfigure.screenWidth, height: 49))
     }

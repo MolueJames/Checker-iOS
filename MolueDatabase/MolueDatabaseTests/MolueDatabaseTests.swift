@@ -33,23 +33,6 @@ class MolueDatabaseTests: XCTestCase {
     func testExample() {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-        MLDatabaseManager.shared.doConnection("333333")
-        users.createOperation()
-        var user = users.init()
-        user.id = "123"
-        user.name = "james"
-        user.email = "james@qq.com"
-//        users.insertOperation(user)
-        users.updateObjectOperation(user)
-        
-        let userlist:[users] = users.selectObjectOperation()
-        MolueLogger.database.message(userlist)
-        
-        user.name = "alice"
-        users.updateObjectOperation(user)
-        
-        let auserlist:[users] = users.selectObjectOperation()
-        MolueLogger.database.message(auserlist)
     }
     
     func testProtocol () {

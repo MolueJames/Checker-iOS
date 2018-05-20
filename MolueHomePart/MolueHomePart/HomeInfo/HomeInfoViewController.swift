@@ -20,7 +20,7 @@ class HomeInfoViewController: MLBaseViewController, NVActivityIndicatorViewable 
         didSet {
             tableview.delegate = self
             tableview.dataSource = self
-            tableview.register(HomeInfoTableViewCell.self, forCellReuseIdentifier: cellIdentifier)
+            tableview.register(xibWithCellClass: HomeInfoTableViewCell.self)
             tableview.tableHeaderView = headerView
         }
     }
@@ -59,7 +59,7 @@ class HomeInfoViewController: MLBaseViewController, NVActivityIndicatorViewable 
     } ()
     
     lazy var headerView: HomeInfoTableHeaderView! = {
-        let view: HomeInfoTableHeaderView! = HomeInfoTableHeaderView.createFromXib()
+        let view: HomeInfoTableHeaderView = HomeInfoTableHeaderView.createFromXib()
         view.frame = CGRect.init(x: 0, y: 0, width: MLConfigure.screenWidth, height: 405)
         view.backgroundColor = .gray
         return view
@@ -95,10 +95,7 @@ extension HomeInfoViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: HomeInfoTableViewCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! HomeInfoTableViewCell
-        
+        let cell = tableView.dequeueReusableCell(withClass: HomeInfoTableViewCell.self)!
         return cell
     }
-    
-    
 }

@@ -74,6 +74,7 @@ target 'MolueNetwork' do
     project 'MolueNetwork/MolueNetwork.xcodeproj'
         pod 'Alamofire', '~> 4.7'
         pod 'Moya', '~> 11.0'
+        pod 'ObjectMapper', '~> 3.1'
     target 'MolueNetworkTests' do
         inherit! :search_paths
     end

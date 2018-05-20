@@ -163,5 +163,15 @@ public extension UITableView {
         register(UINib(nibName: identifier, bundle: bundle), forCellReuseIdentifier: identifier)
     }
 	
+    /// SwifterSwift: Register UITableViewCell with .xib file using only its corresponding class.
+    ///               Assumes that the .xib filename and cell class has the same name.
+    ///
+    /// - Parameter name: UITableViewCell type.
+    public func register<T: UITableViewCell>(xibWithCellClass name: T.Type) {
+        let info = NSStringFromClass(T.self).separateTypeName()
+        guard let module = info.module, let identifier = info.file else {fatalError("module or idenitifer is nil")}
+        guard let bundle = Bundle.create(module: module) else {fatalError("bundle is nil")}
+        register(UINib(nibName: identifier, bundle: bundle), forCellReuseIdentifier: identifier)
+    }
 }
 #endif
