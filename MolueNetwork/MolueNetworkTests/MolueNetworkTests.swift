@@ -21,7 +21,7 @@ class MolueNetworkTests: XCTestCase {
     
     func testNetworkProvider() {
         let expectation = self.expectation(description: "request should succeed")
-        AccountService.appVersion(device: "iOS", version: "1.0.0").start { (response:ResponseEnum<MolueNetworkTestModel>) in
+        AccountService.appVersion(device: "iOS", version: "1.0.0").start({ (response:ResponseEnum<MolueNetworkTestModel>) in
             if case .dictResult(let response) = response {
                 MolueLogger.network.message(response)
             }
@@ -29,7 +29,7 @@ class MolueNetworkTests: XCTestCase {
                 MolueLogger.network.message(response)
             }
             expectation.fulfill()
-        }
+        })
         waitForExpectations(timeout: 30, handler: nil)
     }
     

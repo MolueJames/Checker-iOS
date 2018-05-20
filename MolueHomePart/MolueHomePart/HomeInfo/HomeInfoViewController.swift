@@ -1,3 +1,4 @@
+
 //
 //  HomeInforViewController.swift
 //  MolueHomePart
@@ -14,6 +15,7 @@ import ESPullToRefresh
 import MolueNetwork
 import NVActivityIndicatorView
 import MolueFoundation
+import Moya
 class HomeInfoViewController: MLBaseViewController, NVActivityIndicatorViewable {
     let cellIdentifier = "HomeInfoCellIdentifier"
     @IBOutlet weak var tableview: UITableView! {
@@ -69,6 +71,14 @@ class HomeInfoViewController: MLBaseViewController, NVActivityIndicatorViewable 
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.navigationItem.titleView = titleLabel
+        let request = AccountService.appVersion(device: "iOS", version: "1.0.0")
+        request.start({ (response:ResultEnum<MolueNetworkTestModel>) in
+            
+        }, delegate: self)
+        
+        AccountService.appVersion(device: "iOS", version: "1.0.0").start({ (response:ResultEnum<MolueNetworkTestModel>) in
+            
+        }, delegate: self)
     }
     
     @IBAction func buttonClicked(button: Any?) {
@@ -82,6 +92,17 @@ class HomeInfoViewController: MLBaseViewController, NVActivityIndicatorViewable 
         // Dispose of any resources that can be recreated.
     }
 }
+
+extension HomeInfoViewController: NetworkActivityDelegate {
+    func networkActivityBegin(target: MolueNetworkProvider) {
+        
+    }
+    
+    func networkActivityEnded(target: MolueNetworkProvider) {
+        
+    }
+}
+
 
 extension HomeInfoViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

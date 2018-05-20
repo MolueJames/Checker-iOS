@@ -8,6 +8,8 @@
 
 import Foundation
 import Moya
+import ObjectMapper
+
 public typealias Method = Moya.Method
 public struct MolueProviderModel {
     fileprivate let baseURL: String
@@ -24,6 +26,13 @@ public struct MolueProviderModel {
         self.header = header
         self.task = task
         self.sampleData = sampleData!
+    }
+    
+    public func start<T>(_ result: @escaping responseClosure<T>, delegate: NetworkActivityDelegate? = nil) where T : Mappable {
+        let networkPlugin = MolueNetworkPlugin.init(delegate: delegate)
+        let provider = MoyaProvider<MolueNetworkProvider>(plugins:[networkPlugin])
+        let target = MolueNetworkProvider(self)
+        provider.doRequest(target, response: result)
     }
 }
 
