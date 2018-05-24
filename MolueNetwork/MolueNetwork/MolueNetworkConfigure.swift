@@ -20,7 +20,7 @@ public enum AppSchemeStatus {
 }
 
 public struct HTTPConfigure {
-    var baseURL: String  {
+    public static var baseURL: String  {
         switch AppSchemeStatus.base() {
         case .debug:
             return "https://api.fushuninsurance.com/insurance-guide"
@@ -29,7 +29,7 @@ public struct HTTPConfigure {
         }
     }
     
-    var header: Dictionary<String, String> {
+    public static var header: Dictionary<String, String> {
         switch AppSchemeStatus.base() {
         case .debug:
             return ["ver":"1.1.0","Content-Type":"application/json"]
@@ -37,4 +37,10 @@ public struct HTTPConfigure {
             return ["ver":"1.1.0","Content-Type":"application/json"]
         }
     }
+}
+
+public protocol MolueActivityDelegate: NSObjectProtocol {
+    func networkActivityStarted()
+    func networkActivitySuccess()
+    func networkActivityFailure(error: Error)
 }

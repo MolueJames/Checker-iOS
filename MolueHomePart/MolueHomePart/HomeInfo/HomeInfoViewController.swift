@@ -56,13 +56,13 @@ class HomeInfoViewController: MLBaseViewController, NVActivityIndicatorViewable 
         label.font = UIFont.boldSystemFont(ofSize: 18)
         label.textAlignment = .center
         label.textColor = .white
-        label.text = "安监通"
+//        label.text = "安监通"
         return label
     } ()
     
     lazy var headerView: HomeInfoTableHeaderView! = {
         let view: HomeInfoTableHeaderView = HomeInfoTableHeaderView.createFromXib()
-        view.frame = CGRect.init(x: 0, y: 0, width: MLConfigure.screenWidth, height: 405)
+        view.frame = CGRect.init(x: 0, y: 0, width: MLConfigure.screenWidth, height: 0)
         view.backgroundColor = .gray
         return view
     }()
@@ -71,14 +71,25 @@ class HomeInfoViewController: MLBaseViewController, NVActivityIndicatorViewable 
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.navigationItem.titleView = titleLabel
-        let request = AccountService.appVersion(device: "iOS", version: "1.0.0")
-        request.start({ (response:ResultEnum<MolueNetworkTestModel>) in
-            
-        }, delegate: self)
+//        let request = AccountService.appVersion(device: "iOS", version: "1.0.0")
+//        request.start({ (response:ResultEnum<MolueNetworkTestModel>) in
+//
+//        }, delegate: self)
+//
         
-        AccountService.appVersion(device: "iOS", version: "1.0.0").start({ (response:ResultEnum<MolueNetworkTestModel>) in
-            
-        }, delegate: self)
+        let request = MolueDataRequest.init(parameter: ["channelCode": "DS0001"], method: .get, path: "/api/home")
+        let manager = MolueRequestManager.init(request: request, delegate: self)
+        manager.handleFailureResponse { (error) in
+            print(error.localizedDescription)
+            print(error)
+        }
+        manager.handleSuccessResponse { (result) in
+            print(result)
+        }
+        manager.start()
+//        AccountService.appVersion(device: "iOS", version: "1.0.0").start({ (response:ResultEnum<MolueNetworkTestModel>) in
+//
+//        }, delegate: self)
     }
     
     @IBAction func buttonClicked(button: Any?) {
@@ -93,30 +104,43 @@ class HomeInfoViewController: MLBaseViewController, NVActivityIndicatorViewable 
     }
 }
 
-extension HomeInfoViewController: NetworkActivityDelegate {
-    func networkActivityBegin(target: MolueNetworkProvider) {
-        
-    }
-    
-    func networkActivityEnded(target: MolueNetworkProvider) {
-        
-    }
-}
+//    func networkActivityBegin(target: MolueNetworkProvider) {
+//
+//    }
+//
+//    func networkActivityEnded(target: MolueNetworkProvider) {
+//
+//    }
+//}
 
 
 extension HomeInfoViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        return 0
     }
 }
 
 extension HomeInfoViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withClass: HomeInfoTableViewCell.self)!
         return cell
+    }
+}
+
+extension MLBaseViewController: MolueActivityDelegate {
+    public func networkActivityStarted() {
+        
+    }
+    
+    public func networkActivitySuccess() {
+        MolueLogger.network.message("success")
+    }
+    
+    public func networkActivityFailure(error: Error) {
+        print(error.localizedDescription)
     }
 }

@@ -9,6 +9,7 @@
 import XCTest
 import Moya
 import MolueUtilities
+import Alamofire
 @testable import MolueNetwork
 
 class MolueNetworkTests: XCTestCase {
@@ -19,17 +20,61 @@ class MolueNetworkTests: XCTestCase {
         
     }
     
-    func testNetworkProvider() {
+    func testAccountService()  {
         let expectation = self.expectation(description: "request should succeed")
-        AccountService.appVersion(device: "iOS", version: "1.0.0").start({ (response:ResponseEnum<MolueNetworkTestModel>) in
-            if case .dictResult(let response) = response {
-                MolueLogger.network.message(response)
-            }
-            if case .listResult(let response) = response {
-                MolueLogger.network.message(response)
-            }
+        AccountService.appVersion(device: "iOS", version: "1.0.0").start({ (result:ResultEnum<MolueNetworkTestModel>) in
+            print(result)
             expectation.fulfill()
-        })
+        }, delegate: nil)
+        waitForExpectations(timeout: 30, handler: nil)
+    }
+    
+    func testNetworkProvider() {
+        
+        let expectation = self.expectation(description: "request should succeed")
+        let request = MolueDataRequest.init(parameter: ["channelCode": "DS0001"], method: .post, path: "/api/home")
+        let manager = MolueRequestManager.init(request: request)
+        manager.handleFailureResponse { (error) in
+            print(error.localizedDescription)
+            print(error)
+            expectation.fulfill()
+        }
+        manager.handleSuccessResponse { (result) in
+            print(result)
+            expectation.fulfill()
+        }
+        manager.start()
+//        manager.handleFailureResponse { (error) in
+//
+//        }.handleSuccessResponse { (result) in
+//
+//        }.start()
+//        dataRequest.validate { (request, response, data) -> Request.ValidationResult in
+//            if response.statusCode == 200 {
+//                return .success
+//            } else {
+//                return .failure(error.testerror)
+//            }
+//        }
+//        dataRequest.responseJSON { (response) in
+//            switch response.result {
+//            case .success(let response):
+//                break
+//            case .failure(let error):
+//                print(error)
+//                break
+//            }
+//            print(response.result)
+
+//        }
+        
+        
+            
+            
+//            .responseJSON { (response) in
+//
+//
+//        }
         waitForExpectations(timeout: 30, handler: nil)
     }
     
