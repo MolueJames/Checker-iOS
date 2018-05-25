@@ -14,15 +14,23 @@ public extension DataRequest {
     
     public func responseHandler(delegate observer: MolueActivityDelegate?, queue: DispatchQueue? = nil, options: JSONSerialization.ReadingOptions = .allowFragments, success:MolueResultClosure<Any?>? = nil, failure: MolueResultClosure<Error>? = nil) {
         let operation = BlockOperation.init { [weak observer]  in
-            self.printRequestInfo()
+            if self.handleDefaultError(self.delegate.error, delegate: observer, failure: failure) {return}
             let status = self.validateResponse(self.response)
             let serviceResult = self.handleResponseStatus(status, options: options)
             self.handleServiceResult(serviceResult, delegate: observer, success: success, failure: failure)
+            self.startRequestInfoLogger()
         }
         delegate.queue.addOperation(operation)
     }
     
-    private func printRequestInfo () {
+    private func handleDefaultError(_ error: Error?, delegate: MolueActivityDelegate?, failure: MolueResultClosure<Error>? = nil) -> Bool {
+        guard let error = error else {return false}
+        delegate?.networkActivityFailure(error: error)
+        failure?(error)
+        return true
+    }
+    
+    private func startRequestInfoLogger () {
         MolueLogger.network.message(self.request)
         MolueLogger.network.message(self.response)
     }
@@ -46,14 +54,14 @@ public extension DataRequest {
         case .authenticateFailure(let description):
             let name = NSNotification.Name(rawValue: "com.authorization.timeout.molue")
             NotificationCenter.default.post(name: name, object: nil)
-            let error = MolueResponseStatusError.authenticateFailure(description: description)
+            let error = MolueStatusError.authenticateFailure(description: description)
             return MolueServiceResponse.resultFailure(result: error)
         case .requestIsNotExisted(let description):
-            let error = MolueResponseStatusError.requestIsNotExisted(description: description)
+            let error = MolueStatusError.requestIsNotExisted(description: description)
             return MolueServiceResponse.resultFailure(result: error)
         case .bussinessError(let data):
             let result = self.transferJsonWithResponseData(data, options: options)
-            let error = MolueResponseStatusError.bussinessError(result: result)
+            let error = MolueStatusError.bussinessError(result: result)
             return MolueServiceResponse.resultFailure(result: error)
         }
     }
@@ -91,12 +99,12 @@ private enum MolueServiceResponse {
     case resultFailure(result: Error)
 }
 
-private enum MolueResponseStatusError: Error {
+private enum MolueStatusError: LocalizedError {
     case authenticateFailure(description: String)
     case requestIsNotExisted(description: String)
     case bussinessError(result: Any?)
     
-    var localizedDescription: String {
+    var errorDescription: String? {
         switch self {
         case .authenticateFailure(let description):
             return description
