@@ -14,11 +14,7 @@ PODS:
     - JCore (~> 1.1.7)
   - KeychainAccess (3.1.1)
   - Kingfisher (4.7.0)
-  - Moya (11.0.2):
-    - Moya/Core (= 11.0.2)
-  - Moya/Core (11.0.2):
-    - Alamofire (~> 4.1)
-    - Result (~> 3.0)
+  - Locksmith (4.0.0)
   - NVActivityIndicatorView (4.2.0):
     - NVActivityIndicatorView/Presenter (= 4.2.0)
   - NVActivityIndicatorView/Presenter (4.2.0)
@@ -30,7 +26,6 @@ PODS:
     - Permission/Core
   - Permission/Notifications (2.0.4):
     - Permission/Core
-  - Result (3.2.4)
   - SnapKit (4.0.0)
   - SQLite.swift (0.11.5):
     - SQLite.swift/standard (= 0.11.5)
@@ -49,7 +44,7 @@ DEPENDENCIES:
   - JPush (~> 3.0.9)
   - KeychainAccess (~> 3.1.1)
   - Kingfisher (~> 4.0)
-  - Moya (~> 11.0)
+  - Locksmith (~> 4.0.0)
   - NVActivityIndicatorView (~> 4.2.0)
   - ObjectMapper (~> 3.1)
   - Permission/Camera (~> 2.0.4)
@@ -74,11 +69,10 @@ SPEC REPOS:
     - JPush
     - KeychainAccess
     - Kingfisher
-    - Moya
+    - Locksmith
     - NVActivityIndicatorView
     - ObjectMapper
     - Permission
-    - Result
     - SnapKit
     - SQLite.swift
     - URLNavigator
@@ -97,16 +91,15 @@ SPEC CHECKSUMS:
   JPush: 003d9eaef8ba2df76de32573d0c8aa62b92b3c82
   KeychainAccess: 7bd430028059754a3debab3cfc0bd1fc7fb85df3
   Kingfisher: da6b005aa96d37698e3e4f1ccfe96a5b9bbf27d6
-  Moya: a725035953bc1c0eb1be505ab903984501d82440
+  Locksmith: e9bebbaaa4cee3c511bc358a44f843c3fe00e21f
   NVActivityIndicatorView: 75c9634073e03b31d7e2748cd2417feab1206195
   ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
   Permission: 6853b9694e66a6c9197468c66d1935c3629cbf9c
-  Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SQLite.swift: 6e5356850bb1791459f8c16d6ee9195b28714a2e
   URLNavigator: af5582fbbb3586c958be16835d799bfdb23a4793
   ViewAnimator: 0c70ee4e1dfbe9d4f129407f81db91f6948900aa
 
-PODFILE CHECKSUM: acc4b50a7ef10e0520d51c02ebfaf267f0eb1290
+PODFILE CHECKSUM: 18a3d0ac08af9c770d9eb189fcf2b96cd179274d
 
 COCOAPODS: 1.5.0

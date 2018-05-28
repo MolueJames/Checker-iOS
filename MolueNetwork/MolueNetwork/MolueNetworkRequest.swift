@@ -34,6 +34,11 @@ open class MolueRequestManager {
         self.dataRequest?.responseHandler(delegate: delegate, queue: queue, options: options, success: success, failure: failure)
     }
     @discardableResult
+    public func handleAuthenticate(usingCredential: URLCredential) -> MolueRequestManager {
+        self.dataRequest = self.dataRequest?.authenticate(usingCredential: usingCredential)
+        return self
+    }
+    @discardableResult
     public func handleSuccessResponse(_ success: MolueResultClosure<Any?>?) -> MolueRequestManager {
         self.success = success
         return self

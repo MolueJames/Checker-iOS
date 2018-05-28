@@ -19,7 +19,7 @@ target 'MolueSafty' do
         pod 'Alamofire', '~> 4.7'
         pod 'SnapKit', '~> 4.0.0'
         pod 'SQLite.swift', '~> 0.11.4'
-        pod 'Moya', '~> 11.0'
+        pod 'Locksmith', '~> 4.0.0'
         pod 'ObjectMapper', '~> 3.1'
         pod 'JPush', '~> 3.0.9'
         pod 'AMapSearch', '~> 5.7.0'
@@ -73,7 +73,7 @@ end
 target 'MolueNetwork' do
     project 'MolueNetwork/MolueNetwork.xcodeproj'
         pod 'Alamofire', '~> 4.7'
-        pod 'Moya', '~> 11.0'
+        pod 'Locksmith', '~> 4.0.0'
         pod 'ObjectMapper', '~> 3.1'
     target 'MolueNetworkTests' do
         inherit! :search_paths
