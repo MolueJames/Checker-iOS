@@ -31,7 +31,10 @@ public extension DataRequest {
     
     private func startRequestInfoLogger () {
         MolueLogger.network.message(self.request)
+        MolueLogger.network.message(self.request?.allHTTPHeaderFields)
         MolueLogger.network.message(self.response)
+        MolueLogger.network.message(self.response?.allHeaderFields)
+        MolueLogger.network.message(self.response?.description)
     }
     
     private func handleServiceResult(_ result: MolueServiceResponse, delegate: MolueActivityDelegate?, success:MolueResultClosure<Any?>? = nil, failure: MolueResultClosure<Error>? = nil) {
@@ -94,6 +97,7 @@ public extension DataRequest {
         do {
            return try JSONSerialization.jsonObject(with: data, options: options)
         } catch {
+            MolueLogger.failure.message(error)
             throw MolueStatusError.transferJsonFailure
         }
     }
@@ -130,7 +134,6 @@ public enum MolueStatusError: LocalizedError {
     case requestIsNotExisted
     case transferJsonFailure
     case mapperResponseError
-    case successResponseIsNil
     case bussinessError(result: Any?)
     
     public var errorDescription: String? {
@@ -143,8 +146,6 @@ public enum MolueStatusError: LocalizedError {
             return "服务器返回数据异常!"
         case .mapperResponseError:
             return "服务器数据映射出错!"
-        case .successResponseIsNil:
-            return "服务器数据为空数据!"
         case .bussinessError(let result):
             return handleErrorResult(result: result)
         }

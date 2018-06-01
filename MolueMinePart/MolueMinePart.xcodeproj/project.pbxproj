@@ -11,14 +11,28 @@
 		1A1B88AE20864D8500C5F4D9 /* MolueMinePartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1B88AD20864D8500C5F4D9 /* MolueMinePartTests.swift */; };
 		1A1B88B020864D8500C5F4D9 /* MolueMinePart.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A1B88A220864D8500C5F4D9 /* MolueMinePart.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1A501495209414A600DB931E /* MolueNavigator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A501494209414A600DB931E /* MolueNavigator.framework */; };
-		1A50149920943A6B00DB931E /* MineInfoViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A50149820943A6B00DB931E /* MineInfoViewController.storyboard */; };
 		1A5014CA2097498400DB931E /* MolueCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5014C92097498400DB931E /* MolueCommon.framework */; };
 		1A5014CC2097498400DB931E /* MolueDatabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5014CB2097498400DB931E /* MolueDatabase.framework */; };
 		1A5014CE2097498400DB931E /* MolueFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5014CD2097498400DB931E /* MolueFoundation.framework */; };
 		1A5014D02097498400DB931E /* MolueNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5014CF2097498400DB931E /* MolueNetwork.framework */; };
 		1A5014D22097498400DB931E /* MolueUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5014D12097498400DB931E /* MolueUtilities.framework */; };
 		1AA7357820A9E05A00DF7CD0 /* MolueMine.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AA7357720A9E05A00DF7CD0 /* MolueMine.xcassets */; };
-		1AEB87E12092CA3F002230A3 /* MineInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEB87E02092CA3F002230A3 /* MineInfoViewController.swift */; };
+		1AAF7B4520C190590051EC18 /* BasicArchivesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAF7B4420C190590051EC18 /* BasicArchivesViewController.swift */; };
+		1AAF7B4720C190960051EC18 /* EnterpriseInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAF7B4620C190960051EC18 /* EnterpriseInformationViewController.swift */; };
+		1AAF7B4920C190B90051EC18 /* ContactInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAF7B4820C190B90051EC18 /* ContactInformationViewController.swift */; };
+		1AAF7B4B20C1916E0051EC18 /* RiskFeatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAF7B4A20C1916E0051EC18 /* RiskFeatureViewController.swift */; };
+		1AAF7B4D20C1919F0051EC18 /* HazardousMachineryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAF7B4C20C1919F0051EC18 /* HazardousMachineryViewController.swift */; };
+		1AAF7B4F20C191D60051EC18 /* EnterpriseRiskFeatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAF7B4E20C191D60051EC18 /* EnterpriseRiskFeatureViewController.swift */; };
+		1AAF7B5120C192600051EC18 /* SecurityAdministratorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAF7B5020C192600051EC18 /* SecurityAdministratorViewController.swift */; };
+		1AAF7B5320C1926E0051EC18 /* AddSecurityAdministratorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAF7B5220C1926E0051EC18 /* AddSecurityAdministratorViewController.swift */; };
+		1AAF7B5520C1932C0051EC18 /* EnterpriseInformationViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AAF7B5420C1932C0051EC18 /* EnterpriseInformationViewController.storyboard */; };
+		1AAF7B5720C1933E0051EC18 /* BasicArchivesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AAF7B5620C1933E0051EC18 /* BasicArchivesViewController.storyboard */; };
+		1AAF7B5920C193470051EC18 /* ContactInformationViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AAF7B5820C193470051EC18 /* ContactInformationViewController.storyboard */; };
+		1AAF7B5B20C193500051EC18 /* RiskFeatureViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AAF7B5A20C193500051EC18 /* RiskFeatureViewController.storyboard */; };
+		1AAF7B5D20C1935D0051EC18 /* EnterpriseRiskFeatureViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AAF7B5C20C1935D0051EC18 /* EnterpriseRiskFeatureViewController.storyboard */; };
+		1AAF7B5F20C1936C0051EC18 /* HazardousMachineryViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AAF7B5E20C1936C0051EC18 /* HazardousMachineryViewController.storyboard */; };
+		1AAF7B6120C193770051EC18 /* SecurityAdministratorViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AAF7B6020C193770051EC18 /* SecurityAdministratorViewController.storyboard */; };
+		1AAF7B6320C193800051EC18 /* AddSecurityAdministratorViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AAF7B6220C193800051EC18 /* AddSecurityAdministratorViewController.storyboard */; };
 		A1B2025363B9BFEEB3CA22AC /* Pods_MolueMinePart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E94F0281829CA034AC7E0935 /* Pods_MolueMinePart.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,14 +54,28 @@
 		1A1B88AD20864D8500C5F4D9 /* MolueMinePartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueMinePartTests.swift; sourceTree = "<group>"; };
 		1A1B88AF20864D8500C5F4D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A501494209414A600DB931E /* MolueNavigator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueNavigator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1A50149820943A6B00DB931E /* MineInfoViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MineInfoViewController.storyboard; sourceTree = "<group>"; };
 		1A5014C92097498400DB931E /* MolueCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A5014CB2097498400DB931E /* MolueDatabase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueDatabase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A5014CD2097498400DB931E /* MolueFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A5014CF2097498400DB931E /* MolueNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A5014D12097498400DB931E /* MolueUtilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueUtilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AA7357720A9E05A00DF7CD0 /* MolueMine.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MolueMine.xcassets; sourceTree = "<group>"; };
-		1AEB87E02092CA3F002230A3 /* MineInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineInfoViewController.swift; sourceTree = "<group>"; };
+		1AAF7B4420C190590051EC18 /* BasicArchivesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicArchivesViewController.swift; sourceTree = "<group>"; };
+		1AAF7B4620C190960051EC18 /* EnterpriseInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterpriseInformationViewController.swift; sourceTree = "<group>"; };
+		1AAF7B4820C190B90051EC18 /* ContactInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactInformationViewController.swift; sourceTree = "<group>"; };
+		1AAF7B4A20C1916E0051EC18 /* RiskFeatureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskFeatureViewController.swift; sourceTree = "<group>"; };
+		1AAF7B4C20C1919F0051EC18 /* HazardousMachineryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HazardousMachineryViewController.swift; sourceTree = "<group>"; };
+		1AAF7B4E20C191D60051EC18 /* EnterpriseRiskFeatureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterpriseRiskFeatureViewController.swift; sourceTree = "<group>"; };
+		1AAF7B5020C192600051EC18 /* SecurityAdministratorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityAdministratorViewController.swift; sourceTree = "<group>"; };
+		1AAF7B5220C1926E0051EC18 /* AddSecurityAdministratorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSecurityAdministratorViewController.swift; sourceTree = "<group>"; };
+		1AAF7B5420C1932C0051EC18 /* EnterpriseInformationViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EnterpriseInformationViewController.storyboard; sourceTree = "<group>"; };
+		1AAF7B5620C1933E0051EC18 /* BasicArchivesViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BasicArchivesViewController.storyboard; sourceTree = "<group>"; };
+		1AAF7B5820C193470051EC18 /* ContactInformationViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ContactInformationViewController.storyboard; sourceTree = "<group>"; };
+		1AAF7B5A20C193500051EC18 /* RiskFeatureViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RiskFeatureViewController.storyboard; sourceTree = "<group>"; };
+		1AAF7B5C20C1935D0051EC18 /* EnterpriseRiskFeatureViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EnterpriseRiskFeatureViewController.storyboard; sourceTree = "<group>"; };
+		1AAF7B5E20C1936C0051EC18 /* HazardousMachineryViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HazardousMachineryViewController.storyboard; sourceTree = "<group>"; };
+		1AAF7B6020C193770051EC18 /* SecurityAdministratorViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SecurityAdministratorViewController.storyboard; sourceTree = "<group>"; };
+		1AAF7B6220C193800051EC18 /* AddSecurityAdministratorViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddSecurityAdministratorViewController.storyboard; sourceTree = "<group>"; };
 		23650B8EF1C713F76417DF5C /* Pods-MolueMinePart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueMinePart.release.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueMinePart/Pods-MolueMinePart.release.xcconfig"; sourceTree = "<group>"; };
 		CCE1C3C7822940047D1B665E /* Pods-MolueMinePart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueMinePart.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueMinePart/Pods-MolueMinePart.debug.xcconfig"; sourceTree = "<group>"; };
 		E94F0281829CA034AC7E0935 /* Pods_MolueMinePart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MolueMinePart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,7 +130,11 @@
 		1A1B88A120864D8400C5F4D9 /* MolueMinePart */ = {
 			isa = PBXGroup;
 			children = (
-				1AEB87DF2092CA14002230A3 /* MineInfor */,
+				1AAF7B4020C18AB80051EC18 /* 安全管理员 */,
+				1AAF7B3F20C18A9F0051EC18 /* 危险特征 */,
+				1AAF7B3E20C18A700051EC18 /* 联络信息 */,
+				1AAF7B3D20C18A5D0051EC18 /* 基本档案 */,
+				1AEB87DF2092CA14002230A3 /* 基础信息 */,
 				1A1B88A220864D8500C5F4D9 /* MolueMinePart.h */,
 				1A1B88A320864D8500C5F4D9 /* Info.plist */,
 				1AA7357720A9E05A00DF7CD0 /* MolueMine.xcassets */,
@@ -119,13 +151,79 @@
 			path = MolueMinePartTests;
 			sourceTree = "<group>";
 		};
-		1AEB87DF2092CA14002230A3 /* MineInfor */ = {
+		1AAF7B3D20C18A5D0051EC18 /* 基本档案 */ = {
 			isa = PBXGroup;
 			children = (
-				1AEB87E02092CA3F002230A3 /* MineInfoViewController.swift */,
-				1A50149820943A6B00DB931E /* MineInfoViewController.storyboard */,
+				1AAF7B4420C190590051EC18 /* BasicArchivesViewController.swift */,
+				1AAF7B5620C1933E0051EC18 /* BasicArchivesViewController.storyboard */,
 			);
-			path = MineInfor;
+			path = "基本档案";
+			sourceTree = "<group>";
+		};
+		1AAF7B3E20C18A700051EC18 /* 联络信息 */ = {
+			isa = PBXGroup;
+			children = (
+				1AAF7B4820C190B90051EC18 /* ContactInformationViewController.swift */,
+				1AAF7B5820C193470051EC18 /* ContactInformationViewController.storyboard */,
+			);
+			path = "联络信息";
+			sourceTree = "<group>";
+		};
+		1AAF7B3F20C18A9F0051EC18 /* 危险特征 */ = {
+			isa = PBXGroup;
+			children = (
+				1AAF7B4320C18BA90051EC18 /* 危险设备 */,
+				1AAF7B4220C18B7A0051EC18 /* 企业危险特征 */,
+				1AAF7B4A20C1916E0051EC18 /* RiskFeatureViewController.swift */,
+				1AAF7B5A20C193500051EC18 /* RiskFeatureViewController.storyboard */,
+			);
+			path = "危险特征";
+			sourceTree = "<group>";
+		};
+		1AAF7B4020C18AB80051EC18 /* 安全管理员 */ = {
+			isa = PBXGroup;
+			children = (
+				1AAF7B4120C18AD00051EC18 /* 添加管理员 */,
+				1AAF7B5020C192600051EC18 /* SecurityAdministratorViewController.swift */,
+				1AAF7B6020C193770051EC18 /* SecurityAdministratorViewController.storyboard */,
+			);
+			path = "安全管理员";
+			sourceTree = "<group>";
+		};
+		1AAF7B4120C18AD00051EC18 /* 添加管理员 */ = {
+			isa = PBXGroup;
+			children = (
+				1AAF7B5220C1926E0051EC18 /* AddSecurityAdministratorViewController.swift */,
+				1AAF7B6220C193800051EC18 /* AddSecurityAdministratorViewController.storyboard */,
+			);
+			path = "添加管理员";
+			sourceTree = "<group>";
+		};
+		1AAF7B4220C18B7A0051EC18 /* 企业危险特征 */ = {
+			isa = PBXGroup;
+			children = (
+				1AAF7B4E20C191D60051EC18 /* EnterpriseRiskFeatureViewController.swift */,
+				1AAF7B5C20C1935D0051EC18 /* EnterpriseRiskFeatureViewController.storyboard */,
+			);
+			path = "企业危险特征";
+			sourceTree = "<group>";
+		};
+		1AAF7B4320C18BA90051EC18 /* 危险设备 */ = {
+			isa = PBXGroup;
+			children = (
+				1AAF7B4C20C1919F0051EC18 /* HazardousMachineryViewController.swift */,
+				1AAF7B5E20C1936C0051EC18 /* HazardousMachineryViewController.storyboard */,
+			);
+			path = "危险设备";
+			sourceTree = "<group>";
+		};
+		1AEB87DF2092CA14002230A3 /* 基础信息 */ = {
+			isa = PBXGroup;
+			children = (
+				1AAF7B4620C190960051EC18 /* EnterpriseInformationViewController.swift */,
+				1AAF7B5420C1932C0051EC18 /* EnterpriseInformationViewController.storyboard */,
+			);
+			path = "基础信息";
 			sourceTree = "<group>";
 		};
 		573542AAC9DCB6D9DB5A82A7 /* Pods */ = {
@@ -244,8 +342,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A50149920943A6B00DB931E /* MineInfoViewController.storyboard in Resources */,
+				1AAF7B6320C193800051EC18 /* AddSecurityAdministratorViewController.storyboard in Resources */,
+				1AAF7B5D20C1935D0051EC18 /* EnterpriseRiskFeatureViewController.storyboard in Resources */,
 				1AA7357820A9E05A00DF7CD0 /* MolueMine.xcassets in Resources */,
+				1AAF7B5720C1933E0051EC18 /* BasicArchivesViewController.storyboard in Resources */,
+				1AAF7B5F20C1936C0051EC18 /* HazardousMachineryViewController.storyboard in Resources */,
+				1AAF7B5520C1932C0051EC18 /* EnterpriseInformationViewController.storyboard in Resources */,
+				1AAF7B6120C193770051EC18 /* SecurityAdministratorViewController.storyboard in Resources */,
+				1AAF7B5B20C193500051EC18 /* RiskFeatureViewController.storyboard in Resources */,
+				1AAF7B5920C193470051EC18 /* ContactInformationViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,7 +389,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1AEB87E12092CA3F002230A3 /* MineInfoViewController.swift in Sources */,
+				1AAF7B5320C1926E0051EC18 /* AddSecurityAdministratorViewController.swift in Sources */,
+				1AAF7B4920C190B90051EC18 /* ContactInformationViewController.swift in Sources */,
+				1AAF7B5120C192600051EC18 /* SecurityAdministratorViewController.swift in Sources */,
+				1AAF7B4720C190960051EC18 /* EnterpriseInformationViewController.swift in Sources */,
+				1AAF7B4D20C1919F0051EC18 /* HazardousMachineryViewController.swift in Sources */,
+				1AAF7B4B20C1916E0051EC18 /* RiskFeatureViewController.swift in Sources */,
+				1AAF7B4F20C191D60051EC18 /* EnterpriseRiskFeatureViewController.swift in Sources */,
+				1AAF7B4520C190590051EC18 /* BasicArchivesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

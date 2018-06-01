@@ -11,6 +11,9 @@ import SnapKit
 import MolueUtilities
 
 open class MLBaseViewController: UIViewController, MLNavigationProtocol {
+    func navigationShouldPopOnBackButton(sender: Any?) {
+        
+    }
     
     public var networkcount = 0
     
@@ -27,14 +30,9 @@ open class MLBaseViewController: UIViewController, MLNavigationProtocol {
     }
     
     private func updateNavBackgroundView() {
-        guard let navController = self.navigationController else { return }
-        guard let view = navController.navigationBar.subviews.first else { return }
-        self.navBackgroundView.frame = CGRect.init(x: 0, y: 0, width: view.width, height: view.height)
-    }
-    
-    override open func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        self.updateNavBackgroundView()
+        guard let _ = self.navigationController else { return }
+//        guard let view = navController.navigationBar.subviews.first else { return }
+        self.navBackgroundView.frame = CGRect.init(x: 0, y: 0, width: self.view.width, height: 88)
     }
     
     open override var preferredStatusBarStyle: UIStatusBarStyle {

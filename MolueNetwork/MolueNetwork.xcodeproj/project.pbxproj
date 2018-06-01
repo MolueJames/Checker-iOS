@@ -17,6 +17,10 @@
 		1AA41B6F20B71A33005A9217 /* MolueNetworkConfigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA41B6E20B71A33005A9217 /* MolueNetworkConfigure.swift */; };
 		1AA41B7120B71CE8005A9217 /* MolueResponseMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA41B7020B71CE8005A9217 /* MolueResponseMapper.swift */; };
 		1AEB87D82092173C002230A3 /* MolueUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AEB87D72092173C002230A3 /* MolueUtilities.framework */; };
+		1AEFC77A20BEC978006B063F /* MolueOauthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEFC77920BEC978006B063F /* MolueOauthService.swift */; };
+		1AEFC77C20BECA16006B063F /* MolueRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEFC77B20BECA16006B063F /* MolueRequestManager.swift */; };
+		1AEFC77E20BECD30006B063F /* MolueOauthHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEFC77D20BECD30006B063F /* MolueOauthHelper.swift */; };
+		1AEFC78320BEE795006B063F /* MolueOauthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEFC78220BEE795006B063F /* MolueOauthModel.swift */; };
 		512F2AA5F6D42488BE5A77B4 /* Pods_MolueNetworkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5102C4172D88E1753D4AF8A5 /* Pods_MolueNetworkTests.framework */; };
 		BC189391F27A554850E68EE3 /* Pods_MolueNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26543693E5EB9CE1B9CB8CAF /* Pods_MolueNetwork.framework */; };
 /* End PBXBuildFile section */
@@ -57,6 +61,10 @@
 		1AA41B6E20B71A33005A9217 /* MolueNetworkConfigure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MolueNetworkConfigure.swift; sourceTree = "<group>"; };
 		1AA41B7020B71CE8005A9217 /* MolueResponseMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueResponseMapper.swift; sourceTree = "<group>"; };
 		1AEB87D72092173C002230A3 /* MolueUtilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueUtilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AEFC77920BEC978006B063F /* MolueOauthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueOauthService.swift; sourceTree = "<group>"; };
+		1AEFC77B20BECA16006B063F /* MolueRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueRequestManager.swift; sourceTree = "<group>"; };
+		1AEFC77D20BECD30006B063F /* MolueOauthHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueOauthHelper.swift; sourceTree = "<group>"; };
+		1AEFC78220BEE795006B063F /* MolueOauthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueOauthModel.swift; sourceTree = "<group>"; };
 		26543693E5EB9CE1B9CB8CAF /* Pods_MolueNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MolueNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		502A34E792853FC8712EE271 /* Pods-MolueNetworkTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueNetworkTests.release.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueNetworkTests/Pods-MolueNetworkTests.release.xcconfig"; sourceTree = "<group>"; };
 		5102C4172D88E1753D4AF8A5 /* Pods_MolueNetworkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MolueNetworkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -110,6 +118,7 @@
 		1A7D9AD2208645B800FA997D /* MolueNetwork */ = {
 			isa = PBXGroup;
 			children = (
+				1AEFC78120BEDBCF006B063F /* MolueOauth */,
 				1A7D9AD3208645B800FA997D /* MolueNetwork.h */,
 				1A7D9AD4208645B800FA997D /* Info.plist */,
 				1AA41B6E20B71A33005A9217 /* MolueNetworkConfigure.swift */,
@@ -117,6 +126,7 @@
 				1A00450A20B4431E00AA717D /* MolueNetworkRequest.swift */,
 				1A00450C20B4432D00AA717D /* MolueResponseHandler.swift */,
 				1AA41B7020B71CE8005A9217 /* MolueResponseMapper.swift */,
+				1AEFC77B20BECA16006B063F /* MolueRequestManager.swift */,
 			);
 			path = MolueNetwork;
 			sourceTree = "<group>";
@@ -128,6 +138,16 @@
 				1A7D9AE0208645B800FA997D /* Info.plist */,
 			);
 			path = MolueNetworkTests;
+			sourceTree = "<group>";
+		};
+		1AEFC78120BEDBCF006B063F /* MolueOauth */ = {
+			isa = PBXGroup;
+			children = (
+				1AEFC77D20BECD30006B063F /* MolueOauthHelper.swift */,
+				1AEFC77920BEC978006B063F /* MolueOauthService.swift */,
+				1AEFC78220BEE795006B063F /* MolueOauthModel.swift */,
+			);
+			path = MolueOauth;
 			sourceTree = "<group>";
 		};
 		A5478C7CB7B7C49753983632 /* Pods */ = {
@@ -325,9 +345,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AEFC77A20BEC978006B063F /* MolueOauthService.swift in Sources */,
 				1A00445E20B14C5500AA717D /* MolueNetwokTestModel.swift in Sources */,
 				1AA41B7120B71CE8005A9217 /* MolueResponseMapper.swift in Sources */,
 				1A00450D20B4432D00AA717D /* MolueResponseHandler.swift in Sources */,
+				1AEFC77E20BECD30006B063F /* MolueOauthHelper.swift in Sources */,
+				1AEFC77C20BECA16006B063F /* MolueRequestManager.swift in Sources */,
+				1AEFC78320BEE795006B063F /* MolueOauthModel.swift in Sources */,
 				1AA41B6F20B71A33005A9217 /* MolueNetworkConfigure.swift in Sources */,
 				1A00450B20B4431E00AA717D /* MolueNetworkRequest.swift in Sources */,
 			);
@@ -486,7 +510,11 @@
 				INFOPLIST_FILE = MolueNetwork/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Molue.MolueNetwork;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -510,7 +538,11 @@
 				INFOPLIST_FILE = MolueNetwork/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Molue.MolueNetwork;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -526,7 +558,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MolueNetworkTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Molue.MolueNetworkTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -541,7 +577,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MolueNetworkTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Molue.MolueNetworkTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

@@ -9,6 +9,7 @@
 import UIKit
 protocol MLNavigationProtocol {
     var customBackBarButtonItem: UIBarButtonItem {get}
+    func navigationShouldPopOnBackButton(sender: Any?)
 }
 extension MLNavigationProtocol {
     var customBackBarButtonItem: UIBarButtonItem { get {
@@ -55,6 +56,8 @@ open class MLNavigationController: UINavigationController {
         }
         super.pushViewController(viewController, animated: animated)
     }
+    
+    
     /*
     // MARK: - Navigation
 

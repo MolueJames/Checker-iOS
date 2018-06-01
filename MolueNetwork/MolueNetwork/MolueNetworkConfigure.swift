@@ -7,6 +7,7 @@
 //
 
 import Foundation
+
 public enum AppSchemeStatus {
     case debug
     case release
@@ -23,18 +24,9 @@ public struct HTTPConfigure {
     public static var baseURL: String  {
         switch AppSchemeStatus.base() {
         case .debug:
-            return "https://api.fushuninsurance.com/insurance-guide"
+            return "http://39.104.119.97"
         case .release:
             return "https://api.fushuninsurance.com/insurance-guide"
-        }
-    }
-    
-    public static var header: Dictionary<String, String> {
-        switch AppSchemeStatus.base() {
-        case .debug:
-            return ["ver":"1.1.0","Content-Type":"application/json"]
-        case .release:
-            return ["ver":"1.1.0","Content-Type":"application/json"]
         }
     }
 }

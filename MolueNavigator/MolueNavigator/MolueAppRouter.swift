@@ -30,25 +30,37 @@ public class MolueAppRouter {
     public func initialize() {
         if let homeRouter = MolueNavigatorRouter(.Home, path: "<fileName>").toString() {
             navigator.register(homeRouter) { [unowned self] (url, values, context) -> UIViewController? in
-                guard let fileName = values["fileName"] as? String else { return nil }
+                guard let fileName = values["fileName"] as? String else {
+                    MolueLogger.failure.error("The style is not String")
+                    return nil
+                }
                 return self.createViewController(url, filename: fileName, context: context)
             }
         }
         if let mineRouter = MolueNavigatorRouter(.Mine, path: "<fileName>").toString() {
             navigator.register(mineRouter) { [unowned self] (url, values, context) -> UIViewController? in
-                guard let fileName = values["fileName"] as? String else { return nil }
+                guard let fileName = values["fileName"] as? String else {
+                    MolueLogger.failure.error("The style is not String")
+                    return nil
+                }
                 return self.createViewController(url, filename: fileName, context: context)
             }
         }
         if let riskRouter = MolueNavigatorRouter(.Risk, path: "<fileName>").toString() {
             navigator.register(riskRouter) { [unowned self] (url, values, context) -> UIViewController? in
-                guard let fileName = values["fileName"] as? String else { return nil }
+                guard let fileName = values["fileName"] as? String else {
+                    MolueLogger.failure.error("The style is not String")
+                    return nil
+                }
                 return self.createViewController(url, filename: fileName, context: context)
             }
         }
         if let documentRouter = MolueNavigatorRouter(.Book, path: "<fileName>").toString() {
             navigator.register(documentRouter) { [unowned self] (url, values, context) -> UIViewController? in
-                guard let fileName = values["fileName"] as? String else { return nil }
+                guard let fileName = values["fileName"] as? String else {
+                    MolueLogger.failure.error("The style is not String")
+                    return nil
+                }
                 return self.createViewController(url, filename: fileName, context: context)
             }
         }
@@ -64,7 +76,10 @@ public class MolueAppRouter {
         }
         if let alertRouter = MolueDoAlertRouter.init("<style>").toPath() {
             navigator.register(alertRouter) { (url, values, context) -> UIViewController? in
-                guard let style = values["style"] as? String else { return nil }
+                guard let style = values["style"] as? String else {
+                    MolueLogger.failure.error("The style is not String")
+                    return nil
+                }
                 let alertStyle: UIAlertControllerStyle = style == "alert" ? .alert : .actionSheet
                 let title = url.queryParameters["title"]
                 let message = url.queryParameters["message"]
@@ -74,7 +89,10 @@ public class MolueAppRouter {
     }
     
     private func createAlertController(_ url: URLConvertible, style: UIAlertControllerStyle, title: String?, message: String?, context: Any?) -> UIViewController? {
-        guard let title = title else { return nil }
+        guard let title = title else {
+            MolueLogger.failure.error("The title is nil")
+            return nil
+        }
         let alertController = UIAlertController(title: title, message: message, preferredStyle: style)
         if let actions:[UIAlertAction] = context as? [UIAlertAction] {
             alertController.addActions(actions)
@@ -89,26 +107,40 @@ public class MolueAppRouter {
     }
     
     private func createViewController(_ url: URLConvertible, filename: String, context: Any?) -> UIViewController? {
-        guard let components = URLComponents.init(string: url.urlStringValue) else {return nil}
-        guard let module = components.host else {return nil}
+        guard let component = URLComponents.init(string: url.urlStringValue) else {
+            MolueLogger.failure.error("The component is not existed")
+            return nil
+        }
+        guard let module = component.host else {
+            MolueLogger.failure.error("The module is not existed")
+            return nil
+        }
         let viewController = self.instantiateViewController(module: module, filename: filename)
         self.updateViewController(viewController, params: url.queryParameters, context: context)
         return viewController
     }
     
     private func instantiateViewController(module: String, filename: String) -> UIViewController? {
-        guard let bundle = Bundle.create(module: module) else {return nil}
+        guard let bundle = Bundle.create(module: module) else {
+            MolueLogger.failure.error("The bundle is not existed")
+            return nil
+        }
         let storyboard = UIStoryboard.init(name: filename, bundle: bundle)
-        guard let Class : AnyClass = NSClassFromString(module + "." + filename) else {return nil}
-        guard let targetClass = Class as? UIViewController.Type else {return nil}
+        guard let Class : AnyClass = NSClassFromString(module + "." + filename) else {
+            MolueLogger.failure.error("The class is not existed")
+            return nil
+        }
+        guard let targetClass = Class as? UIViewController.Type else {
+            MolueLogger.failure.error("The targetClass is not UIViewController")
+            return nil
+        }
         return storyboard.instantiateViewController(withClass:targetClass.self)
     }
     
     private func updateViewController(_ viewController: UIViewController?, params:Dictionary<String,String>, context: Any?) {
-        if let controller = viewController as? MolueNavigatorProtocol {
-            controller.doTransferParameters(params: context)
-            controller.doSettingParameters(params: params)
-        }
+        guard let controller = viewController as? MolueNavigatorProtocol else {return}
+        controller.doTransferParameters(params: context)
+        controller.doSettingParameters(params: params)
     }
     
     private func updateRouterURL(_ url: String, parameters: [String: Any]?) -> String {
@@ -122,34 +154,52 @@ public class MolueAppRouter {
 
 extension MolueAppRouter {
     public func viewController<T: UIViewController>(_ router: MolueNavigatorRouter, parameters: [String: Any]? = nil, context: Any? = nil) -> T? {
-        guard let url = router.toString() else {return nil}
+        guard let url = router.toString() else {
+            MolueLogger.failure.error("The url is not existed")
+            return nil
+        }
         let newURL = self.updateRouterURL(url, parameters: parameters)
         return navigator.viewController(for: newURL, context: context) as? T
     }
     
     @discardableResult
     public func pushRouter(_ router: MolueNavigatorRouter, parameters: [String: Any]? = nil, context: Any? = nil, from: UINavigationControllerType? = nil, animated: Bool = true) -> UIViewController? {
-        guard let viewController = self.viewController(router, parameters: parameters, context: context) else { return nil }
+        guard let viewController = self.viewController(router, parameters: parameters, context: context) else {
+            MolueLogger.failure.error("The viewController is not existed")
+            return nil
+        }
         return navigator.pushViewController(viewController, from: from, animated: animated)
     }
     
     @discardableResult
     public func presentRouter(_ router: MolueNavigatorRouter, parameters: [String: Any]? = nil, context: Any? = nil, wrap: UINavigationController.Type? = nil, from: UIViewControllerType? = nil, animated: Bool = true, completion: (() -> Void)? = nil) -> UIViewController? {
-        guard let viewController = self.viewController(router, parameters: parameters, context: context) else { return nil }
+        guard let viewController = self.viewController(router, parameters: parameters, context: context) else {
+            MolueLogger.failure.error("The viewController is not existed")
+            return nil
+        }
         return navigator.presentViewController(viewController, wrap: wrap, from: from, animated: animated, completion: completion)
     }
     
     @discardableResult
     public func handler(for router: MolueWebsiteRouter,  parameters: [String: Any]? = nil, context: Any?) -> URLOpenHandler? {
-        guard let url = router.toString() else {return nil}
+        guard let url = router.toString() else {
+            MolueLogger.failure.error("The url is not existed")
+            return nil
+        }
         let newURL = self.updateRouterURL(url, parameters: parameters)
         return navigator.handler(for: newURL, context: context)
     }
     
     @discardableResult
     public func showAlert(_ router: MolueDoAlertRouter, actions:[UIAlertAction]? = nil, wrap: UINavigationController.Type? = nil, from: UIViewControllerType? = nil, animated: Bool = true, completion: (() -> Void)? = nil) -> UIViewController?{
-        guard let url = router.toString() else {return nil}
-        guard let viewcontroller = navigator.viewController(for: url, context: actions) else {return nil}
+        guard let url = router.toString() else {
+            MolueLogger.failure.error("The url is not existed")
+            return nil
+        }
+        guard let viewcontroller = navigator.viewController(for: url, context: actions) else {
+            MolueLogger.failure.error("The viewController is not existed")
+            return nil
+        }
         return navigator.present(viewcontroller, wrap: wrap, from: from, animated: animated, completion: completion)
     }
 }

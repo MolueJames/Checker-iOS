@@ -31,7 +31,7 @@ class MolueNetworkTests: XCTestCase {
     func testNetworkProvider() {
         let expectation = self.expectation(description: "request should succeed")
         let request = MolueDataRequest.init(parameter: ["channelCode": "DS0001"], method: .post, path: "/api/home")
-        let manager = MolueRequestManager.init(request: request)
+        var manager = MolueRequestManager.init(request: request)
         manager.handleFailureResponse { (error) in
             print(error.localizedDescription)
             expectation.fulfill()
@@ -44,10 +44,34 @@ class MolueNetworkTests: XCTestCase {
         waitForExpectations(timeout: 30, handler: nil)
     }
     
+    func testLogin() {
+        let expectation = self.expectation(description: "request should succeed")
+        let headerInfo = Alamofire.Request.authorizationHeader(user: "hj8LAJukEhrs37yPbvXlwX5kG8sk45q0gciIw1Ol", password: "jEOk3ZLDixlJWPyyoncEbcwp4z3Ij5VG05HfKGORg5357CCWeRnrY86OPFpCPF79FaRiUGHnUcb68uCp5NScHg3z5roBqkVY3eB2LHrEaByULCY4JFMRDvXTa7a3ITq9")
+        guard let header = headerInfo else {return}
+        let xxx = [header.key : header.value]
+        let dict = ["username":"13063745829", "password":"q1w2e3r4","grant_type":"password"]
+        
+        let request = MolueDataRequest.init(parameter:dict, method: .post, path: "oauth/token", headers: xxx)
+        var manager = MolueRequestManager(request: request)
+        manager.handleFailureResponse { (error) in
+            print(error.localizedDescription)
+            print(error)
+            expectation.fulfill()
+        }
+        manager.handleSuccessResponse { (success) in
+            print(success)
+            expectation.fulfill()
+        }
+//        let credential = URLCredential.init(user: "13063745829", password: "q1w2e3r4", persistence: .none)
+//        manager.start(usingCredential:credential)
+        manager.start()
+        waitForExpectations(timeout: 130, handler: nil)
+    }
+    
     func test() {
         let expectation = self.expectation(description: "request should succeed")
         let request = MolueDataRequest.init(parameter: ["device": "iOS", "version": "1.0.0"], method: .get, path: "api/app/version")
-        let manager = MolueRequestManager.init(request: request)
+        var manager = MolueRequestManager.init(request: request)
         manager.handleFailureResponse { (error) in
             print(error.localizedDescription)
             expectation.fulfill()
@@ -64,6 +88,16 @@ class MolueNetworkTests: XCTestCase {
         waitForExpectations(timeout: 30, handler: nil)
     }
     
+    func testOauth() {
+        let expectation = self.expectation(description: "request should succeed")
+        let service = MolueOauthService.doLogin(username: "13063745829", password: "13063745829")
+        service.handleSuccessResultToObjc { (result: MolueOauthModel?) in
+            print(result)
+            expectation.fulfill()
+        }
+        service.start()
+        waitForExpectations(timeout: 30, handler: nil)
+    }
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()

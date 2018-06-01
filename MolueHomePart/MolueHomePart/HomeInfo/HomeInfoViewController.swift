@@ -13,9 +13,9 @@ import MolueCommon
 import Permission
 import ESPullToRefresh
 import MolueNetwork
+import MolueNavigator
 import NVActivityIndicatorView
 import MolueFoundation
-import Moya
 class HomeInfoViewController: MLBaseViewController, NVActivityIndicatorViewable {
     let cellIdentifier = "HomeInfoCellIdentifier"
     @IBOutlet weak var tableview: UITableView! {
@@ -77,19 +77,24 @@ class HomeInfoViewController: MLBaseViewController, NVActivityIndicatorViewable 
 //        }, delegate: self)
 //
         
-        let request = MolueDataRequest.init(parameter: ["channelCode": "DS0001"], method: .get, path: "/api/home")
-        let manager = MolueRequestManager.init(request: request, delegate: self)
-        manager.handleFailureResponse { (error) in
-            print(error.localizedDescription)
-            print(error)
-        }
-        manager.handleSuccessResponse { (result) in
-            print(result)
-        }
-        manager.start()
+//        let request = MolueDataRequest.init(parameter: ["channelCode": "DS0001"], method: .get, path: "/api/home")
+//        let manager = MolueRequestManager.init(request: request, delegate: self)
+//        manager.handleFailureResponse { (error) in
+//            print(error.localizedDescription)
+//            print(error)
+//        }
+//        manager.handleSuccessResponse { (result) in
+//            print(result)
+//        }
+//        manager.start()
 //        AccountService.appVersion(device: "iOS", version: "1.0.0").start({ (response:ResultEnum<MolueNetworkTestModel>) in
 //
 //        }, delegate: self)
+        let service = MolueOauthService.doLogin(username: "13063745829", password: "q1w2e3r4")
+        service.handleSuccessResultToObjc { (result: MolueOauthModel?) in
+            print(result)
+        }
+        service.start()
     }
     
     @IBAction func buttonClicked(button: Any?) {
