@@ -9,7 +9,7 @@
 import UIKit
 protocol MLNavigationProtocol {
     var customBackBarButtonItem: UIBarButtonItem {get}
-    func navigationShouldPopOnBackButton(sender: Any?)
+    func navigationShouldPopOnBackButton(sender: Any)
 }
 extension MLNavigationProtocol {
     var customBackBarButtonItem: UIBarButtonItem { get {

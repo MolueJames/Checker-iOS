@@ -11,7 +11,6 @@ import Locksmith
 import ObjectMapper
 import MolueUtilities
 
-
 public struct MolueOauthModel: Mappable, ReadableSecureStorable, CreateableSecureStorable, DeleteableSecureStorable, GenericPasswordSecureStorable {
     public mutating func mapping(map: Map) {
         access_token   <- map["access_token"]
@@ -27,7 +26,7 @@ public struct MolueOauthModel: Mappable, ReadableSecureStorable, CreateableSecur
             MolueLogger.failure.error("expires in is nil")
             return
         }
-        expires_date = Date.init(timeIntervalSinceNow: expires_in)
+        expires_date = Date().addingTimeInterval(expires_in)
     }
     
     public init?(map: Map) {
@@ -54,6 +53,6 @@ public struct MolueOauthModel: Mappable, ReadableSecureStorable, CreateableSecur
             MolueLogger.failure.error("the expires data is nil")
             return false
         }
-        return expires_date < Date.init()
+        return expires_date.isInFuture
     }
 }

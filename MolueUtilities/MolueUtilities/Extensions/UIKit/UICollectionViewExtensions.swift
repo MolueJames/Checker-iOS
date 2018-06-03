@@ -146,7 +146,7 @@ public extension UICollectionView {
     ///
     /// - Parameters:
     ///   - name: UICollectionViewCell type.
-    public func register<T: UITableViewCell>(xibWithCellClass name: T.Type) {
+    public func register<T: UICollectionViewCell>(xibWithCellClass name: T.Type) {
         let info = NSStringFromClass(T.self).separateTypeName()
         guard let module = info.module, let identifier = info.file else {fatalError("module or idenitifer is nil")}
         guard let bundle = Bundle.create(module: module) else {fatalError("bundle is nil")}

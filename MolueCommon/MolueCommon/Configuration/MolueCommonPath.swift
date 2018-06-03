@@ -10,26 +10,30 @@ import Foundation
 import MolueUtilities
 
 public struct HomeFilePath {
-    public static let HomeInfo = "HomeInfoViewController"
-}
-
-public struct MineFilePath {
+    /// 应用首页
+    public static let HomePageInfo = "HomeInfoViewController"
     /// 基础信息
     public static let EnterpriseInfo = "EnterpriseInformationViewController"
     /// 基本档案
     public static let BasicArchives = "BasicArchivesViewController"
     /// 联络信息
-    public static let contactInfo = "ContactInformationViewController"
+    public static let ContactInfo = "ContactInformationViewController"
     /// 危险特征
-    public static let riskFeature = "RiskFeatureViewController"
+    public static let RiskFeature = "RiskFeatureViewController"
     /// 危险设备
-    public static let hazardousMachinery = "HazardousMachineryViewController"
+    public static let HazardousMachinery = "HazardousMachineryViewController"
     /// 企业危险特征
-    public static let enterpriseRisk = "EnterpriseRiskFeatureViewController"
+    public static let EnterpriseRisk = "EnterpriseRiskFeatureViewController"
     /// 添加管理员
-    public static let addAdministrator = "AddSecurityAdministratorViewController"
+    public static let AddAdministrator = "AddSecurityAdministratorViewController"
     /// 安全管理员
-    public static let securityAdministrator = "SecurityAdministratorViewController"
+    public static let SecurityAdministrator = "SecurityAdministratorViewController"
+
+}
+
+public struct MineFilePath {
+    /// 个人信息
+    public static let MineInfo = "MineInformationViewController"
 }
 
 public struct RiskFilePath {

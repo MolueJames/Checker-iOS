@@ -155,11 +155,9 @@ public extension UITableView {
     public func register<T: UITableViewCell>(nibWithCellClass name: T.Type, at bundleClass: AnyClass? = nil) {
         let identifier = String(describing: name)
         var bundle: Bundle? = nil
-        
         if let bundleName = bundleClass {
             bundle = Bundle(for: bundleName)
         }
-        
         register(UINib(nibName: identifier, bundle: bundle), forCellReuseIdentifier: identifier)
     }
 	

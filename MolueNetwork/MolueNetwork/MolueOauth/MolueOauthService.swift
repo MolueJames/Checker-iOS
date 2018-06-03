@@ -12,9 +12,7 @@ import Foundation
 public struct MolueOauthService {
     public static func doLogin(username: String, password: String, delegate: MolueActivityDelegate? = nil) -> MolueRequestManager {
         let header = MolueOauthHelper.authHeader()
-        print(header)
         let parameter = ["username":username, "password":password, "grant_type":"password"]
-        print(parameter)
         let request = MolueDataRequest.init(parameter:parameter, method: .post, path: "oauth/token/", headers: header)
         return MolueRequestManager.init(request: request, delegate: delegate)
     }

@@ -11,6 +11,11 @@
 		1A2D441B20A07E9900BA947A /* MLRefreshHeaderAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D441A20A07E9900BA947A /* MLRefreshHeaderAnimator.swift */; };
 		1A2D443220A088C500BA947A /* MolueCommon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A2D443120A088C400BA947A /* MolueCommon.xcassets */; };
 		1A2D443D20A097E100BA947A /* MLInterfaceConfigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D443C20A097E100BA947A /* MLInterfaceConfigure.swift */; };
+		1A43BC3620C4031D0093855B /* MLCommonInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A43BC3520C4031D0093855B /* MLCommonInputView.swift */; };
+		1A43BC3820C403330093855B /* MLCommonInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A43BC3720C403330093855B /* MLCommonInputView.xib */; };
+		1A43BC3A20C4063E0093855B /* MLContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A43BC3920C4063E0093855B /* MLContainerView.swift */; };
+		1A43BC3C20C40FA30093855B /* MLCommonSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A43BC3B20C40FA30093855B /* MLCommonSelectView.swift */; };
+		1A43BC3E20C40FC60093855B /* MLCommonSelectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A43BC3D20C40FC60093855B /* MLCommonSelectView.xib */; };
 		1A5014AB2094AFA400DB931E /* MoluePermissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5014AA2094AFA400DB931E /* MoluePermissions.swift */; };
 		1A5014B42094B90A00DB931E /* MolueCommonPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5014B32094B90A00DB931E /* MolueCommonPath.swift */; };
 		1A5014B62094B9BA00DB931E /* MolueCommonColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5014B52094B9BA00DB931E /* MolueCommonColor.swift */; };
@@ -51,6 +56,11 @@
 		1A2D441A20A07E9900BA947A /* MLRefreshHeaderAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLRefreshHeaderAnimator.swift; sourceTree = "<group>"; };
 		1A2D443120A088C400BA947A /* MolueCommon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MolueCommon.xcassets; sourceTree = "<group>"; };
 		1A2D443C20A097E100BA947A /* MLInterfaceConfigure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLInterfaceConfigure.swift; sourceTree = "<group>"; };
+		1A43BC3520C4031D0093855B /* MLCommonInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLCommonInputView.swift; sourceTree = "<group>"; };
+		1A43BC3720C403330093855B /* MLCommonInputView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MLCommonInputView.xib; sourceTree = "<group>"; };
+		1A43BC3920C4063E0093855B /* MLContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLContainerView.swift; sourceTree = "<group>"; };
+		1A43BC3B20C40FA30093855B /* MLCommonSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLCommonSelectView.swift; sourceTree = "<group>"; };
+		1A43BC3D20C40FC60093855B /* MLCommonSelectView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MLCommonSelectView.xib; sourceTree = "<group>"; };
 		1A5014AA2094AFA400DB931E /* MoluePermissions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoluePermissions.swift; sourceTree = "<group>"; };
 		1A5014B32094B90A00DB931E /* MolueCommonPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueCommonPath.swift; sourceTree = "<group>"; };
 		1A5014B52094B9BA00DB931E /* MolueCommonColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueCommonColor.swift; sourceTree = "<group>"; };
@@ -107,6 +117,18 @@
 			path = InterfaceConfigure;
 			sourceTree = "<group>";
 		};
+		1A43BC3420C402F10093855B /* CommonViews */ = {
+			isa = PBXGroup;
+			children = (
+				1A43BC3520C4031D0093855B /* MLCommonInputView.swift */,
+				1A43BC3720C403330093855B /* MLCommonInputView.xib */,
+				1A43BC3920C4063E0093855B /* MLContainerView.swift */,
+				1A43BC3B20C40FA30093855B /* MLCommonSelectView.swift */,
+				1A43BC3D20C40FC60093855B /* MLCommonSelectView.xib */,
+			);
+			path = CommonViews;
+			sourceTree = "<group>";
+		};
 		1A5014B22094B8ED00DB931E /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +161,7 @@
 		1A7D9B622086470200FA997D /* MolueCommon */ = {
 			isa = PBXGroup;
 			children = (
+				1A43BC3420C402F10093855B /* CommonViews */,
 				1A2D443B20A0977A00BA947A /* InterfaceConfigure */,
 				1A2D441920A07E9900BA947A /* RefreshAnimator */,
 				1A5014B22094B8ED00DB931E /* Configuration */,
@@ -293,6 +316,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A2D443220A088C500BA947A /* MolueCommon.xcassets in Resources */,
+				1A43BC3E20C40FC60093855B /* MLCommonSelectView.xib in Resources */,
+				1A43BC3820C403330093855B /* MLCommonInputView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,12 +341,16 @@
 				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/ESPullToRefresh/ESPullToRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/Permission/Permission.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ESPullToRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Permission.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -377,6 +406,9 @@
 				1A2D443D20A097E100BA947A /* MLInterfaceConfigure.swift in Sources */,
 				1A5014B62094B9BA00DB931E /* MolueCommonColor.swift in Sources */,
 				1A2D441B20A07E9900BA947A /* MLRefreshHeaderAnimator.swift in Sources */,
+				1A43BC3620C4031D0093855B /* MLCommonInputView.swift in Sources */,
+				1A43BC3C20C40FA30093855B /* MLCommonSelectView.swift in Sources */,
+				1A43BC3A20C4063E0093855B /* MLContainerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -532,11 +564,7 @@
 				INFOPLIST_FILE = MolueCommon/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Molue.MolueCommon;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -558,11 +586,7 @@
 				INFOPLIST_FILE = MolueCommon/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Molue.MolueCommon;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -578,11 +602,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MolueCommonTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Molue.MolueCommonTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -597,11 +617,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MolueCommonTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Molue.MolueCommonTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

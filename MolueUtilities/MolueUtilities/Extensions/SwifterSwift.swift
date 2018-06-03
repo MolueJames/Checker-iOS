@@ -254,6 +254,16 @@ public struct MLConfigure {
 	}
 	#endif
 	
+    public static var single_line_height: CGFloat {
+        return 1 / UIScreen.main.scale
+    }
+
+    public static var iPhoneX: Bool {
+        return UIScreen.instancesRespond(to:#selector(getter: UIScreen.main.currentMode)) ? __CGSizeEqualToSize(CGSize(width:1125,height:2436), (UIScreen.main.currentMode?.size)!) : false
+    }
+//    static inline BOOL iPhoneX() {
+//    return [UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO;
+//    }
 }
 
 // MARK: - Methods

@@ -26,6 +26,7 @@ PODS:
     - Permission/Core
   - Permission/Notifications (2.0.4):
     - Permission/Core
+  - RxSwift (4.1.2)
   - SnapKit (4.0.0)
   - SQLite.swift (0.11.5):
     - SQLite.swift/standard (= 0.11.5)
@@ -50,6 +51,7 @@ DEPENDENCIES:
   - Permission/Camera (~> 2.0.4)
   - Permission/Location (~> 2.0.4)
   - Permission/Notifications (~> 2.0.4)
+  - RxSwift (~> 4.1.2)
   - SnapKit (~> 4.0.0)
   - SQLite.swift (~> 0.11.4)
   - URLNavigator (~> 2.0.4)
@@ -73,6 +75,7 @@ SPEC REPOS:
     - NVActivityIndicatorView
     - ObjectMapper
     - Permission
+    - RxSwift
     - SnapKit
     - SQLite.swift
     - URLNavigator
@@ -95,11 +98,12 @@ SPEC CHECKSUMS:
   NVActivityIndicatorView: 75c9634073e03b31d7e2748cd2417feab1206195
   ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
   Permission: 6853b9694e66a6c9197468c66d1935c3629cbf9c
+  RxSwift: e49536837d9901277638493ea537394d4b55f570
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SQLite.swift: 6e5356850bb1791459f8c16d6ee9195b28714a2e
   URLNavigator: af5582fbbb3586c958be16835d799bfdb23a4793
   ViewAnimator: 0c70ee4e1dfbe9d4f129407f81db91f6948900aa
 
-PODFILE CHECKSUM: 18a3d0ac08af9c770d9eb189fcf2b96cd179274d
+PODFILE CHECKSUM: 58be50abc9ee584764fb99f5a075f191baf484a6
 
 COCOAPODS: 1.5.0

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Basic Archives View Controller-->
+        <scene sceneID="Zck-Iw-CrW">
+            <objects>
+                <viewController storyboardIdentifier="BasicArchivesViewController" id="yVG-Va-9MF" customClass="BasicArchivesViewController" customModule="MolueHomePart" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pvq-kO-35q">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="esp-SR-R94" customClass="MLContainerView" customModule="MolueCommon">
+                                <rect key="frame" x="0.0" y="20" width="375" height="55"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="财荣金属制品(太仓)有限公司" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gah-MW-SpW">
+                                        <rect key="frame" x="20" y="17.5" width="335" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Gah-MW-SpW" secondAttribute="trailing" constant="20" id="Xps-Cp-6o5"/>
+                                    <constraint firstItem="Gah-MW-SpW" firstAttribute="centerY" secondItem="esp-SR-R94" secondAttribute="centerY" id="aH5-41-5dh"/>
+                                    <constraint firstAttribute="height" constant="55" id="h5N-8Y-oe4"/>
+                                    <constraint firstItem="Gah-MW-SpW" firstAttribute="leading" secondItem="esp-SR-R94" secondAttribute="leading" constant="20" id="liP-m9-L9t"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9W5-3I-hog" customClass="MLContainerView" customModule="MolueCommon">
+                                <rect key="frame" x="0.0" y="75" width="375" height="55"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="Gjp-1y-TIr"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xFI-t7-XAW" customClass="MLContainerView" customModule="MolueCommon">
+                                <rect key="frame" x="0.0" y="150" width="375" height="55"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="SP5-Fh-EjR"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4lC-jy-FSK" customClass="MLContainerView" customModule="MolueCommon">
+                                <rect key="frame" x="0.0" y="205" width="375" height="55"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="tZ7-rG-TXT"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="08u-FG-CmZ" customClass="MLContainerView" customModule="MolueCommon">
+                                <rect key="frame" x="0.0" y="260" width="375" height="55"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="6Dw-Nh-eJJ"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cW7-Yu-RHw" customClass="MLContainerView" customModule="MolueCommon">
+                                <rect key="frame" x="0.0" y="315" width="375" height="55"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="fVc-J8-QdP"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="esp-SR-R94" firstAttribute="top" secondItem="vYz-Ov-5Gd" secondAttribute="top" id="2CB-OZ-LIX"/>
+                            <constraint firstItem="xFI-t7-XAW" firstAttribute="top" secondItem="9W5-3I-hog" secondAttribute="bottom" constant="20" id="3R6-Oe-2Ha"/>
+                            <constraint firstItem="9W5-3I-hog" firstAttribute="top" secondItem="esp-SR-R94" secondAttribute="bottom" id="3WB-ca-VZt"/>
+                            <constraint firstItem="vYz-Ov-5Gd" firstAttribute="trailing" secondItem="esp-SR-R94" secondAttribute="trailing" id="8C3-NN-HJR"/>
+                            <constraint firstItem="vYz-Ov-5Gd" firstAttribute="trailing" secondItem="9W5-3I-hog" secondAttribute="trailing" id="CsM-81-SRz"/>
+                            <constraint firstItem="esp-SR-R94" firstAttribute="leading" secondItem="vYz-Ov-5Gd" secondAttribute="leading" id="DVA-NB-zdq"/>
+                            <constraint firstItem="vYz-Ov-5Gd" firstAttribute="trailing" secondItem="4lC-jy-FSK" secondAttribute="trailing" id="DqI-nf-P6u"/>
+                            <constraint firstItem="vYz-Ov-5Gd" firstAttribute="trailing" secondItem="08u-FG-CmZ" secondAttribute="trailing" id="GrP-OS-Weo"/>
+                            <constraint firstItem="cW7-Yu-RHw" firstAttribute="top" secondItem="08u-FG-CmZ" secondAttribute="bottom" id="NnR-DF-wf7"/>
+                            <constraint firstItem="4lC-jy-FSK" firstAttribute="top" secondItem="xFI-t7-XAW" secondAttribute="bottom" id="RUp-s3-QlZ"/>
+                            <constraint firstItem="08u-FG-CmZ" firstAttribute="top" secondItem="4lC-jy-FSK" secondAttribute="bottom" id="VhA-m8-cXK"/>
+                            <constraint firstItem="4lC-jy-FSK" firstAttribute="leading" secondItem="vYz-Ov-5Gd" secondAttribute="leading" id="Zcq-Qm-BST"/>
+                            <constraint firstItem="cW7-Yu-RHw" firstAttribute="leading" secondItem="vYz-Ov-5Gd" secondAttribute="leading" id="dw3-6z-9JB"/>
+                            <constraint firstItem="vYz-Ov-5Gd" firstAttribute="trailing" secondItem="xFI-t7-XAW" secondAttribute="trailing" id="eAP-nl-3h6"/>
+                            <constraint firstItem="vYz-Ov-5Gd" firstAttribute="trailing" secondItem="cW7-Yu-RHw" secondAttribute="trailing" id="gwn-ln-2I1"/>
+                            <constraint firstItem="9W5-3I-hog" firstAttribute="leading" secondItem="vYz-Ov-5Gd" secondAttribute="leading" id="lb1-DM-8FS"/>
+                            <constraint firstItem="08u-FG-CmZ" firstAttribute="leading" secondItem="vYz-Ov-5Gd" secondAttribute="leading" id="pQw-yN-Nod"/>
+                            <constraint firstItem="xFI-t7-XAW" firstAttribute="leading" secondItem="vYz-Ov-5Gd" secondAttribute="leading" id="xfc-8n-rPU"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vYz-Ov-5Gd"/>
+                    </view>
+                    <connections>
+                        <outlet property="CodeContainerView" destination="9W5-3I-hog" id="sjn-Fe-f75"/>
+                        <outlet property="DivisionContainerView" destination="xFI-t7-XAW" id="fud-jY-My5"/>
+                        <outlet property="LevelContainerView" destination="cW7-Yu-RHw" id="PCM-Rw-7Eo"/>
+                        <outlet property="ScaleContainerView" destination="4lC-jy-FSK" id="8Wo-Zm-xxO"/>
+                        <outlet property="TypesContainerView" destination="08u-FG-CmZ" id="ymE-ts-3jk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nrc-WP-I9C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="280.80000000000001" y="95.802098950524751"/>
+        </scene>
+    </scenes>
+</document>

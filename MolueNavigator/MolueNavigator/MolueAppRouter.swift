@@ -163,11 +163,12 @@ extension MolueAppRouter {
     }
     
     @discardableResult
-    public func pushRouter(_ router: MolueNavigatorRouter, parameters: [String: Any]? = nil, context: Any? = nil, from: UINavigationControllerType? = nil, animated: Bool = true) -> UIViewController? {
+    public func pushRouter(_ router: MolueNavigatorRouter, parameters: [String: Any]? = nil, context: Any? = nil, from: UINavigationControllerType? = nil, animated: Bool = true, needHideBottomBar: Bool! = false) -> UIViewController? {
         guard let viewController = self.viewController(router, parameters: parameters, context: context) else {
             MolueLogger.failure.error("The viewController is not existed")
             return nil
         }
+        viewController.hidesBottomBarWhenPushed = needHideBottomBar
         return navigator.pushViewController(viewController, from: from, animated: animated)
     }
     

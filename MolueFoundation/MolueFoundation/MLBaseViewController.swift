@@ -11,7 +11,7 @@ import SnapKit
 import MolueUtilities
 
 open class MLBaseViewController: UIViewController, MLNavigationProtocol {
-    func navigationShouldPopOnBackButton(sender: Any?) {
+    func navigationShouldPopOnBackButton(sender: Any) {
         
     }
     
@@ -19,7 +19,7 @@ open class MLBaseViewController: UIViewController, MLNavigationProtocol {
     
     private lazy var navBackgroundView: UIView! = {
         let view = UIView()
-        view.backgroundColor = UIColor.init(hex: 0xB82D2)
+        view.backgroundColor = UIColor.init(hex: 0x1B82D2)
         self.view.insertSubview(view, at: 0)
         return view
     }()
@@ -31,8 +31,9 @@ open class MLBaseViewController: UIViewController, MLNavigationProtocol {
     
     private func updateNavBackgroundView() {
         guard let _ = self.navigationController else { return }
-//        guard let view = navController.navigationBar.subviews.first else { return }
-        self.navBackgroundView.frame = CGRect.init(x: 0, y: 0, width: self.view.width, height: 88)
+        let height: CGFloat = MLConfigure.iPhoneX ? 88 : 64
+        let width: CGFloat = self.view.width
+        self.navBackgroundView.frame = CGRect.init(x: 0, y: 0, width: width, height: height)
     }
     
     open override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -59,6 +60,11 @@ open class MLBaseViewController: UIViewController, MLNavigationProtocol {
         self.edgesForExtendedLayout = .all;
         self.view.backgroundColor = UIColor.init(hex: 0xf5f5f9)
     }
+    
+    deinit {
+        MolueLogger.dealloc.message(String(describing: self))
+    }
+    
     /*
     // MARK: - Navigation
 

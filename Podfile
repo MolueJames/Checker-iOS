@@ -33,6 +33,7 @@ target 'MolueSafty' do
         pod 'ViewAnimator', '~> 2.0.1'
         pod 'ESPullToRefresh', '~> 2.7'
         pod 'ImagePicker', '~> 3.0.0'
+        pod 'RxSwift', '~> 4.1.2'
     target 'MolueMinePart' do
         project 'MolueMinePart/MolueMinePart.xcodeproj'
         inherit! :search_paths
@@ -58,6 +59,8 @@ target 'MolueCommon' do
         pod 'Permission/Location', '~> 2.0.4'
         pod 'Permission/Notifications', '~> 2.0.4'
         pod 'ESPullToRefresh', '~> 2.7'
+        pod 'SnapKit', '~> 4.0.0'
+        pod 'RxSwift', '~> 4.1.2'
     target 'MolueCommonTests' do
         inherit! :search_paths
     end
