@@ -506,13 +506,34 @@ public extension UIView {
 	}
 }
 
+import SnapKit
 public extension UIView {
     public static func createFromXib<T: UIView>() -> T! {
         let info = NSStringFromClass(self).separateTypeName()
-        guard let module = info.module, let nib = info.file else {fatalError("the module or nib is nil")}
-        guard let bundle = Bundle.create(module: module) else {fatalError("the bundle is nil")}
+        guard let module = info.module, let nib = info.file else {
+            MolueLogger.UIModule.error("the module or nib is nil")
+            return nil
+        }
+        guard let bundle = Bundle.create(module: module) else {
+            MolueLogger.UIModule.error("the bundle is nil")
+            return nil
+        }
         let views = bundle.loadNibNamed(nib, owner: nil, options: nil)
         return views?.last as! T
+    }
+    /// 将childView布满self
+    ///
+    /// - Parameter childView: subView
+    public func doBespreadOn(_ childView: UIView) {
+        guard childView.superview == nil else {
+            MolueLogger.UIModule.error("the child view alreadly has superview")
+            return
+        }
+        self.addSubview(childView)
+        childView.snp.makeConstraints { (make) in
+            make.top.bottom.equalToSuperview()
+            make.left.right.equalToSuperview()
+        }
     }
 }
 #endif

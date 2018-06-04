@@ -10,6 +10,7 @@ PODS:
   - ImagePicker (3.0.0)
   - IQKeyboardManagerSwift (5.0.0)
   - JCore (1.1.9)
+  - JGProgressHUD (1.4)
   - JPush (3.0.9):
     - JCore (~> 1.1.7)
   - KeychainAccess (3.1.1)
@@ -42,6 +43,7 @@ DEPENDENCIES:
   - ESPullToRefresh (~> 2.7)
   - ImagePicker (~> 3.0.0)
   - IQKeyboardManagerSwift (~> 5.0.0)
+  - JGProgressHUD (~> 1.4)
   - JPush (~> 3.0.9)
   - KeychainAccess (~> 3.1.1)
   - Kingfisher (~> 4.0)
@@ -68,6 +70,7 @@ SPEC REPOS:
     - ImagePicker
     - IQKeyboardManagerSwift
     - JCore
+    - JGProgressHUD
     - JPush
     - KeychainAccess
     - Kingfisher
@@ -91,6 +94,7 @@ SPEC CHECKSUMS:
   ImagePicker: 973953c25960fe04729a7082a56194321c6762d2
   IQKeyboardManagerSwift: 3f340202ebe1a7076279b9b9b3c817243ddb3aab
   JCore: 27598485098d0db99d2812cba048003457d08cfb
+  JGProgressHUD: 1617b0940cf80bb53e8f7d6f0fd69252ea45d6d4
   JPush: 003d9eaef8ba2df76de32573d0c8aa62b92b3c82
   KeychainAccess: 7bd430028059754a3debab3cfc0bd1fc7fb85df3
   Kingfisher: da6b005aa96d37698e3e4f1ccfe96a5b9bbf27d6
@@ -104,6 +108,6 @@ SPEC CHECKSUMS:
   URLNavigator: af5582fbbb3586c958be16835d799bfdb23a4793
   ViewAnimator: 0c70ee4e1dfbe9d4f129407f81db91f6948900aa
 
-PODFILE CHECKSUM: 58be50abc9ee584764fb99f5a075f191baf484a6
+PODFILE CHECKSUM: 3812544dfb857fd05370a5b994fb67546b5dbf48
 
 COCOAPODS: 1.5.0

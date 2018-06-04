@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="AddAdministratorFooterView" customModule="MolueHomePart" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3IT-NH-Z3t">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="security_admin_add" translatesAutoresizingMaskIntoConstraints="NO" id="lS6-b2-FEE">
+                    <rect key="frame" x="20" y="12.5" width="35" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="35" id="SJZ-Ue-nFH"/>
+                        <constraint firstAttribute="height" constant="35" id="bo6-xQ-KoG"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="添加安全管理员" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ET-RS-OdR">
+                    <rect key="frame" x="70" y="20.5" width="114.5" height="19.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="3IT-NH-Z3t" secondAttribute="bottom" id="8RB-C3-7o4"/>
+                <constraint firstItem="3ET-RS-OdR" firstAttribute="leading" secondItem="lS6-b2-FEE" secondAttribute="trailing" constant="15" id="DYx-OG-112"/>
+                <constraint firstAttribute="trailing" secondItem="3IT-NH-Z3t" secondAttribute="trailing" id="FDo-RU-hBl"/>
+                <constraint firstItem="3IT-NH-Z3t" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="aLh-pG-HYe"/>
+                <constraint firstItem="3ET-RS-OdR" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="fyP-zW-GDV"/>
+                <constraint firstItem="3IT-NH-Z3t" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="lwl-la-dGP"/>
+                <constraint firstItem="lS6-b2-FEE" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="sJy-7e-hev"/>
+                <constraint firstItem="lS6-b2-FEE" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="y8I-fb-VCy"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="33.5" y="91"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="security_admin_add" width="45" height="45"/>
+    </resources>
+</document>

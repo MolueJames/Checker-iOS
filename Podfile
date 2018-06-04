@@ -34,6 +34,7 @@ target 'MolueSafty' do
         pod 'ESPullToRefresh', '~> 2.7'
         pod 'ImagePicker', '~> 3.0.0'
         pod 'RxSwift', '~> 4.1.2'
+        pod 'JGProgressHUD', '~> 1.4'
     target 'MolueMinePart' do
         project 'MolueMinePart/MolueMinePart.xcodeproj'
         inherit! :search_paths
@@ -68,6 +69,7 @@ end
 
 target 'MolueUtilities' do
     project 'MolueUtilities/MolueUtilities.xcodeproj'
+        pod 'SnapKit', '~> 4.0.0'
     target 'MolueUtilitiesTests' do
         inherit! :search_paths
     end
@@ -94,6 +96,7 @@ end
 target 'MolueFoundation' do
     project 'MolueFoundation/MolueFoundation.xcodeproj'
         pod 'SnapKit', '~> 4.0.0'
+        pod 'JGProgressHUD', '~> 1.4'
 end
 
 target 'MolueDatabase' do

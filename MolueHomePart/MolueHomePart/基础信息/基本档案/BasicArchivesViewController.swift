@@ -15,34 +15,25 @@ class BasicArchivesViewController: MLBaseViewController {
     @IBOutlet weak var CodeContainerView: MLContainerView! {
         didSet {
             codeInputView = MLCommonInputView.createFromXib()
-            CodeContainerView.addSubview(codeInputView)
-            codeInputView.snp.makeConstraints { (make) in
-                make.top.bottom.equalToSuperview()
-                make.left.right.equalToSuperview()
-            }
+            CodeContainerView.doBespreadOn(codeInputView)
         }
     }
     var codeInputView: MLCommonInputView! {
         didSet {
-            codeInputView.titleLabel.text = "信用代码"
-            codeInputView.textFiled.placeholder = "请输入18位统一社会信用代码"
+            codeInputView.update(title: "信用代码", placeholder: "请输入18位统一社会信用代码")
         }
     }
     
     @IBOutlet weak var DivisionContainerView: MLContainerView! {
         didSet {
             divisionSelectView = MLCommonSelectView.createFromXib()
-            DivisionContainerView.addSubview(divisionSelectView)
-            divisionSelectView.snp.makeConstraints { (make) in
-                make.top.bottom.equalToSuperview()
-                make.left.right.equalToSuperview()
-            }
+            DivisionContainerView.doBespreadOn(divisionSelectView)
+            
         }
     }
     var divisionSelectView: MLCommonSelectView! {
         didSet {
-            divisionSelectView.titleLabel.text = "行政区划"
-            divisionSelectView.descriptionLabel.text = "请选择"
+            divisionSelectView.update(title: "行政区划", description: "请选择")
             divisionSelectView.clickedCommand.subscribe { _ in
                 
             }.disposed(by: disposeBag)
@@ -52,18 +43,13 @@ class BasicArchivesViewController: MLBaseViewController {
     @IBOutlet weak var ScaleContainerView: MLContainerView! {
         didSet {
             scaleSelectView = MLCommonSelectView.createFromXib()
-            ScaleContainerView.addSubview(scaleSelectView)
-            scaleSelectView.snp.makeConstraints { (make) in
-                make.top.bottom.equalToSuperview()
-                make.left.right.equalToSuperview()
-            }
+            ScaleContainerView.doBespreadOn(scaleSelectView)
         }
     }
     
     var scaleSelectView: MLCommonSelectView! {
         didSet {
-            scaleSelectView.titleLabel.text = "企业规模"
-            scaleSelectView.descriptionLabel.text = "请选择"
+            scaleSelectView.update(title: "企业规模", description: "请选择")
             scaleSelectView.clickedCommand.subscribe { _ in
                 
             }.disposed(by: disposeBag)
@@ -73,18 +59,13 @@ class BasicArchivesViewController: MLBaseViewController {
     @IBOutlet weak var TypesContainerView: MLContainerView! {
         didSet {
             typesSelectView = MLCommonSelectView.createFromXib()
-            TypesContainerView.addSubview(typesSelectView)
-            typesSelectView.snp.makeConstraints { (make) in
-                make.top.bottom.equalToSuperview()
-                make.left.right.equalToSuperview()
-            }
+            TypesContainerView.doBespreadOn(typesSelectView)
         }
     }
     
     var typesSelectView: MLCommonSelectView! {
         didSet {
-            typesSelectView.titleLabel.text = "企业类型"
-            typesSelectView.descriptionLabel.text = "请选择"
+            typesSelectView.update(title: "企业类型", description: "请选择")
             typesSelectView.clickedCommand.subscribe { _ in
                 
             }.disposed(by: disposeBag)
@@ -94,18 +75,13 @@ class BasicArchivesViewController: MLBaseViewController {
     @IBOutlet weak var LevelContainerView: MLContainerView! {
         didSet {
             levelSelectView = MLCommonSelectView.createFromXib()
-            LevelContainerView.addSubview(levelSelectView)
-            levelSelectView.snp.makeConstraints { (make) in
-                make.top.bottom.equalToSuperview()
-                make.left.right.equalToSuperview()
-            }
+            LevelContainerView.doBespreadOn(levelSelectView)
         }
     }
     
     var levelSelectView: MLCommonSelectView! {
         didSet {
-            levelSelectView.titleLabel.text = "安全生产标准化达标级别"
-            levelSelectView.descriptionLabel.text = "请选择"
+            levelSelectView.update(title: "安全生产标准化达标级别", description: "请选择")
             levelSelectView.clickedCommand.subscribe { _ in
                 
             }.disposed(by: disposeBag)
@@ -116,6 +92,12 @@ class BasicArchivesViewController: MLBaseViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.title = "基本档案"
+        let submitButton = UIBarButtonItem(title: "提交", style: .plain, target: self, action: #selector(submitButtonClicked))
+        self.navigationItem.rightBarButtonItem = submitButton
+    }
+    
+    @IBAction func submitButtonClicked(_ sender: UIBarButtonItem) {
+        
     }
 
     override func didReceiveMemoryWarning() {

@@ -9,16 +9,8 @@
 import UIKit
 import SnapKit
 import MolueUtilities
-public class MLContainerView: UIView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
-    
+public class MLContainerView: UIView {
     lazy private var bottomLineView: UIView! = {
         let bottomLineView = UIView()
         self.addSubview(bottomLineView)
@@ -34,4 +26,15 @@ public class MLContainerView: UIView {
         super.awakeFromNib()
         bottomLineView.backgroundColor = UIColor.init(hex: 0x999999)
     }
+    /*
+    // Only override draw() if you perform custom drawing.
+    // An empty implementation adversely affects performance during animation.
+    override func draw(_ rect: CGRect) {
+        // Drawing code
+    }
+    */
+}
+
+public extension UIView {
+    
 }

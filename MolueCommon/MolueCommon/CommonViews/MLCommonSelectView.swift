@@ -11,8 +11,8 @@ import RxSwift
 import SnapKit
 public class MLCommonSelectView: UIView {
     public let clickedCommand = PublishSubject<Void>()
-    @IBOutlet public weak var titleLabel: UILabel!
-    @IBOutlet public weak var descriptionLabel: UILabel!
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var descriptionLabel: UILabel!
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -37,5 +37,9 @@ public class MLCommonSelectView: UIView {
     
     @IBAction private func controlClicked(_ sender: Any) {
         self.clickedCommand.onNext(())
+    }
+    public func update(title: String, description: String) {
+        self.titleLabel.text = title
+        self.descriptionLabel.text = description
     }
 }

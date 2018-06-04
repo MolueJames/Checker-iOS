@@ -17,9 +17,24 @@
                     <view key="view" contentMode="scaleToFill" id="3gZ-qI-agY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WPV-l3-Qg3">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="WPV-l3-Qg3" firstAttribute="top" secondItem="YWO-X5-yr1" secondAttribute="top" id="8mC-Fn-skw"/>
+                            <constraint firstItem="YWO-X5-yr1" firstAttribute="trailing" secondItem="WPV-l3-Qg3" secondAttribute="trailing" id="DpJ-rJ-dhV"/>
+                            <constraint firstItem="WPV-l3-Qg3" firstAttribute="leading" secondItem="YWO-X5-yr1" secondAttribute="leading" id="NBW-Vp-YWG"/>
+                            <constraint firstItem="YWO-X5-yr1" firstAttribute="bottom" secondItem="WPV-l3-Qg3" secondAttribute="bottom" id="bRt-hi-73S"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="YWO-X5-yr1"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="WPV-l3-Qg3" id="Rwl-Qt-rtx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aFJ-0q-G1N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

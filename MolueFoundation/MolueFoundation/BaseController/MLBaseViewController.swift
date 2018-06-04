@@ -9,13 +9,25 @@
 import UIKit
 import SnapKit
 import MolueUtilities
-
+import JGProgressHUD
+import MolueNetwork
 open class MLBaseViewController: UIViewController, MLNavigationProtocol {
-    func navigationShouldPopOnBackButton(sender: Any) {
+    public var networkcount = 0 {
+        didSet {
+            
+        }
+    }
+    public func showSuccessHUD(text: String) {
         
     }
     
-    public var networkcount = 0
+    public func showFailureHUD(text: String) {
+        
+    }
+    
+    public func showWarningHUD(text: String) {
+        
+    }
     
     private lazy var navBackgroundView: UIView! = {
         let view = UIView()
@@ -64,17 +76,19 @@ open class MLBaseViewController: UIViewController, MLNavigationProtocol {
     deinit {
         MolueLogger.dealloc.message(String(describing: self))
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
-
+extension MLBaseViewController: MolueActivityDelegate {
+    public func networkActivityStarted() {
+        
+    }
+    
+    public func networkActivitySuccess() {
+        MolueLogger.network.message("success")
+    }
+    
+    public func networkActivityFailure(error: Error) {
+        print(error.localizedDescription)
+        
+    }
+}

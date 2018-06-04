@@ -33,75 +33,20 @@ class HomeInfoTableHeaderView: UIView {
         }
     }
     
-    @IBOutlet private weak var basicInfoView: UIView!
-    
-    @IBOutlet private weak var riskCheckView: UIView!
-    
-    private func addControlToRiskCheckView() {
-        let control = UIControl.init()
-        riskCheckView.addSubview(control)
-        control.snp.makeConstraints { (make) in
-            make.top.bottom.equalToSuperview()
-            make.left.right.equalToSuperview()
+    @IBOutlet private weak var basicInfoView: UIView! {
+        didSet {
+            let control = UIControl.init()
+            basicInfoView.doBespreadOn(control)
+            control.addTarget(self, action: #selector(basicInfoControlClicked), for: .touchUpInside)
         }
-        control.addTarget(self, action: #selector(riskCheckControlClicked), for: .touchUpInside)
     }
     
-    private func addControlToBasicInfoView() {
-        let control = UIControl.init()
-        basicInfoView.addSubview(control)
-        control.snp.makeConstraints { (make) in
-            make.top.bottom.equalToSuperview()
-            make.left.right.equalToSuperview()
+    @IBOutlet private weak var riskCheckView: UIView! {
+        didSet {
+            let control = UIControl.init()
+            riskCheckView.doBespreadOn(control)
+            control.addTarget(self, action: #selector(riskCheckControlClicked), for: .touchUpInside)
         }
-        control.addTarget(self, action: #selector(basicInfoControlClicked), for: .touchUpInside)
-    }
-    
-    private func addControlsToBottomView() {
-        self.addControlToNotificationView()
-        self.addControlToEducationView()
-        self.addControlToLegislationView()
-        self.addControlToDataRecordView()
-    }
-    
-    private func addControlToNotificationView () {
-        let control = UIControl.init()
-        notificationView.addSubview(control)
-        control.snp.makeConstraints { (make) in
-            make.top.bottom.equalToSuperview()
-            make.left.right.equalToSuperview()
-        }
-        control.addTarget(self, action: #selector(notificationControlClicked), for: .touchUpInside)
-    }
-    
-    private func addControlToEducationView() {
-        let control = UIControl.init()
-        educationView.addSubview(control)
-        control.snp.makeConstraints { (make) in
-            make.top.bottom.equalToSuperview()
-            make.left.right.equalToSuperview()
-        }
-        control.addTarget(self, action: #selector(educationControlClicked), for: .touchUpInside)
-    }
-    
-    private func addControlToLegislationView() {
-        let control = UIControl.init()
-        legislationView.addSubview(control)
-        control.snp.makeConstraints { (make) in
-            make.top.bottom.equalToSuperview()
-            make.left.right.equalToSuperview()
-        }
-        control.addTarget(self, action: #selector(legislationControlClicked), for: .touchUpInside)
-    }
-    
-    private func addControlToDataRecordView() {
-        let control = UIControl.init()
-        dataRecordView.addSubview(control)
-        control.snp.makeConstraints { (make) in
-            make.top.bottom.equalToSuperview()
-            make.left.right.equalToSuperview()
-        }
-        control.addTarget(self, action: #selector(dataRecordControlClicked), for: .touchUpInside)
     }
     
     @IBAction private func basicInfoControlClicked(_ sender: Any) {
@@ -130,10 +75,34 @@ class HomeInfoTableHeaderView: UIView {
         }
     }
     
-    @IBOutlet private weak var notificationView: UIView!
-    @IBOutlet private weak var educationView: UIView!
-    @IBOutlet private weak var legislationView: UIView!
-    @IBOutlet private weak var dataRecordView: UIView!
+    @IBOutlet private weak var notificationView: UIView! {
+        didSet {
+            let control = UIControl.init()
+            notificationView.doBespreadOn(control)
+            control.addTarget(self, action: #selector(notificationControlClicked), for: .touchUpInside)
+        }
+    }
+    @IBOutlet private weak var educationView: UIView! {
+        didSet {
+            let control = UIControl.init()
+            educationView.doBespreadOn(control)
+            control.addTarget(self, action: #selector(educationControlClicked), for: .touchUpInside)
+        }
+    }
+    @IBOutlet private weak var legislationView: UIView! {
+        didSet {
+            let control = UIControl.init()
+            legislationView.doBespreadOn(control)
+            control.addTarget(self, action: #selector(legislationControlClicked), for: .touchUpInside)
+        }
+    }
+    @IBOutlet private weak var dataRecordView: UIView! {
+        didSet {
+            let control = UIControl.init()
+            dataRecordView.doBespreadOn(control)
+            control.addTarget(self, action: #selector(dataRecordControlClicked), for: .touchUpInside)
+        }
+    }
     
     let selectedCommand = PublishSubject<String>()
     /// 基础信息
@@ -148,13 +117,6 @@ class HomeInfoTableHeaderView: UIView {
     let legislationCommand = PublishSubject<Void>()
     /// 资料备案
     let dataRecordCommand = PublishSubject<Void>()
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        self.addControlToBasicInfoView()
-        self.addControlToRiskCheckView()
-        self.addControlsToBottomView()
-    }
 }
 
 extension HomeInfoTableHeaderView: UICollectionViewDelegate {

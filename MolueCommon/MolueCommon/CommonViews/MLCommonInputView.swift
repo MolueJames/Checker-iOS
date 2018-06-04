@@ -7,10 +7,26 @@
 //
 
 import UIKit
-
+import RxSwift
 public class MLCommonInputView: UIView {
-    @IBOutlet public weak var textFiled: UITextField!
-    @IBOutlet public weak var titleLabel: UILabel!
+    @IBOutlet private weak var textFiled: UITextField! {
+        didSet {
+            textFiled.addTarget(self, action: #selector(textValueChanged), for: .editingChanged)
+        }
+    }
+    @IBOutlet private weak var titleLabel: UILabel!
+    
+    public let textChangedCommand = PublishSubject<String>()
+    
+    @IBAction private func textValueChanged(_ textFiled: UITextField) {
+        guard let text = textFiled.text else {return}
+        self.textChangedCommand.onNext(text)
+    }
+    
+    public func update(title: String, placeholder: String) {
+        self.titleLabel.text = title
+        self.textFiled.placeholder = placeholder
+    }
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -19,3 +35,5 @@ public class MLCommonInputView: UIView {
     }
     */
 }
+
+

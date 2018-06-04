@@ -110,16 +110,4 @@ extension HomeInfoViewController: UITableViewDataSource {
     }
 }
 
-extension MLBaseViewController: MolueActivityDelegate {
-    public func networkActivityStarted() {
-        
-    }
-    
-    public func networkActivitySuccess() {
-        MolueLogger.network.message("success")
-    }
-    
-    public func networkActivityFailure(error: Error) {
-        print(error.localizedDescription)
-    }
-}
+

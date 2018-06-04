@@ -17,9 +17,140 @@
                     <view key="view" contentMode="scaleToFill" id="yoW-it-gUN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oli-h5-Oei">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="必填" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nxr-JR-ZdA">
+                                        <rect key="frame" x="20" y="0.0" width="355" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="CS6-yd-TP3"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H1z-Xr-6AF" customClass="MLContainerView" customModule="MolueCommon">
+                                        <rect key="frame" x="0.0" y="30" width="375" height="55"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="DKF-7B-nVx"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9SW-Gp-wur" customClass="MLContainerView" customModule="MolueCommon">
+                                        <rect key="frame" x="0.0" y="85" width="375" height="55"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="aGd-9u-seJ"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pyc-jc-FUm" customClass="MLContainerView" customModule="MolueCommon">
+                                        <rect key="frame" x="0.0" y="140" width="375" height="55"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="Ep9-nf-qGn"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pkm-cH-MwA" customClass="MLContainerView" customModule="MolueCommon">
+                                        <rect key="frame" x="0.0" y="195" width="375" height="55"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="IAw-Aa-DFT"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="选填" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BFV-Xa-nfM">
+                                        <rect key="frame" x="20" y="250" width="355" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="OKR-47-iN5"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TPj-6h-RLC" customClass="MLContainerView" customModule="MolueCommon">
+                                        <rect key="frame" x="0.0" y="280" width="375" height="55"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="hH1-z5-4vg"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3wU-jg-k1C" customClass="MLContainerView" customModule="MolueCommon">
+                                        <rect key="frame" x="0.0" y="335" width="375" height="55"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="MoH-Ow-c83"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="72p-9m-ECo" customClass="MLContainerView" customModule="MolueCommon">
+                                        <rect key="frame" x="0.0" y="390" width="375" height="55"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="64a-CG-MXP"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CZQ-Co-RxQ" customClass="MLContainerView" customModule="MolueCommon">
+                                        <rect key="frame" x="0.0" y="445" width="375" height="55"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="RBH-mg-hnU"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="9SW-Gp-wur" secondAttribute="trailing" id="09o-Wa-CG1"/>
+                                    <constraint firstItem="TPj-6h-RLC" firstAttribute="top" secondItem="BFV-Xa-nfM" secondAttribute="bottom" id="2uJ-fx-bDd"/>
+                                    <constraint firstItem="BFV-Xa-nfM" firstAttribute="leading" secondItem="oli-h5-Oei" secondAttribute="leading" constant="20" id="4Sc-bp-TBa"/>
+                                    <constraint firstAttribute="trailing" secondItem="H1z-Xr-6AF" secondAttribute="trailing" id="8ht-gY-C1a"/>
+                                    <constraint firstItem="pkm-cH-MwA" firstAttribute="leading" secondItem="oli-h5-Oei" secondAttribute="leading" id="AMM-gR-Pla"/>
+                                    <constraint firstItem="nxr-JR-ZdA" firstAttribute="leading" secondItem="oli-h5-Oei" secondAttribute="leading" constant="20" id="CkJ-Ta-C4s"/>
+                                    <constraint firstAttribute="trailing" secondItem="nxr-JR-ZdA" secondAttribute="trailing" id="DhM-PT-Dbm"/>
+                                    <constraint firstAttribute="trailing" secondItem="3wU-jg-k1C" secondAttribute="trailing" id="Egh-JH-ODw"/>
+                                    <constraint firstAttribute="bottom" secondItem="CZQ-Co-RxQ" secondAttribute="bottom" id="Gnv-v9-gfb"/>
+                                    <constraint firstItem="nxr-JR-ZdA" firstAttribute="top" secondItem="oli-h5-Oei" secondAttribute="top" id="IIr-Of-FlJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="BFV-Xa-nfM" secondAttribute="trailing" id="Kus-NZ-WDr"/>
+                                    <constraint firstItem="Pyc-jc-FUm" firstAttribute="leading" secondItem="oli-h5-Oei" secondAttribute="leading" id="Pcr-NZ-0Ph"/>
+                                    <constraint firstAttribute="trailing" secondItem="TPj-6h-RLC" secondAttribute="trailing" id="PhA-Fw-J2W"/>
+                                    <constraint firstItem="H1z-Xr-6AF" firstAttribute="width" secondItem="oli-h5-Oei" secondAttribute="width" id="ST0-xJ-kWZ"/>
+                                    <constraint firstItem="9SW-Gp-wur" firstAttribute="top" secondItem="H1z-Xr-6AF" secondAttribute="bottom" id="TjH-GX-e7Q"/>
+                                    <constraint firstItem="Pyc-jc-FUm" firstAttribute="top" secondItem="9SW-Gp-wur" secondAttribute="bottom" id="Xw0-a0-PcW"/>
+                                    <constraint firstAttribute="trailing" secondItem="pkm-cH-MwA" secondAttribute="trailing" id="Z65-eO-17a"/>
+                                    <constraint firstItem="72p-9m-ECo" firstAttribute="top" secondItem="3wU-jg-k1C" secondAttribute="bottom" id="c2m-fS-8uX"/>
+                                    <constraint firstItem="9SW-Gp-wur" firstAttribute="leading" secondItem="oli-h5-Oei" secondAttribute="leading" id="dD9-3f-0sE"/>
+                                    <constraint firstItem="3wU-jg-k1C" firstAttribute="top" secondItem="TPj-6h-RLC" secondAttribute="bottom" id="lNN-xK-iW5"/>
+                                    <constraint firstAttribute="trailing" secondItem="Pyc-jc-FUm" secondAttribute="trailing" id="mXa-ox-ENH"/>
+                                    <constraint firstItem="CZQ-Co-RxQ" firstAttribute="leading" secondItem="oli-h5-Oei" secondAttribute="leading" id="nLp-yZ-XFD"/>
+                                    <constraint firstItem="TPj-6h-RLC" firstAttribute="leading" secondItem="oli-h5-Oei" secondAttribute="leading" id="oLK-lQ-Gzp"/>
+                                    <constraint firstItem="pkm-cH-MwA" firstAttribute="top" secondItem="Pyc-jc-FUm" secondAttribute="bottom" id="q21-DH-Tt0"/>
+                                    <constraint firstItem="3wU-jg-k1C" firstAttribute="leading" secondItem="oli-h5-Oei" secondAttribute="leading" id="q59-TX-3bw"/>
+                                    <constraint firstAttribute="trailing" secondItem="72p-9m-ECo" secondAttribute="trailing" id="qIP-Ee-gYi"/>
+                                    <constraint firstItem="H1z-Xr-6AF" firstAttribute="leading" secondItem="oli-h5-Oei" secondAttribute="leading" id="sFL-d7-nVc"/>
+                                    <constraint firstItem="CZQ-Co-RxQ" firstAttribute="top" secondItem="72p-9m-ECo" secondAttribute="bottom" id="wkG-rs-V0e"/>
+                                    <constraint firstAttribute="trailing" secondItem="CZQ-Co-RxQ" secondAttribute="trailing" id="wv7-Te-nfN"/>
+                                    <constraint firstItem="BFV-Xa-nfM" firstAttribute="top" secondItem="pkm-cH-MwA" secondAttribute="bottom" id="xBS-mJ-rMn"/>
+                                    <constraint firstItem="H1z-Xr-6AF" firstAttribute="top" secondItem="nxr-JR-ZdA" secondAttribute="bottom" id="z6O-sQ-vzG"/>
+                                    <constraint firstItem="72p-9m-ECo" firstAttribute="leading" secondItem="oli-h5-Oei" secondAttribute="leading" id="ze2-Pq-are"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="oli-h5-Oei" firstAttribute="leading" secondItem="5UM-U4-bRw" secondAttribute="leading" id="7xR-kc-zPf"/>
+                            <constraint firstItem="oli-h5-Oei" firstAttribute="bottom" secondItem="5UM-U4-bRw" secondAttribute="bottom" id="Eyr-eu-e34"/>
+                            <constraint firstItem="5UM-U4-bRw" firstAttribute="trailing" secondItem="oli-h5-Oei" secondAttribute="trailing" id="RjS-kP-bUr"/>
+                            <constraint firstItem="oli-h5-Oei" firstAttribute="top" secondItem="5UM-U4-bRw" secondAttribute="top" id="jPk-OP-Daa"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="5UM-U4-bRw"/>
                     </view>
+                    <connections>
+                        <outlet property="EmailContainerView" destination="72p-9m-ECo" id="tSD-dP-P0p"/>
+                        <outlet property="addressContainerView" destination="pkm-cH-MwA" id="KjC-TQ-am8"/>
+                        <outlet property="contactNoContainerView" destination="Pyc-jc-FUm" id="Tol-Gy-ghr"/>
+                        <outlet property="faxNumberContainerView" destination="3wU-jg-k1C" id="riR-Nf-OIz"/>
+                        <outlet property="phoneNoContainerView" destination="9SW-Gp-wur" id="YeG-VS-upQ"/>
+                        <outlet property="postalCodeContainerView" destination="TPj-6h-RLC" id="j65-WY-Jh4"/>
+                        <outlet property="representContainerView" destination="H1z-Xr-6AF" id="D2w-9O-gLP"/>
+                        <outlet property="websiteContainerView" destination="CZQ-Co-RxQ" id="IpK-kg-V7N"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mr1-6R-Eb4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

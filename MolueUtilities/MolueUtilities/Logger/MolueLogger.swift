@@ -27,6 +27,8 @@ public enum MolueLogger: String {
     public func error<T>(_ message: T, file: String = #file, method: String = #function, line: Int = #line) {
         #if DEBUG
             fatalError("\((file as NSString).lastPathComponent)-Line:\(line)-Method:\(method) \(self.rawValue): \(message)")
+        #else
+            print("\((file as NSString).lastPathComponent)-Line:\(line)-Method:\(method) \(self.rawValue): \(message)")
         #endif
     }
 }
