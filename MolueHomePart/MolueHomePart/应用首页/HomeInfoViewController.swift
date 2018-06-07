@@ -24,19 +24,18 @@ class HomeInfoViewController: MLBaseViewController, NVActivityIndicatorViewable 
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.navigationItem.titleView = titleLabel
-        self.initPublishSubjects()
     }
     
     func initPublishSubjects() {
         self.headerView.basicInfoCommand.subscribe(onNext: { _ in
-            let router = MolueNavigatorRouter(.Home, path: HomeFilePath.EnterpriseInfo)
+            let router = MolueNavigatorRouter(.Home, path: HomePath.EnterpriseInfo.rawValue)
             MolueAppRouter.sharedInstance.pushRouter(router, needHideBottomBar: true)
         }).disposed(by: disposeBag)
         self.headerView.riskCheckCommand.subscribe(onNext: { _ in
-            
+        
         }).disposed(by: disposeBag)
         self.headerView.notificationCommand.subscribe(onNext: { _ in
-            
+        
         }).disposed(by: disposeBag)
         self.headerView.legislationCommand.subscribe(onNext: { _ in
             
@@ -61,6 +60,7 @@ class HomeInfoViewController: MLBaseViewController, NVActivityIndicatorViewable 
             tableview.dataSource = self
             tableview.separatorStyle = .none
             tableview.register(xibWithCellClass: HomeInfoTableViewCell.self)
+            headerView = HomeInfoTableHeaderView.createFromXib()
             tableview.tableHeaderView = headerView
         }
     }
@@ -74,11 +74,12 @@ class HomeInfoViewController: MLBaseViewController, NVActivityIndicatorViewable 
         return label
     } ()
     
-    lazy var headerView: HomeInfoTableHeaderView! = {
-        let view: HomeInfoTableHeaderView = HomeInfoTableHeaderView.createFromXib()
-        view.frame = CGRect.init(x: 0, y: 0, width: MLConfigure.screenWidth, height: 385)
-        return view
-    }()
+    var headerView: HomeInfoTableHeaderView! {
+        didSet {
+            headerView.frame = CGRect.init(x: 0, y: 0, width: MLConfigure.screenWidth, height: 385)
+            self.initPublishSubjects()
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

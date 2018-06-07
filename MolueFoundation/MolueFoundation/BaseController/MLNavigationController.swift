@@ -7,24 +7,11 @@
 //
 
 import UIKit
-protocol MLNavigationProtocol {
-    var customBackBarButtonItem: UIBarButtonItem {get}
-}
-protocol MLNavigationPopProtocol {
-    func navigationShouldPopOnBackButton(_ sender: UINavigationItem)
-}
 
-extension MLNavigationProtocol {
-    var customBackBarButtonItem: UIBarButtonItem { get {
-            return UIBarButtonItem.init(title: "返回", style: .plain, target: nil, action: nil)
-        }
-    }
-}
 open class MLNavigationController: UINavigationController {
 
     override open func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
     
@@ -75,13 +62,4 @@ open class MLNavigationController: UINavigationController {
         }
         return false
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 }

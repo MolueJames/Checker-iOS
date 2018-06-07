@@ -9,86 +9,90 @@
 import UIKit
 import SnapKit
 import MolueUtilities
-import JGProgressHUD
 import MolueNetwork
-open class MLBaseViewController: UIViewController, MLNavigationProtocol {
-    public var networkcount = 0 {
+open class MLBaseViewController: UIViewController, MLNavigationProtocol, MLControllerNetworkProtocol {
+    private var networkcount = 0 {
         didSet {
-            
+            self.needToDo(newValue: networkcount, oldValue: oldValue)
         }
     }
-    public func showSuccessHUD(text: String) {
-        
+    private var navBackgroundView: UIView! {
+        didSet {
+            self.view.addSubview(navBackgroundView)
+            let height: CGFloat = MLConfigure.iPhoneX ? 88 : 64
+            navBackgroundView.snp.updateConstraints { (make) in
+                make.height.equalTo(height)
+            }
+            navBackgroundView.snp.makeConstraints { (make) in
+                make.top.left.right.equalToSuperview()
+            }
+        }
     }
-    
-    public func showFailureHUD(text: String) {
-        
-    }
-    
-    public func showWarningHUD(text: String) {
-        
-    }
-    
-    private lazy var navBackgroundView: UIView! = {
-        let view = UIView()
-        view.backgroundColor = UIColor.init(hex: 0x1B82D2)
-        self.view.insertSubview(view, at: 0)
-        return view
-    }()
-
     open override func loadView() {
         super.loadView()
         self.updateNavBackgroundView()
     }
-    
     private func updateNavBackgroundView() {
         guard let _ = self.navigationController else { return }
-        let height: CGFloat = MLConfigure.iPhoneX ? 88 : 64
-        let width: CGFloat = self.view.width
-        self.navBackgroundView.frame = CGRect.init(x: 0, y: 0, width: width, height: height)
+        navBackgroundView = UIView()
+        navBackgroundView.backgroundColor = UIColor.init(hex: 0x1B82D2)
     }
-    
     open override var preferredStatusBarStyle: UIStatusBarStyle {
-        get {
-            return .lightContent
-        }
+        get { return .lightContent }
     }
-    
     open override var prefersStatusBarHidden: Bool {
-        get {
-            return false
-        }
+        get { return false }
     }
-    
     open override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
-        get {
-            return .slide
-        }
+        get { return .slide }
     }
-    
     open override func viewDidLoad() {
         super.viewDidLoad()
         self.automaticallyAdjustsScrollViewInsets = false;
         self.edgesForExtendedLayout = .all;
         self.view.backgroundColor = UIColor.init(hex: 0xf5f5f9)
     }
-    
     deinit {
         MolueLogger.dealloc.message(String(describing: self))
     }
 }
 
-extension MLBaseViewController: MolueActivityDelegate {
+extension MLBaseViewController {
+    open func hideNavigationBar(animated: Bool = false) {
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+        navBackgroundView.snp.updateConstraints { (make) in
+            make.height.equalTo(0)
+        }
+        self.navigationBarAnimate(animated)
+    }
+    open func showNavigationBar(animated: Bool = false) {
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+        let height: CGFloat = MLConfigure.iPhoneX ? 88 : 64
+        navBackgroundView.snp.updateConstraints { (make) in
+            make.height.equalTo(height)
+        }
+        self.navigationBarAnimate(animated)
+    }
+    private func navigationBarAnimate(_ animated: Bool) {
+        guard animated == true else {return}
+        UIView.animate(withDuration: 0.2) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    open func updateNavigationBarBackgroundColor(_ color: UIColor) {
+        navBackgroundView.backgroundColor = color
+    }
+}
+
+extension MLBaseViewController : MolueActivityDelegate {
     public func networkActivityStarted() {
-        
+        self.networkcount = self.networkcount + 1
     }
-    
     public func networkActivitySuccess() {
-        MolueLogger.network.message("success")
+        self.networkcount = self.networkcount - 1
     }
-    
     public func networkActivityFailure(error: Error) {
-        print(error.localizedDescription)
-        
+        self.networkcount = self.networkcount - 1
+        self.showFailureHUD(text: error.localizedDescription)
     }
 }

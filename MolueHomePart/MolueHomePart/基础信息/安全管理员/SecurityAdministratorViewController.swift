@@ -25,7 +25,7 @@ class SecurityAdministratorViewController: MLBaseViewController {
     var tableViewFooterView: AddAdministratorFooterView! {
         didSet {
             tableViewFooterView.addControlCommand.subscribe { _ in
-                let router = MolueNavigatorRouter(.Home, path: HomeFilePath.AddAdministrator)
+                let router = MolueNavigatorRouter(.Home, path: HomePath.AddAdministrator.rawValue)
                 MolueAppRouter.sharedInstance.pushRouter(router)
             }.disposed(by: disposeBag)
         }

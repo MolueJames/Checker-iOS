@@ -23,10 +23,10 @@ extension AppDelegate {
     private func rootViewController() -> UIViewController {
         MolueAppRouter.sharedInstance.initialize()
         var viewControllers = [MLNavigationController]()
-        self.addNavigationController(module: .Home, path: HomeFilePath.HomePageInfo, viewControllers: &viewControllers, title:"首页", imageName: "molue_tabbar_home")
-        self.addNavigationController(module: .Risk, path: RiskFilePath.RiskInfo, viewControllers: &viewControllers, title:"隐患", imageName: "molue_tabbar_risk")
-        self.addNavigationController(module: .Book, path: BookFilePath.BookInfo, viewControllers: &viewControllers, title:"文书", imageName: "molue_tabbar_book")
-        self.addNavigationController(module: .Mine, path: MineFilePath.MineInfo, viewControllers: &viewControllers, title:"我的", imageName: "molue_tabbar_mine")
+        self.addNavigationController(module: .Home, path: HomePath.HomePageInfo.rawValue, viewControllers: &viewControllers, title:"首页", imageName: "molue_tabbar_home")
+        self.addNavigationController(module: .Risk, path: RiskPath.RiskInfo.rawValue, viewControllers: &viewControllers, title:"隐患", imageName: "molue_tabbar_risk")
+        self.addNavigationController(module: .Book, path: BookPath.BookInfo.rawValue, viewControllers: &viewControllers, title:"文书", imageName: "molue_tabbar_book")
+        self.addNavigationController(module: .Mine, path: MinePath.MineInfo.rawValue, viewControllers: &viewControllers, title:"我的", imageName: "molue_tabbar_mine")
         
         let tabbarController = MLTabBarController.init()
         tabbarController.viewControllers = viewControllers

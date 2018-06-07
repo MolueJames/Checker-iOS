@@ -97,6 +97,7 @@ target 'MolueFoundation' do
     project 'MolueFoundation/MolueFoundation.xcodeproj'
         pod 'SnapKit', '~> 4.0.0'
         pod 'JGProgressHUD', '~> 1.4'
+        pod 'NVActivityIndicatorView', '~> 4.2.0'
 end
 
 target 'MolueDatabase' do

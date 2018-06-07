@@ -8,12 +8,13 @@
 
 import UIKit
 import MolueFoundation
+
 class RiskInfoViewController: MLBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "隐患"
         // Do any additional setup after loading the view.
+        self.title = "隐患"
     }
 
     override func didReceiveMemoryWarning() {

@@ -36,15 +36,16 @@ class EnterpriseInformationViewController: MLBaseViewController {
     
     private func dataSource() -> [EnterpriseInfoModel] {
         var list = [EnterpriseInfoModel]()
-        self.addInfoToModelList(lists: &list, model: EnterpriseInfoModel(color: UIColor.init(hex: 0x1B82D2)!, imageName: "enterprise_info_basic", title: "基本档案", description: "更新日期：2018.12.1", viewPath: HomeFilePath.BasicArchives))
-        self.addInfoToModelList(lists: &list, model: EnterpriseInfoModel(color: UIColor.init(hex: 0x43C6A4)!, imageName: "enterprise_info_contact", title: "联络信息", description: "更新日期：2018.12.1", viewPath: HomeFilePath.ContactInfo))
-        self.addInfoToModelList(lists: &list, model: EnterpriseInfoModel(color: UIColor.init(hex: 0xFFC30C)!, imageName: "enterprise_info_feature", title: "危险特征", description: "未更新", viewPath: HomeFilePath.RiskFeature))
-        self.addInfoToModelList(lists: &list, model: EnterpriseInfoModel(color: UIColor.init(hex: 0x999999)!, imageName: "enterprise_info_manager", title: "安全管理员", description: "1人，更新日期：2018.12.1", viewPath: HomeFilePath.SecurityAdministrator))
+        self.addInfoToModelList(lists: &list, model: EnterpriseInfoModel(color: UIColor.init(hex: 0x1B82D2)!, imageName: "enterprise_info_basic", title: "基本档案", description: "更新日期：2018.12.1", viewPath: HomePath.BasicArchives.rawValue))
+        self.addInfoToModelList(lists: &list, model: EnterpriseInfoModel(color: UIColor.init(hex: 0x43C6A4)!, imageName: "enterprise_info_contact", title: "联络信息", description: "更新日期：2018.12.1", viewPath: HomePath.ContactInfo.rawValue))
+        self.addInfoToModelList(lists: &list, model: EnterpriseInfoModel(color: UIColor.init(hex: 0xFFC30C)!, imageName: "enterprise_info_feature", title: "危险特征", description: "未更新", viewPath: HomePath.RiskFeature.rawValue))
+        self.addInfoToModelList(lists: &list, model: EnterpriseInfoModel(color: UIColor.init(hex: 0x999999)!, imageName: "enterprise_info_manager", title: "安全管理员", description: "1人，更新日期：2018.12.1", viewPath: HomePath.SecurityAdministrator.rawValue))
         return list
     }
     
     private func addInfoToModelList(lists: inout [EnterpriseInfoModel], model: EnterpriseInfoModel) {
-        objc_sync_enter(self); defer {objc_sync_exit(self)}
+        objc_sync_enter(self)
+        defer {objc_sync_exit(self)}
         lists.append(model)
     }
     /*

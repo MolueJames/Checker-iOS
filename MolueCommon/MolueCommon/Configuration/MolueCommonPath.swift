@@ -9,38 +9,37 @@
 import Foundation
 import MolueUtilities
 
-public struct HomeFilePath {
+public enum HomePath: String {
     /// 应用首页
-    public static let HomePageInfo = "HomeInfoViewController"
+    case HomePageInfo = "HomeInfoViewController"
     /// 基础信息
-    public static let EnterpriseInfo = "EnterpriseInformationViewController"
+    case EnterpriseInfo = "EnterpriseInformationViewController"
     /// 基本档案
-    public static let BasicArchives = "BasicArchivesViewController"
+    case BasicArchives = "BasicArchivesViewController"
     /// 联络信息
-    public static let ContactInfo = "ContactInformationViewController"
+    case ContactInfo = "ContactInformationViewController"
     /// 危险特征
-    public static let RiskFeature = "RiskFeatureViewController"
+    case RiskFeature = "RiskFeatureViewController"
     /// 危险设备
-    public static let HazardousMachinery = "HazardousMachineryViewController"
+    case HazardousMachinery = "HazardousMachineryViewController"
     /// 企业危险特征
-    public static let EnterpriseRisk = "EnterpriseRiskFeatureViewController"
+    case EnterpriseRisk = "EnterpriseRiskFeatureViewController"
     /// 添加管理员
-    public static let AddAdministrator = "AddSecurityAdministratorViewController"
+    case AddAdministrator = "AddSecurityAdministratorViewController"
     /// 安全管理员
-    public static let SecurityAdministrator = "SecurityAdministratorViewController"
-
+    case SecurityAdministrator = "SecurityAdministratorViewController"
 }
 
-public struct MineFilePath {
+public enum MinePath: String {
     /// 个人信息
-    public static let MineInfo = "MineInformationViewController"
+    case MineInfo = "MineInformationViewController"
 }
 
-public struct RiskFilePath {
-    public static let RiskInfo = "RiskInfoViewController"
+public enum RiskPath: String {
+    case RiskInfo = "RiskInfoViewController"
 }
 
-public struct BookFilePath {
-    public static let BookInfo = "BookInfoViewController"
+public enum BookPath: String {
+    case BookInfo = "BookInfoViewController"
 }
 

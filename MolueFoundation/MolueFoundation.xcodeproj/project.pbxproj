@@ -44,7 +44,6 @@
 		1A7D9B262086460100FA997D /* MolueFoundationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueFoundationTests.swift; sourceTree = "<group>"; };
 		1A7D9B282086460100FA997D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1AA7356D20A9CC5F00DF7CD0 /* MolueUtilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueUtilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1ABDCAA520C59AC00062DE71 /* Objective-C-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Objective-C-Bridging-Header.h"; sourceTree = "<group>"; };
 		1ABDCAA720C59BCE0062DE71 /* MolueNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1ABDCAA920C59D400062DE71 /* MolueFoundation.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MolueFoundation.xcassets; sourceTree = "<group>"; };
 		3E9AC032042B4F8088E50751 /* Pods-MolueFoundation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueFoundation.release.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueFoundation/Pods-MolueFoundation.release.xcconfig"; sourceTree = "<group>"; };
@@ -100,7 +99,6 @@
 				1ABDCAA620C59ACB0062DE71 /* BaseController */,
 				1A7D9B1B2086460100FA997D /* MolueFoundation.h */,
 				1A7D9B1C2086460100FA997D /* Info.plist */,
-				1ABDCAA520C59AC00062DE71 /* Objective-C-Bridging-Header.h */,
 				1ABDCAA920C59D400062DE71 /* MolueFoundation.xcassets */,
 			);
 			path = MolueFoundation;
