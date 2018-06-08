@@ -48,8 +48,8 @@
 		1AAF7B8B20C1971B0051EC18 /* RiskFeatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAF7B7D20C1971B0051EC18 /* RiskFeatureViewController.swift */; };
 		1ABDCA9520C5720F0062DE71 /* AddAdministratorFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABDCA9420C5720F0062DE71 /* AddAdministratorFooterView.swift */; };
 		1ABDCA9720C5721B0062DE71 /* AddAdministratorFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1ABDCA9620C5721B0062DE71 /* AddAdministratorFooterView.xib */; };
-		1ABDCA9A20C5798B0062DE71 /* AddAdministratorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABDCA9820C5798B0062DE71 /* AddAdministratorTableViewCell.swift */; };
-		1ABDCA9B20C5798B0062DE71 /* AddAdministratorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1ABDCA9920C5798B0062DE71 /* AddAdministratorTableViewCell.xib */; };
+		1ABDCA9A20C5798B0062DE71 /* SecurityAdministratorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABDCA9820C5798B0062DE71 /* SecurityAdministratorTableViewCell.swift */; };
+		1ABDCA9B20C5798B0062DE71 /* SecurityAdministratorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1ABDCA9920C5798B0062DE71 /* SecurityAdministratorTableViewCell.xib */; };
 		EF01F517C22ED0361C323767 /* Pods_MolueHomePart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 010F6973D5E1725577EE6B03 /* Pods_MolueHomePart.framework */; };
 /* End PBXBuildFile section */
 
@@ -110,8 +110,8 @@
 		1AAF7B7D20C1971B0051EC18 /* RiskFeatureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RiskFeatureViewController.swift; sourceTree = "<group>"; };
 		1ABDCA9420C5720F0062DE71 /* AddAdministratorFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAdministratorFooterView.swift; sourceTree = "<group>"; };
 		1ABDCA9620C5721B0062DE71 /* AddAdministratorFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddAdministratorFooterView.xib; sourceTree = "<group>"; };
-		1ABDCA9820C5798B0062DE71 /* AddAdministratorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAdministratorTableViewCell.swift; sourceTree = "<group>"; };
-		1ABDCA9920C5798B0062DE71 /* AddAdministratorTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddAdministratorTableViewCell.xib; sourceTree = "<group>"; };
+		1ABDCA9820C5798B0062DE71 /* SecurityAdministratorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityAdministratorTableViewCell.swift; sourceTree = "<group>"; };
+		1ABDCA9920C5798B0062DE71 /* SecurityAdministratorTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecurityAdministratorTableViewCell.xib; sourceTree = "<group>"; };
 		9468AE17912D4AEEBE6E1EFA /* Pods-MolueHomePart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueHomePart.release.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueHomePart/Pods-MolueHomePart.release.xcconfig"; sourceTree = "<group>"; };
 		C7C163FB01CFAE81C039463E /* Pods-MolueHomePart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueHomePart.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueHomePart/Pods-MolueHomePart.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -320,8 +320,8 @@
 			children = (
 				1ABDCA9420C5720F0062DE71 /* AddAdministratorFooterView.swift */,
 				1ABDCA9620C5721B0062DE71 /* AddAdministratorFooterView.xib */,
-				1ABDCA9820C5798B0062DE71 /* AddAdministratorTableViewCell.swift */,
-				1ABDCA9920C5798B0062DE71 /* AddAdministratorTableViewCell.xib */,
+				1ABDCA9820C5798B0062DE71 /* SecurityAdministratorTableViewCell.swift */,
+				1ABDCA9920C5798B0062DE71 /* SecurityAdministratorTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -450,7 +450,7 @@
 				1AAF7B8620C1971B0051EC18 /* HazardousMachineryViewController.storyboard in Resources */,
 				1AAF7B8A20C1971B0051EC18 /* RiskFeatureViewController.storyboard in Resources */,
 				1A602F8C20A88095003AD583 /* HomeInfoTableHeaderView.xib in Resources */,
-				1ABDCA9B20C5798B0062DE71 /* AddAdministratorTableViewCell.xib in Resources */,
+				1ABDCA9B20C5798B0062DE71 /* SecurityAdministratorTableViewCell.xib in Resources */,
 				1A06557E20A9EE020016CA86 /* HomeInfoTableViewCell.xib in Resources */,
 				1AA7357020A9CFE800DF7CD0 /* MolueHome.xcassets in Resources */,
 				1A43BC2520C3AEE70093855B /* HomeInfoCollectionViewCell.xib in Resources */,
@@ -502,7 +502,7 @@
 				1AAF7B8220C1971B0051EC18 /* SecurityAdministratorViewController.swift in Sources */,
 				1A43BC2F20C3CAA60093855B /* EnterpriseInfoTableViewCell.swift in Sources */,
 				1A43BC2420C3AEE70093855B /* HomeInfoCollectionViewCell.swift in Sources */,
-				1ABDCA9A20C5798B0062DE71 /* AddAdministratorTableViewCell.swift in Sources */,
+				1ABDCA9A20C5798B0062DE71 /* SecurityAdministratorTableViewCell.swift in Sources */,
 				1AAF7B8520C1971B0051EC18 /* ContactInformationViewController.swift in Sources */,
 				1AAF7B8B20C1971B0051EC18 /* RiskFeatureViewController.swift in Sources */,
 				1AAF7B8720C1971B0051EC18 /* HazardousMachineryViewController.swift in Sources */,

@@ -28,7 +28,7 @@ public class MLInterfaceConfigure {
     
     private static func setViewsAppearanceConfigure() {
         if #available(iOS 11.0, *) {
-            UIScrollView.appearance().contentInsetAdjustmentBehavior = .automatic
+            UIScrollView.appearance().contentInsetAdjustmentBehavior = .never
         }
     }
     

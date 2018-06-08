@@ -96,7 +96,7 @@ class BasicArchivesViewController: MLBaseViewController {
         self.navigationItem.rightBarButtonItem = submitButton
     }
     
-    @IBAction func submitButtonClicked(_ sender: UIBarButtonItem) {
+    @IBAction private func submitButtonClicked(_ sender: UIBarButtonItem) {
         
     }
 

@@ -23,14 +23,22 @@ class MolueUtilitiesTests: XCTestCase {
         MolueLogger.warning.message("xxxxx")
     }
     func testDM5() {
-        let md5 = MolueCryption.MD5("james")
-        MolueLogger.success.message(md5)
+//        let md5 = MolueCryption.MD5("james")
+//        MolueLogger.success.message(md5)
     }
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
     
+    
+    func testGuardNil () {
+        var a: Int?
+        guard let aa = a else {
+            MolueLogger.warning.error("ttt"); return
+        }
+        print(aa)
+    }
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.

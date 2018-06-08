@@ -29,7 +29,6 @@ protocol MLLoadingIndicatorProtocol {
 
 extension MLLoadingIndicatorProtocol where Self: UIViewController {
     func showLoadingIndicatorView() {
-        
         let data = ActivityData()
         NVActivityIndicatorPresenter.sharedInstance.startAnimating(data)
     }

@@ -17,7 +17,118 @@
                     <view key="view" contentMode="scaleToFill" id="HNH-hf-bxd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mwL-pk-ArC">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="人员信息" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HTg-rm-Psq">
+                                        <rect key="frame" x="20" y="0.0" width="355" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="gOx-AK-yKp"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5bj-51-9pe" customClass="MLContainerView" customModule="MolueCommon">
+                                        <rect key="frame" x="0.0" y="30" width="375" height="55"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="y7S-aq-tAO"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OgB-VC-tsb" customClass="MLContainerView" customModule="MolueCommon">
+                                        <rect key="frame" x="0.0" y="85" width="375" height="55"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="mxx-ul-kFE"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nOC-ng-Zv8" customClass="MLContainerView" customModule="MolueCommon">
+                                        <rect key="frame" x="0.0" y="140" width="375" height="55"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="blm-0q-ZLf"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HUU-Im-RPI" customClass="MLContainerView" customModule="MolueCommon">
+                                        <rect key="frame" x="0.0" y="195" width="375" height="55"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="hbI-t9-ktE"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="证书信息" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A1n-hI-G6z">
+                                        <rect key="frame" x="20" y="250" width="355" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="MoE-TC-gN0"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yOM-hU-FzV" customClass="MLContainerView" customModule="MolueCommon">
+                                        <rect key="frame" x="0.0" y="280" width="375" height="55"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="YCd-3I-hTe"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3xb-7J-fht" customClass="MLContainerView" customModule="MolueCommon">
+                                        <rect key="frame" x="0.0" y="335" width="375" height="55"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="opR-Ak-A5N"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QgD-ra-SGn" customClass="MLContainerView" customModule="MolueCommon">
+                                        <rect key="frame" x="0.0" y="390" width="375" height="130"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="130" id="Fgi-xO-AEP"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="HTg-rm-Psq" secondAttribute="trailing" id="1RY-ne-euY"/>
+                                    <constraint firstAttribute="bottom" secondItem="QgD-ra-SGn" secondAttribute="bottom" id="3WH-54-kLT"/>
+                                    <constraint firstItem="nOC-ng-Zv8" firstAttribute="top" secondItem="OgB-VC-tsb" secondAttribute="bottom" id="4iP-eU-JmL"/>
+                                    <constraint firstItem="OgB-VC-tsb" firstAttribute="leading" secondItem="mwL-pk-ArC" secondAttribute="leading" id="58c-yF-ErD"/>
+                                    <constraint firstItem="3xb-7J-fht" firstAttribute="leading" secondItem="mwL-pk-ArC" secondAttribute="leading" id="5xk-pZ-xtJ"/>
+                                    <constraint firstItem="HTg-rm-Psq" firstAttribute="top" secondItem="mwL-pk-ArC" secondAttribute="top" id="CFI-re-iZk"/>
+                                    <constraint firstItem="A1n-hI-G6z" firstAttribute="top" secondItem="HUU-Im-RPI" secondAttribute="bottom" id="EBm-hq-p3q"/>
+                                    <constraint firstAttribute="trailing" secondItem="5bj-51-9pe" secondAttribute="trailing" id="G3b-yc-ejE"/>
+                                    <constraint firstItem="yOM-hU-FzV" firstAttribute="top" secondItem="A1n-hI-G6z" secondAttribute="bottom" id="IDQ-Y6-fZd"/>
+                                    <constraint firstItem="yOM-hU-FzV" firstAttribute="leading" secondItem="mwL-pk-ArC" secondAttribute="leading" id="LGl-nY-kWK"/>
+                                    <constraint firstItem="3xb-7J-fht" firstAttribute="top" secondItem="yOM-hU-FzV" secondAttribute="bottom" id="PUJ-je-234"/>
+                                    <constraint firstAttribute="trailing" secondItem="A1n-hI-G6z" secondAttribute="trailing" id="TUP-Hh-hDI"/>
+                                    <constraint firstItem="5bj-51-9pe" firstAttribute="top" secondItem="HTg-rm-Psq" secondAttribute="bottom" id="USE-WG-fq3"/>
+                                    <constraint firstAttribute="trailing" secondItem="3xb-7J-fht" secondAttribute="trailing" id="VSH-3g-Iul"/>
+                                    <constraint firstItem="HTg-rm-Psq" firstAttribute="leading" secondItem="mwL-pk-ArC" secondAttribute="leading" constant="20" id="bqI-1d-613"/>
+                                    <constraint firstItem="OgB-VC-tsb" firstAttribute="top" secondItem="5bj-51-9pe" secondAttribute="bottom" id="efP-gO-eYC"/>
+                                    <constraint firstItem="5bj-51-9pe" firstAttribute="leading" secondItem="mwL-pk-ArC" secondAttribute="leading" id="hlP-P7-FpX"/>
+                                    <constraint firstItem="HUU-Im-RPI" firstAttribute="leading" secondItem="mwL-pk-ArC" secondAttribute="leading" id="jnH-1r-7Ls"/>
+                                    <constraint firstItem="QgD-ra-SGn" firstAttribute="leading" secondItem="mwL-pk-ArC" secondAttribute="leading" id="kUL-aD-tAd"/>
+                                    <constraint firstItem="5bj-51-9pe" firstAttribute="width" secondItem="mwL-pk-ArC" secondAttribute="width" id="lZa-Wg-Xys"/>
+                                    <constraint firstAttribute="trailing" secondItem="nOC-ng-Zv8" secondAttribute="trailing" id="nTh-fh-rQy"/>
+                                    <constraint firstAttribute="trailing" secondItem="HUU-Im-RPI" secondAttribute="trailing" id="pRR-9c-fSK"/>
+                                    <constraint firstItem="A1n-hI-G6z" firstAttribute="leading" secondItem="mwL-pk-ArC" secondAttribute="leading" constant="20" id="s5F-rh-8if"/>
+                                    <constraint firstItem="nOC-ng-Zv8" firstAttribute="leading" secondItem="mwL-pk-ArC" secondAttribute="leading" id="uSy-TD-5AG"/>
+                                    <constraint firstAttribute="trailing" secondItem="QgD-ra-SGn" secondAttribute="trailing" id="vKa-0D-SYz"/>
+                                    <constraint firstItem="QgD-ra-SGn" firstAttribute="top" secondItem="3xb-7J-fht" secondAttribute="bottom" id="xyn-43-mdK"/>
+                                    <constraint firstAttribute="trailing" secondItem="yOM-hU-FzV" secondAttribute="trailing" id="xzL-t4-MnZ"/>
+                                    <constraint firstItem="HUU-Im-RPI" firstAttribute="top" secondItem="nOC-ng-Zv8" secondAttribute="bottom" id="zYO-uS-5Re"/>
+                                    <constraint firstAttribute="trailing" secondItem="OgB-VC-tsb" secondAttribute="trailing" id="zvY-r2-v1u"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="00G-3c-UAd" firstAttribute="trailing" secondItem="mwL-pk-ArC" secondAttribute="trailing" id="29f-oR-cse"/>
+                            <constraint firstItem="00G-3c-UAd" firstAttribute="bottom" secondItem="mwL-pk-ArC" secondAttribute="bottom" id="Tjm-BG-bpX"/>
+                            <constraint firstItem="mwL-pk-ArC" firstAttribute="leading" secondItem="00G-3c-UAd" secondAttribute="leading" id="ZjT-8L-iDb"/>
+                            <constraint firstItem="mwL-pk-ArC" firstAttribute="top" secondItem="00G-3c-UAd" secondAttribute="top" id="t7f-ji-bSM"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="00G-3c-UAd"/>
                     </view>
                 </viewController>

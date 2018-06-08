@@ -12,6 +12,7 @@ import MolueNavigator
 import MolueCommon
 import MolueUtilities
 import MolueFoundation
+import ViewAnimator
 class SecurityAdministratorViewController: MLBaseViewController {
     private let disposeBag = DisposeBag()
     @IBOutlet weak var tableView: UITableView! {
@@ -19,6 +20,9 @@ class SecurityAdministratorViewController: MLBaseViewController {
             tableViewFooterView = AddAdministratorFooterView.createFromXib()
             tableViewFooterView.frame = CGRect(x: 0, y: 0, width:MLConfigure.screenWidth , height: 60)
             tableView.tableFooterView = tableViewFooterView
+            tableView.register(xibWithCellClass: SecurityAdministratorTableViewCell.self)
+            tableView.dataSource = self
+            tableView.delegate = self
         }
     }
     
@@ -35,7 +39,9 @@ class SecurityAdministratorViewController: MLBaseViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.title = "安全管理员"
-        
+        tableView.reloadData()
+        let animations = [AnimationType.from(direction: .left, offset: 300.0)]
+        UIView.animate(views: self.tableView.visibleCells, animations: animations)
     }
     
     override func didReceiveMemoryWarning() {
@@ -53,5 +59,28 @@ class SecurityAdministratorViewController: MLBaseViewController {
         // Pass the selected object to the new view controller.
     }
     */
+}
 
+extension SecurityAdministratorViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 110
+    }
+}
+
+extension SecurityAdministratorViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: SecurityAdministratorTableViewCell! = tableView.dequeueReusableCell(withClass: SecurityAdministratorTableViewCell.self)
+        cell.phoneCommand.subscribe(onNext: { (phone) in
+            MLCommonFunction.ringUpPhone(phone)
+        }).disposed(by: disposeBag)
+        cell.detailCommand.subscribe { _ in
+            let router = MolueNavigatorRouter(.Home, path: HomePath.AddAdministrator.rawValue)
+            MolueAppRouter.sharedInstance.pushRouter(router, parameters:["title": "编辑管理员"])
+        }.disposed(by: disposeBag)
+        return cell
+    }
 }

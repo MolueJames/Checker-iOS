@@ -8,12 +8,23 @@
 
 import UIKit
 import MolueFoundation
-class AddSecurityAdministratorViewController: MLBaseViewController {
+import MolueNavigator
+class AddSecurityAdministratorViewController: MLBaseViewController, MolueNavigatorProtocol {
+    func doTransferParameters(params: Any?) {
+        
+    }
+    
+    func doSettingParameters(params: Dictionary<String, String>) {
+        guard let title = params["title"] else {
+            self.title = "添加管理员"; return
+        }
+        self.title = title
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.title = "添加管理员"
     }
 
     override func didReceiveMemoryWarning() {

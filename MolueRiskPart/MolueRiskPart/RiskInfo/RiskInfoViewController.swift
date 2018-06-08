@@ -14,7 +14,8 @@ class RiskInfoViewController: MLBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.title = "隐患"
+//        self.title = "隐患"
+        self.hideNavigationBar()
     }
 
     override func didReceiveMemoryWarning() {

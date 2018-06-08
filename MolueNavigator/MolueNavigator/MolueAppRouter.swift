@@ -77,8 +77,7 @@ public class MolueAppRouter {
         if let alertRouter = MolueDoAlertRouter.init("<style>").toPath() {
             navigator.register(alertRouter) { (url, values, context) -> UIViewController? in
                 guard let style = values["style"] as? String else {
-                    MolueLogger.failure.error("The style is not String")
-                    return nil
+                    return MolueLogger.failure.returnNil("The style is not String")
                 }
                 let alertStyle: UIAlertControllerStyle = style == "alert" ? .alert : .actionSheet
                 let title = url.queryParameters["title"]
@@ -90,8 +89,7 @@ public class MolueAppRouter {
     
     private func createAlertController(_ url: URLConvertible, style: UIAlertControllerStyle, title: String?, message: String?, context: Any?) -> UIViewController? {
         guard let title = title else {
-            MolueLogger.failure.error("The title is nil")
-            return nil
+            return MolueLogger.failure.returnNil("The title is nil")
         }
         let alertController = UIAlertController(title: title, message: message, preferredStyle: style)
         if let actions:[UIAlertAction] = context as? [UIAlertAction] {
@@ -108,12 +106,10 @@ public class MolueAppRouter {
     
     private func createViewController(_ url: URLConvertible, filename: String, context: Any?) -> UIViewController? {
         guard let component = URLComponents.init(string: url.urlStringValue) else {
-            MolueLogger.failure.error("The component is not existed")
-            return nil
+            return MolueLogger.failure.returnNil("The component is not existed")
         }
         guard let module = component.host else {
-            MolueLogger.failure.error("The module is not existed")
-            return nil
+            return MolueLogger.failure.returnNil("The module is not existed")
         }
         let viewController = self.instantiateViewController(module: module, filename: filename)
         self.updateViewController(viewController, params: url.queryParameters, context: context)

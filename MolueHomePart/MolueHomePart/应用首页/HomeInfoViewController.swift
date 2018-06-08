@@ -11,19 +11,21 @@ import UIKit
 import MolueUtilities
 import RxSwift
 import MolueCommon
-import Permission
 import ESPullToRefresh
 import MolueNetwork
 import MolueNavigator
-import NVActivityIndicatorView
 import MolueFoundation
-class HomeInfoViewController: MLBaseViewController, NVActivityIndicatorViewable {
+import ViewAnimator
+
+class HomeInfoViewController: MLBaseViewController {
     private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.navigationItem.titleView = titleLabel
+        let animations = [AnimationType.from(direction: .top, offset: 80.0)]
+        UIView.animate(views: self.tableView.visibleCells, animations: animations)
     }
     
     func initPublishSubjects() {
@@ -48,20 +50,14 @@ class HomeInfoViewController: MLBaseViewController, NVActivityIndicatorViewable 
         }).disposed(by: disposeBag)
     }
     
-    @IBAction func buttonClicked(button: Any?) {
-        MoluePermission.camera { (status) in
-            MolueLogger.success.message(status)
-        }
-    }
-    
-    @IBOutlet weak var tableview: UITableView! {
+    @IBOutlet weak var tableView: UITableView! {
         didSet {
-            tableview.delegate = self
-            tableview.dataSource = self
-            tableview.separatorStyle = .none
-            tableview.register(xibWithCellClass: HomeInfoTableViewCell.self)
+            tableView.delegate = self
+            tableView.dataSource = self
+            tableView.separatorStyle = .none
+            tableView.register(xibWithCellClass: HomeInfoTableViewCell.self)
             headerView = HomeInfoTableHeaderView.createFromXib()
-            tableview.tableHeaderView = headerView
+            tableView.tableHeaderView = headerView
         }
     }
     

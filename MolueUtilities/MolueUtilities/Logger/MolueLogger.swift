@@ -31,4 +31,13 @@ public enum MolueLogger: String {
             print("\((file as NSString).lastPathComponent)-Line:\(line)-Method:\(method) \(self.rawValue): \(message)")
         #endif
     }
+    
+    public func returnNil<T, R> (_ message: T, file: String = #file, method: String = #function, line: Int = #line) -> R? {
+        #if DEBUG
+        fatalError("\((file as NSString).lastPathComponent)-Line:\(line)-Method:\(method) \(self.rawValue): \(message)")
+        #else
+        print("\((file as NSString).lastPathComponent)-Line:\(line)-Method:\(method) \(self.rawValue): \(message)")
+        return nil
+        #endif
+    }
 }
