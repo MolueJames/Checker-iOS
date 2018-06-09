@@ -157,7 +157,6 @@ extension MLDatabaseManager {
         return false
     }
     fileprivate func handleDatabaseError(_ error: Error) -> AnySequence<Row>? {
-        MolueLogger.failure.message(error)
-        return nil
+        return MolueLogger.failure.returnNil(error)
     }
 }

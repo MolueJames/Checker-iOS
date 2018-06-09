@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import MolueUtilities
 public class MolueDoAlertRouter {
     private var components = URLComponents()
     
@@ -14,7 +15,9 @@ public class MolueDoAlertRouter {
         self.components.scheme = "navigator"
         self.components.host = "alert"
         self.components.path = style.toString()
-        guard let title = title, let message = message else {return}
+        guard let title = title, let message = message else {
+            MolueLogger.failure.error("the title and message is not existed"); return
+        }
         self.components.query = QueryUtilities.query(["title": title, "message": message])
     }
     
@@ -26,15 +29,17 @@ public class MolueDoAlertRouter {
     }
     
     public func toPath() -> String? {
-        guard self.components.query == nil else {return nil}
-        guard let string = self.components.url?.absoluteString else {return nil}
-        return string.removingPercentEncoding
+        guard let url = self.components.url else {
+            return MolueLogger.failure.returnNil("the url is not existed")
+        }
+        return url.absoluteString.removingPercentEncoding
     }
     
     public func toString() -> String? {
-        guard self.components.query != nil else {return nil}
-        guard let string = self.components.url?.absoluteString else {return nil}
-        return string.removingPercentEncoding
+        guard let url = self.components.url else {
+            return MolueLogger.failure.returnNil("the url is not existed")
+        }
+        return url.absoluteString.removingPercentEncoding
     }
 }
 

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import MolueUtilities
 public class MolueNavigatorRouter {
     private var components = URLComponents()
     
@@ -27,10 +27,10 @@ public class MolueNavigatorRouter {
     }
     
     public func toString() -> String? {
-        if let string = self.components.url?.absoluteString {
-            return string.removingPercentEncoding
+        guard let url = self.components.url else {
+            return MolueLogger.failure.returnNil("the url is not existed")
         }
-        return nil
+        return url.absoluteString.removingPercentEncoding
     }
 }
 

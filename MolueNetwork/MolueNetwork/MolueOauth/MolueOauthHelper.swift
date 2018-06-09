@@ -17,8 +17,7 @@ public struct MolueOauthHelper {
     public static func authHeader() -> [String : String]? {
         let header = Alamofire.Request.authorizationHeader(user: key, password: secret)
         guard let authHeader = header else {
-            MolueLogger.failure.error("the header value is nil")
-            return nil
+            return MolueLogger.failure.returnNil("the header value is nil")
         }
         return [authHeader.key: authHeader.value]
     }

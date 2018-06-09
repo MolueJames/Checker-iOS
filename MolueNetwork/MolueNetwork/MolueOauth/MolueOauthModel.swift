@@ -23,8 +23,7 @@ public struct MolueOauthModel: Mappable, ReadableSecureStorable, CreateableSecur
     
     private mutating func setExpires_data(expires_in: Double?) {
         guard let expires_in = expires_in else {
-            MolueLogger.failure.error("expires in is nil")
-            return
+            MolueLogger.failure.error("expires in is nil"); return
         }
         expires_date = Date().addingTimeInterval(expires_in)
     }

@@ -28,7 +28,6 @@ target 'MolueSafty' do
         pod 'Permission/Camera', '~> 2.0.4'
         pod 'Permission/Location', '~> 2.0.4'
         pod 'Permission/Notifications', '~> 2.0.4'
-        pod 'KeychainAccess', '~> 3.1.1'
         pod 'NVActivityIndicatorView', '~> 4.2.0'
         pod 'ViewAnimator', '~> 2.0.1'
         pod 'ESPullToRefresh', '~> 2.7'
