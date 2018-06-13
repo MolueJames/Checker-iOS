@@ -20,7 +20,7 @@ class BasicArchivesViewController: MLBaseViewController {
     }
     var codeInputView: MLCommonInputView! {
         didSet {
-            codeInputView.update(title: "信用代码", placeholder: "请输入18位统一社会信用代码")
+            codeInputView.defaultValue(title: "信用代码", placeholder: "请输入18位统一社会信用代码")
         }
     }
     
@@ -33,7 +33,7 @@ class BasicArchivesViewController: MLBaseViewController {
     }
     var divisionSelectView: MLCommonSelectView! {
         didSet {
-            divisionSelectView.update(title: "行政区划", description: "请选择")
+            divisionSelectView.defaultValue(title: "行政区划", description: "请选择")
             divisionSelectView.clickedCommand.subscribe { _ in
                 
             }.disposed(by: disposeBag)
@@ -49,7 +49,7 @@ class BasicArchivesViewController: MLBaseViewController {
     
     var scaleSelectView: MLCommonSelectView! {
         didSet {
-            scaleSelectView.update(title: "企业规模", description: "请选择")
+            scaleSelectView.defaultValue(title: "企业规模", description: "请选择")
             scaleSelectView.clickedCommand.subscribe { _ in
                 
             }.disposed(by: disposeBag)
@@ -65,7 +65,7 @@ class BasicArchivesViewController: MLBaseViewController {
     
     var typesSelectView: MLCommonSelectView! {
         didSet {
-            typesSelectView.update(title: "企业类型", description: "请选择")
+            typesSelectView.defaultValue(title: "企业类型", description: "请选择")
             typesSelectView.clickedCommand.subscribe { _ in
                 
             }.disposed(by: disposeBag)
@@ -81,7 +81,7 @@ class BasicArchivesViewController: MLBaseViewController {
     
     var levelSelectView: MLCommonSelectView! {
         didSet {
-            levelSelectView.update(title: "安全生产标准化达标级别", description: "请选择")
+            levelSelectView.defaultValue(title: "安全生产标准化达标级别", description: "请选择")
             levelSelectView.clickedCommand.subscribe { _ in
                 
             }.disposed(by: disposeBag)
@@ -104,16 +104,4 @@ class BasicArchivesViewController: MLBaseViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

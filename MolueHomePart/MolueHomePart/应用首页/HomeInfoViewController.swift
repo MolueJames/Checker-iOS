@@ -31,7 +31,7 @@ class HomeInfoViewController: MLBaseViewController {
     func initPublishSubjects() {
         self.headerView.basicInfoCommand.subscribe(onNext: { _ in
             let router = MolueNavigatorRouter(.Home, path: HomePath.EnterpriseInfo.rawValue)
-            MolueAppRouter.sharedInstance.pushRouter(router, needHideBottomBar: true)
+            MolueAppRouter.shared.pushRouter(router, needHideBottomBar: true)
         }).disposed(by: disposeBag)
         self.headerView.riskCheckCommand.subscribe(onNext: { _ in
         

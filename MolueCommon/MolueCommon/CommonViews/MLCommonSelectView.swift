@@ -22,11 +22,7 @@ public class MLCommonSelectView: UIView {
     */
     lazy private var clickedControl: UIControl! = {
         let clickedControl = UIControl()
-        self.addSubview(clickedControl)
-        clickedControl.snp.makeConstraints { (make) in
-            make.top.bottom.equalToSuperview()
-            make.left.right.equalToSuperview()
-        }
+        self.doBespreadOn(clickedControl)
         return clickedControl
     }()
     
@@ -38,8 +34,11 @@ public class MLCommonSelectView: UIView {
     @IBAction private func controlClicked(_ sender: Any) {
         self.clickedCommand.onNext(())
     }
-    public func update(title: String, description: String) {
+    public func defaultValue(title: String, description: String) {
         self.titleLabel.text = title
+        self.descriptionLabel.text = description
+    }
+    public func update(description: String) {
         self.descriptionLabel.text = description
     }
 }

@@ -19,7 +19,7 @@ class ContactInformationViewController: MLBaseViewController {
     }
     var resresentInputView: MLCommonInputView! {
         didSet {
-            resresentInputView.update(title: "法人代表", placeholder: "请输入法定代表人姓名")
+            resresentInputView.defaultValue(title: "法人代表", placeholder: "请输入法定代表人姓名")
         }
     }
     
@@ -31,7 +31,7 @@ class ContactInformationViewController: MLBaseViewController {
     }
     var contactNoInputView: MLCommonInputView! {
         didSet {
-            contactNoInputView.update(title: "企业电话", placeholder: "请输入企业联系电话")
+            contactNoInputView.defaultValue(title: "企业电话", placeholder: "请输入企业联系电话")
         }
     }
     @IBOutlet weak var phoneNoContainerView: MLContainerView! {
@@ -42,7 +42,7 @@ class ContactInformationViewController: MLBaseViewController {
     }
     var phoneNoInputView: MLCommonInputView! {
         didSet {
-            phoneNoInputView.update(title: "法人手机", placeholder: "请输入法定代表人手机号")
+            phoneNoInputView.defaultValue(title: "法人手机", placeholder: "请输入法定代表人手机号")
         }
     }
     @IBOutlet weak var addressContainerView: MLContainerView! {
@@ -53,7 +53,7 @@ class ContactInformationViewController: MLBaseViewController {
     }
     var addressInputView: MLCommonInputView! {
         didSet {
-            addressInputView.update(title: "经营地址", placeholder: "自动获取地址 >")
+            addressInputView.defaultValue(title: "经营地址", placeholder: "自动获取地址 >")
         }
     }
     
@@ -65,7 +65,7 @@ class ContactInformationViewController: MLBaseViewController {
     }
     var faxNumberInputView: MLCommonInputView! {
         didSet {
-            faxNumberInputView.update(title: "传真号码", placeholder: "请输入企业传真号码")
+            faxNumberInputView.defaultValue(title: "传真号码", placeholder: "请输入企业传真号码")
         }
     }
     @IBOutlet weak var postalCodeContainerView: MLContainerView! {
@@ -76,7 +76,7 @@ class ContactInformationViewController: MLBaseViewController {
     }
     var postalCodeInputView: MLCommonInputView! {
         didSet {
-            postalCodeInputView.update(title: "邮政编码", placeholder: "请输入邮政编码")
+            postalCodeInputView.defaultValue(title: "邮政编码", placeholder: "请输入邮政编码")
         }
     }
     @IBOutlet weak var EmailContainerView: MLContainerView! {
@@ -87,7 +87,7 @@ class ContactInformationViewController: MLBaseViewController {
     }
     var emailInputView: MLCommonInputView! {
         didSet {
-            emailInputView.update(title: "企业邮箱", placeholder: "请输入企业邮箱")
+            emailInputView.defaultValue(title: "企业邮箱", placeholder: "请输入企业邮箱")
         }
     }
     @IBOutlet weak var websiteContainerView: MLContainerView! {
@@ -98,7 +98,7 @@ class ContactInformationViewController: MLBaseViewController {
     }
     var websiteInputView: MLCommonInputView! {
         didSet {
-            websiteInputView.update(title: "企业网站", placeholder: "请输入企业网站地址")
+            websiteInputView.defaultValue(title: "企业网站", placeholder: "请输入企业网站地址")
         }
     }
     
@@ -118,16 +118,4 @@ class ContactInformationViewController: MLBaseViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

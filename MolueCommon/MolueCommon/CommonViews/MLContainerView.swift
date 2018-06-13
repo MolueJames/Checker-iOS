@@ -24,7 +24,7 @@ public class MLContainerView: UIView {
     
     public override func awakeFromNib() {
         super.awakeFromNib()
-        bottomLineView.backgroundColor = UIColor.init(hex: 0x999999)
+        bottomLineView.backgroundColor = UIColor.init(hex: 0xCCCCCC)
     }
     /*
     // Only override draw() if you perform custom drawing.

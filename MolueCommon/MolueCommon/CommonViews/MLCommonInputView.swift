@@ -23,9 +23,10 @@ public class MLCommonInputView: UIView {
         self.textChangedCommand.onNext(text)
     }
     
-    public func update(title: String, placeholder: String) {
+    public func defaultValue(title: String, placeholder: String, keyboardType: UIKeyboardType = .default) {
         self.titleLabel.text = title
         self.textFiled.placeholder = placeholder
+        self.textFiled.keyboardType = keyboardType
     }
     /*
     // Only override draw() if you perform custom drawing.

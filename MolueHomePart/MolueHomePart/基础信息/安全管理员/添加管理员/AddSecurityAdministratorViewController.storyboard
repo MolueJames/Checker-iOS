@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -131,6 +131,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="00G-3c-UAd"/>
                     </view>
+                    <connections>
+                        <outlet property="adminiTypeContainerView" destination="HUU-Im-RPI" id="eDr-R0-jXP"/>
+                        <outlet property="certificateNoContainerView" destination="yOM-hU-FzV" id="Heu-Ns-H0l"/>
+                        <outlet property="deadLineContainerView" destination="3xb-7J-fht" id="38U-EL-Ggs"/>
+                        <outlet property="idCardNoContainerView" destination="nOC-ng-Zv8" id="ZC8-st-zQl"/>
+                        <outlet property="phoneNoContainerView" destination="OgB-VC-tsb" id="TJN-BL-3P2"/>
+                        <outlet property="uploadPhotoContainerView" destination="QgD-ra-SGn" id="xTy-Bc-Kry"/>
+                        <outlet property="usernameContainerView" destination="5bj-51-9pe" id="B2k-YE-Ply"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jbp-cf-6d8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

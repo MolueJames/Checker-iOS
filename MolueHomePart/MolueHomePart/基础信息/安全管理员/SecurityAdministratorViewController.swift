@@ -30,7 +30,7 @@ class SecurityAdministratorViewController: MLBaseViewController {
         didSet {
             tableViewFooterView.addControlCommand.subscribe { _ in
                 let router = MolueNavigatorRouter(.Home, path: HomePath.AddAdministrator.rawValue)
-                MolueAppRouter.sharedInstance.pushRouter(router)
+                MolueAppRouter.shared.pushRouter(router)
             }.disposed(by: disposeBag)
         }
     }
@@ -48,17 +48,6 @@ class SecurityAdministratorViewController: MLBaseViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 }
 
 extension SecurityAdministratorViewController: UITableViewDelegate {
@@ -79,7 +68,7 @@ extension SecurityAdministratorViewController: UITableViewDataSource {
         }).disposed(by: disposeBag)
         cell.detailCommand.subscribe { _ in
             let router = MolueNavigatorRouter(.Home, path: HomePath.AddAdministrator.rawValue)
-            MolueAppRouter.sharedInstance.pushRouter(router, parameters:["title": "编辑管理员"])
+            MolueAppRouter.shared.pushRouter(router, parameters:["title": "编辑管理员"])
         }.disposed(by: disposeBag)
         return cell
     }

@@ -21,7 +21,7 @@ extension AppDelegate {
     }
     
     private func rootViewController() -> UIViewController {
-        MolueAppRouter.sharedInstance.initialize()
+        MolueAppRouter.shared.initialize()
         var viewControllers = [MLNavigationController]()
         self.addNavigationController(module: .Home, path: HomePath.HomePageInfo.rawValue, viewControllers: &viewControllers, title:"首页", imageName: "molue_tabbar_home")
         self.addNavigationController(module: .Risk, path: RiskPath.RiskInfo.rawValue, viewControllers: &viewControllers, title:"隐患", imageName: "molue_tabbar_risk")
@@ -35,7 +35,7 @@ extension AppDelegate {
     
     private func addNavigationController(module: MolueNavigatorRouter.RouterHost, path: String, viewControllers: inout [MLNavigationController], title: String, imageName: String){
         let router = MolueNavigatorRouter(module, path: path)
-        guard let viewController = MolueAppRouter.sharedInstance.viewController(router) else { return }
+        guard let viewController = MolueAppRouter.shared.viewController(router) else { return }
         viewController.tabBarItem = UITabBarItem.init(title: title, image: UIImage.init(named: imageName), tag: viewControllers.count)
         viewControllers.append(MLNavigationController.init(rootViewController: viewController))
     }
