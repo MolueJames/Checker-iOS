@@ -94,10 +94,15 @@ class AddSecurityAdministratorViewController: MLBaseViewController, MolueNavigat
     
     private func pushToAdminiType() {
         let router = MolueNavigatorRouter(.Common, path: CommonPath.selectTable.rawValue)
-        let controller: MLSelectedTableController! = MolueAppRouter.shared.pushRouter(router)
-        print(controller)
+        let model1 = MLSelectedTableViewModel(title: "安全管理人", select: true, keyPath: "target1")
+        let model2 = MLSelectedTableViewModel(title: "安全负责人", select: false, keyPath: "target2")
+        let context = [model1, model2, model1, model2, model1, model2, model1, model2, model1, model2, model1, model2, model1, model2, model1, model2, model1, model2, model1, model2]
+        let parameter = ["title" : "人员类型", "isMutiple" : "true"]
+        let controller: MLSelectedTableController! = MolueAppRouter.shared.pushRouter(router, parameters: parameter ,context:context)
+        controller.selectRowCommand.subscribe(onNext: { [unowned self] (list) in
+            
+        }).disposed(by: disposeBag)
     }
-    
     private func presentDatePicker() {
         let router = MolueNavigatorRouter(.Common, path: CommonPath.datePicker.rawValue)
         let controller: MLDatePickerViewController! = MolueAppRouter.shared.viewController(router)
@@ -126,10 +131,10 @@ class AddSecurityAdministratorViewController: MLBaseViewController, MolueNavigat
         
     }
     func doSettingParameters(params: Dictionary<String, String>) {
-        guard let title = params["title"] else {
-            self.title = "添加管理员"; return
+        if let title = params["title"]  {
+            self.title = title
         }
-        self.title = title
+        self.title = "添加管理员"
     }
     
     override func viewDidLoad() {

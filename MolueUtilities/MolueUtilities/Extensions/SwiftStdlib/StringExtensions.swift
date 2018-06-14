@@ -1021,3 +1021,9 @@ public extension String {
         return (module, file)
     }
 }
+
+public extension String {
+    public var isTrue: Bool {
+        get { return self == "true" }
+    }
+}
