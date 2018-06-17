@@ -42,7 +42,7 @@ class ContactInformationViewController: MLBaseViewController {
     }
     var phoneNoInputView: MLCommonInputView! {
         didSet {
-            phoneNoInputView.defaultValue(title: "法人手机", placeholder: "请输入法定代表人手机号")
+            phoneNoInputView.defaultValue(title: "法人手机", placeholder: "请输入法定代表人手机号", keyboardType: .numberPad)
         }
     }
     @IBOutlet weak var addressContainerView: MLContainerView! {
@@ -76,7 +76,7 @@ class ContactInformationViewController: MLBaseViewController {
     }
     var postalCodeInputView: MLCommonInputView! {
         didSet {
-            postalCodeInputView.defaultValue(title: "邮政编码", placeholder: "请输入邮政编码")
+            postalCodeInputView.defaultValue(title: "邮政编码", placeholder: "请输入邮政编码", keyboardType: .numberPad)
         }
     }
     @IBOutlet weak var EmailContainerView: MLContainerView! {
@@ -87,7 +87,7 @@ class ContactInformationViewController: MLBaseViewController {
     }
     var emailInputView: MLCommonInputView! {
         didSet {
-            emailInputView.defaultValue(title: "企业邮箱", placeholder: "请输入企业邮箱")
+            emailInputView.defaultValue(title: "企业邮箱", placeholder: "请输入企业邮箱", keyboardType: .emailAddress)
         }
     }
     @IBOutlet weak var websiteContainerView: MLContainerView! {
@@ -98,7 +98,7 @@ class ContactInformationViewController: MLBaseViewController {
     }
     var websiteInputView: MLCommonInputView! {
         didSet {
-            websiteInputView.defaultValue(title: "企业网站", placeholder: "请输入企业网站地址")
+            websiteInputView.defaultValue(title: "企业网站", placeholder: "请输入企业网站地址", keyboardType: .URL)
         }
     }
     

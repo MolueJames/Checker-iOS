@@ -8,40 +8,50 @@
 
 import UIKit
 import RxSwift
-import MolueNavigator
+import SnapKit
 import MolueFoundation
 import MolueUtilities
-public class MLSelectedTableController: MLBaseViewController, MolueNavigatorProtocol {
-    public func doTransferParameters(params: Any?) {
-        if let list = params as? [MLSelectedTableViewModel] {
-            self.list = list
-        }
+public protocol MLMutipleSectionProtocol: CustomStringConvertible {
+    var selected: Bool {get set}
+}
+public class MLSelectedTableController<Target: MLMutipleSectionProtocol>: MLBaseViewController, UITableViewDelegate, UITableViewDataSource {
+
+    private var list = [Target]()
+    
+    public let selectCommand = PublishSubject<[Target]>()
+    
+    public func updateValues(title: String, list: [Target]) {
+        self.title = title
+        self.list = list
     }
     
-    public func doSettingParameters(params: Dictionary<String, String>) {
-        if let title = params["title"] {
-            self.title = title
-        }
-    }
-    
-    private var list = [MLSelectedTableViewModel]()
-    
-    public let selectRowCommand = PublishSubject<[Int]>()
-    
-    @IBOutlet private weak var tableView: UITableView! {
+    private var tableView: UITableView! {
         didSet {
+            tableView.allowsMultipleSelection = true
+            tableView.backgroundColor = .clear
+            tableView.separatorStyle = .none
+            tableView.register(xibWithCellClass: MLSelectedTableViewCell.self)
             tableView.delegate = self
             tableView.dataSource = self
-            tableView.allowsMultipleSelection = true
-            tableView.register(xibWithCellClass: MLSelectedTableViewCell.self)
         }
     }
 
     open override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "保持", style: .plain, target: self, action: #selector(saveButtonClicked))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "提交", style: .plain, target: self, action: #selector(saveButtonClicked))
+        self.updateInterfaceConfigure()
         self.selectDefaultCells()
+    }
+    
+    private func updateInterfaceConfigure() {
+        self.tableView = UITableView()
+        self.view.addSubview(tableView)
+        self.tableView.snp.makeConstraints { [unowned self] (make) in
+            make.top.equalTo(self.navigationView.snp.bottom)
+            make.left.right.equalToSuperview()
+            make.bottom.equalToSuperview()
+        }
     }
     
     private func selectDefaultCells() {
@@ -55,25 +65,24 @@ public class MLSelectedTableController: MLBaseViewController, MolueNavigatorProt
         guard let selectedList = self.tableView.indexPathsForSelectedRows?.enumerated() else {
             MolueLogger.warning.message("the select list is not existed"); return
         }
-        let list: [Int] = selectedList.compactMap { (_, element) -> Int in
-            return element.row
-            }.sorted {$0 < $1}
-        self.selectRowCommand.onNext(list)
+        let list: [Target] = selectedList.compactMap { [unowned self] (index, _) -> Target in
+            var model = self.list[index]
+            model.selected = true
+            return model
+        }
+        self.selectCommand.onNext(list)
+        self.navigationController?.popViewController(animated: true)
     }
     
     open override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-}
-
-extension MLSelectedTableController: UITableViewDelegate {
+    
     open func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 70
     }
-}
-
-extension MLSelectedTableController: UITableViewDataSource {
+    
     open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.list.count
     }

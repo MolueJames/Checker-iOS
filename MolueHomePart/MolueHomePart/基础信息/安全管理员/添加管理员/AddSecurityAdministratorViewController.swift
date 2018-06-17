@@ -93,15 +93,15 @@ class AddSecurityAdministratorViewController: MLBaseViewController, MolueNavigat
     }
     
     private func pushToAdminiType() {
-        let router = MolueNavigatorRouter(.Common, path: CommonPath.selectTable.rawValue)
         let model1 = MLSelectedTableViewModel(title: "安全管理人", select: true, keyPath: "target1")
         let model2 = MLSelectedTableViewModel(title: "安全负责人", select: false, keyPath: "target2")
-        let context = [model1, model2, model1, model2, model1, model2, model1, model2, model1, model2, model1, model2, model1, model2, model1, model2, model1, model2, model1, model2]
-        let parameter = ["title" : "人员类型", "isMutiple" : "true"]
-        let controller: MLSelectedTableController! = MolueAppRouter.shared.pushRouter(router, parameters: parameter ,context:context)
-        controller.selectRowCommand.subscribe(onNext: { [unowned self] (list) in
-            
+        let list = [model1, model2]
+        let controller = MLSingleSelectController<MLSelectedTableViewModel>()
+        controller.updateValues(title: "人员类型", list: list)
+        controller.selectCommand.subscribe(onNext: { [unowned self] (model) in
+            self.adminiTypeInputView.update(description: model.description)
         }).disposed(by: disposeBag)
+        self.navigationController?.pushViewController(controller, animated: true)
     }
     private func presentDatePicker() {
         let router = MolueNavigatorRouter(.Common, path: CommonPath.datePicker.rawValue)

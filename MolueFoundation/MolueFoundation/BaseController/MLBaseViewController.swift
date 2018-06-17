@@ -16,26 +16,23 @@ open class MLBaseViewController: UIViewController, MLNavigationProtocol, MLContr
             self.needToDo(newValue: networkcount, oldValue: oldValue)
         }
     }
-    private var navBackgroundView: UIView! {
-        didSet {
-            self.view.addSubview(navBackgroundView)
-            let height: CGFloat = MLConfigure.iPhoneX ? 88 : 64
-            navBackgroundView.snp.updateConstraints { (make) in
-                make.height.equalTo(height)
-            }
-            navBackgroundView.snp.makeConstraints { (make) in
-                make.top.left.right.equalToSuperview()
-            }
-        }
-    }
+    private let height: CGFloat = MLConfigure.iPhoneX ? 88 : 64
+    
+    open let navigationView: UIView! = UIView()
+    
     open override func loadView() {
         super.loadView()
         self.updateNavBackgroundView()
     }
     private func updateNavBackgroundView() {
         guard let _ = self.navigationController else { return }
-        navBackgroundView = UIView()
-        navBackgroundView.backgroundColor = UIColor.init(hex: 0x1B82D2)
+        self.view.addSubview(navigationView)
+        navigationView.snp.updateConstraints { (make) in
+            make.height.equalTo(height)
+        }
+        navigationView.snp.makeConstraints { (make) in
+            make.top.left.right.equalToSuperview()
+        }
     }
     open override var preferredStatusBarStyle: UIStatusBarStyle {
         get { return .lightContent }
@@ -51,6 +48,7 @@ open class MLBaseViewController: UIViewController, MLNavigationProtocol, MLContr
         self.automaticallyAdjustsScrollViewInsets = false;
         self.edgesForExtendedLayout = .all;
         self.view.backgroundColor = UIColor.init(hex: 0xf5f5f9)
+        navigationView.backgroundColor = UIColor.init(hex: 0x1B82D2)
     }
     deinit {
         MolueLogger.dealloc.message(String(describing: self))
@@ -60,7 +58,7 @@ open class MLBaseViewController: UIViewController, MLNavigationProtocol, MLContr
 extension MLBaseViewController {
     open func hideNavigationBar(animated: Bool = false) {
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
-        navBackgroundView.snp.updateConstraints { (make) in
+        navigationView.snp.updateConstraints { (make) in
             make.height.equalTo(0)
         }
         self.navigationBarAnimate(animated)
@@ -68,7 +66,7 @@ extension MLBaseViewController {
     open func showNavigationBar(animated: Bool = false) {
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
         let height: CGFloat = MLConfigure.iPhoneX ? 88 : 64
-        navBackgroundView.snp.updateConstraints { (make) in
+        navigationView.snp.updateConstraints { (make) in
             make.height.equalTo(height)
         }
         self.navigationBarAnimate(animated)
@@ -80,7 +78,7 @@ extension MLBaseViewController {
         }
     }
     open func updateNavigationBarBackgroundColor(_ color: UIColor) {
-        navBackgroundView.backgroundColor = color
+        navigationView.backgroundColor = color
     }
 }
 

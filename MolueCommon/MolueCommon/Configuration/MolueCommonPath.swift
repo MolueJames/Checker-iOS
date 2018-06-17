@@ -44,7 +44,6 @@ public enum BookPath: String {
 }
 
 public enum CommonPath: String {
-    case selectTable = "MLSelectedTableController"
     case datePicker = "MLDatePickerViewController"
 }
 

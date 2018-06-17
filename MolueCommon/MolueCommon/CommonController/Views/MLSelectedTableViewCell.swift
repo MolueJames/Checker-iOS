@@ -10,8 +10,8 @@ import UIKit
 
 class MLSelectedTableViewCell: UITableViewCell {
     private var isDefault = false
-    public func reloadSubviewsWithValue(_ value: MLSelectedTableViewModel) {
-        self.titleLabel.text = value.title
+    public func reloadSubviewsWithValue(_ value: MLMutipleSectionProtocol) {
+        self.titleLabel.text = value.description
         self.isDefault = value.selected
     }
     

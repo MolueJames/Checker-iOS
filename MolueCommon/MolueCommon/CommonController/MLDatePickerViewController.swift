@@ -12,11 +12,15 @@ import MolueUtilities
 import MolueFoundation
 public class MLDatePickerViewController: MLBaseViewController {
     private var pickDate: Date = Date()
-    private var warning: String = "请选择有效日期"
+    private var warning = "请选择有效日期"
+    private var dateFormat = "yyyy年MM月dd日"
+    private var pickerMode = UIDatePickerMode.date
     public let selectDateCommand = PublishSubject<(date: Date, string: String)>()
     
-    public func update(warning: String) {
+    public func changeDefault(warning: String, format: String, mode: UIDatePickerMode) {
         self.warning = warning
+        self.dateFormat = format
+        self.pickerMode = mode
     }
     
     open override func viewDidLoad() {
@@ -33,6 +37,7 @@ public class MLDatePickerViewController: MLBaseViewController {
     
     @IBOutlet private weak var datePicker: UIDatePicker! {
         didSet {
+            datePicker.datePickerMode = pickerMode
             datePicker.date = Date()
             datePicker.addTarget(self, action: #selector(pickerValueChanged), for: .valueChanged)
             self.pickDate = datePicker.date
@@ -51,7 +56,7 @@ public class MLDatePickerViewController: MLBaseViewController {
     }
     
     @IBAction private func submitButtonClicked(_ sender: UIButton) {
-        let string = pickDate.string(withFormat: "yyyy年-MM月-dd日")
+        let string = pickDate.string(withFormat: dateFormat)
         self.selectDateCommand.onNext((date: pickDate, string: string))
         self.dismissViewController()
     }

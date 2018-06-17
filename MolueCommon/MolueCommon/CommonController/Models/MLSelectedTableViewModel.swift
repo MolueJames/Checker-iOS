@@ -8,10 +8,19 @@
 
 import Foundation
 
-public struct MLSelectedTableViewModel {
-    var title: String
-    var selected: Bool
-    var keyPath: String
+public struct MLSelectedTableViewModel: MLMutipleSectionProtocol {
+    public var description: String {
+        return title
+    }
+    
+    private var title: String
+    public var selected: Bool
+    private(set) var keyPath: String
+    
+    public mutating func updateValue(select: Bool) {
+        self.selected = select
+    }
+    
     public init(title: String, select: Bool, keyPath: String) {
         self.title = title
         self.selected = select

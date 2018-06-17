@@ -20,7 +20,7 @@ class BasicArchivesViewController: MLBaseViewController {
     }
     var codeInputView: MLCommonInputView! {
         didSet {
-            codeInputView.defaultValue(title: "信用代码", placeholder: "请输入18位统一社会信用代码")
+            codeInputView.defaultValue(title: "信用代码", placeholder: "请输入18位统一社会信用代码", keyboardType: .numberPad)
         }
     }
     
@@ -28,7 +28,6 @@ class BasicArchivesViewController: MLBaseViewController {
         didSet {
             divisionSelectView = MLCommonSelectView.createFromXib()
             DivisionContainerView.doBespreadOn(divisionSelectView)
-            
         }
     }
     var divisionSelectView: MLCommonSelectView! {

@@ -22,6 +22,10 @@
 		1A5014B92094C17B00DB931E /* MolueUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5014B72094BA3F00DB931E /* MolueUtilities.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		1A5014BB2094C27600DB931E /* MolueUtilities.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1A5014B72094BA3F00DB931E /* MolueUtilities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1A52756320D29F9C00CA0D68 /* MLSelectedTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A52756220D29F9C00CA0D68 /* MLSelectedTableViewModel.swift */; };
+		1A52756520D51F7200CA0D68 /* MLSingleSelectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A52756420D51F7200CA0D68 /* MLSingleSelectController.swift */; };
+		1A52756A20D523B500CA0D68 /* MLSignleSelectTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A52756820D523B500CA0D68 /* MLSignleSelectTableCell.swift */; };
+		1A52756B20D523B500CA0D68 /* MLSignleSelectTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A52756920D523B500CA0D68 /* MLSignleSelectTableCell.xib */; };
+		1A52756D20D52A7600CA0D68 /* MLSingleSectionTableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A52756C20D52A7600CA0D68 /* MLSingleSectionTableModel.swift */; };
 		1A7D9B6A2086470300FA997D /* MolueCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A7D9B602086470200FA997D /* MolueCommon.framework */; };
 		1A7D9B6F2086470300FA997D /* MolueCommonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7D9B6E2086470300FA997D /* MolueCommonTests.swift */; };
 		1A7D9B712086470300FA997D /* MolueCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A7D9B632086470300FA997D /* MolueCommon.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -36,7 +40,6 @@
 		1AA7823520CCFF3B00088923 /* MLSelectedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA7823320CCFF3B00088923 /* MLSelectedTableViewCell.swift */; };
 		1AA7823620CCFF3B00088923 /* MLSelectedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AA7823420CCFF3B00088923 /* MLSelectedTableViewCell.xib */; };
 		1AA7825420CE9F3300088923 /* MLDatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA7825320CE9F3300088923 /* MLDatePickerViewController.swift */; };
-		1AA7825620CE9FF100088923 /* MLSelectedTableController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AA7825520CE9FF100088923 /* MLSelectedTableController.storyboard */; };
 		1AA7825820CEA01500088923 /* MLDatePickerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AA7825720CEA01500088923 /* MLDatePickerViewController.storyboard */; };
 		1ABDCA9D20C5946B0062DE71 /* MLCommonClickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABDCA9C20C5946B0062DE71 /* MLCommonClickView.swift */; };
 		1ABDCA9F20C5947E0062DE71 /* MLCommonClickView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1ABDCA9E20C5947E0062DE71 /* MLCommonClickView.xib */; };
@@ -84,6 +87,10 @@
 		1A5014B52094B9BA00DB931E /* MolueCommonColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueCommonColor.swift; sourceTree = "<group>"; };
 		1A5014B72094BA3F00DB931E /* MolueUtilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueUtilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A52756220D29F9C00CA0D68 /* MLSelectedTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLSelectedTableViewModel.swift; sourceTree = "<group>"; };
+		1A52756420D51F7200CA0D68 /* MLSingleSelectController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLSingleSelectController.swift; sourceTree = "<group>"; };
+		1A52756820D523B500CA0D68 /* MLSignleSelectTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLSignleSelectTableCell.swift; sourceTree = "<group>"; };
+		1A52756920D523B500CA0D68 /* MLSignleSelectTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MLSignleSelectTableCell.xib; sourceTree = "<group>"; };
+		1A52756C20D52A7600CA0D68 /* MLSingleSectionTableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLSingleSectionTableModel.swift; sourceTree = "<group>"; };
 		1A7D9B602086470200FA997D /* MolueCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MolueCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A7D9B632086470300FA997D /* MolueCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MolueCommon.h; sourceTree = "<group>"; };
 		1A7D9B642086470300FA997D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -101,7 +108,6 @@
 		1AA7823320CCFF3B00088923 /* MLSelectedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLSelectedTableViewCell.swift; sourceTree = "<group>"; };
 		1AA7823420CCFF3B00088923 /* MLSelectedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MLSelectedTableViewCell.xib; sourceTree = "<group>"; };
 		1AA7825320CE9F3300088923 /* MLDatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLDatePickerViewController.swift; sourceTree = "<group>"; };
-		1AA7825520CE9FF100088923 /* MLSelectedTableController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MLSelectedTableController.storyboard; sourceTree = "<group>"; };
 		1AA7825720CEA01500088923 /* MLDatePickerViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MLDatePickerViewController.storyboard; sourceTree = "<group>"; };
 		1ABDCA9C20C5946B0062DE71 /* MLCommonClickView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLCommonClickView.swift; sourceTree = "<group>"; };
 		1ABDCA9E20C5947E0062DE71 /* MLCommonClickView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MLCommonClickView.xib; sourceTree = "<group>"; };
@@ -183,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				1A52756220D29F9C00CA0D68 /* MLSelectedTableViewModel.swift */,
+				1A52756C20D52A7600CA0D68 /* MLSingleSectionTableModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -248,7 +255,7 @@
 				1A52756120D29F7A00CA0D68 /* Models */,
 				1AA7823220CCFE8300088923 /* Views */,
 				1AA7822D20CCFDC200088923 /* MLSelectedTableController.swift */,
-				1AA7825520CE9FF100088923 /* MLSelectedTableController.storyboard */,
+				1A52756420D51F7200CA0D68 /* MLSingleSelectController.swift */,
 				1AA7825320CE9F3300088923 /* MLDatePickerViewController.swift */,
 				1AA7825720CEA01500088923 /* MLDatePickerViewController.storyboard */,
 			);
@@ -273,6 +280,8 @@
 			children = (
 				1AA7823320CCFF3B00088923 /* MLSelectedTableViewCell.swift */,
 				1AA7823420CCFF3B00088923 /* MLSelectedTableViewCell.xib */,
+				1A52756820D523B500CA0D68 /* MLSignleSelectTableCell.swift */,
+				1A52756920D523B500CA0D68 /* MLSignleSelectTableCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -414,10 +423,10 @@
 				1ABDCA9F20C5947E0062DE71 /* MLCommonClickView.xib in Resources */,
 				1A43BC3E20C40FC60093855B /* MLCommonSelectView.xib in Resources */,
 				1A43BC3820C403330093855B /* MLCommonInputView.xib in Resources */,
+				1A52756B20D523B500CA0D68 /* MLSignleSelectTableCell.xib in Resources */,
 				1ABDCAA320C594AC0062DE71 /* MLCommonSegmentView.xib in Resources */,
 				1A98F2A120C96E9D000D0F8F /* MLCommonPhotoView.xib in Resources */,
 				1A98F2A920C97331000D0F8F /* MLCommonAddPhotoCell.xib in Resources */,
-				1AA7825620CE9FF100088923 /* MLSelectedTableController.storyboard in Resources */,
 				1AA7823620CCFF3B00088923 /* MLSelectedTableViewCell.xib in Resources */,
 				1A98F2A520C972ED000D0F8F /* MLCommonPhotoCell.xib in Resources */,
 			);
@@ -508,9 +517,11 @@
 				1A5014AB2094AFA400DB931E /* MoluePermissions.swift in Sources */,
 				1A2D443D20A097E100BA947A /* MLInterfaceConfigure.swift in Sources */,
 				1A5014B62094B9BA00DB931E /* MolueCommonColor.swift in Sources */,
+				1A52756520D51F7200CA0D68 /* MLSingleSelectController.swift in Sources */,
 				1A2D441B20A07E9900BA947A /* MLRefreshHeaderAnimator.swift in Sources */,
 				1A52756320D29F9C00CA0D68 /* MLSelectedTableViewModel.swift in Sources */,
 				1A98F2A820C97331000D0F8F /* MLCommonAddPhotoCell.swift in Sources */,
+				1A52756A20D523B500CA0D68 /* MLSignleSelectTableCell.swift in Sources */,
 				1AA7822E20CCFDC200088923 /* MLSelectedTableController.swift in Sources */,
 				1A43BC3620C4031D0093855B /* MLCommonInputView.swift in Sources */,
 				1AA7823520CCFF3B00088923 /* MLSelectedTableViewCell.swift in Sources */,
@@ -519,6 +530,7 @@
 				1ABDCA9D20C5946B0062DE71 /* MLCommonClickView.swift in Sources */,
 				1A43BC3C20C40FA30093855B /* MLCommonSelectView.swift in Sources */,
 				1ABDCAA120C594A50062DE71 /* MLCommonSegmentView.swift in Sources */,
+				1A52756D20D52A7600CA0D68 /* MLSingleSectionTableModel.swift in Sources */,
 				1A98F2A420C972ED000D0F8F /* MLCommonPhotoCell.swift in Sources */,
 				1A43BC3A20C4063E0093855B /* MLContainerView.swift in Sources */,
 			);
