@@ -7,16 +7,20 @@
 //
 
 import UIKit
-
+import MolueUtilities
+import RxSwift
 class MLCommonAddPhotoCell: UICollectionViewCell {
-    @IBOutlet private weak var containerView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        let color = UIColor.init(hex: 0x999999).cgColor
-        containerView.layer.borderColor = color
-        containerView.layer.borderWidth = 1
+        let color = UIColor.init(hex: 0xCCCCCC)
+        self.borderColor = color
+        self.borderWidth = MLConfigure.single_line_height
     }
-
+    
+    @IBAction private func appendButtonClicked(_ sender: UIButton) {
+        self.appendCommand.onNext(())
+    }
+    public let appendCommand = PublishSubject<Void>()
 }

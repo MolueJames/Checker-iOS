@@ -12,10 +12,11 @@ import MolueNavigator
 import MolueCommon
 import RxSwift
 import MolueUtilities
-class AddSecurityAdministratorViewController: MLBaseViewController, MolueNavigatorProtocol {
-    
+import ImagePicker
+class AddSecurityAdministratorViewController: MLBaseViewController {
+    private let limitCount = 4
     private let disposeBag = DisposeBag()
-    
+    //MARK: Interface Elements
     @IBOutlet private weak var usernameContainerView: MLContainerView! {
         didSet {
             usernameInputView = MLCommonInputView.createFromXib()
@@ -91,6 +92,32 @@ class AddSecurityAdministratorViewController: MLBaseViewController, MolueNavigat
             }).disposed(by: disposeBag)
         }
     }
+    @IBOutlet private weak var uploadPhotoContainerView: MLContainerView! {
+        didSet {
+            uploadPhotoInputView = MLCommonPhotoView.createFromXib()
+            uploadPhotoContainerView.doBespreadOn(uploadPhotoInputView)
+        }
+    }
+    private var uploadPhotoInputView: MLCommonPhotoView! {
+        didSet {
+            let images = [UIImage(named: "home_page_riskCheck")!, UIImage(named: "home_page_riskCheck")!,UIImage(named: "home_page_riskCheck")!,UIImage(named: "home_page_riskCheck")!,UIImage(named: "home_page_riskCheck")!]
+            uploadPhotoInputView.defaultValue(title: "上传证书", list: images, count: limitCount)
+            uploadPhotoInputView.appendCommand.subscribe(onNext: { [unowned self] (leftCount) in
+                self.pushToImagePick(leftCount: leftCount)
+            }).disposed(by: disposeBag)
+        }
+    }
+    //MARK: Interface Functions
+    private func pushToImagePick(leftCount: Int) {
+        if leftCount > 0 {
+            let imagePickerController = ImagePickerController()
+            imagePickerController.delegate = self
+            imagePickerController.imageLimit = leftCount
+            present(imagePickerController, animated: true)
+        } else {
+            self.showWarningHUD(text: "只能选择\(limitCount)张图片")
+        }
+    }
     
     private func pushToAdminiType() {
         let model1 = MLSelectedTableViewModel(title: "安全管理人", select: true, keyPath: "target1")
@@ -116,17 +143,33 @@ class AddSecurityAdministratorViewController: MLBaseViewController, MolueNavigat
         MolueLogger.warning.message((date, string))
         self.deadLineInputView.update(description: string)
     }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+
+    }
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+}
+
+//TODO: 实现这些协议方法
+extension AddSecurityAdministratorViewController: ImagePickerDelegate {
+    func wrapperDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
+        imagePicker.dismiss(animated: true)
+    }
     
-    @IBOutlet private weak var uploadPhotoContainerView: MLContainerView! {
-        didSet {
-            
-        }
+    func doneButtonDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
+        imagePicker.dismiss(animated: true)
     }
-    private var uploadPhotoInputView: MLCommonInputView! {
-        didSet {
-            
-        }
+    
+    func cancelButtonDidPress(_ imagePicker: ImagePickerController) {
+        imagePicker.dismiss(animated: true)
     }
+}
+
+extension AddSecurityAdministratorViewController: MolueNavigatorProtocol {
     func doTransferParameters(params: Any?) {
         
     }
@@ -135,16 +178,5 @@ class AddSecurityAdministratorViewController: MLBaseViewController, MolueNavigat
             self.title = title
         }
         self.title = "添加管理员"
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 }

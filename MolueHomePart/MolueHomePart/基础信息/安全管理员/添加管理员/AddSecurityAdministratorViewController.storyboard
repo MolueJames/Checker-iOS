@@ -82,10 +82,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QgD-ra-SGn" customClass="MLContainerView" customModule="MolueCommon">
-                                        <rect key="frame" x="0.0" y="390" width="375" height="130"/>
+                                        <rect key="frame" x="0.0" y="390" width="375" height="120"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="130" id="Fgi-xO-AEP"/>
+                                            <constraint firstAttribute="height" constant="120" id="Fgi-xO-AEP"/>
                                         </constraints>
                                     </view>
                                 </subviews>

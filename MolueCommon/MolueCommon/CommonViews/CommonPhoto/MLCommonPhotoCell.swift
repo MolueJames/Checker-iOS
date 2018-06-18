@@ -7,16 +7,23 @@
 //
 
 import UIKit
-
+import RxSwift
+import MolueUtilities
 class MLCommonPhotoCell: UICollectionViewCell {
-
-    @IBOutlet private weak var containerView: UIView!
+    public let deleteCommand = PublishSubject<Void>()
+    @IBOutlet private weak var imageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        containerView.layer.borderWidth = 1
-        let color = UIColor.init(hex: 0x999999).cgColor
-        containerView.layer.borderColor = color
+        self.borderWidth = MLConfigure.single_line_height
+        let color = UIColor.init(hex: 0xCCCCCC)
+        self.borderColor = color
     }
-
+    @IBAction private func deleteButtonClicked(_ sender: Any) {
+        self.deleteCommand.onNext(())
+    }
+    public func reloadSubviewWithImage(_ image: UIImage) {
+        self.imageView.image = image
+    }
 }

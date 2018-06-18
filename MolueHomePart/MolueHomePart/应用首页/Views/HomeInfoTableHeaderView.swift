@@ -19,17 +19,22 @@ class HomeInfoTableHeaderView: UIView {
         // Drawing code
     }
     */
-    @IBOutlet weak var collectionView: UICollectionView! {
+    @IBOutlet private weak var collectionView: UICollectionView! {
         didSet {
             collectionView.delegate = self
             collectionView.dataSource = self
             collectionView.register(xibWithCellClass: HomeInfoCollectionViewCell.self)
-            let flowLayout = UICollectionViewFlowLayout()
+            self.flowLayout = UICollectionViewFlowLayout()
+            collectionView.collectionViewLayout = self.flowLayout
+        }
+    }
+    
+    private var flowLayout: UICollectionViewFlowLayout! {
+        didSet {
             flowLayout.scrollDirection = .horizontal
             let width = MLConfigure.screenWidth - 30
             flowLayout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
             flowLayout.itemSize = CGSize(width: width, height: 180)
-            collectionView.collectionViewLayout = flowLayout
         }
     }
     

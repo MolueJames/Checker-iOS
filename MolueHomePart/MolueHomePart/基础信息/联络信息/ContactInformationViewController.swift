@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import RxSwift
 import MolueFoundation
+import MolueUtilities
 import MolueCommon
 class ContactInformationViewController: MLBaseViewController {
-
+    private let disposeBag = DisposeBag()
+    
     @IBOutlet weak var representContainerView: MLContainerView! {
         didSet {
             resresentInputView = MLCommonInputView.createFromXib()
@@ -47,13 +50,16 @@ class ContactInformationViewController: MLBaseViewController {
     }
     @IBOutlet weak var addressContainerView: MLContainerView! {
         didSet {
-            addressInputView = MLCommonInputView.createFromXib()
+            addressInputView = MLCommonClickView.createFromXib()
             addressContainerView.doBespreadOn(addressInputView)
         }
     }
-    var addressInputView: MLCommonInputView! {
+    var addressInputView: MLCommonClickView! {
         didSet {
             addressInputView.defaultValue(title: "经营地址", placeholder: "自动获取地址 >")
+            addressInputView.clickedCommand.subscribe(onNext: { (_) in
+                MolueLogger.success.message("clicked")
+            }).disposed(by: disposeBag)
         }
     }
     
