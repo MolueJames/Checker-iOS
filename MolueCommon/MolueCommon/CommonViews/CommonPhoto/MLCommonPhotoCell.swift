@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import MolueUtilities
 class MLCommonPhotoCell: UICollectionViewCell {
-    public let deleteCommand = PublishSubject<Void>()
+    public var deleteCommand: PublishSubject<MLCommonPhotoCell>?
     @IBOutlet private weak var imageView: UIImageView!
     
     override func awakeFromNib() {
@@ -21,9 +21,10 @@ class MLCommonPhotoCell: UICollectionViewCell {
         self.borderColor = color
     }
     @IBAction private func deleteButtonClicked(_ sender: Any) {
-        self.deleteCommand.onNext(())
+        self.deleteCommand?.onNext(self)
     }
     public func reloadSubviewWithImage(_ image: UIImage) {
         self.imageView.image = image
+        self.deleteCommand = PublishSubject<MLCommonPhotoCell>()
     }
 }

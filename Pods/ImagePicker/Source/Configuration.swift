@@ -23,14 +23,14 @@ public struct Configuration {
 
   // MARK: Titles
 
-  public var OKButtonTitle = "OK"
-  public var cancelButtonTitle = "Cancel"
-  public var doneButtonTitle = "Done"
-  public var noImagesTitle = "No images available"
-  public var noCameraTitle = "Camera is not available"
-  public var settingsTitle = "Settings"
-  public var requestPermissionTitle = "Permission denied"
-  public var requestPermissionMessage = "Please, allow the application to access to your photo library."
+  public var OKButtonTitle = "确定"
+  public var cancelButtonTitle = "取消"
+  public var doneButtonTitle = "完成"
+  public var noImagesTitle = "相册中暂无照片"
+  public var noCameraTitle = "无法调用手机相机"
+  public var settingsTitle = "设置"
+  public var requestPermissionTitle = "未开启权限"
+  public var requestPermissionMessage = "请允许App使用您的手机相册"
 
   // MARK: Dimensions
 

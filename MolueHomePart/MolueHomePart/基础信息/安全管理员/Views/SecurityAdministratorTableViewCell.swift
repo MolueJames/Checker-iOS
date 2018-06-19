@@ -9,7 +9,10 @@
 import UIKit
 import RxSwift
 class SecurityAdministratorTableViewCell: UITableViewCell {
-
+    public func reloadSubviewsWithModel() {
+        self.detailCommand = PublishSubject<Void>()
+        self.phoneCommand = PublishSubject<String>()
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -33,15 +36,15 @@ class SecurityAdministratorTableViewCell: UITableViewCell {
         }
     }
     
-    public let detailCommand = PublishSubject<Void>()
+    public var detailCommand: PublishSubject<Void>?
     
-    public let phoneCommand = PublishSubject<String>()
+    public var phoneCommand: PublishSubject<String>?
     
     @IBAction private func detailButtonClicked(_ sender: UIButton) {
-        self.detailCommand.onNext(())
+        self.detailCommand?.onNext(())
     }
     
     @IBAction private func phoneButtonClicked(_ sender: UIButton) {
-        self.phoneCommand.onNext("13962624420")
+        self.phoneCommand?.onNext("13962624420")
     }
 }

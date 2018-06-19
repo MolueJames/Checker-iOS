@@ -58,18 +58,21 @@ extension SecurityAdministratorViewController: UITableViewDelegate {
 
 extension SecurityAdministratorViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 15
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: SecurityAdministratorTableViewCell! = tableView.dequeueReusableCell(withClass: SecurityAdministratorTableViewCell.self)
-        cell.phoneCommand.subscribe(onNext: { (phone) in
+        cell.reloadSubviewsWithModel()
+        
+        cell.phoneCommand?.subscribe(onNext: { (phone) in
             MLCommonFunction.ringUpPhone(phone)
         }).disposed(by: disposeBag)
-        cell.detailCommand.subscribe { _ in
+        
+        cell.detailCommand?.subscribe(onNext: { (_) in
             let router = MolueNavigatorRouter(.Home, path: HomePath.AddAdministrator.rawValue)
             MolueAppRouter.shared.pushRouter(router, parameters:["title": "编辑管理员"])
-        }.disposed(by: disposeBag)
+        }).disposed(by: disposeBag)
         return cell
     }
 }

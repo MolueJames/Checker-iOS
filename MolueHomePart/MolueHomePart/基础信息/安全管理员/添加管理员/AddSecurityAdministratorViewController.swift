@@ -110,13 +110,18 @@ class AddSecurityAdministratorViewController: MLBaseViewController {
     //MARK: Interface Functions
     private func pushToImagePick(leftCount: Int) {
         if leftCount > 0 {
-            let imagePickerController = ImagePickerController()
-            imagePickerController.delegate = self
-            imagePickerController.imageLimit = leftCount
-            present(imagePickerController, animated: true)
+            let pickerController = self.imagePickerController(leftCount)
+            self.tabBarController?.present(pickerController, animated: true)
         } else {
-            self.showWarningHUD(text: "只能选择\(limitCount)张图片")
+            self.showWarningHUD(text: "对不起,只允许选择\(limitCount)张图片")
         }
+    }
+    
+    private func imagePickerController(_ leftCount: Int) -> ImagePickerController {
+        let imagePickerController = ImagePickerController()
+        imagePickerController.delegate = self
+        imagePickerController.imageLimit = leftCount
+        return imagePickerController
     }
     
     private func pushToAdminiType() {
@@ -157,10 +162,12 @@ class AddSecurityAdministratorViewController: MLBaseViewController {
 //TODO: 实现这些协议方法
 extension AddSecurityAdministratorViewController: ImagePickerDelegate {
     func wrapperDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
+        self.uploadPhotoInputView.appendImages(images)
         imagePicker.dismiss(animated: true)
     }
     
     func doneButtonDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
+        self.uploadPhotoInputView.appendImages(images)
         imagePicker.dismiss(animated: true)
     }
     

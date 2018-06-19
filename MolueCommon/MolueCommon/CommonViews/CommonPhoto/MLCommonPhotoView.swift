@@ -97,10 +97,10 @@ extension MLCommonPhotoView: UICollectionViewDataSource {
     private func handelShowPhotoCell(_ cell: MLCommonPhotoCell, indexPath: IndexPath) {
         let image = self.list[indexPath.row]
         cell.reloadSubviewWithImage(image)
-        cell.deleteCommand.subscribe(onNext: { [unowned self] (_) in
+        cell.deleteCommand?.subscribe(onNext: { [unowned self] (deleteCell) in
             objc_sync_enter(self)
             defer {objc_sync_exit(self)}
-            self.doDeleteOperationForCell(cell)
+            self.doDeleteOperationForCell(deleteCell)
         }).disposed(by: disposeBag)
     }
     
