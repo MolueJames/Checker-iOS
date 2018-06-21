@@ -8,7 +8,7 @@
 
 import UIKit
 import RxSwift
-class SecurityAdministratorTableViewCell: UITableViewCell {
+class SecurityAdminiTableViewCell: UITableViewCell {
     public func reloadSubviewsWithModel() {
         self.detailCommand = PublishSubject<Void>()
         self.phoneCommand = PublishSubject<String>()

@@ -16,8 +16,15 @@ import MolueNetwork
 import MolueNavigator
 import MolueFoundation
 import ViewAnimator
+protocol HomeInfoDataProtocol {
+    
+}
 
-class HomeInfoViewController: MLBaseViewController {
+class HomeInfoViewController: MLBaseViewController, MLDataManagerProtocol {
+    var dataManager: HomeInfoDataProtocol = HomeInfoDataManager()
+    
+    typealias DataManagerTarget = HomeInfoDataProtocol
+    
     private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
@@ -63,7 +70,7 @@ class HomeInfoViewController: MLBaseViewController {
     
     lazy var titleLabel: UILabel! = {
         let label = UILabel.init(frame: CGRect.init(x: 0, y: 0, width: 100, height: 44))
-        label.font = UIFont.boldSystemFont(ofSize: 18)
+        label.font = .boldSystemFont(ofSize: 18)
         label.textAlignment = .center
         label.textColor = .white
         label.text = "安监通"

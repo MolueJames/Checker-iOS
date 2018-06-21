@@ -12,6 +12,8 @@
 		1A1B88CD20864D9500C5F4D9 /* MolueHomePart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A1B88C320864D9500C5F4D9 /* MolueHomePart.framework */; };
 		1A1B88D220864D9500C5F4D9 /* MolueHomePartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1B88D120864D9500C5F4D9 /* MolueHomePartTests.swift */; };
 		1A1B88D420864D9500C5F4D9 /* MolueHomePart.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A1B88C620864D9500C5F4D9 /* MolueHomePart.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1A35D7F820DBC999002ED3CB /* HomeInfoDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A35D7F720DBC999002ED3CB /* HomeInfoDataManager.swift */; };
+		1A35D7FA20DBC9BF002ED3CB /* EnterpriseInfoDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A35D7F920DBC9BF002ED3CB /* EnterpriseInfoDataManager.swift */; };
 		1A43BC2420C3AEE70093855B /* HomeInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A43BC2220C3AEE70093855B /* HomeInfoCollectionViewCell.swift */; };
 		1A43BC2520C3AEE70093855B /* HomeInfoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A43BC2320C3AEE70093855B /* HomeInfoCollectionViewCell.xib */; };
 		1A43BC2720C3AF190093855B /* HomeInfoHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A43BC2620C3AF190093855B /* HomeInfoHeaderView.swift */; };
@@ -30,26 +32,26 @@
 		1A602F8520A87D58003AD583 /* HomeInfoTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A602F8420A87D58003AD583 /* HomeInfoTableHeaderView.swift */; };
 		1A602F8C20A88095003AD583 /* HomeInfoTableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A602F8B20A88095003AD583 /* HomeInfoTableHeaderView.xib */; };
 		1AA7357020A9CFE800DF7CD0 /* MolueHome.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AA7356F20A9CFE800DF7CD0 /* MolueHome.xcassets */; };
-		1AAF7B6720C1970A0051EC18 /* EnterpriseInformationViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AAF7B6520C1970A0051EC18 /* EnterpriseInformationViewController.storyboard */; };
-		1AAF7B6820C1970A0051EC18 /* EnterpriseInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAF7B6620C1970A0051EC18 /* EnterpriseInformationViewController.swift */; };
+		1AAF7B6720C1970A0051EC18 /* EnterpriseInfoViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AAF7B6520C1970A0051EC18 /* EnterpriseInfoViewController.storyboard */; };
+		1AAF7B6820C1970A0051EC18 /* EnterpriseInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAF7B6620C1970A0051EC18 /* EnterpriseInfoViewController.swift */; };
 		1AAF7B7E20C1971B0051EC18 /* BasicArchivesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAF7B6A20C1971B0051EC18 /* BasicArchivesViewController.swift */; };
 		1AAF7B7F20C1971B0051EC18 /* BasicArchivesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AAF7B6B20C1971B0051EC18 /* BasicArchivesViewController.storyboard */; };
-		1AAF7B8020C1971B0051EC18 /* AddSecurityAdministratorViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AAF7B6E20C1971B0051EC18 /* AddSecurityAdministratorViewController.storyboard */; };
-		1AAF7B8120C1971B0051EC18 /* AddSecurityAdministratorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAF7B6F20C1971B0051EC18 /* AddSecurityAdministratorViewController.swift */; };
-		1AAF7B8220C1971B0051EC18 /* SecurityAdministratorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAF7B7020C1971B0051EC18 /* SecurityAdministratorViewController.swift */; };
-		1AAF7B8320C1971B0051EC18 /* SecurityAdministratorViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AAF7B7120C1971B0051EC18 /* SecurityAdministratorViewController.storyboard */; };
+		1AAF7B8020C1971B0051EC18 /* IncreaseAdminiViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AAF7B6E20C1971B0051EC18 /* IncreaseAdminiViewController.storyboard */; };
+		1AAF7B8120C1971B0051EC18 /* IncreaseAdminiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAF7B6F20C1971B0051EC18 /* IncreaseAdminiViewController.swift */; };
+		1AAF7B8220C1971B0051EC18 /* SecurityAdminiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAF7B7020C1971B0051EC18 /* SecurityAdminiViewController.swift */; };
+		1AAF7B8320C1971B0051EC18 /* SecurityAdminiViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AAF7B7120C1971B0051EC18 /* SecurityAdminiViewController.storyboard */; };
 		1AAF7B8420C1971B0051EC18 /* ContactInformationViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AAF7B7320C1971B0051EC18 /* ContactInformationViewController.storyboard */; };
 		1AAF7B8520C1971B0051EC18 /* ContactInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAF7B7420C1971B0051EC18 /* ContactInformationViewController.swift */; };
-		1AAF7B8620C1971B0051EC18 /* HazardousMachineryViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AAF7B7720C1971B0051EC18 /* HazardousMachineryViewController.storyboard */; };
-		1AAF7B8720C1971B0051EC18 /* HazardousMachineryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAF7B7820C1971B0051EC18 /* HazardousMachineryViewController.swift */; };
-		1AAF7B8820C1971B0051EC18 /* EnterpriseRiskFeatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAF7B7A20C1971B0051EC18 /* EnterpriseRiskFeatureViewController.swift */; };
-		1AAF7B8920C1971B0051EC18 /* EnterpriseRiskFeatureViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AAF7B7B20C1971B0051EC18 /* EnterpriseRiskFeatureViewController.storyboard */; };
-		1AAF7B8A20C1971B0051EC18 /* RiskFeatureViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AAF7B7C20C1971B0051EC18 /* RiskFeatureViewController.storyboard */; };
-		1AAF7B8B20C1971B0051EC18 /* RiskFeatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAF7B7D20C1971B0051EC18 /* RiskFeatureViewController.swift */; };
-		1ABDCA9520C5720F0062DE71 /* AddAdministratorFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABDCA9420C5720F0062DE71 /* AddAdministratorFooterView.swift */; };
-		1ABDCA9720C5721B0062DE71 /* AddAdministratorFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1ABDCA9620C5721B0062DE71 /* AddAdministratorFooterView.xib */; };
-		1ABDCA9A20C5798B0062DE71 /* SecurityAdministratorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABDCA9820C5798B0062DE71 /* SecurityAdministratorTableViewCell.swift */; };
-		1ABDCA9B20C5798B0062DE71 /* SecurityAdministratorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1ABDCA9920C5798B0062DE71 /* SecurityAdministratorTableViewCell.xib */; };
+		1AAF7B8620C1971B0051EC18 /* DangerMachineryViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AAF7B7720C1971B0051EC18 /* DangerMachineryViewController.storyboard */; };
+		1AAF7B8720C1971B0051EC18 /* DangerMachineryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAF7B7820C1971B0051EC18 /* DangerMachineryViewController.swift */; };
+		1AAF7B8820C1971B0051EC18 /* EnterpriseRiskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAF7B7A20C1971B0051EC18 /* EnterpriseRiskViewController.swift */; };
+		1AAF7B8920C1971B0051EC18 /* EnterpriseRiskViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AAF7B7B20C1971B0051EC18 /* EnterpriseRiskViewController.storyboard */; };
+		1AAF7B8A20C1971B0051EC18 /* DangerousFeatureViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AAF7B7C20C1971B0051EC18 /* DangerousFeatureViewController.storyboard */; };
+		1AAF7B8B20C1971B0051EC18 /* DangerousFeatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAF7B7D20C1971B0051EC18 /* DangerousFeatureViewController.swift */; };
+		1ABDCA9520C5720F0062DE71 /* IncreaseAdminiFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABDCA9420C5720F0062DE71 /* IncreaseAdminiFooterView.swift */; };
+		1ABDCA9720C5721B0062DE71 /* IncreaseAdminiFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1ABDCA9620C5721B0062DE71 /* IncreaseAdminiFooterView.xib */; };
+		1ABDCA9A20C5798B0062DE71 /* SecurityAdminiTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABDCA9820C5798B0062DE71 /* SecurityAdminiTableViewCell.swift */; };
+		1ABDCA9B20C5798B0062DE71 /* SecurityAdminiTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1ABDCA9920C5798B0062DE71 /* SecurityAdminiTableViewCell.xib */; };
 		EF01F517C22ED0361C323767 /* Pods_MolueHomePart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 010F6973D5E1725577EE6B03 /* Pods_MolueHomePart.framework */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +75,8 @@
 		1A1B88CC20864D9500C5F4D9 /* MolueHomePartTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MolueHomePartTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A1B88D120864D9500C5F4D9 /* MolueHomePartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueHomePartTests.swift; sourceTree = "<group>"; };
 		1A1B88D320864D9500C5F4D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A35D7F720DBC999002ED3CB /* HomeInfoDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInfoDataManager.swift; sourceTree = "<group>"; };
+		1A35D7F920DBC9BF002ED3CB /* EnterpriseInfoDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterpriseInfoDataManager.swift; sourceTree = "<group>"; };
 		1A43BC2220C3AEE70093855B /* HomeInfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInfoCollectionViewCell.swift; sourceTree = "<group>"; };
 		1A43BC2320C3AEE70093855B /* HomeInfoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeInfoCollectionViewCell.xib; sourceTree = "<group>"; };
 		1A43BC2620C3AF190093855B /* HomeInfoHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInfoHeaderView.swift; sourceTree = "<group>"; };
@@ -92,26 +96,26 @@
 		1A602F8420A87D58003AD583 /* HomeInfoTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInfoTableHeaderView.swift; sourceTree = "<group>"; };
 		1A602F8B20A88095003AD583 /* HomeInfoTableHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeInfoTableHeaderView.xib; sourceTree = "<group>"; };
 		1AA7356F20A9CFE800DF7CD0 /* MolueHome.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MolueHome.xcassets; sourceTree = "<group>"; };
-		1AAF7B6520C1970A0051EC18 /* EnterpriseInformationViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EnterpriseInformationViewController.storyboard; sourceTree = "<group>"; };
-		1AAF7B6620C1970A0051EC18 /* EnterpriseInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterpriseInformationViewController.swift; sourceTree = "<group>"; };
+		1AAF7B6520C1970A0051EC18 /* EnterpriseInfoViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EnterpriseInfoViewController.storyboard; sourceTree = "<group>"; };
+		1AAF7B6620C1970A0051EC18 /* EnterpriseInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterpriseInfoViewController.swift; sourceTree = "<group>"; };
 		1AAF7B6A20C1971B0051EC18 /* BasicArchivesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicArchivesViewController.swift; sourceTree = "<group>"; };
 		1AAF7B6B20C1971B0051EC18 /* BasicArchivesViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BasicArchivesViewController.storyboard; sourceTree = "<group>"; };
-		1AAF7B6E20C1971B0051EC18 /* AddSecurityAdministratorViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddSecurityAdministratorViewController.storyboard; sourceTree = "<group>"; };
-		1AAF7B6F20C1971B0051EC18 /* AddSecurityAdministratorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddSecurityAdministratorViewController.swift; sourceTree = "<group>"; };
-		1AAF7B7020C1971B0051EC18 /* SecurityAdministratorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecurityAdministratorViewController.swift; sourceTree = "<group>"; };
-		1AAF7B7120C1971B0051EC18 /* SecurityAdministratorViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SecurityAdministratorViewController.storyboard; sourceTree = "<group>"; };
+		1AAF7B6E20C1971B0051EC18 /* IncreaseAdminiViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = IncreaseAdminiViewController.storyboard; sourceTree = "<group>"; };
+		1AAF7B6F20C1971B0051EC18 /* IncreaseAdminiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncreaseAdminiViewController.swift; sourceTree = "<group>"; };
+		1AAF7B7020C1971B0051EC18 /* SecurityAdminiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecurityAdminiViewController.swift; sourceTree = "<group>"; };
+		1AAF7B7120C1971B0051EC18 /* SecurityAdminiViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SecurityAdminiViewController.storyboard; sourceTree = "<group>"; };
 		1AAF7B7320C1971B0051EC18 /* ContactInformationViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ContactInformationViewController.storyboard; sourceTree = "<group>"; };
 		1AAF7B7420C1971B0051EC18 /* ContactInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactInformationViewController.swift; sourceTree = "<group>"; };
-		1AAF7B7720C1971B0051EC18 /* HazardousMachineryViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HazardousMachineryViewController.storyboard; sourceTree = "<group>"; };
-		1AAF7B7820C1971B0051EC18 /* HazardousMachineryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HazardousMachineryViewController.swift; sourceTree = "<group>"; };
-		1AAF7B7A20C1971B0051EC18 /* EnterpriseRiskFeatureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterpriseRiskFeatureViewController.swift; sourceTree = "<group>"; };
-		1AAF7B7B20C1971B0051EC18 /* EnterpriseRiskFeatureViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EnterpriseRiskFeatureViewController.storyboard; sourceTree = "<group>"; };
-		1AAF7B7C20C1971B0051EC18 /* RiskFeatureViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RiskFeatureViewController.storyboard; sourceTree = "<group>"; };
-		1AAF7B7D20C1971B0051EC18 /* RiskFeatureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RiskFeatureViewController.swift; sourceTree = "<group>"; };
-		1ABDCA9420C5720F0062DE71 /* AddAdministratorFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAdministratorFooterView.swift; sourceTree = "<group>"; };
-		1ABDCA9620C5721B0062DE71 /* AddAdministratorFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddAdministratorFooterView.xib; sourceTree = "<group>"; };
-		1ABDCA9820C5798B0062DE71 /* SecurityAdministratorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityAdministratorTableViewCell.swift; sourceTree = "<group>"; };
-		1ABDCA9920C5798B0062DE71 /* SecurityAdministratorTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecurityAdministratorTableViewCell.xib; sourceTree = "<group>"; };
+		1AAF7B7720C1971B0051EC18 /* DangerMachineryViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DangerMachineryViewController.storyboard; sourceTree = "<group>"; };
+		1AAF7B7820C1971B0051EC18 /* DangerMachineryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DangerMachineryViewController.swift; sourceTree = "<group>"; };
+		1AAF7B7A20C1971B0051EC18 /* EnterpriseRiskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterpriseRiskViewController.swift; sourceTree = "<group>"; };
+		1AAF7B7B20C1971B0051EC18 /* EnterpriseRiskViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EnterpriseRiskViewController.storyboard; sourceTree = "<group>"; };
+		1AAF7B7C20C1971B0051EC18 /* DangerousFeatureViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DangerousFeatureViewController.storyboard; sourceTree = "<group>"; };
+		1AAF7B7D20C1971B0051EC18 /* DangerousFeatureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DangerousFeatureViewController.swift; sourceTree = "<group>"; };
+		1ABDCA9420C5720F0062DE71 /* IncreaseAdminiFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncreaseAdminiFooterView.swift; sourceTree = "<group>"; };
+		1ABDCA9620C5721B0062DE71 /* IncreaseAdminiFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IncreaseAdminiFooterView.xib; sourceTree = "<group>"; };
+		1ABDCA9820C5798B0062DE71 /* SecurityAdminiTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityAdminiTableViewCell.swift; sourceTree = "<group>"; };
+		1ABDCA9920C5798B0062DE71 /* SecurityAdminiTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecurityAdminiTableViewCell.xib; sourceTree = "<group>"; };
 		9468AE17912D4AEEBE6E1EFA /* Pods-MolueHomePart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueHomePart.release.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueHomePart/Pods-MolueHomePart.release.xcconfig"; sourceTree = "<group>"; };
 		C7C163FB01CFAE81C039463E /* Pods-MolueHomePart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueHomePart.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueHomePart/Pods-MolueHomePart.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -183,6 +187,14 @@
 			path = MolueHomePartTests;
 			sourceTree = "<group>";
 		};
+		1A35D7F620DBC988002ED3CB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1A35D7F720DBC999002ED3CB /* HomeInfoDataManager.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		1A43BC2A20C3CA750093855B /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -196,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				1A43BC3220C3CEAA0093855B /* EnterpriseInfoModel.swift */,
+				1A35D7F920DBC9BF002ED3CB /* EnterpriseInfoDataManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -203,7 +216,7 @@
 		1A50149B20944D7A00DB931E /* 应用首页 */ = {
 			isa = PBXGroup;
 			children = (
-				1A602F8320A87D37003AD583 /* Models */,
+				1A35D7F620DBC988002ED3CB /* Models */,
 				1A602F8220A87D37003AD583 /* Views */,
 				1A5014A320944DFE00DB931E /* HomeInfoViewController.swift */,
 				1A5014A120944DF000DB931E /* HomeInfoViewController.storyboard */,
@@ -226,13 +239,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		1A602F8320A87D37003AD583 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		1AAF7B6420C1970A0051EC18 /* 基础信息 */ = {
 			isa = PBXGroup;
 			children = (
@@ -242,8 +248,8 @@
 				1AAF7B6920C1971B0051EC18 /* 基本档案 */,
 				1AAF7B7220C1971B0051EC18 /* 联络信息 */,
 				1AAF7B7520C1971B0051EC18 /* 危险特征 */,
-				1AAF7B6520C1970A0051EC18 /* EnterpriseInformationViewController.storyboard */,
-				1AAF7B6620C1970A0051EC18 /* EnterpriseInformationViewController.swift */,
+				1AAF7B6520C1970A0051EC18 /* EnterpriseInfoViewController.storyboard */,
+				1AAF7B6620C1970A0051EC18 /* EnterpriseInfoViewController.swift */,
 			);
 			path = "基础信息";
 			sourceTree = "<group>";
@@ -262,8 +268,8 @@
 			children = (
 				1ABDCA9320C571D00062DE71 /* Views */,
 				1AAF7B6D20C1971B0051EC18 /* 添加管理员 */,
-				1AAF7B7020C1971B0051EC18 /* SecurityAdministratorViewController.swift */,
-				1AAF7B7120C1971B0051EC18 /* SecurityAdministratorViewController.storyboard */,
+				1AAF7B7020C1971B0051EC18 /* SecurityAdminiViewController.swift */,
+				1AAF7B7120C1971B0051EC18 /* SecurityAdminiViewController.storyboard */,
 			);
 			path = "安全管理员";
 			sourceTree = "<group>";
@@ -271,8 +277,8 @@
 		1AAF7B6D20C1971B0051EC18 /* 添加管理员 */ = {
 			isa = PBXGroup;
 			children = (
-				1AAF7B6E20C1971B0051EC18 /* AddSecurityAdministratorViewController.storyboard */,
-				1AAF7B6F20C1971B0051EC18 /* AddSecurityAdministratorViewController.swift */,
+				1AAF7B6E20C1971B0051EC18 /* IncreaseAdminiViewController.storyboard */,
+				1AAF7B6F20C1971B0051EC18 /* IncreaseAdminiViewController.swift */,
 			);
 			path = "添加管理员";
 			sourceTree = "<group>";
@@ -291,8 +297,8 @@
 			children = (
 				1AAF7B7620C1971B0051EC18 /* 危险设备 */,
 				1AAF7B7920C1971B0051EC18 /* 企业危险特征 */,
-				1AAF7B7C20C1971B0051EC18 /* RiskFeatureViewController.storyboard */,
-				1AAF7B7D20C1971B0051EC18 /* RiskFeatureViewController.swift */,
+				1AAF7B7C20C1971B0051EC18 /* DangerousFeatureViewController.storyboard */,
+				1AAF7B7D20C1971B0051EC18 /* DangerousFeatureViewController.swift */,
 			);
 			path = "危险特征";
 			sourceTree = "<group>";
@@ -300,8 +306,8 @@
 		1AAF7B7620C1971B0051EC18 /* 危险设备 */ = {
 			isa = PBXGroup;
 			children = (
-				1AAF7B7720C1971B0051EC18 /* HazardousMachineryViewController.storyboard */,
-				1AAF7B7820C1971B0051EC18 /* HazardousMachineryViewController.swift */,
+				1AAF7B7720C1971B0051EC18 /* DangerMachineryViewController.storyboard */,
+				1AAF7B7820C1971B0051EC18 /* DangerMachineryViewController.swift */,
 			);
 			path = "危险设备";
 			sourceTree = "<group>";
@@ -309,8 +315,8 @@
 		1AAF7B7920C1971B0051EC18 /* 企业危险特征 */ = {
 			isa = PBXGroup;
 			children = (
-				1AAF7B7A20C1971B0051EC18 /* EnterpriseRiskFeatureViewController.swift */,
-				1AAF7B7B20C1971B0051EC18 /* EnterpriseRiskFeatureViewController.storyboard */,
+				1AAF7B7A20C1971B0051EC18 /* EnterpriseRiskViewController.swift */,
+				1AAF7B7B20C1971B0051EC18 /* EnterpriseRiskViewController.storyboard */,
 			);
 			path = "企业危险特征";
 			sourceTree = "<group>";
@@ -318,10 +324,10 @@
 		1ABDCA9320C571D00062DE71 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				1ABDCA9420C5720F0062DE71 /* AddAdministratorFooterView.swift */,
-				1ABDCA9620C5721B0062DE71 /* AddAdministratorFooterView.xib */,
-				1ABDCA9820C5798B0062DE71 /* SecurityAdministratorTableViewCell.swift */,
-				1ABDCA9920C5798B0062DE71 /* SecurityAdministratorTableViewCell.xib */,
+				1ABDCA9420C5720F0062DE71 /* IncreaseAdminiFooterView.swift */,
+				1ABDCA9620C5721B0062DE71 /* IncreaseAdminiFooterView.xib */,
+				1ABDCA9820C5798B0062DE71 /* SecurityAdminiTableViewCell.swift */,
+				1ABDCA9920C5798B0062DE71 /* SecurityAdminiTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -446,20 +452,20 @@
 				1A5014A220944DF000DB931E /* HomeInfoViewController.storyboard in Resources */,
 				1AAF7B7F20C1971B0051EC18 /* BasicArchivesViewController.storyboard in Resources */,
 				1A43BC3020C3CAA60093855B /* EnterpriseInfoTableViewCell.xib in Resources */,
-				1ABDCA9720C5721B0062DE71 /* AddAdministratorFooterView.xib in Resources */,
-				1AAF7B8620C1971B0051EC18 /* HazardousMachineryViewController.storyboard in Resources */,
-				1AAF7B8A20C1971B0051EC18 /* RiskFeatureViewController.storyboard in Resources */,
+				1ABDCA9720C5721B0062DE71 /* IncreaseAdminiFooterView.xib in Resources */,
+				1AAF7B8620C1971B0051EC18 /* DangerMachineryViewController.storyboard in Resources */,
+				1AAF7B8A20C1971B0051EC18 /* DangerousFeatureViewController.storyboard in Resources */,
 				1A602F8C20A88095003AD583 /* HomeInfoTableHeaderView.xib in Resources */,
-				1ABDCA9B20C5798B0062DE71 /* SecurityAdministratorTableViewCell.xib in Resources */,
+				1ABDCA9B20C5798B0062DE71 /* SecurityAdminiTableViewCell.xib in Resources */,
 				1A06557E20A9EE020016CA86 /* HomeInfoTableViewCell.xib in Resources */,
 				1AA7357020A9CFE800DF7CD0 /* MolueHome.xcassets in Resources */,
 				1A43BC2520C3AEE70093855B /* HomeInfoCollectionViewCell.xib in Resources */,
 				1A43BC2920C3AF2B0093855B /* HomeInfoHeaderView.xib in Resources */,
-				1AAF7B8320C1971B0051EC18 /* SecurityAdministratorViewController.storyboard in Resources */,
-				1AAF7B8920C1971B0051EC18 /* EnterpriseRiskFeatureViewController.storyboard in Resources */,
+				1AAF7B8320C1971B0051EC18 /* SecurityAdminiViewController.storyboard in Resources */,
+				1AAF7B8920C1971B0051EC18 /* EnterpriseRiskViewController.storyboard in Resources */,
 				1AAF7B8420C1971B0051EC18 /* ContactInformationViewController.storyboard in Resources */,
-				1AAF7B8020C1971B0051EC18 /* AddSecurityAdministratorViewController.storyboard in Resources */,
-				1AAF7B6720C1970A0051EC18 /* EnterpriseInformationViewController.storyboard in Resources */,
+				1AAF7B8020C1971B0051EC18 /* IncreaseAdminiViewController.storyboard in Resources */,
+				1AAF7B6720C1970A0051EC18 /* EnterpriseInfoViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,22 +505,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AAF7B7E20C1971B0051EC18 /* BasicArchivesViewController.swift in Sources */,
-				1AAF7B8220C1971B0051EC18 /* SecurityAdministratorViewController.swift in Sources */,
+				1AAF7B8220C1971B0051EC18 /* SecurityAdminiViewController.swift in Sources */,
 				1A43BC2F20C3CAA60093855B /* EnterpriseInfoTableViewCell.swift in Sources */,
 				1A43BC2420C3AEE70093855B /* HomeInfoCollectionViewCell.swift in Sources */,
-				1ABDCA9A20C5798B0062DE71 /* SecurityAdministratorTableViewCell.swift in Sources */,
+				1A35D7FA20DBC9BF002ED3CB /* EnterpriseInfoDataManager.swift in Sources */,
+				1ABDCA9A20C5798B0062DE71 /* SecurityAdminiTableViewCell.swift in Sources */,
 				1AAF7B8520C1971B0051EC18 /* ContactInformationViewController.swift in Sources */,
-				1AAF7B8B20C1971B0051EC18 /* RiskFeatureViewController.swift in Sources */,
-				1AAF7B8720C1971B0051EC18 /* HazardousMachineryViewController.swift in Sources */,
+				1AAF7B8B20C1971B0051EC18 /* DangerousFeatureViewController.swift in Sources */,
+				1AAF7B8720C1971B0051EC18 /* DangerMachineryViewController.swift in Sources */,
 				1A5014A420944DFE00DB931E /* HomeInfoViewController.swift in Sources */,
 				1A43BC2720C3AF190093855B /* HomeInfoHeaderView.swift in Sources */,
-				1AAF7B8120C1971B0051EC18 /* AddSecurityAdministratorViewController.swift in Sources */,
+				1AAF7B8120C1971B0051EC18 /* IncreaseAdminiViewController.swift in Sources */,
 				1A602F8520A87D58003AD583 /* HomeInfoTableHeaderView.swift in Sources */,
-				1AAF7B6820C1970A0051EC18 /* EnterpriseInformationViewController.swift in Sources */,
+				1AAF7B6820C1970A0051EC18 /* EnterpriseInfoViewController.swift in Sources */,
 				1A06557D20A9EE020016CA86 /* HomeInfoTableViewCell.swift in Sources */,
 				1A43BC3320C3CEAA0093855B /* EnterpriseInfoModel.swift in Sources */,
-				1ABDCA9520C5720F0062DE71 /* AddAdministratorFooterView.swift in Sources */,
-				1AAF7B8820C1971B0051EC18 /* EnterpriseRiskFeatureViewController.swift in Sources */,
+				1ABDCA9520C5720F0062DE71 /* IncreaseAdminiFooterView.swift in Sources */,
+				1A35D7F820DBC999002ED3CB /* HomeInfoDataManager.swift in Sources */,
+				1AAF7B8820C1971B0051EC18 /* EnterpriseRiskViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

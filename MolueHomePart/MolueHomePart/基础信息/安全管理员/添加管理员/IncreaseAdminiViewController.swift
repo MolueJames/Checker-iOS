@@ -13,7 +13,7 @@ import MolueCommon
 import RxSwift
 import MolueUtilities
 import ImagePicker
-class AddSecurityAdministratorViewController: MLBaseViewController {
+class IncreaseAdminiViewController: MLBaseViewController {
     private let limitCount = 4
     private let disposeBag = DisposeBag()
     //MARK: Interface Elements
@@ -160,7 +160,7 @@ class AddSecurityAdministratorViewController: MLBaseViewController {
 }
 
 //TODO: 实现这些协议方法
-extension AddSecurityAdministratorViewController: ImagePickerDelegate {
+extension IncreaseAdminiViewController: ImagePickerDelegate {
     func wrapperDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
         self.uploadPhotoInputView.appendImages(images)
         imagePicker.dismiss(animated: true)
@@ -176,7 +176,7 @@ extension AddSecurityAdministratorViewController: ImagePickerDelegate {
     }
 }
 
-extension AddSecurityAdministratorViewController: MolueNavigatorProtocol {
+extension IncreaseAdminiViewController: MolueNavigatorProtocol {
     func doTransferParameters(params: Any?) {
         
     }

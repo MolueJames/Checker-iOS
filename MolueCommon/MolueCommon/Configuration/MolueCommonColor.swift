@@ -8,5 +8,3 @@
 
 import Foundation
 import MolueUtilities
-public class CommonColor {}
-

@@ -13,23 +13,23 @@ import MolueCommon
 import MolueUtilities
 import MolueFoundation
 import ViewAnimator
-class SecurityAdministratorViewController: MLBaseViewController {
+class SecurityAdminiViewController: MLBaseViewController {
     private let disposeBag = DisposeBag()
     @IBOutlet weak var tableView: UITableView! {
         didSet {
-            tableViewFooterView = AddAdministratorFooterView.createFromXib()
+            tableViewFooterView = IncreaseAdminiFooterView.createFromXib()
             tableViewFooterView.frame = CGRect(x: 0, y: 0, width:MLConfigure.screenWidth , height: 60)
             tableView.tableFooterView = tableViewFooterView
-            tableView.register(xibWithCellClass: SecurityAdministratorTableViewCell.self)
+            tableView.register(xibWithCellClass: SecurityAdminiTableViewCell.self)
             tableView.dataSource = self
             tableView.delegate = self
         }
     }
     
-    var tableViewFooterView: AddAdministratorFooterView! {
+    var tableViewFooterView: IncreaseAdminiFooterView! {
         didSet {
             tableViewFooterView.addControlCommand.subscribe { _ in
-                let router = MolueNavigatorRouter(.Home, path: HomePath.AddAdministrator.rawValue)
+                let router = MolueNavigatorRouter(.Home, path: HomePath.IncreaseAdmini.rawValue)
                 MolueAppRouter.shared.pushRouter(router)
             }.disposed(by: disposeBag)
         }
@@ -50,19 +50,19 @@ class SecurityAdministratorViewController: MLBaseViewController {
     }
 }
 
-extension SecurityAdministratorViewController: UITableViewDelegate {
+extension SecurityAdminiViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 110
     }
 }
 
-extension SecurityAdministratorViewController: UITableViewDataSource {
+extension SecurityAdminiViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 15
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: SecurityAdministratorTableViewCell! = tableView.dequeueReusableCell(withClass: SecurityAdministratorTableViewCell.self)
+        let cell: SecurityAdminiTableViewCell! = tableView.dequeueReusableCell(withClass: SecurityAdminiTableViewCell.self)
         cell.reloadSubviewsWithModel()
         
         cell.phoneCommand?.subscribe(onNext: { (phone) in
@@ -70,7 +70,7 @@ extension SecurityAdministratorViewController: UITableViewDataSource {
         }).disposed(by: disposeBag)
         
         cell.detailCommand?.subscribe(onNext: { (_) in
-            let router = MolueNavigatorRouter(.Home, path: HomePath.AddAdministrator.rawValue)
+            let router = MolueNavigatorRouter(.Home, path: HomePath.IncreaseAdmini.rawValue)
             MolueAppRouter.shared.pushRouter(router, parameters:["title": "编辑管理员"])
         }).disposed(by: disposeBag)
         return cell

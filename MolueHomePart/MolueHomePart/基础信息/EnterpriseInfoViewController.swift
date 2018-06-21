@@ -10,8 +10,12 @@ import UIKit
 import MolueCommon
 import MolueNavigator
 import MolueFoundation
-class EnterpriseInformationViewController: MLBaseViewController {
-    private var modelList = EnterpriseInfoModel.defaultValues()
+
+class EnterpriseInfoViewController: MLBaseViewController, MLDataManagerProtocol {
+    
+    typealias DataManagerTarget = EnterpriseInfoDataManager
+    
+    var dataManager: EnterpriseInfoDataManager = EnterpriseInfoDataManager()
     
     @IBOutlet weak var informationTableView: UITableView! {
         didSet {
@@ -34,24 +38,25 @@ class EnterpriseInformationViewController: MLBaseViewController {
     }
 }
 
-extension EnterpriseInformationViewController: UITableViewDelegate {
+extension EnterpriseInfoViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 95
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let model = self.modelList[indexPath.row]
-        let router = MolueNavigatorRouter(.Home, path: model.viewPath)
+        let item = self.dataManager.item(at: indexPath.row)
+        let router = MolueNavigatorRouter(.Home, path: item.viewPath)
         MolueAppRouter.shared.pushRouter(router)
     }
 }
 
-extension EnterpriseInformationViewController: UITableViewDataSource {
+extension EnterpriseInfoViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.modelList.count
+        return self.dataManager.count()
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:EnterpriseInfoTableViewCell! = tableView.dequeueReusableCell(withClass: EnterpriseInfoTableViewCell.self)
-        cell.setEnterpriseInfoModel(self.modelList[indexPath.row])
+        let item = self.dataManager.item(at: indexPath.row)
+        cell.setEnterpriseInfoModel(item)
         return cell
     }
 }

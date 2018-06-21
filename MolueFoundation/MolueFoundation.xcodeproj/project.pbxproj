@@ -12,6 +12,7 @@
 		1A1B88E820864E8100C5F4D9 /* MLBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1B88E720864E8100C5F4D9 /* MLBaseViewController.swift */; };
 		1A2D443620A0944E00BA947A /* MLWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D443520A0944E00BA947A /* MLWebViewController.swift */; };
 		1A2D443820A0949300BA947A /* MLControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D443720A0949300BA947A /* MLControllerProtocol.swift */; };
+		1A35D7FE20DBD6D3002ED3CB /* MLDataManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A35D7FD20DBD6D3002ED3CB /* MLDataManagerProtocol.swift */; };
 		1A7D9B222086460100FA997D /* MolueFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A7D9B182086460100FA997D /* MolueFoundation.framework */; };
 		1A7D9B272086460100FA997D /* MolueFoundationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7D9B262086460100FA997D /* MolueFoundationTests.swift */; };
 		1A7D9B292086460100FA997D /* MolueFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A7D9B1B2086460100FA997D /* MolueFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -37,6 +38,7 @@
 		1A1B88E720864E8100C5F4D9 /* MLBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLBaseViewController.swift; sourceTree = "<group>"; };
 		1A2D443520A0944E00BA947A /* MLWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLWebViewController.swift; sourceTree = "<group>"; };
 		1A2D443720A0949300BA947A /* MLControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLControllerProtocol.swift; sourceTree = "<group>"; };
+		1A35D7FD20DBD6D3002ED3CB /* MLDataManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLDataManagerProtocol.swift; sourceTree = "<group>"; };
 		1A7D9B182086460100FA997D /* MolueFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MolueFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A7D9B1B2086460100FA997D /* MolueFoundation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MolueFoundation.h; sourceTree = "<group>"; };
 		1A7D9B1C2086460100FA997D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -73,6 +75,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A35D7FC20DBD6B6002ED3CB /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				1A35D7FD20DBD6D3002ED3CB /* MLDataManagerProtocol.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
 		1A7D9B0E2086460100FA997D = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +106,7 @@
 		1A7D9B1A2086460100FA997D /* MolueFoundation */ = {
 			isa = PBXGroup;
 			children = (
+				1A35D7FC20DBD6B6002ED3CB /* DataManager */,
 				1ABDCAA620C59ACB0062DE71 /* BaseController */,
 				1A7D9B1B2086460100FA997D /* MolueFoundation.h */,
 				1A7D9B1C2086460100FA997D /* Info.plist */,
@@ -280,6 +291,7 @@
 				1A1B88E620864E6C00C5F4D9 /* MLNavigationController.swift in Sources */,
 				1A1B88E420864E5500C5F4D9 /* MLTabBarController.swift in Sources */,
 				1A2D443620A0944E00BA947A /* MLWebViewController.swift in Sources */,
+				1A35D7FE20DBD6D3002ED3CB /* MLDataManagerProtocol.swift in Sources */,
 				1A1B88E820864E8100C5F4D9 /* MLBaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

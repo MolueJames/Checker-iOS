@@ -34,6 +34,7 @@ open class MLBaseViewController: UIViewController, MLNavigationProtocol, MLContr
             make.top.left.right.equalToSuperview()
         }
     }
+    
     open override var preferredStatusBarStyle: UIStatusBarStyle {
         get { return .lightContent }
     }
@@ -58,17 +59,13 @@ open class MLBaseViewController: UIViewController, MLNavigationProtocol, MLContr
 extension MLBaseViewController {
     open func hideNavigationBar(animated: Bool = false) {
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
-        navigationView.snp.updateConstraints { (make) in
-            make.height.equalTo(0)
-        }
+        self.updateNavigationView(height: 0)
         self.navigationBarAnimate(animated)
     }
     open func showNavigationBar(animated: Bool = false) {
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
         let height: CGFloat = MLConfigure.iPhoneX ? 88 : 64
-        navigationView.snp.updateConstraints { (make) in
-            make.height.equalTo(height)
-        }
+        self.updateNavigationView(height: height)
         self.navigationBarAnimate(animated)
     }
     private func navigationBarAnimate(_ animated: Bool) {
@@ -77,8 +74,13 @@ extension MLBaseViewController {
             self.view.layoutIfNeeded()
         }
     }
-    open func updateNavigationBarBackgroundColor(_ color: UIColor) {
+    open func updateNavigationView(color: UIColor) {
         navigationView.backgroundColor = color
+    }
+    open func updateNavigationView(height: CGFloat) {
+        navigationView.snp.updateConstraints { (make) in
+            make.height.equalTo(height)
+        }
     }
 }
 

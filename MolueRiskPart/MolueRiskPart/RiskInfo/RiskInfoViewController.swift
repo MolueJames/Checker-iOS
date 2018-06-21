@@ -14,9 +14,17 @@ class RiskInfoViewController: MLBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-//        self.title = "隐患"
-        self.hideNavigationBar()
+        self.title = "隐患"
+        self.view.backgroundColor = UIColor.init(hex: 0xcccccc)
+        self.navigationItem.titleView = searchBar
+        self.updateNavigationView(height: 76)
+        self.updateNavigationView(color: .clear)
     }
+    
+    lazy var searchBar: UISearchBar! = {
+        let searchBar = UISearchBar()
+        return searchBar
+    } ()
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

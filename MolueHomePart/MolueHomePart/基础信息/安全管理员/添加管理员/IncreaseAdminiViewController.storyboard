@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Add Security Administrator View Controller-->
+        <!--Increase Admini View Controller-->
         <scene sceneID="Lvc-ge-i3p">
             <objects>
-                <viewController storyboardIdentifier="AddSecurityAdministratorViewController" id="xRE-Qd-Fgl" customClass="AddSecurityAdministratorViewController" customModule="MolueHomePart" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="IncreaseAdminiViewController" id="xRE-Qd-Fgl" customClass="IncreaseAdminiViewController" customModule="MolueHomePart" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HNH-hf-bxd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

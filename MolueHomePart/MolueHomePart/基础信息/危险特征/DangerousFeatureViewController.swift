@@ -1,5 +1,5 @@
 //
-//  HazardousMachineryViewController.swift
+//  RiskCharacterizationViewController.swift
 //  MolueMinePart
 //
 //  Created by James on 2018/6/1.
@@ -8,12 +8,12 @@
 
 import UIKit
 import MolueFoundation
-class HazardousMachineryViewController: MLBaseViewController {
+class DangerousFeatureViewController: MLBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.title = "危险设备"
+        self.title = "危险特征"
     }
 
     override func didReceiveMemoryWarning() {

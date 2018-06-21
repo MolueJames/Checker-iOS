@@ -1,5 +1,5 @@
 //
-//  RiskCharacterizationViewController.swift
+//  EnterpriseRiskViewController.swift
 //  MolueMinePart
 //
 //  Created by James on 2018/6/1.
@@ -8,12 +8,12 @@
 
 import UIKit
 import MolueFoundation
-class RiskFeatureViewController: MLBaseViewController {
+class EnterpriseRiskViewController: MLBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.title = "危险特征"
+        self.title = "企业危险特征"
     }
 
     override func didReceiveMemoryWarning() {

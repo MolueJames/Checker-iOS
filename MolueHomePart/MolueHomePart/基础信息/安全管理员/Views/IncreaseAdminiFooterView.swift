@@ -8,7 +8,7 @@
 
 import UIKit
 import RxSwift
-class AddAdministratorFooterView: UIView {
+class IncreaseAdminiFooterView: UIView {
 
     /*
     // Only override draw() if you perform custom drawing.

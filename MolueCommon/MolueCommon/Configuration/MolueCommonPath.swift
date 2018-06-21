@@ -13,21 +13,21 @@ public enum HomePath: String {
     /// 应用首页
     case HomePageInfo = "HomeInfoViewController"
     /// 基础信息
-    case EnterpriseInfo = "EnterpriseInformationViewController"
+    case EnterpriseInfo = "EnterpriseInfoViewController"
     /// 基本档案
     case BasicArchives = "BasicArchivesViewController"
     /// 联络信息
     case ContactInfo = "ContactInformationViewController"
     /// 危险特征
-    case RiskFeature = "RiskFeatureViewController"
+    case DangerousFeature = "DangerousFeatureViewController"
     /// 危险设备
-    case HazardousMachinery = "HazardousMachineryViewController"
+    case DangerMachinery = "DangerMachineryViewController"
     /// 企业危险特征
-    case EnterpriseRisk = "EnterpriseRiskFeatureViewController"
+    case EnterpriseRisk = "EnterpriseRiskViewController"
     /// 添加管理员
-    case AddAdministrator = "AddSecurityAdministratorViewController"
+    case IncreaseAdmini = "IncreaseAdminiViewController"
     /// 安全管理员
-    case SecurityAdministrator = "SecurityAdministratorViewController"
+    case SecurityAdmini = "SecurityAdminiViewController"
 }
 
 public enum MinePath: String {
