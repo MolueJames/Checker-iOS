@@ -21,8 +21,9 @@ class EnterpriseInfoTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        self.layer.cornerRadius = 5
-        self.layer.masksToBounds = true
+        self.layer.cornerRadius = 3
+        self.contentView.layer.masksToBounds = true
+        self.setDefalutShadow()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

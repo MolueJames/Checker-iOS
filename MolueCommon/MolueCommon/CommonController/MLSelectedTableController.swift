@@ -7,19 +7,24 @@
 //
 
 import UIKit
-import RxSwift
 import SnapKit
 import MolueFoundation
 import MolueUtilities
+
+public protocol MLSelectedMutipleProtocol: NSObjectProtocol {
+    func selected<T: MLMutipleSectionProtocol>(controller:MLSelectedTableController<T>, values: [T])
+}
+
 public protocol MLMutipleSectionProtocol: CustomStringConvertible {
     var selected: Bool {get set}
 }
-public class MLSelectedTableController<Target: MLMutipleSectionProtocol>: MLBaseViewController, UITableViewDelegate, UITableViewDataSource {
 
+public class MLSelectedTableController<Target: MLMutipleSectionProtocol>: MLBaseViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    public weak var delegate: MLSelectedMutipleProtocol?
+    
     private var list = [Target]()
-    
-    public let selectCommand = PublishSubject<[Target]>()
-    
+
     public func updateValues(title: String, list: [Target]) {
         self.title = title
         self.list = list
@@ -70,7 +75,7 @@ public class MLSelectedTableController<Target: MLMutipleSectionProtocol>: MLBase
             model.selected = true
             return model
         }
-        self.selectCommand.onNext(list)
+        self.delegate?.selected(controller: self, values: list)
         self.navigationController?.popViewController(animated: true)
     }
     

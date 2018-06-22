@@ -31,7 +31,7 @@
 		1A58263A20B7123E007FBFC7 /* MolueNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A58263920B7123E007FBFC7 /* MolueNetwork.framework */; };
 		1A602F8520A87D58003AD583 /* HomeInfoTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A602F8420A87D58003AD583 /* HomeInfoTableHeaderView.swift */; };
 		1A602F8C20A88095003AD583 /* HomeInfoTableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A602F8B20A88095003AD583 /* HomeInfoTableHeaderView.xib */; };
-		1AA7357020A9CFE800DF7CD0 /* MolueHome.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AA7356F20A9CFE800DF7CD0 /* MolueHome.xcassets */; };
+		1A65039620DD552B0017F91D /* MolueHome.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A65039520DD552A0017F91D /* MolueHome.xcassets */; };
 		1AAF7B6720C1970A0051EC18 /* EnterpriseInfoViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AAF7B6520C1970A0051EC18 /* EnterpriseInfoViewController.storyboard */; };
 		1AAF7B6820C1970A0051EC18 /* EnterpriseInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAF7B6620C1970A0051EC18 /* EnterpriseInfoViewController.swift */; };
 		1AAF7B7E20C1971B0051EC18 /* BasicArchivesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAF7B6A20C1971B0051EC18 /* BasicArchivesViewController.swift */; };
@@ -95,7 +95,7 @@
 		1A58263920B7123E007FBFC7 /* MolueNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A602F8420A87D58003AD583 /* HomeInfoTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInfoTableHeaderView.swift; sourceTree = "<group>"; };
 		1A602F8B20A88095003AD583 /* HomeInfoTableHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeInfoTableHeaderView.xib; sourceTree = "<group>"; };
-		1AA7356F20A9CFE800DF7CD0 /* MolueHome.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MolueHome.xcassets; sourceTree = "<group>"; };
+		1A65039520DD552A0017F91D /* MolueHome.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MolueHome.xcassets; sourceTree = "<group>"; };
 		1AAF7B6520C1970A0051EC18 /* EnterpriseInfoViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EnterpriseInfoViewController.storyboard; sourceTree = "<group>"; };
 		1AAF7B6620C1970A0051EC18 /* EnterpriseInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterpriseInfoViewController.swift; sourceTree = "<group>"; };
 		1AAF7B6A20C1971B0051EC18 /* BasicArchivesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicArchivesViewController.swift; sourceTree = "<group>"; };
@@ -169,11 +169,11 @@
 		1A1B88C520864D9500C5F4D9 /* MolueHomePart */ = {
 			isa = PBXGroup;
 			children = (
+				1A65039520DD552A0017F91D /* MolueHome.xcassets */,
 				1AAF7B6420C1970A0051EC18 /* 基础信息 */,
 				1A50149B20944D7A00DB931E /* 应用首页 */,
 				1A1B88C620864D9500C5F4D9 /* MolueHomePart.h */,
 				1A1B88C720864D9500C5F4D9 /* Info.plist */,
-				1AA7356F20A9CFE800DF7CD0 /* MolueHome.xcassets */,
 			);
 			path = MolueHomePart;
 			sourceTree = "<group>";
@@ -458,13 +458,13 @@
 				1A602F8C20A88095003AD583 /* HomeInfoTableHeaderView.xib in Resources */,
 				1ABDCA9B20C5798B0062DE71 /* SecurityAdminiTableViewCell.xib in Resources */,
 				1A06557E20A9EE020016CA86 /* HomeInfoTableViewCell.xib in Resources */,
-				1AA7357020A9CFE800DF7CD0 /* MolueHome.xcassets in Resources */,
 				1A43BC2520C3AEE70093855B /* HomeInfoCollectionViewCell.xib in Resources */,
 				1A43BC2920C3AF2B0093855B /* HomeInfoHeaderView.xib in Resources */,
 				1AAF7B8320C1971B0051EC18 /* SecurityAdminiViewController.storyboard in Resources */,
 				1AAF7B8920C1971B0051EC18 /* EnterpriseRiskViewController.storyboard in Resources */,
 				1AAF7B8420C1971B0051EC18 /* ContactInformationViewController.storyboard in Resources */,
 				1AAF7B8020C1971B0051EC18 /* IncreaseAdminiViewController.storyboard in Resources */,
+				1A65039620DD552B0017F91D /* MolueHome.xcassets in Resources */,
 				1AAF7B6720C1970A0051EC18 /* EnterpriseInfoViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -669,10 +669,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C7C163FB01CFAE81C039463E /* Pods-MolueHomePart.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = TLJJG2KN5U;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -684,6 +687,8 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACH_O_TYPE = mh_dylib;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = Molue.MolueHomePart;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -697,10 +702,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9468AE17912D4AEEBE6E1EFA /* Pods-MolueHomePart.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = TLJJG2KN5U;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -712,6 +720,8 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACH_O_TYPE = mh_dylib;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = Molue.MolueHomePart;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;

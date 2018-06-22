@@ -13,5 +13,4 @@ public struct EnterpriseInfoDataManager: MLListManagerProtocol {
     public typealias Item = EnterpriseInfoModel
     
     public var items: [EnterpriseInfoModel] = EnterpriseInfoModel.defaultValues()
-    
 }

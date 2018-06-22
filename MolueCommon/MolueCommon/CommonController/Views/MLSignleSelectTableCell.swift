@@ -7,17 +7,13 @@
 //
 
 import UIKit
-
+import MolueUtilities
 class MLSignleSelectTableCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        let color = UIColor.init(hex: 0x333333).cgColor
-        self.layer.borderColor = color
-        self.layer.shadowOffset = CGSize(width: 1, height: 1)
-        self.layer.shadowRadius = 1;
-        self.layer.shadowOpacity = 0.1
+        self.setDefalutShadow()
     }
     
     public func reloadSubviewsWithValue(_ value: MLSingleSelectProtocol) {

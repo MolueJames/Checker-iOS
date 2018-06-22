@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		06B680F23DF37F71DDAC1CD2 /* Pods_MolueCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F64AC0DDC4B2457896DB8640 /* Pods_MolueCommon.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		1A2D441B20A07E9900BA947A /* MLRefreshHeaderAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D441A20A07E9900BA947A /* MLRefreshHeaderAnimator.swift */; };
-		1A2D443220A088C500BA947A /* MolueCommon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A2D443120A088C400BA947A /* MolueCommon.xcassets */; };
 		1A2D443D20A097E100BA947A /* MLInterfaceConfigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D443C20A097E100BA947A /* MLInterfaceConfigure.swift */; };
+		1A35D80020DD2893002ED3CB /* MolueFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A35D7FF20DD2893002ED3CB /* MolueFoundation.framework */; };
 		1A43BC3620C4031D0093855B /* MLCommonInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A43BC3520C4031D0093855B /* MLCommonInputView.swift */; };
 		1A43BC3820C403330093855B /* MLCommonInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A43BC3720C403330093855B /* MLCommonInputView.xib */; };
 		1A43BC3A20C4063E0093855B /* MLContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A43BC3920C4063E0093855B /* MLContainerView.swift */; };
@@ -26,6 +26,7 @@
 		1A52756A20D523B500CA0D68 /* MLSignleSelectTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A52756820D523B500CA0D68 /* MLSignleSelectTableCell.swift */; };
 		1A52756B20D523B500CA0D68 /* MLSignleSelectTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A52756920D523B500CA0D68 /* MLSignleSelectTableCell.xib */; };
 		1A52756D20D52A7600CA0D68 /* MLSingleSectionTableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A52756C20D52A7600CA0D68 /* MLSingleSectionTableModel.swift */; };
+		1A65039220DD54F20017F91D /* MolueCommon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A65039120DD54F20017F91D /* MolueCommon.xcassets */; };
 		1A7D9B6A2086470300FA997D /* MolueCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A7D9B602086470200FA997D /* MolueCommon.framework */; };
 		1A7D9B6F2086470300FA997D /* MolueCommonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7D9B6E2086470300FA997D /* MolueCommonTests.swift */; };
 		1A7D9B712086470300FA997D /* MolueCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A7D9B632086470300FA997D /* MolueCommon.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -75,8 +76,8 @@
 /* Begin PBXFileReference section */
 		0B3FA8D5CD50C93A81938144 /* Pods-MolueCommon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueCommon.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueCommon/Pods-MolueCommon.debug.xcconfig"; sourceTree = "<group>"; };
 		1A2D441A20A07E9900BA947A /* MLRefreshHeaderAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLRefreshHeaderAnimator.swift; sourceTree = "<group>"; };
-		1A2D443120A088C400BA947A /* MolueCommon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MolueCommon.xcassets; sourceTree = "<group>"; };
 		1A2D443C20A097E100BA947A /* MLInterfaceConfigure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLInterfaceConfigure.swift; sourceTree = "<group>"; };
+		1A35D7FF20DD2893002ED3CB /* MolueFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A43BC3520C4031D0093855B /* MLCommonInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLCommonInputView.swift; sourceTree = "<group>"; };
 		1A43BC3720C403330093855B /* MLCommonInputView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MLCommonInputView.xib; sourceTree = "<group>"; };
 		1A43BC3920C4063E0093855B /* MLContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLContainerView.swift; sourceTree = "<group>"; };
@@ -91,6 +92,7 @@
 		1A52756820D523B500CA0D68 /* MLSignleSelectTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLSignleSelectTableCell.swift; sourceTree = "<group>"; };
 		1A52756920D523B500CA0D68 /* MLSignleSelectTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MLSignleSelectTableCell.xib; sourceTree = "<group>"; };
 		1A52756C20D52A7600CA0D68 /* MLSingleSectionTableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLSingleSectionTableModel.swift; sourceTree = "<group>"; };
+		1A65039120DD54F20017F91D /* MolueCommon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MolueCommon.xcassets; sourceTree = "<group>"; };
 		1A7D9B602086470200FA997D /* MolueCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MolueCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A7D9B632086470300FA997D /* MolueCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MolueCommon.h; sourceTree = "<group>"; };
 		1A7D9B642086470300FA997D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A35D80020DD2893002ED3CB /* MolueFoundation.framework in Frameworks */,
 				1A5014B92094C17B00DB931E /* MolueUtilities.framework in Frameworks */,
 				06B680F23DF37F71DDAC1CD2 /* Pods_MolueCommon.framework in Frameworks */,
 			);
@@ -217,6 +220,7 @@
 		1A7D9B622086470200FA997D /* MolueCommon */ = {
 			isa = PBXGroup;
 			children = (
+				1A65039120DD54F20017F91D /* MolueCommon.xcassets */,
 				1AA7822C20CCFC0800088923 /* CommonController */,
 				1A98F29B20C968F8000D0F8F /* CommonFunction */,
 				1A43BC3420C402F10093855B /* CommonViews */,
@@ -227,7 +231,6 @@
 				1AEB87D9209218D3002230A3 /* Encryption */,
 				1A7D9B632086470300FA997D /* MolueCommon.h */,
 				1A7D9B642086470300FA997D /* Info.plist */,
-				1A2D443120A088C400BA947A /* MolueCommon.xcassets */,
 			);
 			path = MolueCommon;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 		7DBC480713B54D37639897AC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1A35D7FF20DD2893002ED3CB /* MolueFoundation.framework */,
 				1A5014B72094BA3F00DB931E /* MolueUtilities.framework */,
 				F64AC0DDC4B2457896DB8640 /* Pods_MolueCommon.framework */,
 				DCC4653C34129E915BF6180A /* Pods_MolueCommonTests.framework */,
@@ -419,9 +423,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AA7825820CEA01500088923 /* MLDatePickerViewController.storyboard in Resources */,
-				1A2D443220A088C500BA947A /* MolueCommon.xcassets in Resources */,
 				1ABDCA9F20C5947E0062DE71 /* MLCommonClickView.xib in Resources */,
 				1A43BC3E20C40FC60093855B /* MLCommonSelectView.xib in Resources */,
+				1A65039220DD54F20017F91D /* MolueCommon.xcassets in Resources */,
 				1A43BC3820C403330093855B /* MLCommonInputView.xib in Resources */,
 				1A52756B20D523B500CA0D68 /* MLSignleSelectTableCell.xib in Resources */,
 				1ABDCAA320C594AC0062DE71 /* MLCommonSegmentView.xib in Resources */,
@@ -693,6 +697,8 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACH_O_TYPE = mh_dylib;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = Molue.MolueCommon;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -719,6 +725,8 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACH_O_TYPE = mh_dylib;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = Molue.MolueCommon;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;

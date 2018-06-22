@@ -27,6 +27,7 @@ class IncreaseAdminiFooterView: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.setDefalutShadow()
         addAdministratorControl.addTarget(self, action: #selector(addControlClicked), for: .touchUpInside)
     }
     

@@ -16,7 +16,7 @@
 		1A5014CE2097498400DB931E /* MolueFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5014CD2097498400DB931E /* MolueFoundation.framework */; };
 		1A5014D02097498400DB931E /* MolueNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5014CF2097498400DB931E /* MolueNetwork.framework */; };
 		1A5014D22097498400DB931E /* MolueUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5014D12097498400DB931E /* MolueUtilities.framework */; };
-		1AA7357820A9E05A00DF7CD0 /* MolueMine.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AA7357720A9E05A00DF7CD0 /* MolueMine.xcassets */; };
+		1A65039420DD550E0017F91D /* MolueMine.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A65039320DD550D0017F91D /* MolueMine.xcassets */; };
 		1AAF7B8E20C1978C0051EC18 /* MineInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAF7B8D20C1978C0051EC18 /* MineInformationViewController.swift */; };
 		1AAF7B9020C197B20051EC18 /* MineInformationViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AAF7B8F20C197B20051EC18 /* MineInformationViewController.storyboard */; };
 		A1B2025363B9BFEEB3CA22AC /* Pods_MolueMinePart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E94F0281829CA034AC7E0935 /* Pods_MolueMinePart.framework */; };
@@ -45,7 +45,7 @@
 		1A5014CD2097498400DB931E /* MolueFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A5014CF2097498400DB931E /* MolueNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A5014D12097498400DB931E /* MolueUtilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueUtilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1AA7357720A9E05A00DF7CD0 /* MolueMine.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MolueMine.xcassets; sourceTree = "<group>"; };
+		1A65039320DD550D0017F91D /* MolueMine.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MolueMine.xcassets; sourceTree = "<group>"; };
 		1AAF7B8D20C1978C0051EC18 /* MineInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineInformationViewController.swift; sourceTree = "<group>"; };
 		1AAF7B8F20C197B20051EC18 /* MineInformationViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MineInformationViewController.storyboard; sourceTree = "<group>"; };
 		23650B8EF1C713F76417DF5C /* Pods-MolueMinePart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueMinePart.release.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueMinePart/Pods-MolueMinePart.release.xcconfig"; sourceTree = "<group>"; };
@@ -102,10 +102,10 @@
 		1A1B88A120864D8400C5F4D9 /* MolueMinePart */ = {
 			isa = PBXGroup;
 			children = (
+				1A65039320DD550D0017F91D /* MolueMine.xcassets */,
 				1AAF7B8C20C197760051EC18 /* 我的信息 */,
 				1A1B88A220864D8500C5F4D9 /* MolueMinePart.h */,
 				1A1B88A320864D8500C5F4D9 /* Info.plist */,
-				1AA7357720A9E05A00DF7CD0 /* MolueMine.xcassets */,
 			);
 			path = MolueMinePart;
 			sourceTree = "<group>";
@@ -244,8 +244,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1AA7357820A9E05A00DF7CD0 /* MolueMine.xcassets in Resources */,
 				1AAF7B9020C197B20051EC18 /* MineInformationViewController.storyboard in Resources */,
+				1A65039420DD550E0017F91D /* MolueMine.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,9 +432,10 @@
 			baseConfigurationReference = CCE1C3C7822940047D1B665E /* Pods-MolueMinePart.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = TLJJG2KN5U;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -446,6 +447,8 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACH_O_TYPE = mh_dylib;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = Molue.MolueMinePart;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -463,6 +466,7 @@
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = TLJJG2KN5U;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -474,6 +478,8 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACH_O_TYPE = mh_dylib;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = Molue.MolueMinePart;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;

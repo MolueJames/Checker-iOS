@@ -15,7 +15,7 @@ class EnterpriseInfoViewController: MLBaseViewController, MLDataManagerProtocol 
     
     typealias DataManagerTarget = EnterpriseInfoDataManager
     
-    var dataManager: EnterpriseInfoDataManager = EnterpriseInfoDataManager()
+    var dataManager = EnterpriseInfoDataManager()
     
     @IBOutlet weak var informationTableView: UITableView! {
         didSet {

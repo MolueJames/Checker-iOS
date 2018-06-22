@@ -7,17 +7,20 @@
 //
 
 import UIKit
-import RxSwift
 import SnapKit
 import MolueFoundation
 import MolueUtilities
+public protocol MLSelectedSignleProtocol: NSObjectProtocol {
+    func selected<T: MLSingleSelectProtocol>(controller:MLSingleSelectController<T>, value: T)
+}
+
 public typealias MLSingleSelectProtocol = CustomStringConvertible
 
 public class MLSingleSelectController<Target: MLSingleSelectProtocol>: MLBaseViewController, UITableViewDelegate, UITableViewDataSource {
   
     private var list = [Target]()
     
-    public let selectCommand = PublishSubject<Target>()
+    public weak var delegate: MLSelectedSignleProtocol?
     
     private var tableView: UITableView! {
         didSet {
@@ -52,7 +55,7 @@ public class MLSingleSelectController<Target: MLSingleSelectProtocol>: MLBaseVie
             MolueLogger.warning.message("the select list is not existed"); return
         }
         let model = self.list[selectIndex.row]
-        self.selectCommand.onNext(model)
+        self.delegate?.selected(controller: self, value: model)
         self.navigationController?.popViewController(animated: true)
     }
     open override func didReceiveMemoryWarning() {

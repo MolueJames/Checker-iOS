@@ -17,7 +17,7 @@ class SecurityAdminiTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         self.layer.cornerRadius = 5
-        self.layer.masksToBounds = true
+        self.setDefalutShadow()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -40,7 +40,7 @@ class SecurityAdminiViewController: MLBaseViewController {
         // Do any additional setup after loading the view.
         self.title = "安全管理员"
         tableView.reloadData()
-        let animations = [AnimationType.from(direction: .left, offset: 300.0)]
+        let animations = [AnimationType.from(direction: .top, offset: 115)]
         UIView.animate(views: self.tableView.visibleCells, animations: animations)
     }
     
@@ -52,13 +52,13 @@ class SecurityAdminiViewController: MLBaseViewController {
 
 extension SecurityAdminiViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 110
+        return 115
     }
 }
 
 extension SecurityAdminiViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 15
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

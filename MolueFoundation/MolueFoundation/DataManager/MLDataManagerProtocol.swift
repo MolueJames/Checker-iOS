@@ -14,6 +14,7 @@ public protocol MLDataManagerProtocol: class {
 }
 
 public protocol MLListManagerProtocol {
+    
     associatedtype Item
     
     var items: [Item] {get set}
@@ -27,7 +28,6 @@ public protocol MLListManagerProtocol {
     mutating func remove(at index: Int)
     
     func item(at index: Int) -> Item
-    
 }
 
 public extension MLListManagerProtocol {
@@ -36,14 +36,20 @@ public extension MLListManagerProtocol {
     }
     
     mutating func append(item: Item) {
+        objc_sync_enter(self)
+        defer{objc_sync_exit(self)}
         items.append(item)
     }
     
     mutating func append(newItems: [Item]) {
+        objc_sync_enter(self)
+        defer{objc_sync_exit(self)}
         items.append(contentsOf: newItems)
     }
     
     mutating func remove(at index: Int) {
+        objc_sync_enter(self)
+        defer{objc_sync_exit(self)}
         items.remove(at: index)
     }
     
@@ -52,6 +58,8 @@ public extension MLListManagerProtocol {
     }
     
     mutating func replace(index: Int, new: Item) {
+        objc_sync_enter(self)
+        defer{objc_sync_exit(self)}
         items[index] = new
     }
 }

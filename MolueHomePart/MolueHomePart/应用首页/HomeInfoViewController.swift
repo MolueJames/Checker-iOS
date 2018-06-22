@@ -16,14 +16,11 @@ import MolueNetwork
 import MolueNavigator
 import MolueFoundation
 import ViewAnimator
-protocol HomeInfoDataProtocol {
-    
-}
 
 class HomeInfoViewController: MLBaseViewController, MLDataManagerProtocol {
-    var dataManager: HomeInfoDataProtocol = HomeInfoDataManager()
+    var dataManager = HomeInfoDataManager()
     
-    typealias DataManagerTarget = HomeInfoDataProtocol
+    typealias DataManagerTarget = HomeInfoDataManager
     
     private let disposeBag = DisposeBag()
     
@@ -105,7 +102,7 @@ extension HomeInfoViewController: UITableViewDelegate {
 
 extension HomeInfoViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 12
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

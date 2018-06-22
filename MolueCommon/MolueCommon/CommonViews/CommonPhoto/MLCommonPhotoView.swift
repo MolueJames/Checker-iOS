@@ -27,6 +27,7 @@ public class MLCommonPhotoView: UIView {
     public let appendCommand = PublishSubject<Int>()
     
     @IBOutlet private weak var titleLabel: UILabel!
+    
     @IBOutlet private weak var collectionView: UICollectionView! {
         didSet {
             collectionView.delegate = self

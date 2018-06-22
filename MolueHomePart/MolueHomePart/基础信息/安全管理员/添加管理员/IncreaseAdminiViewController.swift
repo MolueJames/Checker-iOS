@@ -13,6 +13,7 @@ import MolueCommon
 import RxSwift
 import MolueUtilities
 import ImagePicker
+import Kingfisher
 class IncreaseAdminiViewController: MLBaseViewController {
     private let limitCount = 4
     private let disposeBag = DisposeBag()
@@ -100,8 +101,8 @@ class IncreaseAdminiViewController: MLBaseViewController {
     }
     private var uploadPhotoInputView: MLCommonPhotoView! {
         didSet {
-            let images = [UIImage(named: "home_page_riskCheck")!, UIImage(named: "home_page_riskCheck")!,UIImage(named: "home_page_riskCheck")!,UIImage(named: "home_page_riskCheck")!,UIImage(named: "home_page_riskCheck")!]
-            uploadPhotoInputView.defaultValue(title: "上传证书", list: images, count: limitCount)
+            
+            uploadPhotoInputView.defaultValue(title: "上传证书", list: [UIImage](), count: limitCount)
             uploadPhotoInputView.appendCommand.subscribe(onNext: { [unowned self] (leftCount) in
                 self.pushToImagePick(leftCount: leftCount)
             }).disposed(by: disposeBag)
@@ -130,22 +131,17 @@ class IncreaseAdminiViewController: MLBaseViewController {
         let list = [model1, model2]
         let controller = MLSingleSelectController<MLSelectedTableViewModel>()
         controller.updateValues(title: "人员类型", list: list)
-        controller.selectCommand.subscribe(onNext: { [unowned self] (model) in
-            self.adminiTypeInputView.update(description: model.description)
-        }).disposed(by: disposeBag)
+        controller.delegate = self
         self.navigationController?.pushViewController(controller, animated: true)
     }
     private func presentDatePicker() {
         let router = MolueNavigatorRouter(.Common, path: CommonPath.datePicker.rawValue)
         let controller: MLDatePickerViewController! = MolueAppRouter.shared.viewController(router)
         controller.modalPresentationStyle = .overCurrentContext
+        controller.delegate = self
         self.present(controller, animated: true, completion: nil)
-        controller.selectDateCommand.subscribe(onNext: { [unowned self] (date, string) in
-            self.updateDeadLineValue(date: date, string: string)
-        }).disposed(by: disposeBag)
     }
     private func updateDeadLineValue(date: Date, string: String) {
-        MolueLogger.warning.message((date, string))
         self.deadLineInputView.update(description: string)
     }
     override func viewDidLoad() {
@@ -185,5 +181,15 @@ extension IncreaseAdminiViewController: MolueNavigatorProtocol {
             self.title = title
         }
         self.title = "添加管理员"
+    }
+}
+
+extension IncreaseAdminiViewController: MLSelectedSignleProtocol, MLDatePickerProtocol {
+    func selectDate(_ date: Date, string: String, controller: MLDatePickerViewController) {
+        self.updateDeadLineValue(date: date, string: string)
+    }
+    
+    func selected<T>(controller: MLSingleSelectController<T>, value: T) where T : CustomStringConvertible {
+        self.adminiTypeInputView.update(description: value.description)
     }
 }
