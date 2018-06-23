@@ -117,6 +117,7 @@ post_install do |installer|
         config.build_settings['CLANG_WARN_STRICT_PROTOTYPES'] = 'YES'
         config.build_settings['ENABLE_STRICT_OBJC_MSGSEND'] = 'YES'
         config.build_settings['GCC_NO_COMMON_BLOCKS'] = 'YES'
+        config.build_settings['ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES'] = 'YES'
     end
     
     installer.pods_project.targets.each do |target|

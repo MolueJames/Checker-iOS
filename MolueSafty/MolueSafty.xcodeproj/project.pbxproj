@@ -7,6 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A41F11320DDFB90000B8A9A /* MolueBookPart.framework in Resources */ = {isa = PBXBuildFile; fileRef = 1A6503A520DD58F50017F91D /* MolueBookPart.framework */; };
+		1A41F11420DDFB90000B8A9A /* MolueCommon.framework in Resources */ = {isa = PBXBuildFile; fileRef = 1A6503A720DD58F50017F91D /* MolueCommon.framework */; };
+		1A41F11520DDFB90000B8A9A /* MolueHomePart.framework in Resources */ = {isa = PBXBuildFile; fileRef = 1A6503AD20DD58F50017F91D /* MolueHomePart.framework */; };
+		1A41F11620DDFB90000B8A9A /* MolueMinePart.framework in Resources */ = {isa = PBXBuildFile; fileRef = 1A6503AF20DD58F50017F91D /* MolueMinePart.framework */; };
+		1A41F11720DDFB90000B8A9A /* MolueRiskPart.framework in Resources */ = {isa = PBXBuildFile; fileRef = 1A6503B520DD58F50017F91D /* MolueRiskPart.framework */; };
+		1A41F11920DDFF77000B8A9A /* MolueBookPart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A41F11820DDFF77000B8A9A /* MolueBookPart.framework */; };
+		1A41F11B20DDFF77000B8A9A /* MolueCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A41F11A20DDFF77000B8A9A /* MolueCommon.framework */; };
+		1A41F11D20DDFF77000B8A9A /* MolueDatabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A41F11C20DDFF77000B8A9A /* MolueDatabase.framework */; };
+		1A41F11F20DDFF77000B8A9A /* MolueFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A41F11E20DDFF77000B8A9A /* MolueFoundation.framework */; };
+		1A41F12120DDFF77000B8A9A /* MolueHomePart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A41F12020DDFF77000B8A9A /* MolueHomePart.framework */; };
+		1A41F12320DDFF77000B8A9A /* MolueMinePart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A41F12220DDFF77000B8A9A /* MolueMinePart.framework */; };
+		1A41F12520DDFF77000B8A9A /* MolueNavigator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A41F12420DDFF77000B8A9A /* MolueNavigator.framework */; };
+		1A41F12720DDFF77000B8A9A /* MolueNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A41F12620DDFF77000B8A9A /* MolueNetwork.framework */; };
+		1A41F12920DDFF77000B8A9A /* MolueRiskPart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A41F12820DDFF77000B8A9A /* MolueRiskPart.framework */; };
+		1A41F12B20DDFF77000B8A9A /* MolueUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A41F12A20DDFF77000B8A9A /* MolueUtilities.framework */; };
 		1A5014BD2095647B00DB931E /* AppDelegate+ThirdPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5014BC2095647B00DB931E /* AppDelegate+ThirdPart.swift */; };
 		1A602F1520A6D660003AD583 /* Appdelegate+Addtional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A602F1420A6D660003AD583 /* Appdelegate+Addtional.swift */; };
 		1A65038920DD51E60017F91D /* MolueSafty.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A35D80420DD3113002ED3CB /* MolueSafty.xcassets */; };
@@ -15,44 +30,12 @@
 		1A6503A020DD55740017F91D /* MolueHome.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A65039F20DD55730017F91D /* MolueHome.xcassets */; };
 		1A6503A220DD557C0017F91D /* MolueMine.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A6503A120DD557C0017F91D /* MolueMine.xcassets */; };
 		1A6503A420DD55950017F91D /* MolueCommon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A6503A320DD55940017F91D /* MolueCommon.xcassets */; };
-		1A6503BA20DD59C10017F91D /* MolueBookPart.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6503A520DD58F50017F91D /* MolueBookPart.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1A6503BC20DD59C10017F91D /* MolueCommon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6503A720DD58F50017F91D /* MolueCommon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1A6503BE20DD59C10017F91D /* MolueDatabase.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6503A920DD58F50017F91D /* MolueDatabase.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1A6503C020DD59C10017F91D /* MolueFoundation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6503AB20DD58F50017F91D /* MolueFoundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1A6503C220DD59C10017F91D /* MolueHomePart.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6503AD20DD58F50017F91D /* MolueHomePart.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1A6503C420DD59C10017F91D /* MolueMinePart.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6503AF20DD58F50017F91D /* MolueMinePart.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1A6503C620DD59C10017F91D /* MolueNavigator.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6503B120DD58F50017F91D /* MolueNavigator.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1A6503C820DD59C10017F91D /* MolueNetwork.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6503B320DD58F50017F91D /* MolueNetwork.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1A6503CA20DD59C10017F91D /* MolueRiskPart.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6503B520DD58F50017F91D /* MolueRiskPart.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1A6503CC20DD59C10017F91D /* MolueUtilities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6503B720DD58F50017F91D /* MolueUtilities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1A6503CD20DD5A330017F91D /* MolueBookPart.framework in Resources */ = {isa = PBXBuildFile; fileRef = 1A6503A520DD58F50017F91D /* MolueBookPart.framework */; };
-		1A6503CE20DD5A330017F91D /* MolueCommon.framework in Resources */ = {isa = PBXBuildFile; fileRef = 1A6503A720DD58F50017F91D /* MolueCommon.framework */; };
-		1A6503CF20DD5A330017F91D /* MolueDatabase.framework in Resources */ = {isa = PBXBuildFile; fileRef = 1A6503A920DD58F50017F91D /* MolueDatabase.framework */; };
-		1A6503D020DD5A330017F91D /* MolueFoundation.framework in Resources */ = {isa = PBXBuildFile; fileRef = 1A6503AB20DD58F50017F91D /* MolueFoundation.framework */; };
-		1A6503D120DD5A330017F91D /* MolueHomePart.framework in Resources */ = {isa = PBXBuildFile; fileRef = 1A6503AD20DD58F50017F91D /* MolueHomePart.framework */; };
-		1A6503D220DD5A330017F91D /* MolueMinePart.framework in Resources */ = {isa = PBXBuildFile; fileRef = 1A6503AF20DD58F50017F91D /* MolueMinePart.framework */; };
-		1A6503D320DD5A330017F91D /* MolueNavigator.framework in Resources */ = {isa = PBXBuildFile; fileRef = 1A6503B120DD58F50017F91D /* MolueNavigator.framework */; };
-		1A6503D420DD5A330017F91D /* MolueNetwork.framework in Resources */ = {isa = PBXBuildFile; fileRef = 1A6503B320DD58F50017F91D /* MolueNetwork.framework */; };
-		1A6503D520DD5A330017F91D /* MolueRiskPart.framework in Resources */ = {isa = PBXBuildFile; fileRef = 1A6503B520DD58F50017F91D /* MolueRiskPart.framework */; };
-		1A6503D620DD5A330017F91D /* MolueUtilities.framework in Resources */ = {isa = PBXBuildFile; fileRef = 1A6503B720DD58F50017F91D /* MolueUtilities.framework */; };
-		1A6503D820DD5B1B0017F91D /* MolueBookPart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6503A520DD58F50017F91D /* MolueBookPart.framework */; };
-		1A6503D920DD5B1B0017F91D /* MolueCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6503A720DD58F50017F91D /* MolueCommon.framework */; };
-		1A6503DA20DD5B1B0017F91D /* MolueDatabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6503A920DD58F50017F91D /* MolueDatabase.framework */; };
-		1A6503DB20DD5B1B0017F91D /* MolueFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6503AB20DD58F50017F91D /* MolueFoundation.framework */; };
-		1A6503DC20DD5B1B0017F91D /* MolueHomePart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6503AD20DD58F50017F91D /* MolueHomePart.framework */; };
-		1A6503DD20DD5B1B0017F91D /* MolueMinePart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6503AF20DD58F50017F91D /* MolueMinePart.framework */; };
-		1A6503DE20DD5B1B0017F91D /* MolueNavigator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6503B120DD58F50017F91D /* MolueNavigator.framework */; };
-		1A6503DF20DD5B1B0017F91D /* MolueNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6503B320DD58F50017F91D /* MolueNetwork.framework */; };
-		1A6503E020DD5B1B0017F91D /* MolueRiskPart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6503B520DD58F50017F91D /* MolueRiskPart.framework */; };
-		1A6503E120DD5B1B0017F91D /* MolueUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6503B720DD58F50017F91D /* MolueUtilities.framework */; };
-		1A6503E220DD5B1B0017F91D /* Pods_MolueSafty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF222F92DB201F01537C480 /* Pods_MolueSafty.framework */; };
 		1A7D9A832084E73500FA997D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7D9A822084E73500FA997D /* AppDelegate.swift */; };
 		1A7D9A982084E73600FA997D /* MolueSaftyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7D9A972084E73600FA997D /* MolueSaftyTests.swift */; };
 		1A7D9AA32084E73600FA997D /* MolueSaftyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7D9AA22084E73600FA997D /* MolueSaftyUITests.swift */; };
 		1A9A6BBC20A1D1BE00A94535 /* MolueUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A6BBB20A1D1BE00A94535 /* MolueUser.swift */; };
 		1AA5391F208A423F0095E2B4 /* AppDelegate+JPush.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA5391E208A423F0095E2B4 /* AppDelegate+JPush.swift */; };
 		1AEB87E32092CA94002230A3 /* AppDelegate+UILogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEB87E22092CA94002230A3 /* AppDelegate+UILogic.swift */; };
-		1AEB87E72092CB19002230A3 /* Pods_MolueSafty.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF222F92DB201F01537C480 /* Pods_MolueSafty.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,32 +55,18 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		1AADF8532090B7810020527B /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 12;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				1A6503C420DD59C10017F91D /* MolueMinePart.framework in Embed Frameworks */,
-				1A6503C620DD59C10017F91D /* MolueNavigator.framework in Embed Frameworks */,
-				1A6503CC20DD59C10017F91D /* MolueUtilities.framework in Embed Frameworks */,
-				1A6503BC20DD59C10017F91D /* MolueCommon.framework in Embed Frameworks */,
-				1A6503C220DD59C10017F91D /* MolueHomePart.framework in Embed Frameworks */,
-				1A6503C820DD59C10017F91D /* MolueNetwork.framework in Embed Frameworks */,
-				1A6503CA20DD59C10017F91D /* MolueRiskPart.framework in Embed Frameworks */,
-				1AEB87E72092CB19002230A3 /* Pods_MolueSafty.framework in Embed Frameworks */,
-				1A6503BE20DD59C10017F91D /* MolueDatabase.framework in Embed Frameworks */,
-				1A6503C020DD59C10017F91D /* MolueFoundation.framework in Embed Frameworks */,
-				1A6503BA20DD59C10017F91D /* MolueBookPart.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		1A35D80420DD3113002ED3CB /* MolueSafty.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MolueSafty.xcassets; sourceTree = "<group>"; };
+		1A41F11820DDFF77000B8A9A /* MolueBookPart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueBookPart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A41F11A20DDFF77000B8A9A /* MolueCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A41F11C20DDFF77000B8A9A /* MolueDatabase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueDatabase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A41F11E20DDFF77000B8A9A /* MolueFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A41F12020DDFF77000B8A9A /* MolueHomePart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueHomePart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A41F12220DDFF77000B8A9A /* MolueMinePart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueMinePart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A41F12420DDFF77000B8A9A /* MolueNavigator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueNavigator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A41F12620DDFF77000B8A9A /* MolueNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A41F12820DDFF77000B8A9A /* MolueRiskPart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueRiskPart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A41F12A20DDFF77000B8A9A /* MolueUtilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueUtilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A5014BC2095647B00DB931E /* AppDelegate+ThirdPart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+ThirdPart.swift"; sourceTree = "<group>"; };
 		1A602F1420A6D660003AD583 /* Appdelegate+Addtional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Appdelegate+Addtional.swift"; sourceTree = "<group>"; };
 		1A65039B20DD55530017F91D /* MolueBook.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = MolueBook.xcassets; path = ../../MolueBookPart/MolueBookPart/MolueBook.xcassets; sourceTree = "<group>"; };
@@ -140,17 +109,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A6503D820DD5B1B0017F91D /* MolueBookPart.framework in Frameworks */,
-				1A6503D920DD5B1B0017F91D /* MolueCommon.framework in Frameworks */,
-				1A6503DA20DD5B1B0017F91D /* MolueDatabase.framework in Frameworks */,
-				1A6503DB20DD5B1B0017F91D /* MolueFoundation.framework in Frameworks */,
-				1A6503DC20DD5B1B0017F91D /* MolueHomePart.framework in Frameworks */,
-				1A6503DD20DD5B1B0017F91D /* MolueMinePart.framework in Frameworks */,
-				1A6503DE20DD5B1B0017F91D /* MolueNavigator.framework in Frameworks */,
-				1A6503DF20DD5B1B0017F91D /* MolueNetwork.framework in Frameworks */,
-				1A6503E020DD5B1B0017F91D /* MolueRiskPart.framework in Frameworks */,
-				1A6503E120DD5B1B0017F91D /* MolueUtilities.framework in Frameworks */,
-				1A6503E220DD5B1B0017F91D /* Pods_MolueSafty.framework in Frameworks */,
+				1A41F11920DDFF77000B8A9A /* MolueBookPart.framework in Frameworks */,
+				1A41F11B20DDFF77000B8A9A /* MolueCommon.framework in Frameworks */,
+				1A41F11D20DDFF77000B8A9A /* MolueDatabase.framework in Frameworks */,
+				1A41F11F20DDFF77000B8A9A /* MolueFoundation.framework in Frameworks */,
+				1A41F12120DDFF77000B8A9A /* MolueHomePart.framework in Frameworks */,
+				1A41F12320DDFF77000B8A9A /* MolueMinePart.framework in Frameworks */,
+				1A41F12520DDFF77000B8A9A /* MolueNavigator.framework in Frameworks */,
+				1A41F12720DDFF77000B8A9A /* MolueNetwork.framework in Frameworks */,
+				1A41F12920DDFF77000B8A9A /* MolueRiskPart.framework in Frameworks */,
+				1A41F12B20DDFF77000B8A9A /* MolueUtilities.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,6 +211,16 @@
 		83E91D7A2F4B97501AC8DD7E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1A41F11820DDFF77000B8A9A /* MolueBookPart.framework */,
+				1A41F11A20DDFF77000B8A9A /* MolueCommon.framework */,
+				1A41F11C20DDFF77000B8A9A /* MolueDatabase.framework */,
+				1A41F11E20DDFF77000B8A9A /* MolueFoundation.framework */,
+				1A41F12020DDFF77000B8A9A /* MolueHomePart.framework */,
+				1A41F12220DDFF77000B8A9A /* MolueMinePart.framework */,
+				1A41F12420DDFF77000B8A9A /* MolueNavigator.framework */,
+				1A41F12620DDFF77000B8A9A /* MolueNetwork.framework */,
+				1A41F12820DDFF77000B8A9A /* MolueRiskPart.framework */,
+				1A41F12A20DDFF77000B8A9A /* MolueUtilities.framework */,
 				1A6503A520DD58F50017F91D /* MolueBookPart.framework */,
 				1A6503A720DD58F50017F91D /* MolueCommon.framework */,
 				1A6503A920DD58F50017F91D /* MolueDatabase.framework */,
@@ -282,7 +260,6 @@
 				1A7D9A7D2084E73500FA997D /* Resources */,
 				93ACA222656BBB64E109AC6D /* [CP] Embed Pods Frameworks */,
 				DCE51C25D418643C0931B26A /* [CP] Copy Pods Resources */,
-				1AADF8532090B7810020527B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -377,16 +354,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A6503CD20DD5A330017F91D /* MolueBookPart.framework in Resources */,
-				1A6503CE20DD5A330017F91D /* MolueCommon.framework in Resources */,
-				1A6503CF20DD5A330017F91D /* MolueDatabase.framework in Resources */,
-				1A6503D020DD5A330017F91D /* MolueFoundation.framework in Resources */,
-				1A6503D120DD5A330017F91D /* MolueHomePart.framework in Resources */,
-				1A6503D220DD5A330017F91D /* MolueMinePart.framework in Resources */,
-				1A6503D320DD5A330017F91D /* MolueNavigator.framework in Resources */,
-				1A6503D420DD5A330017F91D /* MolueNetwork.framework in Resources */,
-				1A6503D520DD5A330017F91D /* MolueRiskPart.framework in Resources */,
-				1A6503D620DD5A330017F91D /* MolueUtilities.framework in Resources */,
+				1A41F11320DDFB90000B8A9A /* MolueBookPart.framework in Resources */,
+				1A41F11420DDFB90000B8A9A /* MolueCommon.framework in Resources */,
+				1A41F11520DDFB90000B8A9A /* MolueHomePart.framework in Resources */,
+				1A41F11620DDFB90000B8A9A /* MolueMinePart.framework in Resources */,
+				1A41F11720DDFB90000B8A9A /* MolueRiskPart.framework in Resources */,
 				1A65038920DD51E60017F91D /* MolueSafty.xcassets in Resources */,
 				1A65039E20DD55640017F91D /* MolueRisk.xcassets in Resources */,
 				1A6503A420DD55950017F91D /* MolueCommon.xcassets in Resources */,
@@ -444,7 +416,6 @@
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/ImagePicker/ImagePicker.framework",
 				"${BUILT_PRODUCTS_DIR}/JGProgressHUD/JGProgressHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Locksmith/Locksmith.framework",
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
@@ -464,7 +435,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImagePicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JGProgressHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Locksmith.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
