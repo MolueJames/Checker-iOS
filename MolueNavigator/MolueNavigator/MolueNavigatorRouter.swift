@@ -34,6 +34,3 @@ public class MolueNavigatorRouter {
         return url.absoluteString.removingPercentEncoding
     }
 }
-
-
-

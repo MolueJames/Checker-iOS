@@ -8,6 +8,6 @@
 
 import Foundation
 
-public struct HomeInfoDataManager {
+public struct HomeInfoDataManager: HomeInfoDataProtocol {
     
 }

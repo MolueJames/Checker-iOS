@@ -17,7 +17,7 @@ public enum HomePath: String {
     /// 基本档案
     case BasicArchives = "BasicArchivesViewController"
     /// 联络信息
-    case ContactInfo = "ContactInformationViewController"
+    case ContactInfo = "ContactInfoViewController"
     /// 危险特征
     case DangerousFeature = "DangerousFeatureViewController"
     /// 危险设备

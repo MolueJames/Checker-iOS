@@ -34,22 +34,50 @@ target 'MolueSafty' do
         pod 'ImagePicker', '~> 3.0.0'
         pod 'RxSwift', '~> 4.1.2'
         pod 'JGProgressHUD', '~> 1.4'
-    target 'MolueMinePart' do
-        project 'MolueMinePart/MolueMinePart.xcodeproj'
-        inherit! :search_paths
-    end
-    target 'MolueHomePart' do
-        project 'MolueHomePart/MolueHomePart.xcodeproj'
-        inherit! :search_paths
-    end
-    target 'MolueRiskPart' do
-        project 'MolueRiskPart/MolueRiskPart.xcodeproj'
-        inherit! :search_paths
-    end
-    target 'MolueBookPart' do
-        project 'MolueBookPart/MolueBookPart.xcodeproj'
-        inherit! :search_paths
-    end
+end
+
+target 'MolueMinePart' do
+    project 'MolueMinePart/MolueMinePart.xcodeproj'
+        pod 'SnapKit', '~> 4.0.0'
+        pod 'Kingfisher', '~> 4.0'
+        pod 'ViewAnimator', '~> 2.0.1'
+        pod 'ImagePicker', '~> 3.0.0'
+        pod 'RxSwift', '~> 4.1.2'
+        pod 'ESPullToRefresh', '~> 2.7'
+        pod 'ObjectMapper', '~> 3.1'
+end
+
+target 'MolueHomePart' do
+    project 'MolueHomePart/MolueHomePart.xcodeproj'
+        pod 'SnapKit', '~> 4.0.0'
+        pod 'Kingfisher', '~> 4.0'
+        pod 'ViewAnimator', '~> 2.0.1'
+        pod 'ImagePicker', '~> 3.0.0'
+        pod 'RxSwift', '~> 4.1.2'
+        pod 'ESPullToRefresh', '~> 2.7'
+        pod 'ObjectMapper', '~> 3.1'
+end
+
+target 'MolueRiskPart' do
+    project 'MolueRiskPart/MolueRiskPart.xcodeproj'
+        pod 'SnapKit', '~> 4.0.0'
+        pod 'Kingfisher', '~> 4.0'
+        pod 'ViewAnimator', '~> 2.0.1'
+        pod 'ImagePicker', '~> 3.0.0'
+        pod 'RxSwift', '~> 4.1.2'
+        pod 'ESPullToRefresh', '~> 2.7'
+        pod 'ObjectMapper', '~> 3.1'
+end
+
+target 'MolueBookPart' do
+    project 'MolueBookPart/MolueBookPart.xcodeproj'
+        pod 'SnapKit', '~> 4.0.0'
+        pod 'Kingfisher', '~> 4.0'
+        pod 'ViewAnimator', '~> 2.0.1'
+        pod 'ImagePicker', '~> 3.0.0'
+        pod 'RxSwift', '~> 4.1.2'
+        pod 'ESPullToRefresh', '~> 2.7'
+        pod 'ObjectMapper', '~> 3.1'
 end
 
 target 'MolueCommon' do
@@ -87,6 +115,7 @@ end
 target 'MolueNavigator' do
     project 'MolueNavigator/MolueNavigator.xcodeproj'
         pod 'URLNavigator', '~> 2.0.4'
+        pod 'ObjectMapper', '~> 3.1'
     target 'MolueNavigatorTests' do
         inherit! :search_paths
     end
@@ -117,7 +146,7 @@ post_install do |installer|
         config.build_settings['CLANG_WARN_STRICT_PROTOTYPES'] = 'YES'
         config.build_settings['ENABLE_STRICT_OBJC_MSGSEND'] = 'YES'
         config.build_settings['GCC_NO_COMMON_BLOCKS'] = 'YES'
-        config.build_settings['ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES'] = 'YES'
+        config.build_settings['ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES'] = 'NO'
     end
     
     installer.pods_project.targets.each do |target|

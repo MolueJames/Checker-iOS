@@ -13,9 +13,10 @@
 		1A7D9B4B2086469200FA997D /* MolueNavigatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7D9B4A2086469200FA997D /* MolueNavigatorTests.swift */; };
 		1A7D9B4D2086469200FA997D /* MolueNavigator.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A7D9B3F2086469200FA997D /* MolueNavigator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1AA53921208B9DCC0095E2B4 /* MolueNavigatorRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA53920208B9DCC0095E2B4 /* MolueNavigatorRouter.swift */; };
-		1AA53923208CCB310095E2B4 /* MolueAlertRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA53922208CCB310095E2B4 /* MolueAlertRouter.swift */; };
+		1AA53923208CCB310095E2B4 /* MolueDoAlertRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA53922208CCB310095E2B4 /* MolueDoAlertRouter.swift */; };
 		1AA53925208CCB580095E2B4 /* MolueWebsiteRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA53924208CCB580095E2B4 /* MolueWebsiteRouter.swift */; };
 		1AAD07362088D2A0008C4F7A /* MolueNavigatorQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAD07352088D2A0008C4F7A /* MolueNavigatorQuery.swift */; };
+		1ACA305D20E3C0A10092E0F6 /* MLNavigatiorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA305C20E3C0A10092E0F6 /* MLNavigatiorProtocol.swift */; };
 		B119049A7D2F038518C38B72 /* Pods_MolueNavigatorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3239FC3B28A67C031DD54C0 /* Pods_MolueNavigatorTests.framework */; };
 		CB40B39E1CF66F381D200AA0 /* Pods_MolueNavigator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE00FCE280F42E325CC276E4 /* Pods_MolueNavigator.framework */; };
 /* End PBXBuildFile section */
@@ -40,9 +41,10 @@
 		1A7D9B4A2086469200FA997D /* MolueNavigatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueNavigatorTests.swift; sourceTree = "<group>"; };
 		1A7D9B4C2086469200FA997D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1AA53920208B9DCC0095E2B4 /* MolueNavigatorRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueNavigatorRouter.swift; sourceTree = "<group>"; };
-		1AA53922208CCB310095E2B4 /* MolueAlertRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueAlertRouter.swift; sourceTree = "<group>"; };
+		1AA53922208CCB310095E2B4 /* MolueDoAlertRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueDoAlertRouter.swift; sourceTree = "<group>"; };
 		1AA53924208CCB580095E2B4 /* MolueWebsiteRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueWebsiteRouter.swift; sourceTree = "<group>"; };
 		1AAD07352088D2A0008C4F7A /* MolueNavigatorQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueNavigatorQuery.swift; sourceTree = "<group>"; };
+		1ACA305C20E3C0A10092E0F6 /* MLNavigatiorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLNavigatiorProtocol.swift; sourceTree = "<group>"; };
 		5B53FD9CBA10883F7B2E73CC /* Pods-MolueNavigatorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueNavigatorTests.release.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueNavigatorTests/Pods-MolueNavigatorTests.release.xcconfig"; sourceTree = "<group>"; };
 		B5E46F1DED2681A903BE3ED9 /* Pods-MolueNavigator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueNavigator.release.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueNavigator/Pods-MolueNavigator.release.xcconfig"; sourceTree = "<group>"; };
 		BE37C8A822DBA77136F6BCE7 /* Pods-MolueNavigator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueNavigator.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueNavigator/Pods-MolueNavigator.debug.xcconfig"; sourceTree = "<group>"; };
@@ -101,8 +103,9 @@
 				1A7D9B402086469200FA997D /* Info.plist */,
 				1AAD07352088D2A0008C4F7A /* MolueNavigatorQuery.swift */,
 				1AA53920208B9DCC0095E2B4 /* MolueNavigatorRouter.swift */,
-				1AA53922208CCB310095E2B4 /* MolueAlertRouter.swift */,
+				1AA53922208CCB310095E2B4 /* MolueDoAlertRouter.swift */,
 				1AA53924208CCB580095E2B4 /* MolueWebsiteRouter.swift */,
+				1ACA305C20E3C0A10092E0F6 /* MLNavigatiorProtocol.swift */,
 			);
 			path = MolueNavigator;
 			sourceTree = "<group>";
@@ -252,10 +255,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/../Pods/Target Support Files/Pods-MolueNavigatorTests/Pods-MolueNavigatorTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/URLNavigator/URLNavigator.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/URLNavigator.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,10 +311,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1AA53923208CCB310095E2B4 /* MolueAlertRouter.swift in Sources */,
+				1AA53923208CCB310095E2B4 /* MolueDoAlertRouter.swift in Sources */,
 				1A1B889420864CE200C5F4D9 /* MolueAppRouter.swift in Sources */,
 				1AA53925208CCB580095E2B4 /* MolueWebsiteRouter.swift in Sources */,
 				1AAD07362088D2A0008C4F7A /* MolueNavigatorQuery.swift in Sources */,
+				1ACA305D20E3C0A10092E0F6 /* MLNavigatiorProtocol.swift in Sources */,
 				1AA53921208B9DCC0095E2B4 /* MolueNavigatorRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -457,6 +463,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BE37C8A822DBA77136F6BCE7 /* Pods-MolueNavigator.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -486,6 +493,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B5E46F1DED2681A903BE3ED9 /* Pods-MolueNavigator.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;

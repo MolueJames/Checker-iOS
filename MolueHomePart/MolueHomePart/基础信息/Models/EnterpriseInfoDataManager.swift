@@ -9,7 +9,7 @@
 import Foundation
 import MolueFoundation
 
-public struct EnterpriseInfoDataManager: MLListManagerProtocol {
+public struct EnterpriseInfoDataManager: MLImpDataManagerProtocol, MLListDataHelperProtocol {
     public typealias Item = EnterpriseInfoModel
     
     public var items: [EnterpriseInfoModel] = EnterpriseInfoModel.defaultValues()

@@ -11,6 +11,10 @@ import MolueCommon
 import MolueNavigator
 import MolueFoundation
 
+protocol EnterpriseInfoDataProtocol: MLImpDataManagerProtocol {
+    
+}
+
 class EnterpriseInfoViewController: MLBaseViewController, MLDataManagerProtocol {
     
     typealias DataManagerTarget = EnterpriseInfoDataManager
@@ -45,7 +49,7 @@ extension EnterpriseInfoViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let item = self.dataManager.item(at: indexPath.row)
         let router = MolueNavigatorRouter(.Home, path: item.viewPath)
-        MolueAppRouter.shared.pushRouter(router)
+        MolueAppRouter.shared.push(router)
     }
 }
 

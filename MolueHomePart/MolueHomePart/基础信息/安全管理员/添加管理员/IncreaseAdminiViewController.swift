@@ -14,6 +14,9 @@ import RxSwift
 import MolueUtilities
 import ImagePicker
 import Kingfisher
+import ObjectMapper
+
+
 class IncreaseAdminiViewController: MLBaseViewController {
     private let limitCount = 4
     private let disposeBag = DisposeBag()
@@ -101,7 +104,6 @@ class IncreaseAdminiViewController: MLBaseViewController {
     }
     private var uploadPhotoInputView: MLCommonPhotoView! {
         didSet {
-            
             uploadPhotoInputView.defaultValue(title: "上传证书", list: [UIImage](), count: limitCount)
             uploadPhotoInputView.appendCommand.subscribe(onNext: { [unowned self] (leftCount) in
                 self.pushToImagePick(leftCount: leftCount)
@@ -112,7 +114,8 @@ class IncreaseAdminiViewController: MLBaseViewController {
     private func pushToImagePick(leftCount: Int) {
         if leftCount > 0 {
             let pickerController = self.imagePickerController(leftCount)
-            self.tabBarController?.present(pickerController, animated: true)
+            self.present(pickerController, animated: false)
+//            self.navigationController?.pushViewController(pickerController, animated: true)
         } else {
             self.showWarningHUD(text: "对不起,只允许选择\(limitCount)张图片")
         }
@@ -173,14 +176,13 @@ extension IncreaseAdminiViewController: ImagePickerDelegate {
 }
 
 extension IncreaseAdminiViewController: MolueNavigatorProtocol {
+    
     func doTransferParameters(params: Any?) {
-        
+
     }
-    func doSettingParameters(params: Dictionary<String, String>) {
-        if let title = params["title"]  {
-            self.title = title
-        }
-        self.title = "添加管理员"
+    func doSettingParameters(params: String?) {
+        let value = MLNavigatorTransfer.value(params, Target: testMap.self)
+        MolueLogger.success.message(value)
     }
 }
 

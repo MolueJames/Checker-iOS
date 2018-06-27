@@ -40,8 +40,8 @@
 		1AAF7B8120C1971B0051EC18 /* IncreaseAdminiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAF7B6F20C1971B0051EC18 /* IncreaseAdminiViewController.swift */; };
 		1AAF7B8220C1971B0051EC18 /* SecurityAdminiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAF7B7020C1971B0051EC18 /* SecurityAdminiViewController.swift */; };
 		1AAF7B8320C1971B0051EC18 /* SecurityAdminiViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AAF7B7120C1971B0051EC18 /* SecurityAdminiViewController.storyboard */; };
-		1AAF7B8420C1971B0051EC18 /* ContactInformationViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AAF7B7320C1971B0051EC18 /* ContactInformationViewController.storyboard */; };
-		1AAF7B8520C1971B0051EC18 /* ContactInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAF7B7420C1971B0051EC18 /* ContactInformationViewController.swift */; };
+		1AAF7B8420C1971B0051EC18 /* ContactInfoViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AAF7B7320C1971B0051EC18 /* ContactInfoViewController.storyboard */; };
+		1AAF7B8520C1971B0051EC18 /* ContactInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAF7B7420C1971B0051EC18 /* ContactInfoViewController.swift */; };
 		1AAF7B8620C1971B0051EC18 /* DangerMachineryViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AAF7B7720C1971B0051EC18 /* DangerMachineryViewController.storyboard */; };
 		1AAF7B8720C1971B0051EC18 /* DangerMachineryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAF7B7820C1971B0051EC18 /* DangerMachineryViewController.swift */; };
 		1AAF7B8820C1971B0051EC18 /* EnterpriseRiskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAF7B7A20C1971B0051EC18 /* EnterpriseRiskViewController.swift */; };
@@ -104,8 +104,8 @@
 		1AAF7B6F20C1971B0051EC18 /* IncreaseAdminiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncreaseAdminiViewController.swift; sourceTree = "<group>"; };
 		1AAF7B7020C1971B0051EC18 /* SecurityAdminiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecurityAdminiViewController.swift; sourceTree = "<group>"; };
 		1AAF7B7120C1971B0051EC18 /* SecurityAdminiViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SecurityAdminiViewController.storyboard; sourceTree = "<group>"; };
-		1AAF7B7320C1971B0051EC18 /* ContactInformationViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ContactInformationViewController.storyboard; sourceTree = "<group>"; };
-		1AAF7B7420C1971B0051EC18 /* ContactInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactInformationViewController.swift; sourceTree = "<group>"; };
+		1AAF7B7320C1971B0051EC18 /* ContactInfoViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ContactInfoViewController.storyboard; sourceTree = "<group>"; };
+		1AAF7B7420C1971B0051EC18 /* ContactInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactInfoViewController.swift; sourceTree = "<group>"; };
 		1AAF7B7720C1971B0051EC18 /* DangerMachineryViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DangerMachineryViewController.storyboard; sourceTree = "<group>"; };
 		1AAF7B7820C1971B0051EC18 /* DangerMachineryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DangerMachineryViewController.swift; sourceTree = "<group>"; };
 		1AAF7B7A20C1971B0051EC18 /* EnterpriseRiskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterpriseRiskViewController.swift; sourceTree = "<group>"; };
@@ -286,8 +286,8 @@
 		1AAF7B7220C1971B0051EC18 /* 联络信息 */ = {
 			isa = PBXGroup;
 			children = (
-				1AAF7B7320C1971B0051EC18 /* ContactInformationViewController.storyboard */,
-				1AAF7B7420C1971B0051EC18 /* ContactInformationViewController.swift */,
+				1AAF7B7320C1971B0051EC18 /* ContactInfoViewController.storyboard */,
+				1AAF7B7420C1971B0051EC18 /* ContactInfoViewController.swift */,
 			);
 			path = "联络信息";
 			sourceTree = "<group>";
@@ -462,7 +462,7 @@
 				1A43BC2920C3AF2B0093855B /* HomeInfoHeaderView.xib in Resources */,
 				1AAF7B8320C1971B0051EC18 /* SecurityAdminiViewController.storyboard in Resources */,
 				1AAF7B8920C1971B0051EC18 /* EnterpriseRiskViewController.storyboard in Resources */,
-				1AAF7B8420C1971B0051EC18 /* ContactInformationViewController.storyboard in Resources */,
+				1AAF7B8420C1971B0051EC18 /* ContactInfoViewController.storyboard in Resources */,
 				1AAF7B8020C1971B0051EC18 /* IncreaseAdminiViewController.storyboard in Resources */,
 				1A65039620DD552B0017F91D /* MolueHome.xcassets in Resources */,
 				1AAF7B6720C1970A0051EC18 /* EnterpriseInfoViewController.storyboard in Resources */,
@@ -510,7 +510,7 @@
 				1A43BC2420C3AEE70093855B /* HomeInfoCollectionViewCell.swift in Sources */,
 				1A35D7FA20DBC9BF002ED3CB /* EnterpriseInfoDataManager.swift in Sources */,
 				1ABDCA9A20C5798B0062DE71 /* SecurityAdminiTableViewCell.swift in Sources */,
-				1AAF7B8520C1971B0051EC18 /* ContactInformationViewController.swift in Sources */,
+				1AAF7B8520C1971B0051EC18 /* ContactInfoViewController.swift in Sources */,
 				1AAF7B8B20C1971B0051EC18 /* DangerousFeatureViewController.swift in Sources */,
 				1AAF7B8720C1971B0051EC18 /* DangerMachineryViewController.swift in Sources */,
 				1A5014A420944DFE00DB931E /* HomeInfoViewController.swift in Sources */,
@@ -669,7 +669,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C7C163FB01CFAE81C039463E /* Pods-MolueHomePart.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				APPLICATION_EXTENSION_API_ONLY = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -702,7 +702,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9468AE17912D4AEEBE6E1EFA /* Pods-MolueHomePart.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				APPLICATION_EXTENSION_API_ONLY = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";

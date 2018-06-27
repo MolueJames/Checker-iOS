@@ -801,6 +801,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3DAA8FC00FCE1977EB6E8A10 /* Pods-MolueUtilities.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -830,6 +831,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B99464FCEEBDA4B9D10F2E66 /* Pods-MolueUtilities.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;

@@ -11,7 +11,7 @@ import RxSwift
 import MolueFoundation
 import MolueUtilities
 import MolueCommon
-class ContactInformationViewController: MLBaseViewController {
+class ContactInfoViewController: MLBaseViewController {
     private let disposeBag = DisposeBag()
     
     @IBOutlet weak var representContainerView: MLContainerView! {

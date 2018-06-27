@@ -9,11 +9,13 @@
 import Foundation
 
 public protocol MLDataManagerProtocol: class {
-    associatedtype DataManagerTarget
+    associatedtype DataManagerTarget: MLImpDataManagerProtocol
     var dataManager: DataManagerTarget {get set}
 }
 
-public protocol MLListManagerProtocol {
+public protocol MLImpDataManagerProtocol {}
+
+public protocol MLListDataHelperProtocol {
     
     associatedtype Item
     
@@ -30,7 +32,7 @@ public protocol MLListManagerProtocol {
     func item(at index: Int) -> Item
 }
 
-public extension MLListManagerProtocol {
+public extension MLListDataHelperProtocol {
     func count() -> Int {
         return items.count
     }

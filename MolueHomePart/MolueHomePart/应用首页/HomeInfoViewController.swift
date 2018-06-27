@@ -16,8 +16,12 @@ import MolueNetwork
 import MolueNavigator
 import MolueFoundation
 import ViewAnimator
+protocol HomeInfoDataProtocol: MLImpDataManagerProtocol {
+    
+}
 
 class HomeInfoViewController: MLBaseViewController, MLDataManagerProtocol {
+    
     var dataManager = HomeInfoDataManager()
     
     typealias DataManagerTarget = HomeInfoDataManager
@@ -35,7 +39,7 @@ class HomeInfoViewController: MLBaseViewController, MLDataManagerProtocol {
     func initPublishSubjects() {
         self.headerView.basicInfoCommand.subscribe(onNext: { _ in
             let router = MolueNavigatorRouter(.Home, path: HomePath.EnterpriseInfo.rawValue)
-            MolueAppRouter.shared.pushRouter(router, needHideBottomBar: true)
+            MolueAppRouter.shared.push(router, needHideBottomBar: true)
         }).disposed(by: disposeBag)
         self.headerView.riskCheckCommand.subscribe(onNext: { _ in
         

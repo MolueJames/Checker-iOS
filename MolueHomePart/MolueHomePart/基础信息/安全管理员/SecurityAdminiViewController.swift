@@ -30,7 +30,7 @@ class SecurityAdminiViewController: MLBaseViewController {
         didSet {
             tableViewFooterView.addControlCommand.subscribe { _ in
                 let router = MolueNavigatorRouter(.Home, path: HomePath.IncreaseAdmini.rawValue)
-                MolueAppRouter.shared.pushRouter(router)
+                MolueAppRouter.shared.push(router)
             }.disposed(by: disposeBag)
         }
     }
@@ -71,8 +71,23 @@ extension SecurityAdminiViewController: UITableViewDataSource {
         
         cell.detailCommand?.subscribe(onNext: { (_) in
             let router = MolueNavigatorRouter(.Home, path: HomePath.IncreaseAdmini.rawValue)
-            MolueAppRouter.shared.pushRouter(router, parameters:["title": "编辑管理员"])
+            MolueAppRouter.shared.push(router, parameters: testMap.init(title: "xxxxxxx"))
         }).disposed(by: disposeBag)
         return cell
     }
+}
+import ObjectMapper
+public struct testMap : Mappable {
+    public init?(map: Map) {
+        title = ""
+    }
+    
+    public mutating func mapping(map: Map) {
+       title <- map["title"]
+    }
+    public init(title: String) {
+        self.title = title
+    }
+    
+    var title: String?
 }
