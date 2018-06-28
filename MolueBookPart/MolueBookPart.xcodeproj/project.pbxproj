@@ -82,6 +82,8 @@
 		1A06556720A9E2F70016CA86 /* MolueBookInfo */ = {
 			isa = PBXGroup;
 			children = (
+				1A24023620E539FC00FC3EBA /* Models */,
+				1A24023520E539F000FC3EBA /* Views */,
 				1A06557720A9E3E90016CA86 /* BookInfoViewController.swift */,
 				1A06557920A9E4070016CA86 /* BookInfoViewController.storyboard */,
 			);
@@ -100,6 +102,20 @@
 				7C88D5F32B4F80735FC8D514 /* Pods_MolueBookPart.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1A24023520E539F000FC3EBA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1A24023620E539FC00FC3EBA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		1AA7357920A9E19700DF7CD0 = {

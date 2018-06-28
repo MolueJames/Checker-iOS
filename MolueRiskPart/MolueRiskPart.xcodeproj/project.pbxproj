@@ -79,6 +79,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A24023320E539D700FC3EBA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1A24023420E539E100FC3EBA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		1A602F3A20A810DF003AD583 = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +136,8 @@
 		1AA7353E20A9C0D700DF7CD0 /* RiskInfo */ = {
 			isa = PBXGroup;
 			children = (
+				1A24023420E539E100FC3EBA /* Models */,
+				1A24023320E539D700FC3EBA /* Views */,
 				1AA7353F20A9C25200DF7CD0 /* RiskInfoViewController.swift */,
 				1AA7354120A9C26400DF7CD0 /* RiskInfoViewController.storyboard */,
 			);

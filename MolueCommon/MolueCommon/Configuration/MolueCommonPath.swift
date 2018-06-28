@@ -19,7 +19,7 @@ public enum HomePath: String {
     /// 联络信息
     case ContactInfo = "ContactInfoViewController"
     /// 危险特征
-    case DangerousFeature = "DangerousFeatureViewController"
+    case DangerousFeature = "RiskFeatureViewController"
     /// 危险设备
     case DangerMachinery = "DangerMachineryViewController"
     /// 企业危险特征
@@ -28,6 +28,12 @@ public enum HomePath: String {
     case IncreaseAdmini = "IncreaseAdminiViewController"
     /// 安全管理员
     case SecurityAdmini = "SecurityAdminiViewController"
+    /// 隐患自查
+    case SelfRiskCheck = "SelfRiskCheckViewController"
+    /// 政策通知
+    case PolicyNotice = "PolicyNoticeViewController"
+    /// 法律法规
+    case LawRegulation = "LawRegulationViewController"
 }
 
 public enum MinePath: String {

@@ -13,7 +13,22 @@ import MolueCommon
 import MolueUtilities
 import MolueFoundation
 import ViewAnimator
-class SecurityAdminiViewController: MLBaseViewController {
+
+protocol SecurityAdminiDataProtocol: MLImpDataManagerProtocol {
+    
+}
+
+protocol SecurityAdminiNavigatorProtocol: MLAppImpNavigatorProtocol {
+    func pushToIncreaseAdmini()
+}
+
+class SecurityAdminiViewController: MLBaseViewController, MLAppNavigatorProtocol, MLDataManagerProtocol {
+    typealias DataManagerTarget = SecurityAdminiDataManager
+    typealias NavigatorTarget = SecurityAdminiNavigator
+    
+    internal var dataManager = SecurityAdminiDataManager()
+    internal var navigator = SecurityAdminiNavigator()
+    
     private let disposeBag = DisposeBag()
     @IBOutlet weak var tableView: UITableView! {
         didSet {
@@ -28,10 +43,9 @@ class SecurityAdminiViewController: MLBaseViewController {
     
     var tableViewFooterView: IncreaseAdminiFooterView! {
         didSet {
-            tableViewFooterView.addControlCommand.subscribe { _ in
-                let router = MolueNavigatorRouter(.Home, path: HomePath.IncreaseAdmini.rawValue)
-                MolueAppRouter.shared.push(router)
-            }.disposed(by: disposeBag)
+            tableViewFooterView.addControlCommand.subscribe(onNext: { [unowned self] (_) in
+                self.navigator.pushToIncreaseAdmini()
+            }).disposed(by: disposeBag)
         }
     }
     
@@ -69,25 +83,9 @@ extension SecurityAdminiViewController: UITableViewDataSource {
             MLCommonFunction.ringUpPhone(phone)
         }).disposed(by: disposeBag)
         
-        cell.detailCommand?.subscribe(onNext: { (_) in
-            let router = MolueNavigatorRouter(.Home, path: HomePath.IncreaseAdmini.rawValue)
-            MolueAppRouter.shared.push(router, parameters: testMap.init(title: "xxxxxxx"))
+        cell.detailCommand?.subscribe(onNext: { [unowned self] (_) in
+            self.navigator.pushToIncreaseAdmini()
         }).disposed(by: disposeBag)
         return cell
     }
-}
-import ObjectMapper
-public struct testMap : Mappable {
-    public init?(map: Map) {
-        title = ""
-    }
-    
-    public mutating func mapping(map: Map) {
-       title <- map["title"]
-    }
-    public init(title: String) {
-        self.title = title
-    }
-    
-    var title: String?
 }

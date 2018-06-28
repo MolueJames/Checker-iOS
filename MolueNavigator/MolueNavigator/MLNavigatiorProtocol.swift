@@ -19,20 +19,20 @@ public protocol MolueNavigatorProtocol: NSObjectProtocol {
     /// transfer parameters
     ///
     /// - Parameter params: for user interface
-    func doSettingParameters(params: String?)
+    func doSettingParameters(params: String)
 }
 
 public protocol MLAppNavigatorProtocol {
     associatedtype NavigatorTarget: MLAppImpNavigatorProtocol
-    var navigator: NavigatorTarget? {get set}
+    var navigator: NavigatorTarget {get set}
 }
 
 public protocol MLAppImpNavigatorProtocol {
-    var router: MolueAppRouter! {get}
+    var router: MolueAppRouter? {get}
 }
 
-extension MLAppImpNavigatorProtocol {
-    weak var router: MolueAppRouter! {
+public extension MLAppImpNavigatorProtocol {
+    public weak var router: MolueAppRouter? {
         return MolueAppRouter.shared
     }
 }

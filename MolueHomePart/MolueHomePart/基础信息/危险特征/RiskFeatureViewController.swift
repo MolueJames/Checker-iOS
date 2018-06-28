@@ -8,7 +8,7 @@
 
 import UIKit
 import MolueFoundation
-class DangerousFeatureViewController: MLBaseViewController {
+class RiskFeatureViewController: MLBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -20,11 +20,22 @@ protocol HomeInfoDataProtocol: MLImpDataManagerProtocol {
     
 }
 
-class HomeInfoViewController: MLBaseViewController, MLDataManagerProtocol {
+protocol HomeInfoNavigatorProtocol: MLAppImpNavigatorProtocol {
+    func pushToEnterpriseInfo()
     
-    var dataManager = HomeInfoDataManager()
+    func pushToSelfRiskCheck()
     
+    func pushToLawRegulation()
+    
+    func pushToPolicyNotice()
+}
+
+class HomeInfoViewController: MLBaseViewController, MLDataManagerProtocol, MLAppNavigatorProtocol {
+    typealias NavigatorTarget = HomeInfoNavigator
     typealias DataManagerTarget = HomeInfoDataManager
+    
+    internal var dataManager = HomeInfoDataManager()
+    internal var navigator = HomeInfoNavigator()
     
     private let disposeBag = DisposeBag()
     
@@ -37,18 +48,17 @@ class HomeInfoViewController: MLBaseViewController, MLDataManagerProtocol {
     }
     
     func initPublishSubjects() {
-        self.headerView.basicInfoCommand.subscribe(onNext: { _ in
-            let router = MolueNavigatorRouter(.Home, path: HomePath.EnterpriseInfo.rawValue)
-            MolueAppRouter.shared.push(router, needHideBottomBar: true)
+        self.headerView.basicInfoCommand.subscribe(onNext: { [unowned self] (_) in
+            self.navigator.pushToEnterpriseInfo()
         }).disposed(by: disposeBag)
-        self.headerView.riskCheckCommand.subscribe(onNext: { _ in
-        
+        self.headerView.riskCheckCommand.subscribe(onNext: { [unowned self] (_) in
+            self.navigator.pushToSelfRiskCheck()
         }).disposed(by: disposeBag)
-        self.headerView.notificationCommand.subscribe(onNext: { _ in
-        
+        self.headerView.notificationCommand.subscribe(onNext: { [unowned self] (_) in
+            self.navigator.pushToPolicyNotice()
         }).disposed(by: disposeBag)
-        self.headerView.legislationCommand.subscribe(onNext: { _ in
-            
+        self.headerView.legislationCommand.subscribe(onNext: { [unowned self] (_) in
+            self.navigator.pushToLawRegulation()
         }).disposed(by: disposeBag)
         self.headerView.educationCommand.subscribe(onNext: { _ in
             

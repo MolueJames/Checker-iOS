@@ -180,9 +180,8 @@ extension IncreaseAdminiViewController: MolueNavigatorProtocol {
     func doTransferParameters(params: Any?) {
 
     }
-    func doSettingParameters(params: String?) {
-        let value = MLNavigatorTransfer.value(params, Target: testMap.self)
-        MolueLogger.success.message(value)
+    func doSettingParameters(params: String) {
+        
     }
 }
 

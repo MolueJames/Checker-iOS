@@ -19,12 +19,11 @@ public class MolueNavigatorRouter {
         case Common = "MolueCommon"
     }
     
-    public init(_ host: RouterHost, path: String, query: String? = nil) {
+    public init(_ host: RouterHost, path: String) {
         self.components.scheme = "navigator"
         self.components.host = host.rawValue
         let urlPath = path.hasPrefix("/") ? path : "/" + path
         self.components.path = urlPath
-        self.components.query = query
     }
     
     public func toString() -> String? {

@@ -15,11 +15,16 @@ protocol EnterpriseInfoDataProtocol: MLImpDataManagerProtocol {
     
 }
 
-class EnterpriseInfoViewController: MLBaseViewController, MLDataManagerProtocol {
-    
+protocol EnterpriseInfoNavigatorProtocol: MLAppImpNavigatorProtocol {
+    func pushToController(path: String)
+}
+
+class EnterpriseInfoViewController: MLBaseViewController, MLDataManagerProtocol, MLAppNavigatorProtocol {
+    typealias NavigatorTarget = EnterpriseInfoNavigator
     typealias DataManagerTarget = EnterpriseInfoDataManager
     
-    var dataManager = EnterpriseInfoDataManager()
+    internal var navigator = EnterpriseInfoNavigator()
+    internal var dataManager = EnterpriseInfoDataManager()
     
     @IBOutlet weak var informationTableView: UITableView! {
         didSet {
@@ -48,8 +53,7 @@ extension EnterpriseInfoViewController: UITableViewDelegate {
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let item = self.dataManager.item(at: indexPath.row)
-        let router = MolueNavigatorRouter(.Home, path: item.viewPath)
-        MolueAppRouter.shared.push(router)
+        self.navigator.pushToController(path: item.viewPath)
     }
 }
 

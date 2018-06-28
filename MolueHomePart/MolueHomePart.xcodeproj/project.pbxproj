@@ -12,6 +12,15 @@
 		1A1B88CD20864D9500C5F4D9 /* MolueHomePart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A1B88C320864D9500C5F4D9 /* MolueHomePart.framework */; };
 		1A1B88D220864D9500C5F4D9 /* MolueHomePartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1B88D120864D9500C5F4D9 /* MolueHomePartTests.swift */; };
 		1A1B88D420864D9500C5F4D9 /* MolueHomePart.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A1B88C620864D9500C5F4D9 /* MolueHomePart.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1A24021A20E52CE100FC3EBA /* SelfRiskCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A24021920E52CE100FC3EBA /* SelfRiskCheckViewController.swift */; };
+		1A24021C20E52DFB00FC3EBA /* SelfRiskCheckViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A24021B20E52DFB00FC3EBA /* SelfRiskCheckViewController.storyboard */; };
+		1A24022020E52F7800FC3EBA /* LawRegulationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A24021F20E52F7800FC3EBA /* LawRegulationViewController.swift */; };
+		1A24022220E52FA800FC3EBA /* PolicyNoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A24022120E52FA800FC3EBA /* PolicyNoticeViewController.swift */; };
+		1A24022420E5309100FC3EBA /* LawRegulationViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A24022320E5309100FC3EBA /* LawRegulationViewController.storyboard */; };
+		1A24022620E530AE00FC3EBA /* PolicyNoticeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A24022520E530AE00FC3EBA /* PolicyNoticeViewController.storyboard */; };
+		1A24022820E5337A00FC3EBA /* EnterpriseInfoNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A24022720E5337A00FC3EBA /* EnterpriseInfoNavigator.swift */; };
+		1A24022B20E5363600FC3EBA /* SecurityAdminiNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A24022A20E5363600FC3EBA /* SecurityAdminiNavigator.swift */; };
+		1A24022D20E536A700FC3EBA /* SecurityAdminiDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A24022C20E536A700FC3EBA /* SecurityAdminiDataManager.swift */; };
 		1A35D7F820DBC999002ED3CB /* HomeInfoDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A35D7F720DBC999002ED3CB /* HomeInfoDataManager.swift */; };
 		1A35D7FA20DBC9BF002ED3CB /* EnterpriseInfoDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A35D7F920DBC9BF002ED3CB /* EnterpriseInfoDataManager.swift */; };
 		1A43BC2420C3AEE70093855B /* HomeInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A43BC2220C3AEE70093855B /* HomeInfoCollectionViewCell.swift */; };
@@ -46,12 +55,13 @@
 		1AAF7B8720C1971B0051EC18 /* DangerMachineryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAF7B7820C1971B0051EC18 /* DangerMachineryViewController.swift */; };
 		1AAF7B8820C1971B0051EC18 /* EnterpriseRiskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAF7B7A20C1971B0051EC18 /* EnterpriseRiskViewController.swift */; };
 		1AAF7B8920C1971B0051EC18 /* EnterpriseRiskViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AAF7B7B20C1971B0051EC18 /* EnterpriseRiskViewController.storyboard */; };
-		1AAF7B8A20C1971B0051EC18 /* DangerousFeatureViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AAF7B7C20C1971B0051EC18 /* DangerousFeatureViewController.storyboard */; };
-		1AAF7B8B20C1971B0051EC18 /* DangerousFeatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAF7B7D20C1971B0051EC18 /* DangerousFeatureViewController.swift */; };
+		1AAF7B8A20C1971B0051EC18 /* RiskFeatureViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AAF7B7C20C1971B0051EC18 /* RiskFeatureViewController.storyboard */; };
+		1AAF7B8B20C1971B0051EC18 /* RiskFeatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAF7B7D20C1971B0051EC18 /* RiskFeatureViewController.swift */; };
 		1ABDCA9520C5720F0062DE71 /* IncreaseAdminiFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABDCA9420C5720F0062DE71 /* IncreaseAdminiFooterView.swift */; };
 		1ABDCA9720C5721B0062DE71 /* IncreaseAdminiFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1ABDCA9620C5721B0062DE71 /* IncreaseAdminiFooterView.xib */; };
 		1ABDCA9A20C5798B0062DE71 /* SecurityAdminiTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABDCA9820C5798B0062DE71 /* SecurityAdminiTableViewCell.swift */; };
 		1ABDCA9B20C5798B0062DE71 /* SecurityAdminiTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1ABDCA9920C5798B0062DE71 /* SecurityAdminiTableViewCell.xib */; };
+		1AEEC11E20E515CC006C3B75 /* HomeInfoNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEEC11D20E515CC006C3B75 /* HomeInfoNavigator.swift */; };
 		EF01F517C22ED0361C323767 /* Pods_MolueHomePart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 010F6973D5E1725577EE6B03 /* Pods_MolueHomePart.framework */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +85,15 @@
 		1A1B88CC20864D9500C5F4D9 /* MolueHomePartTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MolueHomePartTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A1B88D120864D9500C5F4D9 /* MolueHomePartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueHomePartTests.swift; sourceTree = "<group>"; };
 		1A1B88D320864D9500C5F4D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A24021920E52CE100FC3EBA /* SelfRiskCheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfRiskCheckViewController.swift; sourceTree = "<group>"; };
+		1A24021B20E52DFB00FC3EBA /* SelfRiskCheckViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelfRiskCheckViewController.storyboard; sourceTree = "<group>"; };
+		1A24021F20E52F7800FC3EBA /* LawRegulationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LawRegulationViewController.swift; sourceTree = "<group>"; };
+		1A24022120E52FA800FC3EBA /* PolicyNoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyNoticeViewController.swift; sourceTree = "<group>"; };
+		1A24022320E5309100FC3EBA /* LawRegulationViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LawRegulationViewController.storyboard; sourceTree = "<group>"; };
+		1A24022520E530AE00FC3EBA /* PolicyNoticeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PolicyNoticeViewController.storyboard; sourceTree = "<group>"; };
+		1A24022720E5337A00FC3EBA /* EnterpriseInfoNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterpriseInfoNavigator.swift; sourceTree = "<group>"; };
+		1A24022A20E5363600FC3EBA /* SecurityAdminiNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityAdminiNavigator.swift; sourceTree = "<group>"; };
+		1A24022C20E536A700FC3EBA /* SecurityAdminiDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityAdminiDataManager.swift; sourceTree = "<group>"; };
 		1A35D7F720DBC999002ED3CB /* HomeInfoDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInfoDataManager.swift; sourceTree = "<group>"; };
 		1A35D7F920DBC9BF002ED3CB /* EnterpriseInfoDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterpriseInfoDataManager.swift; sourceTree = "<group>"; };
 		1A43BC2220C3AEE70093855B /* HomeInfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInfoCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -110,12 +129,13 @@
 		1AAF7B7820C1971B0051EC18 /* DangerMachineryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DangerMachineryViewController.swift; sourceTree = "<group>"; };
 		1AAF7B7A20C1971B0051EC18 /* EnterpriseRiskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterpriseRiskViewController.swift; sourceTree = "<group>"; };
 		1AAF7B7B20C1971B0051EC18 /* EnterpriseRiskViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EnterpriseRiskViewController.storyboard; sourceTree = "<group>"; };
-		1AAF7B7C20C1971B0051EC18 /* DangerousFeatureViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DangerousFeatureViewController.storyboard; sourceTree = "<group>"; };
-		1AAF7B7D20C1971B0051EC18 /* DangerousFeatureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DangerousFeatureViewController.swift; sourceTree = "<group>"; };
+		1AAF7B7C20C1971B0051EC18 /* RiskFeatureViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RiskFeatureViewController.storyboard; sourceTree = "<group>"; };
+		1AAF7B7D20C1971B0051EC18 /* RiskFeatureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RiskFeatureViewController.swift; sourceTree = "<group>"; };
 		1ABDCA9420C5720F0062DE71 /* IncreaseAdminiFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncreaseAdminiFooterView.swift; sourceTree = "<group>"; };
 		1ABDCA9620C5721B0062DE71 /* IncreaseAdminiFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IncreaseAdminiFooterView.xib; sourceTree = "<group>"; };
 		1ABDCA9820C5798B0062DE71 /* SecurityAdminiTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityAdminiTableViewCell.swift; sourceTree = "<group>"; };
 		1ABDCA9920C5798B0062DE71 /* SecurityAdminiTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecurityAdminiTableViewCell.xib; sourceTree = "<group>"; };
+		1AEEC11D20E515CC006C3B75 /* HomeInfoNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInfoNavigator.swift; sourceTree = "<group>"; };
 		9468AE17912D4AEEBE6E1EFA /* Pods-MolueHomePart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueHomePart.release.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueHomePart/Pods-MolueHomePart.release.xcconfig"; sourceTree = "<group>"; };
 		C7C163FB01CFAE81C039463E /* Pods-MolueHomePart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueHomePart.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueHomePart/Pods-MolueHomePart.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -170,6 +190,9 @@
 			isa = PBXGroup;
 			children = (
 				1A65039520DD552A0017F91D /* MolueHome.xcassets */,
+				1A24021E20E52F4C00FC3EBA /* 政策通知 */,
+				1A24021D20E52F3700FC3EBA /* 法律法规 */,
+				1AEEC11F20E52608006C3B75 /* 隐患自查 */,
 				1AAF7B6420C1970A0051EC18 /* 基础信息 */,
 				1A50149B20944D7A00DB931E /* 应用首页 */,
 				1A1B88C620864D9500C5F4D9 /* MolueHomePart.h */,
@@ -187,9 +210,76 @@
 			path = MolueHomePartTests;
 			sourceTree = "<group>";
 		};
+		1A24021D20E52F3700FC3EBA /* 法律法规 */ = {
+			isa = PBXGroup;
+			children = (
+				1A24022F20E5390000FC3EBA /* Models */,
+				1A24022E20E538FA00FC3EBA /* Views */,
+				1A24021F20E52F7800FC3EBA /* LawRegulationViewController.swift */,
+				1A24022320E5309100FC3EBA /* LawRegulationViewController.storyboard */,
+			);
+			path = "法律法规";
+			sourceTree = "<group>";
+		};
+		1A24021E20E52F4C00FC3EBA /* 政策通知 */ = {
+			isa = PBXGroup;
+			children = (
+				1A24023120E5390D00FC3EBA /* Models */,
+				1A24023020E5390700FC3EBA /* Views */,
+				1A24022120E52FA800FC3EBA /* PolicyNoticeViewController.swift */,
+				1A24022520E530AE00FC3EBA /* PolicyNoticeViewController.storyboard */,
+			);
+			path = "政策通知";
+			sourceTree = "<group>";
+		};
+		1A24022920E535C900FC3EBA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1A24022A20E5363600FC3EBA /* SecurityAdminiNavigator.swift */,
+				1A24022C20E536A700FC3EBA /* SecurityAdminiDataManager.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1A24022E20E538FA00FC3EBA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1A24022F20E5390000FC3EBA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1A24023020E5390700FC3EBA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1A24023120E5390D00FC3EBA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1A24023220E5391C00FC3EBA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		1A35D7F620DBC988002ED3CB /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				1AEEC11D20E515CC006C3B75 /* HomeInfoNavigator.swift */,
 				1A35D7F720DBC999002ED3CB /* HomeInfoDataManager.swift */,
 			);
 			path = Models;
@@ -209,6 +299,7 @@
 			children = (
 				1A43BC3220C3CEAA0093855B /* EnterpriseInfoModel.swift */,
 				1A35D7F920DBC9BF002ED3CB /* EnterpriseInfoDataManager.swift */,
+				1A24022720E5337A00FC3EBA /* EnterpriseInfoNavigator.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -266,6 +357,7 @@
 		1AAF7B6C20C1971B0051EC18 /* 安全管理员 */ = {
 			isa = PBXGroup;
 			children = (
+				1A24022920E535C900FC3EBA /* Models */,
 				1ABDCA9320C571D00062DE71 /* Views */,
 				1AAF7B6D20C1971B0051EC18 /* 添加管理员 */,
 				1AAF7B7020C1971B0051EC18 /* SecurityAdminiViewController.swift */,
@@ -297,8 +389,8 @@
 			children = (
 				1AAF7B7620C1971B0051EC18 /* 危险设备 */,
 				1AAF7B7920C1971B0051EC18 /* 企业危险特征 */,
-				1AAF7B7C20C1971B0051EC18 /* DangerousFeatureViewController.storyboard */,
-				1AAF7B7D20C1971B0051EC18 /* DangerousFeatureViewController.swift */,
+				1AAF7B7C20C1971B0051EC18 /* RiskFeatureViewController.storyboard */,
+				1AAF7B7D20C1971B0051EC18 /* RiskFeatureViewController.swift */,
 			);
 			path = "危险特征";
 			sourceTree = "<group>";
@@ -330,6 +422,16 @@
 				1ABDCA9920C5798B0062DE71 /* SecurityAdminiTableViewCell.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		1AEEC11F20E52608006C3B75 /* 隐患自查 */ = {
+			isa = PBXGroup;
+			children = (
+				1A24023220E5391C00FC3EBA /* Models */,
+				1A24021920E52CE100FC3EBA /* SelfRiskCheckViewController.swift */,
+				1A24021B20E52DFB00FC3EBA /* SelfRiskCheckViewController.storyboard */,
+			);
+			path = "隐患自查";
 			sourceTree = "<group>";
 		};
 		56076729037BEB2CEBACE6F0 /* Frameworks */ = {
@@ -419,7 +521,7 @@
 				TargetAttributes = {
 					1A1B88C220864D9500C5F4D9 = {
 						CreatedOnToolsVersion = 9.3;
-						LastSwiftMigration = 0930;
+						LastSwiftMigration = 0940;
 					};
 					1A1B88CB20864D9500C5F4D9 = {
 						CreatedOnToolsVersion = 9.3;
@@ -452,9 +554,11 @@
 				1A5014A220944DF000DB931E /* HomeInfoViewController.storyboard in Resources */,
 				1AAF7B7F20C1971B0051EC18 /* BasicArchivesViewController.storyboard in Resources */,
 				1A43BC3020C3CAA60093855B /* EnterpriseInfoTableViewCell.xib in Resources */,
+				1A24021C20E52DFB00FC3EBA /* SelfRiskCheckViewController.storyboard in Resources */,
 				1ABDCA9720C5721B0062DE71 /* IncreaseAdminiFooterView.xib in Resources */,
+				1A24022420E5309100FC3EBA /* LawRegulationViewController.storyboard in Resources */,
 				1AAF7B8620C1971B0051EC18 /* DangerMachineryViewController.storyboard in Resources */,
-				1AAF7B8A20C1971B0051EC18 /* DangerousFeatureViewController.storyboard in Resources */,
+				1AAF7B8A20C1971B0051EC18 /* RiskFeatureViewController.storyboard in Resources */,
 				1A602F8C20A88095003AD583 /* HomeInfoTableHeaderView.xib in Resources */,
 				1ABDCA9B20C5798B0062DE71 /* SecurityAdminiTableViewCell.xib in Resources */,
 				1A06557E20A9EE020016CA86 /* HomeInfoTableViewCell.xib in Resources */,
@@ -464,6 +568,7 @@
 				1AAF7B8920C1971B0051EC18 /* EnterpriseRiskViewController.storyboard in Resources */,
 				1AAF7B8420C1971B0051EC18 /* ContactInfoViewController.storyboard in Resources */,
 				1AAF7B8020C1971B0051EC18 /* IncreaseAdminiViewController.storyboard in Resources */,
+				1A24022620E530AE00FC3EBA /* PolicyNoticeViewController.storyboard in Resources */,
 				1A65039620DD552B0017F91D /* MolueHome.xcassets in Resources */,
 				1AAF7B6720C1970A0051EC18 /* EnterpriseInfoViewController.storyboard in Resources */,
 			);
@@ -504,6 +609,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A24021A20E52CE100FC3EBA /* SelfRiskCheckViewController.swift in Sources */,
 				1AAF7B7E20C1971B0051EC18 /* BasicArchivesViewController.swift in Sources */,
 				1AAF7B8220C1971B0051EC18 /* SecurityAdminiViewController.swift in Sources */,
 				1A43BC2F20C3CAA60093855B /* EnterpriseInfoTableViewCell.swift in Sources */,
@@ -511,17 +617,23 @@
 				1A35D7FA20DBC9BF002ED3CB /* EnterpriseInfoDataManager.swift in Sources */,
 				1ABDCA9A20C5798B0062DE71 /* SecurityAdminiTableViewCell.swift in Sources */,
 				1AAF7B8520C1971B0051EC18 /* ContactInfoViewController.swift in Sources */,
-				1AAF7B8B20C1971B0051EC18 /* DangerousFeatureViewController.swift in Sources */,
+				1A24022820E5337A00FC3EBA /* EnterpriseInfoNavigator.swift in Sources */,
+				1AAF7B8B20C1971B0051EC18 /* RiskFeatureViewController.swift in Sources */,
+				1A24022220E52FA800FC3EBA /* PolicyNoticeViewController.swift in Sources */,
+				1A24022020E52F7800FC3EBA /* LawRegulationViewController.swift in Sources */,
 				1AAF7B8720C1971B0051EC18 /* DangerMachineryViewController.swift in Sources */,
 				1A5014A420944DFE00DB931E /* HomeInfoViewController.swift in Sources */,
 				1A43BC2720C3AF190093855B /* HomeInfoHeaderView.swift in Sources */,
 				1AAF7B8120C1971B0051EC18 /* IncreaseAdminiViewController.swift in Sources */,
 				1A602F8520A87D58003AD583 /* HomeInfoTableHeaderView.swift in Sources */,
+				1A24022D20E536A700FC3EBA /* SecurityAdminiDataManager.swift in Sources */,
 				1AAF7B6820C1970A0051EC18 /* EnterpriseInfoViewController.swift in Sources */,
 				1A06557D20A9EE020016CA86 /* HomeInfoTableViewCell.swift in Sources */,
 				1A43BC3320C3CEAA0093855B /* EnterpriseInfoModel.swift in Sources */,
+				1A24022B20E5363600FC3EBA /* SecurityAdminiNavigator.swift in Sources */,
 				1ABDCA9520C5720F0062DE71 /* IncreaseAdminiFooterView.swift in Sources */,
 				1A35D7F820DBC999002ED3CB /* HomeInfoDataManager.swift in Sources */,
+				1AEEC11E20E515CC006C3B75 /* HomeInfoNavigator.swift in Sources */,
 				1AAF7B8820C1971B0051EC18 /* EnterpriseRiskViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

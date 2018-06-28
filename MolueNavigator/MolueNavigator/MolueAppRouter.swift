@@ -80,7 +80,7 @@ public class MolueAppRouter {
         if let actions:[UIAlertAction] = context as? [UIAlertAction] {
             alertController.addActions(actions)
         } else {
-            alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            alertController.addAction(UIAlertAction(title: "好的", style: .default, handler: nil))
         }
         return alertController
     }
@@ -118,15 +118,15 @@ public class MolueAppRouter {
     private func updateViewController(_ viewController: UIViewController?, params: String?, context: Any?) {
         guard let controller = viewController as? MolueNavigatorProtocol else {return}
         controller.doTransferParameters(params: context)
-        controller.doSettingParameters(params: params?.removingPercentEncoding)
+        guard let value = params?.removingPercentEncoding else {return}
+        controller.doSettingParameters(params: value)
     }
     
     private func updateRouterURL(_ url: String, parameters: Mappable?) -> String {
-        guard let parameters = parameters else {return url}
-        guard let query = parameters.toJSONString() else {return url}
-        guard query.isEmpty == false else {return url}
-        let connector = (URL.init(string: url)?.query) == nil  ? "?" : "&"
-        return url + connector + query
+        guard var component = URLComponents(string: url) else {return url}
+        component.query = parameters?.toJSONString()
+        guard let URL = component.url else {return url}
+        return URL.absoluteString
     }
 }
 
@@ -176,9 +176,21 @@ extension MolueAppRouter {
         guard let url = router.toString() else {
             return MolueLogger.failure.returnNil("The url is not existed")
         }
-        guard let viewcontroller = navigator.viewController(for: url, context: actions) else {
+        guard let viewController = navigator.viewController(for: url, context: actions) else {
             return MolueLogger.failure.returnNil("The viewController is not existed")
         }
-        return navigator.present(viewcontroller, wrap: wrap, from: from, animated: animated, completion: completion)
+        return navigator.presentViewController(viewController, wrap: wrap, from: from, animated: animated, completion: completion)
+    }
+}
+
+extension MolueAppRouter {
+    @discardableResult
+    public func present(_ viewController: UIViewController, wrap: UINavigationController.Type? = nil, from: UIViewControllerType? = nil, animated: Bool = true, completion: (() -> Void)? = nil) -> UIViewController? {
+        return navigator.present(viewController, wrap: wrap, from: from, animated: animated, completion: completion)
+    }
+    
+    @discardableResult
+    public func pushViewController(_ viewController: UIViewController, from: UINavigationControllerType? = nil, animated: Bool = true) -> UIViewController? {
+         return navigator.pushViewController(viewController, from: from, animated: animated)
     }
 }
