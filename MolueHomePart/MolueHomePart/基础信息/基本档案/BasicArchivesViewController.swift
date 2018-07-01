@@ -12,77 +12,45 @@ import MolueFoundation
 import MolueCommon
 class BasicArchivesViewController: MLBaseViewController {
     let disposeBag = DisposeBag()
-    @IBOutlet weak var CodeContainerView: MLContainerView! {
-        didSet {
-            codeInputView = MLCommonInputView.createFromXib()
-            CodeContainerView.doBespreadOn(codeInputView)
-        }
-    }
-    var codeInputView: MLCommonInputView! {
+
+    @IBOutlet weak var codeInputView: MLCommonInputView! {
         didSet {
             codeInputView.defaultValue(title: "信用代码", placeholder: "请输入18位统一社会信用代码", keyboardType: .numberPad)
         }
     }
-    
-    @IBOutlet weak var DivisionContainerView: MLContainerView! {
+
+    @IBOutlet weak var divisionSelectView: MLCommonSelectView! {
         didSet {
-            divisionSelectView = MLCommonSelectView.createFromXib()
-            DivisionContainerView.doBespreadOn(divisionSelectView)
-        }
-    }
-    var divisionSelectView: MLCommonSelectView! {
-        didSet {
-            divisionSelectView.defaultValue(title: "行政区划", description: "请选择")
+            divisionSelectView.defaultValue(title: "行政区划", detail: "请选择")
             divisionSelectView.clickedCommand.subscribe { _ in
-                
+
             }.disposed(by: disposeBag)
         }
     }
-    
-    @IBOutlet weak var ScaleContainerView: MLContainerView! {
+
+    @IBOutlet weak var scaleSelectView: MLCommonSelectView! {
         didSet {
-            scaleSelectView = MLCommonSelectView.createFromXib()
-            ScaleContainerView.doBespreadOn(scaleSelectView)
-        }
-    }
-    
-    var scaleSelectView: MLCommonSelectView! {
-        didSet {
-            scaleSelectView.defaultValue(title: "企业规模", description: "请选择")
+            scaleSelectView.defaultValue(title: "企业规模", detail: "请选择")
             scaleSelectView.clickedCommand.subscribe { _ in
-                
+
             }.disposed(by: disposeBag)
         }
     }
-    
-    @IBOutlet weak var TypesContainerView: MLContainerView! {
+
+    @IBOutlet weak var typesSelectView: MLCommonSelectView! {
         didSet {
-            typesSelectView = MLCommonSelectView.createFromXib()
-            TypesContainerView.doBespreadOn(typesSelectView)
-        }
-    }
-    
-    var typesSelectView: MLCommonSelectView! {
-        didSet {
-            typesSelectView.defaultValue(title: "企业类型", description: "请选择")
+            typesSelectView.defaultValue(title: "企业类型", detail: "请选择")
             typesSelectView.clickedCommand.subscribe { _ in
-                
+
             }.disposed(by: disposeBag)
         }
     }
-    
-    @IBOutlet weak var LevelContainerView: MLContainerView! {
+
+    @IBOutlet weak var levelSelectView: MLCommonSelectView! {
         didSet {
-            levelSelectView = MLCommonSelectView.createFromXib()
-            LevelContainerView.doBespreadOn(levelSelectView)
-        }
-    }
-    
-    var levelSelectView: MLCommonSelectView! {
-        didSet {
-            levelSelectView.defaultValue(title: "安全生产标准化达标级别", description: "请选择")
+            levelSelectView.defaultValue(title: "安全生产标准化达标级别", detail: "请选择")
             levelSelectView.clickedCommand.subscribe { _ in
-                
+
             }.disposed(by: disposeBag)
         }
     }

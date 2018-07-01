@@ -14,20 +14,13 @@ import MolueUtilities
 import MolueFoundation
 import ViewAnimator
 
-protocol SecurityAdminiDataProtocol: MLImpDataManagerProtocol {
-    
-}
-
-protocol SecurityAdminiNavigatorProtocol: MLAppImpNavigatorProtocol {
+protocol SecurityAdminiNavigatorProtocol: MLAppNavigatorProtocol {
     func pushToIncreaseAdmini()
 }
 
-class SecurityAdminiViewController: MLBaseViewController, MLAppNavigatorProtocol, MLDataManagerProtocol {
-    typealias DataManagerTarget = SecurityAdminiDataManager
-    typealias NavigatorTarget = SecurityAdminiNavigator
-    
+class SecurityAdminiViewController: MLBaseViewController {
     internal var dataManager = SecurityAdminiDataManager()
-    internal var navigator = SecurityAdminiNavigator()
+    internal var navigator: SecurityAdminiNavigatorProtocol = SecurityAdminiNavigator()
     
     private let disposeBag = DisposeBag()
     @IBOutlet weak var tableView: UITableView! {

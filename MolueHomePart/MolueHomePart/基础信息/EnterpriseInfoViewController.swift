@@ -11,19 +11,12 @@ import MolueCommon
 import MolueNavigator
 import MolueFoundation
 
-protocol EnterpriseInfoDataProtocol: MLImpDataManagerProtocol {
-    
-}
-
-protocol EnterpriseInfoNavigatorProtocol: MLAppImpNavigatorProtocol {
+protocol EnterpriseInfoNavigatorProtocol: MLAppNavigatorProtocol {
     func pushToController(path: String)
 }
 
-class EnterpriseInfoViewController: MLBaseViewController, MLDataManagerProtocol, MLAppNavigatorProtocol {
-    typealias NavigatorTarget = EnterpriseInfoNavigator
-    typealias DataManagerTarget = EnterpriseInfoDataManager
-    
-    internal var navigator = EnterpriseInfoNavigator()
+class EnterpriseInfoViewController: MLBaseViewController {
+    internal var navigator: EnterpriseInfoNavigatorProtocol = EnterpriseInfoNavigator()
     internal var dataManager = EnterpriseInfoDataManager()
     
     @IBOutlet weak var informationTableView: UITableView! {

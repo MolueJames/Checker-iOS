@@ -8,6 +8,6 @@
 
 import Foundation
 
-public struct SecurityAdminiDataManager: SecurityAdminiDataProtocol {
+public struct SecurityAdminiDataManager {
     
 }

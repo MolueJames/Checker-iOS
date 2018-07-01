@@ -26,28 +26,57 @@ public class MLCommonPhotoView: UIView {
     
     public let appendCommand = PublishSubject<Int>()
     
-    @IBOutlet private weak var titleLabel: UILabel!
-    
-    @IBOutlet private weak var collectionView: UICollectionView! {
-        didSet {
-            collectionView.delegate = self
-            collectionView.dataSource = self
-            collectionView.register(xibWithCellClass: MLCommonPhotoCell.self)
-            collectionView.register(xibWithCellClass: MLCommonAddPhotoCell.self)
-            self.flowLayout = UICollectionViewFlowLayout()
-            collectionView.collectionViewLayout = self.flowLayout
-        }
+    lazy private var titleLabel: UILabel! = {
+        let internalTitleLabel = UILabel()
+        self.addSubview(internalTitleLabel)
+        internalTitleLabel.snp.makeConstraints({ (make) in
+            make.top.right.equalToSuperview()
+            make.left.equalTo(20)
+            make.height.equalTo(30)
+        })
+        internalTitleLabel.textColor = MLCommonColor.titleLabel
+        internalTitleLabel.font = .systemFont(ofSize: 16)
+        return internalTitleLabel
+    }()
+    lazy private var collectionView: UICollectionView! = {
+        let internalCollectionView = UICollectionView(frame: .zero, collectionViewLayout: self.flowLayout)
+        self.addSubview(internalCollectionView)
+        internalCollectionView.backgroundColor = .clear
+        internalCollectionView.snp.makeConstraints({ (make) in
+            make.top.equalTo(30)
+            make.left.right.equalToSuperview()
+            make.bottom.equalToSuperview()
+        })
+        return internalCollectionView
+    }()
+    private func setCollectionViewConfigure() {
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.register(xibWithCellClass: MLCommonPhotoCell.self)
+        collectionView.register(xibWithCellClass: MLCommonAddPhotoCell.self)
     }
-    private var flowLayout: UICollectionViewFlowLayout! {
-        didSet {
-            flowLayout.scrollDirection = .horizontal
-            flowLayout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 10, right: 0)
-            flowLayout.itemSize = CGSize(width: 80, height: 80)
-        }
-    }
-    
+    lazy private var flowLayout: UICollectionViewFlowLayout! = {
+        let internalFlowLayout = UICollectionViewFlowLayout()
+        internalFlowLayout.scrollDirection = .horizontal
+        internalFlowLayout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 10, right: 0)
+        internalFlowLayout.itemSize = CGSize(width: 80, height: 80)
+        return internalFlowLayout
+    }()
+    lazy private var lineView: UIView! = {
+        let internalLineView = UIView()
+        self.addSubview(internalLineView)
+        internalLineView.snp.makeConstraints({ (make) in
+            make.left.equalTo(20)
+            make.bottom.equalToSuperview()
+            make.right.equalToSuperview()
+            make.height.equalTo(MLConfigure.single_line_height)
+        })
+        return internalLineView
+    }()
     open override func awakeFromNib() {
         super.awakeFromNib()
+        self.lineView.backgroundColor = MLCommonColor.commonLine
+        self.setCollectionViewConfigure()
     }
     
     public func defaultValue(title: String, list: [UIImage], count: Int) {

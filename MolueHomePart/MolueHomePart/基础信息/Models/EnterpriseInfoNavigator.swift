@@ -12,6 +12,6 @@ import MolueNavigator
 public struct EnterpriseInfoNavigator: EnterpriseInfoNavigatorProtocol {
     func pushToController(path: String) {
         let target = MolueNavigatorRouter(.Home, path: path)
-        router?.push(target)
+        router.push(target)
     }
 }

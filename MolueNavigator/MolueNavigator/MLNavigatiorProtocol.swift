@@ -23,16 +23,11 @@ public protocol MolueNavigatorProtocol: NSObjectProtocol {
 }
 
 public protocol MLAppNavigatorProtocol {
-    associatedtype NavigatorTarget: MLAppImpNavigatorProtocol
-    var navigator: NavigatorTarget {get set}
+    var router: MolueAppRouter {get}
 }
 
-public protocol MLAppImpNavigatorProtocol {
-    var router: MolueAppRouter? {get}
-}
-
-public extension MLAppImpNavigatorProtocol {
-    public weak var router: MolueAppRouter? {
+public extension MLAppNavigatorProtocol {
+    public var router: MolueAppRouter {
         return MolueAppRouter.shared
     }
 }

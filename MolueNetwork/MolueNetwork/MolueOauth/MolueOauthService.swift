@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 public struct MolueOauthService {
     public static func doLogin(username: String, password: String, delegate: MolueActivityDelegate? = nil) -> MolueRequestManager {
         let header = MolueOauthHelper.authHeader()

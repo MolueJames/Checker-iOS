@@ -12,21 +12,25 @@ import MolueCommon
 public struct HomeInfoNavigator: HomeInfoNavigatorProtocol {
     func pushToEnterpriseInfo() {
         let target = MolueNavigatorRouter(.Home, path: HomePath.EnterpriseInfo.rawValue)
-        router?.push(target, needHideBottomBar: true)
+        router.push(target, needHideBottomBar: true)
     }
     
     func pushToSelfRiskCheck() {
         let target = MolueNavigatorRouter(.Home, path: HomePath.SelfRiskCheck.rawValue)
-        router?.push(target, needHideBottomBar: true)
+        router.push(target, needHideBottomBar: true)
     }
     
     func pushToLawRegulation() {
         let target = MolueNavigatorRouter(.Home, path: HomePath.LawRegulation.rawValue)
-        router?.push(target, needHideBottomBar: true)
+        router.push(target, needHideBottomBar: true)
     }
     
     func pushToPolicyNotice()  {
         let target = MolueNavigatorRouter(.Home, path: HomePath.PolicyNotice.rawValue)
-        router?.push(target, needHideBottomBar: true)
+        router.push(target, needHideBottomBar: true)
+    }
+    
+    func test() {
+        
     }
 }

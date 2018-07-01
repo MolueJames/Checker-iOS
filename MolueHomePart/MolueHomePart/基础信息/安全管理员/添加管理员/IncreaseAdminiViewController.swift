@@ -21,46 +21,22 @@ class IncreaseAdminiViewController: MLBaseViewController {
     private let limitCount = 4
     private let disposeBag = DisposeBag()
     //MARK: Interface Elements
-    @IBOutlet private weak var usernameContainerView: MLContainerView! {
-        didSet {
-            usernameInputView = MLCommonInputView.createFromXib()
-            usernameContainerView.doBespreadOn(usernameInputView)
-        }
-    }
-    private var usernameInputView: MLCommonInputView! {
+    @IBOutlet private weak var usernameInputView: MLCommonInputView! {
         didSet {
             usernameInputView.defaultValue(title: "姓名", placeholder: "请输入人员姓名")
         }
     }
-    @IBOutlet private weak var phoneNoContainerView: MLContainerView! {
-        didSet {
-            phoneNoInputView = MLCommonInputView.createFromXib()
-            phoneNoContainerView.doBespreadOn(phoneNoInputView)
-        }
-    }
-    private var phoneNoInputView: MLCommonInputView! {
+    @IBOutlet private weak var phoneNoInputView: MLCommonInputView! {
         didSet {
             phoneNoInputView.defaultValue(title: "手机", placeholder: "请输入人员手机号", keyboardType: .numberPad)
         }
     }
-    @IBOutlet private weak var idCardNoContainerView: MLContainerView! {
-        didSet {
-            idCardNoInputView = MLCommonInputView.createFromXib()
-            idCardNoContainerView.doBespreadOn(idCardNoInputView)
-        }
-    }
-    private var idCardNoInputView: MLCommonInputView! {
+    @IBOutlet private weak var idCardNoInputView: MLCommonInputView! {
         didSet {
             idCardNoInputView.defaultValue(title: "身份证", placeholder: "请输入人员身份证", keyboardType: .numberPad)
         }
     }
-    @IBOutlet private weak var adminiTypeContainerView: MLContainerView! {
-        didSet {
-            adminiTypeInputView = MLCommonClickView.createFromXib()
-            adminiTypeContainerView.doBespreadOn(adminiTypeInputView)
-        }
-    }
-    private var adminiTypeInputView: MLCommonClickView! {
+    @IBOutlet private weak var adminiTypeInputView: MLCommonClickView! {
         didSet {
             adminiTypeInputView.defaultValue(title: "类型", placeholder: "请选择人员类型")
             adminiTypeInputView.clickedCommand.subscribe(onNext: { [unowned self] (_) in
@@ -68,13 +44,7 @@ class IncreaseAdminiViewController: MLBaseViewController {
             }).disposed(by: disposeBag)
         }
     }
-    @IBOutlet private weak var certificateNoContainerView: MLContainerView! {
-        didSet {
-            certificateNoInputView = MLCommonInputView.createFromXib()
-            certificateNoContainerView.doBespreadOn(certificateNoInputView)
-        }
-    }
-    private var certificateNoInputView: MLCommonInputView! {
+    @IBOutlet private weak var certificateNoInputView: MLCommonInputView! {
         didSet {
             certificateNoInputView.defaultValue(title: "证书编号", placeholder: "请输入证书编号", keyboardType: .numberPad)
             certificateNoInputView.textChangedCommand.subscribe(onNext: { (value) in
@@ -82,13 +52,7 @@ class IncreaseAdminiViewController: MLBaseViewController {
             }).disposed(by: disposeBag)
         }
     }
-    @IBOutlet private weak var deadLineContainerView: MLContainerView! {
-        didSet {
-            deadLineInputView = MLCommonClickView.createFromXib()
-            deadLineContainerView.doBespreadOn(deadLineInputView)
-        }
-    }
-    private var deadLineInputView: MLCommonClickView! {
+    @IBOutlet private weak var deadLineInputView: MLCommonClickView! {
         didSet {
             deadLineInputView.defaultValue(title: "有效期至", placeholder: "请选择证书有效截止日期")
             deadLineInputView.clickedCommand.subscribe(onNext: { [unowned self] (_) in
@@ -96,13 +60,7 @@ class IncreaseAdminiViewController: MLBaseViewController {
             }).disposed(by: disposeBag)
         }
     }
-    @IBOutlet private weak var uploadPhotoContainerView: MLContainerView! {
-        didSet {
-            uploadPhotoInputView = MLCommonPhotoView.createFromXib()
-            uploadPhotoContainerView.doBespreadOn(uploadPhotoInputView)
-        }
-    }
-    private var uploadPhotoInputView: MLCommonPhotoView! {
+    @IBOutlet private weak var uploadPhotoInputView: MLCommonPhotoView! {
         didSet {
             uploadPhotoInputView.defaultValue(title: "上传证书", list: [UIImage](), count: limitCount)
             uploadPhotoInputView.appendCommand.subscribe(onNext: { [unowned self] (leftCount) in

@@ -8,28 +8,21 @@
 
 import Foundation
 
-public protocol MLDataManagerProtocol: class {
-    associatedtype DataManagerTarget: MLImpDataManagerProtocol
-    var dataManager: DataManagerTarget {get set}
-}
-
-public protocol MLImpDataManagerProtocol {}
-
 public protocol MLListDataHelperProtocol {
     
-    associatedtype Item
+    associatedtype ItemTarget
     
-    var items: [Item] {get set}
+    var items: [ItemTarget] {get set}
     
     func count() -> Int
     
-    mutating func append(item: Item)
+    mutating func append(item: ItemTarget)
     
-    mutating func append(newItems: [Item])
+    mutating func append(newItems: [ItemTarget])
     
     mutating func remove(at index: Int)
     
-    func item(at index: Int) -> Item
+    func item(at index: Int) -> ItemTarget
 }
 
 public extension MLListDataHelperProtocol {
@@ -37,13 +30,13 @@ public extension MLListDataHelperProtocol {
         return items.count
     }
     
-    mutating func append(item: Item) {
+    mutating func append(item: ItemTarget) {
         objc_sync_enter(self)
         defer{objc_sync_exit(self)}
         items.append(item)
     }
     
-    mutating func append(newItems: [Item]) {
+    mutating func append(newItems: [ItemTarget]) {
         objc_sync_enter(self)
         defer{objc_sync_exit(self)}
         items.append(contentsOf: newItems)
@@ -55,11 +48,11 @@ public extension MLListDataHelperProtocol {
         items.remove(at: index)
     }
     
-    func item(at index: Int) -> Item {
+    func item(at index: Int) -> ItemTarget {
         return items[index]
     }
     
-    mutating func replace(index: Int, new: Item) {
+    mutating func replace(index: Int, new: ItemTarget) {
         objc_sync_enter(self)
         defer{objc_sync_exit(self)}
         items[index] = new

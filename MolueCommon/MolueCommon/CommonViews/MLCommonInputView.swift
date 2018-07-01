@@ -8,13 +8,46 @@
 
 import UIKit
 import RxSwift
+import SnapKit
+import MolueUtilities
 public class MLCommonInputView: UIView {
-    @IBOutlet private weak var textFiled: UITextField! {
-        didSet {
-            textFiled.addTarget(self, action: #selector(textValueChanged), for: .editingChanged)
-        }
-    }
-    @IBOutlet private weak var titleLabel: UILabel!
+    lazy private var textFiled: UITextField! = {
+        let internalTextField = UITextField()
+        self.addSubview(internalTextField)
+        internalTextField.snp.makeConstraints({ (make) in
+            make.right.equalTo(-15)
+            make.left.equalTo(95)
+            make.top.bottom.equalToSuperview()
+        })
+        internalTextField.font = .systemFont(ofSize: 16)
+        internalTextField.textColor = MLCommonColor.titleLabel
+        internalTextField.textAlignment = .right
+        return internalTextField
+    }()
+    lazy private var titleLabel: UILabel! = {
+        let internalTitleLabel = UILabel()
+        self.addSubview(internalTitleLabel)
+        internalTitleLabel.snp.makeConstraints({ (make) in
+            make.width.equalTo(70)
+            make.left.equalTo(20)
+            make.top.bottom.equalToSuperview()
+        })
+        internalTitleLabel.font = .systemFont(ofSize: 16)
+        internalTitleLabel.textColor = MLCommonColor.titleLabel
+        return internalTitleLabel
+    }()
+    
+    lazy private var lineView: UIView! = {
+        let internalLineView = UIView()
+        self.addSubview(internalLineView)
+        internalLineView.snp.makeConstraints({ (make) in
+            make.left.equalTo(20)
+            make.bottom.equalToSuperview()
+            make.right.equalToSuperview()
+            make.height.equalTo(MLConfigure.single_line_height)
+        })
+        return internalLineView
+    }()
     
     public let textChangedCommand = PublishSubject<String>()
     
@@ -28,13 +61,12 @@ public class MLCommonInputView: UIView {
         self.textFiled.placeholder = placeholder
         self.textFiled.keyboardType = keyboardType
     }
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    
+    public override func awakeFromNib() {
+        super.awakeFromNib()
+        self.lineView.backgroundColor = MLCommonColor.commonLine
+        self.textFiled.addTarget(self, action: #selector(textValueChanged), for: .editingChanged)
     }
-    */
 }
 
 

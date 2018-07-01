@@ -12,10 +12,8 @@
 		1A2D443D20A097E100BA947A /* MLInterfaceConfigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D443C20A097E100BA947A /* MLInterfaceConfigure.swift */; };
 		1A35D80020DD2893002ED3CB /* MolueFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A35D7FF20DD2893002ED3CB /* MolueFoundation.framework */; };
 		1A43BC3620C4031D0093855B /* MLCommonInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A43BC3520C4031D0093855B /* MLCommonInputView.swift */; };
-		1A43BC3820C403330093855B /* MLCommonInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A43BC3720C403330093855B /* MLCommonInputView.xib */; };
 		1A43BC3A20C4063E0093855B /* MLContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A43BC3920C4063E0093855B /* MLContainerView.swift */; };
 		1A43BC3C20C40FA30093855B /* MLCommonSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A43BC3B20C40FA30093855B /* MLCommonSelectView.swift */; };
-		1A43BC3E20C40FC60093855B /* MLCommonSelectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A43BC3D20C40FC60093855B /* MLCommonSelectView.xib */; };
 		1A5014AB2094AFA400DB931E /* MoluePermissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5014AA2094AFA400DB931E /* MoluePermissions.swift */; };
 		1A5014B42094B90A00DB931E /* MolueCommonPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5014B32094B90A00DB931E /* MolueCommonPath.swift */; };
 		1A5014B62094B9BA00DB931E /* MolueCommonColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5014B52094B9BA00DB931E /* MolueCommonColor.swift */; };
@@ -32,7 +30,6 @@
 		1A7D9B712086470300FA997D /* MolueCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A7D9B632086470300FA997D /* MolueCommon.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1A98F29D20C96940000D0F8F /* MLCommonFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A98F29C20C96940000D0F8F /* MLCommonFunction.swift */; };
 		1A98F29F20C96E87000D0F8F /* MLCommonPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A98F29E20C96E87000D0F8F /* MLCommonPhotoView.swift */; };
-		1A98F2A120C96E9D000D0F8F /* MLCommonPhotoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A98F2A020C96E9D000D0F8F /* MLCommonPhotoView.xib */; };
 		1A98F2A420C972ED000D0F8F /* MLCommonPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A98F2A220C972ED000D0F8F /* MLCommonPhotoCell.swift */; };
 		1A98F2A520C972ED000D0F8F /* MLCommonPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A98F2A320C972ED000D0F8F /* MLCommonPhotoCell.xib */; };
 		1A98F2A820C97331000D0F8F /* MLCommonAddPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A98F2A620C97331000D0F8F /* MLCommonAddPhotoCell.swift */; };
@@ -43,7 +40,6 @@
 		1AA7825420CE9F3300088923 /* MLDatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA7825320CE9F3300088923 /* MLDatePickerViewController.swift */; };
 		1AA7825820CEA01500088923 /* MLDatePickerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AA7825720CEA01500088923 /* MLDatePickerViewController.storyboard */; };
 		1ABDCA9D20C5946B0062DE71 /* MLCommonClickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABDCA9C20C5946B0062DE71 /* MLCommonClickView.swift */; };
-		1ABDCA9F20C5947E0062DE71 /* MLCommonClickView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1ABDCA9E20C5947E0062DE71 /* MLCommonClickView.xib */; };
 		1ABDCAA120C594A50062DE71 /* MLCommonSegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABDCAA020C594A50062DE71 /* MLCommonSegmentView.swift */; };
 		1ABDCAA320C594AC0062DE71 /* MLCommonSegmentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1ABDCAA220C594AC0062DE71 /* MLCommonSegmentView.xib */; };
 		1AEB87DB209218D3002230A3 /* MolueCryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEB87DA209218D3002230A3 /* MolueCryption.swift */; };
@@ -79,10 +75,8 @@
 		1A2D443C20A097E100BA947A /* MLInterfaceConfigure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLInterfaceConfigure.swift; sourceTree = "<group>"; };
 		1A35D7FF20DD2893002ED3CB /* MolueFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A43BC3520C4031D0093855B /* MLCommonInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLCommonInputView.swift; sourceTree = "<group>"; };
-		1A43BC3720C403330093855B /* MLCommonInputView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MLCommonInputView.xib; sourceTree = "<group>"; };
 		1A43BC3920C4063E0093855B /* MLContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLContainerView.swift; sourceTree = "<group>"; };
 		1A43BC3B20C40FA30093855B /* MLCommonSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLCommonSelectView.swift; sourceTree = "<group>"; };
-		1A43BC3D20C40FC60093855B /* MLCommonSelectView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MLCommonSelectView.xib; sourceTree = "<group>"; };
 		1A5014AA2094AFA400DB931E /* MoluePermissions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoluePermissions.swift; sourceTree = "<group>"; };
 		1A5014B32094B90A00DB931E /* MolueCommonPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueCommonPath.swift; sourceTree = "<group>"; };
 		1A5014B52094B9BA00DB931E /* MolueCommonColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueCommonColor.swift; sourceTree = "<group>"; };
@@ -101,7 +95,6 @@
 		1A7D9B702086470300FA997D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A98F29C20C96940000D0F8F /* MLCommonFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLCommonFunction.swift; sourceTree = "<group>"; };
 		1A98F29E20C96E87000D0F8F /* MLCommonPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLCommonPhotoView.swift; sourceTree = "<group>"; };
-		1A98F2A020C96E9D000D0F8F /* MLCommonPhotoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MLCommonPhotoView.xib; sourceTree = "<group>"; };
 		1A98F2A220C972ED000D0F8F /* MLCommonPhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLCommonPhotoCell.swift; sourceTree = "<group>"; };
 		1A98F2A320C972ED000D0F8F /* MLCommonPhotoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MLCommonPhotoCell.xib; sourceTree = "<group>"; };
 		1A98F2A620C97331000D0F8F /* MLCommonAddPhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLCommonAddPhotoCell.swift; sourceTree = "<group>"; };
@@ -112,7 +105,6 @@
 		1AA7825320CE9F3300088923 /* MLDatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLDatePickerViewController.swift; sourceTree = "<group>"; };
 		1AA7825720CEA01500088923 /* MLDatePickerViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MLDatePickerViewController.storyboard; sourceTree = "<group>"; };
 		1ABDCA9C20C5946B0062DE71 /* MLCommonClickView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLCommonClickView.swift; sourceTree = "<group>"; };
-		1ABDCA9E20C5947E0062DE71 /* MLCommonClickView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MLCommonClickView.xib; sourceTree = "<group>"; };
 		1ABDCAA020C594A50062DE71 /* MLCommonSegmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLCommonSegmentView.swift; sourceTree = "<group>"; };
 		1ABDCAA220C594AC0062DE71 /* MLCommonSegmentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MLCommonSegmentView.xib; sourceTree = "<group>"; };
 		1AEB87DA209218D3002230A3 /* MolueCryption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MolueCryption.swift; sourceTree = "<group>"; };
@@ -167,12 +159,9 @@
 			children = (
 				1AA7823120CCFE5600088923 /* CommonPhoto */,
 				1A43BC3520C4031D0093855B /* MLCommonInputView.swift */,
-				1A43BC3720C403330093855B /* MLCommonInputView.xib */,
 				1A43BC3920C4063E0093855B /* MLContainerView.swift */,
 				1A43BC3B20C40FA30093855B /* MLCommonSelectView.swift */,
-				1A43BC3D20C40FC60093855B /* MLCommonSelectView.xib */,
 				1ABDCA9C20C5946B0062DE71 /* MLCommonClickView.swift */,
-				1ABDCA9E20C5947E0062DE71 /* MLCommonClickView.xib */,
 				1ABDCAA020C594A50062DE71 /* MLCommonSegmentView.swift */,
 				1ABDCAA220C594AC0062DE71 /* MLCommonSegmentView.xib */,
 			);
@@ -269,7 +258,6 @@
 			isa = PBXGroup;
 			children = (
 				1A98F29E20C96E87000D0F8F /* MLCommonPhotoView.swift */,
-				1A98F2A020C96E9D000D0F8F /* MLCommonPhotoView.xib */,
 				1A98F2A220C972ED000D0F8F /* MLCommonPhotoCell.swift */,
 				1A98F2A320C972ED000D0F8F /* MLCommonPhotoCell.xib */,
 				1A98F2A620C97331000D0F8F /* MLCommonAddPhotoCell.swift */,
@@ -423,13 +411,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AA7825820CEA01500088923 /* MLDatePickerViewController.storyboard in Resources */,
-				1ABDCA9F20C5947E0062DE71 /* MLCommonClickView.xib in Resources */,
-				1A43BC3E20C40FC60093855B /* MLCommonSelectView.xib in Resources */,
 				1A65039220DD54F20017F91D /* MolueCommon.xcassets in Resources */,
-				1A43BC3820C403330093855B /* MLCommonInputView.xib in Resources */,
 				1A52756B20D523B500CA0D68 /* MLSignleSelectTableCell.xib in Resources */,
 				1ABDCAA320C594AC0062DE71 /* MLCommonSegmentView.xib in Resources */,
-				1A98F2A120C96E9D000D0F8F /* MLCommonPhotoView.xib in Resources */,
 				1A98F2A920C97331000D0F8F /* MLCommonAddPhotoCell.xib in Resources */,
 				1AA7823620CCFF3B00088923 /* MLSelectedTableViewCell.xib in Resources */,
 				1A98F2A520C972ED000D0F8F /* MLCommonPhotoCell.xib in Resources */,

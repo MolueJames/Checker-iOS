@@ -30,28 +30,28 @@
                                         <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H1z-Xr-6AF" customClass="MLContainerView" customModule="MolueCommon">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H1z-Xr-6AF" customClass="MLCommonInputView" customModule="MolueCommon">
                                         <rect key="frame" x="0.0" y="30" width="375" height="55"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="55" id="DKF-7B-nVx"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9SW-Gp-wur" customClass="MLContainerView" customModule="MolueCommon">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9SW-Gp-wur" customClass="MLCommonInputView" customModule="MolueCommon">
                                         <rect key="frame" x="0.0" y="85" width="375" height="55"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="55" id="aGd-9u-seJ"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pyc-jc-FUm" customClass="MLContainerView" customModule="MolueCommon">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pyc-jc-FUm" customClass="MLCommonInputView" customModule="MolueCommon">
                                         <rect key="frame" x="0.0" y="140" width="375" height="55"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="55" id="Ep9-nf-qGn"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pkm-cH-MwA" customClass="MLContainerView" customModule="MolueCommon">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pkm-cH-MwA" customClass="MLCommonClickView" customModule="MolueCommon">
                                         <rect key="frame" x="0.0" y="195" width="375" height="55"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -67,28 +67,28 @@
                                         <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TPj-6h-RLC" customClass="MLContainerView" customModule="MolueCommon">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TPj-6h-RLC" customClass="MLCommonInputView" customModule="MolueCommon">
                                         <rect key="frame" x="0.0" y="280" width="375" height="55"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="55" id="hH1-z5-4vg"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3wU-jg-k1C" customClass="MLContainerView" customModule="MolueCommon">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3wU-jg-k1C" customClass="MLCommonInputView" customModule="MolueCommon">
                                         <rect key="frame" x="0.0" y="335" width="375" height="55"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="55" id="MoH-Ow-c83"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="72p-9m-ECo" customClass="MLContainerView" customModule="MolueCommon">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="72p-9m-ECo" customClass="MLCommonInputView" customModule="MolueCommon">
                                         <rect key="frame" x="0.0" y="390" width="375" height="55"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="55" id="64a-CG-MXP"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CZQ-Co-RxQ" customClass="MLContainerView" customModule="MolueCommon">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CZQ-Co-RxQ" customClass="MLCommonInputView" customModule="MolueCommon">
                                         <rect key="frame" x="0.0" y="445" width="375" height="55"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -142,19 +142,19 @@
                         <viewLayoutGuide key="safeArea" id="5UM-U4-bRw"/>
                     </view>
                     <connections>
-                        <outlet property="EmailContainerView" destination="72p-9m-ECo" id="tSD-dP-P0p"/>
-                        <outlet property="addressContainerView" destination="pkm-cH-MwA" id="KjC-TQ-am8"/>
-                        <outlet property="contactNoContainerView" destination="Pyc-jc-FUm" id="Tol-Gy-ghr"/>
-                        <outlet property="faxNumberContainerView" destination="3wU-jg-k1C" id="riR-Nf-OIz"/>
-                        <outlet property="phoneNoContainerView" destination="9SW-Gp-wur" id="YeG-VS-upQ"/>
-                        <outlet property="postalCodeContainerView" destination="TPj-6h-RLC" id="j65-WY-Jh4"/>
-                        <outlet property="representContainerView" destination="H1z-Xr-6AF" id="D2w-9O-gLP"/>
-                        <outlet property="websiteContainerView" destination="CZQ-Co-RxQ" id="IpK-kg-V7N"/>
+                        <outlet property="addressInputView" destination="pkm-cH-MwA" id="sXm-ib-4dL"/>
+                        <outlet property="contactNoInputView" destination="Pyc-jc-FUm" id="wZ0-EX-6ht"/>
+                        <outlet property="emailInputView" destination="72p-9m-ECo" id="NZA-k9-h1R"/>
+                        <outlet property="faxNumberInputView" destination="3wU-jg-k1C" id="Zk0-hj-kHr"/>
+                        <outlet property="phoneNoInputView" destination="9SW-Gp-wur" id="ylQ-hw-AL8"/>
+                        <outlet property="postalCodeInputView" destination="TPj-6h-RLC" id="rzn-0k-1sJ"/>
+                        <outlet property="resresentInputView" destination="H1z-Xr-6AF" id="zua-JO-WLJ"/>
+                        <outlet property="websiteInputView" destination="CZQ-Co-RxQ" id="WVM-se-xQV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mr1-6R-Eb4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="148" y="107"/>
+            <point key="canvasLocation" x="500" y="86"/>
         </scene>
     </scenes>
 </document>

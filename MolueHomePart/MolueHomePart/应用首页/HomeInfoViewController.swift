@@ -16,11 +16,9 @@ import MolueNetwork
 import MolueNavigator
 import MolueFoundation
 import ViewAnimator
-protocol HomeInfoDataProtocol: MLImpDataManagerProtocol {
-    
-}
 
-protocol HomeInfoNavigatorProtocol: MLAppImpNavigatorProtocol {
+protocol HomeInfoNavigatorProtocol: MLAppNavigatorProtocol {
+    
     func pushToEnterpriseInfo()
     
     func pushToSelfRiskCheck()
@@ -30,12 +28,10 @@ protocol HomeInfoNavigatorProtocol: MLAppImpNavigatorProtocol {
     func pushToPolicyNotice()
 }
 
-class HomeInfoViewController: MLBaseViewController, MLDataManagerProtocol, MLAppNavigatorProtocol {
-    typealias NavigatorTarget = HomeInfoNavigator
-    typealias DataManagerTarget = HomeInfoDataManager
+class HomeInfoViewController: MLBaseViewController  {
     
     internal var dataManager = HomeInfoDataManager()
-    internal var navigator = HomeInfoNavigator()
+    internal var navigator: HomeInfoNavigatorProtocol = HomeInfoNavigator()
     
     private let disposeBag = DisposeBag()
     
@@ -61,7 +57,7 @@ class HomeInfoViewController: MLBaseViewController, MLDataManagerProtocol, MLApp
             self.navigator.pushToLawRegulation()
         }).disposed(by: disposeBag)
         self.headerView.educationCommand.subscribe(onNext: { _ in
-            
+        
         }).disposed(by: disposeBag)
         self.headerView.dataRecordCommand.subscribe(onNext: { _ in
             

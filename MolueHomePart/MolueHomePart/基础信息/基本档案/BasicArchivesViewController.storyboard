@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -36,35 +36,35 @@
                                     <constraint firstItem="Gah-MW-SpW" firstAttribute="leading" secondItem="esp-SR-R94" secondAttribute="leading" constant="20" id="liP-m9-L9t"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9W5-3I-hog" customClass="MLContainerView" customModule="MolueCommon">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9W5-3I-hog" customClass="MLCommonInputView" customModule="MolueCommon">
                                 <rect key="frame" x="0.0" y="75" width="375" height="55"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="Gjp-1y-TIr"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xFI-t7-XAW" customClass="MLContainerView" customModule="MolueCommon">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xFI-t7-XAW" customClass="MLCommonSelectView" customModule="MolueCommon">
                                 <rect key="frame" x="0.0" y="150" width="375" height="55"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="SP5-Fh-EjR"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4lC-jy-FSK" customClass="MLContainerView" customModule="MolueCommon">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4lC-jy-FSK" customClass="MLCommonSelectView" customModule="MolueCommon">
                                 <rect key="frame" x="0.0" y="205" width="375" height="55"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="tZ7-rG-TXT"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="08u-FG-CmZ" customClass="MLContainerView" customModule="MolueCommon">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="08u-FG-CmZ" customClass="MLCommonSelectView" customModule="MolueCommon">
                                 <rect key="frame" x="0.0" y="260" width="375" height="55"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="6Dw-Nh-eJJ"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cW7-Yu-RHw" customClass="MLContainerView" customModule="MolueCommon">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cW7-Yu-RHw" customClass="MLCommonSelectView" customModule="MolueCommon">
                                 <rect key="frame" x="0.0" y="315" width="375" height="55"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -96,11 +96,11 @@
                         <viewLayoutGuide key="safeArea" id="vYz-Ov-5Gd"/>
                     </view>
                     <connections>
-                        <outlet property="CodeContainerView" destination="9W5-3I-hog" id="sjn-Fe-f75"/>
-                        <outlet property="DivisionContainerView" destination="xFI-t7-XAW" id="fud-jY-My5"/>
-                        <outlet property="LevelContainerView" destination="cW7-Yu-RHw" id="PCM-Rw-7Eo"/>
-                        <outlet property="ScaleContainerView" destination="4lC-jy-FSK" id="8Wo-Zm-xxO"/>
-                        <outlet property="TypesContainerView" destination="08u-FG-CmZ" id="ymE-ts-3jk"/>
+                        <outlet property="codeInputView" destination="9W5-3I-hog" id="e1E-MO-VkY"/>
+                        <outlet property="divisionSelectView" destination="xFI-t7-XAW" id="s2B-te-ymH"/>
+                        <outlet property="levelSelectView" destination="cW7-Yu-RHw" id="5q8-d4-vZ8"/>
+                        <outlet property="scaleSelectView" destination="4lC-jy-FSK" id="PUo-wf-bUQ"/>
+                        <outlet property="typesSelectView" destination="08u-FG-CmZ" id="1xh-tw-Ibj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nrc-WP-I9C" userLabel="First Responder" sceneMemberID="firstResponder"/>
