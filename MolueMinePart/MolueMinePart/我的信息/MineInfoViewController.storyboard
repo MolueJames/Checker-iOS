@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Mine Info View Controller-->
+        <scene sceneID="GtE-lZ-hGu">
+            <objects>
+                <viewController storyboardIdentifier="MineInfoViewController" id="5KR-OA-Jaq" customClass="MineInfoViewController" customModule="MolueMinePart" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mBC-2x-0N5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Tg9-jj-iz1">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="f67-yl-rOn" firstAttribute="trailing" secondItem="Tg9-jj-iz1" secondAttribute="trailing" id="53E-IF-NAu"/>
+                            <constraint firstItem="f67-yl-rOn" firstAttribute="bottom" secondItem="Tg9-jj-iz1" secondAttribute="bottom" id="aWU-EV-G0C"/>
+                            <constraint firstItem="Tg9-jj-iz1" firstAttribute="leading" secondItem="f67-yl-rOn" secondAttribute="leading" id="fp0-8F-krW"/>
+                            <constraint firstItem="Tg9-jj-iz1" firstAttribute="top" secondItem="f67-yl-rOn" secondAttribute="top" id="xsI-Uu-xkX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="f67-yl-rOn"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="Tg9-jj-iz1" id="reW-jA-Dp0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lnw-eU-Udu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="95" y="171"/>
+        </scene>
+    </scenes>
+</document>

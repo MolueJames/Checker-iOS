@@ -8,53 +8,64 @@
 
 import Foundation
 
-public protocol MLListDataHelperProtocol {
+public protocol MLNeedListDataProtocol {
     
     associatedtype ItemTarget
     
     var items: [ItemTarget] {get set}
-    
+}
+
+public protocol MLDataManagerProtocol {}
+
+public protocol MLListDataManagerProtocol: MLDataManagerProtocol {
     func count() -> Int
     
-    mutating func append(item: ItemTarget)
+    mutating func append<Target>(item: Target)
     
-    mutating func append(newItems: [ItemTarget])
+    mutating func append<Target>(items: [Target])
     
     mutating func remove(at index: Int)
     
-    func item(at index: Int) -> ItemTarget
+    func item<Target>(at index: Int) -> Target
+    
+    mutating func replace<Target>(index: Int, new: Target)
 }
 
-public extension MLListDataHelperProtocol {
-    func count() -> Int {
-        return items.count
-    }
-    
-    mutating func append(item: ItemTarget) {
-        objc_sync_enter(self)
-        defer{objc_sync_exit(self)}
-        items.append(item)
-    }
-    
-    mutating func append(newItems: [ItemTarget]) {
-        objc_sync_enter(self)
-        defer{objc_sync_exit(self)}
-        items.append(contentsOf: newItems)
-    }
-    
+public extension MLListDataManagerProtocol where Self: MLNeedListDataProtocol {
     mutating func remove(at index: Int) {
         objc_sync_enter(self)
         defer{objc_sync_exit(self)}
-        items.remove(at: index)
+        self.items.remove(at: index)
     }
-    
-    func item(at index: Int) -> ItemTarget {
-        return items[index]
+    func item<Target>(at index: Int) -> Target {
+        objc_sync_enter(self); defer{objc_sync_exit(self)}
+        guard let item = self.items[index] as? Target else {
+            fatalError("the item is not Target")
+        }
+        return item
     }
-    
-    mutating func replace(index: Int, new: ItemTarget) {
-        objc_sync_enter(self)
-        defer{objc_sync_exit(self)}
-        items[index] = new
+    mutating func replace<Target>(index: Int, new: Target) {
+        objc_sync_enter(self); defer{objc_sync_exit(self)}
+        guard let newValue = new as? Self.ItemTarget else {
+            fatalError("the new is not ItemTarget")
+        }
+        self.items[index] = newValue
+    }
+    mutating func append<Target>(item: Target) {
+        objc_sync_enter(self); defer{objc_sync_exit(self)}
+        guard let newItem = item as? Self.ItemTarget else {
+            fatalError("the item is not ItemTarget")
+        }
+        self.items.append(newItem)
+    }
+    mutating func append<Target>(items: [Target]) {
+        objc_sync_enter(self); defer{objc_sync_exit(self)}
+        guard let newItems = items as? [Self.ItemTarget] else {
+            fatalError("the items is not [ItemTarget]")
+        }
+        self.items.append(contentsOf:newItems)
+    }
+    func count() -> Int {
+        return self.items.count
     }
 }

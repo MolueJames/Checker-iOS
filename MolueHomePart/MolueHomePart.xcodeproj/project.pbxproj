@@ -41,6 +41,10 @@
 		1A602F8520A87D58003AD583 /* HomeInfoTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A602F8420A87D58003AD583 /* HomeInfoTableHeaderView.swift */; };
 		1A602F8C20A88095003AD583 /* HomeInfoTableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A602F8B20A88095003AD583 /* HomeInfoTableHeaderView.xib */; };
 		1A65039620DD552B0017F91D /* MolueHome.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A65039520DD552A0017F91D /* MolueHome.xcassets */; };
+		1A730AEB20EBBC02008831BC /* PolicyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A730AEA20EBBC02008831BC /* PolicyDetailViewController.swift */; };
+		1A730AED20EBBC2E008831BC /* RegulationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A730AEC20EBBC2E008831BC /* RegulationDetailViewController.swift */; };
+		1A730AEF20EBBC49008831BC /* PolicyDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A730AEE20EBBC49008831BC /* PolicyDetailViewController.storyboard */; };
+		1A730AF120EBBC5E008831BC /* RegulationDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A730AF020EBBC5E008831BC /* RegulationDetailViewController.storyboard */; };
 		1AAF7B6720C1970A0051EC18 /* EnterpriseInfoViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AAF7B6520C1970A0051EC18 /* EnterpriseInfoViewController.storyboard */; };
 		1AAF7B6820C1970A0051EC18 /* EnterpriseInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAF7B6620C1970A0051EC18 /* EnterpriseInfoViewController.swift */; };
 		1AAF7B7E20C1971B0051EC18 /* BasicArchivesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAF7B6A20C1971B0051EC18 /* BasicArchivesViewController.swift */; };
@@ -115,6 +119,10 @@
 		1A602F8420A87D58003AD583 /* HomeInfoTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInfoTableHeaderView.swift; sourceTree = "<group>"; };
 		1A602F8B20A88095003AD583 /* HomeInfoTableHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeInfoTableHeaderView.xib; sourceTree = "<group>"; };
 		1A65039520DD552A0017F91D /* MolueHome.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MolueHome.xcassets; sourceTree = "<group>"; };
+		1A730AEA20EBBC02008831BC /* PolicyDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyDetailViewController.swift; sourceTree = "<group>"; };
+		1A730AEC20EBBC2E008831BC /* RegulationDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegulationDetailViewController.swift; sourceTree = "<group>"; };
+		1A730AEE20EBBC49008831BC /* PolicyDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PolicyDetailViewController.storyboard; sourceTree = "<group>"; };
+		1A730AF020EBBC5E008831BC /* RegulationDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegulationDetailViewController.storyboard; sourceTree = "<group>"; };
 		1AAF7B6520C1970A0051EC18 /* EnterpriseInfoViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EnterpriseInfoViewController.storyboard; sourceTree = "<group>"; };
 		1AAF7B6620C1970A0051EC18 /* EnterpriseInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterpriseInfoViewController.swift; sourceTree = "<group>"; };
 		1AAF7B6A20C1971B0051EC18 /* BasicArchivesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicArchivesViewController.swift; sourceTree = "<group>"; };
@@ -213,6 +221,7 @@
 		1A24021D20E52F3700FC3EBA /* 法律法规 */ = {
 			isa = PBXGroup;
 			children = (
+				1A730AE820EBBBCD008831BC /* 法规详情 */,
 				1A24022F20E5390000FC3EBA /* Models */,
 				1A24022E20E538FA00FC3EBA /* Views */,
 				1A24021F20E52F7800FC3EBA /* LawRegulationViewController.swift */,
@@ -224,6 +233,7 @@
 		1A24021E20E52F4C00FC3EBA /* 政策通知 */ = {
 			isa = PBXGroup;
 			children = (
+				1A730AE920EBBBE7008831BC /* 政策详情 */,
 				1A24023120E5390D00FC3EBA /* Models */,
 				1A24023020E5390700FC3EBA /* Views */,
 				1A24022120E52FA800FC3EBA /* PolicyNoticeViewController.swift */,
@@ -328,6 +338,24 @@
 				1A43BC2820C3AF2B0093855B /* HomeInfoHeaderView.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		1A730AE820EBBBCD008831BC /* 法规详情 */ = {
+			isa = PBXGroup;
+			children = (
+				1A730AEC20EBBC2E008831BC /* RegulationDetailViewController.swift */,
+				1A730AF020EBBC5E008831BC /* RegulationDetailViewController.storyboard */,
+			);
+			path = "法规详情";
+			sourceTree = "<group>";
+		};
+		1A730AE920EBBBE7008831BC /* 政策详情 */ = {
+			isa = PBXGroup;
+			children = (
+				1A730AEA20EBBC02008831BC /* PolicyDetailViewController.swift */,
+				1A730AEE20EBBC49008831BC /* PolicyDetailViewController.storyboard */,
+			);
+			path = "政策详情";
 			sourceTree = "<group>";
 		};
 		1AAF7B6420C1970A0051EC18 /* 基础信息 */ = {
@@ -558,6 +586,8 @@
 				1ABDCA9720C5721B0062DE71 /* IncreaseAdminiFooterView.xib in Resources */,
 				1A24022420E5309100FC3EBA /* LawRegulationViewController.storyboard in Resources */,
 				1AAF7B8620C1971B0051EC18 /* DangerMachineryViewController.storyboard in Resources */,
+				1A730AEF20EBBC49008831BC /* PolicyDetailViewController.storyboard in Resources */,
+				1A730AF120EBBC5E008831BC /* RegulationDetailViewController.storyboard in Resources */,
 				1AAF7B8A20C1971B0051EC18 /* RiskFeatureViewController.storyboard in Resources */,
 				1A602F8C20A88095003AD583 /* HomeInfoTableHeaderView.xib in Resources */,
 				1ABDCA9B20C5798B0062DE71 /* SecurityAdminiTableViewCell.xib in Resources */,
@@ -622,6 +652,7 @@
 				1A24022220E52FA800FC3EBA /* PolicyNoticeViewController.swift in Sources */,
 				1A24022020E52F7800FC3EBA /* LawRegulationViewController.swift in Sources */,
 				1AAF7B8720C1971B0051EC18 /* DangerMachineryViewController.swift in Sources */,
+				1A730AEB20EBBC02008831BC /* PolicyDetailViewController.swift in Sources */,
 				1A5014A420944DFE00DB931E /* HomeInfoViewController.swift in Sources */,
 				1A43BC2720C3AF190093855B /* HomeInfoHeaderView.swift in Sources */,
 				1AAF7B8120C1971B0051EC18 /* IncreaseAdminiViewController.swift in Sources */,
@@ -635,6 +666,7 @@
 				1A35D7F820DBC999002ED3CB /* HomeInfoDataManager.swift in Sources */,
 				1AEEC11E20E515CC006C3B75 /* HomeInfoNavigator.swift in Sources */,
 				1AAF7B8820C1971B0051EC18 /* EnterpriseRiskViewController.swift in Sources */,
+				1A730AED20EBBC2E008831BC /* RegulationDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

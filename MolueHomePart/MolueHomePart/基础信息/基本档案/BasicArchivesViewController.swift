@@ -13,6 +13,11 @@ import MolueCommon
 class BasicArchivesViewController: MLBaseViewController {
     let disposeBag = DisposeBag()
 
+    @IBOutlet weak var nameTitleView: MLCommonTitleView! {
+        didSet {
+            nameTitleView.defaultValue(title: "财荣金属制品(太仓)有限公司")
+        }
+    }
     @IBOutlet weak var codeInputView: MLCommonInputView! {
         didSet {
             codeInputView.defaultValue(title: "信用代码", placeholder: "请输入18位统一社会信用代码", keyboardType: .numberPad)

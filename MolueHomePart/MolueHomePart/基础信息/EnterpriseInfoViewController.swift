@@ -15,9 +15,13 @@ protocol EnterpriseInfoNavigatorProtocol: MLAppNavigatorProtocol {
     func pushToController(path: String)
 }
 
+protocol EnterpriseInfoDataProtocol: MLListDataManagerProtocol {
+    
+}
+
 class EnterpriseInfoViewController: MLBaseViewController {
     internal var navigator: EnterpriseInfoNavigatorProtocol = EnterpriseInfoNavigator()
-    internal var dataManager = EnterpriseInfoDataManager()
+    internal var dataManager: EnterpriseInfoDataProtocol = EnterpriseInfoDataManager()
     
     @IBOutlet weak var informationTableView: UITableView! {
         didSet {
@@ -45,7 +49,7 @@ extension EnterpriseInfoViewController: UITableViewDelegate {
         return 95
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let item = self.dataManager.item(at: indexPath.row)
+        let item: EnterpriseInfoModel = self.dataManager.item(at: indexPath.row)
         self.navigator.pushToController(path: item.viewPath)
     }
 }
@@ -56,7 +60,7 @@ extension EnterpriseInfoViewController: UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:EnterpriseInfoTableViewCell! = tableView.dequeueReusableCell(withClass: EnterpriseInfoTableViewCell.self)
-        let item = self.dataManager.item(at: indexPath.row)
+        let item: EnterpriseInfoModel = self.dataManager.item(at: indexPath.row)
         cell.setEnterpriseInfoModel(item)
         return cell
     }

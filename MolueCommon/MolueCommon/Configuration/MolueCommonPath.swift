@@ -38,7 +38,7 @@ public enum HomePath: String {
 
 public enum MinePath: String {
     /// 个人信息
-    case MineInfo = "MineInformationViewController"
+    case MineInfo = "MineInfoViewController"
 }
 
 public enum RiskPath: String {
