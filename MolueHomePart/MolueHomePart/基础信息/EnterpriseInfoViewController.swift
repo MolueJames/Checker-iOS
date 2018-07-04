@@ -20,8 +20,8 @@ protocol EnterpriseInfoDataProtocol: MLListDataManagerProtocol {
 }
 
 class EnterpriseInfoViewController: MLBaseViewController {
-    internal var navigator: EnterpriseInfoNavigatorProtocol = EnterpriseInfoNavigator()
-    internal var dataManager: EnterpriseInfoDataProtocol = EnterpriseInfoDataManager()
+    private let navigator: EnterpriseInfoNavigatorProtocol = EnterpriseInfoNavigator()
+    private let dataManager: EnterpriseInfoDataProtocol = EnterpriseInfoDataManager()
     
     @IBOutlet weak var informationTableView: UITableView! {
         didSet {

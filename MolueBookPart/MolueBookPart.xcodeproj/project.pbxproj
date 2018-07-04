@@ -16,6 +16,9 @@
 		1A06557420A9E30F0016CA86 /* MolueUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A06557320A9E30F0016CA86 /* MolueUtilities.framework */; };
 		1A06557820A9E3E90016CA86 /* BookInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A06557720A9E3E90016CA86 /* BookInfoViewController.swift */; };
 		1A06557A20A9E4070016CA86 /* BookInfoViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A06557920A9E4070016CA86 /* BookInfoViewController.storyboard */; };
+		1A10850220ED0E17004E365A /* BookInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A10850020ED0E17004E365A /* BookInfoTableViewCell.swift */; };
+		1A10850320ED0E17004E365A /* BookInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A10850120ED0E17004E365A /* BookInfoTableViewCell.xib */; };
+		1A10850520ED0FB2004E365A /* BookInfoSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A10850420ED0FB2004E365A /* BookInfoSectionView.swift */; };
 		1A65039A20DD553F0017F91D /* MolueBook.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A65039920DD553F0017F91D /* MolueBook.xcassets */; };
 		1AA7358D20A9E19700DF7CD0 /* MolueBookPart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA7358320A9E19700DF7CD0 /* MolueBookPart.framework */; };
 		1AA7359220A9E19700DF7CD0 /* MolueBookPartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA7359120A9E19700DF7CD0 /* MolueBookPartTests.swift */; };
@@ -41,6 +44,9 @@
 		1A06557320A9E30F0016CA86 /* MolueUtilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueUtilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A06557720A9E3E90016CA86 /* BookInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookInfoViewController.swift; sourceTree = "<group>"; };
 		1A06557920A9E4070016CA86 /* BookInfoViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BookInfoViewController.storyboard; sourceTree = "<group>"; };
+		1A10850020ED0E17004E365A /* BookInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookInfoTableViewCell.swift; sourceTree = "<group>"; };
+		1A10850120ED0E17004E365A /* BookInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookInfoTableViewCell.xib; sourceTree = "<group>"; };
+		1A10850420ED0FB2004E365A /* BookInfoSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookInfoSectionView.swift; sourceTree = "<group>"; };
 		1A65039920DD553F0017F91D /* MolueBook.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MolueBook.xcassets; sourceTree = "<group>"; };
 		1AA7358320A9E19700DF7CD0 /* MolueBookPart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MolueBookPart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AA7358620A9E19700DF7CD0 /* MolueBookPart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MolueBookPart.h; sourceTree = "<group>"; };
@@ -79,7 +85,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1A06556720A9E2F70016CA86 /* MolueBookInfo */ = {
+		1A06556720A9E2F70016CA86 /* 文书列表 */ = {
 			isa = PBXGroup;
 			children = (
 				1A24023620E539FC00FC3EBA /* Models */,
@@ -87,7 +93,7 @@
 				1A06557720A9E3E90016CA86 /* BookInfoViewController.swift */,
 				1A06557920A9E4070016CA86 /* BookInfoViewController.storyboard */,
 			);
-			path = MolueBookInfo;
+			path = "文书列表";
 			sourceTree = "<group>";
 		};
 		1A06556820A9E30F0016CA86 /* Frameworks */ = {
@@ -107,6 +113,9 @@
 		1A24023520E539F000FC3EBA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1A10850020ED0E17004E365A /* BookInfoTableViewCell.swift */,
+				1A10850120ED0E17004E365A /* BookInfoTableViewCell.xib */,
+				1A10850420ED0FB2004E365A /* BookInfoSectionView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -142,7 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				1A65039920DD553F0017F91D /* MolueBook.xcassets */,
-				1A06556720A9E2F70016CA86 /* MolueBookInfo */,
+				1A06556720A9E2F70016CA86 /* 文书列表 */,
 				1AA7358620A9E19700DF7CD0 /* MolueBookPart.h */,
 				1AA7358720A9E19700DF7CD0 /* Info.plist */,
 			);
@@ -260,6 +269,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A10850320ED0E17004E365A /* BookInfoTableViewCell.xib in Resources */,
 				1A06557A20A9E4070016CA86 /* BookInfoViewController.storyboard in Resources */,
 				1A65039A20DD553F0017F91D /* MolueBook.xcassets in Resources */,
 			);
@@ -300,7 +310,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A10850220ED0E17004E365A /* BookInfoTableViewCell.swift in Sources */,
 				1A06557820A9E3E90016CA86 /* BookInfoViewController.swift in Sources */,
+				1A10850520ED0FB2004E365A /* BookInfoSectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

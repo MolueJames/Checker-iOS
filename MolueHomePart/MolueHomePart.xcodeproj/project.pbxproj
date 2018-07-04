@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1A06557D20A9EE020016CA86 /* HomeInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A06557B20A9EE020016CA86 /* HomeInfoTableViewCell.swift */; };
 		1A06557E20A9EE020016CA86 /* HomeInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A06557C20A9EE020016CA86 /* HomeInfoTableViewCell.xib */; };
+		1A1084FD20ECF1DD004E365A /* IncreaseAdminiNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1084FC20ECF1DD004E365A /* IncreaseAdminiNavigator.swift */; };
+		1A1084FF20ECF1FC004E365A /* IncreaseAdminiDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1084FE20ECF1FC004E365A /* IncreaseAdminiDataManager.swift */; };
 		1A1B88CD20864D9500C5F4D9 /* MolueHomePart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A1B88C320864D9500C5F4D9 /* MolueHomePart.framework */; };
 		1A1B88D220864D9500C5F4D9 /* MolueHomePartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1B88D120864D9500C5F4D9 /* MolueHomePartTests.swift */; };
 		1A1B88D420864D9500C5F4D9 /* MolueHomePart.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A1B88C620864D9500C5F4D9 /* MolueHomePart.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -83,6 +85,8 @@
 		010F6973D5E1725577EE6B03 /* Pods_MolueHomePart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MolueHomePart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A06557B20A9EE020016CA86 /* HomeInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInfoTableViewCell.swift; sourceTree = "<group>"; };
 		1A06557C20A9EE020016CA86 /* HomeInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeInfoTableViewCell.xib; sourceTree = "<group>"; };
+		1A1084FC20ECF1DD004E365A /* IncreaseAdminiNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncreaseAdminiNavigator.swift; sourceTree = "<group>"; };
+		1A1084FE20ECF1FC004E365A /* IncreaseAdminiDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncreaseAdminiDataManager.swift; sourceTree = "<group>"; };
 		1A1B88C320864D9500C5F4D9 /* MolueHomePart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MolueHomePart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A1B88C620864D9500C5F4D9 /* MolueHomePart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MolueHomePart.h; sourceTree = "<group>"; };
 		1A1B88C720864D9500C5F4D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -174,6 +178,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A1084FB20ECF139004E365A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1A1084FC20ECF1DD004E365A /* IncreaseAdminiNavigator.swift */,
+				1A1084FE20ECF1FC004E365A /* IncreaseAdminiDataManager.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		1A1B88B920864D9500C5F4D9 = {
 			isa = PBXGroup;
 			children = (
@@ -397,6 +410,7 @@
 		1AAF7B6D20C1971B0051EC18 /* 添加管理员 */ = {
 			isa = PBXGroup;
 			children = (
+				1A1084FB20ECF139004E365A /* Models */,
 				1AAF7B6E20C1971B0051EC18 /* IncreaseAdminiViewController.storyboard */,
 				1AAF7B6F20C1971B0051EC18 /* IncreaseAdminiViewController.swift */,
 			);
@@ -655,12 +669,14 @@
 				1A730AEB20EBBC02008831BC /* PolicyDetailViewController.swift in Sources */,
 				1A5014A420944DFE00DB931E /* HomeInfoViewController.swift in Sources */,
 				1A43BC2720C3AF190093855B /* HomeInfoHeaderView.swift in Sources */,
+				1A1084FD20ECF1DD004E365A /* IncreaseAdminiNavigator.swift in Sources */,
 				1AAF7B8120C1971B0051EC18 /* IncreaseAdminiViewController.swift in Sources */,
 				1A602F8520A87D58003AD583 /* HomeInfoTableHeaderView.swift in Sources */,
 				1A24022D20E536A700FC3EBA /* SecurityAdminiDataManager.swift in Sources */,
 				1AAF7B6820C1970A0051EC18 /* EnterpriseInfoViewController.swift in Sources */,
 				1A06557D20A9EE020016CA86 /* HomeInfoTableViewCell.swift in Sources */,
 				1A43BC3320C3CEAA0093855B /* EnterpriseInfoModel.swift in Sources */,
+				1A1084FF20ECF1FC004E365A /* IncreaseAdminiDataManager.swift in Sources */,
 				1A24022B20E5363600FC3EBA /* SecurityAdminiNavigator.swift in Sources */,
 				1ABDCA9520C5720F0062DE71 /* IncreaseAdminiFooterView.swift in Sources */,
 				1A35D7F820DBC999002ED3CB /* HomeInfoDataManager.swift in Sources */,

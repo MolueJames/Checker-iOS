@@ -16,10 +16,21 @@ import ImagePicker
 import Kingfisher
 import ObjectMapper
 
+protocol IncreaseAdminiNavigatorProtocol: MLAppNavigatorProtocol {
+    func selectController(title: String, list: [MLSelectedTableViewModel]) -> MLSingleSelectController<MLSelectedTableViewModel>
+}
+
+protocol IncreaseAdminiDataProtocol: MLDataManagerProtocol {
+    var uploadImageLimit: Int {get}
+    var adminiTypeList: [MLSelectedTableViewModel] {get}
+    var fullTimeList: [MLSelectedTableViewModel] {get}
+}
 
 class IncreaseAdminiViewController: MLBaseViewController {
-    private let limitCount = 4
     private let disposeBag = DisposeBag()
+    private let dataManager: IncreaseAdminiDataProtocol = IncreaseAdminiDataManager()
+    private let navigator: IncreaseAdminiNavigatorProtocol = IncreaseAdminiNavigator()
+    
     //MARK: Interface Elements
     @IBOutlet private weak var usernameInputView: MLCommonInputView! {
         didSet {
@@ -38,9 +49,10 @@ class IncreaseAdminiViewController: MLBaseViewController {
     }
     @IBOutlet private weak var adminiTypeInputView: MLCommonClickView! {
         didSet {
-            adminiTypeInputView.defaultValue(title: "类型", placeholder: "请选择人员类型")
+            adminiTypeInputView.defaultValue(title: "职务", placeholder: "请选择人员职务")
             adminiTypeInputView.clickedCommand.subscribe(onNext: { [unowned self] (_) in
-                self.pushToAdminiType()
+                let list = self.dataManager.adminiTypeList
+                self.pushToSelectController(title: "人员职务", list: list)
             }).disposed(by: disposeBag)
         }
     }
@@ -62,9 +74,28 @@ class IncreaseAdminiViewController: MLBaseViewController {
     }
     @IBOutlet private weak var uploadPhotoInputView: MLCommonPhotoView! {
         didSet {
-            uploadPhotoInputView.defaultValue(title: "上传证书", list: [UIImage](), count: limitCount)
+            let count = self.dataManager.uploadImageLimit
+            uploadPhotoInputView.defaultValue(title: "上传证书", list: [UIImage](), count: count)
             uploadPhotoInputView.appendCommand.subscribe(onNext: { [unowned self] (leftCount) in
                 self.pushToImagePick(leftCount: leftCount)
+            }).disposed(by: disposeBag)
+        }
+    }
+    
+    @IBOutlet weak var telephoneInputView: MLCommonInputView! {
+        didSet {
+            telephoneInputView.defaultValue(title: "固话", placeholder: "请输入固话号码(选填)")
+            telephoneInputView.textChangedCommand.subscribe(onNext: { (value) in
+                
+            }).disposed(by: disposeBag)
+        }
+    }
+    @IBOutlet weak var fullTimeAdminiClickView: MLCommonClickView! {
+        didSet {
+            fullTimeAdminiClickView.defaultValue(title: "专职", placeholder: "请选择是否为专职安全员")
+            fullTimeAdminiClickView.clickedCommand.subscribe(onNext: { [unowned self] (value) in
+                let list = self.dataManager.fullTimeList
+                self.pushToSelectController(title: "安全员类型", list: list)
             }).disposed(by: disposeBag)
         }
     }
@@ -72,9 +103,9 @@ class IncreaseAdminiViewController: MLBaseViewController {
     private func pushToImagePick(leftCount: Int) {
         if leftCount > 0 {
             let pickerController = self.imagePickerController(leftCount)
-            self.present(pickerController, animated: false)
-//            self.navigationController?.pushViewController(pickerController, animated: true)
+            self.navigator.present(pickerController)
         } else {
+            let limitCount = self.dataManager.uploadImageLimit
             self.showWarningHUD(text: "对不起,只允许选择\(limitCount)张图片")
         }
     }
@@ -86,21 +117,23 @@ class IncreaseAdminiViewController: MLBaseViewController {
         return imagePickerController
     }
     
-    private func pushToAdminiType() {
-        let model1 = MLSelectedTableViewModel(title: "安全管理人", select: true, keyPath: "target1")
-        let model2 = MLSelectedTableViewModel(title: "安全负责人", select: false, keyPath: "target2")
-        let list = [model1, model2]
-        let controller = MLSingleSelectController<MLSelectedTableViewModel>()
-        controller.updateValues(title: "人员类型", list: list)
-        controller.delegate = self
-        self.navigationController?.pushViewController(controller, animated: true)
+    private func pushToSelectController(title: String, list: [MLSelectedTableViewModel]) {
+        let list = self.dataManager.fullTimeList
+        let controller = self.navigator.selectController(title: "安全员类型", list: list)
+        controller.selectCommand.subscribe(onNext: { [unowned self] (model) in
+            self.fullTimeAdminiClickView.update(description: model.description)
+        }).disposed(by: disposeBag)
+        self.navigator.push(controller)
     }
+    
     private func presentDatePicker() {
         let router = MolueNavigatorRouter(.Common, path: CommonPath.datePicker.rawValue)
         let controller: MLDatePickerViewController! = MolueAppRouter.shared.viewController(router)
         controller.modalPresentationStyle = .overCurrentContext
-        controller.delegate = self
-        self.present(controller, animated: true, completion: nil)
+        controller.selectDateCommand.subscribe(onNext: { [unowned self] (date, string) in
+            self.updateDeadLineValue(date: date, string: string)
+        }).disposed(by: disposeBag)
+        self.navigator.present(controller)
     }
     private func updateDeadLineValue(date: Date, string: String) {
         self.deadLineInputView.update(description: string)
@@ -143,12 +176,4 @@ extension IncreaseAdminiViewController: MolueNavigatorProtocol {
     }
 }
 
-extension IncreaseAdminiViewController: MLSelectedSignleProtocol, MLDatePickerProtocol {
-    func selectDate(_ date: Date, string: String, controller: MLDatePickerViewController) {
-        self.updateDeadLineValue(date: date, string: string)
-    }
-    
-    func selected<T>(controller: MLSingleSelectController<T>, value: T) where T : CustomStringConvertible {
-        self.adminiTypeInputView.update(description: value.description)
-    }
-}
+

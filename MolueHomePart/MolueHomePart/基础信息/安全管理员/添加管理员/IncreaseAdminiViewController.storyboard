@@ -37,29 +37,43 @@
                                             <constraint firstAttribute="height" constant="55" id="y7S-aq-tAO"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OgB-VC-tsb" customClass="MLCommonInputView" customModule="MolueCommon">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OgB-VC-tsb" customClass="MLCommonClickView" customModule="MolueCommon">
                                         <rect key="frame" x="0.0" y="85" width="375" height="55"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="55" id="mxx-ul-kFE"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nOC-ng-Zv8" customClass="MLCommonInputView" customModule="MolueCommon">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nOC-ng-Zv8" customClass="MLCommonClickView" customModule="MolueCommon">
                                         <rect key="frame" x="0.0" y="140" width="375" height="55"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="55" id="blm-0q-ZLf"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HUU-Im-RPI" customClass="MLCommonClickView" customModule="MolueCommon">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HUU-Im-RPI" customClass="MLCommonInputView" customModule="MolueCommon">
                                         <rect key="frame" x="0.0" y="195" width="375" height="55"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="55" id="hbI-t9-ktE"/>
                                         </constraints>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="82l-oY-vDE" customClass="MLCommonInputView" customModule="MolueCommon">
+                                        <rect key="frame" x="0.0" y="250" width="375" height="55"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="djP-el-B0s"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eNX-Sf-NRi" customClass="MLCommonInputView" customModule="MolueCommon">
+                                        <rect key="frame" x="0.0" y="305" width="375" height="55"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="BPI-3v-XyT"/>
+                                        </constraints>
+                                    </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="证书信息" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A1n-hI-G6z">
-                                        <rect key="frame" x="20" y="250" width="355" height="30"/>
+                                        <rect key="frame" x="20" y="360" width="355" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="MoE-TC-gN0"/>
                                         </constraints>
@@ -68,21 +82,21 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yOM-hU-FzV" customClass="MLCommonInputView" customModule="MolueCommon">
-                                        <rect key="frame" x="0.0" y="280" width="375" height="55"/>
+                                        <rect key="frame" x="0.0" y="390" width="375" height="55"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="55" id="YCd-3I-hTe"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3xb-7J-fht" customClass="MLCommonClickView" customModule="MolueCommon">
-                                        <rect key="frame" x="0.0" y="335" width="375" height="55"/>
+                                        <rect key="frame" x="0.0" y="445" width="375" height="55"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="55" id="opR-Ak-A5N"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QgD-ra-SGn" customClass="MLCommonPhotoView" customModule="MolueCommon">
-                                        <rect key="frame" x="0.0" y="390" width="375" height="120"/>
+                                        <rect key="frame" x="0.0" y="500" width="375" height="120"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="120" id="Fgi-xO-AEP"/>
@@ -96,22 +110,28 @@
                                     <constraint firstItem="OgB-VC-tsb" firstAttribute="leading" secondItem="mwL-pk-ArC" secondAttribute="leading" id="58c-yF-ErD"/>
                                     <constraint firstItem="3xb-7J-fht" firstAttribute="leading" secondItem="mwL-pk-ArC" secondAttribute="leading" id="5xk-pZ-xtJ"/>
                                     <constraint firstItem="HTg-rm-Psq" firstAttribute="top" secondItem="mwL-pk-ArC" secondAttribute="top" id="CFI-re-iZk"/>
-                                    <constraint firstItem="A1n-hI-G6z" firstAttribute="top" secondItem="HUU-Im-RPI" secondAttribute="bottom" id="EBm-hq-p3q"/>
                                     <constraint firstAttribute="trailing" secondItem="5bj-51-9pe" secondAttribute="trailing" id="G3b-yc-ejE"/>
                                     <constraint firstItem="yOM-hU-FzV" firstAttribute="top" secondItem="A1n-hI-G6z" secondAttribute="bottom" id="IDQ-Y6-fZd"/>
+                                    <constraint firstAttribute="trailing" secondItem="eNX-Sf-NRi" secondAttribute="trailing" id="IjR-tk-HSV"/>
                                     <constraint firstItem="yOM-hU-FzV" firstAttribute="leading" secondItem="mwL-pk-ArC" secondAttribute="leading" id="LGl-nY-kWK"/>
                                     <constraint firstItem="3xb-7J-fht" firstAttribute="top" secondItem="yOM-hU-FzV" secondAttribute="bottom" id="PUJ-je-234"/>
                                     <constraint firstAttribute="trailing" secondItem="A1n-hI-G6z" secondAttribute="trailing" id="TUP-Hh-hDI"/>
                                     <constraint firstItem="5bj-51-9pe" firstAttribute="top" secondItem="HTg-rm-Psq" secondAttribute="bottom" id="USE-WG-fq3"/>
                                     <constraint firstAttribute="trailing" secondItem="3xb-7J-fht" secondAttribute="trailing" id="VSH-3g-Iul"/>
+                                    <constraint firstItem="82l-oY-vDE" firstAttribute="leading" secondItem="mwL-pk-ArC" secondAttribute="leading" id="YKH-Zh-0Ke"/>
+                                    <constraint firstItem="A1n-hI-G6z" firstAttribute="top" secondItem="eNX-Sf-NRi" secondAttribute="bottom" id="aB7-HX-KfA"/>
+                                    <constraint firstItem="eNX-Sf-NRi" firstAttribute="top" secondItem="82l-oY-vDE" secondAttribute="bottom" id="bbE-e1-DN6"/>
                                     <constraint firstItem="HTg-rm-Psq" firstAttribute="leading" secondItem="mwL-pk-ArC" secondAttribute="leading" constant="20" id="bqI-1d-613"/>
+                                    <constraint firstItem="82l-oY-vDE" firstAttribute="top" secondItem="HUU-Im-RPI" secondAttribute="bottom" id="dSR-7O-E9K"/>
                                     <constraint firstItem="OgB-VC-tsb" firstAttribute="top" secondItem="5bj-51-9pe" secondAttribute="bottom" id="efP-gO-eYC"/>
                                     <constraint firstItem="5bj-51-9pe" firstAttribute="leading" secondItem="mwL-pk-ArC" secondAttribute="leading" id="hlP-P7-FpX"/>
                                     <constraint firstItem="HUU-Im-RPI" firstAttribute="leading" secondItem="mwL-pk-ArC" secondAttribute="leading" id="jnH-1r-7Ls"/>
+                                    <constraint firstItem="eNX-Sf-NRi" firstAttribute="leading" secondItem="mwL-pk-ArC" secondAttribute="leading" id="jqo-aY-xXk"/>
                                     <constraint firstItem="QgD-ra-SGn" firstAttribute="leading" secondItem="mwL-pk-ArC" secondAttribute="leading" id="kUL-aD-tAd"/>
                                     <constraint firstItem="5bj-51-9pe" firstAttribute="width" secondItem="mwL-pk-ArC" secondAttribute="width" id="lZa-Wg-Xys"/>
                                     <constraint firstAttribute="trailing" secondItem="nOC-ng-Zv8" secondAttribute="trailing" id="nTh-fh-rQy"/>
                                     <constraint firstAttribute="trailing" secondItem="HUU-Im-RPI" secondAttribute="trailing" id="pRR-9c-fSK"/>
+                                    <constraint firstAttribute="trailing" secondItem="82l-oY-vDE" secondAttribute="trailing" id="qRa-8f-5fe"/>
                                     <constraint firstItem="A1n-hI-G6z" firstAttribute="leading" secondItem="mwL-pk-ArC" secondAttribute="leading" constant="20" id="s5F-rh-8if"/>
                                     <constraint firstItem="nOC-ng-Zv8" firstAttribute="leading" secondItem="mwL-pk-ArC" secondAttribute="leading" id="uSy-TD-5AG"/>
                                     <constraint firstAttribute="trailing" secondItem="QgD-ra-SGn" secondAttribute="trailing" id="vKa-0D-SYz"/>
@@ -132,18 +152,20 @@
                         <viewLayoutGuide key="safeArea" id="00G-3c-UAd"/>
                     </view>
                     <connections>
-                        <outlet property="adminiTypeInputView" destination="HUU-Im-RPI" id="VOn-Ze-X1f"/>
+                        <outlet property="adminiTypeInputView" destination="OgB-VC-tsb" id="avF-87-UGJ"/>
                         <outlet property="certificateNoInputView" destination="yOM-hU-FzV" id="vz7-YY-b7m"/>
                         <outlet property="deadLineInputView" destination="3xb-7J-fht" id="I97-uj-Fqu"/>
-                        <outlet property="idCardNoInputView" destination="nOC-ng-Zv8" id="4jh-r5-uTL"/>
-                        <outlet property="phoneNoInputView" destination="OgB-VC-tsb" id="NIx-cD-f2J"/>
+                        <outlet property="fullTimeAdminiClickView" destination="nOC-ng-Zv8" id="DRI-uy-TKZ"/>
+                        <outlet property="idCardNoInputView" destination="eNX-Sf-NRi" id="Hur-eP-D4j"/>
+                        <outlet property="phoneNoInputView" destination="HUU-Im-RPI" id="B1z-pw-so0"/>
+                        <outlet property="telephoneInputView" destination="82l-oY-vDE" id="g5R-VK-Kdj"/>
                         <outlet property="uploadPhotoInputView" destination="QgD-ra-SGn" id="sRG-Pg-VzA"/>
                         <outlet property="usernameInputView" destination="5bj-51-9pe" id="Z9D-Z1-8IE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jbp-cf-6d8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="511" y="-652"/>
+            <point key="canvasLocation" x="509.60000000000002" y="-652.62368815592208"/>
         </scene>
     </scenes>
 </document>

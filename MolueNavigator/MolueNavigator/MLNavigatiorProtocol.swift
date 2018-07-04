@@ -24,11 +24,21 @@ public protocol MolueNavigatorProtocol: NSObjectProtocol {
 
 public protocol MLAppNavigatorProtocol {
     var router: MolueAppRouter {get}
+    
+    func push(_ viewController: UIViewController)
+    
+    func present(_ viewController: UIViewController)
 }
 
 public extension MLAppNavigatorProtocol {
     public var router: MolueAppRouter {
         return MolueAppRouter.shared
+    }
+    func push(_ viewController: UIViewController) {
+        self.router.push(viewController)
+    }
+    func present(_ viewController: UIViewController) {
+        self.router.present(viewController)
     }
 }
 

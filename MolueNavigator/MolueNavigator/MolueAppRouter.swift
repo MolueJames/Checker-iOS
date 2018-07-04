@@ -190,7 +190,7 @@ extension MolueAppRouter {
     }
     
     @discardableResult
-    public func pushViewController(_ viewController: UIViewController, from: UINavigationControllerType? = nil, animated: Bool = true) -> UIViewController? {
+    public func push(_ viewController: UIViewController, from: UINavigationControllerType? = nil, animated: Bool = true) -> UIViewController? {
          return navigator.pushViewController(viewController, from: from, animated: animated)
     }
 }

@@ -7,11 +7,9 @@
 //
 
 import UIKit
+import RxSwift
 import MolueUtilities
 import MolueFoundation
-public protocol MLDatePickerProtocol: NSObjectProtocol {
-    func selectDate(_ date: Date, string: String, controller: MLDatePickerViewController)
-}
 
 public class MLDatePickerViewController: MLBaseViewController {
     private var pickDate: Date = Date()
@@ -22,7 +20,7 @@ public class MLDatePickerViewController: MLBaseViewController {
     
     private var pickerMode = UIDatePickerMode.date
     
-    public weak var delegate: MLDatePickerProtocol?
+    public let selectDateCommand = PublishSubject<(date: Date, string: String)>()
     
     public func changeDefault(warning: String, format: String, mode: UIDatePickerMode) {
         self.warning = warning
@@ -64,7 +62,7 @@ public class MLDatePickerViewController: MLBaseViewController {
     
     @IBAction private func submitButtonClicked(_ sender: UIButton) {
         let string = pickDate.string(withFormat: dateFormat)
-        self.delegate?.selectDate(pickDate, string: string, controller: self)
+        self.selectDateCommand.onNext((date: pickDate, string: string))
         self.dismissViewController()
     }
 }

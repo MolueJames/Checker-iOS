@@ -14,7 +14,6 @@ class RiskInfoViewController: MLBaseViewController {
         didSet {
             tableView.delegate = self
             tableView.dataSource = self
-            tableView.estimatedRowHeight = 94
             tableView.register(xibWithCellClass: RiskInfoTableViewCell.self)
         }
     }
@@ -24,7 +23,6 @@ class RiskInfoViewController: MLBaseViewController {
         // Do any additional setup after loading the view.
         self.title = "隐患"
     }
-    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -34,7 +32,9 @@ class RiskInfoViewController: MLBaseViewController {
 }
 
 extension RiskInfoViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 90
+    }
 }
 
 extension RiskInfoViewController: UITableViewDataSource {
