@@ -11,13 +11,6 @@ import SnapKit
 import MolueUtilities
 public class MLCommonTitleView: UIView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
     lazy private var lineView: UIView! = {
         let internalLineView = UIView()
         self.addSubview(internalLineView)
@@ -38,14 +31,17 @@ public class MLCommonTitleView: UIView {
             make.left.equalTo(20)
             make.top.bottom.equalToSuperview()
         })
-        internalTitleLabel.font = .systemFont(ofSize: 16)
-        internalTitleLabel.textColor = MLCommonColor.titleLabel
         return internalTitleLabel
     }()
     
     public override func awakeFromNib() {
         super.awakeFromNib()
+        self.updateViewElements()
+    }
+    private func updateViewElements() {
         self.lineView.backgroundColor = MLCommonColor.commonLine
+        self.titleLabel.font = .systemFont(ofSize: 16)
+        self.titleLabel.textColor = MLCommonColor.titleLabel
     }
     
     public func defaultValue(title: String) {

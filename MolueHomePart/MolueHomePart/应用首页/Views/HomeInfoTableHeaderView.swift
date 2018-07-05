@@ -12,13 +12,6 @@ import SnapKit
 import MolueUtilities
 class HomeInfoTableHeaderView: UIView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
     @IBOutlet private weak var collectionView: UICollectionView! {
         didSet {
             collectionView.delegate = self
@@ -32,7 +25,7 @@ class HomeInfoTableHeaderView: UIView {
     private var flowLayout: UICollectionViewFlowLayout! {
         didSet {
             flowLayout.scrollDirection = .horizontal
-            let width = MLConfigure.screenWidth - 30
+            let width = MLConfigure.ScreenWidth - 30
             flowLayout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
             flowLayout.itemSize = CGSize(width: width, height: 180)
         }

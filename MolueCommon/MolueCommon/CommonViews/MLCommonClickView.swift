@@ -18,8 +18,6 @@ public class MLCommonClickView: UIView {
             make.width.equalTo(70)
             make.left.equalTo(20)
         })
-        internalTitleLabel.font = .systemFont(ofSize: 16)
-        internalTitleLabel.textColor = MLCommonColor.titleLabel
         return internalTitleLabel
     }()
     
@@ -31,10 +29,6 @@ public class MLCommonClickView: UIView {
             make.left.equalTo(95)
             make.right.equalTo(-15)
         }
-        internalTextField.delegate = self
-        internalTextField.font = .systemFont(ofSize: 16)
-        internalTextField.textColor = MLCommonColor.titleLabel
-        internalTextField.textAlignment = .right
         return internalTextField
     }()
     lazy private var lineView: UIView! = {
@@ -52,7 +46,17 @@ public class MLCommonClickView: UIView {
 
     public override func awakeFromNib() {
         super.awakeFromNib()
+        self.updateViewElements()
+    }
+    
+    private func updateViewElements() {
         self.lineView.backgroundColor = MLCommonColor.commonLine
+        self.titleLabel.font = .systemFont(ofSize: 16)
+        self.titleLabel.textColor = MLCommonColor.titleLabel
+        self.textField.delegate = self
+        self.textField.font = .systemFont(ofSize: 16)
+        self.textField.textColor = MLCommonColor.titleLabel
+        self.textField.textAlignment = .right
     }
 
     private func textFieldBeginEditing() {

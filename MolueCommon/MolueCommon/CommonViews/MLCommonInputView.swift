@@ -19,9 +19,6 @@ public class MLCommonInputView: UIView {
             make.left.equalTo(95)
             make.top.bottom.equalToSuperview()
         })
-        internalTextField.font = .systemFont(ofSize: 16)
-        internalTextField.textColor = MLCommonColor.titleLabel
-        internalTextField.textAlignment = .right
         return internalTextField
     }()
     lazy private var titleLabel: UILabel! = {
@@ -32,8 +29,6 @@ public class MLCommonInputView: UIView {
             make.left.equalTo(20)
             make.top.bottom.equalToSuperview()
         })
-        internalTitleLabel.font = .systemFont(ofSize: 16)
-        internalTitleLabel.textColor = MLCommonColor.titleLabel
         return internalTitleLabel
     }()
     
@@ -64,8 +59,16 @@ public class MLCommonInputView: UIView {
     
     public override func awakeFromNib() {
         super.awakeFromNib()
-        self.lineView.backgroundColor = MLCommonColor.commonLine
         self.textFiled.addTarget(self, action: #selector(textValueChanged), for: .editingChanged)
+        self.updateViewElements()
+    }
+    private func updateViewElements() {
+        self.lineView.backgroundColor = MLCommonColor.commonLine
+        self.textFiled.font = .systemFont(ofSize: 16)
+        self.textFiled.textColor = MLCommonColor.titleLabel
+        self.textFiled.textAlignment = .right
+        self.titleLabel.font = .systemFont(ofSize: 16)
+        self.titleLabel.textColor = MLCommonColor.titleLabel
     }
 }
 

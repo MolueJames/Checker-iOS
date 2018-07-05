@@ -10,7 +10,12 @@ import UIKit
 import RxSwift
 import SnapKit
 import MolueCommon
+import MolueUtilities
 class BookInfoSectionView: UIView {
+    enum BookInfoSelected: Int {
+        case left = 0
+        case right = 1
+    }
     lazy private var enforceButton: UIButton! = {
         let internalEnforceButton = UIButton()
         self.addSubview(internalEnforceButton)
@@ -19,7 +24,6 @@ class BookInfoSectionView: UIView {
             make.left.equalToSuperview()
             make.width.equalToSuperview().multipliedBy(0.5)
         })
-        self.updateButtonConfigure(internalEnforceButton, title: "执法")
         return internalEnforceButton
     }()
     lazy private var addtionButton: UIButton! = {
@@ -30,7 +34,6 @@ class BookInfoSectionView: UIView {
             make.right.equalToSuperview()
             make.width.equalToSuperview().multipliedBy(0.5)
         })
-        self.updateButtonConfigure(internalAddtionButton, title: "其他")
         return internalAddtionButton
     }()
     
@@ -42,7 +45,7 @@ class BookInfoSectionView: UIView {
     }
     lazy private var lineView: UIView! = {
         let internalLineView = UIView()
-        self.addSubview(internalLineView)
+        bottomView.addSubview(internalLineView)
         internalLineView.snp.updateConstraints({ [unowned self] (make) in
             make.left.equalTo(0)
         })
@@ -64,36 +67,52 @@ class BookInfoSectionView: UIView {
         return internalBottomView
     }()
     
-    public let enforceCommand = PublishSubject<Void>()
-    public let addtionCommand = PublishSubject<Void>()
+    public let selectedCommand = PublishSubject<Int>()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.addtionButton.addTarget(self, action: #selector(addtionButtonClicked), for: .touchUpInside)
         self.enforceButton.addTarget(self, action: #selector(enforceButtonClicked), for: .touchUpInside)
+        self.updateViewElements()
+    }
+    private func updateViewElements() {
         self.bottomView.backgroundColor = MLCommonColor.commonLine
         self.lineView.backgroundColor = MLCommonColor.appDefault
+        self.updateButtonConfigure(self.addtionButton, title: "其他")
+        self.updateButtonConfigure(self.enforceButton, title: "执法")
     }
     
     @IBAction private func addtionButtonClicked(_ sender: UIButton) {
         if sender.isSelected == false {
-            sender.isSelected = true
-            self.enforceButton.isSelected = false
-            self.updateLineView(false)
+            let index = BookInfoSelected.right.rawValue
+            self.setSelectedIndex(index, animated: true)
+            self.selectedCommand.onNext(index)
         }
     }
     @IBAction private func enforceButtonClicked(_ sender: UIButton) {
         if sender.isSelected == false {
-            sender.isSelected = true
-            self.addtionButton.isSelected = false
-            self.updateLineView(true)
+            let index = BookInfoSelected.left.rawValue
+            self.setSelectedIndex(index, animated: true)
+            self.selectedCommand.onNext(index)
         }
     }
-    private func updateLineView(_ isDefault: Bool) {
+    private func selectedIndexButton(_ index: Int, animated: Bool) {
+        let leftDistance = index == 0 ? 0 : MLConfigure.ScreenWidth/2
         self.lineView.snp.updateConstraints { (make) in
-            make.left.equalTo(isDefault ? 0 : 200)
+            make.left.equalTo(leftDistance)
         }
-        UIView.animate(withDuration: 0.4) {
+        if animated { self.doSelectedIndexAnimated() }
+    }
+    private func doSelectedIndexAnimated() {
+        UIView.animate(withDuration: 0.1) {
             self.layoutIfNeeded()
         }
     }
+    public func setSelectedIndex(_ index: Int, animated: Bool) {
+        let isLeft = index == 0
+        self.enforceButton.isSelected = isLeft
+        self.addtionButton.isSelected = !isLeft
+        self.selectedIndexButton(index, animated: animated)
+    }
+    
 }

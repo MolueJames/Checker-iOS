@@ -10,13 +10,6 @@ import UIKit
 import RxSwift
 class IncreaseAdminiFooterView: UIView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
     let addControlCommand = PublishSubject<Void>()
     
     private lazy var addAdministratorControl: UIControl = {

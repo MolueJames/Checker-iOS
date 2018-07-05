@@ -46,6 +46,17 @@ open class MLBaseViewController: UIViewController, MLNavigationProtocol, MLContr
     }
     open override func viewDidLoad() {
         super.viewDidLoad()
+        self.updateControllerElements()
+        self.implementInterfaceProtocol()
+    }
+    
+    private func implementInterfaceProtocol() {
+        if let controller = self as? MLUserInterfaceProtocol  {
+            controller.queryInformationWithNetwork()
+            controller.updateUserInterfaceElements()
+        }
+    }
+    private func updateControllerElements() {
         self.automaticallyAdjustsScrollViewInsets = false;
         self.edgesForExtendedLayout = .all;
         self.view.backgroundColor = UIColor.init(hex: 0xf5f5f9)

@@ -12,7 +12,7 @@ import MolueUtilities
 public class MLInterfaceConfigure {
     private static func navigationBarAppearance() {
         let navigationBar = UINavigationBar.appearance()
-        let image = UIImage.init(color: .clear, size: CGSize.init(width: MLConfigure.screenWidth, height: 64))
+        let image = UIImage.init(color: .clear, size: CGSize.init(width: MLConfigure.ScreenWidth, height: 64))
         navigationBar.setBackgroundImage(image, for: .default)
         navigationBar.tintColor = .white
         navigationBar.titleTextAttributes = [NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: 18), NSAttributedStringKey.foregroundColor: UIColor.white]
@@ -36,7 +36,7 @@ public class MLInterfaceConfigure {
     private static func updateUITabBarAppearance() {
         let tabBar = UITabBar.appearance(whenContainedInInstancesOf: [UITabBarController.self])
         tabBar.tintColor = UIColor.init(hex: 0x1B82D2)
-        tabBar.backgroundImage = UIImage.init(color: .white, size: CGSize.init(width: MLConfigure.screenWidth, height: 49))
+        tabBar.backgroundImage = UIImage.init(color: .white, size: CGSize.init(width: MLConfigure.ScreenWidth, height: 49))
     }
     
     public static func setInterfaceConfigure() {

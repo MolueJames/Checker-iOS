@@ -86,7 +86,7 @@ public struct MLConfigure {
 	
 	#if !os(macOS)
 	/// SwifterSwift: Screen height.
-	public static var screenHeight: CGFloat {
+	public static var ScreenHeight: CGFloat {
 		#if os(iOS) || os(tvOS)
 			return UIScreen.main.bounds.height
 		#elseif os(watchOS)
@@ -118,7 +118,7 @@ public struct MLConfigure {
 	
 	#if !os(macOS)
 	/// SwifterSwift: Screen width.
-	public static var screenWidth: CGFloat {
+	public static var ScreenWidth: CGFloat {
 		#if os(iOS) || os(tvOS)
 			return UIScreen.main.bounds.width
 		#elseif os(watchOS)

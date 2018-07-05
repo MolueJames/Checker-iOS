@@ -19,8 +19,6 @@ public class MLCommonSelectView: UIView {
             make.left.equalTo(20)
             make.top.equalTo(8)
         })
-        internalTitleLabel.textColor = MLCommonColor.titleLabel
-        internalTitleLabel.font = .systemFont(ofSize: 16)
         return internalTitleLabel
     }()
     lazy private var detailLabel: UILabel! = {
@@ -30,8 +28,6 @@ public class MLCommonSelectView: UIView {
             make.left.equalTo(20)
             make.bottom.equalTo(-8)
         })
-        internalDetailLabel.textColor = MLCommonColor.detailText
-        internalDetailLabel.font = .systemFont(ofSize: 14)
         return internalDetailLabel
     }()
     lazy private var rightImageView: UIImageView! = {
@@ -42,7 +38,6 @@ public class MLCommonSelectView: UIView {
             make.centerY.equalToSuperview()
             make.right.equalTo(-5)
         })
-        internalRightImageView.contentMode = .center
         return internalRightImageView
     }()
     lazy private var lineView: UIView! = {
@@ -63,10 +58,17 @@ public class MLCommonSelectView: UIView {
     }()
     public override func awakeFromNib() {
         super.awakeFromNib()
-        self.lineView.backgroundColor = MLCommonColor.commonLine
-        let image = UIImage(named: "common_icon_right")
-        self.rightImageView.image = image
+        self.updateViewElements()
         self.clickedControl.addTarget(self, action: #selector(controlClicked), for: .touchUpInside)
+    }
+    private func updateViewElements() {
+        self.detailLabel.textColor = MLCommonColor.detailText
+        self.detailLabel.font = .systemFont(ofSize: 14)
+        self.rightImageView.contentMode = .center
+        self.lineView.backgroundColor = MLCommonColor.commonLine
+        self.rightImageView.image = UIImage(named: "common_icon_right")
+        self.titleLabel.textColor = MLCommonColor.titleLabel
+        self.titleLabel.font = .systemFont(ofSize: 16)
     }
     @IBAction private func controlClicked(_ sender: Any) {
         self.clickedCommand.onNext(())

@@ -11,6 +11,11 @@ import MolueNetwork
 import MolueUtilities
 import JGProgressHUD
 import NVActivityIndicatorView
+public protocol MLUserInterfaceProtocol {
+    func queryInformationWithNetwork()
+    func updateUserInterfaceElements()
+}
+
 typealias MLControllerNetworkProtocol = MLControllerHUDProtocol & MLLoadingIndicatorProtocol
 
 fileprivate let hud_display_duration = 0.5

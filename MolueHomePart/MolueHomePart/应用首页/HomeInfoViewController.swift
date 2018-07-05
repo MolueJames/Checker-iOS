@@ -86,7 +86,7 @@ class HomeInfoViewController: MLBaseViewController  {
     
     var headerView: HomeInfoTableHeaderView! {
         didSet {
-            headerView.frame = CGRect.init(x: 0, y: 0, width: MLConfigure.screenWidth, height: 385)
+            headerView.frame = CGRect.init(x: 0, y: 0, width: MLConfigure.ScreenWidth, height: 385)
             self.initPublishSubjects()
         }
     }

@@ -157,7 +157,6 @@
 		1A43BC3420C402F10093855B /* CommonViews */ = {
 			isa = PBXGroup;
 			children = (
-				1AA7823120CCFE5600088923 /* CommonPhoto */,
 				1A43BC3520C4031D0093855B /* MLCommonInputView.swift */,
 				1A43BC3B20C40FA30093855B /* MLCommonSelectView.swift */,
 				1ABDCA9C20C5946B0062DE71 /* MLCommonClickView.swift */,
@@ -212,6 +211,7 @@
 				1A65039120DD54F20017F91D /* MolueCommon.xcassets */,
 				1AA7822C20CCFC0800088923 /* CommonController */,
 				1A98F29B20C968F8000D0F8F /* CommonFunction */,
+				1AA7823120CCFE5600088923 /* CommonPhoto */,
 				1A43BC3420C402F10093855B /* CommonViews */,
 				1A2D443B20A0977A00BA947A /* InterfaceConfigure */,
 				1A2D441920A07E9900BA947A /* RefreshAnimator */,

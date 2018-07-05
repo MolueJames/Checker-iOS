@@ -26,7 +26,7 @@ class SecurityAdminiViewController: MLBaseViewController {
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableViewFooterView = IncreaseAdminiFooterView.createFromXib()
-            tableViewFooterView.frame = CGRect(x: 0, y: 0, width:MLConfigure.screenWidth , height: 60)
+            tableViewFooterView.frame = CGRect(x: 0, y: 0, width:MLConfigure.ScreenWidth , height: 60)
             tableView.tableFooterView = tableViewFooterView
             tableView.register(xibWithCellClass: SecurityAdminiTableViewCell.self)
             tableView.dataSource = self

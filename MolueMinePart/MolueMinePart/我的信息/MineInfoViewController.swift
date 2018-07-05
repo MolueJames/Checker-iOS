@@ -24,7 +24,7 @@ class MineInfoViewController: MLBaseViewController {
     
     lazy private var headerView: MineInfoTableHeaderView! = {
         let internalHeaderView: MineInfoTableHeaderView = MineInfoTableHeaderView.createFromXib()
-        let width = MLConfigure.screenWidth
+        let width = self.view.width
         let frame = CGRect(x: 0, y: 0, width: width, height: 60)
         internalHeaderView.frame = frame
         return internalHeaderView
@@ -32,7 +32,7 @@ class MineInfoViewController: MLBaseViewController {
     
     lazy private var lineFooterView: UIView! = {
         let internalLineFooterView = UIView()
-        let width = MLConfigure.screenWidth
+        let width = self.view.width
         let frame = CGRect(x: 20, y: 0, width: width, height: 0.5)
         internalLineFooterView.frame = frame
         internalLineFooterView.backgroundColor = MLCommonColor.commonLine
