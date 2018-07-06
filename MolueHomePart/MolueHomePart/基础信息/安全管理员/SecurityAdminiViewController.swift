@@ -42,18 +42,21 @@ class SecurityAdminiViewController: MLBaseViewController {
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        self.title = "安全管理员"
-        tableView.reloadData()
-        let animations = [AnimationType.from(direction: .top, offset: 115)]
-        UIView.animate(views: self.tableView.visibleCells, animations: animations)
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+}
+
+extension SecurityAdminiViewController: MLUserInterfaceProtocol {
+    func queryInformationWithNetwork() {
+        
+    }
+    
+    func updateUserInterfaceElements() {
+        self.title = "安全管理员"
+        let animations = [AnimationType.from(direction: .top, offset: 115)]
+        UIView.animate(views: self.tableView.visibleCells, animations: animations)
     }
 }
 

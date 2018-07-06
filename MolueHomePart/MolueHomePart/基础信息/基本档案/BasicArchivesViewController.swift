@@ -63,9 +63,7 @@ class BasicArchivesViewController: MLBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.title = "基本档案"
-        let submitButton = UIBarButtonItem(title: "提交", style: .plain, target: self, action: #selector(submitButtonClicked))
-        self.navigationItem.rightBarButtonItem = submitButton
+        
     }
     
     @IBAction private func submitButtonClicked(_ sender: UIBarButtonItem) {
@@ -77,3 +75,16 @@ class BasicArchivesViewController: MLBaseViewController {
         // Dispose of any resources that can be recreated.
     }
 }
+
+extension BasicArchivesViewController: MLUserInterfaceProtocol {
+    func queryInformationWithNetwork() {
+        
+    }
+    
+    func updateUserInterfaceElements() {
+        self.title = "基本档案"
+        let submitButton = UIBarButtonItem(title: "提交", style: .plain, target: self, action: #selector(submitButtonClicked))
+        self.navigationItem.rightBarButtonItem = submitButton
+    }
+}
+

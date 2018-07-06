@@ -60,13 +60,13 @@ public class MLSingleSelectController<Target: MLSingleSelectProtocol>: MLBaseVie
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    open func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
     }
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.list.count
     }
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: MLSignleSelectTableCell! = tableView.dequeueReusableCell(withClass: MLSignleSelectTableCell.self)
         let value = self.list[indexPath.row]
         cell.reloadSubviewsWithValue(value)

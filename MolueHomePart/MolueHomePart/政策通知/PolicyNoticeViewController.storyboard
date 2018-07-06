@@ -11,19 +11,65 @@
     </dependencies>
     <scenes>
         <!--Policy Notice View Controller-->
-        <scene sceneID="jyl-NH-34U">
+        <scene sceneID="YBB-dd-NFG">
             <objects>
-                <viewController storyboardIdentifier="PolicyNoticeViewController" id="h3w-1H-xzd" customClass="PolicyNoticeViewController" customModule="MolueHomePart" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="LPv-kc-2wR">
+                <viewController storyboardIdentifier="PolicyNoticeViewController" id="cqf-cc-B5g" customClass="PolicyNoticeViewController" customModule="MolueHomePart" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YRv-rR-spA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aYE-Ar-HPS">
+                                <rect key="frame" x="0.0" y="20" width="375" height="50"/>
+                                <subviews>
+                                    <searchBar contentMode="redraw" searchBarStyle="prominent" placeholder="搜索" translatesAutoresizingMaskIntoConstraints="NO" id="gcl-vJ-y0K">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                        <color key="barTintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </searchBar>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HkY-Hu-mZW">
+                                        <rect key="frame" x="0.0" y="49.5" width="375" height="0.5"/>
+                                        <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="0.5" id="wiC-wS-YAX"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="HkY-Hu-mZW" secondAttribute="bottom" id="6SY-xK-MJi"/>
+                                    <constraint firstItem="gcl-vJ-y0K" firstAttribute="leading" secondItem="aYE-Ar-HPS" secondAttribute="leading" id="AVN-28-EGc"/>
+                                    <constraint firstItem="HkY-Hu-mZW" firstAttribute="leading" secondItem="aYE-Ar-HPS" secondAttribute="leading" id="Lbu-bh-azn"/>
+                                    <constraint firstAttribute="bottom" secondItem="gcl-vJ-y0K" secondAttribute="bottom" id="ds1-sy-u4R"/>
+                                    <constraint firstAttribute="trailing" secondItem="gcl-vJ-y0K" secondAttribute="trailing" id="frA-2g-cmA"/>
+                                    <constraint firstAttribute="trailing" secondItem="HkY-Hu-mZW" secondAttribute="trailing" id="iPg-8c-E0a"/>
+                                    <constraint firstItem="gcl-vJ-y0K" firstAttribute="top" secondItem="aYE-Ar-HPS" secondAttribute="top" id="nLc-K1-3rR"/>
+                                    <constraint firstAttribute="height" constant="50" id="rqW-Zi-Jbk"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZV0-5r-onb">
+                                <rect key="frame" x="0.0" y="70" width="375" height="597"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="eDH-jL-U0n"/>
+                        <constraints>
+                            <constraint firstItem="ZV0-5r-onb" firstAttribute="leading" secondItem="7xo-kg-vfr" secondAttribute="leading" id="7n6-e4-QHh"/>
+                            <constraint firstItem="aYE-Ar-HPS" firstAttribute="leading" secondItem="7xo-kg-vfr" secondAttribute="leading" id="DwC-FH-6Nv"/>
+                            <constraint firstItem="aYE-Ar-HPS" firstAttribute="top" secondItem="7xo-kg-vfr" secondAttribute="top" id="KRY-LV-GTt"/>
+                            <constraint firstItem="7xo-kg-vfr" firstAttribute="trailing" secondItem="aYE-Ar-HPS" secondAttribute="trailing" id="NHu-gQ-Ag7"/>
+                            <constraint firstItem="7xo-kg-vfr" firstAttribute="trailing" secondItem="ZV0-5r-onb" secondAttribute="trailing" id="UDh-1B-IM8"/>
+                            <constraint firstItem="7xo-kg-vfr" firstAttribute="bottom" secondItem="ZV0-5r-onb" secondAttribute="bottom" id="mc2-5j-lJF"/>
+                            <constraint firstItem="ZV0-5r-onb" firstAttribute="top" secondItem="aYE-Ar-HPS" secondAttribute="bottom" id="qih-61-Gar"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="7xo-kg-vfr"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="ZV0-5r-onb" id="CMc-bJ-5NR"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qPT-x0-3qn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YIh-gm-FDF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="50" y="216"/>
+            <point key="canvasLocation" x="181.59999999999999" y="250.52473763118442"/>
         </scene>
     </scenes>
 </document>

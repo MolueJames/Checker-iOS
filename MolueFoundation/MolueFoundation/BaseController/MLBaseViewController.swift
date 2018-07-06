@@ -25,7 +25,7 @@ open class MLBaseViewController: UIViewController, MLNavigationProtocol, MLContr
         self.updateNavBackgroundView()
     }
     private func updateNavBackgroundView() {
-        guard let _ = self.navigationController else { return }
+        guard let _ = self.parent as? UINavigationController else { return }
         self.view.addSubview(navigationView)
         navigationView.snp.updateConstraints { (make) in
             make.height.equalTo(height)

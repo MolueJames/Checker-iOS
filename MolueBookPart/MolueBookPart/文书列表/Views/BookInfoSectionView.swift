@@ -13,8 +13,8 @@ import MolueCommon
 import MolueUtilities
 class BookInfoSectionView: UIView {
     enum BookInfoSelected: Int {
-        case left = 0
-        case right = 1
+        case enforce = 0
+        case addtion = 1
     }
     lazy private var enforceButton: UIButton! = {
         let internalEnforceButton = UIButton()
@@ -52,7 +52,7 @@ class BookInfoSectionView: UIView {
         internalLineView.snp.makeConstraints({ (make) in
             make.bottom.equalToSuperview()
             make.width.equalToSuperview().multipliedBy(0.5)
-            make.height.equalTo(1)
+            make.height.equalTo(1.5)
         })
         return internalLineView
     }()
@@ -62,7 +62,7 @@ class BookInfoSectionView: UIView {
         internalBottomView.snp.makeConstraints({ (make) in
             make.bottom.equalToSuperview()
             make.left.right.equalToSuperview()
-            make.height.equalTo(1)
+            make.height.equalTo(MLConfigure.single_line_height)
         })
         return internalBottomView
     }()
@@ -84,14 +84,14 @@ class BookInfoSectionView: UIView {
     
     @IBAction private func addtionButtonClicked(_ sender: UIButton) {
         if sender.isSelected == false {
-            let index = BookInfoSelected.right.rawValue
+            let index = BookInfoSelected.addtion.rawValue
             self.setSelectedIndex(index, animated: true)
             self.selectedCommand.onNext(index)
         }
     }
     @IBAction private func enforceButtonClicked(_ sender: UIButton) {
         if sender.isSelected == false {
-            let index = BookInfoSelected.left.rawValue
+            let index = BookInfoSelected.enforce.rawValue
             self.setSelectedIndex(index, animated: true)
             self.selectedCommand.onNext(index)
         }

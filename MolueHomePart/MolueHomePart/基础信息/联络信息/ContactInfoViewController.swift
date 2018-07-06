@@ -57,14 +57,6 @@ class ContactInfoViewController: MLBaseViewController {
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        self.title = "联络信息"
-        let submitButton = UIBarButtonItem(title: "提交", style: .plain, target: self, action: #selector(submitButtonClicked))
-        self.navigationItem.rightBarButtonItem = submitButton
-    }
-    
     @IBAction private func submitButtonClicked(_ sender: UIBarButtonItem) {
         
     }
@@ -72,5 +64,17 @@ class ContactInfoViewController: MLBaseViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+}
+
+extension ContactInfoViewController: MLUserInterfaceProtocol {
+    func queryInformationWithNetwork() {
+        
+    }
+    
+    func updateUserInterfaceElements() {
+        self.title = "联络信息"
+        let submitButton = UIBarButtonItem(title: "提交", style: .plain, target: self, action: #selector(submitButtonClicked))
+        self.navigationItem.rightBarButtonItem = submitButton
     }
 }

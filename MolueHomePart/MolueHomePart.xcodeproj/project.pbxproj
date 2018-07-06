@@ -63,6 +63,10 @@
 		1AAF7B8920C1971B0051EC18 /* EnterpriseRiskViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AAF7B7B20C1971B0051EC18 /* EnterpriseRiskViewController.storyboard */; };
 		1AAF7B8A20C1971B0051EC18 /* RiskFeatureViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AAF7B7C20C1971B0051EC18 /* RiskFeatureViewController.storyboard */; };
 		1AAF7B8B20C1971B0051EC18 /* RiskFeatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAF7B7D20C1971B0051EC18 /* RiskFeatureViewController.swift */; };
+		1AB0670320EFB06B00619570 /* LawRegulationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB0670120EFB06B00619570 /* LawRegulationTableViewCell.swift */; };
+		1AB0670420EFB06B00619570 /* LawRegulationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AB0670220EFB06B00619570 /* LawRegulationTableViewCell.xib */; };
+		1AB0670720EFB61D00619570 /* PolicyNoticeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB0670520EFB61D00619570 /* PolicyNoticeTableViewCell.swift */; };
+		1AB0670820EFB61D00619570 /* PolicyNoticeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AB0670620EFB61D00619570 /* PolicyNoticeTableViewCell.xib */; };
 		1ABDCA9520C5720F0062DE71 /* IncreaseAdminiFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABDCA9420C5720F0062DE71 /* IncreaseAdminiFooterView.swift */; };
 		1ABDCA9720C5721B0062DE71 /* IncreaseAdminiFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1ABDCA9620C5721B0062DE71 /* IncreaseAdminiFooterView.xib */; };
 		1ABDCA9A20C5798B0062DE71 /* SecurityAdminiTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABDCA9820C5798B0062DE71 /* SecurityAdminiTableViewCell.swift */; };
@@ -143,6 +147,10 @@
 		1AAF7B7B20C1971B0051EC18 /* EnterpriseRiskViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EnterpriseRiskViewController.storyboard; sourceTree = "<group>"; };
 		1AAF7B7C20C1971B0051EC18 /* RiskFeatureViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RiskFeatureViewController.storyboard; sourceTree = "<group>"; };
 		1AAF7B7D20C1971B0051EC18 /* RiskFeatureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RiskFeatureViewController.swift; sourceTree = "<group>"; };
+		1AB0670120EFB06B00619570 /* LawRegulationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LawRegulationTableViewCell.swift; sourceTree = "<group>"; };
+		1AB0670220EFB06B00619570 /* LawRegulationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LawRegulationTableViewCell.xib; sourceTree = "<group>"; };
+		1AB0670520EFB61D00619570 /* PolicyNoticeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyNoticeTableViewCell.swift; sourceTree = "<group>"; };
+		1AB0670620EFB61D00619570 /* PolicyNoticeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PolicyNoticeTableViewCell.xib; sourceTree = "<group>"; };
 		1ABDCA9420C5720F0062DE71 /* IncreaseAdminiFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncreaseAdminiFooterView.swift; sourceTree = "<group>"; };
 		1ABDCA9620C5721B0062DE71 /* IncreaseAdminiFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IncreaseAdminiFooterView.xib; sourceTree = "<group>"; };
 		1ABDCA9820C5798B0062DE71 /* SecurityAdminiTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityAdminiTableViewCell.swift; sourceTree = "<group>"; };
@@ -267,6 +275,8 @@
 		1A24022E20E538FA00FC3EBA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1AB0670120EFB06B00619570 /* LawRegulationTableViewCell.swift */,
+				1AB0670220EFB06B00619570 /* LawRegulationTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -281,6 +291,8 @@
 		1A24023020E5390700FC3EBA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1AB0670520EFB61D00619570 /* PolicyNoticeTableViewCell.swift */,
+				1AB0670620EFB61D00619570 /* PolicyNoticeTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -608,9 +620,11 @@
 				1A06557E20A9EE020016CA86 /* HomeInfoTableViewCell.xib in Resources */,
 				1A43BC2520C3AEE70093855B /* HomeInfoCollectionViewCell.xib in Resources */,
 				1A43BC2920C3AF2B0093855B /* HomeInfoHeaderView.xib in Resources */,
+				1AB0670420EFB06B00619570 /* LawRegulationTableViewCell.xib in Resources */,
 				1AAF7B8320C1971B0051EC18 /* SecurityAdminiViewController.storyboard in Resources */,
 				1AAF7B8920C1971B0051EC18 /* EnterpriseRiskViewController.storyboard in Resources */,
 				1AAF7B8420C1971B0051EC18 /* ContactInfoViewController.storyboard in Resources */,
+				1AB0670820EFB61D00619570 /* PolicyNoticeTableViewCell.xib in Resources */,
 				1AAF7B8020C1971B0051EC18 /* IncreaseAdminiViewController.storyboard in Resources */,
 				1A24022620E530AE00FC3EBA /* PolicyNoticeViewController.storyboard in Resources */,
 				1A65039620DD552B0017F91D /* MolueHome.xcassets in Resources */,
@@ -658,6 +672,7 @@
 				1AAF7B8220C1971B0051EC18 /* SecurityAdminiViewController.swift in Sources */,
 				1A43BC2F20C3CAA60093855B /* EnterpriseInfoTableViewCell.swift in Sources */,
 				1A43BC2420C3AEE70093855B /* HomeInfoCollectionViewCell.swift in Sources */,
+				1AB0670320EFB06B00619570 /* LawRegulationTableViewCell.swift in Sources */,
 				1A35D7FA20DBC9BF002ED3CB /* EnterpriseInfoDataManager.swift in Sources */,
 				1ABDCA9A20C5798B0062DE71 /* SecurityAdminiTableViewCell.swift in Sources */,
 				1AAF7B8520C1971B0051EC18 /* ContactInfoViewController.swift in Sources */,
@@ -667,6 +682,7 @@
 				1A24022020E52F7800FC3EBA /* LawRegulationViewController.swift in Sources */,
 				1AAF7B8720C1971B0051EC18 /* DangerMachineryViewController.swift in Sources */,
 				1A730AEB20EBBC02008831BC /* PolicyDetailViewController.swift in Sources */,
+				1AB0670720EFB61D00619570 /* PolicyNoticeTableViewCell.swift in Sources */,
 				1A5014A420944DFE00DB931E /* HomeInfoViewController.swift in Sources */,
 				1A43BC2720C3AF190093855B /* HomeInfoHeaderView.swift in Sources */,
 				1A1084FD20ECF1DD004E365A /* IncreaseAdminiNavigator.swift in Sources */,

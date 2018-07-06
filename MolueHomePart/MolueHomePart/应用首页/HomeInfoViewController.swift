@@ -35,14 +35,6 @@ class HomeInfoViewController: MLBaseViewController  {
     
     private let disposeBag = DisposeBag()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        self.navigationItem.titleView = titleLabel
-        let animations = [AnimationType.from(direction: .top, offset: 80.0)]
-        UIView.animate(views: self.tableView.visibleCells, animations: animations)
-    }
-    
     func initPublishSubjects() {
         self.headerView.basicInfoCommand.subscribe(onNext: { [unowned self] (_) in
             self.navigator.pushToEnterpriseInfo()
@@ -80,7 +72,6 @@ class HomeInfoViewController: MLBaseViewController  {
         label.font = .boldSystemFont(ofSize: 18)
         label.textAlignment = .center
         label.textColor = .white
-        label.text = "安监通"
         return label
     } ()
     
@@ -95,7 +86,18 @@ class HomeInfoViewController: MLBaseViewController  {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+}
+
+extension HomeInfoViewController: MLUserInterfaceProtocol {
+    func queryInformationWithNetwork() {
+        
+    }
+    func updateUserInterfaceElements() {
+        self.titleLabel.text = "安监通"
+        self.navigationItem.titleView = titleLabel
+        let animations = [AnimationType.from(direction: .top, offset: 80.0)]
+        UIView.animate(views: self.tableView.visibleCells, animations: animations)
+    }
 }
 
 extension HomeInfoViewController: UITableViewDelegate {

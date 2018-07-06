@@ -11,7 +11,6 @@ import MolueFoundation
 import MolueUtilities
 import MolueCommon
 class MineInfoViewController: MLBaseViewController {
-
     @IBOutlet private weak var tableView: UITableView! {
         didSet {
             tableView.delegate = self
@@ -21,33 +20,40 @@ class MineInfoViewController: MLBaseViewController {
             tableView.tableFooterView = lineFooterView
         }
     }
-    
     lazy private var headerView: MineInfoTableHeaderView! = {
         let internalHeaderView: MineInfoTableHeaderView = MineInfoTableHeaderView.createFromXib()
-        let width = self.view.width
-        let frame = CGRect(x: 0, y: 0, width: width, height: 60)
+        let frame = CGRect(x: 0, y: 0, width: MLConfigure.ScreenWidth, height: 60)
         internalHeaderView.frame = frame
         return internalHeaderView
     }()
-    
     lazy private var lineFooterView: UIView! = {
         let internalLineFooterView = UIView()
-        let width = self.view.width
-        let frame = CGRect(x: 20, y: 0, width: width, height: 0.5)
+        let frame = CGRect(x: 20, y: 0, width: MLConfigure.ScreenWidth, height: 0.5)
         internalLineFooterView.frame = frame
         internalLineFooterView.backgroundColor = MLCommonColor.commonLine
         return internalLineFooterView
     }()
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        self.title = "我的"
-    }
-
+    lazy var titleLabel: UILabel! = {
+        let label = UILabel.init()
+        label.font = .boldSystemFont(ofSize: 18)
+        label.textAlignment = .center
+        label.textColor = UIColor.white
+        return label
+    } ()
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+}
+
+extension MineInfoViewController: MLUserInterfaceProtocol {
+    func queryInformationWithNetwork() {
+        
+    }
+    
+    func updateUserInterfaceElements() {
+        self.titleLabel.text = "个人信息"
+        self.navigationItem.titleView = self.titleLabel
     }
 }
 

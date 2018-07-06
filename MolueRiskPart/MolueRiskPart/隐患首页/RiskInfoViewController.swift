@@ -17,18 +17,29 @@ class RiskInfoViewController: MLBaseViewController {
             tableView.register(xibWithCellClass: RiskInfoTableViewCell.self)
         }
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        self.title = "隐患"
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    lazy var titleLabel: UILabel! = {
+        let label = UILabel.init()
+        label.font = .boldSystemFont(ofSize: 18)
+        label.textAlignment = .center
+        label.textColor = UIColor.white
+        return label
+    } ()
+}
+
+extension RiskInfoViewController: MLUserInterfaceProtocol {
+    func queryInformationWithNetwork() {
+        
+    }
     
+    func updateUserInterfaceElements() {
+        self.titleLabel.text = "隐患列表"
+        self.navigationItem.titleView = self.titleLabel
+    }
 }
 
 extension RiskInfoViewController: UITableViewDelegate {

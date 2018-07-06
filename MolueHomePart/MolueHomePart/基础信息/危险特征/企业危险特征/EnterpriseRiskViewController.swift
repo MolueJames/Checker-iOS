@@ -10,14 +10,18 @@ import UIKit
 import MolueFoundation
 class EnterpriseRiskViewController: MLBaseViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        self.title = "企业危险特征"
-    }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+}
+
+extension EnterpriseRiskViewController: MLUserInterfaceProtocol {
+    func queryInformationWithNetwork() {
+        
+    }
+    
+    func updateUserInterfaceElements() {
+        self.title = "企业危险特征"
     }
 }

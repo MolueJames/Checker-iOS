@@ -138,14 +138,20 @@ class IncreaseAdminiViewController: MLBaseViewController {
     private func updateDeadLineValue(date: Date, string: String) {
         self.deadLineInputView.update(description: string)
     }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
 
-    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+}
+
+extension IncreaseAdminiViewController: MLUserInterfaceProtocol {
+    func queryInformationWithNetwork() {
+        
+    }
+    
+    func updateUserInterfaceElements() {
+ 
     }
 }
 
