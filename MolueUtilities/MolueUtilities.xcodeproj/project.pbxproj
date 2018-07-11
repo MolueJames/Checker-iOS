@@ -74,6 +74,7 @@
 		1AEB886A2092CFE3002230A3 /* NSViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEB882E2092CFE3002230A3 /* NSViewExtensions.swift */; };
 		1AEB886B2092CFE3002230A3 /* NSImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEB882F2092CFE3002230A3 /* NSImageExtensions.swift */; };
 		1AEB886C2092CFE3002230A3 /* SwifterSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEB88302092CFE3002230A3 /* SwifterSwift.swift */; };
+		1AF5449620F647C0000BFCD0 /* DispatchQueueExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF5449520F647BF000BFCD0 /* DispatchQueueExtensions.swift */; };
 		334A49C5F6399723A9409DBE /* Pods_MolueUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AA1EA8647EAB7A4D37FDFDF /* Pods_MolueUtilities.framework */; };
 		EE12918524953AAF213BCC39 /* Pods_MolueUtilitiesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8323136335963F49DA4C5E25 /* Pods_MolueUtilitiesTests.framework */; };
 /* End PBXBuildFile section */
@@ -159,6 +160,7 @@
 		1AEB882E2092CFE3002230A3 /* NSViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSViewExtensions.swift; sourceTree = "<group>"; };
 		1AEB882F2092CFE3002230A3 /* NSImageExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSImageExtensions.swift; sourceTree = "<group>"; };
 		1AEB88302092CFE3002230A3 /* SwifterSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwifterSwift.swift; sourceTree = "<group>"; };
+		1AF5449520F647BF000BFCD0 /* DispatchQueueExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueueExtensions.swift; sourceTree = "<group>"; };
 		34462318B630408B7B82C266 /* Pods-MolueUtilitiesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueUtilitiesTests.release.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueUtilitiesTests/Pods-MolueUtilitiesTests.release.xcconfig"; sourceTree = "<group>"; };
 		3DAA8FC00FCE1977EB6E8A10 /* Pods-MolueUtilities.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueUtilities.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueUtilities/Pods-MolueUtilities.debug.xcconfig"; sourceTree = "<group>"; };
 		8323136335963F49DA4C5E25 /* Pods_MolueUtilitiesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MolueUtilitiesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -336,6 +338,7 @@
 				1AEB88132092CFE3002230A3 /* CalendarExtensions.swift */,
 				1A602F8D20A88B09003AD583 /* BundelExtensions.swift */,
 				1AEB88142092CFE3002230A3 /* Deprecated */,
+				1AF5449520F647BF000BFCD0 /* DispatchQueueExtensions.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -635,6 +638,7 @@
 				1AEB883A2092CFE3002230A3 /* UICollectionViewExtensions.swift in Sources */,
 				1AEB88462092CFE3002230A3 /* UILabelExtensions.swift in Sources */,
 				1AEB88602092CFE3002230A3 /* StringExtensions.swift in Sources */,
+				1AF5449620F647C0000BFCD0 /* DispatchQueueExtensions.swift in Sources */,
 				1AEB88572092CFE3002230A3 /* FoundationDeprecated.swift in Sources */,
 				1AEB884D2092CFE3002230A3 /* NSPredicateExtensions.swift in Sources */,
 				1AEB88442092CFE3002230A3 /* UINavigationControllerExtensions.swift in Sources */,

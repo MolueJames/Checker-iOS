@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -19,8 +19,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="338" height="79.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="关于督促生产经营单位建立健全安全生产档案的通知" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ujy-I5-7Nd">
-                        <rect key="frame" x="15" y="10" width="308" height="36"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="关于督促生产经营单位建立健全安全生产档案的通知" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ujy-I5-7Nd">
+                        <rect key="frame" x="15" y="12" width="308" height="36"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -52,7 +52,7 @@
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="Ujy-I5-7Nd" secondAttribute="trailing" constant="15" id="9aN-Ct-Tp1"/>
                     <constraint firstItem="jyN-oo-lTI" firstAttribute="centerY" secondItem="lfu-Rf-wKB" secondAttribute="centerY" id="GEu-Jo-sNf"/>
-                    <constraint firstItem="Ujy-I5-7Nd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="MyM-ib-9R4"/>
+                    <constraint firstItem="Ujy-I5-7Nd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="MyM-ib-9R4"/>
                     <constraint firstItem="Ujy-I5-7Nd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="fhh-0y-P9M"/>
                     <constraint firstAttribute="bottom" secondItem="lfu-Rf-wKB" secondAttribute="bottom" constant="8" id="hJc-ZH-7yb"/>
                     <constraint firstAttribute="trailing" secondItem="jyN-oo-lTI" secondAttribute="trailing" constant="15" id="t3A-qN-aWq"/>
@@ -60,7 +60,7 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <point key="canvasLocation" x="-143" y="68"/>
+            <point key="canvasLocation" x="16" y="42"/>
         </tableViewCell>
     </objects>
 </document>

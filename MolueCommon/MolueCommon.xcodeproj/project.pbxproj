@@ -28,6 +28,7 @@
 		1A7D9B6A2086470300FA997D /* MolueCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A7D9B602086470200FA997D /* MolueCommon.framework */; };
 		1A7D9B6F2086470300FA997D /* MolueCommonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7D9B6E2086470300FA997D /* MolueCommonTests.swift */; };
 		1A7D9B712086470300FA997D /* MolueCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A7D9B632086470300FA997D /* MolueCommon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1A944CB420F1D08A002BD1E9 /* MLCommonRemarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A944CB320F1D08A002BD1E9 /* MLCommonRemarkView.swift */; };
 		1A98F29D20C96940000D0F8F /* MLCommonFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A98F29C20C96940000D0F8F /* MLCommonFunction.swift */; };
 		1A98F29F20C96E87000D0F8F /* MLCommonPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A98F29E20C96E87000D0F8F /* MLCommonPhotoView.swift */; };
 		1A98F2A420C972ED000D0F8F /* MLCommonPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A98F2A220C972ED000D0F8F /* MLCommonPhotoCell.swift */; };
@@ -93,6 +94,7 @@
 		1A7D9B692086470300FA997D /* MolueCommonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MolueCommonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A7D9B6E2086470300FA997D /* MolueCommonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueCommonTests.swift; sourceTree = "<group>"; };
 		1A7D9B702086470300FA997D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A944CB320F1D08A002BD1E9 /* MLCommonRemarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLCommonRemarkView.swift; sourceTree = "<group>"; };
 		1A98F29C20C96940000D0F8F /* MLCommonFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLCommonFunction.swift; sourceTree = "<group>"; };
 		1A98F29E20C96E87000D0F8F /* MLCommonPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLCommonPhotoView.swift; sourceTree = "<group>"; };
 		1A98F2A220C972ED000D0F8F /* MLCommonPhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLCommonPhotoCell.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 				1ABDCAA020C594A50062DE71 /* MLCommonSegmentView.swift */,
 				1ABDCAA220C594AC0062DE71 /* MLCommonSegmentView.xib */,
 				1A730ADB20EBB7F8008831BC /* MLCommonTitleView.swift */,
+				1A944CB320F1D08A002BD1E9 /* MLCommonRemarkView.swift */,
 			);
 			path = CommonViews;
 			sourceTree = "<group>";
@@ -211,7 +214,7 @@
 				1A65039120DD54F20017F91D /* MolueCommon.xcassets */,
 				1AA7822C20CCFC0800088923 /* CommonController */,
 				1A98F29B20C968F8000D0F8F /* CommonFunction */,
-				1AA7823120CCFE5600088923 /* CommonPhoto */,
+				1AA7823120CCFE5600088923 /* CommonPhotoView */,
 				1A43BC3420C402F10093855B /* CommonViews */,
 				1A2D443B20A0977A00BA947A /* InterfaceConfigure */,
 				1A2D441920A07E9900BA947A /* RefreshAnimator */,
@@ -254,7 +257,7 @@
 			path = CommonController;
 			sourceTree = "<group>";
 		};
-		1AA7823120CCFE5600088923 /* CommonPhoto */ = {
+		1AA7823120CCFE5600088923 /* CommonPhotoView */ = {
 			isa = PBXGroup;
 			children = (
 				1A98F29E20C96E87000D0F8F /* MLCommonPhotoView.swift */,
@@ -263,7 +266,7 @@
 				1A98F2A620C97331000D0F8F /* MLCommonAddPhotoCell.swift */,
 				1A98F2A720C97331000D0F8F /* MLCommonAddPhotoCell.xib */,
 			);
-			path = CommonPhoto;
+			path = CommonPhotoView;
 			sourceTree = "<group>";
 		};
 		1AA7823220CCFE8300088923 /* Views */ = {
@@ -512,6 +515,7 @@
 				1A98F2A820C97331000D0F8F /* MLCommonAddPhotoCell.swift in Sources */,
 				1A52756A20D523B500CA0D68 /* MLSignleSelectTableCell.swift in Sources */,
 				1AA7822E20CCFDC200088923 /* MLSelectedTableController.swift in Sources */,
+				1A944CB420F1D08A002BD1E9 /* MLCommonRemarkView.swift in Sources */,
 				1A43BC3620C4031D0093855B /* MLCommonInputView.swift in Sources */,
 				1AA7823520CCFF3B00088923 /* MLSelectedTableViewCell.swift in Sources */,
 				1A98F29F20C96E87000D0F8F /* MLCommonPhotoView.swift in Sources */,

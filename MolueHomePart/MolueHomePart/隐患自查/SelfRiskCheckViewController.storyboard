@@ -127,6 +127,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ySf-wE-RHm"/>
                     </view>
+                    <connections>
+                        <outlet property="checkDataClickView" destination="C6z-Zc-gMF" id="xy7-Xw-XqH"/>
+                        <outlet property="checkTypeClickView" destination="ynK-E8-bll" id="3XR-eD-z02"/>
+                        <outlet property="checkerNameInputView" destination="NM6-gb-Nwr" id="NbP-VQ-qB9"/>
+                        <outlet property="riskCategoryClickView" destination="sFu-tB-xsG" id="Goa-gY-V77"/>
+                        <outlet property="riskDescriptionInputView" destination="mcO-hr-sYi" id="oC6-Xp-dkP"/>
+                        <outlet property="riskLevelClickView" destination="hvt-WV-1nO" id="63i-h5-2XU"/>
+                        <outlet property="riskPlaceClickView" destination="Cso-bP-ddH" id="C0i-jG-pWH"/>
+                        <outlet property="uploadPhotoView" destination="JWA-bk-yFp" id="nNc-r6-8eJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W4w-Nm-e5c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
