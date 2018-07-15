@@ -75,7 +75,7 @@ extension MineInfoViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withClass: MineInfoTableViewCell.self)!
+        let cell = tableView.dequeueReusableCell(withClass: MineInfoTableViewCell.self)
         return cell
     }
 }

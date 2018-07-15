@@ -38,7 +38,7 @@ extension LawRegulationViewController: UITableViewDataSource {
         return 10
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withClass: LawRegulationTableViewCell.self)!
+        let cell = tableView.dequeueReusableCell(withClass: LawRegulationTableViewCell.self)
         return cell
     }
 }

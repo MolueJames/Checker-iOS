@@ -32,8 +32,6 @@ extension BookDetailViewController: MLUserInterfaceProtocol {
     func updateUserInterfaceElements() {
         self.tableView.backgroundColor = .clear
         self.tableView.separatorStyle = .none
-//        self.updateNavigationView(height: 0)
-        MolueLogger.UIModule.message(self.parent)
     }
 }
 
@@ -47,7 +45,7 @@ extension BookDetailViewController: UITableViewDataSource {
         return 10
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withClass: BookInfoTableViewCell.self)!
+        let cell = tableView.dequeueReusableCell(withClass: BookInfoTableViewCell.self)
         return cell
     }
 }

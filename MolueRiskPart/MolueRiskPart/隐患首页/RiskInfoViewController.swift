@@ -54,7 +54,7 @@ extension RiskInfoViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: RiskInfoTableViewCell! = tableView.dequeueReusableCell(withClass: RiskInfoTableViewCell.self)
+        let cell = tableView.dequeueReusableCell(withClass: RiskInfoTableViewCell.self)
         if indexPath.row % 2 == 1 {
             cell.update(title:"哈哈占用、堵塞、封闭消防通道，妨碍逃生, 嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻")
         } else {

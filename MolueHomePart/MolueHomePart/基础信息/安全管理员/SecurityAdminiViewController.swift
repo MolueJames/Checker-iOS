@@ -72,7 +72,7 @@ extension SecurityAdminiViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: SecurityAdminiTableViewCell! = tableView.dequeueReusableCell(withClass: SecurityAdminiTableViewCell.self)
+        let cell = tableView.dequeueReusableCell(withClass: SecurityAdminiTableViewCell.self)
         cell.reloadSubviewsWithModel()
         
         cell.phoneCommand?.subscribe(onNext: { (phone) in

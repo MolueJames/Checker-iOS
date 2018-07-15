@@ -38,7 +38,7 @@ extension PolicyNoticeViewController: UITableViewDataSource {
         return 10
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withClass: PolicyNoticeTableViewCell.self)!
+        let cell = tableView.dequeueReusableCell(withClass: PolicyNoticeTableViewCell.self)
         return cell
     }
 }

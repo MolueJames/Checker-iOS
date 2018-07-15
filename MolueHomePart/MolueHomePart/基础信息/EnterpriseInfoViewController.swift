@@ -62,7 +62,7 @@ extension EnterpriseInfoViewController: UITableViewDataSource {
         return self.dataManager.count()
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell:EnterpriseInfoTableViewCell! = tableView.dequeueReusableCell(withClass: EnterpriseInfoTableViewCell.self)
+        let cell = tableView.dequeueReusableCell(withClass: EnterpriseInfoTableViewCell.self)
         let item: EnterpriseInfoModel = self.dataManager.item(at: indexPath.row)
         cell.setEnterpriseInfoModel(item)
         return cell

@@ -11,16 +11,23 @@ project 'MolueNavigator/MolueNavigator.xcodeproj'
 project 'MolueFoundation/MolueFoundation.xcodeproj'
 project 'MolueDatabase/MolueDatabase.xcodeproj'
 
+def molue_safty_shared_pods
+    pod 'SnapKit', '~> 4.0.0'
+    pod 'Kingfisher', '~> 4.0'
+    pod 'ViewAnimator', '~> 2.0.1'
+    pod 'ImagePicker', '~> 3.0.0'
+    pod 'RxSwift', '~> 4.1.2'
+    pod 'ESPullToRefresh', '~> 2.7'
+    pod 'ObjectMapper', '~> 3.1'
+end
+
 target 'MolueSafty' do
     project 'MolueSafty/MolueSafty.xcodeproj'
         pod 'URLNavigator', '~> 2.0.4'
         pod 'IQKeyboardManagerSwift', '~> 5.0.0'
-        pod 'Kingfisher', '~> 4.0'
         pod 'Alamofire', '~> 4.7'
-        pod 'SnapKit', '~> 4.0.0'
         pod 'SQLite.swift', '~> 0.11.4'
         pod 'Locksmith', '~> 4.0.0'
-        pod 'ObjectMapper', '~> 3.1'
         pod 'JPush', '~> 3.0.9'
         pod 'AMapSearch', '~> 5.7.0'
         pod 'AMap3DMap', '~> 5.7.0'
@@ -29,55 +36,28 @@ target 'MolueSafty' do
         pod 'Permission/Location', '~> 2.0.4'
         pod 'Permission/Notifications', '~> 2.0.4'
         pod 'NVActivityIndicatorView', '~> 4.2.0'
-        pod 'ViewAnimator', '~> 2.0.1'
-        pod 'ESPullToRefresh', '~> 2.7'
-        pod 'ImagePicker', '~> 3.0.0'
-        pod 'RxSwift', '~> 4.1.2'
         pod 'JGProgressHUD', '~> 1.4'
+        molue_safty_shared_pods
 end
 
 target 'MolueMinePart' do
     project 'MolueMinePart/MolueMinePart.xcodeproj'
-        pod 'SnapKit', '~> 4.0.0'
-        pod 'Kingfisher', '~> 4.0'
-        pod 'ViewAnimator', '~> 2.0.1'
-        pod 'ImagePicker', '~> 3.0.0'
-        pod 'RxSwift', '~> 4.1.2'
-        pod 'ESPullToRefresh', '~> 2.7'
-        pod 'ObjectMapper', '~> 3.1'
+        molue_safty_shared_pods
 end
 
 target 'MolueHomePart' do
     project 'MolueHomePart/MolueHomePart.xcodeproj'
-        pod 'SnapKit', '~> 4.0.0'
-        pod 'Kingfisher', '~> 4.0'
-        pod 'ViewAnimator', '~> 2.0.1'
-        pod 'ImagePicker', '~> 3.0.0'
-        pod 'RxSwift', '~> 4.1.2'
-        pod 'ESPullToRefresh', '~> 2.7'
-        pod 'ObjectMapper', '~> 3.1'
+        molue_safty_shared_pods
 end
 
 target 'MolueRiskPart' do
     project 'MolueRiskPart/MolueRiskPart.xcodeproj'
-        pod 'SnapKit', '~> 4.0.0'
-        pod 'Kingfisher', '~> 4.0'
-        pod 'ViewAnimator', '~> 2.0.1'
-        pod 'ImagePicker', '~> 3.0.0'
-        pod 'RxSwift', '~> 4.1.2'
-        pod 'ESPullToRefresh', '~> 2.7'
-        pod 'ObjectMapper', '~> 3.1'
+        molue_safty_shared_pods
 end
 
 target 'MolueBookPart' do
     project 'MolueBookPart/MolueBookPart.xcodeproj'
-        pod 'SnapKit', '~> 4.0.0'
-        pod 'Kingfisher', '~> 4.0'
-        pod 'ViewAnimator', '~> 2.0.1'
-        pod 'ImagePicker', '~> 3.0.0'
-        pod 'RxSwift', '~> 4.1.2'
-        pod 'ESPullToRefresh', '~> 2.7'
-        pod 'ObjectMapper', '~> 3.1'
+        molue_safty_shared_pods
 end
 
 target 'MolueCommon' do
@@ -86,9 +66,7 @@ target 'MolueCommon' do
         pod 'Permission/Camera', '~> 2.0.4'
         pod 'Permission/Location', '~> 2.0.4'
         pod 'Permission/Notifications', '~> 2.0.4'
-        pod 'ESPullToRefresh', '~> 2.7'
-        pod 'SnapKit', '~> 4.0.0'
-        pod 'RxSwift', '~> 4.1.2'
+        molue_safty_shared_pods
     target 'MolueCommonTests' do
         inherit! :search_paths
     end
