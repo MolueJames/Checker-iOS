@@ -78,5 +78,47 @@ public extension Optional {
 	
 }
 
+public struct MolueNilError: Error, CustomStringConvertible {
+    public var description: String { return _description }
+    public init(file: String, function: String, line: Int) {
+        _description = "Nil returned at " + (file as NSString).lastPathComponent + ":\(line)"
+    }
+    private let _description: String
+}
+
+public extension Optional {
+    public func unwrap(file: String = #file, function: String = #function, line: Int = #line) throws -> Wrapped {
+        guard let unwrapped = self else { throw MolueNilError(file: file, function: function, line: line) }
+        return unwrapped
+    }
+}
+
+public protocol MolueTargetHelper {}
+
+public extension MolueTargetHelper where Self: Any {
+    /// 该方法适用于返回值是Optional的方法, 其他的方法不建议使用
+    /// public func viewController<T: UIViewController>(_ router: MolueNavigatorRouter, parameters: Mappable? = nil, context: Any? = nil) -> T? {
+    ///     do {
+    ///         let url = try router.toString().unwrap()
+    ///         let newURL = self.updateRouterURL(url, parameters: parameters)
+    ///         let controller = try navigator.viewController(for: newURL, context: context).unwrap()
+    ///         return try controller.toTarget().unwrap()
+    ///     } catch {
+    ///         return MolueLogger.failure.returnNil(error)
+    ///     }
+    /// }
+    public func toTarget<T> (file: String = #file, line: Int = #line) -> T? {
+        return self as? T
+    }
+}
+
+extension NSObject: MolueTargetHelper {}
+extension CGPoint: MolueTargetHelper {}
+extension CGRect: MolueTargetHelper {}
+extension CGSize: MolueTargetHelper {}
+extension CGVector: MolueTargetHelper {}
+extension Array: MolueTargetHelper {}
+extension Dictionary: MolueTargetHelper{}
+
 // MARK: - Operators
 infix operator ??= : AssignmentPrecedence

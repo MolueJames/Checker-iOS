@@ -49,12 +49,14 @@ public class MLSingleSelectController<Target: MLSingleSelectProtocol>: MLBaseVie
         }
     }
     @IBAction private func saveButtonClicked(_ sender: UIBarButtonItem) {
-        guard let selectIndex = self.tableView.indexPathForSelectedRow else {
-            MolueLogger.warning.message("the select list is not existed"); return
+        do {
+            let selectIndex = try self.tableView.indexPathForSelectedRow.unwrap()
+            let model = self.list[selectIndex.row]
+            self.selectCommand.onNext(model)
+            self.navigationController?.popViewController(animated: true)
+        } catch {
+            MolueLogger.warning.message(error)
         }
-        let model = self.list[selectIndex.row]
-        self.selectCommand.onNext(model)
-        self.navigationController?.popViewController(animated: true)
     }
     open override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

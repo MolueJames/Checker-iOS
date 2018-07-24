@@ -29,14 +29,15 @@ open class MolueRequestManager {
     }
     
     public func start() {
-        guard let component = request.components, let url = try? component.asURL() else {
-            MolueLogger.failure.error("request url is invalid"); return
+        do {
+            let component = try request.components.unwrap()
+            let requestURL = try component.asURL()
+            self.dataRequest = SessionManager.default.doRequest(requestURL, method: request.method, parameters: request.parameter, encoding: request.encoding, headers: request.headers, delegate: delegate)
+            let dataRequest = try self.dataRequest.unwrap()
+            dataRequest.responseHandler(delegate: delegate, queue: queue, options: options, success: success, failure: failure)
+        } catch {
+            MolueLogger.failure.error(error)
         }
-        self.dataRequest = SessionManager.default.doRequest(url, method: request.method, parameters: request.parameter, encoding: request.encoding, headers: request.headers, delegate: delegate)
-        guard let dataRequest = self.dataRequest else {
-            MolueLogger.failure.error("the data request is not existed"); return
-        }
-        dataRequest.responseHandler(delegate: delegate, queue: queue, options: options, success: success, failure: failure)
     }
     @discardableResult
     public func handleSuccessResponse(_ success: MolueResultClosure<Any?>?) -> MolueRequestManager {

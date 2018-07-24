@@ -10,6 +10,7 @@ import Foundation
 import MolueNavigator
 import MolueMinePart
 import MolueFoundation
+import MolueUtilities
 import MolueCommon
 
 extension AppDelegate {
@@ -28,15 +29,19 @@ extension AppDelegate {
         self.addNavigationController(module: .Book, path: BookPath.BookInfo.rawValue, viewControllers: &viewControllers, title:"文书", imageName: "molue_tabbar_book")
         self.addNavigationController(module: .Mine, path: MinePath.MineInfo.rawValue, viewControllers: &viewControllers, title:"我的", imageName: "molue_tabbar_mine")
         
-        let tabbarController = MLTabBarController.init()
+        let tabbarController = MLTabBarController()
         tabbarController.viewControllers = viewControllers
         return tabbarController
     }
     
-    private func addNavigationController(module: MolueNavigatorRouter.RouterHost, path: String, viewControllers: inout [MLNavigationController], title: String, imageName: String){
-        let router = MolueNavigatorRouter(module, path: path)
-        guard let viewController = MolueAppRouter.shared.viewController(router) else { return }
-        viewController.tabBarItem = UITabBarItem.init(title: title, image: UIImage.init(named: imageName), tag: viewControllers.count)
-        viewControllers.append(MLNavigationController.init(rootViewController: viewController))
+    private func addNavigationController(module: MolueNavigatorRouter.RouterHost, path: String, viewControllers: inout [MLNavigationController], title: String, imageName: String) {
+        do {
+            let router = MolueNavigatorRouter(module, path: path)
+            let viewController = try MolueAppRouter.shared.viewController(router).unwrap()
+            viewController.tabBarItem = UITabBarItem(title: title, image: UIImage.init(named: imageName), tag: viewControllers.count)
+            viewControllers.append(MLNavigationController.init(rootViewController: viewController))
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
     }
 }

@@ -12,13 +12,16 @@ public class MolueDoAlertRouter {
     private var components = URLComponents()
     
     public init(_ style: UIAlertControllerStyle, title: String? = nil, message: String? = nil) {
-        self.components.scheme = "navigator"
-        self.components.host = "alert"
-        self.components.path = style.toString()
-        guard let title = title, let message = message else {
-            MolueLogger.failure.error("the title and message is not existed"); return
+        do {
+            self.components.scheme = "navigator"
+            self.components.host = "alert"
+            self.components.path = style.toString()
+            let title = try title.unwrap()
+            let message = try message.unwrap()
+            self.components.query = QueryUtilities.query(["title": title, "message": message])
+        } catch {
+            MolueLogger.failure.error(error)
         }
-        self.components.query = QueryUtilities.query(["title": title, "message": message])
     }
     
     public init (_ path: String) {
@@ -29,21 +32,27 @@ public class MolueDoAlertRouter {
     }
     
     public func toPath() -> String? {
-        guard let url = self.components.url else {
-            return MolueLogger.failure.returnNil("the url is not existed")
+        do {
+            let url = try self.components.url.unwrap()
+            let absolute = try url.absoluteString.removingPercentEncoding.unwrap()
+            return absolute
+        } catch {
+            return MolueLogger.failure.returnNil(error)
         }
-        return url.absoluteString.removingPercentEncoding
     }
     
     public func toString() -> String? {
-        guard let url = self.components.url else {
-            return MolueLogger.failure.returnNil("the url is not existed")
+        do {
+            let url = try self.components.url.unwrap()
+            let absolute = try url.absoluteString.removingPercentEncoding.unwrap()
+            return absolute
+        } catch {
+            return MolueLogger.failure.returnNil(error)
         }
-        return url.absoluteString.removingPercentEncoding
     }
 }
 
-extension UIAlertControllerStyle {
+fileprivate extension UIAlertControllerStyle {
     fileprivate func toString() -> String {
         switch self {
         case .alert:

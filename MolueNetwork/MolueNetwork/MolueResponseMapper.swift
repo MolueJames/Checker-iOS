@@ -12,17 +12,20 @@ import MolueUtilities
 
 private struct MolueResponseMapper {
     public static func handleResultToDict<Target: Mappable>(_ result: Any?) throws -> Target {
-        guard let object = Mapper<Target>().map(JSONObject: result) else {
+        do {
+            return try Mapper<Target>().map(JSONObject: result).unwrap()
+        } catch {
             throw MolueStatusError.mapperResponseError
         }
-        return object
     }
     
     public static func handleResultToList<Target: Mappable>(_ result: Any?) throws -> [Target] {
-        guard let result = result as? [[String: Any]] else {
+        do {
+            let result = try (result as? [[String: Any]]).unwrap()
+            return Mapper<Target>().mapArray(JSONArray: result)
+        } catch {
             throw MolueStatusError.mapperResponseError
         }
-        return Mapper<Target>().mapArray(JSONArray: result)
     }
 }
 
@@ -31,7 +34,7 @@ public extension MolueRequestManager {
     public func handleSuccessResultToObjc<T: Mappable>(_ success: MolueResultClosure<T?>?) -> MolueRequestManager {
         let resultClosure: MolueResultClosure<Any?> = { (result) in
             do {
-                let response:T? = try MolueResponseMapper.handleResultToDict(result)
+                let response: T? = try MolueResponseMapper.handleResultToDict(result)
                 success?(response)
             } catch {
                 MolueLogger.failure.error(error)

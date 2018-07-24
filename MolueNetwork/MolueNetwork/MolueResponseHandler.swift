@@ -23,10 +23,15 @@ public extension DataRequest {
     }
     
     private func handleDefaultError(_ error: Error?, delegate: MolueActivityDelegate?, failure: MolueResultClosure<Error>? = nil) -> Bool {
-        guard let error = error else {return false}
-        delegate?.networkActivityFailure(error: error)
-        failure?(error)
-        return true
+        do {
+            let error = try error.unwrap()
+            delegate?.networkActivityFailure(error: error)
+            failure?(error)
+            return true
+        } catch {
+            MolueLogger.failure.error(error)
+            return false
+        }
     }
     
     private func startRequestInfoLogger () {
@@ -93,9 +98,9 @@ public extension DataRequest {
     }
     
     private func transferJsonWithResponseData(_ data: Data?, options: JSONSerialization.ReadingOptions) throws -> Any {
-        guard let data = data else {throw MolueStatusError.transferJsonFailure}
         do {
-           return try JSONSerialization.jsonObject(with: data, options: options)
+            let data = try data.unwrap()
+            return try JSONSerialization.jsonObject(with: data, options: options)
         } catch {
             MolueLogger.failure.message(error)
             throw MolueStatusError.transferJsonFailure
@@ -152,8 +157,15 @@ public enum MolueStatusError: LocalizedError {
     }
     
     func handleErrorResult(result: Any?) -> String {
-        guard let result = result, let response = result as? [String: Any] else {return "服务器发生了未知错误"}
-        guard let code = response["code"], let message = response["message"] else {return "服务器发生了未知错误"}
-        return "错误ID:" + String(describing: code) + "\n错误信息:" + String(describing: message)
+        do {
+            let result = try result.unwrap() as? [String: Any]
+            let response = try result.unwrap()
+            let code = try response["code"].unwrap()
+            let message = try response["message"].unwrap()
+            return "错误ID:" + String(describing: code) + "\n错误信息:" + String(describing: message)
+        } catch {
+            MolueLogger.network.error(error)
+            return "服务器发生了未知错误"
+        }
     }
 }

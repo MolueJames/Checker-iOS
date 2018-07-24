@@ -64,16 +64,18 @@ public class MLSelectedTableController<Target: MLMutipleSectionProtocol>: MLBase
     }
     
     @IBAction private func saveButtonClicked(_ sender: UIBarButtonItem) {
-        guard let selectedList = self.tableView.indexPathsForSelectedRows?.enumerated() else {
-            MolueLogger.warning.message("the select list is not existed"); return
+        do {
+            let selectedList = try self.tableView.indexPathsForSelectedRows.unwrap().enumerated()
+            let list: [Target] = selectedList.compactMap { [unowned self] (index, _) -> Target in
+                var model = self.list[index]
+                model.selected = true
+                return model
+            }
+            self.selectCommand.onNext(list)
+            self.navigationController?.popViewController(animated: true)
+        } catch {
+            MolueLogger.UIModule.message(error)
         }
-        let list: [Target] = selectedList.compactMap { [unowned self] (index, _) -> Target in
-            var model = self.list[index]
-            model.selected = true
-            return model
-        }
-        self.selectCommand.onNext(list)
-        self.navigationController?.popViewController(animated: true)
     }
     
     open override func didReceiveMemoryWarning() {

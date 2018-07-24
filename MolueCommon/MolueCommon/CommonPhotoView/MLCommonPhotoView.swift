@@ -135,12 +135,14 @@ extension MLCommonPhotoView: UICollectionViewDataSource {
     }
     
     private func doDeleteOperationForCell(_ cell: MLCommonPhotoCell) {
-        guard let path = self.collectionView.indexPath(for: cell) else {
-            MolueLogger.UIModule.error("the indexPath is not existed"); return
+        do {
+            let path = try self.collectionView.indexPath(for: cell).unwrap()
+            self.collectionView.performBatchUpdates({
+                self.list.remove(at: path.row)
+                self.collectionView.deleteItems(at: [path])
+            })
+        } catch {
+            MolueLogger.UIModule.error(error)
         }
-        self.collectionView.performBatchUpdates({
-            self.list.remove(at: path.row)
-            self.collectionView.deleteItems(at: [path])
-        })
     }
 }

@@ -77,13 +77,13 @@ extension BookInfoViewController: MLUserInterfaceProtocol {
 extension BookInfoViewController: UIPageViewControllerDelegate {
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         guard completed && finished else { return }
-        guard let current = pageViewController.viewControllers?.last else {
-            MolueLogger.UIModule.error("the current is not existed"); return
+        do {
+            let current = try pageViewController.viewControllers.unwrap().last.unwrap()
+            let selectIndex = try self.viewControllers.index(of: current).unwrap()
+            self.selectedIndex = selectIndex
+        } catch {
+            MolueLogger.UIModule.error(error)
         }
-        guard let selectIndex = self.viewControllers.index(of: current) else {
-            MolueLogger.UIModule.error("the selected index is not existed"); return
-        }
-        self.selectedIndex = selectIndex
     }
 }
 

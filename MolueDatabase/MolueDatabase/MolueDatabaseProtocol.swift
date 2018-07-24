@@ -28,8 +28,8 @@ public protocol MLDatabaseProtocol {
 extension MLDatabaseProtocol {
     public static func selectObjectOperation<Target: Codable>(_ closure: databaseClosure<QueryType>? = nil, completion: @escaping databaseCompletion<[Target]>, queue: DispatchQueue = DispatchQueue.main) {
         selectOperation(closure, complection: { (sequence) in
-            guard let list = sequence else { return }
             do {
+                let list = try sequence.unwrap()
                 completion( try list.map({ try $0.decode() }))
             } catch {
                 MolueLogger.failure.error(error)

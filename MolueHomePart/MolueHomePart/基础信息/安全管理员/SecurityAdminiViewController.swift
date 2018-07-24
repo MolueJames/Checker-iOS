@@ -76,7 +76,7 @@ extension SecurityAdminiViewController: UITableViewDataSource {
         cell.reloadSubviewsWithModel()
         
         cell.phoneCommand?.subscribe(onNext: { (phone) in
-            MLCommonFunction.ringUpPhone(phone)
+            MLCommonFunction.makeTelephoneCall(phone)
         }).disposed(by: disposeBag)
         
         cell.detailCommand?.subscribe(onNext: { [unowned self] (_) in

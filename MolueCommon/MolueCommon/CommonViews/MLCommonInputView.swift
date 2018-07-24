@@ -47,8 +47,12 @@ public class MLCommonInputView: UIView {
     public let textChangedCommand = PublishSubject<String>()
     
     @IBAction private func textValueChanged(_ textFiled: UITextField) {
-        guard let text = textFiled.text else {return}
-        self.textChangedCommand.onNext(text)
+        do {
+            let text = try textFiled.text.unwrap()
+            self.textChangedCommand.onNext(text)
+        } catch {
+            MolueLogger.UIModule.message(error)
+        }
     }
     
     public func defaultValue(title: String, placeholder: String, keyboardType: UIKeyboardType = .default) {

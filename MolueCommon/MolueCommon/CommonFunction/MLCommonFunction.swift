@@ -7,14 +7,19 @@
 //
 
 import Foundation
+import MolueUtilities
 
 public struct MLCommonFunction {
-    public static func ringUpPhone(_ phone: String) {
-        guard let url = URL(string: "tel:" + phone) else { return }
-        if #available(iOS 10.0, *) {
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
-        } else {
-            UIApplication.shared.openURL(url)
+    public static func makeTelephoneCall(_ phone: String) {
+        do {
+            let url = try URL(string: "tel:" + phone).unwrap()
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            } else {
+                UIApplication.shared.openURL(url)
+            }
+        } catch {
+            MolueLogger.failure.error(error)
         }
     }
 }

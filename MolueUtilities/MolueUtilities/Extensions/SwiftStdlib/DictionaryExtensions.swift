@@ -186,3 +186,9 @@ public extension Dictionary where Key: ExpressibleByStringLiteral {
 	}
 	
 }
+
+public extension Dictionary {
+    public func forKey<T>(_ key: Key) -> T? {
+        return self[key] as? T
+    }
+}
