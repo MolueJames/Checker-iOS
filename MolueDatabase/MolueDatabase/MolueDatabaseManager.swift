@@ -26,18 +26,16 @@ public class MLDatabaseManager {
     
     @discardableResult
     public func doConnection(_ fileName: String) -> Bool {
-        guard let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first else {
-            return handleDatabaseError(DatabaseError.databasePath)
-        }
         var isSuccess = false
         do {
-            defer {
-                databaseLock.unlock()
-            }
-            databaseLock.lock()
+            databaseLock.lock(); defer { databaseLock.unlock() }
+            let pathList = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+            let path = try pathList.first.unwrap()
             connection = try Connection("\(path)/\(fileName).sqlite3")
             MolueLogger.database.message("file path: \(path)/\(fileName).sqlite3")
             isSuccess = true
+        } catch is MolueNilError {
+            return handleDatabaseError(DatabaseError.databasePath)
         } catch {
             return handleDatabaseError(error)
         }
@@ -50,17 +48,14 @@ extension MLDatabaseManager {
     @discardableResult
     public func runUpdataOperator(_ operation: Update) -> Bool {
         return databaseQueue.sync {
-            guard let connection = self.connection else {
-                return handleDatabaseError(DatabaseError.unconnection)
-            }
             var isSuccess = false
             do {
-                defer {
-                    databaseLock.unlock()
-                }
-                databaseLock.lock()
+                databaseLock.lock(); defer { databaseLock.unlock() }
+                let connection = try self.connection.unwrap()
                 try connection.run(operation)
                 isSuccess = true
+            } catch is MolueNilError {
+                return handleDatabaseError(DatabaseError.databasePath)
             } catch {
                 return handleDatabaseError(error)
             }
@@ -71,17 +66,14 @@ extension MLDatabaseManager {
     @discardableResult
     public func runInsertOperator(_ operation: Insert) -> Bool {
         return databaseQueue.sync {
-            guard let connection = self.connection else {
-                return handleDatabaseError(DatabaseError.unconnection)
-            }
             var isSuccess = false
             do {
-                defer {
-                    databaseLock.unlock()
-                }
-                databaseLock.lock()
+                databaseLock.lock(); defer { databaseLock.unlock() }
+                let connection = try self.connection.unwrap()
                 try connection.run(operation)
                 isSuccess = true
+            } catch is MolueNilError {
+                return handleDatabaseError(DatabaseError.databasePath)
             } catch {
                 return handleDatabaseError(error)
             }
@@ -92,17 +84,14 @@ extension MLDatabaseManager {
     @discardableResult
     public func runDeleteOperator(_ operation: Delete) -> Bool {
         return databaseQueue.sync {
-            guard let connection = self.connection else {
-                return handleDatabaseError(DatabaseError.unconnection)
-            }
             var isSuccess = false
             do {
-                defer {
-                    databaseLock.unlock()
-                }
-                databaseLock.lock()
+                databaseLock.lock(); defer { databaseLock.unlock() }
+                let connection = try self.connection.unwrap()
                 try connection.run(operation)
                 isSuccess = true
+            } catch is MolueNilError {
+                return handleDatabaseError(DatabaseError.databasePath)
             } catch {
                 return handleDatabaseError(error)
             }
@@ -113,17 +102,14 @@ extension MLDatabaseManager {
     @discardableResult
     public func runCreateOperator(_ operation: String) -> Bool {
         return databaseQueue.sync {
-            guard let connection = self.connection else {
-                return handleDatabaseError(DatabaseError.unconnection)
-            }
             var isSuccess = false
             do {
-                defer {
-                    databaseLock.unlock()
-                }
-                databaseLock.lock()
+                databaseLock.lock(); defer { databaseLock.unlock() }
+                let connection = try self.connection.unwrap()
                 try connection.run(operation)
                 isSuccess = true
+            } catch is MolueNilError {
+                return handleDatabaseError(DatabaseError.databasePath)
             } catch {
                 return handleDatabaseError(error)
             }
@@ -133,16 +119,13 @@ extension MLDatabaseManager {
     
     public func runSelectOperator(_ operation: QueryType) -> AnySequence<Row>? {
         return databaseQueue.sync {
-            guard let connection = self.connection else {
-                return handleDatabaseError(DatabaseError.unconnection)
-            }
             var sequence: AnySequence<Row>?
             do {
-                defer {
-                    databaseLock.unlock()
-                }
-                databaseLock.lock()
+                databaseLock.lock(); defer { databaseLock.unlock() }
+                let connection = try self.connection.unwrap()
                 sequence = try connection.prepare(operation)
+            } catch is MolueNilError {
+                return handleDatabaseError(DatabaseError.databasePath)
             } catch {
                 return handleDatabaseError(error)
             }

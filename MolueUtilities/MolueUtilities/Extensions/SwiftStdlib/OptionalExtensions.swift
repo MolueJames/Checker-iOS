@@ -87,6 +87,7 @@ public struct MolueNilError: Error, CustomStringConvertible {
 }
 
 public extension Optional {
+    @discardableResult
     public func unwrap(file: String = #file, function: String = #function, line: Int = #line) throws -> Wrapped {
         guard let unwrapped = self else { throw MolueNilError(file: file, function: function, line: line) }
         return unwrapped

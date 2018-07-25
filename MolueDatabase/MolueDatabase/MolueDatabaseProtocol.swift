@@ -122,7 +122,13 @@ fileprivate enum MLDatabaseOperation {
         }
     }
     private func completionOperation<T> (_ closure: databaseCompletion<T>?, resultValue: T, queue currentQueue: DispatchQueue) {
-        guard let closure = closure else {return}
-        currentQueue.sync { closure(resultValue) }
+        do {
+            let closure = try closure.unwrap()
+            currentQueue.sync {
+                closure(resultValue)
+            }
+        } catch {
+            MolueLogger.failure.message(error)
+        }
     }
 }

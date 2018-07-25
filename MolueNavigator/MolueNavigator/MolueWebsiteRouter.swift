@@ -19,21 +19,21 @@ public class MolueWebsiteRouter {
     }
     
     init(_ scheme: RouterScheme, url: String) {
-        self.scheme = scheme.rawValue
-        guard let components = URLComponents(string: url) else {
-            MolueLogger.failure.error("the commponents is not existed"); return
+        do {
+            self.scheme = scheme.rawValue
+            let commponents = try URLComponents(string: url).unwrap()
+            self.components = commponents
+        } catch {
+            MolueLogger.failure.error(error)
         }
-        self.components = components
     }
     init(url: String) {
-        guard let components = URLComponents(string: url) else {
-            MolueLogger.failure.error("the commponents is not existed"); return
+        do {
+            self.components = try URLComponents(string: url).unwrap()
+            self.scheme = try components.scheme.unwrap()
+        } catch {
+            MolueLogger.failure.error(error)
         }
-        guard let scheme = components.scheme else {
-            MolueLogger.failure.error("the scheme is not existed"); return
-        }
-        self.components = components
-        self.scheme = scheme
     }
     
     init(_ scheme: RouterScheme, path: String) {
@@ -45,22 +45,23 @@ public class MolueWebsiteRouter {
     }
     
     public func toString() -> String? {
-        guard self.scheme == self.components.scheme else {
-            return MolueLogger.failure.returnNil("the schme is not existed")
+        do {
+            self.scheme = try self.components.scheme.unwrap()
+            let url = try self.components.url.unwrap()
+            guard url.absoluteString.isEmpty else {return url.absoluteString}
+            return MolueLogger.failure.returnNil("the url string is empty")
+        } catch {
+            return MolueLogger.failure.returnNil(error)
         }
-        guard let url = self.components.url else {
-            return MolueLogger.failure.returnNil("the url is not existed")
-        }
-        guard url.absoluteString.isEmpty else {
-            return url.absoluteString
-        }
-        return MolueLogger.failure.returnNil("the url string is empty")
     }
     
     func toPath() -> String? {
-        guard let scheme = self.scheme, let path = self.path else {
-            return MolueLogger.failure.returnNil("the schme or path is not existed")
+        do {
+            let scheme = try self.scheme.unwrap()
+            let path = try self.path.unwrap()
+            return scheme + "://" + path
+        } catch {
+            return MolueLogger.failure.returnNil(error)
         }
-        return scheme + "://" + path
     }
 }

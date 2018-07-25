@@ -27,9 +27,11 @@ public class MolueNavigatorRouter {
     }
     
     public func toString() -> String? {
-        guard let url = self.components.url else {
-            return MolueLogger.failure.returnNil("the url is not existed")
+        do {
+            let url = try self.components.url.unwrap()
+            return try url.absoluteString.removingPercentEncoding.unwrap()
+        } catch {
+            return MolueLogger.failure.returnNil(error)
         }
-        return url.absoluteString.removingPercentEncoding
     }
 }

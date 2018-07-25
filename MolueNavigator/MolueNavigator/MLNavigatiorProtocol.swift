@@ -44,7 +44,11 @@ public extension MLAppNavigatorProtocol {
 
 public struct MLNavigatorTransfer {
     public static func value<T: Mappable>(_ jsonValue: String?, Target: T.Type) -> T? {
-        guard let jsonValue = jsonValue else {return nil}
-        return Target.init(JSONString: jsonValue)
+        do {
+            let jsonValue = try jsonValue.unwrap()
+            return Target.init(JSONString: jsonValue)
+        } catch {
+            return MolueLogger.failure.returnNil(error)
+        }
     }
 }

@@ -42,47 +42,67 @@ extension MLLoadingIndicatorProtocol where Self: UIViewController {
         NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
     }
     func needToDo(newValue: Int, oldValue: Int) {
-        if newValue > 0 && oldValue <= 0{
-            self.showLoadingIndicatorView()
-        } else if oldValue > 0 && newValue <= 0{
+        let value = showOrLoadIndicatorView.switchShowHide(new: newValue, old: oldValue)
+        if value == .needHide {
             self.hideLoadingIndicatorView()
+        } else if value == .needShow {
+            self.showLoadingIndicatorView()
         }
+    }
+}
+
+fileprivate enum showOrLoadIndicatorView {
+    case needShow
+    case needHide
+    case keepLoad
+    static func switchShowHide(new: Int, old: Int) -> showOrLoadIndicatorView {
+        if new > 0 && old <= 0 {
+            return .needShow
+        } else if old > 0 && new <= 0 {
+            return .needHide
+        }
+        return .keepLoad
     }
 }
 
 extension MLControllerHUDProtocol where Self: UIViewController {
     public func showSuccessHUD(text: String) {
-        let image = UIImage(named: "foundation_icon_success")
-        guard let hud = self.createHUD(text: text, image: image)  else {
-            MolueLogger.UIModule.error("the hud is not existed")
-            return
+        do {
+            let image = try UIImage(named: "foundation_icon_success").unwrap()
+            let hud = try self.createHUD(text: text, image: image).unwrap()
+            self.showHUDAfterDismiss(hud)
+        } catch {
+            MolueLogger.UIModule.error(error)
         }
-        self.showHUDAfterDismiss(hud)
     }
     public func showFailureHUD(text: String) {
-        let image = UIImage(named: "foundation_icon_failure")
-        guard let hud = self.createHUD(text: text, image: image) else {
-            MolueLogger.UIModule.error("the hud is not existed")
-            return
+        do {
+            let image = try UIImage(named: "foundation_icon_failure").unwrap()
+            let hud = try self.createHUD(text: text, image: image).unwrap()
+            self.showHUDAfterDismiss(hud)
+        } catch {
+            MolueLogger.UIModule.error(error)
         }
-        self.showHUDAfterDismiss(hud)
     }
     public func showWarningHUD(text: String) {
-        guard text.isEmpty == false else {return}
-        guard let hud = self.createHUD(text: text, image: UIImage()) else {
-            MolueLogger.UIModule.error("the hud is not existed")
-            return
+        do {
+            guard text.isEmpty == false else {return}
+            let hud = try self.createHUD(text: text, image: UIImage()).unwrap()
+            self.showHUDAfterDismiss(hud)
+        } catch {
+            MolueLogger.UIModule.error(error)
         }
-        self.showHUDAfterDismiss(hud)
     }
     private func createHUD(text: String, image: UIImage?) -> JGProgressHUD? {
-        guard let hud = JGProgressHUD.init(style: JGProgressHUDStyle.dark) else {
-            MolueLogger.UIModule.error("the hud is not existed")
-            return nil
+        do {
+            let ProgressHUD = JGProgressHUD(style: JGProgressHUDStyle.dark)
+            let hud = try ProgressHUD.unwrap()
+            hud.indicatorView = JGProgressHUDImageIndicatorView.init(image: image)
+            hud.textLabel.text = text
+            return hud
+        } catch {
+            return MolueLogger.UIModule.returnNil(error)
         }
-        hud.indicatorView = JGProgressHUDImageIndicatorView.init(image: image)
-        hud.textLabel.text = text
-        return hud
     }
     private func showHUDAfterDismiss(_ HUD: JGProgressHUD) {
         HUD.show(in: self.view, animated: true)

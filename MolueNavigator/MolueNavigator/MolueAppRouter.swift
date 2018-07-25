@@ -121,13 +121,14 @@ public class MolueAppRouter {
     }
     
     private func updateViewController(_ viewController: UIViewController?, params: String?, context: Any?) {
-        guard let controller = viewController as? MolueNavigatorProtocol else {return}
         do {
+            let viewController = viewController as? MolueNavigatorProtocol
+            let controller = try viewController.unwrap()
             controller.doTransferParameters(params: context)
             let value = try params.unwrap().removingPercentEncoding.unwrap()
             controller.doSettingParameters(params: value)
         } catch {
-            MolueLogger.failure.error(error)
+            MolueLogger.failure.message(error)
         }
     }
     
