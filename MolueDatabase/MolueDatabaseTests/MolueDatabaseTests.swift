@@ -33,10 +33,16 @@ class MolueDatabaseTests: XCTestCase {
     func testExample() {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
     }
     
-    func testProtocol () {
-        MLDatabaseRegister.addDatabaseTarget(users.self)
+    func testSelectProtocol () {
+        user.selectOperation()
     }
+    
+}
+
+struct user: MLDatabaseProtocol {
+    var test: String?
     
 }

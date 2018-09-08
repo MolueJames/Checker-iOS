@@ -26,29 +26,123 @@ public protocol MLDatabaseProtocol {
 }
 
 extension MLDatabaseProtocol {
-    public static func selectObjectOperation<Target: Codable>(_ closure: databaseClosure<QueryType>? = nil, completion: @escaping databaseCompletion<[Target]>, queue: DispatchQueue = DispatchQueue.main) {
-        selectOperation(closure, complection: { (sequence) in
-            do {
-                let list = try sequence.unwrap()
-                completion( try list.map({ try $0.decode() }))
-            } catch {
-                MolueLogger.failure.error(error)
-            }
-        }, queue: queue)
-    }
     
-    private static func selectOperation(_ closure: databaseClosure<QueryType>? = nil, complection: @escaping databaseCompletion<AnySequence<Row>?>, queue: DispatchQueue = DispatchQueue.main) {
+    public static func selectOperation(_ select: QueryType, complection: @escaping databaseCompletion<AnySequence<Row>?>, queue: DispatchQueue = DispatchQueue.main) {
         databaseQueue.sync {
-            var query: QueryType = table_name
-            if let closure = closure {
-                query = closure(table_name)
-            }
-            let operation = MLDatabaseOperation.select(operation: query, complectionClosure: complection)
+            let operation = MLDatabaseOperation.select(operation: select, complectionClosure: complection)
             operation.excuteDatabaseOperation(queue: queue)
         }
     }
     
-    public static func insertOperation<T: Codable>(_ object: T, complection: databaseCompletion<Bool>? = nil, queue: DispatchQueue = DispatchQueue.main) {
+    public static func insertOperation(_ insert: Insert, complection: databaseCompletion<Bool>? = nil, queue: DispatchQueue = DispatchQueue.main) {
+        databaseQueue.sync {
+            let operation = MLDatabaseOperation.insert(operation: insert, complectionClosure: complection)
+            operation.excuteDatabaseOperation(queue: queue)
+        }
+    }
+    
+    public static func deleteOperation(_ delete: Delete, complection: databaseCompletion<Bool>? = nil, queue: DispatchQueue = DispatchQueue.main) {
+        databaseQueue.sync {
+            let operation = MLDatabaseOperation.delete(operation: delete, complectionClosure: complection)
+            operation.excuteDatabaseOperation(queue: queue)
+        }
+    }
+    
+    public static func updateOperation(_ update: Update, complection: databaseCompletion<Bool>? = nil, queue: DispatchQueue = DispatchQueue.main) {
+        databaseQueue.sync {
+            let operation = MLDatabaseOperation.update(operation: update, complectionClosure: complection)
+            operation.excuteDatabaseOperation(queue: queue)
+        }
+    }
+}
+
+extension MLDatabaseProtocol  {
+
+    public static func selectOperation(_ select: QueryType = table_name) -> AnySequence<Row>? {
+        return databaseQueue.sync {
+            return MLDatabaseManager.shared.runSelectOperator(select)
+        }
+    }
+    
+    public static func insertOperation(_ insert: Insert) {
+        return databaseQueue.sync {
+            return MLDatabaseManager.shared.runInsertOperator(insert)
+        }
+    }
+    
+    public static func updateOperation(_ update: Update) -> Bool {
+        return databaseQueue.sync {
+            return MLDatabaseManager.shared.runUpdataOperator(update)
+        }
+    }
+    
+    public static func deleteOperation(_ delete: Delete) -> Bool {
+        return databaseQueue.sync {
+            return MLDatabaseManager.shared.runDeleteOperator(delete)
+        }
+    }
+}
+
+extension MLDatabaseProtocol where Self: Codable {
+    
+    public static func updateObjectOperation(query: QueryType, object: Self) -> Bool {
+        return databaseQueue.sync {
+            do {
+                let update = try query.update(object)
+                return MLDatabaseManager.shared.runUpdataOperator(update)
+            } catch {
+                return handleDBProtocolError(error);
+            }
+        }
+    }
+    
+    public static func insertObjectOperation(_ object: Self) -> Bool {
+        return databaseQueue.sync {
+            do {
+                let insert = try table_name.insert(object)
+                return MLDatabaseManager.shared.runInsertOperator(insert)
+            } catch {
+                return handleDBProtocolError(error)
+            }
+        }
+    }
+    
+    public static func selectObjectOperation(_ select: QueryType = table_name) -> [Self]? {
+        return databaseQueue.sync {
+            let sequence = MLDatabaseManager.shared.runSelectOperator(select);
+            do {
+                let list = try sequence.unwrap()
+                return try list.map({ try $0.decode() })
+            } catch {
+                return handleDBProtocolError(error: error)
+            }
+        }
+    }
+    
+    public static func selectObjectOperation(_ select: QueryType, completion: @escaping databaseCompletion<[Self]?>, queue: DispatchQueue = DispatchQueue.main) {
+        selectOperation(select, complection: { (sequence) in
+            do {
+                let list = try sequence.unwrap()
+                completion( try list.map({ try $0.decode() }))
+            } catch {
+                completion(handleDBProtocolError(error: error))
+            }
+        })
+    }
+    
+    public static func updateObjectOperation(_ object: Self, query: QueryType, complection: databaseCompletion<Bool>? = nil, queue: DispatchQueue = DispatchQueue.main) {
+        databaseQueue.sync {
+            do {
+                let update = try query.update(object)
+                let operation = MLDatabaseOperation.update(operation: update, complectionClosure: complection)
+                operation.excuteDatabaseOperation(queue: queue)
+            } catch {
+                MolueLogger.failure.error(error)
+            }
+        }
+    }
+    
+    public static func insertOperation(_ object: Self, complection: databaseCompletion<Bool>? = nil, queue: DispatchQueue = DispatchQueue.main) {
         databaseQueue.sync {
             do {
                 let insert = try table_name.insert(object)
@@ -59,42 +153,15 @@ extension MLDatabaseProtocol {
             }
         }
     }
-    
-    public static func insertOperation(_ closure: @escaping databaseClosure<Insert>, complection: databaseCompletion<Bool>? = nil, queue: DispatchQueue = DispatchQueue.main) {
-        databaseQueue.sync {
-            let insert = closure(table_name)
-            let operation = MLDatabaseOperation.insert(operation: insert, complectionClosure: complection)
-            operation.excuteDatabaseOperation(queue: queue)
-        }
-    }
-    
-    public static func deleteOperation(_ closure: @escaping databaseClosure<Delete>, complection: databaseCompletion<Bool>? = nil, queue: DispatchQueue = DispatchQueue.main) {
-        databaseQueue.sync {
-            let delete = closure(table_name)
-            let operation = MLDatabaseOperation.delete(operation: delete, complectionClosure: complection)
-            operation.excuteDatabaseOperation(queue: queue)
-        }
-    }
-    
-    public static func updateOperation(_ closure: @escaping databaseClosure<Update>, complection: databaseCompletion<Bool>? = nil, queue: DispatchQueue = DispatchQueue.main) {
-        databaseQueue.sync {
-            let update = closure(table_name)
-            let operation = MLDatabaseOperation.update(operation: update, complectionClosure: complection)
-            operation.excuteDatabaseOperation(queue: queue)
-        }
-    }
-    
-    public static func updateObjectOperation<T: Codable>(_ object: T, complection: databaseCompletion<Bool>? = nil, queue: DispatchQueue = DispatchQueue.main) {
-        databaseQueue.sync {
-            do {
-                let update = try table_name.update(object)
-                let operation = MLDatabaseOperation.update(operation: update, complectionClosure: complection)
-                operation.excuteDatabaseOperation(queue: queue)
-            } catch {
-                MolueLogger.failure.error(error)
-            }
-        }
-    }
+}
+
+fileprivate func handleDBProtocolError(_ error: Error) -> Bool {
+    MolueLogger.failure.message(error)
+    return false
+}
+
+fileprivate func handleDBProtocolError<T>(error: Error) -> T? {
+    return MolueLogger.failure.returnNil(error)
 }
 
 fileprivate enum MLDatabaseOperation {

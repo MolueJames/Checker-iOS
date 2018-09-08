@@ -22,24 +22,22 @@ public class MLDatabaseManager {
     }
    
     private (set) var connection: Connection?
-    let databaseLock = NSLock()
     
     @discardableResult
     public func doConnection(_ fileName: String) -> Bool {
-        var isSuccess = false
-        do {
-            databaseLock.lock(); defer { databaseLock.unlock() }
-            let pathList = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
-            let path = try pathList.first.unwrap()
-            connection = try Connection("\(path)/\(fileName).sqlite3")
-            MolueLogger.database.message("file path: \(path)/\(fileName).sqlite3")
-            isSuccess = true
-        } catch is MolueNilError {
-            return handleDatabaseError(DatabaseError.databasePath)
-        } catch {
-            return handleDatabaseError(error)
+        return databaseQueue.sync {
+            do {
+                let pathList = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+                let path = try pathList.first.unwrap()
+                connection = try Connection("\(path)/\(fileName).sqlite3")
+                MolueLogger.database.message("file path: \(path)/\(fileName).sqlite3")
+                return true
+            } catch is MolueNilError {
+                return handleDatabaseError(DatabaseError.databasePath)
+            } catch {
+                return handleDatabaseError(error)
+            }
         }
-        return isSuccess
     }
 }
 
@@ -50,7 +48,6 @@ extension MLDatabaseManager {
         return databaseQueue.sync {
             var isSuccess = false
             do {
-                databaseLock.lock(); defer { databaseLock.unlock() }
                 let connection = try self.connection.unwrap()
                 try connection.run(operation)
                 isSuccess = true
@@ -68,7 +65,6 @@ extension MLDatabaseManager {
         return databaseQueue.sync {
             var isSuccess = false
             do {
-                databaseLock.lock(); defer { databaseLock.unlock() }
                 let connection = try self.connection.unwrap()
                 try connection.run(operation)
                 isSuccess = true
@@ -86,7 +82,6 @@ extension MLDatabaseManager {
         return databaseQueue.sync {
             var isSuccess = false
             do {
-                databaseLock.lock(); defer { databaseLock.unlock() }
                 let connection = try self.connection.unwrap()
                 try connection.run(operation)
                 isSuccess = true
@@ -104,7 +99,6 @@ extension MLDatabaseManager {
         return databaseQueue.sync {
             var isSuccess = false
             do {
-                databaseLock.lock(); defer { databaseLock.unlock() }
                 let connection = try self.connection.unwrap()
                 try connection.run(operation)
                 isSuccess = true
@@ -121,7 +115,6 @@ extension MLDatabaseManager {
         return databaseQueue.sync {
             var sequence: AnySequence<Row>?
             do {
-                databaseLock.lock(); defer { databaseLock.unlock() }
                 let connection = try self.connection.unwrap()
                 sequence = try connection.prepare(operation)
             } catch is MolueNilError {
