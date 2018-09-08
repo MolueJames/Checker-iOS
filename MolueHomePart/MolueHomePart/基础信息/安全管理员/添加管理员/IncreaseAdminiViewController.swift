@@ -127,7 +127,7 @@ class IncreaseAdminiViewController: MLBaseViewController {
     }
     
     private func presentDatePicker() {
-        let router = MolueNavigatorRouter(.Common, path: CommonPath.datePicker.rawValue)
+        let router = MolueNavigatorRouter(.Common, path: CommonPath.DatePicker.rawValue)
         let controller: MLDatePickerViewController! = MolueAppRouter.shared.viewController(router)
         controller.modalPresentationStyle = .overCurrentContext
         controller.selectDateCommand.subscribe(onNext: { [unowned self] (date, string) in

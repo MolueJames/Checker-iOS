@@ -35,6 +35,7 @@
 		1A98F2A520C972ED000D0F8F /* MLCommonPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A98F2A320C972ED000D0F8F /* MLCommonPhotoCell.xib */; };
 		1A98F2A820C97331000D0F8F /* MLCommonAddPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A98F2A620C97331000D0F8F /* MLCommonAddPhotoCell.swift */; };
 		1A98F2A920C97331000D0F8F /* MLCommonAddPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A98F2A720C97331000D0F8F /* MLCommonAddPhotoCell.xib */; };
+		1A9BCA13210A26410035FC21 /* MolueNotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9BCA12210A26410035FC21 /* MolueNotificationName.swift */; };
 		1AA7822E20CCFDC200088923 /* MLSelectedTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA7822D20CCFDC200088923 /* MLSelectedTableController.swift */; };
 		1AA7823520CCFF3B00088923 /* MLSelectedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA7823320CCFF3B00088923 /* MLSelectedTableViewCell.swift */; };
 		1AA7823620CCFF3B00088923 /* MLSelectedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AA7823420CCFF3B00088923 /* MLSelectedTableViewCell.xib */; };
@@ -101,6 +102,7 @@
 		1A98F2A320C972ED000D0F8F /* MLCommonPhotoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MLCommonPhotoCell.xib; sourceTree = "<group>"; };
 		1A98F2A620C97331000D0F8F /* MLCommonAddPhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLCommonAddPhotoCell.swift; sourceTree = "<group>"; };
 		1A98F2A720C97331000D0F8F /* MLCommonAddPhotoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MLCommonAddPhotoCell.xib; sourceTree = "<group>"; };
+		1A9BCA12210A26410035FC21 /* MolueNotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueNotificationName.swift; sourceTree = "<group>"; };
 		1AA7822D20CCFDC200088923 /* MLSelectedTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLSelectedTableController.swift; sourceTree = "<group>"; };
 		1AA7823320CCFF3B00088923 /* MLSelectedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLSelectedTableViewCell.swift; sourceTree = "<group>"; };
 		1AA7823420CCFF3B00088923 /* MLSelectedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MLSelectedTableViewCell.xib; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 			children = (
 				1A5014B32094B90A00DB931E /* MolueCommonPath.swift */,
 				1A5014B52094B9BA00DB931E /* MolueCommonColor.swift */,
+				1A9BCA12210A26410035FC21 /* MolueNotificationName.swift */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -518,6 +521,7 @@
 				1A2D443D20A097E100BA947A /* MLInterfaceConfigure.swift in Sources */,
 				1A5014B62094B9BA00DB931E /* MolueCommonColor.swift in Sources */,
 				1A52756520D51F7200CA0D68 /* MLSingleSelectController.swift in Sources */,
+				1A9BCA13210A26410035FC21 /* MolueNotificationName.swift in Sources */,
 				1A2D441B20A07E9900BA947A /* MLRefreshHeaderAnimator.swift in Sources */,
 				1A52756320D29F9C00CA0D68 /* MLSelectedTableViewModel.swift in Sources */,
 				1A98F2A820C97331000D0F8F /* MLCommonAddPhotoCell.swift in Sources */,

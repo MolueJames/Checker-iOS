@@ -27,8 +27,10 @@ public class MolueAppRouter {
         
         self.registerNavigatorRouter(MolueNavigatorRouter(.Book, path: "<fileName>").toString())
         
+        self.registerNavigatorRouter(MolueNavigatorRouter(.Login, path: "<fileName>").toString())
+        
         self.registerNavigatorRouter(MolueNavigatorRouter(.Common, path: "<fileName>").toString())
-     
+        
         self.registerWebsiteRouter(MolueWebsiteRouter(.HTTP, path: "<path:_>").toString())
         
         self.registerWebsiteRouter(MolueWebsiteRouter(.HTTPS, path: "<path:_>").toString())
@@ -121,11 +123,11 @@ public class MolueAppRouter {
     }
     
     private func updateViewController(_ viewController: UIViewController?, params: String?, context: Any?) {
+        guard let controller = viewController as? MolueNavigatorProtocol else {return}
         do {
-            let viewController = viewController as? MolueNavigatorProtocol
-            let controller = try viewController.unwrap()
             controller.doTransferParameters(params: context)
-            let value = try params.unwrap().removingPercentEncoding.unwrap()
+            let tempValue = try params.unwrap()
+            let value = try tempValue.removingPercentEncoding.unwrap()
             controller.doSettingParameters(params: value)
         } catch {
             MolueLogger.failure.message(error)
@@ -138,10 +140,7 @@ public class MolueAppRouter {
             let parameters = try parameters.unwrap()
             component.query = parameters.toJSONString()
             return try component.url.unwrap().absoluteString
-        } catch {
-            MolueLogger.failure.message(error)
-            return url
-        }
+        } catch { return url }
     }
 }
 

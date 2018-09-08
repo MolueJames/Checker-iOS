@@ -97,7 +97,7 @@ extension MLControllerHUDProtocol where Self: UIViewController {
         do {
             let ProgressHUD = JGProgressHUD(style: JGProgressHUDStyle.dark)
             let hud = try ProgressHUD.unwrap()
-            hud.indicatorView = JGProgressHUDImageIndicatorView.init(image: image)
+            hud.indicatorView = JGProgressHUDImageIndicatorView(image: image)
             hud.textLabel.text = text
             return hud
         } catch {

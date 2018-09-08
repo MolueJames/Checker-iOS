@@ -10,7 +10,7 @@ import UIKit
 import MolueCommon
 import MolueNavigator
 import MolueFoundation
-
+import RxSwift
 protocol EnterpriseInfoNavigatorProtocol: MLAppNavigatorProtocol {
     func pushToController(path: String)
 }
@@ -22,6 +22,8 @@ protocol EnterpriseInfoDataProtocol: MLListDataManagerProtocol {
 class EnterpriseInfoViewController: MLBaseViewController {
     private let navigator: EnterpriseInfoNavigatorProtocol = EnterpriseInfoNavigator()
     private let dataManager: EnterpriseInfoDataProtocol = EnterpriseInfoDataManager()
+    private let disposeBag = DisposeBag()
+    private let test = PublishSubject<String>()
     
     @IBOutlet weak var informationTableView: UITableView! {
         didSet {
@@ -39,7 +41,10 @@ class EnterpriseInfoViewController: MLBaseViewController {
 }
 extension EnterpriseInfoViewController: MLUserInterfaceProtocol {
     func queryInformationWithNetwork() {
-        
+        test.subscribe(onNext: { (string) in
+            let a = self.dataManager.count()
+            print(a)
+        }).disposed(by: disposeBag)
     }
     
     func updateUserInterfaceElements() {

@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:MolueLoginPart/MolueLoginPart.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:MolueBookPart/MolueBookPart.xcodeproj">
    </FileRef>
    <FileRef

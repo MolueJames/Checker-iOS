@@ -5,6 +5,7 @@ PODS:
   - AMapFoundation (1.4.3)
   - AMapSearch (5.7.0):
     - AMapFoundation (~> 1.4)
+  - AppSwizzle (1.3.1)
   - CryptoSwift (0.9.0)
   - ESPullToRefresh (2.7)
   - ImagePicker (3.0.0)
@@ -14,6 +15,8 @@ PODS:
   - JPush (3.0.9):
     - JCore (~> 1.2.0)
   - Kingfisher (4.7.0)
+  - LeakEye (1.2.0):
+    - AppSwizzle (~> 1.3.1)
   - Locksmith (4.0.0)
   - NVActivityIndicatorView (4.2.0):
     - NVActivityIndicatorView/Presenter (= 4.2.0)
@@ -45,6 +48,7 @@ DEPENDENCIES:
   - JGProgressHUD (~> 1.4)
   - JPush (~> 3.0.9)
   - Kingfisher (~> 4.0)
+  - LeakEye (~> 1.2.0)
   - Locksmith (~> 4.0.0)
   - NVActivityIndicatorView (~> 4.2.0)
   - ObjectMapper (~> 3.1)
@@ -63,6 +67,7 @@ SPEC REPOS:
     - AMap3DMap
     - AMapFoundation
     - AMapSearch
+    - AppSwizzle
     - CryptoSwift
     - ESPullToRefresh
     - ImagePicker
@@ -71,6 +76,7 @@ SPEC REPOS:
     - JGProgressHUD
     - JPush
     - Kingfisher
+    - LeakEye
     - Locksmith
     - NVActivityIndicatorView
     - ObjectMapper
@@ -86,6 +92,7 @@ SPEC CHECKSUMS:
   AMap3DMap: 97afc57b88628237d916991ac31795eb7bde3f63
   AMapFoundation: 973682cfe60b92efd73a8ef8f1144fa0fa8e1296
   AMapSearch: 314f75e9ce282b53dbf66455efa416c39f12b5b1
+  AppSwizzle: db36e436f56110d93e5ae0147683435df593cabc
   CryptoSwift: bca8c5b653dcc2d9734409242a070ff53bafac86
   ESPullToRefresh: 119e2710b82b75536aab2bbe4883ba119fca35c8
   ImagePicker: 973953c25960fe04729a7082a56194321c6762d2
@@ -94,6 +101,7 @@ SPEC CHECKSUMS:
   JGProgressHUD: 1617b0940cf80bb53e8f7d6f0fd69252ea45d6d4
   JPush: 48041e8c5ad2ef9b48709eb0888af9640b36e9b0
   Kingfisher: da6b005aa96d37698e3e4f1ccfe96a5b9bbf27d6
+  LeakEye: 2382ea37ddb10cda7556dbe541b81e0b4df7fdcb
   Locksmith: e9bebbaaa4cee3c511bc358a44f843c3fe00e21f
   NVActivityIndicatorView: 75c9634073e03b31d7e2748cd2417feab1206195
   ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
@@ -104,6 +112,6 @@ SPEC CHECKSUMS:
   URLNavigator: af5582fbbb3586c958be16835d799bfdb23a4793
   ViewAnimator: 0c70ee4e1dfbe9d4f129407f81db91f6948900aa
 
-PODFILE CHECKSUM: 8d8d4ccfb3b0089cc3aca8c6be351c263640f51e
+PODFILE CHECKSUM: 37ad3256c2176a4f4bf43a1d8fbe9bcd90e05287
 
 COCOAPODS: 1.5.3

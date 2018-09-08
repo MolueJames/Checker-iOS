@@ -37,6 +37,7 @@ target 'MolueSafty' do
         pod 'Permission/Notifications', '~> 2.0.4'
         pod 'NVActivityIndicatorView', '~> 4.2.0'
         pod 'JGProgressHUD', '~> 1.4'
+        pod 'LeakEye', '~> 1.2.0'
         molue_safty_shared_pods
 end
 
@@ -57,6 +58,11 @@ end
 
 target 'MolueBookPart' do
     project 'MolueBookPart/MolueBookPart.xcodeproj'
+        molue_safty_shared_pods
+end
+
+target 'MolueLoginPart' do
+    project 'MolueLoginPart/MolueLoginPart.xcodeproj'
         molue_safty_shared_pods
 end
 

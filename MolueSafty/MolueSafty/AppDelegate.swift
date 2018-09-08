@@ -9,21 +9,22 @@
 import UIKit
 import MolueDatabase
 import MolueUtilities
+import MolueCommon
 import MolueNetwork
 import Alamofire
+import LeakEye
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    var window: UIWindow?
-
+    var window: UIWindow? = UIWindow.init(frame: UIScreen.main.bounds)
+    var leakEye = LeakEye()
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         self.registerJPushWithlaunchOptions(launchOptions)
+        self.setUserInterfaceConfigure()
         self.setDefaultRootViewController()
         self.initializeIQKeyBoardConfigure()
-        self.setUserInterfaceConfigure()
-        
-
+        self.initializeLeakEyeConfigure()
 //        let headerInfo = Alamofire.Request.authorizationHeader(user: "hj8LAJukEhrs37yPbvXlwX5kG8sk45q0gciIw1Ol", password: "jEOk3ZLDixlJWPyyoncEbcwp4z3Ij5VG05HfKGORg5357CCWeRnrY86OPFpCPF79FaRiUGHnUcb68uCp5NScHg3z5roBqkVY3eB2LHrEaByULCY4JFMRDvXTa7a3ITq9")
 //        guard let header = headerInfo else {return true}
 //        let xxx = [header.key : header.value]

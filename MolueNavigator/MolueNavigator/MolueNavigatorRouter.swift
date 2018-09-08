@@ -17,6 +17,7 @@ public class MolueNavigatorRouter {
         case Risk = "MolueRiskPart"
         case Book = "MolueBookPart"
         case Common = "MolueCommon"
+        case Login = "MolueLoginPart"
     }
     
     public init(_ host: RouterHost, path: String) {

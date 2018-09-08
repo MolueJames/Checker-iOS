@@ -1,0 +1,554 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1A9BC9D22109F7380035FC21 /* MolueLoginPart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9BC9C82109F7370035FC21 /* MolueLoginPart.framework */; };
+		1A9BC9D72109F7380035FC21 /* MolueLoginPartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9BC9D62109F7380035FC21 /* MolueLoginPartTests.swift */; };
+		1A9BC9D92109F7380035FC21 /* MolueLoginPart.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A9BC9CB2109F7380035FC21 /* MolueLoginPart.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1A9BC9E52109F8D50035FC21 /* MolueCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9BC9E42109F8D50035FC21 /* MolueCommon.framework */; };
+		1A9BC9E72109F8D50035FC21 /* MolueDatabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9BC9E62109F8D50035FC21 /* MolueDatabase.framework */; };
+		1A9BC9E92109F8D50035FC21 /* MolueFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9BC9E82109F8D50035FC21 /* MolueFoundation.framework */; };
+		1A9BC9EB2109F8D50035FC21 /* MolueNavigator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9BC9EA2109F8D50035FC21 /* MolueNavigator.framework */; };
+		1A9BC9ED2109F8D50035FC21 /* MolueNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9BC9EC2109F8D50035FC21 /* MolueNetwork.framework */; };
+		1A9BC9EF2109F8D50035FC21 /* MolueUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9BC9EE2109F8D50035FC21 /* MolueUtilities.framework */; };
+		1A9BC9F12109F9E80035FC21 /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9BC9F02109F9E80035FC21 /* LoginPageViewController.swift */; };
+		1A9BC9FB2109FB4C0035FC21 /* LoginPageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A9BC9FA2109FB4C0035FC21 /* LoginPageViewController.storyboard */; };
+		1A9BC9FE210A02F30035FC21 /* MolueLogin.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A9BC9FD210A02F30035FC21 /* MolueLogin.xcassets */; };
+		44AEE5AA78B82F94B5D303AF /* Pods_MolueLoginPart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A540ABA6882D65703CB373D0 /* Pods_MolueLoginPart.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1A9BC9D32109F7380035FC21 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1A9BC9BF2109F7370035FC21 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1A9BC9C72109F7370035FC21;
+			remoteInfo = MolueLoginPart;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1A9BC9C82109F7370035FC21 /* MolueLoginPart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MolueLoginPart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A9BC9CB2109F7380035FC21 /* MolueLoginPart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MolueLoginPart.h; sourceTree = "<group>"; };
+		1A9BC9CC2109F7380035FC21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A9BC9D12109F7380035FC21 /* MolueLoginPartTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MolueLoginPartTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A9BC9D62109F7380035FC21 /* MolueLoginPartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueLoginPartTests.swift; sourceTree = "<group>"; };
+		1A9BC9D82109F7380035FC21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A9BC9E42109F8D50035FC21 /* MolueCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A9BC9E62109F8D50035FC21 /* MolueDatabase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueDatabase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A9BC9E82109F8D50035FC21 /* MolueFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A9BC9EA2109F8D50035FC21 /* MolueNavigator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueNavigator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A9BC9EC2109F8D50035FC21 /* MolueNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A9BC9EE2109F8D50035FC21 /* MolueUtilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueUtilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A9BC9F02109F9E80035FC21 /* LoginPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageViewController.swift; sourceTree = "<group>"; };
+		1A9BC9FA2109FB4C0035FC21 /* LoginPageViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginPageViewController.storyboard; sourceTree = "<group>"; };
+		1A9BC9FD210A02F30035FC21 /* MolueLogin.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MolueLogin.xcassets; sourceTree = "<group>"; };
+		25B14BC91B041B6771B06C3D /* Pods-MolueLoginPart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueLoginPart.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueLoginPart/Pods-MolueLoginPart.debug.xcconfig"; sourceTree = "<group>"; };
+		4C17BA84BEDF514373B4A262 /* Pods-MolueLoginPart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueLoginPart.release.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueLoginPart/Pods-MolueLoginPart.release.xcconfig"; sourceTree = "<group>"; };
+		A540ABA6882D65703CB373D0 /* Pods_MolueLoginPart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MolueLoginPart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1A9BC9C42109F7370035FC21 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A9BC9E52109F8D50035FC21 /* MolueCommon.framework in Frameworks */,
+				1A9BC9E72109F8D50035FC21 /* MolueDatabase.framework in Frameworks */,
+				1A9BC9E92109F8D50035FC21 /* MolueFoundation.framework in Frameworks */,
+				1A9BC9EB2109F8D50035FC21 /* MolueNavigator.framework in Frameworks */,
+				1A9BC9ED2109F8D50035FC21 /* MolueNetwork.framework in Frameworks */,
+				1A9BC9EF2109F8D50035FC21 /* MolueUtilities.framework in Frameworks */,
+				44AEE5AA78B82F94B5D303AF /* Pods_MolueLoginPart.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A9BC9CE2109F7380035FC21 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A9BC9D22109F7380035FC21 /* MolueLoginPart.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1A9BC9BE2109F7370035FC21 = {
+			isa = PBXGroup;
+			children = (
+				1A9BC9CA2109F7370035FC21 /* MolueLoginPart */,
+				1A9BC9D52109F7380035FC21 /* MolueLoginPartTests */,
+				1A9BC9C92109F7370035FC21 /* Products */,
+				1A9BC9E32109F8D50035FC21 /* Frameworks */,
+				39C22FC49B743C3C336A617F /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		1A9BC9C92109F7370035FC21 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1A9BC9C82109F7370035FC21 /* MolueLoginPart.framework */,
+				1A9BC9D12109F7380035FC21 /* MolueLoginPartTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1A9BC9CA2109F7370035FC21 /* MolueLoginPart */ = {
+			isa = PBXGroup;
+			children = (
+				1A9BC9E22109F84D0035FC21 /* 用户登录 */,
+				1A9BC9CB2109F7380035FC21 /* MolueLoginPart.h */,
+				1A9BC9CC2109F7380035FC21 /* Info.plist */,
+				1A9BC9FD210A02F30035FC21 /* MolueLogin.xcassets */,
+			);
+			path = MolueLoginPart;
+			sourceTree = "<group>";
+		};
+		1A9BC9D52109F7380035FC21 /* MolueLoginPartTests */ = {
+			isa = PBXGroup;
+			children = (
+				1A9BC9D62109F7380035FC21 /* MolueLoginPartTests.swift */,
+				1A9BC9D82109F7380035FC21 /* Info.plist */,
+			);
+			path = MolueLoginPartTests;
+			sourceTree = "<group>";
+		};
+		1A9BC9E22109F84D0035FC21 /* 用户登录 */ = {
+			isa = PBXGroup;
+			children = (
+				1A9BC9F02109F9E80035FC21 /* LoginPageViewController.swift */,
+				1A9BC9FA2109FB4C0035FC21 /* LoginPageViewController.storyboard */,
+			);
+			path = "用户登录";
+			sourceTree = "<group>";
+		};
+		1A9BC9E32109F8D50035FC21 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1A9BC9E42109F8D50035FC21 /* MolueCommon.framework */,
+				1A9BC9E62109F8D50035FC21 /* MolueDatabase.framework */,
+				1A9BC9E82109F8D50035FC21 /* MolueFoundation.framework */,
+				1A9BC9EA2109F8D50035FC21 /* MolueNavigator.framework */,
+				1A9BC9EC2109F8D50035FC21 /* MolueNetwork.framework */,
+				1A9BC9EE2109F8D50035FC21 /* MolueUtilities.framework */,
+				A540ABA6882D65703CB373D0 /* Pods_MolueLoginPart.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		39C22FC49B743C3C336A617F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				25B14BC91B041B6771B06C3D /* Pods-MolueLoginPart.debug.xcconfig */,
+				4C17BA84BEDF514373B4A262 /* Pods-MolueLoginPart.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		1A9BC9C52109F7370035FC21 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A9BC9D92109F7380035FC21 /* MolueLoginPart.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		1A9BC9C72109F7370035FC21 /* MolueLoginPart */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1A9BC9DC2109F7380035FC21 /* Build configuration list for PBXNativeTarget "MolueLoginPart" */;
+			buildPhases = (
+				114941DF364F8791F03D0474 /* [CP] Check Pods Manifest.lock */,
+				1A9BC9C32109F7370035FC21 /* Sources */,
+				1A9BC9C42109F7370035FC21 /* Frameworks */,
+				1A9BC9C52109F7370035FC21 /* Headers */,
+				1A9BC9C62109F7370035FC21 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MolueLoginPart;
+			productName = MolueLoginPart;
+			productReference = 1A9BC9C82109F7370035FC21 /* MolueLoginPart.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		1A9BC9D02109F7380035FC21 /* MolueLoginPartTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1A9BC9DF2109F7380035FC21 /* Build configuration list for PBXNativeTarget "MolueLoginPartTests" */;
+			buildPhases = (
+				1A9BC9CD2109F7380035FC21 /* Sources */,
+				1A9BC9CE2109F7380035FC21 /* Frameworks */,
+				1A9BC9CF2109F7380035FC21 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1A9BC9D42109F7380035FC21 /* PBXTargetDependency */,
+			);
+			name = MolueLoginPartTests;
+			productName = MolueLoginPartTests;
+			productReference = 1A9BC9D12109F7380035FC21 /* MolueLoginPartTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1A9BC9BF2109F7370035FC21 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = MolueJames;
+				TargetAttributes = {
+					1A9BC9C72109F7370035FC21 = {
+						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
+					};
+					1A9BC9D02109F7380035FC21 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+				};
+			};
+			buildConfigurationList = 1A9BC9C22109F7370035FC21 /* Build configuration list for PBXProject "MolueLoginPart" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1A9BC9BE2109F7370035FC21;
+			productRefGroup = 1A9BC9C92109F7370035FC21 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1A9BC9C72109F7370035FC21 /* MolueLoginPart */,
+				1A9BC9D02109F7380035FC21 /* MolueLoginPartTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1A9BC9C62109F7370035FC21 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A9BC9FE210A02F30035FC21 /* MolueLogin.xcassets in Resources */,
+				1A9BC9FB2109FB4C0035FC21 /* LoginPageViewController.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A9BC9CF2109F7380035FC21 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		114941DF364F8791F03D0474 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MolueLoginPart-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1A9BC9C32109F7370035FC21 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A9BC9F12109F9E80035FC21 /* LoginPageViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A9BC9CD2109F7380035FC21 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A9BC9D72109F7380035FC21 /* MolueLoginPartTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1A9BC9D42109F7380035FC21 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1A9BC9C72109F7370035FC21 /* MolueLoginPart */;
+			targetProxy = 1A9BC9D32109F7380035FC21 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1A9BC9DA2109F7380035FC21 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		1A9BC9DB2109F7380035FC21 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		1A9BC9DD2109F7380035FC21 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 25B14BC91B041B6771B06C3D /* Pods-MolueLoginPart.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = MolueLoginPart/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Molue.MolueLoginPart;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1A9BC9DE2109F7380035FC21 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4C17BA84BEDF514373B4A262 /* Pods-MolueLoginPart.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = MolueLoginPart/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Molue.MolueLoginPart;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		1A9BC9E02109F7380035FC21 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MolueLoginPartTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Molue.MolueLoginPartTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1A9BC9E12109F7380035FC21 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MolueLoginPartTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Molue.MolueLoginPartTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1A9BC9C22109F7370035FC21 /* Build configuration list for PBXProject "MolueLoginPart" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A9BC9DA2109F7380035FC21 /* Debug */,
+				1A9BC9DB2109F7380035FC21 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1A9BC9DC2109F7380035FC21 /* Build configuration list for PBXNativeTarget "MolueLoginPart" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A9BC9DD2109F7380035FC21 /* Debug */,
+				1A9BC9DE2109F7380035FC21 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1A9BC9DF2109F7380035FC21 /* Build configuration list for PBXNativeTarget "MolueLoginPartTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A9BC9E02109F7380035FC21 /* Debug */,
+				1A9BC9E12109F7380035FC21 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1A9BC9BF2109F7370035FC21 /* Project object */;
+}

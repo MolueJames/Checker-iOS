@@ -50,6 +50,10 @@ public enum BookPath: String {
 }
 
 public enum CommonPath: String {
-    case datePicker = "MLDatePickerViewController"
+    case DatePicker = "MLDatePickerViewController"
 }
 
+public enum LoginPath: String {
+    /// 登录页面
+    case LoginPage = "LoginPageViewController"
+}
