@@ -132,7 +132,7 @@ extension MLDatabaseManager {
         MolueLogger.failure.message(error)
         return false
     }
-    fileprivate func handleDatabaseError(_ error: Error) -> AnySequence<Row>? {
+    fileprivate func handleDatabaseError<T>(_ error: Error) -> T? {
         return MolueLogger.failure.returnNil(error)
     }
 }

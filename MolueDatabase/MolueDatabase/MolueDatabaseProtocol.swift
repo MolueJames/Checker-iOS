@@ -18,6 +18,7 @@ private let databaseQueue = DispatchQueue(label: "MLDatabaseQueue")
 
 private let completionQueue = DispatchQueue(label: "MLDBOperationQueue")
 
+// MARK: 以下方法中的执行顺序是同步的优先于异步执行, 当同步的全部执行完毕后, 异步的方法按照调用的顺序依次执行
 public protocol MLDatabaseProtocol {
     
     static var table_name: Table { get set }
@@ -25,9 +26,10 @@ public protocol MLDatabaseProtocol {
     static func createOperation()
 }
 
+// MARK: 该Extension中为异步方法, 只需要类型支持当前的MLDatabaseProtocol就可以使用了
 extension MLDatabaseProtocol {
     
-    public static func selectOperation(_ select: QueryType, complection: @escaping databaseCompletion<AnySequence<Row>?>, queue: DispatchQueue = DispatchQueue.main) {
+    public static func selectOperation(_ select: QueryType = table_name, complection: @escaping databaseCompletion<AnySequence<Row>?>, queue: DispatchQueue = DispatchQueue.main) {
         databaseQueue.sync {
             let operation = MLDatabaseOperation.select(operation: select, complectionClosure: complection)
             operation.excuteDatabaseOperation(queue: queue)
@@ -56,26 +58,27 @@ extension MLDatabaseProtocol {
     }
 }
 
+// MARK: 该Extension中为同步方法, 只需要类型支持当前的MLDatabaseProtocol就可以使用了
 extension MLDatabaseProtocol  {
-
+    
     public static func selectOperation(_ select: QueryType = table_name) -> AnySequence<Row>? {
         return databaseQueue.sync {
             return MLDatabaseManager.shared.runSelectOperator(select)
         }
     }
-    
-    public static func insertOperation(_ insert: Insert) {
+    @discardableResult
+    public static func insertOperation(_ insert: Insert) -> Bool {
         return databaseQueue.sync {
             return MLDatabaseManager.shared.runInsertOperator(insert)
         }
     }
-    
+    @discardableResult
     public static func updateOperation(_ update: Update) -> Bool {
         return databaseQueue.sync {
             return MLDatabaseManager.shared.runUpdataOperator(update)
         }
     }
-    
+    @discardableResult
     public static func deleteOperation(_ delete: Delete) -> Bool {
         return databaseQueue.sync {
             return MLDatabaseManager.shared.runDeleteOperator(delete)
@@ -83,8 +86,9 @@ extension MLDatabaseProtocol  {
     }
 }
 
+// MARK: 该Extension中有返回值得为同步方法, 没有返回值得为异步方法, 使用这些方法需要同时支持MLDatabaseProtocol和Codable协议
 extension MLDatabaseProtocol where Self: Codable {
-    
+    @discardableResult
     public static func updateObjectOperation(query: QueryType, object: Self) -> Bool {
         return databaseQueue.sync {
             do {
@@ -95,7 +99,7 @@ extension MLDatabaseProtocol where Self: Codable {
             }
         }
     }
-    
+    @discardableResult
     public static func insertObjectOperation(_ object: Self) -> Bool {
         return databaseQueue.sync {
             do {
@@ -119,15 +123,18 @@ extension MLDatabaseProtocol where Self: Codable {
         }
     }
     
-    public static func selectObjectOperation(_ select: QueryType, completion: @escaping databaseCompletion<[Self]?>, queue: DispatchQueue = DispatchQueue.main) {
-        selectOperation(select, complection: { (sequence) in
-            do {
-                let list = try sequence.unwrap()
-                completion( try list.map({ try $0.decode() }))
-            } catch {
-                completion(handleDBProtocolError(error: error))
-            }
-        })
+    public static func selectObjectOperation(_ select: QueryType = table_name, complection: @escaping databaseCompletion<[Self]?>, queue: DispatchQueue = DispatchQueue.main) {
+        databaseQueue.sync {
+            let operation = MLDatabaseOperation.select(operation: select, complectionClosure: { (sequence) in
+                do {
+                    let list = try sequence.unwrap()
+                    complection( try list.map({ try $0.decode() }))
+                } catch {
+                    complection(handleDBProtocolError(error: error))
+                }
+            })
+            operation.excuteDatabaseOperation(queue: queue)
+        }
     }
     
     public static func updateObjectOperation(_ object: Self, query: QueryType, complection: databaseCompletion<Bool>? = nil, queue: DispatchQueue = DispatchQueue.main) {
@@ -161,7 +168,7 @@ fileprivate func handleDBProtocolError(_ error: Error) -> Bool {
 }
 
 fileprivate func handleDBProtocolError<T>(error: Error) -> T? {
-    return MolueLogger.failure.returnNil(error)
+    return MolueLogger.failure.allowNil(error)
 }
 
 fileprivate enum MLDatabaseOperation {
@@ -169,7 +176,9 @@ fileprivate enum MLDatabaseOperation {
     case delete(operation: Delete, complectionClosure: databaseCompletion<Bool>?)
     case update(operation: Update, complectionClosure: databaseCompletion<Bool>?)
     case select(operation: QueryType, complectionClosure: databaseCompletion<AnySequence<Row>?>?)
-    
+}
+
+extension MLDatabaseOperation {
     fileprivate func excuteDatabaseOperation(queue: DispatchQueue) {
         completionQueue.async {
             switch self {
@@ -189,13 +198,13 @@ fileprivate enum MLDatabaseOperation {
         }
     }
     private func completionOperation<T> (_ closure: databaseCompletion<T>?, resultValue: T, queue currentQueue: DispatchQueue) {
-        do {
-            let closure = try closure.unwrap()
-            currentQueue.sync {
+        currentQueue.sync {
+            do {
+                let closure = try closure.unwrap()
                 closure(resultValue)
+            } catch {
+                MolueLogger.failure.message(error)
             }
-        } catch {
-            MolueLogger.failure.message(error)
         }
     }
 }

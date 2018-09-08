@@ -13,6 +13,7 @@ import MolueCommon
 import MolueNetwork
 import Alamofire
 import LeakEye
+import SQLite
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -43,7 +44,58 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //            print(result?.validateNeedRefresh())
 //        }
 //        manager.start()
+        testDatabaseManager()
         return true
+    }
+    
+    private func testDatabaseManager() {
+        MLDatabaseManager.shared.doConnection("xxxxxx")
+        MLDatabaseRegister.addDatabaseTarget(MolueUsers.self)
+        MLDatabaseRegister.excuteProtocols()
+        
+        let user = MolueUsers()
+        user.id = "1111"
+        user.name = "2222"
+        user.email = "3333"
+        MolueUsers.insertObjectOperation(user)
+        
+        let query = MolueUsers.table_name.filter(MolueUsers.id == "1111")
+        user.email = "44444"
+        MolueUsers.updateObjectOperation(query: query, object: user)
+        
+      
+        
+        MolueUsers.selectObjectOperation(complection: { (list) in
+            MolueLogger.database.message(Thread.current)
+            MolueLogger.database.message(list?.first!.email)
+        })
+        
+//        let list1 = MolueUsers.selectObjectOperation()
+//        MolueLogger.database.message(list1?.first!.email)
+        
+        user.email = "55555"
+//        MolueUsers.updateObjectOperation(query: query, object: user)
+//        MolueUsers.updateOperation(query, complection: { (isSuccess) in
+//            MolueLogger.database.message(isSuccess)
+//        })
+        MolueUsers.updateObjectOperation(user, query: query, complection: { (isSuccess) in
+            MolueLogger.database.message(isSuccess)
+        })
+        
+        MolueUsers.selectObjectOperation(complection: { (list) in
+            MolueLogger.database.message(Thread.current)
+            MolueLogger.database.message(list?.first!.email)
+        })
+//        var index = 0
+//
+//        while index < 20
+//        {
+//            user.email = "55555"
+//            MolueUsers.updateObjectOperation(query: query, object: user)
+//            let list = MolueUsers.selectObjectOperation()
+//            MolueLogger.database.message(list?.first!.email)
+//            index = index + 1
+//        }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
