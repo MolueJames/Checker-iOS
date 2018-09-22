@@ -44,9 +44,13 @@ class BookInfoViewController: MLBaseViewController {
     private var pageViewController: UIPageViewController!
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        self.pageViewController = segue.destination as! UIPageViewController
-        self.pageViewController.delegate = self
-        self.pageViewController.dataSource = self
+        do {
+            self.pageViewController = try segue.destination.toTarget()
+            self.pageViewController.delegate = self
+            self.pageViewController.dataSource = self
+        } catch {
+            MolueLogger.failure.error(error)
+        }
     }
     
     lazy var titleLabel: UILabel! = {

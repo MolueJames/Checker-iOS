@@ -158,8 +158,7 @@ public enum MolueStatusError: LocalizedError {
     
     func handleErrorResult(result: Any?) -> String {
         do {
-            let result = try result.unwrap() as? [String: Any]
-            let response = try result.unwrap()
+            let response: [String: Any] = try validateTarget(result)
             let code = try response["code"].unwrap()
             let message = try response["message"].unwrap()
             return "错误ID:" + String(describing: code) + "\n错误信息:" + String(describing: message)

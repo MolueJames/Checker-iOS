@@ -21,7 +21,7 @@ private struct MolueResponseMapper {
     
     public static func handleResultToList<Target: Mappable>(_ result: Any?) throws -> [Target] {
         do {
-            let result = try (result as? [[String: Any]]).unwrap()
+            let result: [[String: Any]] = try validateTarget(result)
             return Mapper<Target>().mapArray(JSONArray: result)
         } catch {
             throw MolueStatusError.mapperResponseError

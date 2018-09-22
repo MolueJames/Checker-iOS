@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A1328D3214BE5AF00767F7F /* MolueAppRoute+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1328D2214BE5AF00767F7F /* MolueAppRoute+Extension.swift */; };
 		1A1B889420864CE200C5F4D9 /* MolueAppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1B889320864CE200C5F4D9 /* MolueAppRouter.swift */; };
 		1A50149720941BE300DB931E /* MolueUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A50149620941BE300DB931E /* MolueUtilities.framework */; };
 		1A7D9B462086469200FA997D /* MolueNavigator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A7D9B3C2086469200FA997D /* MolueNavigator.framework */; };
@@ -32,6 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A1328D2214BE5AF00767F7F /* MolueAppRoute+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MolueAppRoute+Extension.swift"; sourceTree = "<group>"; };
 		1A1B889320864CE200C5F4D9 /* MolueAppRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MolueAppRouter.swift; sourceTree = "<group>"; };
 		1A50149620941BE300DB931E /* MolueUtilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueUtilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A7D9B3C2086469200FA997D /* MolueNavigator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MolueNavigator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,6 +108,7 @@
 				1AA53922208CCB310095E2B4 /* MolueDoAlertRouter.swift */,
 				1AA53924208CCB580095E2B4 /* MolueWebsiteRouter.swift */,
 				1ACA305C20E3C0A10092E0F6 /* MLNavigatiorProtocol.swift */,
+				1A1328D2214BE5AF00767F7F /* MolueAppRoute+Extension.swift */,
 			);
 			path = MolueNavigator;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A1328D3214BE5AF00767F7F /* MolueAppRoute+Extension.swift in Sources */,
 				1AA53923208CCB310095E2B4 /* MolueDoAlertRouter.swift in Sources */,
 				1A1B889420864CE200C5F4D9 /* MolueAppRouter.swift in Sources */,
 				1AA53925208CCB580095E2B4 /* MolueWebsiteRouter.swift in Sources */,

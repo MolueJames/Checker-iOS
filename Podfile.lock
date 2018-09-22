@@ -21,7 +21,7 @@ PODS:
   - NVActivityIndicatorView (4.2.0):
     - NVActivityIndicatorView/Presenter (= 4.2.0)
   - NVActivityIndicatorView/Presenter (4.2.0)
-  - ObjectMapper (3.1.0)
+  - ObjectMapper (3.3.0)
   - Permission/Camera (2.0.4):
     - Permission/Core
   - Permission/Core (2.0.4)
@@ -52,6 +52,7 @@ DEPENDENCIES:
   - Locksmith (~> 4.0.0)
   - NVActivityIndicatorView (~> 4.2.0)
   - ObjectMapper (~> 3.1)
+  - ObjectMapper (~> 3.3)
   - Permission/Camera (~> 2.0.4)
   - Permission/Location (~> 2.0.4)
   - Permission/Notifications (~> 2.0.4)
@@ -104,7 +105,7 @@ SPEC CHECKSUMS:
   LeakEye: 2382ea37ddb10cda7556dbe541b81e0b4df7fdcb
   Locksmith: e9bebbaaa4cee3c511bc358a44f843c3fe00e21f
   NVActivityIndicatorView: 75c9634073e03b31d7e2748cd2417feab1206195
-  ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
+  ObjectMapper: b612bf8c8e99c4dc0bb6013a51f7c27966ed5da9
   Permission: 6853b9694e66a6c9197468c66d1935c3629cbf9c
   RxSwift: e49536837d9901277638493ea537394d4b55f570
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
@@ -112,6 +113,6 @@ SPEC CHECKSUMS:
   URLNavigator: af5582fbbb3586c958be16835d799bfdb23a4793
   ViewAnimator: 0c70ee4e1dfbe9d4f129407f81db91f6948900aa
 
-PODFILE CHECKSUM: 37ad3256c2176a4f4bf43a1d8fbe9bcd90e05287
+PODFILE CHECKSUM: 9c93f9c3d359e1551bce3835ecd463256f0978d7
 
 COCOAPODS: 1.5.3

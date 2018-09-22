@@ -18,7 +18,7 @@ def molue_safty_shared_pods
     pod 'ImagePicker', '~> 3.0.0'
     pod 'RxSwift', '~> 4.1.2'
     pod 'ESPullToRefresh', '~> 2.7'
-    pod 'ObjectMapper', '~> 3.1'
+    pod 'ObjectMapper', '~> 3.3'
 end
 
 target 'MolueSafty' do

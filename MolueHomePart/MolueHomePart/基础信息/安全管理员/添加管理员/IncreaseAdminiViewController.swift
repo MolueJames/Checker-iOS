@@ -173,12 +173,26 @@ extension IncreaseAdminiViewController: ImagePickerDelegate {
 }
 
 extension IncreaseAdminiViewController: MolueNavigatorProtocol {
+    func doTransferParameters<T>(params: T?) {
+        
+    }
     
     func doTransferParameters(params: Any?) {
-
+        
     }
     func doSettingParameters(params: String) {
         
+    }
+}
+
+extension IncreaseAdminiViewController: MolueVIPBuilderProtocol {
+    static func doBulildVIPComponent() -> UIViewController? {
+        let viewController = self.initializeFromStoryboard()
+//        let interactor = IncreaseAdminInteractor()
+//        viewController.listener = interactor
+//        interactor.presenter = viewController
+        
+        return viewController
     }
 }
 

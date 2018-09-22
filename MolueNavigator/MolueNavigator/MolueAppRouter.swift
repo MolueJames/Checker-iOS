@@ -13,7 +13,7 @@ import ObjectMapper
 
 fileprivate let single = MolueAppRouter()
 public class MolueAppRouter {
-    fileprivate let navigator = Navigator()
+    internal let navigator = Navigator()
     public static var shared : MolueAppRouter {
         return single
     }
@@ -86,9 +86,10 @@ public class MolueAppRouter {
     
     private func createAlertController(_ url: URLConvertible, style: UIAlertControllerStyle, title: String, message: String, context: Any?) -> UIViewController? {
         let controller = UIAlertController(title: title, message: message, preferredStyle: style)
-        if let actions:[UIAlertAction] = context as? [UIAlertAction] {
+        do {
+            let actions:[UIAlertAction] = try validateTarget(context)
             controller.addActions(actions)
-        } else {
+        } catch {
             controller.addAction(UIAlertAction(title: "好的", style: .default, handler: nil))
         }
         return controller
@@ -102,7 +103,7 @@ public class MolueAppRouter {
         do {
             let URL = try url.urlValue.unwrap()
             let module = try URL.host.unwrap()
-            let viewController = self.instantiateViewController(module: module, filename: filename)
+            let viewController = self.initializeViewController(module: module, filename: filename)
             self.updateViewController(viewController, params: URL.query, context: context)
             return viewController
         } catch {
@@ -110,13 +111,19 @@ public class MolueAppRouter {
         }
     }
     
-    private func instantiateViewController(module: String, filename: String) -> UIViewController? {
+    private func initializeViewController(module: String, filename: String) -> UIViewController? {
+        func initializeTargetController(target: UIViewController.Type) -> UIViewController? {
+            do {
+                let theClass = try (target as? MolueVIPBuilderProtocol.Type).unwrap()
+                return theClass.doBulildVIPComponent()
+            } catch {
+                return target.initializeFromStoryboard()
+            }
+        }
         do {
-            let bundle = try Bundle.create(module: module).unwrap()
-            let storyboard = UIStoryboard.init(name: filename, bundle: bundle)
-            let tempClass: AnyClass = try NSClassFromString(module + "." + filename).unwrap()
-            let targetClass = try (tempClass as? UIViewController.Type).unwrap()
-            return storyboard.instantiateViewController(withClass: targetClass.self)
+            let targetClass: AnyClass = try NSClassFromString(module + "." + filename).unwrap()
+            let target = try (targetClass as? UIViewController.Type).unwrap()
+            return initializeTargetController(target: target)
         } catch {
             return MolueLogger.failure.returnNil(error)
         }
@@ -134,82 +141,5 @@ public class MolueAppRouter {
         }
     }
     
-    private func updateRouterURL(_ url: String, parameters: Mappable?) -> String {
-        do {
-            var component = try URLComponents(string: url).unwrap()
-            let parameters = try parameters.unwrap()
-            component.query = parameters.toJSONString()
-            return try component.url.unwrap().absoluteString
-        } catch { return url }
-    }
-}
 
-extension MolueAppRouter {
-    public func viewController<T: UIViewController>(_ router: MolueNavigatorRouter, parameters: Mappable? = nil, context: Any? = nil) -> T? {
-        do {
-            let url = try router.toString().unwrap()
-            let newURL = self.updateRouterURL(url, parameters: parameters)
-            let controller = try navigator.viewController(for: newURL, context: context).unwrap()
-            return try controller.toTarget().unwrap()
-        } catch {
-            return MolueLogger.failure.returnNil(error)
-        }
-    }
-    
-    @discardableResult
-    public func push<T: UIViewController>(_ router: MolueNavigatorRouter, parameters: Mappable? = nil, context: Any? = nil, from: UINavigationControllerType? = nil, animated: Bool = true, needHideBottomBar: Bool! = false) -> T? {
-        do {
-            let viewController = try self.viewController(router, parameters: parameters, context: context).unwrap()
-            viewController.hidesBottomBarWhenPushed = needHideBottomBar
-            let controller = try navigator.pushViewController(viewController, from: from, animated: animated).unwrap()
-            return try controller.toTarget().unwrap()
-        } catch {
-            return MolueLogger.failure.returnNil(error)
-        }
-    }
-    
-    @discardableResult
-    public func present<T: UIViewController>(_ router: MolueNavigatorRouter, parameters: Mappable? = nil, context: Any? = nil, wrap: UINavigationController.Type? = nil, from: UIViewControllerType? = nil, animated: Bool = true, completion: (() -> Void)? = nil) -> T? {
-        do {
-            let viewController = try self.viewController(router, parameters: parameters, context: context).unwrap()
-            let controller = try navigator.presentViewController(viewController, wrap: wrap, from: from, animated: animated, completion: completion).unwrap()
-            return try controller.toTarget().unwrap()
-        } catch {
-            return MolueLogger.failure.returnNil(error)
-        }
-    }
-    
-    @discardableResult
-    public func handler(for router: MolueWebsiteRouter,  parameters: Mappable? = nil, context: Any?) -> URLOpenHandler? {
-        do {
-            let url = try router.toString().unwrap()
-            let newURL = self.updateRouterURL(url, parameters: parameters)
-            return navigator.handler(for: newURL, context: context)
-        } catch {
-            return MolueLogger.failure.returnNil(error)
-        }
-    }
-    
-    @discardableResult
-    public func showAlert(_ router: MolueDoAlertRouter, actions:[UIAlertAction]? = nil, wrap: UINavigationController.Type? = nil, from: UIViewControllerType? = nil, animated: Bool = true, completion: (() -> Void)? = nil) -> UIViewController? {
-        do {
-            let url = try router.toString().unwrap()
-            let viewController = try navigator.viewController(for: url, context: actions).unwrap()
-            return navigator.presentViewController(viewController, wrap: wrap, from: from, animated: animated, completion: completion)
-        } catch {
-            return MolueLogger.failure.returnNil(error)
-        }
-    }
-}
-
-extension MolueAppRouter {
-    @discardableResult
-    public func present(_ viewController: UIViewController, wrap: UINavigationController.Type? = nil, from: UIViewControllerType? = nil, animated: Bool = true, completion: (() -> Void)? = nil) -> UIViewController? {
-        return navigator.present(viewController, wrap: wrap, from: from, animated: animated, completion: completion)
-    }
-    
-    @discardableResult
-    public func push(_ viewController: UIViewController, from: UINavigationControllerType? = nil, animated: Bool = true) -> UIViewController? {
-         return navigator.pushViewController(viewController, from: from, animated: animated)
-    }
 }

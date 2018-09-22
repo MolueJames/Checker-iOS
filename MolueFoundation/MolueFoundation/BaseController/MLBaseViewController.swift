@@ -25,13 +25,17 @@ open class MLBaseViewController: UIViewController, MLNavigationProtocol, MLContr
         self.updateNavBackgroundView()
     }
     private func updateNavBackgroundView() {
-        guard let _ = self.parent as? UINavigationController else { return }
-        self.view.addSubview(navigationView)
-        navigationView.snp.updateConstraints { (make) in
-            make.height.equalTo(height)
-        }
-        navigationView.snp.makeConstraints { (make) in
-            make.top.left.right.equalToSuperview()
+        do {
+            let _: UINavigationController = try self.parent.unwrap().toTarget()
+            self.view.addSubview(navigationView)
+            navigationView.snp.updateConstraints { (make) in
+                make.height.equalTo(height)
+            }
+            navigationView.snp.makeConstraints { (make) in
+                make.top.left.right.equalToSuperview()
+            }
+        } catch {
+            MolueLogger.UIModule.message(error)
         }
     }
     
@@ -51,9 +55,12 @@ open class MLBaseViewController: UIViewController, MLNavigationProtocol, MLContr
     }
     
     private func implementInterfaceProtocol() {
-        if let controller = self as? MLUserInterfaceProtocol  {
+        do {
+            let controller: MLUserInterfaceProtocol = try self.toTarget()
             controller.queryInformationWithNetwork()
             controller.updateUserInterfaceElements()
+        } catch {
+            MolueLogger.UIModule.message(error)
         }
     }
     private func updateControllerElements() {

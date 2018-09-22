@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MolueUtilities
 
 open class MLNavigationController: UINavigationController {
 
@@ -39,8 +40,11 @@ open class MLNavigationController: UINavigationController {
     }
     
     open override func pushViewController(_ viewController: UIViewController, animated: Bool) {
-        if let controller = viewController as? MLNavigationProtocol {
+        do {
+            let controller: MLNavigationProtocol = try viewController.toTarget()
             self.topViewController?.navigationItem.backBarButtonItem = controller.customBackBarButtonItem
+        } catch {
+            MolueLogger.UIModule.message(error)
         }
         super.pushViewController(viewController, animated: animated)
     }
@@ -50,9 +54,11 @@ open class MLNavigationController: UINavigationController {
         if self.viewControllers.count < items.count {
             return true
         }
-        if let viewController = self.topViewController as? MLNavigationPopProtocol  {
+        do {
+            let topViewController = try self.topViewController.unwrap()
+            let viewController: MLNavigationPopProtocol = try topViewController.toTarget()
             viewController.navigationShouldPopOnBackButton(item)
-        } else {
+        } catch {
             self.popViewController(animated: true)
         }
         for subview in navigationBar.subviews {

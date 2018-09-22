@@ -77,4 +77,19 @@ public extension UIViewController {
         return alertController
     }
 }
+
+public extension UIViewController {
+    static func initializeFromStoryboard() -> UIViewController? {
+        do {
+            let value = NSStringFromClass(self).separateTypeName()
+            let module = try value.module.unwrap()
+            let filename = try value.file.unwrap()
+            let bundle = try Bundle.create(module: module).unwrap()
+            let storyboard = UIStoryboard.init(name: filename, bundle: bundle)
+            return storyboard.initializeViewController(withClass: self)
+        } catch {
+            return MolueLogger.failure.returnNil(error)
+        }
+    }
+}
 #endif

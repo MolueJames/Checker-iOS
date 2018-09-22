@@ -14,6 +14,9 @@ import MolueNetwork
 import Alamofire
 import LeakEye
 import SQLite
+
+import MolueFoundation
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -44,8 +47,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //            print(result?.validateNeedRefresh())
 //        }
 //        manager.start()
-        testDatabaseManager()
+//        testDatabaseManager()
+        testProtocolName()
         return true
+    }
+    
+    private func testProtocolName() {
+//        let p = objc_getProtocol("NSObject")
+//        let n = protocol_getName(p!)
+//        MolueLogger.success.message(p!)
+//        MolueLogger.success.message(n)
+        MolueLogger.success.message(MLDatabaseProtocol.self)
+        let p = NSClassFromString("MolueDatabase.MLDatabaseProtocol")
+        MolueLogger.success.message(p)
     }
     
     private func testDatabaseManager() {

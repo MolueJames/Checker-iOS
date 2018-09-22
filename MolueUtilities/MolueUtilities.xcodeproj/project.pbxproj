@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A1328D5214C050A00767F7F /* TargetTypeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1328D4214C050A00767F7F /* TargetTypeExtension.swift */; };
 		1A602F8E20A88B09003AD583 /* BundelExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A602F8D20A88B09003AD583 /* BundelExtensions.swift */; };
 		1A7D9BB22086475C00FA997D /* MolueUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A7D9BA82086475C00FA997D /* MolueUtilities.framework */; };
 		1A7D9BB72086475C00FA997D /* MolueUtilitiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7D9BB62086475C00FA997D /* MolueUtilitiesTests.swift */; };
 		1A7D9BB92086475C00FA997D /* MolueUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A7D9BAB2086475C00FA997D /* MolueUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1AAB69F9215671C90037EF38 /* MolueProtocolFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAB69F8215671C90037EF38 /* MolueProtocolFactory.swift */; };
 		1AADF847209079E10020527B /* MolueAsync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AADF846209079E10020527B /* MolueAsync.swift */; };
 		1AADF84A20907E810020527B /* MolueNameSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AADF84920907E810020527B /* MolueNameSpace.swift */; };
 		1AADF84F2090B1630020527B /* MolueLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AADF84E2090B1630020527B /* MolueLogger.swift */; };
@@ -91,6 +93,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A1328D4214C050A00767F7F /* TargetTypeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetTypeExtension.swift; sourceTree = "<group>"; };
 		1A602F8D20A88B09003AD583 /* BundelExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundelExtensions.swift; sourceTree = "<group>"; };
 		1A7D9BA82086475C00FA997D /* MolueUtilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MolueUtilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A7D9BAB2086475C00FA997D /* MolueUtilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MolueUtilities.h; sourceTree = "<group>"; };
@@ -98,6 +101,7 @@
 		1A7D9BB12086475C00FA997D /* MolueUtilitiesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MolueUtilitiesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A7D9BB62086475C00FA997D /* MolueUtilitiesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueUtilitiesTests.swift; sourceTree = "<group>"; };
 		1A7D9BB82086475C00FA997D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1AAB69F8215671C90037EF38 /* MolueProtocolFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueProtocolFactory.swift; sourceTree = "<group>"; };
 		1AADF846209079E10020527B /* MolueAsync.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MolueAsync.swift; sourceTree = "<group>"; };
 		1AADF84920907E810020527B /* MolueNameSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MolueNameSpace.swift; sourceTree = "<group>"; };
 		1AADF84E2090B1630020527B /* MolueLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueLogger.swift; sourceTree = "<group>"; };
@@ -224,6 +228,7 @@
 		1A7D9BAA2086475C00FA997D /* MolueUtilities */ = {
 			isa = PBXGroup;
 			children = (
+				1AAB69F7215671A20037EF38 /* ProtocolFactory */,
 				1AEB87EA2092CFE3002230A3 /* Extensions */,
 				1AADF84D2090B1440020527B /* Logger */,
 				1AADF84820907E810020527B /* NameSpace */,
@@ -241,6 +246,14 @@
 				1A7D9BB82086475C00FA997D /* Info.plist */,
 			);
 			path = MolueUtilitiesTests;
+			sourceTree = "<group>";
+		};
+		1AAB69F7215671A20037EF38 /* ProtocolFactory */ = {
+			isa = PBXGroup;
+			children = (
+				1AAB69F8215671C90037EF38 /* MolueProtocolFactory.swift */,
+			);
+			path = ProtocolFactory;
 			sourceTree = "<group>";
 		};
 		1AADF845209079E10020527B /* GCDAsync */ = {
@@ -387,6 +400,7 @@
 				1AEB88262092CFE3002230A3 /* IntExtensions.swift */,
 				1AEB88272092CFE3002230A3 /* OptionalExtensions.swift */,
 				1AEB88282092CFE3002230A3 /* CollectionExtensions.swift */,
+				1A1328D4214C050A00767F7F /* TargetTypeExtension.swift */,
 				1AEB88292092CFE3002230A3 /* Deprecated */,
 			);
 			path = SwiftStdlib;
@@ -656,7 +670,9 @@
 				1AEB88652092CFE3002230A3 /* IntExtensions.swift in Sources */,
 				1AEB883D2092CFE3002230A3 /* UIStoryboardExtensions.swift in Sources */,
 				1AEB885F2092CFE3002230A3 /* DictionaryExtensions.swift in Sources */,
+				1A1328D5214C050A00767F7F /* TargetTypeExtension.swift in Sources */,
 				1AEB88662092CFE3002230A3 /* OptionalExtensions.swift in Sources */,
+				1AAB69F9215671C90037EF38 /* MolueProtocolFactory.swift in Sources */,
 				1A602F8E20A88B09003AD583 /* BundelExtensions.swift in Sources */,
 				1AEB88382092CFE3002230A3 /* UINavigationItemExtensions.swift in Sources */,
 				1AEB88542092CFE3002230A3 /* DateExtensions.swift in Sources */,

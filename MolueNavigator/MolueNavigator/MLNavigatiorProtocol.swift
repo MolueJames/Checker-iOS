@@ -22,6 +22,10 @@ public protocol MolueNavigatorProtocol: NSObjectProtocol {
     func doSettingParameters(params: String)
 }
 
+public protocol MolueVIPBuilderProtocol where Self: UIViewController {
+    static func doBulildVIPComponent() -> UIViewController?
+}
+
 public protocol MLAppNavigatorProtocol {
     var router: MolueAppRouter {get}
     
@@ -35,10 +39,10 @@ public extension MLAppNavigatorProtocol {
         return MolueAppRouter.shared
     }
     func push(_ viewController: UIViewController) {
-        self.router.push(viewController)
+//        self.router.push(viewController)
     }
     func present(_ viewController: UIViewController) {
-        self.router.present(viewController)
+//        self.router.present(viewController)
     }
 }
 

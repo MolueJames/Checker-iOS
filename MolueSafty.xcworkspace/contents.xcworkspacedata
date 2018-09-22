@@ -29,6 +29,9 @@
       location = "group:MolueNetwork/MolueNetwork.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:MolueMediator/MolueMediator.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:MolueNavigator/MolueNavigator.xcodeproj">
    </FileRef>
    <FileRef
