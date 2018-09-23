@@ -13,7 +13,7 @@ project 'MolueDatabase/MolueDatabase.xcodeproj'
 
 def molue_safty_shared_pods
     pod 'SnapKit', '~> 4.0.0'
-    pod 'Kingfisher', '~> 4.0'
+    pod 'Kingfisher', '~> 4.10.0'
     pod 'ViewAnimator', '~> 2.0.1'
     pod 'ImagePicker', '~> 3.0.0'
     pod 'RxSwift', '~> 4.1.2'
@@ -69,9 +69,6 @@ end
 target 'MolueCommon' do
     project 'MolueCommon/MolueCommon.xcodeproj'
         pod 'CryptoSwift', '~> 0.9.0'
-        pod 'Permission/Camera', '~> 2.0.4'
-        pod 'Permission/Location', '~> 2.0.4'
-        pod 'Permission/Notifications', '~> 2.0.4'
         molue_safty_shared_pods
     target 'MolueCommonTests' do
         inherit! :search_paths
@@ -90,7 +87,7 @@ target 'MolueNetwork' do
     project 'MolueNetwork/MolueNetwork.xcodeproj'
         pod 'Alamofire', '~> 4.7'
         pod 'Locksmith', '~> 4.0.0'
-        pod 'ObjectMapper', '~> 3.1'
+        pod 'ObjectMapper', '~> 3.3'
     target 'MolueNetworkTests' do
         inherit! :search_paths
     end
@@ -99,7 +96,7 @@ end
 target 'MolueNavigator' do
     project 'MolueNavigator/MolueNavigator.xcodeproj'
         pod 'URLNavigator', '~> 2.0.4'
-        pod 'ObjectMapper', '~> 3.1'
+        pod 'ObjectMapper', '~> 3.3'
     target 'MolueNavigatorTests' do
         inherit! :search_paths
     end
@@ -131,18 +128,5 @@ post_install do |installer|
         config.build_settings['ENABLE_STRICT_OBJC_MSGSEND'] = 'YES'
         config.build_settings['GCC_NO_COMMON_BLOCKS'] = 'YES'
         config.build_settings['ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES'] = 'NO'
-    end
-    
-    installer.pods_project.targets.each do |target|
-        target.build_configurations.each do |config|
-            # Check if any deployment target is lower than 8
-            versions = config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'].split('.').map{|s|s.to_i}
-            if versions.first < 8
-                # puts "Original deployment target for #{config} in #{target.name} is #{config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'].inspect}"
-                config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '8.0'
-                # puts "Update to #{config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'].inspect}"
-                # puts '---'
-            end
-        end
     end
 end

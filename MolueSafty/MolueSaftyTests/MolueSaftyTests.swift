@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import MolueSafty
+//@testable import MolueSafty
 
 class MolueSaftyTests: XCTestCase {
     

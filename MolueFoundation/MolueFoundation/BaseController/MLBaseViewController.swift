@@ -18,7 +18,7 @@ open class MLBaseViewController: UIViewController, MLNavigationProtocol, MLContr
     }
     private let height: CGFloat = MLConfigure.iPhoneX ? 88 : 64
     
-    open let navigationView: UIView! = UIView()
+    public let navigationView: UIView! = UIView()
     
     open override func loadView() {
         super.loadView()

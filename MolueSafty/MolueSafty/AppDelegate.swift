@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var leakEye = LeakEye()
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        self.registerJPushWithlaunchOptions(launchOptions)
+//        self.registerJPushWithlaunchOptions(launchOptions)
         self.setUserInterfaceConfigure()
         self.setDefaultRootViewController()
         self.initializeIQKeyBoardConfigure()
@@ -57,9 +57,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        let n = protocol_getName(p!)
 //        MolueLogger.success.message(p!)
 //        MolueLogger.success.message(n)
-        MolueLogger.success.message(MLDatabaseProtocol.self)
-        let p = NSClassFromString("MolueDatabase.MLDatabaseProtocol")
-        MolueLogger.success.message(p)
+//        MolueLogger.success.message(MLDatabaseProtocol.self)
+//        let p = NSClassFromString("MolueDatabase.MLDatabaseProtocol")
+//        MolueLogger.success.message(p)
     }
     
     private func testDatabaseManager() {

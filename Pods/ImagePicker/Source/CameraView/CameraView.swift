@@ -149,7 +149,6 @@ class CameraView: UIViewController, CLLocationManagerDelegate, CameraManDelegate
   override func viewDidDisappear(_ animated: Bool) {
     super.viewDidDisappear(animated)
     locationManager?.stopUpdatingLocation()
-    cameraMan.stop()
   }
 
   func setupPreviewLayer() {
@@ -164,7 +163,6 @@ class CameraView: UIViewController, CLLocationManagerDelegate, CameraManDelegate
     view.clipsToBounds = true
 
     previewLayer = layer
-//    previewLayer?.connection?.videoOrientation = .portrait
   }
 
   // MARK: - Layout

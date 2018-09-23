@@ -140,7 +140,7 @@ public extension UIView {
             
             for textField in siblings {
                 
-                if textField._IQcanBecomeFirstResponder() == true {
+                if (textField == self || textField.ignoreSwitchingByNextPrevious == false) && textField._IQcanBecomeFirstResponder() == true {
                     tempTextFields.append(textField)
                 }
             }
@@ -159,7 +159,7 @@ public extension UIView {
         
         for textField in subviews {
             
-            if textField._IQcanBecomeFirstResponder() == true {
+            if (textField == self || textField.ignoreSwitchingByNextPrevious == false) && textField._IQcanBecomeFirstResponder() == true {
                 textfields.append(textField)
             }
 
@@ -203,7 +203,7 @@ public extension UIView {
         }
         
         if _IQcanBecomeFirstResponder == true {
-            _IQcanBecomeFirstResponder = (isUserInteractionEnabled == true && isHidden == false && alpha != 0.0 && isAlertViewTextField() == false && isSearchBarTextField() == false) as Bool
+            _IQcanBecomeFirstResponder = isUserInteractionEnabled == true && isHidden == false && alpha != 0.0 && isAlertViewTextField() == false && isSearchBarTextField() == false
         }
 
         return _IQcanBecomeFirstResponder

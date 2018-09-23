@@ -1,6 +1,6 @@
 # URLNavigator
 
-![Swift](https://img.shields.io/badge/Swift-3.0-orange.svg)
+![Swift](https://img.shields.io/badge/Swift-4.1-orange.svg)
 [![CocoaPods](http://img.shields.io/cocoapods/v/URLNavigator.svg)](https://cocoapods.org/pods/URLNavigator)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Build Status](https://travis-ci.org/devxoul/URLNavigator.svg?branch=master)](https://travis-ci.org/devxoul/URLNavigator)
@@ -214,6 +214,36 @@ Navigator.push("myapp://user/10", context: context)
 Navigator.present("myapp://user/10", context: context)
 Navigator.open("myapp://alert?title=Hi", context: context)
 ```
+
+
+#### Defining custom URL Value Converters
+
+You can define custom URL Value Converters for URL placeholders.
+
+For example, the placeholder `<region>` is only allowed for the strings `["us-west-1", "ap-northeast-2", "eu-west-3"]`. If it doesn't contain any of these, the URL pattern should not match.
+
+Add a custom value converter to the `[String: URLValueConverter]` dictionary on your instance of `Navigator`.
+
+```swift
+navigator.matcher.valueConverters["region"] = { pathComponents, index in
+  let allowedRegions = ["us-west-1", "ap-northeast-2", "eu-west-3"]
+  if allowedRegions.contains(pathComponents[index]) {
+    return pathComponents[index]
+  } else {
+    return nil
+  }
+}
+```
+
+With the code above, for example, `myapp://region/<region:_>` matches with:
+- `myapp://region/us-west-1`
+- `myapp://region/ap-northeast-2`
+- `myapp://region/eu-west-3`
+
+But it doesn't match with:
+- `myapp://region/ca-central-1`
+
+For additional information, see the [implementation](https://github.com/devxoul/URLNavigator/blob/master/Sources/URLMatcher/URLMatcher.swift) of default URL Value Converters.
 
 
 ## License

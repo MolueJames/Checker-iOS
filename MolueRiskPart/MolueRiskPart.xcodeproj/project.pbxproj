@@ -272,7 +272,7 @@
 				TargetAttributes = {
 					1A602F4320A810DF003AD583 = {
 						CreatedOnToolsVersion = 9.3;
-						LastSwiftMigration = 0930;
+						LastSwiftMigration = 1000;
 					};
 					1A602F4C20A810DF003AD583 = {
 						CreatedOnToolsVersion = 9.3;

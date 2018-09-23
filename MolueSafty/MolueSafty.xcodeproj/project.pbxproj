@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0C572BA2CD7B6E2C56B10F3C /* Pods_MolueSafty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E41EA7F2F87226125699BB04 /* Pods_MolueSafty.framework */; };
 		1A5014BD2095647B00DB931E /* AppDelegate+ThirdPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5014BC2095647B00DB931E /* AppDelegate+ThirdPart.swift */; };
 		1A602F1520A6D660003AD583 /* Appdelegate+Addtional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A602F1420A6D660003AD583 /* Appdelegate+Addtional.swift */; };
 		1A65038920DD51E60017F91D /* MolueSafty.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A35D80420DD3113002ED3CB /* MolueSafty.xcassets */; };
@@ -27,7 +26,6 @@
 		1A9BCA11210A23EA0035FC21 /* JingDianXingShuJian-1.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1A9BCA10210A23EA0035FC21 /* JingDianXingShuJian-1.ttf */; };
 		1A9F23A220DE5DEF00751D2E /* MolueBookPart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9F238C20DE5DCF00751D2E /* MolueBookPart.framework */; };
 		1A9F23A320DE5DEF00751D2E /* MolueBookPart.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9F238C20DE5DCF00751D2E /* MolueBookPart.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1A9F23A520DE5DEF00751D2E /* Pods_MolueSafty.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9F23A020DE5DDE00751D2E /* Pods_MolueSafty.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1A9F23A620DE5DEF00751D2E /* MolueCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9F238E20DE5DCF00751D2E /* MolueCommon.framework */; };
 		1A9F23A720DE5DEF00751D2E /* MolueCommon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9F238E20DE5DCF00751D2E /* MolueCommon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1A9F23A820DE5DEF00751D2E /* MolueDatabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9F239020DE5DCF00751D2E /* MolueDatabase.framework */; };
@@ -52,7 +50,9 @@
 		1A9F23BB20DE5E3300751D2E /* MolueMinePart.framework in Resources */ = {isa = PBXBuildFile; fileRef = 1A9F239620DE5DCF00751D2E /* MolueMinePart.framework */; };
 		1A9F23BC20DE5E3300751D2E /* MolueRiskPart.framework in Resources */ = {isa = PBXBuildFile; fileRef = 1A9F239C20DE5DCF00751D2E /* MolueRiskPart.framework */; };
 		1AA5391F208A423F0095E2B4 /* AppDelegate+JPush.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA5391E208A423F0095E2B4 /* AppDelegate+JPush.swift */; };
+		1AB5D75221572BA400DA0B0D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AB5D75121572BA400DA0B0D /* LaunchScreen.storyboard */; };
 		1AEB87E32092CA94002230A3 /* AppDelegate+UILogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEB87E22092CA94002230A3 /* AppDelegate+UILogic.swift */; };
+		AE82EC25E9957FA4BE502F93 /* Pods_MolueSafty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E41EA7F2F87226125699BB04 /* Pods_MolueSafty.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,7 +90,6 @@
 				1A9F23A920DE5DEF00751D2E /* MolueDatabase.framework in Embed Frameworks */,
 				1A9F23AB20DE5DEF00751D2E /* MolueFoundation.framework in Embed Frameworks */,
 				1A9BC9F92109FB1C0035FC21 /* MolueLoginPart.framework in Embed Frameworks */,
-				1A9F23A520DE5DEF00751D2E /* Pods_MolueSafty.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -132,6 +131,8 @@
 		1A9F23A020DE5DDE00751D2E /* Pods_MolueSafty.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_MolueSafty.framework; path = "../../../Library/Developer/Xcode/DerivedData/MolueSafty-blgevaoqdzfoxecslfgkahhfzztq/Build/Products/Debug-iphoneos/Pods_MolueSafty.framework"; sourceTree = "<group>"; };
 		1AA538F6208A21440095E2B4 /* Objective-C-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Objective-C-Bridging-Header.h"; sourceTree = "<group>"; };
 		1AA5391E208A423F0095E2B4 /* AppDelegate+JPush.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+JPush.swift"; sourceTree = "<group>"; };
+		1AB5D74F215717B900DA0B0D /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		1AB5D75121572BA400DA0B0D /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1AEB87E22092CA94002230A3 /* AppDelegate+UILogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+UILogic.swift"; sourceTree = "<group>"; };
 		C1101899D8BB4F0B413F8CE1 /* Pods-MolueSafty.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueSafty.release.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueSafty/Pods-MolueSafty.release.xcconfig"; sourceTree = "<group>"; };
 		E41EA7F2F87226125699BB04 /* Pods_MolueSafty.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MolueSafty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -154,7 +155,7 @@
 				1A9F23B020DE5DEF00751D2E /* MolueNavigator.framework in Frameworks */,
 				1A9F23AA20DE5DEF00751D2E /* MolueFoundation.framework in Frameworks */,
 				1A9F23AE20DE5DEF00751D2E /* MolueMinePart.framework in Frameworks */,
-				0C572BA2CD7B6E2C56B10F3C /* Pods_MolueSafty.framework in Frameworks */,
+				AE82EC25E9957FA4BE502F93 /* Pods_MolueSafty.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				1A9BCA10210A23EA0035FC21 /* JingDianXingShuJian-1.ttf */,
+				1AB5D75121572BA400DA0B0D /* LaunchScreen.storyboard */,
 			);
 			path = AddtionalFiles;
 			sourceTree = "<group>";
@@ -257,6 +259,7 @@
 		83E91D7A2F4B97501AC8DD7E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1AB5D74F215717B900DA0B0D /* libc++.tbd */,
 				1A9BC9F62109FB090035FC21 /* MolueLoginPart.framework */,
 				1A9F238C20DE5DCF00751D2E /* MolueBookPart.framework */,
 				1A9F23A020DE5DDE00751D2E /* Pods_MolueSafty.framework */,
@@ -295,8 +298,8 @@
 				1A7D9A7C2084E73500FA997D /* Frameworks */,
 				1A7D9A7D2084E73500FA997D /* Resources */,
 				93ACA222656BBB64E109AC6D /* [CP] Embed Pods Frameworks */,
-				DCE51C25D418643C0931B26A /* [CP] Copy Pods Resources */,
 				1A9F236220DE5D0500751D2E /* Embed Frameworks */,
+				AE592D121B8C3ACB76EB6F44 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -350,18 +353,21 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = MolueTech;
 				TargetAttributes = {
 					1A7D9A7E2084E73500FA997D = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 1000;
 					};
 					1A7D9A922084E73600FA997D = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 1000;
 						TestTargetID = 1A7D9A7E2084E73500FA997D;
 					};
 					1A7D9A9D2084E73600FA997D = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 1000;
 						TestTargetID = 1A7D9A7E2084E73500FA997D;
 					};
 				};
@@ -394,6 +400,7 @@
 				1A9BC9FC210A02AD0035FC21 /* MolueLoginPart.framework in Resources */,
 				1A9F23B820DE5E3300751D2E /* MolueBookPart.framework in Resources */,
 				1A9F23B920DE5E3300751D2E /* MolueCommon.framework in Resources */,
+				1AB5D75221572BA400DA0B0D /* LaunchScreen.storyboard in Resources */,
 				1A9F23BA20DE5E3300751D2E /* MolueHomePart.framework in Resources */,
 				1A9F23BB20DE5E3300751D2E /* MolueMinePart.framework in Resources */,
 				1A9F23BC20DE5E3300751D2E /* MolueRiskPart.framework in Resources */,
@@ -495,7 +502,7 @@
 			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-MolueSafty/Pods-MolueSafty-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DCE51C25D418643C0931B26A /* [CP] Copy Pods Resources */ = {
+		AE592D121B8C3ACB76EB6F44 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -619,7 +626,6 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Release;
@@ -629,7 +635,6 @@
 			baseConfigurationReference = C1101899D8BB4F0B413F8CE1 /* Pods-MolueSafty.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = NO;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -770,7 +775,6 @@
 			baseConfigurationReference = F456BA4D9799A7B589E89FF9 /* Pods-MolueSafty.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = NO;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

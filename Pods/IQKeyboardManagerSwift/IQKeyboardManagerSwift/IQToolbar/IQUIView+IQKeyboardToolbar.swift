@@ -89,7 +89,7 @@ public extension UIView {
     */
     public var shouldHideToolbarPlaceholder: Bool {
         get {
-            let aValue: AnyObject? = objc_getAssociatedObject(self, &kIQShouldHideToolbarPlaceholder) as AnyObject?
+            let aValue = objc_getAssociatedObject(self, &kIQShouldHideToolbarPlaceholder) as Any?
             
             if let unwrapedValue = aValue as? Bool {
                 return unwrapedValue
@@ -225,12 +225,15 @@ public extension UIView {
             //Title button
             toolbar.titleBarButton.title = shouldHideToolbarPlaceholder == true ? nil : titleText
             
-            if #available(iOS 11, *) {
-
-            } else {
+            #if swift(>=3.2)
+                if #available(iOS 11, *) {}
+                else {
+                    toolbar.titleBarButton.customView?.frame = CGRect.zero
+                }
+            #else
                 toolbar.titleBarButton.customView?.frame = CGRect.zero
-            }
-            
+            #endif
+
             items.append(toolbar.titleBarButton)
             
             //Flexible space
@@ -244,6 +247,9 @@ public extension UIView {
                 doneButton.invocation = toolbar.doneBarButton.invocation
                 doneButton.accessibilityLabel = toolbar.doneBarButton.accessibilityLabel
                 toolbar.doneBarButton = doneButton
+            } else {
+                doneButton.target = target
+                doneButton.action = action
             }
 
             items.append(doneButton)
@@ -321,12 +327,15 @@ public extension UIView {
             //Title button
             toolbar.titleBarButton.title = shouldHideToolbarPlaceholder == true ? nil : titleText
 
-            if #available(iOS 11, *) {
-                
-            } else {
+            #if swift(>=3.2)
+                if #available(iOS 11, *) {}
+                else {
+                    toolbar.titleBarButton.customView?.frame = CGRect.zero
+                }
+            #else
                 toolbar.titleBarButton.customView?.frame = CGRect.zero
-            }
-            
+            #endif
+
             items.append(toolbar.titleBarButton)
             
             //Flexible space
@@ -431,12 +440,15 @@ public extension UIView {
             //Title button
             toolbar.titleBarButton.title = shouldHideToolbarPlaceholder == true ? nil : titleText
             
-            if #available(iOS 11, *) {
-                
-            } else {
+            #if swift(>=3.2)
+                if #available(iOS 11, *) {}
+                else {
+                    toolbar.titleBarButton.customView?.frame = CGRect.zero
+                }
+            #else
                 toolbar.titleBarButton.customView?.frame = CGRect.zero
-            }
-            
+            #endif
+
             items.append(toolbar.titleBarButton)
             
             //Flexible space
@@ -547,6 +559,9 @@ public extension UIView {
                 cancelButton.invocation = toolbar.previousBarButton.invocation
                 cancelButton.accessibilityLabel = toolbar.previousBarButton.accessibilityLabel
                 toolbar.previousBarButton = cancelButton
+            } else {
+                cancelButton.target = target
+                cancelButton.action = cancelAction
             }
 
             items.append(cancelButton)
@@ -557,12 +572,15 @@ public extension UIView {
             //Title
             toolbar.titleBarButton.title = shouldHideToolbarPlaceholder == true ? nil : titleText
             
-            if #available(iOS 11, *) {
-                
-            } else {
+            #if swift(>=3.2)
+                if #available(iOS 11, *) {}
+                else {
+                    toolbar.titleBarButton.customView?.frame = CGRect.zero
+                }
+            #else
                 toolbar.titleBarButton.customView?.frame = CGRect.zero
-            }
-            
+            #endif
+
             items.append(toolbar.titleBarButton)
             
             //Flexible space
@@ -576,6 +594,9 @@ public extension UIView {
                 doneButton.invocation = toolbar.doneBarButton.invocation
                 doneButton.accessibilityLabel = toolbar.doneBarButton.accessibilityLabel
                 toolbar.doneBarButton = doneButton
+            } else {
+                doneButton.target = target
+                doneButton.action = doneAction
             }
 
             items.append(doneButton)
@@ -687,12 +708,15 @@ public extension UIView {
             //Title button
             toolbar.titleBarButton.title = shouldHideToolbarPlaceholder == true ? nil : titleText
             
-            if #available(iOS 11, *) {
-                
-            } else {
+            #if swift(>=3.2)
+                if #available(iOS 11, *) {}
+                else {
+                    toolbar.titleBarButton.customView?.frame = CGRect.zero
+                }
+            #else
                 toolbar.titleBarButton.customView?.frame = CGRect.zero
-            }
-            
+            #endif
+
             items.append(toolbar.titleBarButton)
             
             //Flexible space
@@ -860,8 +884,7 @@ public extension UIView {
             items.append(prev)
 
             //Fixed space
-            let fixed = IQBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.fixedSpace, target: nil, action: nil)
-            fixed.isSystemItem = true
+            let fixed = toolbar.fixedSpaceBarButton
             if #available(iOS 10, *) {
                 fixed.width = 6
             } else {
@@ -878,12 +901,15 @@ public extension UIView {
             //Title button
             toolbar.titleBarButton.title = shouldHideToolbarPlaceholder == true ? nil : titleText
             
-            if #available(iOS 11, *) {
-                
-            } else {
+            #if swift(>=3.2)
+                if #available(iOS 11, *) {}
+                else {
+                    toolbar.titleBarButton.customView?.frame = CGRect.zero
+                }
+            #else
                 toolbar.titleBarButton.customView?.frame = CGRect.zero
-            }
-            
+            #endif
+
             items.append(toolbar.titleBarButton)
             
             //Flexible space
@@ -897,6 +923,9 @@ public extension UIView {
                 doneButton.invocation = toolbar.doneBarButton.invocation
                 doneButton.accessibilityLabel = toolbar.doneBarButton.accessibilityLabel
                 toolbar.doneBarButton = doneButton
+            } else {
+                doneButton.target = target
+                doneButton.action = doneAction
             }
 
             items.append(doneButton)
@@ -1032,8 +1061,7 @@ public extension UIView {
             items.append(prev)
             
             //Fixed space
-            let fixed = IQBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.fixedSpace, target: nil, action: nil)
-            fixed.isSystemItem = true
+            let fixed = toolbar.fixedSpaceBarButton
             if #available(iOS 10, *) {
                 fixed.width = 6
             } else {
@@ -1050,12 +1078,15 @@ public extension UIView {
             //Title button
             toolbar.titleBarButton.title = shouldHideToolbarPlaceholder == true ? nil : titleText
             
-            if #available(iOS 11, *) {
-                
-            } else {
+            #if swift(>=3.2)
+                if #available(iOS 11, *) {}
+                else {
+                    toolbar.titleBarButton.customView?.frame = CGRect.zero
+                }
+            #else
                 toolbar.titleBarButton.customView?.frame = CGRect.zero
-            }
-            
+            #endif
+
             items.append(toolbar.titleBarButton)
             
             //Flexible space
@@ -1221,8 +1252,7 @@ public extension UIView {
             items.append(prev)
 
             //Fixed space
-            let fixed = IQBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.fixedSpace, target: nil, action: nil)
-            fixed.isSystemItem = true
+            let fixed = toolbar.fixedSpaceBarButton
             if #available(iOS 10, *) {
                 fixed.width = 6
             } else {
@@ -1239,12 +1269,15 @@ public extension UIView {
             //Title button
             toolbar.titleBarButton.title = shouldHideToolbarPlaceholder == true ? nil : titleText
             
-            if #available(iOS 11, *) {
-                
-            } else {
+            #if swift(>=3.2)
+                if #available(iOS 11, *) {}
+                else {
+                    toolbar.titleBarButton.customView?.frame = CGRect.zero
+                }
+            #else
                 toolbar.titleBarButton.customView?.frame = CGRect.zero
-            }
-            
+            #endif
+
             items.append(toolbar.titleBarButton)
             
             //Flexible space
