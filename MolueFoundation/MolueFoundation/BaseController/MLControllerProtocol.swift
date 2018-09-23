@@ -35,11 +35,11 @@ protocol MLLoadingIndicatorProtocol {
 extension MLLoadingIndicatorProtocol where Self: UIViewController {
     func showLoadingIndicatorView() {
         let data = ActivityData()
-        NVActivityIndicatorPresenter.sharedInstance.startAnimating(data)
+        NVActivityIndicatorPresenter.sharedInstance.startAnimating(data, nil)
     }
     func hideLoadingIndicatorView() {
         NVActivityIndicatorPresenter.sharedInstance.setMessage("加载数据中...")
-        NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
+        NVActivityIndicatorPresenter.sharedInstance.stopAnimating(nil)
     }
     func needToDo(newValue: Int, oldValue: Int) {
         let value = showOrLoadIndicatorView.switchShowHide(new: newValue, old: oldValue)

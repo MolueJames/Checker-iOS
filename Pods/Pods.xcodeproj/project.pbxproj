@@ -41,6 +41,7 @@
 		0B2F529D416D66873E35C2781499D95B /* AppSwizzle-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 474F385033DBFB4FF7D8786A2BA99DBE /* AppSwizzle-dummy.m */; };
 		0C5FD4FF36B9640D55CF75020DE1B36B /* DateAndTimeFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7472362F51C29961EDFC96CAEDD377 /* DateAndTimeFunctions.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		0CE638E074F004ACC54B02091CDBEF45 /* NVActivityIndicatorAnimationOrbit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D6E5ED8AF5E505977FF1CA37E15F47 /* NVActivityIndicatorAnimationOrbit.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		0D46806F73A843A59B707EAC39F27418 /* IQPreviousNextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6AEB3BA5BE2A40CA1C5B1ADCDC2218 /* IQPreviousNextView.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		0D9C5863FF248C55942D6BB52A14ABF2 /* NVActivityIndicatorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BBF66337C8AA2DDE950C7A60DD9ECB /* NVActivityIndicatorPresenter.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		0DA4446B3D8192E4E63E07CA2E6D097F /* JGProgressHUDIndicatorView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7531DDA5B09CF8A36788F914E1051394 /* JGProgressHUDIndicatorView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0DB3B8E72945E979B195DA322A738A94 /* ScheduledDisposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11957CF554EE43610FB4CF2DDCA71313 /* ScheduledDisposable.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -59,6 +60,7 @@
 		1182A6159A047C3C60BF823DDE7F1329 /* Permission-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E93F365D96606F7EDE30A1048A196AC /* Permission-dummy.m */; };
 		11BFF5CEA2A871E68DACD6DBAB3921F4 /* ImageGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B596DCED251D50F30355FD701B73D9 /* ImageGalleryView.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		11DEE4BB9305BD61622B8BE52F549CAC /* Pods-MolueNavigator-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DB9CC97183737F72CEF7CD18CDC81222 /* Pods-MolueNavigator-dummy.m */; };
+		11E407D2F5F8CCA5C42D73CF587FF1E7 /* IQToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4B0261EF1978D772D2BC7767C8662D /* IQToolbar.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		11EC09CA75DD152E1E2ED6D6ECD15A7F /* JGProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D9FD0CF1E24D15F2ECF0B0732875CA5 /* JGProgressHUD.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		1213A793A9DDEB36A1F44985C979F97A /* Rabbit+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64F096C520B92EC09B0D5A93F52E35A /* Rabbit+Foundation.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		12B2355DB75BB737A5FDFC1B12306DAB /* ChaCha20.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8869639FBABCF01130C7A2F09218740 /* ChaCha20.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -74,6 +76,7 @@
 		164781197625A3149B3BDBCAA2AC8CC3 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B05BA8C38769F0BDA4309D1B05D4402 /* Validation.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		1807F60E313FB99543CEF8C26BBB78A2 /* Pods-MolueDatabaseTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B648AD4B25550F2C1BA714943CA82865 /* Pods-MolueDatabaseTests-dummy.m */; };
 		18820F26109FC1FC7F049C807900BA5D /* ConstraintLayoutGuide+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20E99A5501CF56B42B064AB23276D8A /* ConstraintLayoutGuide+Extensions.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		19A3BA22DCD98245FDB5F1F9E5B5EEA1 /* IQKeyboardManagerConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404C79DAC6EE6B0327BDC4712FC0EE87 /* IQKeyboardManagerConstants.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		1A1623738FD41F3ABAA7BAED90D52484 /* PermissionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A78A715EB05086D130A9E31EA7BBB16 /* PermissionType.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		1A596CA1900F8A5446E30397B49B4A22 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B0B479A51FF8C373AFB23D2712881C /* ImageCache.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		1B9EDEDC964E6B08F78920B4F4B9DB84 /* Alamofire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EDC11113CA1C9E766D8461285A765CBE /* Alamofire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -89,6 +92,7 @@
 		1EEDF031CFDA1FAA983FF3E048894AF2 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E89CB6135B00BD15FADF62949155A87 /* CFNetwork.framework */; };
 		1F21BAA88566380CA2A38F95081CD0C9 /* AsSingle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90E5D2D666819B523F7F77D0C4EFACF /* AsSingle.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		1FA07CD6EF1F5D3E5A4700F7E8793CE6 /* ConstraintView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA239B59792D7D8971EF2C532FBEC4DC /* ConstraintView+Extensions.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		1FCB2249F4D91AAC87601E03E3FBBE54 /* IQUIScrollView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD13750298BE75C7A33ABA839EDE6E1 /* IQUIScrollView+Additions.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		204944D67267632DD7CD4BEFB60AC389 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73110417AA1556DC1717296FA046BAC7 /* Response.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		205087E07A7A540E163B48BE33D4C15A /* PermissionAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BBAA08EDD99FA7E20B4AFCB20CDE58 /* PermissionAlert.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		20F12695FD50AF1EA1D9E563CD694EC0 /* ConstraintItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D20903A5F7DFED969EC0AB042A5F6A /* ConstraintItem.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -120,7 +124,7 @@
 		2964D975AC9FBC01EF16F4B1588774B8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2A15C2CEE441B281B516829B643E50C /* Foundation.framework */; };
 		29C40786A12030964755F261EAF0C23D /* ImageGalleryViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191FD58DB74EB281AC033FFFE9709323 /* ImageGalleryViewDataSource.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		2A02AD065F878C4F292E783FDA34792E /* SingleAsync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C969E945ECEB03D0B50FCDA86629A69 /* SingleAsync.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		2A2FE216328BFC23AF9D30EAEFAA2303 /* IQKeyboardManager.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9EE476A0D9547AFADEA92CD01435AC0D /* IQKeyboardManager.bundle */; };
+		2A2FE216328BFC23AF9D30EAEFAA2303 /* IQKeyboardManager.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CC1AA6D421A91C2DBEE34B7C318EF202 /* IQKeyboardManager.bundle */; };
 		2A7B74828C35E3BAE761AD5CD53EA7D2 /* RandomAccessBlockModeWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EB3888820BBA301AF2FA334EC17BF0 /* RandomAccessBlockModeWorker.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		2AA39B56FEF328A035B8A1D12C60EBA4 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D8801313B882BFCA075BA0FEC10F7C /* Configuration.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		2B21525121D63E0077014BEB063E7F78 /* SubscribeOn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FAC38D1D5776B4016E53649A787E55 /* SubscribeOn.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -129,14 +133,13 @@
 		2BD3A143238BFCB5C5133DB930720183 /* ViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFF6C369F46B16AC082EE986291B42B /* ViewAnimator.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		2BF0BAEEC1A9FE146EB2209C7B763031 /* SnapKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E900AFE9DC2CC2CB34BF605ECB3A936 /* SnapKit-dummy.m */; };
 		2C75A96E02B6781E1489070BB1DF23B7 /* LocationWhenInUse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5730792A077B73C6E1665756D714F69E /* LocationWhenInUse.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		2DB5F8F67C0B9967943405F67B158B0F /* IQKeyboardManagerSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E64781BD711C11FA458AD90DCB570FD /* IQKeyboardManagerSwift-dummy.m */; };
-		2DBA331B3AC77FA4AD4682539E266925 /* IQTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE0F040F13B261F0B37AC863962536C /* IQTextView.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		2DFFC9FCC41204C089DC551F9819E822 /* Siri.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B8CA91C259BA2289F93A72F4B1493 /* Siri.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		2E0DB8E3B1D96183BD6C35FD10414C2B /* DisposeBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388B96FA02802D535F079075CC2E846B /* DisposeBag.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		2E1697DFE9AB661C4FA7A8874BBD30F6 /* NVActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF39E39AEB37C97F26E62FF2217BF47B /* NVActivityIndicatorAnimationLineSpinFadeLoader.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		2E7271E0AC136DAC49BECADA818C7338 /* FTS5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049FB1D5AEB57789798BD808464DD49A /* FTS5.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		2EC95926441F6A5BB81F3B947782B0DE /* ImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949771BD982734DF2DFA735DE6E8A229 /* ImagePickerController.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		2FEF3C7AB4B00973D8B62918C5E9ACAE /* InvocableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAD99F5DC4301F7647A34169BC1AA9F /* InvocableType.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		30A03B34A1288B99A52BABDE8190BE42 /* IQTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BA4E315A3AB95D9D52F215C685092B /* IQTextView.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		31CF4454BCCC40FFAD262E915BF83404 /* ImageTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1B195B4CAC8B6A65BB2B671734BF27 /* ImageTransition.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		31D59134A0FF363416301AAAA41D48A9 /* Pods-MolueNetwork-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8323711E6E8A70DFBA0670520B3AEE63 /* Pods-MolueNetwork-dummy.m */; };
 		323ED5DBCA56939367C0948F01A26183 /* Setter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1DE9AF635210F85066060FA337D8DE /* Setter.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -180,6 +183,7 @@
 		4049555A35A86358F8A4878379647FF9 /* Reduce.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA07082DEAF4D2F745CD87A6BCEF5619 /* Reduce.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		418CC02A86017107F25F0E5B10D1E5A5 /* Motion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C14AF692D09BD09786EBA3AA31B2EEB /* Motion.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		41D2F7E685126B6E50B3A8D19AD5089B /* AnyObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3E00223300687991D99E0CBB78BBBF /* AnyObserver.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		427CC1E0CEA44C6ABBB345D95CB8150E /* IQInvocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF6C7D5F7B4B74E9A68A79D5BCA018E /* IQInvocation.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		4390CEA41C1F3196FFFAAD6E1EBD10D4 /* NVActivityIndicatorAnimationBallTrianglePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C510D6599760A0F84715A04ABB6E261 /* NVActivityIndicatorAnimationBallTrianglePath.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		43D82A853C43FB4BD3937FEAB3D6682E /* ImageView+Kingfisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB6ACE3F603A1184C5FE49E7EB6403B /* ImageView+Kingfisher.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		43EC5C1A1C9BD29838B17E6918A126B3 /* ObserverType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3324A371AC5DE596B4DA3D3F8E62B56C /* ObserverType.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -204,7 +208,6 @@
 		4C42CBA1AAC033885A0FB0AAD9B66806 /* SHA2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7747155073A6B87A98FD6B1CD997D9 /* SHA2.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		4C8439CE78FD7EE7CB76C929AC2AC486 /* Pods-MolueRiskPart-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 593B9F6F1BFE343E8741296A91B19E07 /* Pods-MolueRiskPart-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4C8B65310D6EB0FC55121B17577DB9BD /* Scan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D82D02C05520BFB5B85DA3391E3BE34 /* Scan.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		4DD345311D00AA38BAFE1D45C4D33490 /* IQUIView+IQKeyboardToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD53FB64E3647951768FA6F1CCD6A403 /* IQUIView+IQKeyboardToolbar.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		4EE04EAB2ED3A4AD73BECE7B202EBD3C /* ESRefreshProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47F093BCA9D35C2D0C677D6DAF07467 /* ESRefreshProtocol.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		4FB3242AA15160B564A43FA8D2B6060F /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A7D2B6A6CBC826002402A662148FE1 /* Window.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		507776E28A4C6C066B1F53755B48B405 /* Pods-MolueMinePart-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A77BF055E4F469AA37A61D24FA0A0855 /* Pods-MolueMinePart-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -214,6 +217,7 @@
 		51257D32B701992D54CE389471EE427F /* Disposables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317B4BCDCD434B2CDBF414C9B3F008ED /* Disposables.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		512F19FF82229BB81BE97310C62B8D64 /* RxMutableBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7C2BE7D4889BE0806AABD733449C6C /* RxMutableBox.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		52040CBA7A1B6BE40B2BB0C23AD7F515 /* Statement.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40EE0BA738D6308696E170FF5CFE22B /* Statement.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		526C7861D4285F912ED2B290A9B6680A /* IQKeyboardManagerConstantsInternal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629E365F13832AA03404A8CC4DEAE41C /* IQKeyboardManagerConstantsInternal.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		52BAB50281D71BC722702944D653B637 /* Switch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8BA1340A1FCA62CC439E19DF55C1DF /* Switch.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		5319C01B0FD5FD46D9E17EA98F2C4C9B /* ShareReplayScope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8374D35E2FD427AFE0A4ABBBD4E861 /* ShareReplayScope.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		53AB815FAC5437681F6BBB9C0CBF8198 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2134898484AD0C5D90DAD45C1049C9 /* Operators.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -221,6 +225,7 @@
 		53B12F55D31C849AE44593E992416528 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D62077DB3BF16D93D30AF34B6C240F0 /* Camera.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		53E0A72846668C4BDCBAEF9C879987ED /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 965680BC8AB75154B50712F0A3545CC6 /* QuartzCore.framework */; };
 		55FFC26141663BC77A97F74EAC6EE91D /* Platform.Linux.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C522B8CD3DAC9B9582ECA3D151E23B2 /* Platform.Linux.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		5674C00A1D4CEC40CE7C9823392AE80E /* IQBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A73B5BDD3D5D4E4200E4B6F5DAFC1D /* IQBarButtonItem.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		56DE1E454774E891CFC44EBF41FBBF4C /* NVActivityIndicatorAnimationBallScaleMultiple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EBE378914A9CCD540A36853188C8D0 /* NVActivityIndicatorAnimationBallScaleMultiple.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		573486F5385AA57436957F02EDEA6135 /* JGProgressHUDIndeterminateIndicatorView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F1F51C6F099742E2ACEA47B7575AD21 /* JGProgressHUDIndeterminateIndicatorView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5753D22F9F29B7A7C52DC1DC507056C7 /* Locksmith.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742FE405BD8F74F5EA4AC00C3406881E /* Locksmith.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -229,11 +234,9 @@
 		58207380A73CF6BA3F40FA91871FCDF2 /* PrimitiveSequence+Zip+arity.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE9385ABC6522DD9658EDC070421C2D /* PrimitiveSequence+Zip+arity.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		58812AABBC0A1E7AE019752424DF31A7 /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ED45F577D9D9B689C368E893445244 /* MultipartFormData.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		5896A356BDDB45DB0AF858FF6B98749D /* PKCS7Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CE989FD86CB6AFDE1A54791197B388 /* PKCS7Padding.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		5A08F39C235CFEAE5C6003A9F8210C92 /* IQUIViewController+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B777191834582DAE8BD54C513F114D /* IQUIViewController+Additions.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		5A48AD3566190300DAE528B4F6F57A7A /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CD04E28705C7DB16C53D27CDFB6047 /* Timer.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		5AB242E5F8F3A3F60B80C12A02F769E2 /* NVActivityIndicatorAnimationCircleStrokeSpin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3826AB466FE3D2300E740028597354EB /* NVActivityIndicatorAnimationCircleStrokeSpin.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		5AC06AABC37CA995F07480909C8DA1AD /* SkipWhile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9F9BB8472094B6B1E7BD8ABDD5FB5E /* SkipWhile.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		5D4958FA3398268EF4049D18AB2F3A66 /* IQToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BECE7ADE55B5071327A7730FC42F373 /* IQToolbar.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		5D73BF2CD89D5288DDEF3011F9294CAB /* HistoricalSchedulerTimeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69649D26647E8F707BDE18809F8CCCF /* HistoricalSchedulerTimeConverter.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		5D8574165CFD07DEE34097BE0A7866E3 /* ObservableType+PrimitiveSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9256C50B1D4D9BE25D39223C12ACD7FC /* ObservableType+PrimitiveSequence.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		5DB09E6258B5C317E82743F8C42B25F9 /* String+FoundationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2AACB030BEEAB3E8E5496D5EDFEDAF /* String+FoundationExtension.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -247,12 +250,12 @@
 		614C5AD6BB9E8D53DD931A55B1A0F7D1 /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDFB9E984546A34FB1BE8206307092E /* Query.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		616D88241D871F842FB953E7CEE50087 /* URLPatchComponentMatchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A50DAF6B586A2647A0B12F2125AD55 /* URLPatchComponentMatchResult.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		61BF592D0712E55D03A3B29346EC2522 /* Sink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15445CD63E2F2623B94B3193D98C86E4 /* Sink.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		6245FE82D2D8272ED5A54539941E22C7 /* IQUITextFieldView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61BC0A574C18A91F66ACDB459687654A /* IQUITextFieldView+Additions.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		6250D5DFEEB474582957F4FC771DC7ED /* JGProgressHUDAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F82005CF5C3C6200C6DFB005BB0182 /* JGProgressHUDAnimation.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		6254B99DDBFF2B99DC76243515BEF609 /* Enumerated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7F1E7F1DC07DA6B4E925032C227C78 /* Enumerated.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		632590FD2FFCE6FD659CF952AA294070 /* SHA1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D87F8885BBAC9AE84BEA4F5F80487A /* SHA1.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		6391180A4488F27E349805A7FE509247 /* HMAC+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DC2B24B7C4F16D8FE6C0A9AFF74EED /* HMAC+Foundation.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		6406D1BE52223684F48D74B551BDA964 /* ConstraintMakerPriortizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6022AF09304455E8F30A648B31CEB746 /* ConstraintMakerPriortizable.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		64381B08A172E881A5AEA1CB34B11DAC /* IQBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8438907EAC60E1086FBBC53322CBBD /* IQBarButtonItem.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		644D2EFEF34DCB61E136788B5D42C7DD /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714B2887FB8B09A8BF963E69A254D4B3 /* Navigator.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		651A7F04B0519E10946C827874D4E4C7 /* NVActivityIndicatorAnimationAudioEqualizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC927C20EDAE8E98247C5F37E5B57C0 /* NVActivityIndicatorAnimationAudioEqualizer.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		651C65BC9044B2C63B46B5C4CD208A2B /* ConstraintRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB753B93D1BFA67448BB3F861E0AFF35 /* ConstraintRelation.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -325,6 +328,7 @@
 		7DFEF328F25C30C845121D2979FFEA8D /* DateTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C497500DA294B424256CA2C5ABEC081 /* DateTransform.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		7E07F34462D624F8BD9C0A1E58DDAFB2 /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F45E4F5A8039FAE5C28D870404F0DA /* Mapper.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		7EB8BB41537E4FBA41CF9DB85E76C377 /* PublishSubject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A865889A483389624509A6C1C0357E21 /* PublishSubject.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		7EC537FA455633CDC21D90459A0778BA /* IQKeyboardManagerSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 44630A95A9918846AFAE8D14F3F67435 /* IQKeyboardManagerSwift-dummy.m */; };
 		7FCAE53EA092D4EE083C5260DFDE9BA4 /* ConstraintOffsetTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE313FC67837F608F0AF510A0D4A462 /* ConstraintOffsetTarget.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		806188A136F7A2611BC004C77ACA9D5E /* BlockModeWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA4EED6DB4AC52B6DB98D870580C7C2 /* BlockModeWorker.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		80EE81C5DBF384B9B3EB7EC62DC36FEA /* Skip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD5532F71A42FD7B83E61E1D6D60DB5 /* Skip.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -340,19 +344,18 @@
 		83EC6DDBD8196CC63F2B8B239AC27F5B /* LeakEye.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054D62EF7C006EFBC843A458CC83E443 /* LeakEye.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		8464AECDB000BF1239B8E18B565F8DEF /* ConstraintRelatableTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC0CEF3B21A4A8B866FB79BEC5B9C33 /* ConstraintRelatableTarget.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		8488548CA9346116E187AA917197F0F2 /* URLMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F247C934601D829359B92BD512715BA /* URLMatcher.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		84EBE3B98F33BF0ADDE77F4B94FEC1EE /* IQKeyboardManagerConstantsInternal.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EC3FDB710B4E359F9AFAF0660424CB /* IQKeyboardManagerConstantsInternal.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		85227BB2C6B9C3F1B52BD52CF9ECBE77 /* ES.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E95C0709F8A4C2CA8647EF19DBA4E5 /* ES.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		856B67E668E6E7242B646D5D8D768ACB /* DispatchQueue+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034A43C5960295B81D3A9328BF6A17A5 /* DispatchQueue+.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		85B94E269E41B84EFC2B7955E0D8C5F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2A15C2CEE441B281B516829B643E50C /* Foundation.framework */; };
 		86036EDC13C122C0762434CC15B7AD90 /* Pods-MolueDatabaseTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C7EA3E4DB2E1FAA443070EDCB592EED /* Pods-MolueDatabaseTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		861077B4F811603B3386315B96D60BF8 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B701365BEFB0D073CE18A4A540BCA9 /* Observable.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		865C32E3F45424F55C5647162D3C2428 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF52969DE38211DBD6DEE8EEEBF41F4 /* LocationManager.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		8769C8685D5F4803E6C4935D19853E7F /* IQNSArray+Sort.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA31C60012E02A030695ABE67D5C3042 /* IQNSArray+Sort.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		8774B71365392A3F6EE7847A2EABB004 /* Deferred.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE06A538E490DE59B5DEBCC0345BAA1 /* Deferred.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		87AD9D97F0F94C85720FC018235CD8A9 /* IQKeyboardManagerSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C13E655E672C48BF63EF424671789600 /* IQKeyboardManagerSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		87AD9D97F0F94C85720FC018235CD8A9 /* IQKeyboardManagerSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C23E4C523090611C2AE2DFBB32EF551C /* IQKeyboardManagerSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		88923CAD7F21B5283A75A3932D08550C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2A15C2CEE441B281B516829B643E50C /* Foundation.framework */; };
 		892A2C0FA0666F0DA58C03A28913F0C1 /* Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE12BFC0259D3D9ADBB4D563C9764326 /* Create.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		892D40E613FE4CA4F10184EA7D064F65 /* Pods-MolueUtilities-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FC93C9E8DCF160B31AD9BAF5B7F8528 /* Pods-MolueUtilities-dummy.m */; };
-		897A680B8066B5FB6209C505794EA3B8 /* IQPreviousNextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7C5CF783F1E32FF951E8FFD6C9AAE3 /* IQPreviousNextView.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		89C9927EA08BDB60D74E0A4BBD8678E4 /* Value.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DEF90F17C39683358BB21E9556D35A /* Value.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		8A269AC9512013D84ACEAF2DD857F93C /* NVActivityIndicatorAnimationBallClipRotateMultiple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB686EFCE9862B258BB6DF0D8FE1FBF /* NVActivityIndicatorAnimationBallClipRotateMultiple.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		8A3A95D9F8CCA78EF535F933485685A3 /* TailRecursiveSink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852D376D5C8395509E9DDDCD3CDAF18F /* TailRecursiveSink.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -375,11 +378,11 @@
 		8FA9B26AA518B65A03682A1781E2B4D1 /* Locksmith.h in Headers */ = {isa = PBXBuildFile; fileRef = E7AA973434EF2B766DE043AB4326894D /* Locksmith.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8FAFB392500A9034A24E70036AB8E0DE /* VideoInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A994E790F5CF4192C2C1D58A74BB50AA /* VideoInfoView.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		8FB6590FBC73EF3DDA4926D31CE58882 /* ImageGalleryLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAA0EA6B30676B4C7306FAD631A90A1 /* ImageGalleryLayout.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		907EDC349214C874D011C6E94CFE0521 /* IQNSArray+Sort.swift in Sources */ = {isa = PBXBuildFile; fileRef = F211965DF7E55193E9456D7231FAB9CD /* IQNSArray+Sort.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		90896D966EBC5FB07D484125CDD3F032 /* UITableView + ViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793AD1BC39C14849EE37D6FF7557E02C /* UITableView + ViewAnimator.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		9207319BFB1CBBE8EB920A6095603C84 /* NVActivityIndicatorAnimationBallScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E976ED2CE738421D453492B37D1A3F /* NVActivityIndicatorAnimationBallScale.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		92393EE91C9E9EF0F1F0113F6A5709DA /* AggregateFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8AA57F39391B842B15286604F35CD6C /* AggregateFunctions.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		928E67BADC63282370D8B39551E5F703 /* SynchronizedUnsubscribeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C593C016AAACEEFDA2C429DD8E292DA /* SynchronizedUnsubscribeType.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		929AA912810899063B76C84E7F4F9184 /* IQUIView+Hierarchy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A35772EBA7191991F95B692EEB9ECE /* IQUIView+Hierarchy.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		92D9A4AB0F85B41D339ADB501B490C5E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 965680BC8AB75154B50712F0A3545CC6 /* QuartzCore.framework */; };
 		930103F79825861324FCDFE89F83C774 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8B781B994112CB6C85B78F2FFAA0F7 /* Box.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		930ECF9B4BDAFBA1154C53FEE8EA89F7 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387F8B69D778D364B5615C1D72BBDB7D /* Operators.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -401,7 +404,6 @@
 		9B299DF5DEDA0E6BFF47F8D3C3728023 /* NVActivityIndicatorAnimationBallZigZagDeflect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0173996A05CED5BA7B6172B913D6D41E /* NVActivityIndicatorAnimationBallZigZagDeflect.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		9B4795D85A789EC2B46B5138003A0FF7 /* ToArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = D633C38CF1B9848CB176B920EC7583E8 /* ToArray.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		9C92E9E1DC9F5E70B4C4BED698734205 /* NVActivityIndicatorViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9594C3207D04723D9A156E6FF3BF9F /* NVActivityIndicatorViewable.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		9CDD0EF49EBBD2C3BF10ED329D57E86D /* IQUIView+Hierarchy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A8167406B7B56D108CA2E488992ED6 /* IQUIView+Hierarchy.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		9CF253E7D94FAA48E8EFC4ABC67200BF /* Updatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A36BC06CA3113579991F46EAD46DC9 /* Updatable.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		9D35C57F8C6823282033B3E673E676E9 /* AEAD.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECF3E48A9AA0F8E591AF5B2F45EE50D /* AEAD.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		9D9264A44E2FDD5B5D90B52FF24248F6 /* Pods-MolueNavigator-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DB3752803CE54784DD445A486F5062E6 /* Pods-MolueNavigator-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -410,7 +412,6 @@
 		9EDFA5A7B1DDEF5D8AB9EC862BE65435 /* ButtonPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C3DD9468AE042C57DC72A166F854B3 /* ButtonPicker.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		9FCBA85E4E49E5C965ECCD39DF6B1952 /* Range.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FA91A45B8F2A1C53B322138B444C7E /* Range.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		9FE62692E5E53AFAEAD0317E92AB497E /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07B1EA111E3CD86E7B9D7CB1832C02D /* Errors.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		A059D17839AFB15786D46DB36A87EF16 /* IQUITextFieldView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5E352CBCB3CDB838B741CD9D3C4EB1 /* IQUITextFieldView+Additions.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		A0F7A0E79A25F5260A57A3B02A0DA6D5 /* ConstraintConstantTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862DE0B6682FCBD6909748BD2649AA5D /* ConstraintConstantTarget.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		A1255BE59BB116E44FF230DF2089300D /* LeakEye-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B5BF7CC63A95E50AAFD5CF3C71857FF /* LeakEye-dummy.m */; };
 		A128DBCF691E0F4D2AC3EEA36F7BD562 /* ObjectMapper-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C4E564CC9208280E5D610C0E404926D /* ObjectMapper-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -439,6 +440,7 @@
 		ACA4843FDFCBE2D550E8DDCCCA193FAF /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC43EC65DF4618DDFE56EF1FB10450C /* Location.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		AD01D6864ACEF430F5EDF43B78477065 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2A15C2CEE441B281B516829B643E50C /* Foundation.framework */; };
 		AD2C576F50E67B2417C1D17FBF5E32B2 /* AFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7ABBC19A986FDF666A5D9AFCE631A42 /* AFError.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		AD72D81004E206BA6B50BCFE8FBA11A4 /* IQUIView+IQKeyboardToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B35A73877502430682626F9D5F8F148 /* IQUIView+IQKeyboardToolbar.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		ADB9AFAFF53A23406577745C1111A082 /* NVActivityIndicatorAnimationBallBeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADC003187334F078BD1CDC1CA24181D /* NVActivityIndicatorAnimationBallBeat.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		AE0994A54AF1CC68E434BF2401A5371B /* NVActivityIndicatorAnimationCubeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4933C36755506346A347EFAFDE5E2060 /* NVActivityIndicatorAnimationCubeTransition.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		AE70D2D80F3508714F5437BC4C4A7C79 /* Blob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620E31AA065B41D6261B9DAA18CD6B9F /* Blob.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -478,6 +480,7 @@
 		BCA16C6DAA5BD19ED0F1EEE0417E5769 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C354936BEAA48AB1EEF0B8A022DDDC9E /* Resource.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		BD1918C46A799046436A20A8EFA855F6 /* ConstraintPriorityTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662E074D4E8646ABB022C888DC6D0A4A /* ConstraintPriorityTarget.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		BD7E36CF38B18A034D0052E8A0A00CAB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2A15C2CEE441B281B516829B643E50C /* Foundation.framework */; };
+		BE5732DDD592B2F379E75843D7A19CEA /* IQUIViewController+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DF7820327601E489558B18F46C1A15 /* IQUIViewController+Additions.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		BEA7C7F5BE25F47C7161DF953219D022 /* UInt8+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF2722D6A273178C57F69858561CE02 /* UInt8+Extension.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		BEE3BD08E9F8F6633F4B6C08EA105C71 /* SubjectType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039365400799D85C6C36E2177460FB12 /* SubjectType.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		BEEEDE2902835B7AE2541F7FAC066788 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2A15C2CEE441B281B516829B643E50C /* Foundation.framework */; };
@@ -501,9 +504,12 @@
 		C3290D6F80FE6EE0D5D6D419C93D0E80 /* cameraIcon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 276CEE7C21271E2A7A8132EE735154F3 /* cameraIcon@3x.png */; };
 		C34B9517B5A3B31107894CD3EFB7100C /* Permission-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C5387CB068967160616E8BFF618C3D75 /* Permission-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C38E97FBDBA3C7A45C1D4A764F5A335C /* SkipUntil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C64FA791F1AAFE6D3226885D1D26BDD /* SkipUntil.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		C3F78651F021CB9709D782599611D9E7 /* IQKeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852A3606279F5FFFEA898E16FBA02AD3 /* IQKeyboardManager.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		C47603D0AD01848E8198CF3166797B82 /* URLNavigator-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E73B4DD7809B20B2DE47ED4E0796A0E /* URLNavigator-dummy.m */; };
+		C4A3F5C34230E138C658357E04528893 /* IQKeyboardReturnKeyHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FB1F167F3C93E47264C81C2864FC6E3 /* IQKeyboardReturnKeyHandler.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		C4EAA87C7E9E9517CAEC307C17AEF533 /* ConcurrentMainScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DECF855DF6C2F7759704918A202A8DD /* ConcurrentMainScheduler.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		C5278144BD00018B11C35C2DAA3FE0F3 /* DigestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A012062D8D2ECCA5E9230FE838A23B69 /* DigestType.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		C586D785BA91C1E92D4D967EF19F0615 /* IQTitleBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CAC0A66A203E9F90139D046B64AFFD /* IQTitleBarButtonItem.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		C58A7B52B3A399AC2744EE5989DB1C63 /* TransformOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D37B2EE33FF880550C410E9C9F7068 /* TransformOf.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		C5FD57751548EFFA6567AFD2EB47CD56 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226B1B95EC52AABB853E49DCF5F3392B /* Request.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		C6126819C72FEB68DC03F5E0EF77E522 /* Coding.swift in Sources */ = {isa = PBXBuildFile; fileRef = B046CBD753CF8544EF107AA37DAF2317 /* Coding.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -535,7 +541,6 @@
 		D3B2465BA0F2A5550ED0F0F0AB66DC46 /* NVActivityIndicatorAnimationLineScaleParty.swift in Sources */ = {isa = PBXBuildFile; fileRef = C660D7F40EE7B852F2E0BB6D14DFB6B6 /* NVActivityIndicatorAnimationLineScaleParty.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		D3F4668409C76DE4ABFB4D9B9F125A9C /* Zip.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF83163D34C014D68E62053193ADF40 /* Zip.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		D4119F054731A86C533C0E2455235C2F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2A15C2CEE441B281B516829B643E50C /* Foundation.framework */; };
-		D4F7797ABBFA409A57C620F82199C64C /* IQKeyboardReturnKeyHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427A91062B30F7EE359FDAB389C0E25B /* IQKeyboardReturnKeyHandler.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		D52A9A8E2B91FDD058CA517B5FCF4F1E /* CustomFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3AC74C7958824CD156B4560A650253 /* CustomFunctions.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		D5686072DEC1A0E14F8C100FCC873F73 /* TaskDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4F5DAB3F269308D4FD20CBA34B1657 /* TaskDelegate.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		D61DB0FCBDA6057A0E56B267307CEFD5 /* AppSwizzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C842CD2BA7B8C8C66CE8B761DE373F6 /* AppSwizzle.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -545,7 +550,6 @@
 		D73D88D1B001883F35B1E291C5EE2029 /* NVActivityIndicatorAnimationBallPulseRise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C04CC9389A81021131B2479D17317C4 /* NVActivityIndicatorAnimationBallPulseRise.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		D7CC87164C2B724F1EAABCF6A9A068F4 /* focusIcon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB2C5452A0BB8EC0B7F8A8C837BEC9CA /* focusIcon@3x.png */; };
 		D881E82BC685F471CC2B2AA5E5552B0B /* AnonymousObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306281FF280CF64F7A749C51A1D86B0F /* AnonymousObserver.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		D8A183E492E2B8C1CC8514145482A5F8 /* IQTitleBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEBCB97D07F55E44F7C1210225AB0DD /* IQTitleBarButtonItem.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		D930F88423E6D71AA0BD9EC0510E88C7 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFB2DD9F79D66A61C4A7487DC2BEC0F /* Map.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		D9DBFC2CC81A43B02FE76432A12EB757 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09C1A5F2418044B08C102B5181F65B6 /* Helper.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		DA751876EB32977E78F563E489A951A9 /* Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C39A032A3C6923242CE2995AAB50754 /* Contacts.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -554,7 +558,6 @@
 		DADAC302DC2F48DAEF40642B1A7D4AEC /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB03A30A324560C61FA65096AB7D4ED /* Array+Extension.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		DBC735A74F9B3A5EEC36450C82EFE46B /* LocksmithSecurityClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFAB3339E2EF1795D2BF4393642A19E /* LocksmithSecurityClass.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		DD3F8437F5D2EEA3686E32894855F9C8 /* SecureBytes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E821DD02D812564379F6ABFBB4C52A /* SecureBytes.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		DD53411C0F3344D6CBFEFB0D15238C85 /* IQKeyboardManagerConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097F096F91027D138DAD22682FDC64E9 /* IQKeyboardManagerConstants.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		DDEF0F69038319333148EF13725416E9 /* ObjectAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C954DF9734E9A67D49CF09EF80F3A30 /* ObjectAgent.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		DDFA8B7BE2EA5E19E7B475915355D477 /* video@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C1E56DAA266B4BD59FBB1D98E334842 /* video@3x.png */; };
 		DE02930F2F8C8D9567B601DCA66F7F7B /* JGProgressHUDIndeterminateIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 445FA25B4475CB126F40FD92341F99C2 /* JGProgressHUDIndeterminateIndicatorView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -566,7 +569,6 @@
 		DEF61AAF16F7130F6CD03A2303374D5F /* Pods-MolueDatabase-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FDB6EB54C4BD7A3BF8F2046D80C674C2 /* Pods-MolueDatabase-dummy.m */; };
 		DEFA0972BCC2BD0E4F570DBA7520994B /* ImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70790128BAC8568603042C606DB2DAC /* ImageProcessor.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		DF6AAD4D4D7E7E1002AA8F4F919F418C /* KingfisherOptionsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273FB2881ED8ED64CBCB29E08C92FDD3 /* KingfisherOptionsInfo.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		DFAF129EB2900C64E6CDF2E31A606BC2 /* IQUIWindow+Hierarchy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620771A6ED0BC5E2B2AE31149D9143AE /* IQUIWindow+Hierarchy.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		DFBF94293523AF19C9629A1763506583 /* ESRefreshFooterAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4780FE9745A0539E1D4413BE581FFAD6 /* ESRefreshFooterAnimator.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		E010F11106DCB86C9A294F37CF67177D /* Pods-MolueCommon-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BCD148713541985A94395853CD214414 /* Pods-MolueCommon-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E0D51828DEB3F0D3F82842541CE8FE87 /* ConstraintMakerFinalizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851BF274F6C0269BB56FF95F8EC7AE15 /* ConstraintMakerFinalizable.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -608,10 +610,8 @@
 		F2A76837CF1F9E2984059AE423821B31 /* Bag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5013863BCCA91E135D9F7CDCC1C086D5 /* Bag.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		F2DAAC7FEC42B4DF70403BFB87489ED2 /* UICollectionView + ViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6E7A8C416F86D97FA9FA0BF5294A60 /* UICollectionView + ViewAnimator.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		F36495525F247AD2D687B7D2BE4CA5B2 /* NSDecimalNumberTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DA2A828EF76F84D12B4A614D6C818F /* NSDecimalNumberTransform.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		F37DAF201EF3FC51B27472E2DBBACA38 /* IQKeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D0E52AFC437339FB5B5372B01CD516 /* IQKeyboardManager.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		F392B9C3F6DDB0FC7050012FFDB11E13 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD08CEAFA1D7E109CFEF7C3B14148660 /* Event.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		F58F399CB62EEDF6414AC151E9FA7D9E /* SQLite.h in Headers */ = {isa = PBXBuildFile; fileRef = C77AACCD3EA94B2BB1C2F77935038E7C /* SQLite.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F64C5A4C29A4FB17598AB077DF55C0B0 /* IQUIScrollView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2235F4FD1B62074F4294338D3690BFF9 /* IQUIScrollView+Additions.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		F6BA41CF3578FC16F39BDC3736D5CFE9 /* VirtualTimeConverterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880B9179D02797C5CB82C2C97C32B1C3 /* VirtualTimeConverterType.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		F72A09FB8E7B26C55ADFD3AF5C49B7FB /* LocksmithError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB72EBE4327D1B2315279B6552369FA /* LocksmithError.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		F7423985F2F36672B0676F7C22C88878 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2C769E2DB77749678AF5600E3EEE72 /* Map.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -1311,6 +1311,7 @@
 		0172D2294846FFB6BBF650DC22DC3992 /* Pods_MolueHomePart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MolueHomePart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0173996A05CED5BA7B6172B913D6D41E /* NVActivityIndicatorAnimationBallZigZagDeflect.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationBallZigZagDeflect.swift; path = Source/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationBallZigZagDeflect.swift; sourceTree = "<group>"; };
 		019B9C1799003E8266C4FD30183015B6 /* RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		01A35772EBA7191991F95B692EEB9ECE /* IQUIView+Hierarchy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUIView+Hierarchy.swift"; path = "IQKeyboardManagerSwift/Categories/IQUIView+Hierarchy.swift"; sourceTree = "<group>"; };
 		027B01C5A7D2B5645DD9DFDA201A440F /* ImmediateSchedulerType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImmediateSchedulerType.swift; path = RxSwift/ImmediateSchedulerType.swift; sourceTree = "<group>"; };
 		028D8E8399059F9096E380F31A950648 /* Collection+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Collection+Extension.swift"; path = "Sources/CryptoSwift/Collection+Extension.swift"; sourceTree = "<group>"; };
 		0318C02DC2EC4CCA0E21AFFCD8A9589F /* NVActivityIndicatorAnimationBallGridPulse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationBallGridPulse.swift; path = Source/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationBallGridPulse.swift; sourceTree = "<group>"; };
@@ -1319,6 +1320,7 @@
 		039365400799D85C6C36E2177460FB12 /* SubjectType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SubjectType.swift; path = RxSwift/Subjects/SubjectType.swift; sourceTree = "<group>"; };
 		03AAA98C149C5875A8C4DD00115CF94D /* ResourceBundle-ESPullToRefresh-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-ESPullToRefresh-Info.plist"; sourceTree = "<group>"; };
 		03B9E10C8990C4CE4383E98CECB6F5F5 /* MainScheduler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MainScheduler.swift; path = RxSwift/Schedulers/MainScheduler.swift; sourceTree = "<group>"; };
+		03BA4E315A3AB95D9D52F215C685092B /* IQTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQTextView.swift; path = IQKeyboardManagerSwift/IQTextView/IQTextView.swift; sourceTree = "<group>"; };
 		049FB1D5AEB57789798BD808464DD49A /* FTS5.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FTS5.swift; path = Sources/SQLite/Extensions/FTS5.swift; sourceTree = "<group>"; };
 		04D7596F8CF4962C105B5252650A00A3 /* LeakEye-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LeakEye-prefix.pch"; sourceTree = "<group>"; };
 		050318F4A559F732C5A53CB4BD3EE103 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1329,7 +1331,6 @@
 		06063A52E36275AB4213D923E19598CC /* NVActivityIndicatorAnimationSemiCircleSpin.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationSemiCircleSpin.swift; path = Source/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationSemiCircleSpin.swift; sourceTree = "<group>"; };
 		066F9336B8CFD0A142417D7902DF3FBE /* AppSwizzle-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AppSwizzle-umbrella.h"; sourceTree = "<group>"; };
 		070CC192069737B281A340E6D1782D79 /* NVActivityIndicatorAnimationBallRotateChase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationBallRotateChase.swift; path = Source/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationBallRotateChase.swift; sourceTree = "<group>"; };
-		079619077992B4BC915C0F48AFBB747C /* IQKeyboardManagerSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = IQKeyboardManagerSwift.modulemap; sourceTree = "<group>"; };
 		07FDFB5A6E590832542EC40A5B1D46D7 /* First.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = First.swift; path = RxSwift/Observables/First.swift; sourceTree = "<group>"; };
 		0829FA96A842A70CB1D9B8EE24D1E0F3 /* MAPointAnnotation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MAPointAnnotation.h; path = MAMapKit.framework/Headers/MAPointAnnotation.h; sourceTree = "<group>"; };
 		0831E600302365361CE4ADA2534CA0D5 /* ConstraintMakerExtendable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerExtendable.swift; path = Source/ConstraintMakerExtendable.swift; sourceTree = "<group>"; };
@@ -1338,7 +1339,6 @@
 		090930981DF0F561A5AAB3EA354B7A7C /* Never.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Never.swift; path = RxSwift/Observables/Never.swift; sourceTree = "<group>"; };
 		095C90D36C17E9FD7A974790ABF519A7 /* Direction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Direction.swift; path = ViewAnimator/Classes/Models/Direction.swift; sourceTree = "<group>"; };
 		0972DD2C40D3675E5192E57ADDB456C2 /* Pods-MolueBookPart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MolueBookPart.release.xcconfig"; sourceTree = "<group>"; };
-		097F096F91027D138DAD22682FDC64E9 /* IQKeyboardManagerConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQKeyboardManagerConstants.swift; path = IQKeyboardManagerSwift/Constants/IQKeyboardManagerConstants.swift; sourceTree = "<group>"; };
 		0A2796EA79F487371C1F60157AF50CF3 /* Pods-MolueUtilitiesTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MolueUtilitiesTests-resources.sh"; sourceTree = "<group>"; };
 		0A2B64D22E3B35F0599E1E7CBA36AC2D /* ConstraintDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDSL.swift; path = Source/ConstraintDSL.swift; sourceTree = "<group>"; };
 		0A67E42F68D90018E54DA25B459B637A /* AES.Cryptors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AES.Cryptors.swift; path = Sources/CryptoSwift/AES.Cryptors.swift; sourceTree = "<group>"; };
@@ -1350,7 +1350,6 @@
 		0B4768CCD5C9DBE0B62D869B969F7CFE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B7C533891DFA1B8B0C82722E58124F0 /* AMapSearchAPI.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AMapSearchAPI.h; path = AMapSearchKit.framework/Headers/AMapSearchAPI.h; sourceTree = "<group>"; };
 		0BC4F57186E50187957286E1632CC712 /* String+MD5.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+MD5.swift"; path = "Sources/String+MD5.swift"; sourceTree = "<group>"; };
-		0BECE7ADE55B5071327A7730FC42F373 /* IQToolbar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQToolbar.swift; path = IQKeyboardManagerSwift/IQToolbar/IQToolbar.swift; sourceTree = "<group>"; };
 		0C10502A0B3BFA403701B4CBBCCFFC80 /* Sample.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Sample.swift; path = RxSwift/Observables/Sample.swift; sourceTree = "<group>"; };
 		0C522B8CD3DAC9B9582ECA3D151E23B2 /* Platform.Linux.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Platform.Linux.swift; path = Platform/Platform.Linux.swift; sourceTree = "<group>"; };
 		0C593C016AAACEEFDA2C429DD8E292DA /* SynchronizedUnsubscribeType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SynchronizedUnsubscribeType.swift; path = RxSwift/Concurrency/SynchronizedUnsubscribeType.swift; sourceTree = "<group>"; };
@@ -1373,13 +1372,13 @@
 		10B701365BEFB0D073CE18A4A540BCA9 /* Observable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Observable.swift; path = RxSwift/Observable.swift; sourceTree = "<group>"; };
 		115D27F8B030032085B2DC75D31B7C69 /* Cancelable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Cancelable.swift; path = RxSwift/Cancelable.swift; sourceTree = "<group>"; };
 		11957CF554EE43610FB4CF2DDCA71313 /* ScheduledDisposable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ScheduledDisposable.swift; path = RxSwift/Disposables/ScheduledDisposable.swift; sourceTree = "<group>"; };
+		12E9EAA480681B25B165A7602D3125FE /* IQKeyboardManagerSwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = IQKeyboardManagerSwift.xcconfig; sourceTree = "<group>"; };
 		12F4A9CD44D10A846066B575A1FB2BF6 /* NVActivityIndicatorView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NVActivityIndicatorView-dummy.m"; sourceTree = "<group>"; };
 		1456E43AFFCD1BE8D9E336176D00BAC3 /* Pods-MolueDatabase-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MolueDatabase-resources.sh"; sourceTree = "<group>"; };
 		14DB5FB103090D96D6B5CFFDCC7FAC32 /* ESRefreshComponent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ESRefreshComponent.swift; path = Sources/ESRefreshComponent.swift; sourceTree = "<group>"; };
 		15445CD63E2F2623B94B3193D98C86E4 /* Sink.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Sink.swift; path = RxSwift/Observables/Sink.swift; sourceTree = "<group>"; };
 		15D25160CAB1D6CBEB577A539813636A /* ConcurrentDispatchQueueScheduler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConcurrentDispatchQueueScheduler.swift; path = RxSwift/Schedulers/ConcurrentDispatchQueueScheduler.swift; sourceTree = "<group>"; };
 		16082B851EF0583FC56D58A6BB7B82AF /* ImageGalleryViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageGalleryViewCell.swift; path = Source/ImageGallery/ImageGalleryViewCell.swift; sourceTree = "<group>"; };
-		16B777191834582DAE8BD54C513F114D /* IQUIViewController+Additions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUIViewController+Additions.swift"; path = "IQKeyboardManagerSwift/Categories/IQUIViewController+Additions.swift"; sourceTree = "<group>"; };
 		16EB6D3E66A4922F61BF740DD4CD7591 /* SnapKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SnapKit-umbrella.h"; sourceTree = "<group>"; };
 		16FEA8CB43038CE857CB3947A8DD3F07 /* Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-prefix.pch"; sourceTree = "<group>"; };
 		18348160E00CC646E6DFD6DD33D673B1 /* ViewAnimator-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ViewAnimator-dummy.m"; sourceTree = "<group>"; };
@@ -1414,6 +1413,7 @@
 		1E7A556FFE28BBD45CB290A4966B641D /* Int+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Int+Extension.swift"; path = "Sources/CryptoSwift/Int+Extension.swift"; sourceTree = "<group>"; };
 		1EAD99F5DC4301F7647A34169BC1AA9F /* InvocableType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InvocableType.swift; path = RxSwift/Schedulers/Internal/InvocableType.swift; sourceTree = "<group>"; };
 		1EB631CC40178F74A6171ACB3A4E7395 /* Pods-MolueLoginPart-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MolueLoginPart-acknowledgements.plist"; sourceTree = "<group>"; };
+		1F4B0261EF1978D772D2BC7767C8662D /* IQToolbar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQToolbar.swift; path = IQKeyboardManagerSwift/IQToolbar/IQToolbar.swift; sourceTree = "<group>"; };
 		1F5DD8C825F65ED701486BCD981C6804 /* ObserverBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ObserverBase.swift; path = RxSwift/Observers/ObserverBase.swift; sourceTree = "<group>"; };
 		1FA52908FF7A995A9F7FA7517021D92F /* Pods-MolueCommonTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MolueCommonTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		1FA76E14B2EC38F4074DC8DDC26AA238 /* ViewAnimator-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ViewAnimator-umbrella.h"; sourceTree = "<group>"; };
@@ -1424,7 +1424,6 @@
 		201B613958FADDC8E348DFC425312AF6 /* RxSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RxSwift-prefix.pch"; sourceTree = "<group>"; };
 		20411FD6B6C017A126F30D2237F07EDE /* SQLite.swift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SQLite.swift-umbrella.h"; sourceTree = "<group>"; };
 		2133867091055AEF85431584B10071EC /* MAMultiTexturePolylineRenderer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MAMultiTexturePolylineRenderer.h; path = MAMapKit.framework/Headers/MAMultiTexturePolylineRenderer.h; sourceTree = "<group>"; };
-		2235F4FD1B62074F4294338D3690BFF9 /* IQUIScrollView+Additions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUIScrollView+Additions.swift"; path = "IQKeyboardManagerSwift/Categories/IQUIScrollView+Additions.swift"; sourceTree = "<group>"; };
 		2267DB5DF24EE7E1F703DE0E68E6C0AA /* Deprecated.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Deprecated.swift; path = RxSwift/Deprecated.swift; sourceTree = "<group>"; };
 		226B1B95EC52AABB853E49DCF5F3392B /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
 		22968B963322B9AC9DD3A4A0E0CD1442 /* NSMutableArray+AMapSafe.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSMutableArray+AMapSafe.h"; path = "AMapFoundationKit.framework/Headers/NSMutableArray+AMapSafe.h"; sourceTree = "<group>"; };
@@ -1472,6 +1471,7 @@
 		2DF2722D6A273178C57F69858561CE02 /* UInt8+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UInt8+Extension.swift"; path = "Sources/CryptoSwift/UInt8+Extension.swift"; sourceTree = "<group>"; };
 		2E2AEB3305D0E4D50549D2B2E47C9D7E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E7F1E7F1DC07DA6B4E925032C227C78 /* Enumerated.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Enumerated.swift; path = RxSwift/Observables/Enumerated.swift; sourceTree = "<group>"; };
+		2EF6C7D5F7B4B74E9A68A79D5BCA018E /* IQInvocation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQInvocation.swift; path = IQKeyboardManagerSwift/IQToolbar/IQInvocation.swift; sourceTree = "<group>"; };
 		2F39D4C81C355B9D2725DDD9486C58A5 /* Pods-MolueDatabaseTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MolueDatabaseTests-frameworks.sh"; sourceTree = "<group>"; };
 		2F8ED1B5AC41829C95610C6A9BB8E5B3 /* NVActivityIndicatorView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NVActivityIndicatorView-prefix.pch"; sourceTree = "<group>"; };
 		306281FF280CF64F7A749C51A1D86B0F /* AnonymousObserver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnonymousObserver.swift; path = RxSwift/Observers/AnonymousObserver.swift; sourceTree = "<group>"; };
@@ -1519,7 +1519,6 @@
 		3D58E3B459F4CD0F50C107F6B6422A09 /* Pods-MolueMinePart.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MolueMinePart.modulemap"; sourceTree = "<group>"; };
 		3DD7F9FA5FCEC4EE85F407772C5B09DE /* Pods-MolueUtilities.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MolueUtilities.debug.xcconfig"; sourceTree = "<group>"; };
 		3DE0FF590A419DBB6103EBA941F2227C /* BlockModeOptions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BlockModeOptions.swift; path = Sources/CryptoSwift/BlockMode/BlockModeOptions.swift; sourceTree = "<group>"; };
-		3DEBCB97D07F55E44F7C1210225AB0DD /* IQTitleBarButtonItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQTitleBarButtonItem.swift; path = IQKeyboardManagerSwift/IQToolbar/IQTitleBarButtonItem.swift; sourceTree = "<group>"; };
 		3E4C85CB66EDDD8F5770218D58CE5C00 /* MapError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MapError.swift; path = Sources/MapError.swift; sourceTree = "<group>"; };
 		3E69B05C2C2C8ADF0E03853D567A1481 /* BooleanDisposable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BooleanDisposable.swift; path = RxSwift/Disposables/BooleanDisposable.swift; sourceTree = "<group>"; };
 		3E6D61BD563A77B8DB2ED07AFD34B6BA /* NSNotification+LeakEye.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSNotification+LeakEye.swift"; path = "LeakEye/Classes/NSNotification+LeakEye.swift"; sourceTree = "<group>"; };
@@ -1530,6 +1529,7 @@
 		3F1F51C6F099742E2ACEA47B7575AD21 /* JGProgressHUDIndeterminateIndicatorView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JGProgressHUDIndeterminateIndicatorView.h; path = JGProgressHUD/JGProgressHUD/JGProgressHUDIndeterminateIndicatorView.h; sourceTree = "<group>"; };
 		3F7E4BC234E37857DF78404840453D7A /* Animation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Animation.swift; path = ViewAnimator/Classes/Protocols/Animation.swift; sourceTree = "<group>"; };
 		3F8BA1340A1FCA62CC439E19DF55C1DF /* Switch.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Switch.swift; path = RxSwift/Observables/Switch.swift; sourceTree = "<group>"; };
+		404C79DAC6EE6B0327BDC4712FC0EE87 /* IQKeyboardManagerConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQKeyboardManagerConstants.swift; path = IQKeyboardManagerSwift/Constants/IQKeyboardManagerConstants.swift; sourceTree = "<group>"; };
 		4093EBAE9EDE364B0B6FFD9FA99D37DE /* PBKDF2.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PBKDF2.swift; path = Sources/CryptoSwift/PKCS/PBKDF2.swift; sourceTree = "<group>"; };
 		40A7D2B6A6CBC826002402A662148FE1 /* Window.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Window.swift; path = RxSwift/Observables/Window.swift; sourceTree = "<group>"; };
 		41CDB440B1E226FCF4F9F4462EABA9E3 /* Pods-MolueDatabase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MolueDatabase.release.xcconfig"; sourceTree = "<group>"; };
@@ -1538,17 +1538,16 @@
 		42291453BD863318E08C2636C9491C98 /* KingfisherManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KingfisherManager.swift; path = Sources/KingfisherManager.swift; sourceTree = "<group>"; };
 		4248BB4BC049EF04575BF4A860FF458F /* Connection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Connection.swift; path = Sources/SQLite/Core/Connection.swift; sourceTree = "<group>"; };
 		42681BDE1045EADDAB0E0E163D36F2AD /* AMapSearchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapSearchKit.framework; sourceTree = "<group>"; };
-		427A91062B30F7EE359FDAB389C0E25B /* IQKeyboardReturnKeyHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQKeyboardReturnKeyHandler.swift; path = IQKeyboardManagerSwift/IQKeyboardReturnKeyHandler.swift; sourceTree = "<group>"; };
 		430C1916DE423C897731EC9756050AC9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4356EC303C4184B2AE14A7435D2ED73C /* Timeout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Timeout.swift; path = RxSwift/Observables/Timeout.swift; sourceTree = "<group>"; };
 		4384FA0DD7B488B0CA2A629F84CFB38A /* ImagePicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ImagePicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		43994E3AB9813E4F5BF41ECF5E75D984 /* Pods-MolueMinePart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MolueMinePart.release.xcconfig"; sourceTree = "<group>"; };
-		43A8167406B7B56D108CA2E488992ED6 /* IQUIView+Hierarchy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUIView+Hierarchy.swift"; path = "IQKeyboardManagerSwift/Categories/IQUIView+Hierarchy.swift"; sourceTree = "<group>"; };
 		43D9768D9BA152BC70D5A455BC50195E /* Pods-MolueBookPart-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MolueBookPart-dummy.m"; sourceTree = "<group>"; };
 		43EA33691E05194C996EFF45424080C4 /* MACircleRenderer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MACircleRenderer.h; path = MAMapKit.framework/Headers/MACircleRenderer.h; sourceTree = "<group>"; };
 		4453F25F8622BF1FBF44AD171368047B /* Pods-MolueNetworkTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MolueNetworkTests.release.xcconfig"; sourceTree = "<group>"; };
 		4457C46FCE841CCCD6A4009348D0B36D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		445FA25B4475CB126F40FD92341F99C2 /* JGProgressHUDIndeterminateIndicatorView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JGProgressHUDIndeterminateIndicatorView.m; path = JGProgressHUD/JGProgressHUD/JGProgressHUDIndeterminateIndicatorView.m; sourceTree = "<group>"; };
+		44630A95A9918846AFAE8D14F3F67435 /* IQKeyboardManagerSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "IQKeyboardManagerSwift-dummy.m"; sourceTree = "<group>"; };
 		44B655FEE3045B0D776C8457CBDFE07B /* NVActivityIndicatorView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = NVActivityIndicatorView.modulemap; sourceTree = "<group>"; };
 		44CE989FD86CB6AFDE1A54791197B388 /* PKCS7Padding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PKCS7Padding.swift; path = Sources/CryptoSwift/PKCS/PKCS7Padding.swift; sourceTree = "<group>"; };
 		458BD92BDB31C82BE7F18341704FBF66 /* Preparer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Preparer.swift; path = LeakEye/Classes/Monitor/Preparer.swift; sourceTree = "<group>"; };
@@ -1596,6 +1595,7 @@
 		511BFCD6E01EC185AF1FC82C51D3D888 /* VirtualTimeScheduler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VirtualTimeScheduler.swift; path = RxSwift/Schedulers/VirtualTimeScheduler.swift; sourceTree = "<group>"; };
 		526C55DB8EF9E90E523A6F2B832A8821 /* Completable+AndThen.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Completable+AndThen.swift"; path = "RxSwift/Traits/Completable+AndThen.swift"; sourceTree = "<group>"; };
 		529481375E45B26B0A84453B60D09F38 /* AUTO@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "AUTO@3x.png"; path = "Images/AUTO@3x.png"; sourceTree = "<group>"; };
+		52A73B5BDD3D5D4E4200E4B6F5DAFC1D /* IQBarButtonItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQBarButtonItem.swift; path = IQKeyboardManagerSwift/IQToolbar/IQBarButtonItem.swift; sourceTree = "<group>"; };
 		5339CAD592AA4E502B7EFC1DAC2DF903 /* RxSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = RxSwift.modulemap; sourceTree = "<group>"; };
 		534070575DD85C1FF2A710BF6422866C /* Pods-MolueNavigator-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MolueNavigator-resources.sh"; sourceTree = "<group>"; };
 		539D6239D110B8B492BE020A36E291C8 /* Pods-MolueNavigatorTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MolueNavigatorTests-umbrella.h"; sourceTree = "<group>"; };
@@ -1651,14 +1651,14 @@
 		6168ADEE34150E577363634D6B3E983B /* Pods-MolueNetworkTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MolueNetworkTests.modulemap"; sourceTree = "<group>"; };
 		618BE09CCCF885554C636DA543EE565D /* SerialDisposable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SerialDisposable.swift; path = RxSwift/Disposables/SerialDisposable.swift; sourceTree = "<group>"; };
 		61B189D27B73327EE0293528FD4FFF52 /* Zip+arity.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Zip+arity.swift"; path = "RxSwift/Observables/Zip+arity.swift"; sourceTree = "<group>"; };
-		620771A6ED0BC5E2B2AE31149D9143AE /* IQUIWindow+Hierarchy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUIWindow+Hierarchy.swift"; path = "IQKeyboardManagerSwift/Categories/IQUIWindow+Hierarchy.swift"; sourceTree = "<group>"; };
+		61BC0A574C18A91F66ACDB459687654A /* IQUITextFieldView+Additions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUITextFieldView+Additions.swift"; path = "IQKeyboardManagerSwift/Categories/IQUITextFieldView+Additions.swift"; sourceTree = "<group>"; };
 		620E31AA065B41D6261B9DAA18CD6B9F /* Blob.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Blob.swift; path = Sources/SQLite/Core/Blob.swift; sourceTree = "<group>"; };
+		629E365F13832AA03404A8CC4DEAE41C /* IQKeyboardManagerConstantsInternal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQKeyboardManagerConstantsInternal.swift; path = IQKeyboardManagerSwift/Constants/IQKeyboardManagerConstantsInternal.swift; sourceTree = "<group>"; };
 		63B5D987105027F77E3375BF050AC596 /* MAAnimatedAnnotation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MAAnimatedAnnotation.h; path = MAMapKit.framework/Headers/MAAnimatedAnnotation.h; sourceTree = "<group>"; };
 		63DCBD02C605CCFB3534DFA9242516A8 /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
 		63FC99B4743C8D50902E18966A069BD9 /* Locksmith-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Locksmith-umbrella.h"; sourceTree = "<group>"; };
 		640188AA13A872EEC234F527A2AC1B19 /* Lock.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Lock.swift; path = RxSwift/Concurrency/Lock.swift; sourceTree = "<group>"; };
 		649061A40545F345971BCCF5A3B03D13 /* NVActivityIndicatorAnimationLineScalePulseOut.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationLineScalePulseOut.swift; path = Source/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationLineScalePulseOut.swift; sourceTree = "<group>"; };
-		64D0E52AFC437339FB5B5372B01CD516 /* IQKeyboardManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQKeyboardManager.swift; path = IQKeyboardManagerSwift/IQKeyboardManager.swift; sourceTree = "<group>"; };
 		64EBE378914A9CCD540A36853188C8D0 /* NVActivityIndicatorAnimationBallScaleMultiple.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationBallScaleMultiple.swift; path = Source/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationBallScaleMultiple.swift; sourceTree = "<group>"; };
 		655BDF64149AF2FE76E2FE3177826646 /* ConstraintMaker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMaker.swift; path = Source/ConstraintMaker.swift; sourceTree = "<group>"; };
 		65DD554EE5B2BD8CD12CCF9DE1F28FD1 /* LeakEye.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LeakEye.xcconfig; sourceTree = "<group>"; };
@@ -1677,6 +1677,7 @@
 		6AA100A2E8D7AF7E65C4C9E6433DE85B /* MAMultiPoint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MAMultiPoint.h; path = MAMapKit.framework/Headers/MAMultiPoint.h; sourceTree = "<group>"; };
 		6ACD5FBEF78DFE9B04B80CADBB08E44C /* TakeUntil.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TakeUntil.swift; path = RxSwift/Observables/TakeUntil.swift; sourceTree = "<group>"; };
 		6AEC7D53A7A7B471637F77C3F4C9B952 /* SQLite.swift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SQLite.swift.modulemap; sourceTree = "<group>"; };
+		6B35A73877502430682626F9D5F8F148 /* IQUIView+IQKeyboardToolbar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUIView+IQKeyboardToolbar.swift"; path = "IQKeyboardManagerSwift/IQToolbar/IQUIView+IQKeyboardToolbar.swift"; sourceTree = "<group>"; };
 		6B867C803321290A51CC27332CD6C0BA /* Pods-MolueUtilities.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MolueUtilities.release.xcconfig"; sourceTree = "<group>"; };
 		6BD10AFD0FCB10D6B1636EA95B4E6E6B /* AppSwizzle.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AppSwizzle.xcconfig; sourceTree = "<group>"; };
 		6C50862555EA18FB37345B4D1270F129 /* NVActivityIndicatorView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorView.swift; path = Source/NVActivityIndicatorView/NVActivityIndicatorView.swift; sourceTree = "<group>"; };
@@ -1686,6 +1687,7 @@
 		6E454D6A46B8363B998415BF932AFB60 /* ESRefreshAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ESRefreshAnimator.swift; path = Sources/ESRefreshAnimator.swift; sourceTree = "<group>"; };
 		6E8D8E365A43DE4E7142B75BAAF0B9BE /* RxSwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RxSwift.xcconfig; sourceTree = "<group>"; };
 		6EDEDB5D439F86765359C6DCE03005E4 /* URLTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = URLTransform.swift; path = Sources/URLTransform.swift; sourceTree = "<group>"; };
+		6FB1F167F3C93E47264C81C2864FC6E3 /* IQKeyboardReturnKeyHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQKeyboardReturnKeyHandler.swift; path = IQKeyboardManagerSwift/IQKeyboardReturnKeyHandler.swift; sourceTree = "<group>"; };
 		6FC0E87F5BB43F461E6A3C1E4F4548EC /* Pods-MolueNetwork-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MolueNetwork-acknowledgements.plist"; sourceTree = "<group>"; };
 		7027B0B8438A84FED492E40E1EC7FE15 /* AMapFoundationKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AMapFoundationKit.h; path = AMapFoundationKit.framework/Headers/AMapFoundationKit.h; sourceTree = "<group>"; };
 		70EB746DB7A90EA4BFE4DB142E5F79BE /* CryptoSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CryptoSwift.modulemap; sourceTree = "<group>"; };
@@ -1711,7 +1713,6 @@
 		75B2B8FD4A6C3E8A512E609762037912 /* ConstraintLayoutGuide.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutGuide.swift; path = Source/ConstraintLayoutGuide.swift; sourceTree = "<group>"; };
 		75BF2B4E57C6338A8CFB6AC41F7C8A7B /* Bag+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Bag+Rx.swift"; path = "RxSwift/Extensions/Bag+Rx.swift"; sourceTree = "<group>"; };
 		7633E6A52BB01FC32A08524D21C2DD97 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		76C4FD4392BFBBB809D8155F5770D4BA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		76D87F8885BBAC9AE84BEA4F5F80487A /* SHA1.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SHA1.swift; path = Sources/CryptoSwift/SHA1.swift; sourceTree = "<group>"; };
 		76DEF90F17C39683358BB21E9556D35A /* Value.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Value.swift; path = Sources/SQLite/Core/Value.swift; sourceTree = "<group>"; };
 		76E44117807C62A5B775C8F91D6EB73A /* ConstraintInsetTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintInsetTarget.swift; path = Source/ConstraintInsetTarget.swift; sourceTree = "<group>"; };
@@ -1728,6 +1729,7 @@
 		792C9ED045FFB173C0EACC2913F83EAD /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Alamofire.modulemap; sourceTree = "<group>"; };
 		793AD1BC39C14849EE37D6FF7557E02C /* UITableView + ViewAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UITableView + ViewAnimator.swift"; path = "ViewAnimator/Classes/Extensions/UITableView + ViewAnimator.swift"; sourceTree = "<group>"; };
 		7978E3D12B533B4F77D4B7FC1613612D /* CryptoSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CryptoSwift-dummy.m"; sourceTree = "<group>"; };
+		79CAC0A66A203E9F90139D046B64AFFD /* IQTitleBarButtonItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQTitleBarButtonItem.swift; path = IQKeyboardManagerSwift/IQToolbar/IQTitleBarButtonItem.swift; sourceTree = "<group>"; };
 		7B1ECDA06BDED0D8B750B73B46D7B3A7 /* SnapKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SnapKit.xcconfig; sourceTree = "<group>"; };
 		7B2D29D6C86A49E2DC5D2FDC2F1DC38A /* FormatIndicatedCacheSerializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormatIndicatedCacheSerializer.swift; path = Sources/FormatIndicatedCacheSerializer.swift; sourceTree = "<group>"; };
 		7B5BF7CC63A95E50AAFD5CF3C71857FF /* LeakEye-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LeakEye-dummy.m"; sourceTree = "<group>"; };
@@ -1741,9 +1743,8 @@
 		7C969E945ECEB03D0B50FCDA86629A69 /* SingleAsync.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SingleAsync.swift; path = RxSwift/Observables/SingleAsync.swift; sourceTree = "<group>"; };
 		7D24D3BEE11F0DB35E1735A56BAF418D /* Pods-MolueDatabaseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MolueDatabaseTests.release.xcconfig"; sourceTree = "<group>"; };
 		7D325C84EFE5A87BC28DCC966050138D /* Pods-MolueNetworkTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MolueNetworkTests-umbrella.h"; sourceTree = "<group>"; };
-		7E8438907EAC60E1086FBBC53322CBBD /* IQBarButtonItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQBarButtonItem.swift; path = IQKeyboardManagerSwift/IQToolbar/IQBarButtonItem.swift; sourceTree = "<group>"; };
+		7F6AEB3BA5BE2A40CA1C5B1ADCDC2218 /* IQPreviousNextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQPreviousNextView.swift; path = IQKeyboardManagerSwift/IQToolbar/IQPreviousNextView.swift; sourceTree = "<group>"; };
 		7F6E4AAFCB52420F94FA0BE294F220FA /* DeprecationWarner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DeprecationWarner.swift; path = Platform/DeprecationWarner.swift; sourceTree = "<group>"; };
-		7F7C5CF783F1E32FF951E8FFD6C9AAE3 /* IQPreviousNextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQPreviousNextView.swift; path = IQKeyboardManagerSwift/IQToolbar/IQPreviousNextView.swift; sourceTree = "<group>"; };
 		807560EE3CECC9D7E12BB86FB18E5D31 /* ConstraintInsets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintInsets.swift; path = Source/ConstraintInsets.swift; sourceTree = "<group>"; };
 		80B5D69D366B4FD2B7F39AFCBD49B91A /* JGProgressHUDImageIndicatorView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JGProgressHUDImageIndicatorView.h; path = JGProgressHUD/JGProgressHUD/JGProgressHUDImageIndicatorView.h; sourceTree = "<group>"; };
 		80C8E8B63E908EF0BE9C5DD16E3D41BD /* RandomAccessCryptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RandomAccessCryptor.swift; path = Sources/CryptoSwift/RandomAccessCryptor.swift; sourceTree = "<group>"; };
@@ -1759,6 +1760,7 @@
 		84C9F7139E2F1F8D53BA4313FBE99BA3 /* PermissionSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PermissionSet.swift; path = Source/PermissionSet.swift; sourceTree = "<group>"; };
 		8515DD41242AAC3C331B26CB1B7171B3 /* PermissionButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PermissionButton.swift; path = Source/PermissionButton.swift; sourceTree = "<group>"; };
 		851BF274F6C0269BB56FF95F8EC7AE15 /* ConstraintMakerFinalizable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerFinalizable.swift; path = Source/ConstraintMakerFinalizable.swift; sourceTree = "<group>"; };
+		852A3606279F5FFFEA898E16FBA02AD3 /* IQKeyboardManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQKeyboardManager.swift; path = IQKeyboardManagerSwift/IQKeyboardManager.swift; sourceTree = "<group>"; };
 		852D376D5C8395509E9DDDCD3CDAF18F /* TailRecursiveSink.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TailRecursiveSink.swift; path = RxSwift/Observers/TailRecursiveSink.swift; sourceTree = "<group>"; };
 		8584B91575E95C2948B6E730220A465D /* UIViewControllerType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIViewControllerType.swift; path = Sources/URLNavigator/UIViewControllerType.swift; sourceTree = "<group>"; };
 		85ABC127804EE831B4FEE503AAEAC788 /* Pods-MolueSafty-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MolueSafty-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -1768,7 +1770,6 @@
 		863FADCD576FB57E5E9B6EED319B1256 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8668882471A8BD41256CBF083F27D24A /* Pods-MolueUtilities-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MolueUtilities-acknowledgements.markdown"; sourceTree = "<group>"; };
 		868D159E103A1BF5394C07304453E923 /* Pods-MolueHomePart-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MolueHomePart-acknowledgements.markdown"; sourceTree = "<group>"; };
-		86C1093AD9B93A81FD0FD1EBD607E3B1 /* IQKeyboardManagerSwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = IQKeyboardManagerSwift.xcconfig; sourceTree = "<group>"; };
 		876A157610380E1C53846F7A5108E783 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87EC860C3F6807F88C4D4F898F63F867 /* JGProgressHUDFadeAnimation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JGProgressHUDFadeAnimation.m; path = JGProgressHUD/JGProgressHUD/JGProgressHUDFadeAnimation.m; sourceTree = "<group>"; };
 		87F4B1DC5F37498548AD0861A8CDC1EE /* CoreFunctions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CoreFunctions.swift; path = Sources/SQLite/Typed/CoreFunctions.swift; sourceTree = "<group>"; };
@@ -1801,7 +1802,6 @@
 		8DD15344D133A3DB5F3BF11B4A6B0F2B /* Collation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Collation.swift; path = Sources/SQLite/Typed/Collation.swift; sourceTree = "<group>"; };
 		8DD256DDECE7FE29BB68F0886FE3E97E /* ImagePicker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ImagePicker-dummy.m"; sourceTree = "<group>"; };
 		8E52E0B14CDEBFB56B026BEFF4C58F9E /* StartWith.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StartWith.swift; path = RxSwift/Observables/StartWith.swift; sourceTree = "<group>"; };
-		8E64781BD711C11FA458AD90DCB570FD /* IQKeyboardManagerSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "IQKeyboardManagerSwift-dummy.m"; sourceTree = "<group>"; };
 		8E89CB6135B00BD15FADF62949155A87 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
 		8F13927186708B99952B5941A4B73097 /* ESPullToRefresh.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ESPullToRefresh.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F247C934601D829359B92BD512715BA /* URLMatcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = URLMatcher.swift; path = Sources/URLMatcher/URLMatcher.swift; sourceTree = "<group>"; };
@@ -1849,6 +1849,7 @@
 		9A1F189DDCA012E76FDE05D638D36867 /* SubscriptionDisposable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SubscriptionDisposable.swift; path = RxSwift/Disposables/SubscriptionDisposable.swift; sourceTree = "<group>"; };
 		9A1F23B19DD738C034F2A111ECF1CF89 /* EnumOperators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EnumOperators.swift; path = Sources/EnumOperators.swift; sourceTree = "<group>"; };
 		9A571F14B602FABF8E46ECDE24E1606B /* Pods-MolueLoginPart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MolueLoginPart.release.xcconfig"; sourceTree = "<group>"; };
+		9AD13750298BE75C7A33ABA839EDE6E1 /* IQUIScrollView+Additions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUIScrollView+Additions.swift"; path = "IQKeyboardManagerSwift/Categories/IQUIScrollView+Additions.swift"; sourceTree = "<group>"; };
 		9B2FF62E319ADC7CEDFB7E2D7AD0A121 /* Pods-MolueCommon.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MolueCommon.modulemap"; sourceTree = "<group>"; };
 		9B7BA8F76A780C8D9F205CF52963C196 /* Mappable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Mappable.swift; path = Sources/Mappable.swift; sourceTree = "<group>"; };
 		9BB6ACE3F603A1184C5FE49E7EB6403B /* ImageView+Kingfisher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ImageView+Kingfisher.swift"; path = "Sources/ImageView+Kingfisher.swift"; sourceTree = "<group>"; };
@@ -1861,7 +1862,6 @@
 		9D9D6EE5BE7CA33D7317AEE181809178 /* Sequence.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Sequence.swift; path = RxSwift/Observables/Sequence.swift; sourceTree = "<group>"; };
 		9DECF855DF6C2F7759704918A202A8DD /* ConcurrentMainScheduler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConcurrentMainScheduler.swift; path = RxSwift/Schedulers/ConcurrentMainScheduler.swift; sourceTree = "<group>"; };
 		9E900AFE9DC2CC2CB34BF605ECB3A936 /* SnapKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SnapKit-dummy.m"; sourceTree = "<group>"; };
-		9EE476A0D9547AFADEA92CD01435AC0D /* IQKeyboardManager.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = IQKeyboardManager.bundle; path = IQKeyboardManagerSwift/Resources/IQKeyboardManager.bundle; sourceTree = "<group>"; };
 		9F2E11C2F0AEF3A09C770BAF54314C49 /* Pods-MolueBookPart-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MolueBookPart-acknowledgements.markdown"; sourceTree = "<group>"; };
 		9F4CD0801073E8B2D3A901D26D83D68A /* Generics.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Generics.swift; path = Sources/CryptoSwift/Generics.swift; sourceTree = "<group>"; };
 		9F699A4437D0C892AFC5CADCC0EA06C3 /* RecursiveLock.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RecursiveLock.swift; path = Platform/RecursiveLock.swift; sourceTree = "<group>"; };
@@ -1912,7 +1912,6 @@
 		AC6BB25269116C7F2D5A7AA8A3CF599A /* BehaviorSubject.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BehaviorSubject.swift; path = RxSwift/Subjects/BehaviorSubject.swift; sourceTree = "<group>"; };
 		AC79565A9356C7AD63890A1D64BC7D77 /* AMapSearchKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AMapSearchKit.h; path = AMapSearchKit.framework/Headers/AMapSearchKit.h; sourceTree = "<group>"; };
 		AD47221108D40B0E958CCE75AAF1D283 /* Data+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Data+Extension.swift"; path = "Sources/CryptoSwift/Foundation/Data+Extension.swift"; sourceTree = "<group>"; };
-		AD53FB64E3647951768FA6F1CCD6A403 /* IQUIView+IQKeyboardToolbar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUIView+IQKeyboardToolbar.swift"; path = "IQKeyboardManagerSwift/IQToolbar/IQUIView+IQKeyboardToolbar.swift"; sourceTree = "<group>"; };
 		ADBF6DCD6A225B6FEEAF2C881D53A81D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ADC2EB19BDD01A8056460E05AB4A1A41 /* AMapUtility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AMapUtility.h; path = AMapFoundationKit.framework/Headers/AMapUtility.h; sourceTree = "<group>"; };
 		AE59525834B8BB2CD335AED89A51A326 /* MAGroundOverlay.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MAGroundOverlay.h; path = MAMapKit.framework/Headers/MAGroundOverlay.h; sourceTree = "<group>"; };
@@ -1974,10 +1973,10 @@
 		BF8E28C84B2101BBD7D9DEAB4205559A /* Pods-MolueCommonTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MolueCommonTests.release.xcconfig"; sourceTree = "<group>"; };
 		BFE77B80E7496CD3DA4E5605C0A4E8F0 /* JGProgressHUDErrorIndicatorView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JGProgressHUDErrorIndicatorView.h; path = JGProgressHUD/JGProgressHUD/JGProgressHUDErrorIndicatorView.h; sourceTree = "<group>"; };
 		C13BE251F4EDF3311E18C5583EECA381 /* DataTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DataTransform.swift; path = Sources/DataTransform.swift; sourceTree = "<group>"; };
-		C13E655E672C48BF63EF424671789600 /* IQKeyboardManagerSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "IQKeyboardManagerSwift-umbrella.h"; sourceTree = "<group>"; };
 		C13EF67D9096019D3BDD8B6EC913B707 /* Pods-MolueNetworkTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MolueNetworkTests-dummy.m"; sourceTree = "<group>"; };
 		C1C0AA6D679C2B884326EFBAFED3214C /* ImageStack.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageStack.swift; path = Source/BottomView/ImageStack.swift; sourceTree = "<group>"; };
 		C20E99A5501CF56B42B064AB23276D8A /* ConstraintLayoutGuide+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ConstraintLayoutGuide+Extensions.swift"; path = "Source/ConstraintLayoutGuide+Extensions.swift"; sourceTree = "<group>"; };
+		C23E4C523090611C2AE2DFBB32EF551C /* IQKeyboardManagerSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "IQKeyboardManagerSwift-umbrella.h"; sourceTree = "<group>"; };
 		C23F530DE646BAEA45BFE3C555499FEC /* Pods-MolueUtilities.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MolueUtilities.modulemap"; sourceTree = "<group>"; };
 		C2B6EC47739D20066CB4C4F91D244B4F /* AppSwizzle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AppSwizzle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2F45E4F5A8039FAE5C28D870404F0DA /* Mapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Mapper.swift; path = Sources/Mapper.swift; sourceTree = "<group>"; };
@@ -2013,6 +2012,7 @@
 		CA895F722D3AA84A1F854443E64812DF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA8CFA78C49F173CFDA5321994425D69 /* SchedulerServices+Emulation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SchedulerServices+Emulation.swift"; path = "RxSwift/Schedulers/SchedulerServices+Emulation.swift"; sourceTree = "<group>"; };
 		CBD9B1FAD1EB6E686ED64ED1BB54A7C4 /* AppSwizzle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AppSwizzle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC1AA6D421A91C2DBEE34B7C318EF202 /* IQKeyboardManager.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = IQKeyboardManager.bundle; path = IQKeyboardManagerSwift/Resources/IQKeyboardManager.bundle; sourceTree = "<group>"; };
 		CC2A9DD3F143AB5944429025DE3639B0 /* Pods-MolueNavigatorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MolueNavigatorTests.release.xcconfig"; sourceTree = "<group>"; };
 		CC70A66861B9EF8776665E5EBFF25E33 /* AES+Foundation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "AES+Foundation.swift"; path = "Sources/CryptoSwift/Foundation/AES+Foundation.swift"; sourceTree = "<group>"; };
 		CCA8E768AC34EE4035321251AF309443 /* NVActivityIndicatorAnimationLineScalePulseOutRapid.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationLineScalePulseOutRapid.swift; path = Source/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationLineScalePulseOutRapid.swift; sourceTree = "<group>"; };
@@ -2021,7 +2021,6 @@
 		CD0BC985AB93F1941B5F2F4E1FD6677A /* CustomDateFormatTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CustomDateFormatTransform.swift; path = Sources/CustomDateFormatTransform.swift; sourceTree = "<group>"; };
 		CD1B195B4CAC8B6A65BB2B671734BF27 /* ImageTransition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageTransition.swift; path = Sources/ImageTransition.swift; sourceTree = "<group>"; };
 		CD40B8F55A2DF868B8087FAB13E7DE92 /* Pods-MolueRiskPart-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MolueRiskPart-acknowledgements.markdown"; sourceTree = "<group>"; };
-		CD4C8735EB0F1D34D8AE842E2C077C9F /* IQKeyboardManagerSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "IQKeyboardManagerSwift-prefix.pch"; sourceTree = "<group>"; };
 		CDA6B159235D8CCF0201BE809E4E4A25 /* Pods-MolueSafty-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MolueSafty-umbrella.h"; sourceTree = "<group>"; };
 		CE03BBD1E21565B26AABE257231D5840 /* Completable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Completable.swift; path = RxSwift/Traits/Completable.swift; sourceTree = "<group>"; };
 		CE209DFAADC30BC3E3537B6BD9E69FFC /* BinaryDisposable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BinaryDisposable.swift; path = RxSwift/Disposables/BinaryDisposable.swift; sourceTree = "<group>"; };
@@ -2038,13 +2037,13 @@
 		D12C82C59015E258DAFE67E5E262308D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		D184886B82C74BDA34FBCCB497D9D521 /* JGProgressHUD.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JGProgressHUD.xcconfig; sourceTree = "<group>"; };
 		D1C0A92548F7AB60703EEAC889AB4C84 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D1EC3FDB710B4E359F9AFAF0660424CB /* IQKeyboardManagerConstantsInternal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQKeyboardManagerConstantsInternal.swift; path = IQKeyboardManagerSwift/Constants/IQKeyboardManagerConstantsInternal.swift; sourceTree = "<group>"; };
 		D29BECD10EE71EEC444C23C322F1520E /* Locksmith-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Locksmith-prefix.pch"; sourceTree = "<group>"; };
 		D2C3DD9468AE042C57DC72A166F854B3 /* ButtonPicker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ButtonPicker.swift; path = Source/BottomView/ButtonPicker.swift; sourceTree = "<group>"; };
 		D35EB84C9C57EE99D62F7B45B02844EA /* Pods-MolueSafty.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MolueSafty.modulemap"; sourceTree = "<group>"; };
 		D3BBAA08EDD99FA7E20B4AFCB20CDE58 /* PermissionAlert.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PermissionAlert.swift; path = Source/PermissionAlert.swift; sourceTree = "<group>"; };
 		D49BBE701F9B0F4BC2FDD1BA6885EA87 /* DelaySubscription.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DelaySubscription.swift; path = RxSwift/Observables/DelaySubscription.swift; sourceTree = "<group>"; };
 		D4D7A55901E9DEE29A50AD101CA7ABF7 /* ViewAnimator.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ViewAnimator.modulemap; sourceTree = "<group>"; };
+		D4DF7820327601E489558B18F46C1A15 /* IQUIViewController+Additions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUIViewController+Additions.swift"; path = "IQKeyboardManagerSwift/Categories/IQUIViewController+Additions.swift"; sourceTree = "<group>"; };
 		D4E081A5D12DC717C0809E792A9E78B3 /* SwiftSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftSupport.swift; path = RxSwift/SwiftSupport/SwiftSupport.swift; sourceTree = "<group>"; };
 		D542658C90B6D8DB5FB82E2AFD746D76 /* ResourceBundle-ImagePicker-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-ImagePicker-Info.plist"; sourceTree = "<group>"; };
 		D57BD046294E76AE341FF2FC27004F96 /* Pods-MolueUtilitiesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MolueUtilitiesTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -2056,6 +2055,7 @@
 		D6FD4C08FC6D8A3AB0CDC0058CEEBD4C /* CombineLatest+arity.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CombineLatest+arity.swift"; path = "RxSwift/Observables/CombineLatest+arity.swift"; sourceTree = "<group>"; };
 		D71C4EA41C4044EB3BB01E71E0078E8B /* Pods-MolueRiskPart.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MolueRiskPart.modulemap"; sourceTree = "<group>"; };
 		D7BE6175CCF14B21E7AA5406FD31748E /* ON@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "ON@3x.png"; path = "Images/ON@3x.png"; sourceTree = "<group>"; };
+		D7E70620D35C50AA5D024E62C56B7A6B /* IQKeyboardManagerSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "IQKeyboardManagerSwift-prefix.pch"; sourceTree = "<group>"; };
 		D8D147B37D7EFDE874A1ADA584703E1E /* MAMapKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MAMapKit.h; path = MAMapKit.framework/Headers/MAMapKit.h; sourceTree = "<group>"; };
 		D8D757DF7E686DCBC360B09FD0FC1939 /* Pods-MolueDatabaseTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MolueDatabaseTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		D8E942965AC8E5C2DD52F69454893D4F /* AssetManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AssetManager.swift; path = Source/AssetManager.swift; sourceTree = "<group>"; };
@@ -2065,6 +2065,7 @@
 		D9D82C216FBC2FCE22AD01145F2EF410 /* Pods-MolueNetwork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MolueNetwork.debug.xcconfig"; sourceTree = "<group>"; };
 		D9E4B765792C85D818449DE2F991A542 /* Kingfisher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Kingfisher.swift; path = Sources/Kingfisher.swift; sourceTree = "<group>"; };
 		DA24E3315B8BD66DDB751D642CFF1E7B /* AddRef.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AddRef.swift; path = RxSwift/Observables/AddRef.swift; sourceTree = "<group>"; };
+		DA31C60012E02A030695ABE67D5C3042 /* IQNSArray+Sort.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQNSArray+Sort.swift"; path = "IQKeyboardManagerSwift/Categories/IQNSArray+Sort.swift"; sourceTree = "<group>"; };
 		DB3752803CE54784DD445A486F5062E6 /* Pods-MolueNavigator-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MolueNavigator-umbrella.h"; sourceTree = "<group>"; };
 		DB3C175E91E27320566536C9C6127FAC /* AnonymousDisposable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnonymousDisposable.swift; path = RxSwift/Disposables/AnonymousDisposable.swift; sourceTree = "<group>"; };
 		DB9CC97183737F72CEF7CD18CDC81222 /* Pods-MolueNavigator-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MolueNavigator-dummy.m"; sourceTree = "<group>"; };
@@ -2078,7 +2079,6 @@
 		DD6E13526A80CC455F3F4DC2188AB0BD /* Utils+Foundation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Utils+Foundation.swift"; path = "Sources/CryptoSwift/Foundation/Utils+Foundation.swift"; sourceTree = "<group>"; };
 		DDA23C463B49B9A2B58210FF6B106677 /* CurrentThreadScheduler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CurrentThreadScheduler.swift; path = RxSwift/Schedulers/CurrentThreadScheduler.swift; sourceTree = "<group>"; };
 		DE3A1986E029BC2E28170A36ACC37B2F /* AMapFoundationVersion.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AMapFoundationVersion.h; path = AMapFoundationKit.framework/Headers/AMapFoundationVersion.h; sourceTree = "<group>"; };
-		DEE0F040F13B261F0B37AC863962536C /* IQTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQTextView.swift; path = IQKeyboardManagerSwift/IQTextView/IQTextView.swift; sourceTree = "<group>"; };
 		DF9755649C5BE843A1FA91E71AC81D64 /* URLNavigator-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "URLNavigator-umbrella.h"; sourceTree = "<group>"; };
 		DFE313FC67837F608F0AF510A0D4A462 /* ConstraintOffsetTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintOffsetTarget.swift; path = Source/ConstraintOffsetTarget.swift; sourceTree = "<group>"; };
 		E06905C00E9F98C66F6A3314BAF7C32A /* NVActivityIndicatorAnimationPacman.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationPacman.swift; path = Source/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationPacman.swift; sourceTree = "<group>"; };
@@ -2106,6 +2106,7 @@
 		E5C79F39E7261A98305B91349734F255 /* Pods-MolueNavigatorTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MolueNavigatorTests-frameworks.sh"; sourceTree = "<group>"; };
 		E5CD04E28705C7DB16C53D27CDFB6047 /* Timer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Timer.swift; path = RxSwift/Observables/Timer.swift; sourceTree = "<group>"; };
 		E651707D829A09D04FA2153EC9C52EDB /* Pods-MolueHomePart-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MolueHomePart-resources.sh"; sourceTree = "<group>"; };
+		E68CC658A21470883D26AFB85F7C0068 /* IQKeyboardManagerSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = IQKeyboardManagerSwift.modulemap; sourceTree = "<group>"; };
 		E6F45A1F47ADD2C1D13B9E98FDA9C284 /* MAPolygonRenderer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MAPolygonRenderer.h; path = MAMapKit.framework/Headers/MAPolygonRenderer.h; sourceTree = "<group>"; };
 		E76FD8805A4F9D002553DF7E7482F4D2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
 		E7AA973434EF2B766DE043AB4326894D /* Locksmith.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Locksmith.h; path = Source/Locksmith.h; sourceTree = "<group>"; };
@@ -2136,7 +2137,6 @@
 		ECE516D1EDB5604CF07D719FFF596B49 /* Buffer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Buffer.swift; path = RxSwift/Observables/Buffer.swift; sourceTree = "<group>"; };
 		ED16D6545C692A7A208A397F329B7F5E /* OFB.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OFB.swift; path = Sources/CryptoSwift/BlockMode/OFB.swift; sourceTree = "<group>"; };
 		EDC11113CA1C9E766D8461285A765CBE /* Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-umbrella.h"; sourceTree = "<group>"; };
-		EE5E352CBCB3CDB838B741CD9D3C4EB1 /* IQUITextFieldView+Additions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUITextFieldView+Additions.swift"; path = "IQKeyboardManagerSwift/Categories/IQUITextFieldView+Additions.swift"; sourceTree = "<group>"; };
 		EECE18FFADD43612D13FCC36797A0016 /* Do.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Do.swift; path = RxSwift/Observables/Do.swift; sourceTree = "<group>"; };
 		EFD988916BE59082ABC98C6BA60B00FD /* Materialize.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Materialize.swift; path = RxSwift/Observables/Materialize.swift; sourceTree = "<group>"; };
 		EFFA6E6C19B6BCD5214ADF58687B19F7 /* Pods-MolueNavigator-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MolueNavigator-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -2149,7 +2149,6 @@
 		F19283B7965B0A83C65D228B7ACE9874 /* RetryWhen.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RetryWhen.swift; path = RxSwift/Observables/RetryWhen.swift; sourceTree = "<group>"; };
 		F1F21B49DE5D58E41ECFE0C31C16D6F4 /* Pods-MolueDatabaseTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MolueDatabaseTests.modulemap"; sourceTree = "<group>"; };
 		F1FE82A4A61C15EFE156F225429C16B3 /* AnimationType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimationType.swift; path = ViewAnimator/Classes/Models/AnimationType.swift; sourceTree = "<group>"; };
-		F211965DF7E55193E9456D7231FAB9CD /* IQNSArray+Sort.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQNSArray+Sort.swift"; path = "IQKeyboardManagerSwift/Categories/IQNSArray+Sort.swift"; sourceTree = "<group>"; };
 		F2714FF90DB1FE6E04A59F2858C68576 /* DispatchQueueConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DispatchQueueConfiguration.swift; path = RxSwift/Schedulers/Internal/DispatchQueueConfiguration.swift; sourceTree = "<group>"; };
 		F271BC750D4BC81E9C994EE8523F5769 /* SessionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionDelegate.swift; path = Source/SessionDelegate.swift; sourceTree = "<group>"; };
 		F2A49CB41FD7FD58491D66E09D7CD41A /* MAMapVersion.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MAMapVersion.h; path = MAMapKit.framework/Headers/MAMapVersion.h; sourceTree = "<group>"; };
@@ -2201,6 +2200,7 @@
 		FED0793431815A8A0C1FFFDA34E86579 /* ESPullToRefresh+Manager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ESPullToRefresh+Manager.swift"; path = "Sources/ESPullToRefresh+Manager.swift"; sourceTree = "<group>"; };
 		FEDDD05E64678AD6E150A6C8EE8E21D6 /* SHA3.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SHA3.swift; path = Sources/CryptoSwift/SHA3.swift; sourceTree = "<group>"; };
 		FF0D26D6A3A41957F443EB8474F14738 /* JGProgressHUDSuccessIndicatorView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JGProgressHUDSuccessIndicatorView.h; path = JGProgressHUD/JGProgressHUD/JGProgressHUDSuccessIndicatorView.h; sourceTree = "<group>"; };
+		FF689EC76C3515F6E6EE444FDBF00FC5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF70A56F73076746EA33C6A9EE19E774 /* Permission-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Permission-prefix.pch"; sourceTree = "<group>"; };
 		FFB72EBE4327D1B2315279B6552369FA /* LocksmithError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocksmithError.swift; path = Source/LocksmithError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -2532,6 +2532,20 @@
 			path = "Target Support Files/Pods-MolueNavigator";
 			sourceTree = "<group>";
 		};
+		054015920989BCB5BCB6D9F5D610CDA6 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				FF689EC76C3515F6E6EE444FDBF00FC5 /* Info.plist */,
+				E68CC658A21470883D26AFB85F7C0068 /* IQKeyboardManagerSwift.modulemap */,
+				12E9EAA480681B25B165A7602D3125FE /* IQKeyboardManagerSwift.xcconfig */,
+				44630A95A9918846AFAE8D14F3F67435 /* IQKeyboardManagerSwift-dummy.m */,
+				D7E70620D35C50AA5D024E62C56B7A6B /* IQKeyboardManagerSwift-prefix.pch */,
+				C23E4C523090611C2AE2DFBB32EF551C /* IQKeyboardManagerSwift-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/IQKeyboardManagerSwift";
+			sourceTree = "<group>";
+		};
 		07CBB8756FC5327969193D03BEF8090C /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -2544,20 +2558,6 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/SnapKit";
-			sourceTree = "<group>";
-		};
-		0A8EDD12BB33BA2BFD19BAB46C53F0FA /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				76C4FD4392BFBBB809D8155F5770D4BA /* Info.plist */,
-				079619077992B4BC915C0F48AFBB747C /* IQKeyboardManagerSwift.modulemap */,
-				86C1093AD9B93A81FD0FD1EBD607E3B1 /* IQKeyboardManagerSwift.xcconfig */,
-				8E64781BD711C11FA458AD90DCB570FD /* IQKeyboardManagerSwift-dummy.m */,
-				CD4C8735EB0F1D34D8AE842E2C077C9F /* IQKeyboardManagerSwift-prefix.pch */,
-				C13E655E672C48BF63EF424671789600 /* IQKeyboardManagerSwift-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/IQKeyboardManagerSwift";
 			sourceTree = "<group>";
 		};
 		0BC8D82E8FEDF1AF26DAB14F8D8255CB /* LeakEye */ = {
@@ -3224,14 +3224,6 @@
 			path = "../Target Support Files/ObjectMapper";
 			sourceTree = "<group>";
 		};
-		65663C19B6F6E4C9A3AB950C726ACBD6 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				9EE476A0D9547AFADEA92CD01435AC0D /* IQKeyboardManager.bundle */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
 		6B0F8FFB41582E9A6607E4B25C9EEC6E /* standard */ = {
 			isa = PBXGroup;
 			children = (
@@ -3264,6 +3256,31 @@
 			name = standard;
 			sourceTree = "<group>";
 		};
+		6C2F9893F0EF59E65EDADD93C653620C /* IQKeyboardManagerSwift */ = {
+			isa = PBXGroup;
+			children = (
+				52A73B5BDD3D5D4E4200E4B6F5DAFC1D /* IQBarButtonItem.swift */,
+				2EF6C7D5F7B4B74E9A68A79D5BCA018E /* IQInvocation.swift */,
+				852A3606279F5FFFEA898E16FBA02AD3 /* IQKeyboardManager.swift */,
+				404C79DAC6EE6B0327BDC4712FC0EE87 /* IQKeyboardManagerConstants.swift */,
+				629E365F13832AA03404A8CC4DEAE41C /* IQKeyboardManagerConstantsInternal.swift */,
+				6FB1F167F3C93E47264C81C2864FC6E3 /* IQKeyboardReturnKeyHandler.swift */,
+				DA31C60012E02A030695ABE67D5C3042 /* IQNSArray+Sort.swift */,
+				7F6AEB3BA5BE2A40CA1C5B1ADCDC2218 /* IQPreviousNextView.swift */,
+				03BA4E315A3AB95D9D52F215C685092B /* IQTextView.swift */,
+				79CAC0A66A203E9F90139D046B64AFFD /* IQTitleBarButtonItem.swift */,
+				1F4B0261EF1978D772D2BC7767C8662D /* IQToolbar.swift */,
+				9AD13750298BE75C7A33ABA839EDE6E1 /* IQUIScrollView+Additions.swift */,
+				61BC0A574C18A91F66ACDB459687654A /* IQUITextFieldView+Additions.swift */,
+				01A35772EBA7191991F95B692EEB9ECE /* IQUIView+Hierarchy.swift */,
+				6B35A73877502430682626F9D5F8F148 /* IQUIView+IQKeyboardToolbar.swift */,
+				D4DF7820327601E489558B18F46C1A15 /* IQUIViewController+Additions.swift */,
+				E68A66D4FD27C530A29EE02900EDEC5D /* Resources */,
+				054015920989BCB5BCB6D9F5D610CDA6 /* Support Files */,
+			);
+			path = IQKeyboardManagerSwift;
+			sourceTree = "<group>";
+		};
 		73ACA479367DB674B404CA56C5F64D62 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -3275,7 +3292,7 @@
 				D97A17574385E495E806888A1C7EFDB3 /* CryptoSwift */,
 				BC022D029351B2E6B7A9C93DBEB2EE10 /* ESPullToRefresh */,
 				947840555F7E842A84A9692160F26217 /* ImagePicker */,
-				BC0B6A59A633BB78BF0B88E8604FF07A /* IQKeyboardManagerSwift */,
+				6C2F9893F0EF59E65EDADD93C653620C /* IQKeyboardManagerSwift */,
 				230AB9802E6E3BCC6C704FE220B2255F /* JCore */,
 				F71BAC37EED7944BD21CEEFF4729FD7B /* JGProgressHUD */,
 				854A007AB118B2F4B713525792CB1265 /* JPush */,
@@ -3661,31 +3678,6 @@
 			path = ESPullToRefresh;
 			sourceTree = "<group>";
 		};
-		BC0B6A59A633BB78BF0B88E8604FF07A /* IQKeyboardManagerSwift */ = {
-			isa = PBXGroup;
-			children = (
-				7E8438907EAC60E1086FBBC53322CBBD /* IQBarButtonItem.swift */,
-				64D0E52AFC437339FB5B5372B01CD516 /* IQKeyboardManager.swift */,
-				097F096F91027D138DAD22682FDC64E9 /* IQKeyboardManagerConstants.swift */,
-				D1EC3FDB710B4E359F9AFAF0660424CB /* IQKeyboardManagerConstantsInternal.swift */,
-				427A91062B30F7EE359FDAB389C0E25B /* IQKeyboardReturnKeyHandler.swift */,
-				F211965DF7E55193E9456D7231FAB9CD /* IQNSArray+Sort.swift */,
-				7F7C5CF783F1E32FF951E8FFD6C9AAE3 /* IQPreviousNextView.swift */,
-				DEE0F040F13B261F0B37AC863962536C /* IQTextView.swift */,
-				3DEBCB97D07F55E44F7C1210225AB0DD /* IQTitleBarButtonItem.swift */,
-				0BECE7ADE55B5071327A7730FC42F373 /* IQToolbar.swift */,
-				2235F4FD1B62074F4294338D3690BFF9 /* IQUIScrollView+Additions.swift */,
-				EE5E352CBCB3CDB838B741CD9D3C4EB1 /* IQUITextFieldView+Additions.swift */,
-				43A8167406B7B56D108CA2E488992ED6 /* IQUIView+Hierarchy.swift */,
-				AD53FB64E3647951768FA6F1CCD6A403 /* IQUIView+IQKeyboardToolbar.swift */,
-				16B777191834582DAE8BD54C513F114D /* IQUIViewController+Additions.swift */,
-				620771A6ED0BC5E2B2AE31149D9143AE /* IQUIWindow+Hierarchy.swift */,
-				65663C19B6F6E4C9A3AB950C726ACBD6 /* Resources */,
-				0A8EDD12BB33BA2BFD19BAB46C53F0FA /* Support Files */,
-			);
-			path = IQKeyboardManagerSwift;
-			sourceTree = "<group>";
-		};
 		BDEDD35DD9B5A51F93BBCF78E5F950DD /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -3939,6 +3931,14 @@
 				D7BE6175CCF14B21E7AA5406FD31748E /* ON@3x.png */,
 				BE5AD9C8524D7A99B281CC60F95C0A81 /* selectedImageGallery@3x.png */,
 				8C1E56DAA266B4BD59FBB1D98E334842 /* video@3x.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		E68A66D4FD27C530A29EE02900EDEC5D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CC1AA6D421A91C2DBEE34B7C318EF202 /* IQKeyboardManager.bundle */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -4928,7 +4928,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E8C5CE05A712EF50BB123A41D8EFC0CB /* Build configuration list for PBXNativeTarget "IQKeyboardManagerSwift" */;
 			buildPhases = (
-				50B11D0050EFF279F77184610F053BB1 /* Sources */,
+				E4B0F139BDE4ED656F644F7F1FF4D641 /* Sources */,
 				81A5C814ACEB86CB06CD6C51383982FE /* Frameworks */,
 				918D58E08AC7FD6CC66B75FF048005F7 /* Resources */,
 				C82B5F04767CB991E84734A54D0ABA5B /* Headers */,
@@ -5618,30 +5618,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		50B11D0050EFF279F77184610F053BB1 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				64381B08A172E881A5AEA1CB34B11DAC /* IQBarButtonItem.swift in Sources */,
-				F37DAF201EF3FC51B27472E2DBBACA38 /* IQKeyboardManager.swift in Sources */,
-				DD53411C0F3344D6CBFEFB0D15238C85 /* IQKeyboardManagerConstants.swift in Sources */,
-				84EBE3B98F33BF0ADDE77F4B94FEC1EE /* IQKeyboardManagerConstantsInternal.swift in Sources */,
-				2DB5F8F67C0B9967943405F67B158B0F /* IQKeyboardManagerSwift-dummy.m in Sources */,
-				D4F7797ABBFA409A57C620F82199C64C /* IQKeyboardReturnKeyHandler.swift in Sources */,
-				907EDC349214C874D011C6E94CFE0521 /* IQNSArray+Sort.swift in Sources */,
-				897A680B8066B5FB6209C505794EA3B8 /* IQPreviousNextView.swift in Sources */,
-				2DBA331B3AC77FA4AD4682539E266925 /* IQTextView.swift in Sources */,
-				D8A183E492E2B8C1CC8514145482A5F8 /* IQTitleBarButtonItem.swift in Sources */,
-				5D4958FA3398268EF4049D18AB2F3A66 /* IQToolbar.swift in Sources */,
-				F64C5A4C29A4FB17598AB077DF55C0B0 /* IQUIScrollView+Additions.swift in Sources */,
-				A059D17839AFB15786D46DB36A87EF16 /* IQUITextFieldView+Additions.swift in Sources */,
-				9CDD0EF49EBBD2C3BF10ED329D57E86D /* IQUIView+Hierarchy.swift in Sources */,
-				4DD345311D00AA38BAFE1D45C4D33490 /* IQUIView+IQKeyboardToolbar.swift in Sources */,
-				5A08F39C235CFEAE5C6003A9F8210C92 /* IQUIViewController+Additions.swift in Sources */,
-				DFAF129EB2900C64E6CDF2E31A606BC2 /* IQUIWindow+Hierarchy.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		5152C26CF966F6FC9A90002D2E833A2E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -5933,6 +5909,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				B64EC606D6E4C89E3658C6D79FA263F1 /* Pods-MolueLoginPart-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4B0F139BDE4ED656F644F7F1FF4D641 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5674C00A1D4CEC40CE7C9823392AE80E /* IQBarButtonItem.swift in Sources */,
+				427CC1E0CEA44C6ABBB345D95CB8150E /* IQInvocation.swift in Sources */,
+				C3F78651F021CB9709D782599611D9E7 /* IQKeyboardManager.swift in Sources */,
+				19A3BA22DCD98245FDB5F1F9E5B5EEA1 /* IQKeyboardManagerConstants.swift in Sources */,
+				526C7861D4285F912ED2B290A9B6680A /* IQKeyboardManagerConstantsInternal.swift in Sources */,
+				7EC537FA455633CDC21D90459A0778BA /* IQKeyboardManagerSwift-dummy.m in Sources */,
+				C4A3F5C34230E138C658357E04528893 /* IQKeyboardReturnKeyHandler.swift in Sources */,
+				8769C8685D5F4803E6C4935D19853E7F /* IQNSArray+Sort.swift in Sources */,
+				0D46806F73A843A59B707EAC39F27418 /* IQPreviousNextView.swift in Sources */,
+				30A03B34A1288B99A52BABDE8190BE42 /* IQTextView.swift in Sources */,
+				C586D785BA91C1E92D4D967EF19F0615 /* IQTitleBarButtonItem.swift in Sources */,
+				11E407D2F5F8CCA5C42D73CF587FF1E7 /* IQToolbar.swift in Sources */,
+				1FCB2249F4D91AAC87601E03E3FBBE54 /* IQUIScrollView+Additions.swift in Sources */,
+				6245FE82D2D8272ED5A54539941E22C7 /* IQUITextFieldView+Additions.swift in Sources */,
+				929AA912810899063B76C84E7F4F9184 /* IQUIView+Hierarchy.swift in Sources */,
+				AD72D81004E206BA6B50BCFE8FBA11A4 /* IQUIView+IQKeyboardToolbar.swift in Sources */,
+				BE5732DDD592B2F379E75843D7A19CEA /* IQUIViewController+Additions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7788,7 +7788,7 @@
 		};
 		4E70BD20B9491C5F2A03217D984F3B82 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 86C1093AD9B93A81FD0FD1EBD607E3B1 /* IQKeyboardManagerSwift.xcconfig */;
+			baseConfigurationReference = 12E9EAA480681B25B165A7602D3125FE /* IQKeyboardManagerSwift.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -8630,7 +8630,7 @@
 		};
 		B3F365A79A75991CBCBCF49F488646E7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 86C1093AD9B93A81FD0FD1EBD607E3B1 /* IQKeyboardManagerSwift.xcconfig */;
+			baseConfigurationReference = 12E9EAA480681B25B165A7602D3125FE /* IQKeyboardManagerSwift.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";

@@ -12,10 +12,7 @@ import MolueUtilities
 import IQKeyboardManagerSwift
 extension AppDelegate {
     func initializeIQKeyBoardConfigure() {
-        IQKeyboardManager.sharedManager().enable = true
-        IQKeyboardManager.sharedManager().enableAutoToolbar = false
-        IQKeyboardManager.sharedManager().shouldResignOnTouchOutside = true
-        IQKeyboardManager.sharedManager().shouldShowToolbarPlaceholder = false
+
     }
 }
 

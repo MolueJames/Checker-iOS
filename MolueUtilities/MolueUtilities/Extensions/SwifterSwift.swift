@@ -195,18 +195,6 @@ public struct MLConfigure {
 		#endif
 	}
 	
-	#if os(iOS)
-	/// SwifterSwift: Status bar visibility state.
-	public static var isStatusBarHidden: Bool {
-		get {
-			return UIApplication.shared.isStatusBarHidden
-		}
-		set {
-			UIApplication.shared.isStatusBarHidden = newValue
-		}
-	}
-	#endif
-	
 	#if os(iOS) || os(tvOS)
 	/// SwifterSwift: Key window (read only, if applicable).
 	public static var keyWindow: UIView? {
@@ -233,20 +221,6 @@ public struct MLConfigure {
 	}
 	#endif
 	
-	#if os(iOS)
-	/// SwifterSwift: Current status bar style (if applicable).
-	public static var statusBarStyle: UIStatusBarStyle? {
-		get {
-			return UIApplication.shared.statusBarStyle
-		}
-		set {
-			if let style = newValue {
-				UIApplication.shared.statusBarStyle = style
-			}
-		}
-	}
-	#endif
-	
 	#if !os(macOS)
 	/// SwifterSwift: System current version (read-only).
 	public static var systemVersion: String {
@@ -261,9 +235,6 @@ public struct MLConfigure {
     public static var iPhoneX: Bool {
         return UIScreen.instancesRespond(to:#selector(getter: UIScreen.main.currentMode)) ? __CGSizeEqualToSize(CGSize(width:1125,height:2436), (UIScreen.main.currentMode?.size)!) : false
     }
-//    static inline BOOL iPhoneX() {
-//    return [UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO;
-//    }
 }
 
 // MARK: - Methods
