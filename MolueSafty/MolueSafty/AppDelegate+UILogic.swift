@@ -12,6 +12,14 @@ import MolueMinePart
 import MolueFoundation
 import MolueUtilities
 import MolueCommon
+import MolueMediator
+import ObjectMapper
+
+class TestListener: MolueLoginPageInteractable {
+    func testFunction() {
+        print("test function")
+    }
+}
 
 extension AppDelegate {
     func setDefaultRootViewController() {
@@ -22,6 +30,8 @@ extension AppDelegate {
             self.window?.rootViewController = self.rootViewController()
             self.window?.makeKeyAndVisible()
         }
+        
+        
 //        self.window = UIWindow.init(frame: UIScreen.main.bounds)
 //        self.window?.isHidden = false
 //
@@ -47,16 +57,21 @@ extension AppDelegate {
 //        }
     }
     
-    private func loginViewController() -> UIViewController {
-        let navController = MLNavigationController()
-        do {
-            let router = MolueNavigatorRouter(.Login, path: LoginPath.LoginPage.rawValue)
-            let viewController = try MolueAppRouter.shared.viewController(router).unwrap()
-            navController.viewControllers = [viewController]
-        } catch {
-            MolueLogger.UIModule.error(error)
-        }
-        return navController
+    private func loginViewController() -> UIViewController? {
+//        let navController = MLNavigationController()
+//        do {
+//            let router = MolueNavigatorRouter(.Login, path: LoginPath.LoginPage.rawValue)
+//            let viewController = try MolueAppRouter.shared.viewController(router).unwrap()
+//            navController.viewControllers = [viewController]
+//        } catch {
+//            MolueLogger.UIModule.error(error)
+//        }
+//        return navController
+        let builderFactory = MolueBuilderFactory(module: .Login)
+        let builder: MolueLoginPageBuildable? = builderFactory.queryBuilder(fileName: LoginPath.LoginPage.rawValue)
+        let listener = TestListener()
+        return builder?.build(listener: listener)
+        
     }
     
     private func rootViewController() -> UIViewController {

@@ -9,9 +9,9 @@
 import Foundation
 import MolueUtilities
 
-public protocol MolueInteractable: class {}
+public protocol MolueInteractorPresentable: class {}
 
-public class MolueBaseInteractor<PresenterTarget>: MolueInteractable {
+open class MoluePresenterInteractor<PresenterTarget> {
     public let presenter: PresenterTarget
     
     public init(presenter: PresenterTarget) {

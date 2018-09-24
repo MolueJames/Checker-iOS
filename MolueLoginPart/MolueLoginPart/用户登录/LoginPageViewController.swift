@@ -10,7 +10,12 @@ import UIKit
 import MolueCommon
 import MolueUtilities
 import MolueFoundation
-class LoginPageViewController: MLBaseViewController {
+protocol LoginPagePresentableListener: class {
+    func showTest()
+}
+
+class LoginPageViewController: MLBaseViewController, MolueLoginPagePresentable {
+    var listener: LoginPagePresentableListener?
 
     @IBOutlet weak var appIconView: UIView! {
         didSet {
@@ -36,8 +41,9 @@ class LoginPageViewController: MLBaseViewController {
         }
     }
     @IBAction func submitButtonClicked(_ sender: UIButton) {
-        let name = MolueNotification.molue_user_login.toName()
-        NotificationCenter.default.post(name: name, object: nil)
+//        let name = MolueNotification.molue_user_login.toName()
+//        NotificationCenter.default.post(name: name, object: nil)
+        self.listener?.showTest()
     }
     
     override func viewDidLoad() {

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+
 public enum MolueModulePath: String {
     case Mine = "MolueMinePart"
     case Home = "MolueHomePart"
@@ -16,7 +17,7 @@ public enum MolueModulePath: String {
     case Login = "MolueLoginPart"
 }
 
-public protocol MolueProtocolFactory {
+public protocol MolueProtocolFactory: class {
     associatedtype Target
-    func queryBuilder<T> (module: MolueModulePath, fileName:String) -> T?
+    func queryBuilder<T> (fileName:String) -> T?
 }

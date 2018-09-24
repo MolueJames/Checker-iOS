@@ -10,7 +10,7 @@ import Foundation
 import MolueUtilities
 public protocol MolueBuildable: class {}
 
-public class MolueBaseBuilder: MolueBuildable {
+open class MolueBaseBuilder: MolueBuildable {
     public required init() {}
     
     deinit {

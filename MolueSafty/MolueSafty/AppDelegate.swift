@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var leakEye = LeakEye()
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-//        self.registerJPushWithlaunchOptions(launchOptions)
+        self.registerJPushWithlaunchOptions(launchOptions)
         self.setUserInterfaceConfigure()
         self.setDefaultRootViewController()
         self.initializeIQKeyBoardConfigure()

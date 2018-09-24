@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A2558DF21586BB3007E58E0 /* MolueMediator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A2558DE21586BB3007E58E0 /* MolueMediator.framework */; };
+		1A2558E121586BEB007E58E0 /* MolueMediator.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1A2558DE21586BB3007E58E0 /* MolueMediator.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1A5014BD2095647B00DB931E /* AppDelegate+ThirdPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5014BC2095647B00DB931E /* AppDelegate+ThirdPart.swift */; };
 		1A602F1520A6D660003AD583 /* Appdelegate+Addtional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A602F1420A6D660003AD583 /* Appdelegate+Addtional.swift */; };
 		1A65038920DD51E60017F91D /* MolueSafty.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A35D80420DD3113002ED3CB /* MolueSafty.xcassets */; };
@@ -81,6 +83,7 @@
 			files = (
 				1A9F23AF20DE5DEF00751D2E /* MolueMinePart.framework in Embed Frameworks */,
 				1A9F23B120DE5DEF00751D2E /* MolueNavigator.framework in Embed Frameworks */,
+				1A2558E121586BEB007E58E0 /* MolueMediator.framework in Embed Frameworks */,
 				1A9F23B720DE5DEF00751D2E /* MolueUtilities.framework in Embed Frameworks */,
 				1A9F23A720DE5DEF00751D2E /* MolueCommon.framework in Embed Frameworks */,
 				1A9F23AD20DE5DEF00751D2E /* MolueHomePart.framework in Embed Frameworks */,
@@ -97,6 +100,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1A2558DE21586BB3007E58E0 /* MolueMediator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueMediator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A35D80420DD3113002ED3CB /* MolueSafty.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MolueSafty.xcassets; sourceTree = "<group>"; };
 		1A5014BC2095647B00DB931E /* AppDelegate+ThirdPart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+ThirdPart.swift"; sourceTree = "<group>"; };
 		1A602F1420A6D660003AD583 /* Appdelegate+Addtional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Appdelegate+Addtional.swift"; sourceTree = "<group>"; };
@@ -144,6 +148,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A2558DF21586BB3007E58E0 /* MolueMediator.framework in Frameworks */,
 				1A9BC9F72109FB090035FC21 /* MolueLoginPart.framework in Frameworks */,
 				1A9F23A220DE5DEF00751D2E /* MolueBookPart.framework in Frameworks */,
 				1A9F23B420DE5DEF00751D2E /* MolueRiskPart.framework in Frameworks */,
@@ -259,6 +264,7 @@
 		83E91D7A2F4B97501AC8DD7E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1A2558DE21586BB3007E58E0 /* MolueMediator.framework */,
 				1AB5D74F215717B900DA0B0D /* libc++.tbd */,
 				1A9BC9F62109FB090035FC21 /* MolueLoginPart.framework */,
 				1A9F238C20DE5DCF00751D2E /* MolueBookPart.framework */,

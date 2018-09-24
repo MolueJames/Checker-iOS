@@ -79,7 +79,7 @@ public extension UIViewController {
 }
 
 public extension UIViewController {
-    static func initializeFromStoryboard() -> UIViewController? {
+    static func initializeFromStoryboard() -> Self? {
         do {
             let value = NSStringFromClass(self).separateTypeName()
             let module = try value.module.unwrap()

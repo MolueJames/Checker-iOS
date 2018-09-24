@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A2558DB21586A10007E58E0 /* MolueLoginProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2558DA21586A10007E58E0 /* MolueLoginProtocols.swift */; };
 		1AAB69D821566CB70037EF38 /* MolueMediator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AAB69CE21566CB70037EF38 /* MolueMediator.framework */; };
 		1AAB69DD21566CB70037EF38 /* MolueMediatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAB69DC21566CB70037EF38 /* MolueMediatorTests.swift */; };
 		1AAB69DF21566CB70037EF38 /* MolueMediator.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AAB69D121566CB70037EF38 /* MolueMediator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1AAB69E921566CF40037EF38 /* MolueBuilderFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAB69E821566CF40037EF38 /* MolueBuilderFactory.swift */; };
-		1AAB69F221566D480037EF38 /* MolueCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AAB69F121566D480037EF38 /* MolueCommon.framework */; };
 		1AAB69F421566D480037EF38 /* MolueFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AAB69F321566D480037EF38 /* MolueFoundation.framework */; };
 		1AAB69F621566D480037EF38 /* MolueUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AAB69F521566D480037EF38 /* MolueUtilities.framework */; };
+		6344E71DC6FBC95D8F36BC93 /* Pods_MolueMediatorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80AFDD759C0FB45C34F8B6FE /* Pods_MolueMediatorTests.framework */; };
+		CE79835F7A5BF57CA840A80D /* Pods_MolueMediator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA2225FFDFCB629BF0A1F4BE /* Pods_MolueMediator.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0BB286DCC343CE866773E611 /* Pods-MolueMediator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueMediator.release.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueMediator/Pods-MolueMediator.release.xcconfig"; sourceTree = "<group>"; };
+		1A2558DA21586A10007E58E0 /* MolueLoginProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueLoginProtocols.swift; sourceTree = "<group>"; };
 		1AAB69CE21566CB70037EF38 /* MolueMediator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MolueMediator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AAB69D121566CB70037EF38 /* MolueMediator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MolueMediator.h; sourceTree = "<group>"; };
 		1AAB69D221566CB70037EF38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -40,6 +44,11 @@
 		1AAB69F121566D480037EF38 /* MolueCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AAB69F321566D480037EF38 /* MolueFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AAB69F521566D480037EF38 /* MolueUtilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueUtilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		48E3D4F05D90428BE523C956 /* Pods-MolueMediatorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueMediatorTests.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueMediatorTests/Pods-MolueMediatorTests.debug.xcconfig"; sourceTree = "<group>"; };
+		80AFDD759C0FB45C34F8B6FE /* Pods_MolueMediatorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MolueMediatorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA2225FFDFCB629BF0A1F4BE /* Pods_MolueMediator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MolueMediator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D72E7C3C6A6D68E977E7BA64 /* Pods-MolueMediator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueMediator.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueMediator/Pods-MolueMediator.debug.xcconfig"; sourceTree = "<group>"; };
+		DFDE6CFE8F51D1F75F72ED54 /* Pods-MolueMediatorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueMediatorTests.release.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueMediatorTests/Pods-MolueMediatorTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,9 +56,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1AAB69F221566D480037EF38 /* MolueCommon.framework in Frameworks */,
 				1AAB69F421566D480037EF38 /* MolueFoundation.framework in Frameworks */,
 				1AAB69F621566D480037EF38 /* MolueUtilities.framework in Frameworks */,
+				CE79835F7A5BF57CA840A80D /* Pods_MolueMediator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +67,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AAB69D821566CB70037EF38 /* MolueMediator.framework in Frameworks */,
+				6344E71DC6FBC95D8F36BC93 /* Pods_MolueMediatorTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +81,7 @@
 				1AAB69DB21566CB70037EF38 /* MolueMediatorTests */,
 				1AAB69CF21566CB70037EF38 /* Products */,
 				1AAB69EA21566D290037EF38 /* Frameworks */,
+				F7A741474619690F2360DD47 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -86,6 +97,12 @@
 		1AAB69D021566CB70037EF38 /* MolueMediator */ = {
 			isa = PBXGroup;
 			children = (
+				1AB5D7592157488900DA0B0D /* CommonProtocol */,
+				1AB5D7582157487000DA0B0D /* BookProtocol */,
+				1AB5D7572157486500DA0B0D /* RiskProtocol */,
+				1AB5D7562157485700DA0B0D /* MineProtocol */,
+				1AB5D7552157484400DA0B0D /* LoginProtocol */,
+				1AB5D7532157482700DA0B0D /* HomeProtocol */,
 				1AAB69D121566CB70037EF38 /* MolueMediator.h */,
 				1AAB69D221566CB70037EF38 /* Info.plist */,
 				1AAB69E821566CF40037EF38 /* MolueBuilderFactory.swift */,
@@ -111,8 +128,64 @@
 				1AAB69EB21566D290037EF38 /* Pods_MolueCommon.framework */,
 				1AAB69ED21566D290037EF38 /* Pods_MolueFoundation.framework */,
 				1AAB69EF21566D290037EF38 /* Pods_MolueUtilities.framework */,
+				BA2225FFDFCB629BF0A1F4BE /* Pods_MolueMediator.framework */,
+				80AFDD759C0FB45C34F8B6FE /* Pods_MolueMediatorTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1AB5D7532157482700DA0B0D /* HomeProtocol */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HomeProtocol;
+			sourceTree = "<group>";
+		};
+		1AB5D7552157484400DA0B0D /* LoginProtocol */ = {
+			isa = PBXGroup;
+			children = (
+				1A2558DA21586A10007E58E0 /* MolueLoginProtocols.swift */,
+			);
+			path = LoginProtocol;
+			sourceTree = "<group>";
+		};
+		1AB5D7562157485700DA0B0D /* MineProtocol */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MineProtocol;
+			sourceTree = "<group>";
+		};
+		1AB5D7572157486500DA0B0D /* RiskProtocol */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RiskProtocol;
+			sourceTree = "<group>";
+		};
+		1AB5D7582157487000DA0B0D /* BookProtocol */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BookProtocol;
+			sourceTree = "<group>";
+		};
+		1AB5D7592157488900DA0B0D /* CommonProtocol */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CommonProtocol;
+			sourceTree = "<group>";
+		};
+		F7A741474619690F2360DD47 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D72E7C3C6A6D68E977E7BA64 /* Pods-MolueMediator.debug.xcconfig */,
+				0BB286DCC343CE866773E611 /* Pods-MolueMediator.release.xcconfig */,
+				48E3D4F05D90428BE523C956 /* Pods-MolueMediatorTests.debug.xcconfig */,
+				DFDE6CFE8F51D1F75F72ED54 /* Pods-MolueMediatorTests.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -133,6 +206,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1AAB69E221566CB70037EF38 /* Build configuration list for PBXNativeTarget "MolueMediator" */;
 			buildPhases = (
+				BE1257D71999F6415E8D15C8 /* [CP] Check Pods Manifest.lock */,
 				1AAB69C921566CB70037EF38 /* Sources */,
 				1AAB69CA21566CB70037EF38 /* Frameworks */,
 				1AAB69CB21566CB70037EF38 /* Headers */,
@@ -151,9 +225,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1AAB69E521566CB70037EF38 /* Build configuration list for PBXNativeTarget "MolueMediatorTests" */;
 			buildPhases = (
+				6CE74E0279F1FADDD9232FC6 /* [CP] Check Pods Manifest.lock */,
 				1AAB69D321566CB70037EF38 /* Sources */,
 				1AAB69D421566CB70037EF38 /* Frameworks */,
 				1AAB69D521566CB70037EF38 /* Resources */,
+				0F671120584D973D03D4CC23 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -219,11 +295,69 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0F671120584D973D03D4CC23 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/../Pods/Target Support Files/Pods-MolueMediatorTests/Pods-MolueMediatorTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-MolueMediatorTests/Pods-MolueMediatorTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6CE74E0279F1FADDD9232FC6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MolueMediatorTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BE1257D71999F6415E8D15C8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MolueMediator-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1AAB69C921566CB70037EF38 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A2558DB21586A10007E58E0 /* MolueLoginProtocols.swift in Sources */,
 				1AAB69E921566CF40037EF38 /* MolueBuilderFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -369,7 +503,9 @@
 		};
 		1AAB69E321566CB70037EF38 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D72E7C3C6A6D68E977E7BA64 /* Pods-MolueMediator.debug.xcconfig */;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -379,6 +515,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = MolueMediator/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -395,7 +532,9 @@
 		};
 		1AAB69E421566CB70037EF38 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0BB286DCC343CE866773E611 /* Pods-MolueMediator.release.xcconfig */;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -405,6 +544,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = MolueMediator/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -420,6 +560,7 @@
 		};
 		1AAB69E621566CB70037EF38 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 48E3D4F05D90428BE523C956 /* Pods-MolueMediatorTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -438,6 +579,7 @@
 		};
 		1AAB69E721566CB70037EF38 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DFDE6CFE8F51D1F75F72ED54 /* Pods-MolueMediatorTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

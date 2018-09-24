@@ -10,7 +10,7 @@
 #import <AMapSearchKit/AMapSearchKit.h>
 #import <MAMapKit/MAMapKit.h>
 
-#import <JPUSH/JPUSHService.h>
+#import <JPush/JPUSHService.h>
 #ifdef NSFoundationVersionNumber_iOS_9_x_Max
 #import <UserNotifications/UserNotifications.h>
 #endif

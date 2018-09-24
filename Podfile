@@ -10,6 +10,7 @@ project 'MolueNetwork/MolueNetwork.xcodeproj'
 project 'MolueNavigator/MolueNavigator.xcodeproj'
 project 'MolueFoundation/MolueFoundation.xcodeproj'
 project 'MolueDatabase/MolueDatabase.xcodeproj'
+project 'MolueMediator/MolueMediator.xcodeproj'
 
 def molue_safty_shared_pods
     pod 'SnapKit', '~> 4.0.1'
@@ -98,6 +99,14 @@ target 'MolueNavigator' do
         pod 'URLNavigator', '~> 2.0.4'
         pod 'ObjectMapper', '~> 3.3'
     target 'MolueNavigatorTests' do
+        inherit! :search_paths
+    end
+end
+
+target 'MolueMediator' do
+    project 'MolueMediator/MolueMediator.xcodeproj'
+        pod 'ObjectMapper', '~> 3.3'
+    target 'MolueMediatorTests' do
         inherit! :search_paths
     end
 end

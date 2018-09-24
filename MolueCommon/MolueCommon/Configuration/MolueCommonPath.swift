@@ -55,5 +55,5 @@ public enum CommonPath: String {
 
 public enum LoginPath: String {
     /// 登录页面
-    case LoginPage = "LoginPageViewController"
+    case LoginPage = "MolueLoginPageBuilder"
 }
