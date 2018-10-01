@@ -15,10 +15,39 @@ import MolueCommon
 import MolueMediator
 import ObjectMapper
 
-class TestListener: MolueLoginPageInteractable {
-    func testFunction() {
-        print("test function")
+protocol TestPresnetable : class {
+    var listener: TestListenerProtocol?  {get set}
+    func testClicked()
+}
+
+protocol TestListenerProtocol: class {
+    
+}
+
+class TestListener: MolueLoginPageInteractable, MoluePresenterInteractable, TestListenerProtocol {
+    required init(presenter: TestPresnetable) {
+        self.presenter = presenter
+        presenter.listener = self
     }
+    
+    weak var presenter: TestPresnetable?
+    
+    typealias Presentable = TestPresnetable
+    
+    func testFunction() {
+        MolueLogger.success.message("clicked")
+    }
+}
+
+class testPresenter: TestPresnetable {
+    var listener: TestListenerProtocol?
+    
+    func testClicked() {
+        MolueLogger.success.message("clicked")
+    }
+    
+    
+    
 }
 
 extension AppDelegate {
@@ -44,7 +73,8 @@ extension AppDelegate {
         do {
             let window = try self.window.unwrap()
             window.isHidden = false
-            window.rootViewController = self.loginViewController()
+            let navController = UINavigationController(rootViewController: self.loginViewController()!)
+            window.rootViewController = navController
             window.makeKeyAndVisible()
         } catch {
             MolueLogger.UIModule.error(error)
@@ -67,9 +97,10 @@ extension AppDelegate {
 //            MolueLogger.UIModule.error(error)
 //        }
 //        return navController
-        let builderFactory = MolueBuilderFactory(module: .Login)
-        let builder: MolueLoginPageBuildable? = builderFactory.queryBuilder(fileName: LoginPath.LoginPage.rawValue)
-        let listener = TestListener()
+        let builderFactory = MolueBuilderFactory<MolueComponent.Login>(.LoginPage)
+        let builder: MolueLoginPageBuildable? = builderFactory.queryBuilder()
+        let test = testPresenter()
+        let listener = TestListener(presenter: test)
         return builder?.build(listener: listener)
         
     }

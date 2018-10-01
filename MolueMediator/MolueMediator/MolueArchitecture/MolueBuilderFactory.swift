@@ -7,26 +7,25 @@
 //
 
 import Foundation
-import MolueFoundation
 import MolueUtilities
 
-open class MolueBuilderFactory: MolueProtocolFactory {
-    public typealias Target = MolueBaseBuilder
+open class MolueBuilderFactory<Component: MolueBuilderPathProtocol> {
     
-    private let module: MolueModulePath
-    open func queryBuilder<T> (fileName: String) -> T? {
+    private let component: Component
+    
+    open func queryBuilder<T> () -> T? {
         do {
-            let className = "\(self.module.rawValue).\(fileName)"
+            let className = component.builderPath()
             let targetClass: AnyClass = try NSClassFromString(className).unwrap()
-            let targetBuilder = try (targetClass as? Target.Type).unwrap()
+            let targetBuilder = try (targetClass as? MolueComponentBuilder.Type).unwrap()
             return try targetBuilder.init().toTarget()
         } catch {
             return MolueLogger.failure.returnNil(error)
         }
     }
     
-    public init(module: MolueModulePath) {
-        self.module = module
+    public init(_ component: Component) {
+        self.component = component;
     }
     
     deinit {

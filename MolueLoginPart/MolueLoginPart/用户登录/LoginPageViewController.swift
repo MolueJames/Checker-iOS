@@ -12,9 +12,14 @@ import MolueUtilities
 import MolueFoundation
 protocol LoginPagePresentableListener: class {
     func showTest()
+    func routerToForgetPassword()
 }
 
 class LoginPageViewController: MLBaseViewController, MolueLoginPagePresentable {
+    func pushToViewController(_ controller: UIViewController?) {
+        self.navigationController?.pushViewController(controller!, animated: true)
+    }
+    
     var listener: LoginPagePresentableListener?
 
     @IBOutlet weak var appIconView: UIView! {
@@ -41,11 +46,23 @@ class LoginPageViewController: MLBaseViewController, MolueLoginPagePresentable {
         }
     }
     @IBAction func submitButtonClicked(_ sender: UIButton) {
-//        let name = MolueNotification.molue_user_login.toName()
-//        NotificationCenter.default.post(name: name, object: nil)
-        self.listener?.showTest()
+        do {
+            try self.listener.unwrap().showTest()
+        } catch {
+            MolueLogger.failure.message(error)
+        }
+        
+        let name = MolueNotification.molue_user_login.toName()
+        NotificationCenter.default.post(name: name, object: nil)
     }
     
+    @IBAction func forgetButtonClicked(_ sender: UIButton) {
+        do {
+            try self.listener.unwrap().routerToForgetPassword()
+        } catch {
+            MolueLogger.failure.error(error)
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -56,6 +73,7 @@ class LoginPageViewController: MLBaseViewController, MolueLoginPagePresentable {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
 }
 
 extension LoginPageViewController: MLUserInterfaceProtocol {

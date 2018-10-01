@@ -17,8 +17,6 @@
 		1A7D9B272086460100FA997D /* MolueFoundationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7D9B262086460100FA997D /* MolueFoundationTests.swift */; };
 		1A7D9B292086460100FA997D /* MolueFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A7D9B1B2086460100FA997D /* MolueFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1AA7356E20A9CC5F00DF7CD0 /* MolueUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA7356D20A9CC5F00DF7CD0 /* MolueUtilities.framework */; };
-		1AAB69FC215676070037EF38 /* MolueBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAB69FB215676070037EF38 /* MolueBuilder.swift */; };
-		1AAB69FE215678400037EF38 /* MoluePresenterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAB69FD215678400037EF38 /* MoluePresenterInteractor.swift */; };
 		1AAB6A05215678E70037EF38 /* MolueLayoutProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAB6A04215678E70037EF38 /* MolueLayoutProtocol.swift */; };
 		1ABDCAA820C59BCE0062DE71 /* MolueNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ABDCAA720C59BCE0062DE71 /* MolueNetwork.framework */; };
 		1ABDCAAA20C59D400062DE71 /* MolueFoundation.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1ABDCAA920C59D400062DE71 /* MolueFoundation.xcassets */; };
@@ -49,8 +47,6 @@
 		1A7D9B262086460100FA997D /* MolueFoundationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueFoundationTests.swift; sourceTree = "<group>"; };
 		1A7D9B282086460100FA997D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1AA7356D20A9CC5F00DF7CD0 /* MolueUtilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueUtilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1AAB69FB215676070037EF38 /* MolueBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueBuilder.swift; sourceTree = "<group>"; };
-		1AAB69FD215678400037EF38 /* MoluePresenterInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoluePresenterInteractor.swift; sourceTree = "<group>"; };
 		1AAB6A04215678E70037EF38 /* MolueLayoutProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueLayoutProtocol.swift; sourceTree = "<group>"; };
 		1ABDCAA720C59BCE0062DE71 /* MolueNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1ABDCAA920C59D400062DE71 /* MolueFoundation.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MolueFoundation.xcassets; sourceTree = "<group>"; };
@@ -113,7 +109,6 @@
 			isa = PBXGroup;
 			children = (
 				1AAB6A01215678A10037EF38 /* LayoutProtocol */,
-				1AAB69FA215675C00037EF38 /* VIPArchitecture */,
 				1A35D7FC20DBD6B6002ED3CB /* DataManager */,
 				1ABDCAA620C59ACB0062DE71 /* BaseController */,
 				1A7D9B1B2086460100FA997D /* MolueFoundation.h */,
@@ -130,15 +125,6 @@
 				1A7D9B282086460100FA997D /* Info.plist */,
 			);
 			path = MolueFoundationTests;
-			sourceTree = "<group>";
-		};
-		1AAB69FA215675C00037EF38 /* VIPArchitecture */ = {
-			isa = PBXGroup;
-			children = (
-				1AAB69FB215676070037EF38 /* MolueBuilder.swift */,
-				1AAB69FD215678400037EF38 /* MoluePresenterInteractor.swift */,
-			);
-			path = VIPArchitecture;
 			sourceTree = "<group>";
 		};
 		1AAB6A01215678A10037EF38 /* LayoutProtocol */ = {
@@ -315,10 +301,8 @@
 				1A2D443820A0949300BA947A /* MLControllerProtocol.swift in Sources */,
 				1A1B88E620864E6C00C5F4D9 /* MLNavigationController.swift in Sources */,
 				1AAB6A05215678E70037EF38 /* MolueLayoutProtocol.swift in Sources */,
-				1AAB69FC215676070037EF38 /* MolueBuilder.swift in Sources */,
 				1A1B88E420864E5500C5F4D9 /* MLTabBarController.swift in Sources */,
 				1A2D443620A0944E00BA947A /* MLWebViewController.swift in Sources */,
-				1AAB69FE215678400037EF38 /* MoluePresenterInteractor.swift in Sources */,
 				1A35D7FE20DBD6D3002ED3CB /* MLDataManagerProtocol.swift in Sources */,
 				1A1B88E820864E8100C5F4D9 /* MLBaseViewController.swift in Sources */,
 			);

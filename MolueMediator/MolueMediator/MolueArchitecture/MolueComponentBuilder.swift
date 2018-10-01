@@ -8,9 +8,9 @@
 
 import Foundation
 import MolueUtilities
-public protocol MolueBuildable: class {}
+public protocol MolueComponentBuildable: class {}
 
-open class MolueBaseBuilder: MolueBuildable {
+open class MolueComponentBuilder: MolueComponentBuildable {
     public required init() {}
     
     deinit {
@@ -18,4 +18,4 @@ open class MolueBaseBuilder: MolueBuildable {
     }
 }
 
-extension MolueBaseBuilder: MolueTargetHelper {}
+extension MolueComponentBuilder: MolueTargetHelper {}

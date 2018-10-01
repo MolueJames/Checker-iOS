@@ -21,6 +21,9 @@
 		1A9BC9F12109F9E80035FC21 /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9BC9F02109F9E80035FC21 /* LoginPageViewController.swift */; };
 		1A9BC9FB2109FB4C0035FC21 /* LoginPageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A9BC9FA2109FB4C0035FC21 /* LoginPageViewController.storyboard */; };
 		1A9BC9FE210A02F30035FC21 /* MolueLogin.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A9BC9FD210A02F30035FC21 /* MolueLogin.xcassets */; };
+		1AA281502162613B00F66915 /* ForgetPasswordViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AA2814F2162613A00F66915 /* ForgetPasswordViewController.storyboard */; };
+		1AA281522162617800F66915 /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA281512162617800F66915 /* ForgetPasswordViewController.swift */; };
+		1AA281542162619400F66915 /* ForgetPasswordBuildInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA281532162619400F66915 /* ForgetPasswordBuildInteractor.swift */; };
 		44AEE5AA78B82F94B5D303AF /* Pods_MolueLoginPart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A540ABA6882D65703CB373D0 /* Pods_MolueLoginPart.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +55,9 @@
 		1A9BC9F02109F9E80035FC21 /* LoginPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageViewController.swift; sourceTree = "<group>"; };
 		1A9BC9FA2109FB4C0035FC21 /* LoginPageViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginPageViewController.storyboard; sourceTree = "<group>"; };
 		1A9BC9FD210A02F30035FC21 /* MolueLogin.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MolueLogin.xcassets; sourceTree = "<group>"; };
+		1AA2814F2162613A00F66915 /* ForgetPasswordViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ForgetPasswordViewController.storyboard; sourceTree = "<group>"; };
+		1AA281512162617800F66915 /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
+		1AA281532162619400F66915 /* ForgetPasswordBuildInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordBuildInteractor.swift; sourceTree = "<group>"; };
 		25B14BC91B041B6771B06C3D /* Pods-MolueLoginPart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueLoginPart.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueLoginPart/Pods-MolueLoginPart.debug.xcconfig"; sourceTree = "<group>"; };
 		4C17BA84BEDF514373B4A262 /* Pods-MolueLoginPart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueLoginPart.release.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueLoginPart/Pods-MolueLoginPart.release.xcconfig"; sourceTree = "<group>"; };
 		A540ABA6882D65703CB373D0 /* Pods_MolueLoginPart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MolueLoginPart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,6 +113,7 @@
 		1A9BC9CA2109F7370035FC21 /* MolueLoginPart */ = {
 			isa = PBXGroup;
 			children = (
+				1AA2814E2162611000F66915 /* 忘记密码 */,
 				1A9BC9E22109F84D0035FC21 /* 用户登录 */,
 				1A9BC9CB2109F7380035FC21 /* MolueLoginPart.h */,
 				1A9BC9CC2109F7380035FC21 /* Info.plist */,
@@ -147,6 +154,16 @@
 				A540ABA6882D65703CB373D0 /* Pods_MolueLoginPart.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1AA2814E2162611000F66915 /* 忘记密码 */ = {
+			isa = PBXGroup;
+			children = (
+				1AA2814F2162613A00F66915 /* ForgetPasswordViewController.storyboard */,
+				1AA281512162617800F66915 /* ForgetPasswordViewController.swift */,
+				1AA281532162619400F66915 /* ForgetPasswordBuildInteractor.swift */,
+			);
+			path = "忘记密码";
 			sourceTree = "<group>";
 		};
 		39C22FC49B743C3C336A617F /* Pods */ = {
@@ -252,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A9BC9FE210A02F30035FC21 /* MolueLogin.xcassets in Resources */,
+				1AA281502162613B00F66915 /* ForgetPasswordViewController.storyboard in Resources */,
 				1A9BC9FB2109FB4C0035FC21 /* LoginPageViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -292,7 +310,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A9BC9F12109F9E80035FC21 /* LoginPageViewController.swift in Sources */,
+				1AA281522162617800F66915 /* ForgetPasswordViewController.swift in Sources */,
 				1A2558E521586C4D007E58E0 /* LoginPageBuildInteractor.swift in Sources */,
+				1AA281542162619400F66915 /* ForgetPasswordBuildInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

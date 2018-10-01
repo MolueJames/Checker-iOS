@@ -48,6 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        }
 //        manager.start()
 //        testDatabaseManager()
+        
         testProtocolName()
         return true
     }

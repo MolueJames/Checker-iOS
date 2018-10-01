@@ -11,7 +11,7 @@ import MolueFoundation
 import MolueUtilities
 import ObjectMapper
 
-public protocol MolueLoginPageBuildable: MolueBuildable {
+public protocol MolueLoginPageBuildable: MolueComponentBuildable {
     func build(listener: MolueLoginPageInteractable) -> UIViewController?
 }
 

@@ -10,25 +10,46 @@ import Foundation
 import MolueFoundation
 import MolueMediator
 import MolueUtilities
-import ObjectMapper
-protocol MolueLoginPagePresentable: MolueInteractorPresentable {
+
+protocol MolueLoginPagePresentable: MolueInteractorPresentable, MLControllerHUDProtocol {
     var listener: LoginPagePresentableListener? {get set}
+    func pushToViewController(_ controller: UIViewController?)
 }
 
-class MolueLoginPageInteractor: MoluePresenterInteractor<MolueLoginPagePresentable>, LoginPagePresentableListener {
-    func showTest() {
-        self.listener?.testFunction()
+class MolueLoginPageInteractor: MoluePresenterInteractable, LoginPagePresentableListener, MolueForgetPwdInteractable {
+    func backButtonClicked() {
+        MolueLogger.UIModule.message("clicked")
     }
     
-    var listener: MolueLoginPageInteractable?
+    func routerToForgetPassword() {
+        let builderFactory = MolueBuilderFactory<MolueComponent.Login>(.ForgetPwd)
+        let builder: MolueForgetPwdBuildable? = builderFactory.queryBuilder()
+        let controller = builder?.build(listener: self)
+        self.presenter?.pushToViewController(controller)
+    }
     
-    override init(presenter: MolueLoginPagePresentable) {
-        super.init(presenter: presenter)
+    typealias Presentable = MolueLoginPagePresentable
+    
+    weak var presenter: Presentable?
+    
+    weak var listener: MolueLoginPageInteractable?
+    
+    required init(presenter: Presentable) {
+        self.presenter = presenter
         presenter.listener = self
     }
+    
+    func showTest() {
+        self.listener?.testFunction()
+        self.presenter?.showWarningHUD(text: "xxxxxx")
+    }
+    
+    deinit {
+        MolueLogger.dealloc.message(String(describing: self))
+    }
 }
 
-class MolueLoginPageBuilder: MolueBaseBuilder, MolueLoginPageBuildable  {
+class MolueLoginPageBuilder: MolueComponentBuilder, MolueLoginPageBuildable  {
     
     func build(listener: MolueLoginPageInteractable) -> UIViewController? {
         let controller = LoginPageViewController.initializeFromStoryboard()!
