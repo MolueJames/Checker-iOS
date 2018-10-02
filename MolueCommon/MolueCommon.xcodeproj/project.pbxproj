@@ -11,6 +11,7 @@
 		1A2D441B20A07E9900BA947A /* MLRefreshHeaderAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D441A20A07E9900BA947A /* MLRefreshHeaderAnimator.swift */; };
 		1A2D443D20A097E100BA947A /* MLInterfaceConfigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D443C20A097E100BA947A /* MLInterfaceConfigure.swift */; };
 		1A35D80020DD2893002ED3CB /* MolueFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A35D7FF20DD2893002ED3CB /* MolueFoundation.framework */; };
+		1A43801A2162A86200FA1C93 /* MolueTableViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4380192162A86200FA1C93 /* MolueTableViewAdapter.swift */; };
 		1A43BC3620C4031D0093855B /* MLCommonInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A43BC3520C4031D0093855B /* MLCommonInputView.swift */; };
 		1A43BC3C20C40FA30093855B /* MLCommonSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A43BC3B20C40FA30093855B /* MLCommonSelectView.swift */; };
 		1A5014AB2094AFA400DB931E /* MoluePermissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5014AA2094AFA400DB931E /* MoluePermissions.swift */; };
@@ -76,6 +77,7 @@
 		1A2D441A20A07E9900BA947A /* MLRefreshHeaderAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLRefreshHeaderAnimator.swift; sourceTree = "<group>"; };
 		1A2D443C20A097E100BA947A /* MLInterfaceConfigure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLInterfaceConfigure.swift; sourceTree = "<group>"; };
 		1A35D7FF20DD2893002ED3CB /* MolueFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A4380192162A86200FA1C93 /* MolueTableViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueTableViewAdapter.swift; sourceTree = "<group>"; };
 		1A43BC3520C4031D0093855B /* MLCommonInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLCommonInputView.swift; sourceTree = "<group>"; };
 		1A43BC3B20C40FA30093855B /* MLCommonSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLCommonSelectView.swift; sourceTree = "<group>"; };
 		1A5014AA2094AFA400DB931E /* MoluePermissions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoluePermissions.swift; sourceTree = "<group>"; };
@@ -158,6 +160,14 @@
 			path = InterfaceConfigure;
 			sourceTree = "<group>";
 		};
+		1A4380182162A83900FA1C93 /* TableViewAdapter */ = {
+			isa = PBXGroup;
+			children = (
+				1A4380192162A86200FA1C93 /* MolueTableViewAdapter.swift */,
+			);
+			path = TableViewAdapter;
+			sourceTree = "<group>";
+		};
 		1A43BC3420C402F10093855B /* CommonViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				1A65039120DD54F20017F91D /* MolueCommon.xcassets */,
+				1A4380182162A83900FA1C93 /* TableViewAdapter */,
 				1AA7822C20CCFC0800088923 /* CommonController */,
 				1A98F29B20C968F8000D0F8F /* CommonFunction */,
 				1AA7823120CCFE5600088923 /* CommonPhotoView */,
@@ -444,6 +455,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/../Pods/Target Support Files/Pods-MolueCommonTests/Pods-MolueCommonTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts-Swift/BoltsSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/ESPullToRefresh/ESPullToRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/ImagePicker/ImagePicker.framework",
@@ -455,6 +467,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BoltsSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ESPullToRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImagePicker.framework",
@@ -518,6 +531,7 @@
 				1A730ADC20EBB7F8008831BC /* MLCommonTitleView.swift in Sources */,
 				1A5014AB2094AFA400DB931E /* MoluePermissions.swift in Sources */,
 				1A2D443D20A097E100BA947A /* MLInterfaceConfigure.swift in Sources */,
+				1A43801A2162A86200FA1C93 /* MolueTableViewAdapter.swift in Sources */,
 				1A5014B62094B9BA00DB931E /* MolueCommonColor.swift in Sources */,
 				1A52756520D51F7200CA0D68 /* MLSingleSelectController.swift in Sources */,
 				1A9BCA13210A26410035FC21 /* MolueNotificationName.swift in Sources */,

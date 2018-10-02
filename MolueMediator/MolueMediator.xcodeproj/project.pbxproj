@@ -78,6 +78,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A43801B216311C800FA1C93 /* MolueNavigator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MolueNavigator;
+			sourceTree = "<group>";
+		};
 		1AA2814921625A4900F66915 /* MolueArchitecture */ = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +118,7 @@
 		1AAB69D021566CB70037EF38 /* MolueMediator */ = {
 			isa = PBXGroup;
 			children = (
+				1A43801B216311C800FA1C93 /* MolueNavigator */,
 				1AA281472161BE7D00F66915 /* MolueComponentPath.swift */,
 				1AA2814921625A4900F66915 /* MolueArchitecture */,
 				1AB5D7592157488900DA0B0D /* CommonProtocol */,

@@ -73,7 +73,12 @@ extension AppDelegate {
         do {
             let window = try self.window.unwrap()
             window.isHidden = false
-            let navController = UINavigationController(rootViewController: self.loginViewController()!)
+            let builderFactory = MolueBuilderFactory<MolueComponent.Login>(.LoginPage)
+            let builder: MolueLoginPageBuildable? = builderFactory.queryBuilder()
+            let test = testPresenter()
+            let listener = TestListener(presenter: test)
+            let controller = builder?.build(listener: listener)
+            let navController = MLNavigationController(rootViewController: controller!)
             window.rootViewController = navController
             window.makeKeyAndVisible()
         } catch {
@@ -87,23 +92,19 @@ extension AppDelegate {
 //        }
     }
     
-    private func loginViewController() -> UIViewController? {
-//        let navController = MLNavigationController()
-//        do {
-//            let router = MolueNavigatorRouter(.Login, path: LoginPath.LoginPage.rawValue)
-//            let viewController = try MolueAppRouter.shared.viewController(router).unwrap()
-//            navController.viewControllers = [viewController]
-//        } catch {
-//            MolueLogger.UIModule.error(error)
-//        }
-//        return navController
-        let builderFactory = MolueBuilderFactory<MolueComponent.Login>(.LoginPage)
-        let builder: MolueLoginPageBuildable? = builderFactory.queryBuilder()
-        let test = testPresenter()
-        let listener = TestListener(presenter: test)
-        return builder?.build(listener: listener)
-        
-    }
+//    private func loginViewController() -> UIViewController? {
+////        let navController = MLNavigationController()
+////        do {
+////            let router = MolueNavigatorRouter(.Login, path: LoginPath.LoginPage.rawValue)
+////            let viewController = try MolueAppRouter.shared.viewController(router).unwrap()
+////            navController.viewControllers = [viewController]
+////        } catch {
+////            MolueLogger.UIModule.error(error)
+////        }
+////        return navController
+//
+//
+//    }
     
     private func rootViewController() -> UIViewController {
         var viewControllers = [MLNavigationController]()

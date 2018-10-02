@@ -82,7 +82,7 @@ extension LoginPageViewController: MLUserInterfaceProtocol {
     }
     
     func updateUserInterfaceElements() {
-        self.hideNavigationBar()
+//        self.hideNavigationBar()
         self.view.backgroundColor = .white
     }
 }

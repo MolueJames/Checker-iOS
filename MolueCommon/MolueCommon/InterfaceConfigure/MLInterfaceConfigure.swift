@@ -40,11 +40,12 @@ public class MLInterfaceConfigure {
     }
     
     public static func setInterfaceConfigure() {
-        DispatchQueue.doOnce {
-            self.barButtonItemAppearance()
-            self.navigationBarAppearance()
-            self.updateUITabBarAppearance()
-            self.setViewsAppearanceConfigure()
-        }
+        self.barButtonItemAppearance()
+        self.navigationBarAppearance()
+        self.updateUITabBarAppearance()
+        self.setViewsAppearanceConfigure()
+//        DispatchQueue.doOnce {
+//
+//        }
     }
 }

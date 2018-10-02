@@ -20,6 +20,7 @@ def molue_safty_shared_pods
     pod 'RxSwift', '~> 4.1.2'
     pod 'ESPullToRefresh', '~> 2.7'
     pod 'ObjectMapper', '~> 3.3.0'
+    pod 'Bolts-Swift', '~> 1.4.0'
 end
 
 target 'MolueSafty' do
@@ -89,6 +90,7 @@ target 'MolueNetwork' do
         pod 'Alamofire', '~> 4.7'
         pod 'Locksmith', '~> 4.0.0'
         pod 'ObjectMapper', '~> 3.3'
+        pod 'Bolts-Swift', '~> 1.4.0'
     target 'MolueNetworkTests' do
         inherit! :search_paths
     end
