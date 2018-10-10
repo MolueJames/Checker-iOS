@@ -11,6 +11,7 @@ import MolueDatabase
 import MolueUtilities
 import MolueCommon
 import MolueNetwork
+import MolueMediator
 import Alamofire
 import LeakEye
 import SQLite
@@ -50,6 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        testDatabaseManager()
         
         testProtocolName()
+    
         return true
     }
     

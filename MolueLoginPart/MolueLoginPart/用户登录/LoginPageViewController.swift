@@ -10,12 +10,13 @@ import UIKit
 import MolueCommon
 import MolueUtilities
 import MolueFoundation
+
 protocol LoginPagePresentableListener: class {
     func showTest()
     func routerToForgetPassword()
 }
 
-class LoginPageViewController: MLBaseViewController, MolueLoginPagePresentable {
+class LoginPageViewController: MLBaseViewController, MolueLoginPagePresentable, MolueLoginPageControllerable {
     func pushToViewController(_ controller: UIViewController?) {
         self.navigationController?.pushViewController(controller!, animated: true)
     }

@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1A2558E321586C30007E58E0 /* MolueMediator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A2558E221586C30007E58E0 /* MolueMediator.framework */; };
-		1A2558E521586C4D007E58E0 /* LoginPageBuildInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2558E421586C4D007E58E0 /* LoginPageBuildInteractor.swift */; };
+		1A2558E521586C4D007E58E0 /* LoginPagePageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2558E421586C4D007E58E0 /* LoginPagePageInteractor.swift */; };
+		1A4380292167848900FA1C93 /* LoginPageBuilderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4380282167848900FA1C93 /* LoginPageBuilderRouter.swift */; };
 		1A9BC9D22109F7380035FC21 /* MolueLoginPart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9BC9C82109F7370035FC21 /* MolueLoginPart.framework */; };
 		1A9BC9D72109F7380035FC21 /* MolueLoginPartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9BC9D62109F7380035FC21 /* MolueLoginPartTests.swift */; };
 		1A9BC9D92109F7380035FC21 /* MolueLoginPart.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A9BC9CB2109F7380035FC21 /* MolueLoginPart.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -39,7 +40,8 @@
 
 /* Begin PBXFileReference section */
 		1A2558E221586C30007E58E0 /* MolueMediator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueMediator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1A2558E421586C4D007E58E0 /* LoginPageBuildInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageBuildInteractor.swift; sourceTree = "<group>"; };
+		1A2558E421586C4D007E58E0 /* LoginPagePageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPagePageInteractor.swift; sourceTree = "<group>"; };
+		1A4380282167848900FA1C93 /* LoginPageBuilderRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageBuilderRouter.swift; sourceTree = "<group>"; };
 		1A9BC9C82109F7370035FC21 /* MolueLoginPart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MolueLoginPart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A9BC9CB2109F7380035FC21 /* MolueLoginPart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MolueLoginPart.h; sourceTree = "<group>"; };
 		1A9BC9CC2109F7380035FC21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -136,7 +138,8 @@
 			children = (
 				1A9BC9F02109F9E80035FC21 /* LoginPageViewController.swift */,
 				1A9BC9FA2109FB4C0035FC21 /* LoginPageViewController.storyboard */,
-				1A2558E421586C4D007E58E0 /* LoginPageBuildInteractor.swift */,
+				1A2558E421586C4D007E58E0 /* LoginPagePageInteractor.swift */,
+				1A4380282167848900FA1C93 /* LoginPageBuilderRouter.swift */,
 			);
 			path = "用户登录";
 			sourceTree = "<group>";
@@ -311,7 +314,8 @@
 			files = (
 				1A9BC9F12109F9E80035FC21 /* LoginPageViewController.swift in Sources */,
 				1AA281522162617800F66915 /* ForgetPasswordViewController.swift in Sources */,
-				1A2558E521586C4D007E58E0 /* LoginPageBuildInteractor.swift in Sources */,
+				1A2558E521586C4D007E58E0 /* LoginPagePageInteractor.swift in Sources */,
+				1A4380292167848900FA1C93 /* LoginPageBuilderRouter.swift in Sources */,
 				1AA281542162619400F66915 /* ForgetPasswordBuildInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
