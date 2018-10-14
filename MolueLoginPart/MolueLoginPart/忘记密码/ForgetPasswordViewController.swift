@@ -2,39 +2,33 @@
 //  ForgetPasswordViewController.swift
 //  MolueLoginPart
 //
-//  Created by MolueJames on 2018/10/1.
-//  Copyright © 2018年 MolueJames. All rights reserved.
+//  Created by MolueJames on 2018/10/14.
+//  Copyright © 2018 MolueJames. All rights reserved.
 //
 
 import UIKit
 import MolueFoundation
 
-protocol ForgetPwdPresentableListener: class {
-    func backButtonClicked()
+protocol ForgetPasswordPresentableListener: class {
+    // 定义一些当前页面需要的业务逻辑, 比如网络请求.
 }
 
-class ForgetPasswordViewController: MLBaseViewController, MolueForgetPwdPresentable {
-    var listener: ForgetPwdPresentableListener?
+final class ForgetPasswordViewController: MLBaseViewController, ForgetPasswordPagePresentable, ForgetPasswordViewControllable {
+
+    var listener: ForgetPasswordPresentableListener?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
-    
-    @IBAction func backButtonClicked(_ sender: UIButton) {
-//        self.listener?.backButtonClicked()
-        self.navigationController?.popViewController(animated: true)
+}
+
+extension ForgetPasswordViewController: MLUserInterfaceProtocol {
+    func queryInformationWithNetwork() {
+        
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func updateUserInterfaceElements() {
+        
     }
-    */
-
 }

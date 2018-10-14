@@ -15,41 +15,6 @@ import MolueCommon
 import MolueMediator
 import ObjectMapper
 
-protocol TestPresnetable : class {
-    var listener: TestListenerProtocol?  {get set}
-    func testClicked()
-}
-
-protocol TestListenerProtocol: class {
-    
-}
-
-class TestListener: MolueLoginPageInteractable, MoluePresenterInteractable, TestListenerProtocol {
-    required init(presenter: TestPresnetable) {
-        self.presenter = presenter
-        presenter.listener = self
-    }
-    
-    weak var presenter: TestPresnetable?
-    
-    typealias Presentable = TestPresnetable
-    
-    func testFunction() {
-        MolueLogger.success.message("clicked")
-    }
-}
-
-class testPresenter: TestPresnetable {
-    var listener: TestListenerProtocol?
-    
-    func testClicked() {
-        MolueLogger.success.message("clicked")
-    }
-    
-    
-    
-}
-
 extension AppDelegate {
     func setDefaultRootViewController() {
         self.setAppRouterConfigure()
@@ -74,11 +39,9 @@ extension AppDelegate {
             let window = try self.window.unwrap()
             window.isHidden = false
             let builderFactory = MolueBuilderFactory<MolueComponent.Login>(.LoginPage)
-            let builder: MolueLoginPageBuildable? = builderFactory.queryBuilder()
-            let test = testPresenter()
-            let listener = TestListener(presenter: test)
-            let controller = builder?.build(listener: listener)
-            let navController = MLNavigationController(rootViewController: controller!)
+            let builder: UserLoginPageComponentBuildable? = builderFactory.queryBuilder()
+            let controller = try builder.unwrap().build()
+            let navController = MLNavigationController(rootViewController: controller)
             window.rootViewController = navController
             window.makeKeyAndVisible()
         } catch {

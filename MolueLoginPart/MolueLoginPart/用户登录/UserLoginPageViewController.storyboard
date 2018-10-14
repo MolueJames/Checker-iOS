@@ -15,10 +15,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Login Page View Controller-->
+        <!--User Login Page View Controller-->
         <scene sceneID="eNd-Gd-SYz">
             <objects>
-                <viewController storyboardIdentifier="LoginPageViewController" id="d45-by-7hO" customClass="LoginPageViewController" customModule="MolueLoginPart" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UserLoginPageViewController" id="d45-by-7hO" customClass="UserLoginPageViewController" customModule="MolueLoginPart" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FhL-Gc-0Tt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -203,8 +203,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="login_page_app_icon" width="108" height="103"/>
-        <image name="login_page_background" width="1866" height="1050"/>
+        <image name="login_page_app_icon" width="108.5" height="103.5"/>
+        <image name="login_page_background" width="1791.8399658203125" height="1008"/>
         <image name="login_password_content_icon" width="24" height="24"/>
         <image name="login_phoneNo_content_icon" width="24" height="24"/>
     </resources>

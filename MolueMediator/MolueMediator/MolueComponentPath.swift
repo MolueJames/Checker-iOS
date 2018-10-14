@@ -53,8 +53,8 @@ public enum MolueComponent {
     }
     
     public enum Login: String, MolueBuilderPathProtocol {
-        case LoginPage = "MolueLoginPageBuilder"
-        case ForgetPwd = "MolueForgetPwdBuilder"
+        case LoginPage = "UserLoginPageComponentBuilder"
+        case ForgetPwd = "ForgetPasswordComponentBuilder"
         public func builderPath() -> String {
             return "MolueLoginPart.\(self.rawValue)";
         }

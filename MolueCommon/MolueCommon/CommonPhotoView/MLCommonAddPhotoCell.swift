@@ -16,7 +16,7 @@ class MLCommonAddPhotoCell: UICollectionViewCell {
         // Initialization code
         let color = UIColor.init(hex: 0xCCCCCC)
         self.borderColor = color
-        self.borderWidth = MLConfigure.single_line_height
+        self.borderWidth = MLConfigure.singleLineHeight
     }
     
     @IBAction private func appendButtonClicked(_ sender: UIButton) {

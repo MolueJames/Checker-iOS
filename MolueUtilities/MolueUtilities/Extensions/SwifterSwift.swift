@@ -228,13 +228,10 @@ public struct MLConfigure {
 	}
 	#endif
 	
-    public static var single_line_height: CGFloat {
+    public static var singleLineHeight: CGFloat {
         return 1 / UIScreen.main.scale
     }
 
-    public static var iPhoneX: Bool {
-        return UIScreen.instancesRespond(to:#selector(getter: UIScreen.main.currentMode)) ? __CGSizeEqualToSize(CGSize(width:1125,height:2436), (UIScreen.main.currentMode?.size)!) : false
-    }
 }
 
 // MARK: - Methods

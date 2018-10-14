@@ -16,7 +16,7 @@ open class MLBaseViewController: UIViewController, MLNavigationProtocol, MLContr
             self.needToDo(newValue: networkcount, oldValue: oldValue)
         }
     }
-    private let height: CGFloat = MLConfigure.iPhoneX ? 88 : 64
+    private let height: CGFloat = iPhoneScreenKit.current().deviceDefaultNavHeight()
     
     public let navigationView: UIView! = UIView()
     
@@ -82,7 +82,7 @@ extension MLBaseViewController {
     }
     open func showNavigationBar(animated: Bool = false) {
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
-        let height: CGFloat = MLConfigure.iPhoneX ? 88 : 64
+        let height: CGFloat = iPhoneScreenKit.current().deviceDefaultNavHeight()
         self.updateNavigationView(height: height)
         self.navigationBarAnimate(animated)
     }

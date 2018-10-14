@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1A2558E321586C30007E58E0 /* MolueMediator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A2558E221586C30007E58E0 /* MolueMediator.framework */; };
-		1A2558E521586C4D007E58E0 /* LoginPagePageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2558E421586C4D007E58E0 /* LoginPagePageInteractor.swift */; };
-		1A4380292167848900FA1C93 /* LoginPageBuilderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4380282167848900FA1C93 /* LoginPageBuilderRouter.swift */; };
+		1A52BA0B2171808100F91AEF /* RegisterAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A52BA082171808100F91AEF /* RegisterAccountViewController.swift */; };
+		1A52BA0C2171808100F91AEF /* RegisterAccountPageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A52BA092171808100F91AEF /* RegisterAccountPageInteractor.swift */; };
+		1A52BA0D2171808100F91AEF /* RegisterAccountBuilderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A52BA0A2171808100F91AEF /* RegisterAccountBuilderRouter.swift */; };
 		1A9BC9D22109F7380035FC21 /* MolueLoginPart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9BC9C82109F7370035FC21 /* MolueLoginPart.framework */; };
 		1A9BC9D72109F7380035FC21 /* MolueLoginPartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9BC9D62109F7380035FC21 /* MolueLoginPartTests.swift */; };
 		1A9BC9D92109F7380035FC21 /* MolueLoginPart.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A9BC9CB2109F7380035FC21 /* MolueLoginPart.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -19,12 +20,15 @@
 		1A9BC9EB2109F8D50035FC21 /* MolueNavigator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9BC9EA2109F8D50035FC21 /* MolueNavigator.framework */; };
 		1A9BC9ED2109F8D50035FC21 /* MolueNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9BC9EC2109F8D50035FC21 /* MolueNetwork.framework */; };
 		1A9BC9EF2109F8D50035FC21 /* MolueUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9BC9EE2109F8D50035FC21 /* MolueUtilities.framework */; };
-		1A9BC9F12109F9E80035FC21 /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9BC9F02109F9E80035FC21 /* LoginPageViewController.swift */; };
-		1A9BC9FB2109FB4C0035FC21 /* LoginPageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A9BC9FA2109FB4C0035FC21 /* LoginPageViewController.storyboard */; };
 		1A9BC9FE210A02F30035FC21 /* MolueLogin.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A9BC9FD210A02F30035FC21 /* MolueLogin.xcassets */; };
 		1AA281502162613B00F66915 /* ForgetPasswordViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AA2814F2162613A00F66915 /* ForgetPasswordViewController.storyboard */; };
-		1AA281522162617800F66915 /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA281512162617800F66915 /* ForgetPasswordViewController.swift */; };
-		1AA281542162619400F66915 /* ForgetPasswordBuildInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA281532162619400F66915 /* ForgetPasswordBuildInteractor.swift */; };
+		1AB888BF2172DC9500862895 /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB888BC2172DC9500862895 /* ForgetPasswordViewController.swift */; };
+		1AB888C02172DC9500862895 /* ForgetPasswordPageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB888BD2172DC9500862895 /* ForgetPasswordPageInteractor.swift */; };
+		1AB888C12172DC9500862895 /* ForgetPasswordBuilderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB888BE2172DC9500862895 /* ForgetPasswordBuilderRouter.swift */; };
+		1AB888C52172DF4000862895 /* UserLoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB888C22172DF4000862895 /* UserLoginPageViewController.swift */; };
+		1AB888C62172DF4000862895 /* UserLoginPagePageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB888C32172DF4000862895 /* UserLoginPagePageInteractor.swift */; };
+		1AB888C72172DF4000862895 /* UserLoginPageBuilderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB888C42172DF4000862895 /* UserLoginPageBuilderRouter.swift */; };
+		1AB888C92172DF6C00862895 /* UserLoginPageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AB888C82172DF6C00862895 /* UserLoginPageViewController.storyboard */; };
 		44AEE5AA78B82F94B5D303AF /* Pods_MolueLoginPart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A540ABA6882D65703CB373D0 /* Pods_MolueLoginPart.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,8 +44,9 @@
 
 /* Begin PBXFileReference section */
 		1A2558E221586C30007E58E0 /* MolueMediator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueMediator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1A2558E421586C4D007E58E0 /* LoginPagePageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPagePageInteractor.swift; sourceTree = "<group>"; };
-		1A4380282167848900FA1C93 /* LoginPageBuilderRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageBuilderRouter.swift; sourceTree = "<group>"; };
+		1A52BA082171808100F91AEF /* RegisterAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAccountViewController.swift; sourceTree = "<group>"; };
+		1A52BA092171808100F91AEF /* RegisterAccountPageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAccountPageInteractor.swift; sourceTree = "<group>"; };
+		1A52BA0A2171808100F91AEF /* RegisterAccountBuilderRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAccountBuilderRouter.swift; sourceTree = "<group>"; };
 		1A9BC9C82109F7370035FC21 /* MolueLoginPart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MolueLoginPart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A9BC9CB2109F7380035FC21 /* MolueLoginPart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MolueLoginPart.h; sourceTree = "<group>"; };
 		1A9BC9CC2109F7380035FC21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -54,12 +59,15 @@
 		1A9BC9EA2109F8D50035FC21 /* MolueNavigator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueNavigator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A9BC9EC2109F8D50035FC21 /* MolueNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A9BC9EE2109F8D50035FC21 /* MolueUtilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueUtilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1A9BC9F02109F9E80035FC21 /* LoginPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageViewController.swift; sourceTree = "<group>"; };
-		1A9BC9FA2109FB4C0035FC21 /* LoginPageViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginPageViewController.storyboard; sourceTree = "<group>"; };
 		1A9BC9FD210A02F30035FC21 /* MolueLogin.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MolueLogin.xcassets; sourceTree = "<group>"; };
 		1AA2814F2162613A00F66915 /* ForgetPasswordViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ForgetPasswordViewController.storyboard; sourceTree = "<group>"; };
-		1AA281512162617800F66915 /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
-		1AA281532162619400F66915 /* ForgetPasswordBuildInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordBuildInteractor.swift; sourceTree = "<group>"; };
+		1AB888BC2172DC9500862895 /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
+		1AB888BD2172DC9500862895 /* ForgetPasswordPageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordPageInteractor.swift; sourceTree = "<group>"; };
+		1AB888BE2172DC9500862895 /* ForgetPasswordBuilderRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordBuilderRouter.swift; sourceTree = "<group>"; };
+		1AB888C22172DF4000862895 /* UserLoginPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoginPageViewController.swift; sourceTree = "<group>"; };
+		1AB888C32172DF4000862895 /* UserLoginPagePageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoginPagePageInteractor.swift; sourceTree = "<group>"; };
+		1AB888C42172DF4000862895 /* UserLoginPageBuilderRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoginPageBuilderRouter.swift; sourceTree = "<group>"; };
+		1AB888C82172DF6C00862895 /* UserLoginPageViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserLoginPageViewController.storyboard; sourceTree = "<group>"; };
 		25B14BC91B041B6771B06C3D /* Pods-MolueLoginPart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueLoginPart.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueLoginPart/Pods-MolueLoginPart.debug.xcconfig"; sourceTree = "<group>"; };
 		4C17BA84BEDF514373B4A262 /* Pods-MolueLoginPart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueLoginPart.release.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueLoginPart/Pods-MolueLoginPart.release.xcconfig"; sourceTree = "<group>"; };
 		A540ABA6882D65703CB373D0 /* Pods_MolueLoginPart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MolueLoginPart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,10 +144,13 @@
 		1A9BC9E22109F84D0035FC21 /* 用户登录 */ = {
 			isa = PBXGroup;
 			children = (
-				1A9BC9F02109F9E80035FC21 /* LoginPageViewController.swift */,
-				1A9BC9FA2109FB4C0035FC21 /* LoginPageViewController.storyboard */,
-				1A2558E421586C4D007E58E0 /* LoginPagePageInteractor.swift */,
-				1A4380282167848900FA1C93 /* LoginPageBuilderRouter.swift */,
+				1A52BA082171808100F91AEF /* RegisterAccountViewController.swift */,
+				1A52BA092171808100F91AEF /* RegisterAccountPageInteractor.swift */,
+				1A52BA0A2171808100F91AEF /* RegisterAccountBuilderRouter.swift */,
+				1AB888C22172DF4000862895 /* UserLoginPageViewController.swift */,
+				1AB888C32172DF4000862895 /* UserLoginPagePageInteractor.swift */,
+				1AB888C42172DF4000862895 /* UserLoginPageBuilderRouter.swift */,
+				1AB888C82172DF6C00862895 /* UserLoginPageViewController.storyboard */,
 			);
 			path = "用户登录";
 			sourceTree = "<group>";
@@ -163,8 +174,9 @@
 			isa = PBXGroup;
 			children = (
 				1AA2814F2162613A00F66915 /* ForgetPasswordViewController.storyboard */,
-				1AA281512162617800F66915 /* ForgetPasswordViewController.swift */,
-				1AA281532162619400F66915 /* ForgetPasswordBuildInteractor.swift */,
+				1AB888BC2172DC9500862895 /* ForgetPasswordViewController.swift */,
+				1AB888BD2172DC9500862895 /* ForgetPasswordPageInteractor.swift */,
+				1AB888BE2172DC9500862895 /* ForgetPasswordBuilderRouter.swift */,
 			);
 			path = "忘记密码";
 			sourceTree = "<group>";
@@ -272,8 +284,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A9BC9FE210A02F30035FC21 /* MolueLogin.xcassets in Resources */,
+				1AB888C92172DF6C00862895 /* UserLoginPageViewController.storyboard in Resources */,
 				1AA281502162613B00F66915 /* ForgetPasswordViewController.storyboard in Resources */,
-				1A9BC9FB2109FB4C0035FC21 /* LoginPageViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,11 +324,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A9BC9F12109F9E80035FC21 /* LoginPageViewController.swift in Sources */,
-				1AA281522162617800F66915 /* ForgetPasswordViewController.swift in Sources */,
-				1A2558E521586C4D007E58E0 /* LoginPagePageInteractor.swift in Sources */,
-				1A4380292167848900FA1C93 /* LoginPageBuilderRouter.swift in Sources */,
-				1AA281542162619400F66915 /* ForgetPasswordBuildInteractor.swift in Sources */,
+				1AB888C52172DF4000862895 /* UserLoginPageViewController.swift in Sources */,
+				1A52BA0D2171808100F91AEF /* RegisterAccountBuilderRouter.swift in Sources */,
+				1AB888C72172DF4000862895 /* UserLoginPageBuilderRouter.swift in Sources */,
+				1AB888C02172DC9500862895 /* ForgetPasswordPageInteractor.swift in Sources */,
+				1AB888C12172DC9500862895 /* ForgetPasswordBuilderRouter.swift in Sources */,
+				1AB888BF2172DC9500862895 /* ForgetPasswordViewController.swift in Sources */,
+				1A52BA0C2171808100F91AEF /* RegisterAccountPageInteractor.swift in Sources */,
+				1AB888C62172DF4000862895 /* UserLoginPagePageInteractor.swift in Sources */,
+				1A52BA0B2171808100F91AEF /* RegisterAccountViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

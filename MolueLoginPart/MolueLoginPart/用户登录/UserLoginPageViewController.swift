@@ -1,28 +1,25 @@
 //
-//  LoginPageViewController.swift
+//  UserLoginPageViewController.swift
 //  MolueLoginPart
 //
-//  Created by MolueJames on 2018/7/26.
-//  Copyright © 2018年 MolueJames. All rights reserved.
+//  Created by MolueJames on 2018/10/14.
+//  Copyright © 2018 MolueJames. All rights reserved.
 //
 
 import UIKit
-import MolueCommon
-import MolueUtilities
 import MolueFoundation
+import MolueUtilities
+import MolueCommon
 
-protocol LoginPagePresentableListener: class {
-    func showTest()
+protocol UserLoginPagePresentableListener: class {
+    // 定义一些当前页面需要的业务逻辑, 比如网络请求.
     func routerToForgetPassword()
 }
 
-class LoginPageViewController: MLBaseViewController, MolueLoginPagePresentable, MolueLoginPageControllerable {
-    func pushToViewController(_ controller: UIViewController?) {
-        self.navigationController?.pushViewController(controller!, animated: true)
-    }
-    
-    var listener: LoginPagePresentableListener?
+final class UserLoginPageViewController: MLBaseViewController, UserLoginPagePagePresentable, UserLoginPageViewControllable {
 
+    var listener: UserLoginPagePresentableListener?
+    
     @IBOutlet weak var appIconView: UIView! {
         didSet {
             let color = MLCommonColor.titleLabel
@@ -32,7 +29,7 @@ class LoginPageViewController: MLBaseViewController, MolueLoginPagePresentable, 
     }
     @IBOutlet weak var submitButton: UIButton! {
         didSet {
-//            submitButton.layer.cornerRadius = 23
+            //            submitButton.layer.cornerRadius = 23
         }
     }
     @IBOutlet weak var loginContainView: UIView! {
@@ -47,12 +44,6 @@ class LoginPageViewController: MLBaseViewController, MolueLoginPagePresentable, 
         }
     }
     @IBAction func submitButtonClicked(_ sender: UIButton) {
-        do {
-            try self.listener.unwrap().showTest()
-        } catch {
-            MolueLogger.failure.message(error)
-        }
-        
         let name = MolueNotification.molue_user_login.toName()
         NotificationCenter.default.post(name: name, object: nil)
     }
@@ -64,26 +55,19 @@ class LoginPageViewController: MLBaseViewController, MolueLoginPagePresentable, 
             MolueLogger.failure.error(error)
         }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
 }
 
-extension LoginPageViewController: MLUserInterfaceProtocol {
+extension UserLoginPageViewController: MLUserInterfaceProtocol {
     func queryInformationWithNetwork() {
         
     }
     
     func updateUserInterfaceElements() {
-//        self.hideNavigationBar()
-        self.view.backgroundColor = .white
+        
     }
 }

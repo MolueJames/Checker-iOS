@@ -79,16 +79,16 @@ public extension UIViewController {
 }
 
 public extension UIViewController {
-    static func initializeFromStoryboard() -> Self? {
+    static func initializeFromStoryboard() -> Self {
         do {
             let value = NSStringFromClass(self).separateTypeName()
             let module = try value.module.unwrap()
             let filename = try value.file.unwrap()
             let bundle = try Bundle.create(module: module).unwrap()
             let storyboard = UIStoryboard.init(name: filename, bundle: bundle)
-            return storyboard.initializeViewController(withClass: self)
+            return try storyboard.initializeViewController(withClass: self).unwrap()
         } catch {
-            return MolueLogger.failure.returnNil(error)
+            fatalError("the controller init failure, becase \(error)");
         }
     }
 }

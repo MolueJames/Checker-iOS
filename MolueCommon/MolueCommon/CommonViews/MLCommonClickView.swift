@@ -38,7 +38,7 @@ public class MLCommonClickView: UIView {
             make.left.equalTo(20)
             make.bottom.equalToSuperview()
             make.right.equalToSuperview()
-            make.height.equalTo(MLConfigure.single_line_height)
+            make.height.equalTo(MLConfigure.singleLineHeight)
         })
         return internalLineView
     }()

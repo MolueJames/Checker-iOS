@@ -16,6 +16,7 @@
 		1AADF847209079E10020527B /* MolueAsync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AADF846209079E10020527B /* MolueAsync.swift */; };
 		1AADF84A20907E810020527B /* MolueNameSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AADF84920907E810020527B /* MolueNameSpace.swift */; };
 		1AADF84F2090B1630020527B /* MolueLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AADF84E2090B1630020527B /* MolueLogger.swift */; };
+		1AB888CB2172FF1500862895 /* iPhoneScreenKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB888CA2172FF1500862895 /* iPhoneScreenKit.swift */; };
 		1AEB88312092CFE3002230A3 /* CGFloatExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEB87EC2092CFE3002230A3 /* CGFloatExtensions.swift */; };
 		1AEB88322092CFE3002230A3 /* CGSizeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEB87ED2092CFE3002230A3 /* CGSizeExtensions.swift */; };
 		1AEB88332092CFE3002230A3 /* CGPointExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEB87EE2092CFE3002230A3 /* CGPointExtensions.swift */; };
@@ -105,6 +106,7 @@
 		1AADF846209079E10020527B /* MolueAsync.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MolueAsync.swift; sourceTree = "<group>"; };
 		1AADF84920907E810020527B /* MolueNameSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MolueNameSpace.swift; sourceTree = "<group>"; };
 		1AADF84E2090B1630020527B /* MolueLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueLogger.swift; sourceTree = "<group>"; };
+		1AB888CA2172FF1500862895 /* iPhoneScreenKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPhoneScreenKit.swift; sourceTree = "<group>"; };
 		1AEB87EC2092CFE3002230A3 /* CGFloatExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGFloatExtensions.swift; sourceTree = "<group>"; };
 		1AEB87ED2092CFE3002230A3 /* CGSizeExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGSizeExtensions.swift; sourceTree = "<group>"; };
 		1AEB87EE2092CFE3002230A3 /* CGPointExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGPointExtensions.swift; sourceTree = "<group>"; };
@@ -427,6 +429,7 @@
 			children = (
 				1AEB882E2092CFE3002230A3 /* NSViewExtensions.swift */,
 				1AEB882F2092CFE3002230A3 /* NSImageExtensions.swift */,
+				1AB888CA2172FF1500862895 /* iPhoneScreenKit.swift */,
 			);
 			path = AppKit;
 			sourceTree = "<group>";
@@ -625,6 +628,7 @@
 				1AEB885E2092CFE3002230A3 /* SignedNumericExtensions.swift in Sources */,
 				1AEB886B2092CFE3002230A3 /* NSImageExtensions.swift in Sources */,
 				1AEB88362092CFE3002230A3 /* UITableViewExtensions.swift in Sources */,
+				1AB888CB2172FF1500862895 /* iPhoneScreenKit.swift in Sources */,
 				1AEB885A2092CFE3002230A3 /* SignedIntegerExtensions.swift in Sources */,
 				1AEB88402092CFE3002230A3 /* UINavigationBarExtensions.swift in Sources */,
 				1AEB883C2092CFE3002230A3 /* UIBarButtonItemExtensions.swift in Sources */,

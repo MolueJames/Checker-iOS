@@ -16,7 +16,7 @@ class MLCommonPhotoCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        self.borderWidth = MLConfigure.single_line_height
+        self.borderWidth = MLConfigure.singleLineHeight
         let color = UIColor.init(hex: 0xCCCCCC)
         self.borderColor = color
     }

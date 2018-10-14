@@ -62,7 +62,7 @@ class BookInfoSectionView: UIView {
         internalBottomView.snp.makeConstraints({ (make) in
             make.bottom.equalToSuperview()
             make.left.right.equalToSuperview()
-            make.height.equalTo(MLConfigure.single_line_height)
+            make.height.equalTo(MLConfigure.singleLineHeight)
         })
         return internalBottomView
     }()

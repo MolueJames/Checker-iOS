@@ -10,10 +10,13 @@ import Foundation
 import MolueUtilities
 import ObjectMapper
 
-public protocol MolueLoginPageBuildable: MolueComponentBuildable {
-    func build(listener: MolueLoginPageInteractable) -> UIViewController?
+public protocol UserLoginPageInteractListener: class {
+    //用于定义其他的Component需要定义的协议方法
 }
 
-public protocol MolueLoginPageInteractable: class {
-    func testFunction()
+public protocol UserLoginPageComponentBuildable: MolueComponentBuildable {
+    //定义当前的Component的构造方法.
+    func build(listener: UserLoginPageInteractListener) -> UIViewController
+    
+    func build() -> UIViewController
 }
