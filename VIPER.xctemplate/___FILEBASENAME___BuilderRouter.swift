@@ -1,7 +1,6 @@
 //___FILEHEADER___
 
 import MolueMediator
-import MolueUtilities
 
 protocol ___VARIABLE_productName___RouterInteractable: class {
     var viewRouter: ___VARIABLE_productName___ViewableRouting? { get set }
@@ -12,24 +11,22 @@ protocol ___VARIABLE_productName___ViewControllable: class {
     // 定义一些该页面需要的其他commponent的组件, 比如该页面的childViewController等.
 }
 
-final class ___VARIABLE_productName___ViewableRouter: MolueViewableRouting, ___VARIABLE_productName___ViewableRouting {
+final class ___VARIABLE_productName___ViewableRouter: MolueViewableRouting {
     
-    typealias Interactable = ___VARIABLE_productName___RouterInteractable
-    weak var interactor: Interactable?
+    weak var interactor: ___VARIABLE_productName___RouterInteractable?
     
-    typealias Controllable = ___VARIABLE_productName___ViewControllable
-    weak var controller: Controllable?
+    weak var controller: ___VARIABLE_productName___ViewControllable?
     
     @discardableResult
-    required init(interactor: Interactable, controller: Controllable) {
+    required init(interactor: ___VARIABLE_productName___RouterInteractable, controller: ___VARIABLE_productName___ViewControllable) {
         self.controller = controller
         self.interactor = interactor
         interactor.viewRouter = self
     }
+}
+
+extension ___VARIABLE_productName___ViewableRouter: ___VARIABLE_productName___ViewableRouting {
     
-    deinit {
-        MolueLogger.dealloc.message(String(describing: self))
-    }
 }
 
 protocol ___VARIABLE_productName___InteractListener: class {
@@ -48,9 +45,5 @@ class ___VARIABLE_productName___ComponentBuilder: MolueComponentBuilder, ___VARI
         ___VARIABLE_productName___ViewableRouter(interactor: interactor, controller: controller)
         interactor.listener = listener
         return controller
-    }
-    
-    deinit {
-        MolueLogger.dealloc.message(String(describing: self))
     }
 }

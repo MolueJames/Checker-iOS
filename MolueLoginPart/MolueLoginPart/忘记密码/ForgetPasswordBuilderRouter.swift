@@ -19,8 +19,11 @@ protocol ForgetPasswordViewControllable: class {
 }
 
 final class ForgetPasswordViewableRouter: MolueViewableRouting, ForgetPasswordViewableRouting {
+    
     weak var interactor: ForgetPasswordRouterInteractable?
+    
     weak var controller: ForgetPasswordViewControllable?
+    
     @discardableResult
     required init(interactor: ForgetPasswordRouterInteractable, controller: ForgetPasswordViewControllable) {
         self.controller = controller
