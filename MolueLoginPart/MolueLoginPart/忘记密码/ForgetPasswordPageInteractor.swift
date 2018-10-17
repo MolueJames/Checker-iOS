@@ -20,14 +20,13 @@ protocol ForgetPasswordPagePresentable: MolueInteractorPresentable {
 
 final class ForgetPasswordPageInteractor: MoluePresenterInteractable, ForgetPasswordRouterInteractable, ForgetPasswordPresentableListener {
     
-    typealias Presentable = ForgetPasswordPagePresentable
-    weak var presenter: Presentable?
+    weak var presenter: ForgetPasswordPagePresentable?
     
     var viewRouter: ForgetPasswordViewableRouting?
     
     weak var listener: ForgetPasswordInteractListener?
-    
-    required init(presenter: Presentable) {
+//
+    required init(presenter: ForgetPasswordPagePresentable) {
         self.presenter = presenter
         presenter.listener = self
     }

@@ -19,15 +19,10 @@ protocol ForgetPasswordViewControllable: class {
 }
 
 final class ForgetPasswordViewableRouter: MolueViewableRouting, ForgetPasswordViewableRouting {
-    
-    typealias Interactable = ForgetPasswordRouterInteractable
-    weak var interactor: Interactable?
-    
-    typealias Controllable = ForgetPasswordViewControllable
-    weak var controller: Controllable?
-    
+    weak var interactor: ForgetPasswordRouterInteractable?
+    weak var controller: ForgetPasswordViewControllable?
     @discardableResult
-    required init(interactor: Interactable, controller: Controllable) {
+    required init(interactor: ForgetPasswordRouterInteractable, controller: ForgetPasswordViewControllable) {
         self.controller = controller
         self.interactor = interactor
         interactor.viewRouter = self

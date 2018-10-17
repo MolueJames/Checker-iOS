@@ -7,3 +7,14 @@
 //
 
 import Foundation
+import MolueUtilities
+
+class MLTableViewAdapter {
+    
+    
+    
+    
+    deinit {
+        MolueLogger.dealloc.message(String(describing: self))
+    }
+}
