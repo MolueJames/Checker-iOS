@@ -29,7 +29,7 @@ final class UserLoginPageViewController: MLBaseViewController, UserLoginPagePage
     }
     @IBOutlet weak var submitButton: UIButton! {
         didSet {
-            //            submitButton.layer.cornerRadius = 23
+            submitButton.layer.cornerRadius = 5
         }
     }
     @IBOutlet weak var loginContainView: UIView! {
@@ -41,18 +41,6 @@ final class UserLoginPageViewController: MLBaseViewController, UserLoginPagePage
             loginContainView.layer.shadowRadius = 4;
             loginContainView.layer.shadowOpacity = 0.2
             loginContainView.layer.cornerRadius = 5
-        }
-    }
-    @IBAction func submitButtonClicked(_ sender: UIButton) {
-        let name = MolueNotification.molue_user_login.toName()
-        NotificationCenter.default.post(name: name, object: nil)
-    }
-    
-    @IBAction func forgetButtonClicked(_ sender: UIButton) {
-        do {
-            try self.listener.unwrap().routerToForgetPassword()
-        } catch {
-            MolueLogger.failure.error(error)
         }
     }
     
@@ -68,6 +56,19 @@ extension UserLoginPageViewController: MLUserInterfaceProtocol {
     }
     
     func updateUserInterfaceElements() {
-        
+        self.view.sendSubview(toBack: self.navigationView)
+    }
+    
+    @IBAction func submitButtonClicked(_ sender: UIButton) {
+        let name = MolueNotification.molue_user_login.toName()
+        NotificationCenter.default.post(name: name, object: nil)
+    }
+    
+    @IBAction func forgetButtonClicked(_ sender: UIButton) {
+        do {
+            try self.listener.unwrap().routerToForgetPassword()
+        } catch {
+            MolueLogger.failure.error(error)
+        }
     }
 }

@@ -9,11 +9,6 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="JingDianXingShuJian-1.ttf">
-            <string>~QxLNf</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--User Login Page View Controller-->
         <scene sceneID="eNd-Gd-SYz">
@@ -30,7 +25,7 @@
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gTE-l9-UWu">
-                                <rect key="frame" x="20" y="165" width="335" height="265"/>
+                                <rect key="frame" x="20" y="205" width="335" height="265"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gWi-Cm-QzN">
                                         <rect key="frame" x="0.0" y="25" width="335" height="60"/>
@@ -149,42 +144,12 @@
                                     <constraint firstAttribute="trailing" secondItem="bzU-Ds-Bbl" secondAttribute="trailing" id="qde-N6-JKo"/>
                                 </constraints>
                             </view>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0OA-6m-Jac">
-                                <rect key="frame" x="106.5" y="80" width="162" height="50"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_page_app_icon" translatesAutoresizingMaskIntoConstraints="NO" id="eAd-YN-VPc">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="50" id="Kz5-14-nod"/>
-                                        </constraints>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="安监通" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v9M-SB-dy6">
-                                        <rect key="frame" x="60" y="0.0" width="102" height="50"/>
-                                        <fontDescription key="fontDescription" name="~QxLNf" family="经典行书简" pointSize="34"/>
-                                        <color key="textColor" red="0.10588235294117647" green="0.46666666666666667" blue="0.70980392156862748" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="eAd-YN-VPc" secondAttribute="bottom" id="1ia-XT-lHB"/>
-                                    <constraint firstAttribute="bottom" secondItem="v9M-SB-dy6" secondAttribute="bottom" id="Awe-5x-ThZ"/>
-                                    <constraint firstItem="eAd-YN-VPc" firstAttribute="top" secondItem="0OA-6m-Jac" secondAttribute="top" id="Fo2-9P-8gN"/>
-                                    <constraint firstItem="v9M-SB-dy6" firstAttribute="leading" secondItem="eAd-YN-VPc" secondAttribute="trailing" constant="10" id="N47-Ea-1Jb"/>
-                                    <constraint firstAttribute="trailing" secondItem="v9M-SB-dy6" secondAttribute="trailing" id="UzG-yR-Svk"/>
-                                    <constraint firstItem="eAd-YN-VPc" firstAttribute="leading" secondItem="0OA-6m-Jac" secondAttribute="leading" id="gyi-IC-MU1"/>
-                                    <constraint firstAttribute="height" constant="50" id="qfj-5Z-HRG"/>
-                                    <constraint firstItem="v9M-SB-dy6" firstAttribute="top" secondItem="0OA-6m-Jac" secondAttribute="top" id="w4a-6q-hKY"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="gTE-l9-UWu" firstAttribute="leading" secondItem="hZs-3n-bfh" secondAttribute="leading" constant="20" id="6Ye-t4-Z6G"/>
                             <constraint firstItem="vvv-LM-LPp" firstAttribute="leading" secondItem="hZs-3n-bfh" secondAttribute="leading" id="8QB-MD-fGs"/>
-                            <constraint firstItem="gTE-l9-UWu" firstAttribute="top" secondItem="vvv-LM-LPp" secondAttribute="bottom" constant="-60" id="Ccn-RZ-ns3"/>
-                            <constraint firstItem="0OA-6m-Jac" firstAttribute="centerX" secondItem="FhL-Gc-0Tt" secondAttribute="centerX" id="Wgp-bG-tHb"/>
-                            <constraint firstItem="gTE-l9-UWu" firstAttribute="top" secondItem="0OA-6m-Jac" secondAttribute="bottom" constant="35" id="eaj-aQ-z5Z"/>
+                            <constraint firstItem="gTE-l9-UWu" firstAttribute="top" secondItem="vvv-LM-LPp" secondAttribute="bottom" constant="-20" id="Ccn-RZ-ns3"/>
                             <constraint firstItem="vvv-LM-LPp" firstAttribute="top" secondItem="FhL-Gc-0Tt" secondAttribute="top" id="tNI-tM-elx"/>
                             <constraint firstItem="hZs-3n-bfh" firstAttribute="trailing" secondItem="gTE-l9-UWu" secondAttribute="trailing" constant="20" id="uV0-3x-677"/>
                             <constraint firstItem="hZs-3n-bfh" firstAttribute="trailing" secondItem="vvv-LM-LPp" secondAttribute="trailing" id="yj0-fY-Usb"/>
@@ -192,7 +157,6 @@
                         <viewLayoutGuide key="safeArea" id="hZs-3n-bfh"/>
                     </view>
                     <connections>
-                        <outlet property="appIconView" destination="0OA-6m-Jac" id="DpH-xt-Xvh"/>
                         <outlet property="loginContainView" destination="gTE-l9-UWu" id="aim-iu-ZqL"/>
                         <outlet property="submitButton" destination="jiQ-FT-Lwy" id="bnq-1r-esK"/>
                     </connections>
@@ -203,7 +167,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="login_page_app_icon" width="108.5" height="103.5"/>
         <image name="login_page_background" width="1791.8399658203125" height="1008"/>
         <image name="login_password_content_icon" width="24" height="24"/>
         <image name="login_phoneNo_content_icon" width="24" height="24"/>

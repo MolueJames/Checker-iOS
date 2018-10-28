@@ -11,10 +11,14 @@ import MolueFoundation
 
 protocol ForgetPasswordPresentableListener: class {
     // 定义一些当前页面需要的业务逻辑, 比如网络请求.
+    func bindingTableViewAdapter(with tableView: UITableView)
+    func addToTableView(item: String)
 }
 
-final class ForgetPasswordViewController: MLBaseViewController, ForgetPasswordPagePresentable, ForgetPasswordViewControllable {
+final class ForgetPasswordViewController: MLBaseViewController {
 
+    @IBOutlet weak var tableView: UITableView!
+    
     var listener: ForgetPasswordPresentableListener?
     
     override func viewDidLoad() {
@@ -29,6 +33,33 @@ extension ForgetPasswordViewController: MLUserInterfaceProtocol {
     }
     
     func updateUserInterfaceElements() {
-        
+        do {
+            let listener = try self.listener.unwrap()
+            listener.bindingTableViewAdapter(with: self.tableView)
+        } catch {
+            
+        }
+        let item = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(rightItemClicked))
+        self.navigationItem.rightBarButtonItem = item
     }
+    
+    @IBAction func rightItemClicked(_ Item: UIBarButtonItem) {
+        do {
+            let listener = try self.listener.unwrap()
+            listener.addToTableView(item: "5")
+        } catch {
+            
+        }
+    }
+}
+
+extension ForgetPasswordViewController: ForgetPasswordPagePresentable {
+    
+    
+}
+
+extension ForgetPasswordViewController: ForgetPasswordViewControllable {
+    
+    
+    
 }

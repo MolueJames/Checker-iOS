@@ -8,12 +8,34 @@
 
 import Foundation
 public protocol MolueViewableRouting: class {
-    associatedtype Interactable
     associatedtype Controllerable
-    
-    
-    init(interactor: Interactable, controller: Controllerable)
-    
+    associatedtype Interactable
     var interactor: Interactable? {get set}
     var controller: Controllerable? {get set}
+    init(interactor: Interactable, controller: Controllerable)
+}
+
+public protocol MolueViewControllable: class {
+    func doPopBack(to controller: UIViewController, animated flag: Bool)
+    func doDismiss(animated flag: Bool, completion: (() -> Void)?)
+    func popBackToRoot(animated flag: Bool)
+    func doPopBackFromCurrent()
+}
+
+public extension MolueViewControllable where Self: UIViewController {
+    public func doPopBackFromCurrent() {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    public func doDismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
+        self.dismiss(animated: flag, completion: completion)
+    }
+    
+    public func doPopBack(to controller: UIViewController, animated flag: Bool) {
+        self.navigationController?.popToViewController(controller, animated: flag)
+    }
+    
+    public func popBackToRoot(animated flag: Bool) {
+        self.navigationController?.popToRootViewController(animated: flag)
+    }
 }

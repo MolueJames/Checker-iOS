@@ -28,15 +28,14 @@ final class UserLoginPagePageInteractor: MoluePresenterInteractable, UserLoginPa
             MolueLogger.UIModule.error(error)
         }
     }
-    
-    typealias Presentable = UserLoginPagePagePresentable
-    weak var presenter: Presentable?
+
+    weak var presenter: UserLoginPagePagePresentable?
     
     var viewRouter: UserLoginPageViewableRouting?
     
     weak var listener: UserLoginPageInteractListener?
     
-    required init(presenter: Presentable) {
+    required init(presenter: UserLoginPagePagePresentable) {
         self.presenter = presenter
         presenter.listener = self
     }

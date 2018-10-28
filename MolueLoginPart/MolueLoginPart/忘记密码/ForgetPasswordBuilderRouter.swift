@@ -14,12 +14,12 @@ protocol ForgetPasswordRouterInteractable: class {
     var listener: ForgetPasswordInteractListener? { get set }
 }
 
-protocol ForgetPasswordViewControllable: class {
+protocol ForgetPasswordViewControllable: MolueViewControllable {
     // 定义一些该页面需要的其他commponent的组件, 比如该页面的childViewController等.
 }
 
-final class ForgetPasswordViewableRouter: MolueViewableRouting, ForgetPasswordViewableRouting {
-    
+final class ForgetPasswordViewableRouter: MolueViewableRouting {
+ 
     weak var interactor: ForgetPasswordRouterInteractable?
     
     weak var controller: ForgetPasswordViewControllable?
@@ -30,9 +30,15 @@ final class ForgetPasswordViewableRouter: MolueViewableRouting, ForgetPasswordVi
         self.interactor = interactor
         interactor.viewRouter = self
     }
-    
-    deinit {
-        MolueLogger.dealloc.message(String(describing: self))
+}
+
+extension ForgetPasswordViewableRouter: ForgetPasswordViewableRouting {
+    func popBackFromForgetPassword() {
+        do {
+            try self.controller.unwrap().doPopBackFromCurrent()
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
     }
 }
 
@@ -47,13 +53,9 @@ protocol ForgetPasswordComponentBuildable: MolueComponentBuildable {
 
 class ForgetPasswordComponentBuilder: MolueComponentBuilder, ForgetPasswordComponentBuildable {
     func build(listener: ForgetPasswordInteractListener) -> UIViewController {
-        let controller = ForgetPasswordViewController()
+        let controller = ForgetPasswordViewController.initializeFromStoryboard()
         let interactor = ForgetPasswordPageInteractor(presenter: controller)
         ForgetPasswordViewableRouter(interactor: interactor, controller: controller)
         return controller
-    }
-    
-    deinit {
-        MolueLogger.dealloc.message(String(describing: self))
     }
 }

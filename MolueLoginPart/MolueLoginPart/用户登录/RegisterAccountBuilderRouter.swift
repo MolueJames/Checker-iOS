@@ -2,12 +2,11 @@
 //  RegisterAccountBuilderRouter.swift
 //  MolueLoginPart
 //
-//  Created by MolueJames on 2018/10/13.
+//  Created by MolueJames on 2018/10/26.
 //  Copyright © 2018 MolueJames. All rights reserved.
 //
 
 import MolueMediator
-import MolueUtilities
 
 protocol RegisterAccountRouterInteractable: class {
     var viewRouter: RegisterAccountViewableRouting? { get set }
@@ -18,24 +17,22 @@ protocol RegisterAccountViewControllable: class {
     // 定义一些该页面需要的其他commponent的组件, 比如该页面的childViewController等.
 }
 
-final class RegisterAccountViewableRouter: MolueViewableRouting, RegisterAccountViewableRouting {
+final class RegisterAccountViewableRouter: MolueViewableRouting {
     
-    typealias Interactable = RegisterAccountRouterInteractable
-    weak var interactor: Interactable?
+    weak var interactor: RegisterAccountRouterInteractable?
     
-    typealias Controllable = RegisterAccountViewControllable
-    weak var controller: Controllable?
+    weak var controller: RegisterAccountViewControllable?
     
     @discardableResult
-    required init(interactor: Interactable, controller: Controllable) {
+    required init(interactor: RegisterAccountRouterInteractable, controller: RegisterAccountViewControllable) {
         self.controller = controller
         self.interactor = interactor
         interactor.viewRouter = self
     }
+}
+
+extension RegisterAccountViewableRouter: RegisterAccountViewableRouting {
     
-    deinit {
-        MolueLogger.dealloc.message(String(describing: self))
-    }
 }
 
 protocol RegisterAccountInteractListener: class {
@@ -49,12 +46,10 @@ protocol RegisterAccountComponentBuildable: MolueComponentBuildable {
 
 class RegisterAccountComponentBuilder: MolueComponentBuilder, RegisterAccountComponentBuildable {
     func build(listener: RegisterAccountInteractListener) -> UIViewController {
-        let controller = RegisterAccountViewController.initializeFromStoryboard()
+        let controller = RegisterAccountViewController()
         let interactor = RegisterAccountPageInteractor(presenter: controller)
         RegisterAccountViewableRouter(interactor: interactor, controller: controller)
+        interactor.listener = listener
         return controller
-    }
-    deinit {
-        MolueLogger.dealloc.message(String(describing: self))
     }
 }

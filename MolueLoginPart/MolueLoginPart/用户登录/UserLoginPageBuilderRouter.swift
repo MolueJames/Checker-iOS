@@ -63,8 +63,4 @@ class UserLoginPageComponentBuilder: MolueComponentBuilder, UserLoginPageCompone
         interactor.listener = listener
         return controller
     }
-    
-    deinit {
-        MolueLogger.dealloc.message(String(describing: self))
-    }
 }
