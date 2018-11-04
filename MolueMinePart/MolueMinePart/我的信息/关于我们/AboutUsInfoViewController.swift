@@ -1,21 +1,21 @@
 //
-//  RiskPlanViewController.swift
-//  MolueRiskPart
+//  AboutUsInfoViewController.swift
+//  MolueMinePart
 //
-//  Created by MolueJames on 2018/10/31.
+//  Created by MolueJames on 2018/11/4.
 //  Copyright © 2018 MolueTech. All rights reserved.
 //
 
 import UIKit
 import MolueFoundation
 
-protocol RiskPlanPresentableListener: class {
+protocol AboutUsInfoPresentableListener: class {
     // 定义一些当前页面需要的业务逻辑, 比如网络请求.
 }
 
-final class RiskPlanViewController: MLBaseViewController  {
+final class AboutUsInfoViewController: MLBaseViewController  {
     //MARK: View Controller Properties
-    var listener: RiskPlanPresentableListener?
+    var listener: AboutUsInfoPresentableListener?
     
     //MARK: View Controller Life Cycle
     override func viewDidLoad() {
@@ -24,20 +24,20 @@ final class RiskPlanViewController: MLBaseViewController  {
     }
 }
 
-extension RiskPlanViewController: MLUserInterfaceProtocol {
+extension AboutUsInfoViewController: MLUserInterfaceProtocol {
     func queryInformationWithNetwork() {
         
     }
     
     func updateUserInterfaceElements() {
-        
+        self.title = "关于我们"
     }
 }
 
-extension RiskPlanViewController: RiskPlanPagePresentable {
+extension AboutUsInfoViewController: AboutUsInfoPagePresentable {
     
 }
 
-extension RiskPlanViewController: RiskPlanViewControllable {
+extension AboutUsInfoViewController: AboutUsInfoViewControllable {
     
 }

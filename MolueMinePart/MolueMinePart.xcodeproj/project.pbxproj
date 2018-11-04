@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A0B8992218EA0B1000B1EBC /* UserInfoCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0B898F218EA0B1000B1EBC /* UserInfoCenterViewController.swift */; };
+		1A0B8993218EA0B1000B1EBC /* UserInfoCenterPageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0B8990218EA0B1000B1EBC /* UserInfoCenterPageInteractor.swift */; };
+		1A0B8994218EA0B1000B1EBC /* UserInfoCenterBuilderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0B8991218EA0B1000B1EBC /* UserInfoCenterBuilderRouter.swift */; };
+		1A0B8996218EA416000B1EBC /* UserInfoCenterViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A0B8995218EA416000B1EBC /* UserInfoCenterViewController.storyboard */; };
+		1A0B899A218EB240000B1EBC /* UserInfoCenterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0B8999218EB240000B1EBC /* UserInfoCenterModel.swift */; };
+		1A0B89A6218EBA51000B1EBC /* MessageCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0B89A3218EBA51000B1EBC /* MessageCenterViewController.swift */; };
+		1A0B89A7218EBA51000B1EBC /* MessageCenterPageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0B89A4218EBA51000B1EBC /* MessageCenterPageInteractor.swift */; };
+		1A0B89A8218EBA51000B1EBC /* MessageCenterBuilderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0B89A5218EBA51000B1EBC /* MessageCenterBuilderRouter.swift */; };
+		1A0B89B2218EBAB8000B1EBC /* AboutUsInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0B89AF218EBAB8000B1EBC /* AboutUsInfoViewController.swift */; };
+		1A0B89B3218EBAB8000B1EBC /* AboutUsInfoPageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0B89B0218EBAB8000B1EBC /* AboutUsInfoPageInteractor.swift */; };
+		1A0B89B4218EBAB8000B1EBC /* AboutUsInfoBuilderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0B89B1218EBAB8000B1EBC /* AboutUsInfoBuilderRouter.swift */; };
 		1A1B88A920864D8500C5F4D9 /* MolueMinePart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A1B889F20864D8400C5F4D9 /* MolueMinePart.framework */; };
 		1A1B88AE20864D8500C5F4D9 /* MolueMinePartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1B88AD20864D8500C5F4D9 /* MolueMinePartTests.swift */; };
 		1A1B88B020864D8500C5F4D9 /* MolueMinePart.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A1B88A220864D8500C5F4D9 /* MolueMinePart.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -17,12 +28,10 @@
 		1A5014D02097498400DB931E /* MolueNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5014CF2097498400DB931E /* MolueNetwork.framework */; };
 		1A5014D22097498400DB931E /* MolueUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5014D12097498400DB931E /* MolueUtilities.framework */; };
 		1A65039420DD550E0017F91D /* MolueMine.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A65039320DD550D0017F91D /* MolueMine.xcassets */; };
-		1A730AD120E90D0A008831BC /* MineInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A730ACF20E90D0A008831BC /* MineInfoTableViewCell.swift */; };
-		1A730AD220E90D0A008831BC /* MineInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A730AD020E90D0A008831BC /* MineInfoTableViewCell.xib */; };
-		1A730AD420E9155B008831BC /* MineInfoTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A730AD320E9155B008831BC /* MineInfoTableHeaderView.swift */; };
-		1A730AD620E9156C008831BC /* MineInfoTableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A730AD520E9156C008831BC /* MineInfoTableHeaderView.xib */; };
-		1AAF7B8E20C1978C0051EC18 /* MineInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAF7B8D20C1978C0051EC18 /* MineInfoViewController.swift */; };
-		1AAF7B9020C197B20051EC18 /* MineInfoViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AAF7B8F20C197B20051EC18 /* MineInfoViewController.storyboard */; };
+		1A730AD120E90D0A008831BC /* UserInfoCenterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A730ACF20E90D0A008831BC /* UserInfoCenterTableViewCell.swift */; };
+		1A730AD220E90D0A008831BC /* UserInfoCenterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A730AD020E90D0A008831BC /* UserInfoCenterTableViewCell.xib */; };
+		1A730AD420E9155B008831BC /* UserInfoCenterTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A730AD320E9155B008831BC /* UserInfoCenterTableHeaderView.swift */; };
+		1A730AD620E9156C008831BC /* UserInfoCenterTableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A730AD520E9156C008831BC /* UserInfoCenterTableHeaderView.xib */; };
 		A1B2025363B9BFEEB3CA22AC /* Pods_MolueMinePart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E94F0281829CA034AC7E0935 /* Pods_MolueMinePart.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +46,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A0B898F218EA0B1000B1EBC /* UserInfoCenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoCenterViewController.swift; sourceTree = "<group>"; };
+		1A0B8990218EA0B1000B1EBC /* UserInfoCenterPageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoCenterPageInteractor.swift; sourceTree = "<group>"; };
+		1A0B8991218EA0B1000B1EBC /* UserInfoCenterBuilderRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoCenterBuilderRouter.swift; sourceTree = "<group>"; };
+		1A0B8995218EA416000B1EBC /* UserInfoCenterViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserInfoCenterViewController.storyboard; sourceTree = "<group>"; };
+		1A0B8999218EB240000B1EBC /* UserInfoCenterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoCenterModel.swift; sourceTree = "<group>"; };
+		1A0B89A3218EBA51000B1EBC /* MessageCenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCenterViewController.swift; sourceTree = "<group>"; };
+		1A0B89A4218EBA51000B1EBC /* MessageCenterPageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCenterPageInteractor.swift; sourceTree = "<group>"; };
+		1A0B89A5218EBA51000B1EBC /* MessageCenterBuilderRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCenterBuilderRouter.swift; sourceTree = "<group>"; };
+		1A0B89AF218EBAB8000B1EBC /* AboutUsInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsInfoViewController.swift; sourceTree = "<group>"; };
+		1A0B89B0218EBAB8000B1EBC /* AboutUsInfoPageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsInfoPageInteractor.swift; sourceTree = "<group>"; };
+		1A0B89B1218EBAB8000B1EBC /* AboutUsInfoBuilderRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsInfoBuilderRouter.swift; sourceTree = "<group>"; };
 		1A1B889F20864D8400C5F4D9 /* MolueMinePart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MolueMinePart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A1B88A220864D8500C5F4D9 /* MolueMinePart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MolueMinePart.h; sourceTree = "<group>"; };
 		1A1B88A320864D8500C5F4D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -50,12 +70,10 @@
 		1A5014CF2097498400DB931E /* MolueNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A5014D12097498400DB931E /* MolueUtilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueUtilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A65039320DD550D0017F91D /* MolueMine.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MolueMine.xcassets; sourceTree = "<group>"; };
-		1A730ACF20E90D0A008831BC /* MineInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineInfoTableViewCell.swift; sourceTree = "<group>"; };
-		1A730AD020E90D0A008831BC /* MineInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineInfoTableViewCell.xib; sourceTree = "<group>"; };
-		1A730AD320E9155B008831BC /* MineInfoTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineInfoTableHeaderView.swift; sourceTree = "<group>"; };
-		1A730AD520E9156C008831BC /* MineInfoTableHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineInfoTableHeaderView.xib; sourceTree = "<group>"; };
-		1AAF7B8D20C1978C0051EC18 /* MineInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineInfoViewController.swift; sourceTree = "<group>"; };
-		1AAF7B8F20C197B20051EC18 /* MineInfoViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MineInfoViewController.storyboard; sourceTree = "<group>"; };
+		1A730ACF20E90D0A008831BC /* UserInfoCenterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoCenterTableViewCell.swift; sourceTree = "<group>"; };
+		1A730AD020E90D0A008831BC /* UserInfoCenterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserInfoCenterTableViewCell.xib; sourceTree = "<group>"; };
+		1A730AD320E9155B008831BC /* UserInfoCenterTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoCenterTableHeaderView.swift; sourceTree = "<group>"; };
+		1A730AD520E9156C008831BC /* UserInfoCenterTableHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserInfoCenterTableHeaderView.xib; sourceTree = "<group>"; };
 		23650B8EF1C713F76417DF5C /* Pods-MolueMinePart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueMinePart.release.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueMinePart/Pods-MolueMinePart.release.xcconfig"; sourceTree = "<group>"; };
 		CCE1C3C7822940047D1B665E /* Pods-MolueMinePart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueMinePart.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueMinePart/Pods-MolueMinePart.debug.xcconfig"; sourceTree = "<group>"; };
 		E94F0281829CA034AC7E0935 /* Pods_MolueMinePart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MolueMinePart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,6 +105,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A0B8998218EB1E0000B1EBC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1A0B8999218EB240000B1EBC /* UserInfoCenterModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1A0B899B218EBA0C000B1EBC /* 消息中心 */ = {
+			isa = PBXGroup;
+			children = (
+				1A0B89A3218EBA51000B1EBC /* MessageCenterViewController.swift */,
+				1A0B89A4218EBA51000B1EBC /* MessageCenterPageInteractor.swift */,
+				1A0B89A5218EBA51000B1EBC /* MessageCenterBuilderRouter.swift */,
+			);
+			path = "消息中心";
+			sourceTree = "<group>";
+		};
+		1A0B899C218EBA1E000B1EBC /* 关于我们 */ = {
+			isa = PBXGroup;
+			children = (
+				1A0B89AF218EBAB8000B1EBC /* AboutUsInfoViewController.swift */,
+				1A0B89B0218EBAB8000B1EBC /* AboutUsInfoPageInteractor.swift */,
+				1A0B89B1218EBAB8000B1EBC /* AboutUsInfoBuilderRouter.swift */,
+			);
+			path = "关于我们";
+			sourceTree = "<group>";
+		};
 		1A1B889520864D8400C5F4D9 = {
 			isa = PBXGroup;
 			children = (
@@ -130,10 +176,10 @@
 		1A730ACE20E90CE1008831BC /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				1A730ACF20E90D0A008831BC /* MineInfoTableViewCell.swift */,
-				1A730AD020E90D0A008831BC /* MineInfoTableViewCell.xib */,
-				1A730AD320E9155B008831BC /* MineInfoTableHeaderView.swift */,
-				1A730AD520E9156C008831BC /* MineInfoTableHeaderView.xib */,
+				1A730ACF20E90D0A008831BC /* UserInfoCenterTableViewCell.swift */,
+				1A730AD020E90D0A008831BC /* UserInfoCenterTableViewCell.xib */,
+				1A730AD320E9155B008831BC /* UserInfoCenterTableHeaderView.swift */,
+				1A730AD520E9156C008831BC /* UserInfoCenterTableHeaderView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -141,9 +187,14 @@
 		1AAF7B8C20C197760051EC18 /* 我的信息 */ = {
 			isa = PBXGroup;
 			children = (
+				1A0B899C218EBA1E000B1EBC /* 关于我们 */,
+				1A0B899B218EBA0C000B1EBC /* 消息中心 */,
+				1A0B8998218EB1E0000B1EBC /* Models */,
 				1A730ACE20E90CE1008831BC /* Views */,
-				1AAF7B8D20C1978C0051EC18 /* MineInfoViewController.swift */,
-				1AAF7B8F20C197B20051EC18 /* MineInfoViewController.storyboard */,
+				1A0B898F218EA0B1000B1EBC /* UserInfoCenterViewController.swift */,
+				1A0B8995218EA416000B1EBC /* UserInfoCenterViewController.storyboard */,
+				1A0B8990218EA0B1000B1EBC /* UserInfoCenterPageInteractor.swift */,
+				1A0B8991218EA0B1000B1EBC /* UserInfoCenterBuilderRouter.swift */,
 			);
 			path = "我的信息";
 			sourceTree = "<group>";
@@ -264,9 +315,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A730AD220E90D0A008831BC /* MineInfoTableViewCell.xib in Resources */,
-				1A730AD620E9156C008831BC /* MineInfoTableHeaderView.xib in Resources */,
-				1AAF7B9020C197B20051EC18 /* MineInfoViewController.storyboard in Resources */,
+				1A730AD220E90D0A008831BC /* UserInfoCenterTableViewCell.xib in Resources */,
+				1A0B8996218EA416000B1EBC /* UserInfoCenterViewController.storyboard in Resources */,
+				1A730AD620E9156C008831BC /* UserInfoCenterTableHeaderView.xib in Resources */,
 				1A65039420DD550E0017F91D /* MolueMine.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,9 +357,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A730AD120E90D0A008831BC /* MineInfoTableViewCell.swift in Sources */,
-				1AAF7B8E20C1978C0051EC18 /* MineInfoViewController.swift in Sources */,
-				1A730AD420E9155B008831BC /* MineInfoTableHeaderView.swift in Sources */,
+				1A0B89B4218EBAB8000B1EBC /* AboutUsInfoBuilderRouter.swift in Sources */,
+				1A0B89B2218EBAB8000B1EBC /* AboutUsInfoViewController.swift in Sources */,
+				1A0B8992218EA0B1000B1EBC /* UserInfoCenterViewController.swift in Sources */,
+				1A730AD120E90D0A008831BC /* UserInfoCenterTableViewCell.swift in Sources */,
+				1A0B89A8218EBA51000B1EBC /* MessageCenterBuilderRouter.swift in Sources */,
+				1A0B89B3218EBAB8000B1EBC /* AboutUsInfoPageInteractor.swift in Sources */,
+				1A0B8993218EA0B1000B1EBC /* UserInfoCenterPageInteractor.swift in Sources */,
+				1A0B89A7218EBA51000B1EBC /* MessageCenterPageInteractor.swift in Sources */,
+				1A0B8994218EA0B1000B1EBC /* UserInfoCenterBuilderRouter.swift in Sources */,
+				1A730AD420E9155B008831BC /* UserInfoCenterTableHeaderView.swift in Sources */,
+				1A0B899A218EB240000B1EBC /* UserInfoCenterModel.swift in Sources */,
+				1A0B89A6218EBA51000B1EBC /* MessageCenterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

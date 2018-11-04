@@ -73,8 +73,6 @@ extension BookInfoViewController: MLUserInterfaceProtocol {
         
         self.titleLabel.text = "文书列表"
         self.navigationItem.titleView = self.titleLabel
-        
-        MolueLogger.UIModule.message(self.parent)
     }
 }
 

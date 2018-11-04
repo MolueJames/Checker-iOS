@@ -49,7 +49,15 @@ public enum MolueComponent {
             return "MolueMinePart.\(self.rawValue)";
         }
     
-        case minePage = "MinePageViewController"
+        case UserCenter = "UserInfoCenterComponentBuilder"
+    }
+    
+    public enum Risk: String, MolueBuilderPathProtocol {
+        case RiskList = "PotentialRiskComponentBuilder"
+        
+        public func builderPath() -> String {
+            return "MolueRiskPart.\(self.rawValue)"
+        }
     }
     
     public enum Login: String, MolueBuilderPathProtocol {

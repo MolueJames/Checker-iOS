@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RiskInfoTableViewCell: UITableViewCell {
+class PotentialRiskTableViewCell: UITableViewCell {
     @IBOutlet private weak var titleLabel: UILabel!
     
     override func awakeFromNib() {
@@ -27,7 +27,7 @@ class RiskInfoTableViewCell: UITableViewCell {
     public func update(title: String) {
         self.titleLabel.text = title
     }
-    
+
     override var frame:CGRect{
         didSet {
             var new = self.frame

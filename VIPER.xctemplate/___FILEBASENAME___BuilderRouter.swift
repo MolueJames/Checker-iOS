@@ -7,7 +7,7 @@ protocol ___VARIABLE_productName___RouterInteractable: class {
     var listener: ___VARIABLE_productName___InteractListener? { get set }
 }
 
-protocol ___VARIABLE_productName___ViewControllable: class {
+protocol ___VARIABLE_productName___ViewControllable: MolueViewControllable {
     // 定义一些该页面需要的其他commponent的组件, 比如该页面的childViewController等.
 }
 

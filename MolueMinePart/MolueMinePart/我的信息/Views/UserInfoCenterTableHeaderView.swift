@@ -8,6 +8,6 @@
 
 import UIKit
 
-class MineInfoTableHeaderView: UIView {
+class UserInfoCenterTableHeaderView: UIView {
 
 }
