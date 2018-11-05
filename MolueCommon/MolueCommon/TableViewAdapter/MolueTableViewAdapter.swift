@@ -9,7 +9,6 @@
 import Foundation
 import MolueUtilities
 
-
 open class MLTableViewAdapter<T: UITableViewCell, U>: NSObject, UITableViewDataSource, UITableViewDelegate {
     private var tableView: UITableView!
     private var valueList: [U]

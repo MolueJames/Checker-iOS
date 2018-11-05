@@ -23,7 +23,6 @@
 		1A24022820E5337A00FC3EBA /* EnterpriseInfoNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A24022720E5337A00FC3EBA /* EnterpriseInfoNavigator.swift */; };
 		1A24022B20E5363600FC3EBA /* SecurityAdminiNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A24022A20E5363600FC3EBA /* SecurityAdminiNavigator.swift */; };
 		1A24022D20E536A700FC3EBA /* SecurityAdminiDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A24022C20E536A700FC3EBA /* SecurityAdminiDataManager.swift */; };
-		1A35D7F820DBC999002ED3CB /* HomeInfoDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A35D7F720DBC999002ED3CB /* HomeInfoDataManager.swift */; };
 		1A35D7FA20DBC9BF002ED3CB /* EnterpriseInfoDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A35D7F920DBC9BF002ED3CB /* EnterpriseInfoDataManager.swift */; };
 		1A43BC2420C3AEE70093855B /* HomeInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A43BC2220C3AEE70093855B /* HomeInfoCollectionViewCell.swift */; };
 		1A43BC2520C3AEE70093855B /* HomeInfoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A43BC2320C3AEE70093855B /* HomeInfoCollectionViewCell.xib */; };
@@ -32,13 +31,19 @@
 		1A43BC2F20C3CAA60093855B /* EnterpriseInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A43BC2D20C3CAA60093855B /* EnterpriseInfoTableViewCell.swift */; };
 		1A43BC3020C3CAA60093855B /* EnterpriseInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A43BC2E20C3CAA60093855B /* EnterpriseInfoTableViewCell.xib */; };
 		1A43BC3320C3CEAA0093855B /* EnterpriseInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A43BC3220C3CEAA0093855B /* EnterpriseInfoModel.swift */; };
-		1A5014A220944DF000DB931E /* HomeInfoViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A5014A120944DF000DB931E /* HomeInfoViewController.storyboard */; };
-		1A5014A420944DFE00DB931E /* HomeInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5014A320944DFE00DB931E /* HomeInfoViewController.swift */; };
 		1A5014AD2094B13400DB931E /* MolueCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5014AC2094B13400DB931E /* MolueCommon.framework */; };
 		1A5014C22097494600DB931E /* MolueDatabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5014C12097494600DB931E /* MolueDatabase.framework */; };
 		1A5014C42097495300DB931E /* MolueNavigator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5014C32097495300DB931E /* MolueNavigator.framework */; };
 		1A5014C82097496300DB931E /* MolueUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5014C72097496300DB931E /* MolueUtilities.framework */; };
 		1A5014D42097499500DB931E /* MolueFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5014D32097499500DB931E /* MolueFoundation.framework */; };
+		1A522EBD2190261900094A8A /* HomeInfoPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A522EBA2190261900094A8A /* HomeInfoPageViewController.swift */; };
+		1A522EBE2190261900094A8A /* HomeInfoPagePageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A522EBB2190261900094A8A /* HomeInfoPagePageInteractor.swift */; };
+		1A522EBF2190261900094A8A /* HomeInfoPageBuilderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A522EBC2190261900094A8A /* HomeInfoPageBuilderRouter.swift */; };
+		1A522EC121902B0300094A8A /* HomeInfoPageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A522EC021902B0300094A8A /* HomeInfoPageViewController.storyboard */; };
+		1A522EC62190356100094A8A /* DailyCheckTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A522EC32190356100094A8A /* DailyCheckTaskViewController.swift */; };
+		1A522EC72190356100094A8A /* DailyCheckTaskPageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A522EC42190356100094A8A /* DailyCheckTaskPageInteractor.swift */; };
+		1A522EC82190356100094A8A /* DailyCheckTaskBuilderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A522EC52190356100094A8A /* DailyCheckTaskBuilderRouter.swift */; };
+		1A522ECA2190357300094A8A /* DailyCheckTaskViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A522EC92190357300094A8A /* DailyCheckTaskViewController.storyboard */; };
 		1A58263A20B7123E007FBFC7 /* MolueNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A58263920B7123E007FBFC7 /* MolueNetwork.framework */; };
 		1A602F8520A87D58003AD583 /* HomeInfoTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A602F8420A87D58003AD583 /* HomeInfoTableHeaderView.swift */; };
 		1A602F8C20A88095003AD583 /* HomeInfoTableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A602F8B20A88095003AD583 /* HomeInfoTableHeaderView.xib */; };
@@ -71,7 +76,6 @@
 		1ABDCA9720C5721B0062DE71 /* IncreaseAdminiFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1ABDCA9620C5721B0062DE71 /* IncreaseAdminiFooterView.xib */; };
 		1ABDCA9A20C5798B0062DE71 /* SecurityAdminiTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABDCA9820C5798B0062DE71 /* SecurityAdminiTableViewCell.swift */; };
 		1ABDCA9B20C5798B0062DE71 /* SecurityAdminiTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1ABDCA9920C5798B0062DE71 /* SecurityAdminiTableViewCell.xib */; };
-		1AEEC11E20E515CC006C3B75 /* HomeInfoNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEEC11D20E515CC006C3B75 /* HomeInfoNavigator.swift */; };
 		EF01F517C22ED0361C323767 /* Pods_MolueHomePart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 010F6973D5E1725577EE6B03 /* Pods_MolueHomePart.framework */; };
 /* End PBXBuildFile section */
 
@@ -106,7 +110,6 @@
 		1A24022720E5337A00FC3EBA /* EnterpriseInfoNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterpriseInfoNavigator.swift; sourceTree = "<group>"; };
 		1A24022A20E5363600FC3EBA /* SecurityAdminiNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityAdminiNavigator.swift; sourceTree = "<group>"; };
 		1A24022C20E536A700FC3EBA /* SecurityAdminiDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityAdminiDataManager.swift; sourceTree = "<group>"; };
-		1A35D7F720DBC999002ED3CB /* HomeInfoDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInfoDataManager.swift; sourceTree = "<group>"; };
 		1A35D7F920DBC9BF002ED3CB /* EnterpriseInfoDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterpriseInfoDataManager.swift; sourceTree = "<group>"; };
 		1A43BC2220C3AEE70093855B /* HomeInfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInfoCollectionViewCell.swift; sourceTree = "<group>"; };
 		1A43BC2320C3AEE70093855B /* HomeInfoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeInfoCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -115,14 +118,20 @@
 		1A43BC2D20C3CAA60093855B /* EnterpriseInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterpriseInfoTableViewCell.swift; sourceTree = "<group>"; };
 		1A43BC2E20C3CAA60093855B /* EnterpriseInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EnterpriseInfoTableViewCell.xib; sourceTree = "<group>"; };
 		1A43BC3220C3CEAA0093855B /* EnterpriseInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterpriseInfoModel.swift; sourceTree = "<group>"; };
-		1A5014A120944DF000DB931E /* HomeInfoViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeInfoViewController.storyboard; sourceTree = "<group>"; };
-		1A5014A320944DFE00DB931E /* HomeInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInfoViewController.swift; sourceTree = "<group>"; };
 		1A5014AC2094B13400DB931E /* MolueCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A5014C12097494600DB931E /* MolueDatabase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueDatabase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A5014C32097495300DB931E /* MolueNavigator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueNavigator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A5014C52097495B00DB931E /* MolueNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A5014C72097496300DB931E /* MolueUtilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueUtilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A5014D32097499500DB931E /* MolueFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A522EBA2190261900094A8A /* HomeInfoPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInfoPageViewController.swift; sourceTree = "<group>"; };
+		1A522EBB2190261900094A8A /* HomeInfoPagePageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInfoPagePageInteractor.swift; sourceTree = "<group>"; };
+		1A522EBC2190261900094A8A /* HomeInfoPageBuilderRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInfoPageBuilderRouter.swift; sourceTree = "<group>"; };
+		1A522EC021902B0300094A8A /* HomeInfoPageViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeInfoPageViewController.storyboard; sourceTree = "<group>"; };
+		1A522EC32190356100094A8A /* DailyCheckTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyCheckTaskViewController.swift; sourceTree = "<group>"; };
+		1A522EC42190356100094A8A /* DailyCheckTaskPageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyCheckTaskPageInteractor.swift; sourceTree = "<group>"; };
+		1A522EC52190356100094A8A /* DailyCheckTaskBuilderRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyCheckTaskBuilderRouter.swift; sourceTree = "<group>"; };
+		1A522EC92190357300094A8A /* DailyCheckTaskViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DailyCheckTaskViewController.storyboard; sourceTree = "<group>"; };
 		1A58263920B7123E007FBFC7 /* MolueNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A602F8420A87D58003AD583 /* HomeInfoTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInfoTableHeaderView.swift; sourceTree = "<group>"; };
 		1A602F8B20A88095003AD583 /* HomeInfoTableHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeInfoTableHeaderView.xib; sourceTree = "<group>"; };
@@ -155,7 +164,6 @@
 		1ABDCA9620C5721B0062DE71 /* IncreaseAdminiFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IncreaseAdminiFooterView.xib; sourceTree = "<group>"; };
 		1ABDCA9820C5798B0062DE71 /* SecurityAdminiTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityAdminiTableViewCell.swift; sourceTree = "<group>"; };
 		1ABDCA9920C5798B0062DE71 /* SecurityAdminiTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecurityAdminiTableViewCell.xib; sourceTree = "<group>"; };
-		1AEEC11D20E515CC006C3B75 /* HomeInfoNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInfoNavigator.swift; sourceTree = "<group>"; };
 		9468AE17912D4AEEBE6E1EFA /* Pods-MolueHomePart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueHomePart.release.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueHomePart/Pods-MolueHomePart.release.xcconfig"; sourceTree = "<group>"; };
 		C7C163FB01CFAE81C039463E /* Pods-MolueHomePart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueHomePart.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueHomePart/Pods-MolueHomePart.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -218,6 +226,7 @@
 		1A1B88C520864D9500C5F4D9 /* MolueHomePart */ = {
 			isa = PBXGroup;
 			children = (
+				1A522EC22190350A00094A8A /* 每日任务 */,
 				1A65039520DD552A0017F91D /* MolueHome.xcassets */,
 				1A24021E20E52F4C00FC3EBA /* 政策通知 */,
 				1A24021D20E52F3700FC3EBA /* 法律法规 */,
@@ -314,8 +323,6 @@
 		1A35D7F620DBC988002ED3CB /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				1AEEC11D20E515CC006C3B75 /* HomeInfoNavigator.swift */,
-				1A35D7F720DBC999002ED3CB /* HomeInfoDataManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -344,10 +351,23 @@
 			children = (
 				1A35D7F620DBC988002ED3CB /* Models */,
 				1A602F8220A87D37003AD583 /* Views */,
-				1A5014A320944DFE00DB931E /* HomeInfoViewController.swift */,
-				1A5014A120944DF000DB931E /* HomeInfoViewController.storyboard */,
+				1A522EBA2190261900094A8A /* HomeInfoPageViewController.swift */,
+				1A522EBB2190261900094A8A /* HomeInfoPagePageInteractor.swift */,
+				1A522EBC2190261900094A8A /* HomeInfoPageBuilderRouter.swift */,
+				1A522EC021902B0300094A8A /* HomeInfoPageViewController.storyboard */,
 			);
 			path = "应用首页";
+			sourceTree = "<group>";
+		};
+		1A522EC22190350A00094A8A /* 每日任务 */ = {
+			isa = PBXGroup;
+			children = (
+				1A522EC32190356100094A8A /* DailyCheckTaskViewController.swift */,
+				1A522EC92190357300094A8A /* DailyCheckTaskViewController.storyboard */,
+				1A522EC42190356100094A8A /* DailyCheckTaskPageInteractor.swift */,
+				1A522EC52190356100094A8A /* DailyCheckTaskBuilderRouter.swift */,
+			);
+			path = "每日任务";
 			sourceTree = "<group>";
 		};
 		1A602F8220A87D37003AD583 /* Views */ = {
@@ -605,11 +625,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A5014A220944DF000DB931E /* HomeInfoViewController.storyboard in Resources */,
 				1AAF7B7F20C1971B0051EC18 /* BasicArchivesViewController.storyboard in Resources */,
 				1A43BC3020C3CAA60093855B /* EnterpriseInfoTableViewCell.xib in Resources */,
 				1A24021C20E52DFB00FC3EBA /* SelfRiskCheckViewController.storyboard in Resources */,
 				1ABDCA9720C5721B0062DE71 /* IncreaseAdminiFooterView.xib in Resources */,
+				1A522ECA2190357300094A8A /* DailyCheckTaskViewController.storyboard in Resources */,
 				1A24022420E5309100FC3EBA /* LawRegulationViewController.storyboard in Resources */,
 				1AAF7B8620C1971B0051EC18 /* DangerMachineryViewController.storyboard in Resources */,
 				1A730AEF20EBBC49008831BC /* PolicyDetailViewController.storyboard in Resources */,
@@ -617,6 +637,7 @@
 				1AAF7B8A20C1971B0051EC18 /* RiskFeatureViewController.storyboard in Resources */,
 				1A602F8C20A88095003AD583 /* HomeInfoTableHeaderView.xib in Resources */,
 				1ABDCA9B20C5798B0062DE71 /* SecurityAdminiTableViewCell.xib in Resources */,
+				1A522EC121902B0300094A8A /* HomeInfoPageViewController.storyboard in Resources */,
 				1A06557E20A9EE020016CA86 /* HomeInfoTableViewCell.xib in Resources */,
 				1A43BC2520C3AEE70093855B /* HomeInfoCollectionViewCell.xib in Resources */,
 				1A43BC2920C3AF2B0093855B /* HomeInfoHeaderView.xib in Resources */,
@@ -673,6 +694,7 @@
 				1A43BC2F20C3CAA60093855B /* EnterpriseInfoTableViewCell.swift in Sources */,
 				1A43BC2420C3AEE70093855B /* HomeInfoCollectionViewCell.swift in Sources */,
 				1AB0670320EFB06B00619570 /* LawRegulationTableViewCell.swift in Sources */,
+				1A522EBE2190261900094A8A /* HomeInfoPagePageInteractor.swift in Sources */,
 				1A35D7FA20DBC9BF002ED3CB /* EnterpriseInfoDataManager.swift in Sources */,
 				1ABDCA9A20C5798B0062DE71 /* SecurityAdminiTableViewCell.swift in Sources */,
 				1AAF7B8520C1971B0051EC18 /* ContactInfoViewController.swift in Sources */,
@@ -682,21 +704,23 @@
 				1A24022020E52F7800FC3EBA /* LawRegulationViewController.swift in Sources */,
 				1AAF7B8720C1971B0051EC18 /* DangerMachineryViewController.swift in Sources */,
 				1A730AEB20EBBC02008831BC /* PolicyDetailViewController.swift in Sources */,
+				1A522EC62190356100094A8A /* DailyCheckTaskViewController.swift in Sources */,
 				1AB0670720EFB61D00619570 /* PolicyNoticeTableViewCell.swift in Sources */,
-				1A5014A420944DFE00DB931E /* HomeInfoViewController.swift in Sources */,
+				1A522EC82190356100094A8A /* DailyCheckTaskBuilderRouter.swift in Sources */,
+				1A522EBF2190261900094A8A /* HomeInfoPageBuilderRouter.swift in Sources */,
 				1A43BC2720C3AF190093855B /* HomeInfoHeaderView.swift in Sources */,
 				1A1084FD20ECF1DD004E365A /* IncreaseAdminiNavigator.swift in Sources */,
 				1AAF7B8120C1971B0051EC18 /* IncreaseAdminiViewController.swift in Sources */,
 				1A602F8520A87D58003AD583 /* HomeInfoTableHeaderView.swift in Sources */,
 				1A24022D20E536A700FC3EBA /* SecurityAdminiDataManager.swift in Sources */,
+				1A522EC72190356100094A8A /* DailyCheckTaskPageInteractor.swift in Sources */,
 				1AAF7B6820C1970A0051EC18 /* EnterpriseInfoViewController.swift in Sources */,
 				1A06557D20A9EE020016CA86 /* HomeInfoTableViewCell.swift in Sources */,
 				1A43BC3320C3CEAA0093855B /* EnterpriseInfoModel.swift in Sources */,
 				1A1084FF20ECF1FC004E365A /* IncreaseAdminiDataManager.swift in Sources */,
 				1A24022B20E5363600FC3EBA /* SecurityAdminiNavigator.swift in Sources */,
 				1ABDCA9520C5720F0062DE71 /* IncreaseAdminiFooterView.swift in Sources */,
-				1A35D7F820DBC999002ED3CB /* HomeInfoDataManager.swift in Sources */,
-				1AEEC11E20E515CC006C3B75 /* HomeInfoNavigator.swift in Sources */,
+				1A522EBD2190261900094A8A /* HomeInfoPageViewController.swift in Sources */,
 				1AAF7B8820C1971B0051EC18 /* EnterpriseRiskViewController.swift in Sources */,
 				1A730AED20EBBC2E008831BC /* RegulationDetailViewController.swift in Sources */,
 			);

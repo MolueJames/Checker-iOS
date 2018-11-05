@@ -47,7 +47,7 @@ extension UserInfoCenterPageInteractor: UserInfoCenterPresentableListener {
     func bindingTableViewAdapter(with tableView: UITableView) {
         self.tableViewAdapter = MLTableViewAdapter<UserInfoCenterTableViewCell, UserInfoCenterMethod>(with: self.valueList)
         self.tableViewAdapter?.bindingTableView(tableView)
-        self.tableViewAdapter?.heightForEachRow(60)
+        self.tableViewAdapter?.heightForEachRow(50)
         self.tableViewAdapter?.cellForRowAtClosure({ (indexPath, cell, item) in
             cell.refreshSubviews(with: item)
         })

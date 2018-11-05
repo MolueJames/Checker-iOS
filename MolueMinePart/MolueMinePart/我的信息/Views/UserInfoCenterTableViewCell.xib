@@ -47,7 +47,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aQh-Fo-lbU">
-                        <rect key="frame" x="20" y="0.0" width="300" height="0.5"/>
+                        <rect key="frame" x="20" y="54" width="300" height="0.5"/>
                         <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="0.5" id="yPf-Ic-9sp"/>
@@ -55,9 +55,9 @@
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="aQh-Fo-lbU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="3z6-Fw-Jo0"/>
                     <constraint firstItem="aQh-Fo-lbU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="4Tc-pT-5Mf"/>
                     <constraint firstItem="qKy-aN-gW8" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Rn9-0j-7or"/>
+                    <constraint firstAttribute="bottom" secondItem="aQh-Fo-lbU" secondAttribute="bottom" id="UIG-aa-JrC"/>
                     <constraint firstAttribute="trailing" secondItem="aQh-Fo-lbU" secondAttribute="trailing" id="a9B-S7-8ek"/>
                     <constraint firstItem="62Q-2x-oqV" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="asG-R0-glH"/>
                     <constraint firstItem="Jdw-Xj-Y9D" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="b2A-sF-Gri"/>

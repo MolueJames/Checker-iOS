@@ -42,7 +42,7 @@ extension AppDelegate {
     
     private func rootViewController() -> UIViewController {
         var viewControllers = [MLNavigationController]()
-//        self.addNavigationController(module: .Home, path: HomePath.HomePageInfo.rawValue, viewControllers: &viewControllers, title:"首页", imageName: "molue_tabbar_home")
+        self.buildHomePartEnter(with: &viewControllers)
         self.buildRiskPartEnter(with: &viewControllers)
 //        self.addNavigationController(module: .Book, path: BookPath.BookInfo.rawValue, viewControllers: &viewControllers, title:"文书", imageName: "molue_tabbar_book")
         self.buildMinePartEnter(with: &viewControllers)
@@ -80,7 +80,19 @@ extension AppDelegate {
             let builderFactory = MolueBuilderFactory<MolueComponent.Mine>(.UserCenter)
             let builder: UserInfoCenterComponentBuildable? = builderFactory.queryBuilder()
             let controller = try builder.unwrap().build()
-            controller.tabBarItem = UITabBarItem(title: "我的", image: UIImage.init(named: "molue_tabbar_mine"), tag: viewControllers.count)
+            controller.tabBarItem = UITabBarItem(title: "首页", image: UIImage.init(named: "molue_tabbar_mine"), tag: viewControllers.count)
+            viewControllers.append(MLNavigationController(rootViewController: controller))
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+    }
+    
+    private func buildHomePartEnter(with viewControllers: inout [MLNavigationController]) {
+        do {
+            let builderFactory = MolueBuilderFactory<MolueComponent.Home>(.HomeInfoPage)
+            let builder: HomeInfoPageComponentBuildable? = builderFactory.queryBuilder()
+            let controller = try builder.unwrap().build()
+            controller.tabBarItem = UITabBarItem(title: "我的", image: UIImage.init(named: "molue_tabbar_home"), tag: viewControllers.count)
             viewControllers.append(MLNavigationController(rootViewController: controller))
         } catch {
             MolueLogger.UIModule.error(error)

@@ -23,21 +23,12 @@ final class UserInfoCenterViewController: MLBaseViewController  {
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.tableHeaderView = headerView
-            tableView.tableFooterView = lineFooterView
         }
     }
     lazy private var headerView: UserInfoCenterTableHeaderView! = {
         let headerView: UserInfoCenterTableHeaderView = UserInfoCenterTableHeaderView.createFromXib()
         headerView.frame = CGRect(x: 0, y: 0, width: MLConfigure.ScreenWidth, height: 75)
         return headerView
-    }()
-
-    lazy private var lineFooterView: UIView! = {
-        let lineFooterView = UIView()
-        let frame = CGRect(x: 20, y: 0, width: MLConfigure.ScreenWidth, height: 0.5)
-        lineFooterView.frame = frame
-        lineFooterView.backgroundColor = MLCommonColor.commonLine
-        return lineFooterView
     }()
     
     lazy var titleLabel: UILabel! = {

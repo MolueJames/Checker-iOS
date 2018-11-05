@@ -398,7 +398,7 @@
 				TargetAttributes = {
 					1A7D9B5F2086470200FA997D = {
 						CreatedOnToolsVersion = 9.3;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1010;
 					};
 					1A7D9B682086470300FA997D = {
 						CreatedOnToolsVersion = 9.3;
@@ -697,6 +697,7 @@
 			baseConfigurationReference = 0B3FA8D5CD50C93A81938144 /* Pods-MolueCommon.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -716,6 +717,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Molue.MolueCommon;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -726,6 +728,7 @@
 			baseConfigurationReference = 35A07F602272B6C2B8044368 /* Pods-MolueCommon.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;

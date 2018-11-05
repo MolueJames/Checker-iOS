@@ -48,7 +48,7 @@ class HomeInfoTableHeaderView: UIView {
     }
     
     @IBAction private func basicInfoControlClicked(_ sender: Any) {
-        self.basicInfoCommand.onNext(())
+        self.dailyTaskCommand.onNext(())
     }
     @IBAction private func riskCheckControlClicked(_ sender: Any) {
         self.riskCheckCommand.onNext(())
@@ -104,7 +104,7 @@ class HomeInfoTableHeaderView: UIView {
     
     let selectedCommand = PublishSubject<String>()
     /// 基础信息
-    let basicInfoCommand = PublishSubject<Void>()
+    let dailyTaskCommand = PublishSubject<Void>()
     /// 隐患自查
     let riskCheckCommand = PublishSubject<Void>()
     /// 政策通知
