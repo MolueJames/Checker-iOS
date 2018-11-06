@@ -46,7 +46,7 @@ protocol CheckTaskDetailComponentBuildable: MolueComponentBuildable {
 
 class CheckTaskDetailComponentBuilder: MolueComponentBuilder, CheckTaskDetailComponentBuildable {
     func build(listener: CheckTaskDetailInteractListener) -> UIViewController {
-        let controller = CheckTaskDetailViewController()
+        let controller = CheckTaskDetailViewController.initializeFromStoryboard()
         let interactor = CheckTaskDetailPageInteractor(presenter: controller)
         CheckTaskDetailViewableRouter(interactor: interactor, controller: controller)
         interactor.listener = listener

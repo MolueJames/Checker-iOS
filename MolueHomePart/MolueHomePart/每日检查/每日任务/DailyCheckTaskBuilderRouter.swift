@@ -7,14 +7,16 @@
 //
 
 import MolueMediator
+import MolueUtilities
 
-protocol DailyCheckTaskRouterInteractable: class {
+protocol DailyCheckTaskRouterInteractable: CheckTaskDetailInteractListener {
     var viewRouter: DailyCheckTaskViewableRouting? { get set }
     var listener: DailyCheckTaskInteractListener? { get set }
 }
 
 protocol DailyCheckTaskViewControllable: MolueViewControllable {
     // 定义一些该页面需要的其他commponent的组件, 比如该页面的childViewController等.
+    
 }
 
 final class DailyCheckTaskViewableRouter: MolueViewableRouting {
@@ -32,7 +34,16 @@ final class DailyCheckTaskViewableRouter: MolueViewableRouting {
 }
 
 extension DailyCheckTaskViewableRouter: DailyCheckTaskViewableRouting {
-    
+    func pushToCheckTaskDetailController() {
+        do {
+            let listener = try self.interactor.unwrap()
+            let builder = CheckTaskDetailComponentBuilder()
+            let controller = builder.build(listener: listener)
+            MoluePageNavigator().pushViewController(controller)
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+    }
 }
 
 protocol DailyCheckTaskInteractListener: class {

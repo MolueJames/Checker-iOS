@@ -27,6 +27,12 @@
 		1A346FC721915C0400CB534B /* CheckTaskDetailPageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A346FC421915C0400CB534B /* CheckTaskDetailPageInteractor.swift */; };
 		1A346FC821915C0400CB534B /* CheckTaskDetailBuilderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A346FC521915C0400CB534B /* CheckTaskDetailBuilderRouter.swift */; };
 		1A346FCA21915C2100CB534B /* CheckTaskDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A346FC921915C2100CB534B /* CheckTaskDetailViewController.storyboard */; };
+		1A346FCE21919A6C00CB534B /* DailyCheckTaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A346FCC21919A6C00CB534B /* DailyCheckTaskTableViewCell.swift */; };
+		1A346FCF21919A6C00CB534B /* DailyCheckTaskTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A346FCD21919A6C00CB534B /* DailyCheckTaskTableViewCell.xib */; };
+		1A346FD92191ABF600CB534B /* RiskCheckTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A346FD62191ABF600CB534B /* RiskCheckTaskViewController.swift */; };
+		1A346FDA2191ABF600CB534B /* RiskCheckTaskPageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A346FD72191ABF600CB534B /* RiskCheckTaskPageInteractor.swift */; };
+		1A346FDB2191ABF600CB534B /* RiskCheckTaskBuilderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A346FD82191ABF600CB534B /* RiskCheckTaskBuilderRouter.swift */; };
+		1A346FDD2191AC4100CB534B /* RiskCheckTaskViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A346FDC2191AC4100CB534B /* RiskCheckTaskViewController.storyboard */; };
 		1A35D7FA20DBC9BF002ED3CB /* EnterpriseInfoDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A35D7F920DBC9BF002ED3CB /* EnterpriseInfoDataManager.swift */; };
 		1A43BC2420C3AEE70093855B /* HomeInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A43BC2220C3AEE70093855B /* HomeInfoCollectionViewCell.swift */; };
 		1A43BC2520C3AEE70093855B /* HomeInfoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A43BC2320C3AEE70093855B /* HomeInfoCollectionViewCell.xib */; };
@@ -124,6 +130,12 @@
 		1A346FC421915C0400CB534B /* CheckTaskDetailPageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTaskDetailPageInteractor.swift; sourceTree = "<group>"; };
 		1A346FC521915C0400CB534B /* CheckTaskDetailBuilderRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTaskDetailBuilderRouter.swift; sourceTree = "<group>"; };
 		1A346FC921915C2100CB534B /* CheckTaskDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CheckTaskDetailViewController.storyboard; sourceTree = "<group>"; };
+		1A346FCC21919A6C00CB534B /* DailyCheckTaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyCheckTaskTableViewCell.swift; sourceTree = "<group>"; };
+		1A346FCD21919A6C00CB534B /* DailyCheckTaskTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailyCheckTaskTableViewCell.xib; sourceTree = "<group>"; };
+		1A346FD62191ABF600CB534B /* RiskCheckTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskCheckTaskViewController.swift; sourceTree = "<group>"; };
+		1A346FD72191ABF600CB534B /* RiskCheckTaskPageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskCheckTaskPageInteractor.swift; sourceTree = "<group>"; };
+		1A346FD82191ABF600CB534B /* RiskCheckTaskBuilderRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskCheckTaskBuilderRouter.swift; sourceTree = "<group>"; };
+		1A346FDC2191AC4100CB534B /* RiskCheckTaskViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RiskCheckTaskViewController.storyboard; sourceTree = "<group>"; };
 		1A35D7F920DBC9BF002ED3CB /* EnterpriseInfoDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterpriseInfoDataManager.swift; sourceTree = "<group>"; };
 		1A43BC2220C3AEE70093855B /* HomeInfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInfoCollectionViewCell.swift; sourceTree = "<group>"; };
 		1A43BC2320C3AEE70093855B /* HomeInfoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeInfoCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -351,6 +363,15 @@
 			path = "检查详情";
 			sourceTree = "<group>";
 		};
+		1A346FCB21919A0600CB534B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1A346FCC21919A6C00CB534B /* DailyCheckTaskTableViewCell.swift */,
+				1A346FCD21919A6C00CB534B /* DailyCheckTaskTableViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		1A35D7F620DBC988002ED3CB /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -393,6 +414,7 @@
 		1A522EC22190350A00094A8A /* 每日任务 */ = {
 			isa = PBXGroup;
 			children = (
+				1A346FCB21919A0600CB534B /* Views */,
 				1A522EC32190356100094A8A /* DailyCheckTaskViewController.swift */,
 				1A522EC92190357300094A8A /* DailyCheckTaskViewController.storyboard */,
 				1A522EC42190356100094A8A /* DailyCheckTaskPageInteractor.swift */,
@@ -558,6 +580,10 @@
 				1A24023220E5391C00FC3EBA /* Models */,
 				1A24021920E52CE100FC3EBA /* SelfRiskCheckViewController.swift */,
 				1A24021B20E52DFB00FC3EBA /* SelfRiskCheckViewController.storyboard */,
+				1A346FD62191ABF600CB534B /* RiskCheckTaskViewController.swift */,
+				1A346FDC2191AC4100CB534B /* RiskCheckTaskViewController.storyboard */,
+				1A346FD72191ABF600CB534B /* RiskCheckTaskPageInteractor.swift */,
+				1A346FD82191ABF600CB534B /* RiskCheckTaskBuilderRouter.swift */,
 			);
 			path = "隐患自查";
 			sourceTree = "<group>";
@@ -695,10 +721,12 @@
 				1A5D5BF221912C3E003E7039 /* DangerUnitListViewController.storyboard in Resources */,
 				1A522EC121902B0300094A8A /* HomeInfoPageViewController.storyboard in Resources */,
 				1A06557E20A9EE020016CA86 /* HomeInfoTableViewCell.xib in Resources */,
+				1A346FDD2191AC4100CB534B /* RiskCheckTaskViewController.storyboard in Resources */,
 				1A43BC2520C3AEE70093855B /* HomeInfoCollectionViewCell.xib in Resources */,
 				1A43BC2920C3AF2B0093855B /* HomeInfoHeaderView.xib in Resources */,
 				1A5D5BF821912E59003E7039 /* DangerUnitCollectionViewCell.xib in Resources */,
 				1AB0670420EFB06B00619570 /* LawRegulationTableViewCell.xib in Resources */,
+				1A346FCF21919A6C00CB534B /* DailyCheckTaskTableViewCell.xib in Resources */,
 				1AAF7B8320C1971B0051EC18 /* SecurityAdminiViewController.storyboard in Resources */,
 				1AAF7B8920C1971B0051EC18 /* EnterpriseRiskViewController.storyboard in Resources */,
 				1AAF7B8420C1971B0051EC18 /* ContactInfoViewController.storyboard in Resources */,
@@ -757,6 +785,7 @@
 				1A522EBE2190261900094A8A /* HomeInfoPagePageInteractor.swift in Sources */,
 				1A35D7FA20DBC9BF002ED3CB /* EnterpriseInfoDataManager.swift in Sources */,
 				1A346FC721915C0400CB534B /* CheckTaskDetailPageInteractor.swift in Sources */,
+				1A346FDB2191ABF600CB534B /* RiskCheckTaskBuilderRouter.swift in Sources */,
 				1ABDCA9A20C5798B0062DE71 /* SecurityAdminiTableViewCell.swift in Sources */,
 				1AAF7B8520C1971B0051EC18 /* ContactInfoViewController.swift in Sources */,
 				1A24022820E5337A00FC3EBA /* EnterpriseInfoNavigator.swift in Sources */,
@@ -776,6 +805,7 @@
 				1AAF7B8120C1971B0051EC18 /* IncreaseAdminiViewController.swift in Sources */,
 				1A602F8520A87D58003AD583 /* HomeInfoTableHeaderView.swift in Sources */,
 				1A24022D20E536A700FC3EBA /* SecurityAdminiDataManager.swift in Sources */,
+				1A346FD92191ABF600CB534B /* RiskCheckTaskViewController.swift in Sources */,
 				1A522EC72190356100094A8A /* DailyCheckTaskPageInteractor.swift in Sources */,
 				1AAF7B6820C1970A0051EC18 /* EnterpriseInfoViewController.swift in Sources */,
 				1A346FC821915C0400CB534B /* CheckTaskDetailBuilderRouter.swift in Sources */,
@@ -783,7 +813,9 @@
 				1A43BC3320C3CEAA0093855B /* EnterpriseInfoModel.swift in Sources */,
 				1A1084FF20ECF1FC004E365A /* IncreaseAdminiDataManager.swift in Sources */,
 				1A24022B20E5363600FC3EBA /* SecurityAdminiNavigator.swift in Sources */,
+				1A346FDA2191ABF600CB534B /* RiskCheckTaskPageInteractor.swift in Sources */,
 				1ABDCA9520C5720F0062DE71 /* IncreaseAdminiFooterView.swift in Sources */,
+				1A346FCE21919A6C00CB534B /* DailyCheckTaskTableViewCell.swift in Sources */,
 				1A522EBD2190261900094A8A /* HomeInfoPageViewController.swift in Sources */,
 				1AAF7B8820C1971B0051EC18 /* EnterpriseRiskViewController.swift in Sources */,
 				1A730AED20EBBC2E008831BC /* RegulationDetailViewController.swift in Sources */,

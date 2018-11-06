@@ -8,9 +8,12 @@
 
 import UIKit
 import MolueFoundation
+import MolueUtilities
 
 protocol DailyCheckTaskPresentableListener: class {
     // 定义一些当前页面需要的业务逻辑, 比如网络请求.
+    
+    func bindingTableViewAdapter(with tableView: UITableView)
 }
 
 final class DailyCheckTaskViewController: MLBaseViewController  {
@@ -32,6 +35,12 @@ extension DailyCheckTaskViewController: MLUserInterfaceProtocol {
     
     func updateUserInterfaceElements() {
         self.title = "任务列表"
+        do {
+            let listener = try self.listener.unwrap()
+            listener.bindingTableViewAdapter(with: self.tableView)
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
     }
 }
 
