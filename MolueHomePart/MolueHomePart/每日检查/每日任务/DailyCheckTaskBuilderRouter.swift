@@ -57,7 +57,7 @@ protocol DailyCheckTaskComponentBuildable: MolueComponentBuildable {
 
 class DailyCheckTaskComponentBuilder: MolueComponentBuilder, DailyCheckTaskComponentBuildable {
     func build(listener: DailyCheckTaskInteractListener) -> UIViewController {
-        let controller = DailyCheckTaskViewController()
+        let controller = DailyCheckTaskViewController.initializeFromStoryboard()
         let interactor = DailyCheckTaskPageInteractor(presenter: controller)
         DailyCheckTaskViewableRouter(interactor: interactor, controller: controller)
         interactor.listener = listener
