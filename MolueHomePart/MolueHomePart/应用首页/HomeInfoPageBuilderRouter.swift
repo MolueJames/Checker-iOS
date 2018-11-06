@@ -9,7 +9,7 @@
 import MolueMediator
 import MolueUtilities
 
-protocol HomeInfoPageRouterInteractable: DailyCheckTaskInteractListener {
+protocol HomeInfoPageRouterInteractable: DangerUnitListInteractListener {
     var viewRouter: HomeInfoPageViewableRouting? { get set }
     var listener: HomeInfoPageInteractListener? { get set }
 }
@@ -36,7 +36,7 @@ extension HomeInfoPageViewableRouter: HomeInfoPageViewableRouting {
     func pushToDailyTaskController() {
         do {
             let listener = try self.interactor.unwrap()
-            let builder = DailyCheckTaskComponentBuilder()
+            let builder = DangerUnitListComponentBuilder()
             let controller = builder.build(listener: listener)
             controller.hidesBottomBarWhenPushed = true
             MoluePageNavigator().pushViewController(controller)
@@ -46,15 +46,15 @@ extension HomeInfoPageViewableRouter: HomeInfoPageViewableRouting {
     }
     
     func pushToRiskCheckController() {
-        do {
-            let listener = try self.interactor.unwrap()
-            let builder = DailyCheckTaskComponentBuilder()
-            let controller = builder.build(listener: listener)
-            controller.hidesBottomBarWhenPushed = true
-            MoluePageNavigator().pushViewController(controller)
-        } catch {
-            MolueLogger.UIModule.error(error)
-        }
+//        do {
+//            let listener = try self.interactor.unwrap()
+//            let builder = DailyCheckTaskComponentBuilder()
+//            let controller = builder.build(listener: listener)
+//            controller.hidesBottomBarWhenPushed = true
+//            MoluePageNavigator().pushViewController(controller)
+//        } catch {
+//            MolueLogger.UIModule.error(error)
+//        }
     }
     
     func pushToNoticationController() {

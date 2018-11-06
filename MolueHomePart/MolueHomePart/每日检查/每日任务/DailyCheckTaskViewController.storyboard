@@ -18,18 +18,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Hl2-qW-93b">
-                                <rect key="frame" x="32" y="60" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VpR-ek-NFb">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="mmk-aT-Kem" id="qdX-Yc-OSF"/>
+                                    <outlet property="delegate" destination="mmk-aT-Kem" id="QZn-15-olN"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="3dj-zO-NET" firstAttribute="bottom" secondItem="VpR-ek-NFb" secondAttribute="bottom" id="VTT-JE-aqX"/>
+                            <constraint firstItem="3dj-zO-NET" firstAttribute="trailing" secondItem="VpR-ek-NFb" secondAttribute="trailing" id="ZOk-21-Plj"/>
+                            <constraint firstItem="VpR-ek-NFb" firstAttribute="leading" secondItem="3dj-zO-NET" secondAttribute="leading" id="pVM-mt-Uky"/>
+                            <constraint firstItem="VpR-ek-NFb" firstAttribute="top" secondItem="3dj-zO-NET" secondAttribute="top" id="xIN-4R-uwC"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="3dj-zO-NET"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="VpR-ek-NFb" id="5do-Rr-TUr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UyS-db-Ofu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-300" y="51"/>
         </scene>
     </scenes>
 </document>

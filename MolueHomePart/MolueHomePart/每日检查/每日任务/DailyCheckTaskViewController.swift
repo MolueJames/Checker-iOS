@@ -17,6 +17,7 @@ final class DailyCheckTaskViewController: MLBaseViewController  {
     //MARK: View Controller Properties
     var listener: DailyCheckTaskPresentableListener?
     
+    @IBOutlet weak var tableView: UITableView!
     //MARK: View Controller Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +31,7 @@ extension DailyCheckTaskViewController: MLUserInterfaceProtocol {
     }
     
     func updateUserInterfaceElements() {
-        
+        self.title = "任务列表"
     }
 }
 
