@@ -46,7 +46,7 @@ protocol RiskPlanComponentBuildable: MolueComponentBuildable {
 
 class RiskPlanComponentBuilder: MolueComponentBuilder, RiskPlanComponentBuildable {
     func build(listener: RiskPlanInteractListener) -> UIViewController {
-        let controller = RiskPlanViewController()
+        let controller = RiskPlanViewController.initializeFromStoryboard()
         let interactor = RiskPlanPageInteractor(presenter: controller)
         RiskPlanViewableRouter(interactor: interactor, controller: controller)
         interactor.listener = listener

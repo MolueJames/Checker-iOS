@@ -16,6 +16,14 @@
 		1A05CC3A2189F8A1006D637C /* RiskPlanPageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A05CC372189F8A1006D637C /* RiskPlanPageInteractor.swift */; };
 		1A05CC3B2189F8A1006D637C /* RiskPlanBuilderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A05CC382189F8A1006D637C /* RiskPlanBuilderRouter.swift */; };
 		1A05CC3D2189FAD7006D637C /* PotentialRiskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A05CC3C2189FAD7006D637C /* PotentialRiskModel.swift */; };
+		1A0B89C82193391C000B1EBC /* RiskRectifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0B89C52193391C000B1EBC /* RiskRectifyViewController.swift */; };
+		1A0B89C92193391C000B1EBC /* RiskRectifyPageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0B89C62193391C000B1EBC /* RiskRectifyPageInteractor.swift */; };
+		1A0B89CA2193391C000B1EBC /* RiskRectifyBuilderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0B89C72193391C000B1EBC /* RiskRectifyBuilderRouter.swift */; };
+		1A0B89CC2193392D000B1EBC /* RiskRectifyViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A0B89CB2193392D000B1EBC /* RiskRectifyViewController.storyboard */; };
+		1A0B89D1219339B4000B1EBC /* RiskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0B89CE219339B4000B1EBC /* RiskDetailViewController.swift */; };
+		1A0B89D2219339B4000B1EBC /* RiskDetailPageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0B89CF219339B4000B1EBC /* RiskDetailPageInteractor.swift */; };
+		1A0B89D3219339B4000B1EBC /* RiskDetailBuilderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0B89D0219339B4000B1EBC /* RiskDetailBuilderRouter.swift */; };
+		1A0B89D5219339C5000B1EBC /* RiskDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A0B89D4219339C5000B1EBC /* RiskDetailViewController.storyboard */; };
 		1A602F4E20A810DF003AD583 /* MolueRiskPart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A602F4420A810DF003AD583 /* MolueRiskPart.framework */; };
 		1A602F5320A810DF003AD583 /* MolueRiskPartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A602F5220A810DF003AD583 /* MolueRiskPartTests.swift */; };
 		1A602F5520A810DF003AD583 /* MolueRiskPart.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A602F4720A810DF003AD583 /* MolueRiskPart.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -23,8 +31,6 @@
 		1A730AD920E91D33008831BC /* PotentialRiskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A730AD720E91D33008831BC /* PotentialRiskTableViewCell.swift */; };
 		1A730ADA20E91D33008831BC /* PotentialRiskTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A730AD820E91D33008831BC /* PotentialRiskTableViewCell.xib */; };
 		1A730AE220EBBB1D008831BC /* RiskPlanViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A730AE120EBBB1D008831BC /* RiskPlanViewController.storyboard */; };
-		1A730AE420EBBB5C008831BC /* RiskRectifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A730AE320EBBB5C008831BC /* RiskRectifyViewController.swift */; };
-		1A730AE620EBBB80008831BC /* RiskRectifyViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A730AE520EBBB80008831BC /* RiskRectifyViewController.storyboard */; };
 		1AA7355420A9C37100DF7CD0 /* MolueCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA7355320A9C37100DF7CD0 /* MolueCommon.framework */; };
 		1AA7355620A9C37100DF7CD0 /* MolueDatabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA7355520A9C37100DF7CD0 /* MolueDatabase.framework */; };
 		1AA7355820A9C37100DF7CD0 /* MolueFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA7355720A9C37100DF7CD0 /* MolueFoundation.framework */; };
@@ -52,6 +58,14 @@
 		1A05CC372189F8A1006D637C /* RiskPlanPageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskPlanPageInteractor.swift; sourceTree = "<group>"; };
 		1A05CC382189F8A1006D637C /* RiskPlanBuilderRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskPlanBuilderRouter.swift; sourceTree = "<group>"; };
 		1A05CC3C2189FAD7006D637C /* PotentialRiskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PotentialRiskModel.swift; sourceTree = "<group>"; };
+		1A0B89C52193391C000B1EBC /* RiskRectifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskRectifyViewController.swift; sourceTree = "<group>"; };
+		1A0B89C62193391C000B1EBC /* RiskRectifyPageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskRectifyPageInteractor.swift; sourceTree = "<group>"; };
+		1A0B89C72193391C000B1EBC /* RiskRectifyBuilderRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskRectifyBuilderRouter.swift; sourceTree = "<group>"; };
+		1A0B89CB2193392D000B1EBC /* RiskRectifyViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RiskRectifyViewController.storyboard; sourceTree = "<group>"; };
+		1A0B89CE219339B4000B1EBC /* RiskDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskDetailViewController.swift; sourceTree = "<group>"; };
+		1A0B89CF219339B4000B1EBC /* RiskDetailPageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskDetailPageInteractor.swift; sourceTree = "<group>"; };
+		1A0B89D0219339B4000B1EBC /* RiskDetailBuilderRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskDetailBuilderRouter.swift; sourceTree = "<group>"; };
+		1A0B89D4219339C5000B1EBC /* RiskDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RiskDetailViewController.storyboard; sourceTree = "<group>"; };
 		1A602F4420A810DF003AD583 /* MolueRiskPart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MolueRiskPart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A602F4720A810DF003AD583 /* MolueRiskPart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MolueRiskPart.h; sourceTree = "<group>"; };
 		1A602F4820A810DF003AD583 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -62,8 +76,6 @@
 		1A730AD720E91D33008831BC /* PotentialRiskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PotentialRiskTableViewCell.swift; sourceTree = "<group>"; };
 		1A730AD820E91D33008831BC /* PotentialRiskTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PotentialRiskTableViewCell.xib; sourceTree = "<group>"; };
 		1A730AE120EBBB1D008831BC /* RiskPlanViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RiskPlanViewController.storyboard; sourceTree = "<group>"; };
-		1A730AE320EBBB5C008831BC /* RiskRectifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskRectifyViewController.swift; sourceTree = "<group>"; };
-		1A730AE520EBBB80008831BC /* RiskRectifyViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RiskRectifyViewController.storyboard; sourceTree = "<group>"; };
 		1AA7355320A9C37100DF7CD0 /* MolueCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AA7355520A9C37100DF7CD0 /* MolueDatabase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueDatabase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AA7355720A9C37100DF7CD0 /* MolueFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,6 +113,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A0B89CD21933987000B1EBC /* 隐患详情 */ = {
+			isa = PBXGroup;
+			children = (
+				1A0B89CE219339B4000B1EBC /* RiskDetailViewController.swift */,
+				1A0B89D4219339C5000B1EBC /* RiskDetailViewController.storyboard */,
+				1A0B89CF219339B4000B1EBC /* RiskDetailPageInteractor.swift */,
+				1A0B89D0219339B4000B1EBC /* RiskDetailBuilderRouter.swift */,
+			);
+			path = "隐患详情";
+			sourceTree = "<group>";
+		};
 		1A24023320E539D700FC3EBA /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -173,8 +196,10 @@
 			isa = PBXGroup;
 			children = (
 				1A730AE720EBBB8E008831BC /* Models */,
-				1A730AE320EBBB5C008831BC /* RiskRectifyViewController.swift */,
-				1A730AE520EBBB80008831BC /* RiskRectifyViewController.storyboard */,
+				1A0B89C52193391C000B1EBC /* RiskRectifyViewController.swift */,
+				1A0B89CB2193392D000B1EBC /* RiskRectifyViewController.storyboard */,
+				1A0B89C62193391C000B1EBC /* RiskRectifyPageInteractor.swift */,
+				1A0B89C72193391C000B1EBC /* RiskRectifyBuilderRouter.swift */,
 			);
 			path = "隐患整改";
 			sourceTree = "<group>";
@@ -189,6 +214,7 @@
 		1AA7353E20A9C0D700DF7CD0 /* 隐患首页 */ = {
 			isa = PBXGroup;
 			children = (
+				1A0B89CD21933987000B1EBC /* 隐患详情 */,
 				1A730ADE20EBBACD008831BC /* 隐患整改 */,
 				1A730ADD20EBBAC1008831BC /* 隐患安排 */,
 				1A24023420E539E100FC3EBA /* Models */,
@@ -318,9 +344,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A05CC2F2189E9C4006D637C /* PotentialRiskViewController.storyboard in Resources */,
+				1A0B89D5219339C5000B1EBC /* RiskDetailViewController.storyboard in Resources */,
 				1A730AE220EBBB1D008831BC /* RiskPlanViewController.storyboard in Resources */,
 				1A65039820DD55350017F91D /* MolueRisk.xcassets in Resources */,
-				1A730AE620EBBB80008831BC /* RiskRectifyViewController.storyboard in Resources */,
+				1A0B89CC2193392D000B1EBC /* RiskRectifyViewController.storyboard in Resources */,
 				1A730ADA20E91D33008831BC /* PotentialRiskTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -363,12 +390,17 @@
 				1A05CC392189F8A1006D637C /* RiskPlanViewController.swift in Sources */,
 				1A05CC2D2189E9AF006D637C /* PotentialRiskBuilderRouter.swift in Sources */,
 				1A05CC3B2189F8A1006D637C /* RiskPlanBuilderRouter.swift in Sources */,
-				1A730AE420EBBB5C008831BC /* RiskRectifyViewController.swift in Sources */,
 				1A730AD920E91D33008831BC /* PotentialRiskTableViewCell.swift in Sources */,
+				1A0B89D3219339B4000B1EBC /* RiskDetailBuilderRouter.swift in Sources */,
 				1A05CC3D2189FAD7006D637C /* PotentialRiskModel.swift in Sources */,
 				1A05CC3A2189F8A1006D637C /* RiskPlanPageInteractor.swift in Sources */,
 				1A05CC2B2189E9AF006D637C /* PotentialRiskViewController.swift in Sources */,
+				1A0B89C82193391C000B1EBC /* RiskRectifyViewController.swift in Sources */,
+				1A0B89D1219339B4000B1EBC /* RiskDetailViewController.swift in Sources */,
+				1A0B89CA2193391C000B1EBC /* RiskRectifyBuilderRouter.swift in Sources */,
 				1A05CC2C2189E9AF006D637C /* PotentialRiskPageInteractor.swift in Sources */,
+				1A0B89D2219339B4000B1EBC /* RiskDetailPageInteractor.swift in Sources */,
+				1A0B89C92193391C000B1EBC /* RiskRectifyPageInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

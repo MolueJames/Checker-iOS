@@ -1,5 +1,5 @@
 //
-//  RiskRectifyViewController.swift
+//  RiskDetailViewController.swift
 //  MolueRiskPart
 //
 //  Created by MolueJames on 2018/11/7.
@@ -9,13 +9,13 @@
 import UIKit
 import MolueFoundation
 
-protocol RiskRectifyPresentableListener: class {
+protocol RiskDetailPresentableListener: class {
     // 定义一些当前页面需要的业务逻辑, 比如网络请求.
 }
 
-final class RiskRectifyViewController: MLBaseViewController  {
+final class RiskDetailViewController: MLBaseViewController  {
     //MARK: View Controller Properties
-    var listener: RiskRectifyPresentableListener?
+    var listener: RiskDetailPresentableListener?
     
     //MARK: View Controller Life Cycle
     override func viewDidLoad() {
@@ -24,7 +24,7 @@ final class RiskRectifyViewController: MLBaseViewController  {
     }
 }
 
-extension RiskRectifyViewController: MLUserInterfaceProtocol {
+extension RiskDetailViewController: MLUserInterfaceProtocol {
     func queryInformationWithNetwork() {
         
     }
@@ -34,10 +34,10 @@ extension RiskRectifyViewController: MLUserInterfaceProtocol {
     }
 }
 
-extension RiskRectifyViewController: RiskRectifyPagePresentable {
+extension RiskDetailViewController: RiskDetailPagePresentable {
     
 }
 
-extension RiskRectifyViewController: RiskRectifyViewControllable {
+extension RiskDetailViewController: RiskDetailViewControllable {
     
 }

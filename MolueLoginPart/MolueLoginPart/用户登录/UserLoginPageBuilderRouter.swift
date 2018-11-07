@@ -14,7 +14,7 @@ protocol UserLoginPageRouterInteractable: ForgetPasswordInteractListener {
     var listener: UserLoginPageInteractListener? { get set }
 }
 
-protocol UserLoginPageViewControllable: class {
+protocol UserLoginPageViewControllable: MolueViewControllable {
     // 定义一些该页面需要的其他commponent的组件, 比如该页面的childViewController等.
 }
 
@@ -24,7 +24,8 @@ final class UserLoginPageViewableRouter: MolueViewableRouting, UserLoginPageView
             let builderFactory = MolueBuilderFactory<MolueComponent.Login>(.ForgetPwd)
             let builder: ForgetPasswordComponentBuildable? = builderFactory.queryBuilder()
             let controller = try builder.unwrap().build(listener: self.interactor.unwrap())
-            MoluePageNavigator().pushViewController(controller)
+            let navigator = try self.controller.unwrap()
+            navigator.pushToViewController(controller, animated: true)
         } catch {
             MolueLogger.UIModule.error(error)
         }

@@ -39,7 +39,8 @@ extension DailyCheckTaskViewableRouter: DailyCheckTaskViewableRouting {
             let listener = try self.interactor.unwrap()
             let builder = CheckTaskDetailComponentBuilder()
             let controller = builder.build(listener: listener)
-            MoluePageNavigator().pushViewController(controller)
+            let navigator = try self.controller.unwrap()
+            navigator.pushToViewController(controller, animated: true)
         } catch {
             MolueLogger.UIModule.error(error)
         }

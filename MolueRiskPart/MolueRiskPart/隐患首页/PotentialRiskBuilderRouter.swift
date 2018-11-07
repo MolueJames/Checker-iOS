@@ -38,7 +38,8 @@ extension PotentialRiskViewableRouter: PotentialRiskViewableRouting {
             let builder: RiskPlanComponentBuildable = RiskPlanComponentBuilder()
             let controller = try builder.build(listener: self.interactor.unwrap())
             controller.hidesBottomBarWhenPushed = true
-            MoluePageNavigator().pushViewController(controller)
+            let navigator = try self.controller.unwrap()
+            navigator.pushToViewController(controller, animated: true)
         } catch {
             MolueLogger.UIModule.error(error)
         }

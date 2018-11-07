@@ -39,7 +39,8 @@ extension UserInfoCenterViewableRouter: UserInfoCenterViewableRouting {
             let builder = MessageCenterComponentBuilder()
             let controller = builder.build(listener: listener)
             controller.hidesBottomBarWhenPushed = true
-            MoluePageNavigator().pushViewController(controller)
+            let navigator = try self.controller.unwrap()
+            navigator.pushToViewController(controller, animated: true)
         } catch {
             MolueLogger.UIModule.error(error)
         }
@@ -51,7 +52,8 @@ extension UserInfoCenterViewableRouter: UserInfoCenterViewableRouting {
             let builder = AboutUsInfoComponentBuilder()
             let controller = builder.build(listener: listener)
             controller.hidesBottomBarWhenPushed = true
-            MoluePageNavigator().pushViewController(controller)
+            let navigator = try self.controller.unwrap()
+            navigator.pushToViewController(controller, animated: true)
         } catch {
             MolueLogger.UIModule.error(error)
         }
