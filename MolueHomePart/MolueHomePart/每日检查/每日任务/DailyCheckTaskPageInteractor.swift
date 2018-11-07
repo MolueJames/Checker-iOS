@@ -27,8 +27,6 @@ final class DailyCheckTaskPageInteractor: MoluePresenterInteractable {
     
     weak var listener: DailyCheckTaskInteractListener?
     
-    var tableViewAdapter: MLTableViewAdapter<DailyCheckTaskTableViewCell, String>?
-    
     var valueList: [String] = ["1", "2", "3"]
     
     required init(presenter: DailyCheckTaskPagePresentable) {
@@ -42,16 +40,5 @@ extension DailyCheckTaskPageInteractor: DailyCheckTaskRouterInteractable {
 }
 
 extension DailyCheckTaskPageInteractor: DailyCheckTaskPresentableListener {
-    func bindingTableViewAdapter(with tableView: UITableView) {
-        self.tableViewAdapter = MLTableViewAdapter<DailyCheckTaskTableViewCell, String>(with: self.valueList)
-        self.tableViewAdapter?.bindingTableView(tableView)
-        self.tableViewAdapter?.heightForEachRow(50)
-        self.tableViewAdapter?.cellForRowAtClosure({ (indexPath, cell, item) in
-            
-        })
-        self.tableViewAdapter?.didSelectRowAtClosure({ [weak self] (indexPath, item) in
-            guard let self = self, let viewRouter = self.viewRouter else {return}
-            viewRouter.pushToCheckTaskDetailController()
-        })
-    }
+  
 }

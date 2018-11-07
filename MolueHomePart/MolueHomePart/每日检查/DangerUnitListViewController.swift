@@ -21,24 +21,13 @@ final class DangerUnitListViewController: MLBaseViewController  {
     //MARK: View Controller Properties
     var listener: DangerUnitListPresentableListener?
     
-    @IBOutlet weak var collectionView: UICollectionView! {
+    @IBOutlet weak var tableView: UITableView! {
         didSet {
-            collectionView.register(xibWithCellClass: DangerUnitCollectionViewCell.self)
-            collectionView.collectionViewLayout = self.collectionViewLayout
+            tableView.dataSource = self
+            tableView.delegate = self
+            tableView.register(xibWithCellClass: DangerUnitTableViewCell.self)
         }
     }
-    
-    lazy var collectionViewLayout: UICollectionViewFlowLayout = {
-        let viewLayout = UICollectionViewFlowLayout()
-        let size = (MLConfigure.ScreenWidth - 30) / 2 - 1
-        viewLayout.itemSize = CGSize(width: size, height: 90)
-        viewLayout.scrollDirection = .vertical
-        viewLayout.sectionInset = UIEdgeInsetsMake(10, 10, 0, 10)
-        viewLayout.minimumLineSpacing = 10
-        viewLayout.minimumInteritemSpacing = 10
-        return viewLayout
-    }()
-    
     //MARK: View Controller Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,8 +41,7 @@ extension DangerUnitListViewController: MLUserInterfaceProtocol {
     }
     
     func updateUserInterfaceElements() {
-        self.title = "风险单元"
-        self.collectionView.backgroundColor = .red
+        self.title = "风险列表"
     }
 }
 
@@ -65,8 +53,25 @@ extension DangerUnitListViewController: DangerUnitListViewControllable {
     
 }
 
-extension DangerUnitListViewController: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+extension DangerUnitListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = DangerUnitSectionHeaderView.createFromXib()
+        return headerView
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 115
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 90
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 15
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         do {
             let listener = try self.listener.unwrap()
             listener.jumpToDailyCheckTaskController()
@@ -74,20 +79,19 @@ extension DangerUnitListViewController: UICollectionViewDelegate {
             MolueLogger.UIModule.error(error)
         }
     }
-    
 }
 
-extension DangerUnitListViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        do {
-            let listener = try self.listener.unwrap()
-            return listener.valueList.count
-        } catch { return 1 }
+extension DangerUnitListViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 4
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withClass: DangerUnitCollectionViewCell.self, for: indexPath)
-        
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withClass: DangerUnitTableViewCell.self)
         return cell
     }
 }

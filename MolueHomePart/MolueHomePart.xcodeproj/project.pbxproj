@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		1A06557D20A9EE020016CA86 /* HomeInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A06557B20A9EE020016CA86 /* HomeInfoTableViewCell.swift */; };
 		1A06557E20A9EE020016CA86 /* HomeInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A06557C20A9EE020016CA86 /* HomeInfoTableViewCell.xib */; };
+		1A0B89B721931B8F000B1EBC /* DangerUnitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0B89B521931B8F000B1EBC /* DangerUnitTableViewCell.swift */; };
+		1A0B89B821931B8F000B1EBC /* DangerUnitTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A0B89B621931B8F000B1EBC /* DangerUnitTableViewCell.xib */; };
+		1A0B89BA21931BAD000B1EBC /* DangerUnitSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0B89B921931BAD000B1EBC /* DangerUnitSectionHeaderView.swift */; };
+		1A0B89BC21931BBA000B1EBC /* DangerUnitSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A0B89BB21931BBA000B1EBC /* DangerUnitSectionHeaderView.xib */; };
+		1A0B89BE21933045000B1EBC /* DailyCheckTaskHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0B89BD21933045000B1EBC /* DailyCheckTaskHeaderView.swift */; };
+		1A0B89C021933052000B1EBC /* DailyCheckTaskHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A0B89BF21933052000B1EBC /* DailyCheckTaskHeaderView.xib */; };
 		1A1084FD20ECF1DD004E365A /* IncreaseAdminiNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1084FC20ECF1DD004E365A /* IncreaseAdminiNavigator.swift */; };
 		1A1084FF20ECF1FC004E365A /* IncreaseAdminiDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1084FE20ECF1FC004E365A /* IncreaseAdminiDataManager.swift */; };
 		1A1B88CD20864D9500C5F4D9 /* MolueHomePart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A1B88C320864D9500C5F4D9 /* MolueHomePart.framework */; };
@@ -59,8 +65,6 @@
 		1A522ED821912BA200094A8A /* DangerUnitListBuilderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A522ED521912BA200094A8A /* DangerUnitListBuilderRouter.swift */; };
 		1A58263A20B7123E007FBFC7 /* MolueNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A58263920B7123E007FBFC7 /* MolueNetwork.framework */; };
 		1A5D5BF221912C3E003E7039 /* DangerUnitListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A5D5BF121912C3E003E7039 /* DangerUnitListViewController.storyboard */; };
-		1A5D5BF721912E59003E7039 /* DangerUnitCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5D5BF521912E59003E7039 /* DangerUnitCollectionViewCell.swift */; };
-		1A5D5BF821912E59003E7039 /* DangerUnitCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A5D5BF621912E59003E7039 /* DangerUnitCollectionViewCell.xib */; };
 		1A602F8520A87D58003AD583 /* HomeInfoTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A602F8420A87D58003AD583 /* HomeInfoTableHeaderView.swift */; };
 		1A602F8C20A88095003AD583 /* HomeInfoTableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A602F8B20A88095003AD583 /* HomeInfoTableHeaderView.xib */; };
 		1A65039620DD552B0017F91D /* MolueHome.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A65039520DD552A0017F91D /* MolueHome.xcassets */; };
@@ -109,6 +113,12 @@
 		010F6973D5E1725577EE6B03 /* Pods_MolueHomePart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MolueHomePart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A06557B20A9EE020016CA86 /* HomeInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInfoTableViewCell.swift; sourceTree = "<group>"; };
 		1A06557C20A9EE020016CA86 /* HomeInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeInfoTableViewCell.xib; sourceTree = "<group>"; };
+		1A0B89B521931B8F000B1EBC /* DangerUnitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DangerUnitTableViewCell.swift; sourceTree = "<group>"; };
+		1A0B89B621931B8F000B1EBC /* DangerUnitTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DangerUnitTableViewCell.xib; sourceTree = "<group>"; };
+		1A0B89B921931BAD000B1EBC /* DangerUnitSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DangerUnitSectionHeaderView.swift; sourceTree = "<group>"; };
+		1A0B89BB21931BBA000B1EBC /* DangerUnitSectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DangerUnitSectionHeaderView.xib; sourceTree = "<group>"; };
+		1A0B89BD21933045000B1EBC /* DailyCheckTaskHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyCheckTaskHeaderView.swift; sourceTree = "<group>"; };
+		1A0B89BF21933052000B1EBC /* DailyCheckTaskHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailyCheckTaskHeaderView.xib; sourceTree = "<group>"; };
 		1A1084FC20ECF1DD004E365A /* IncreaseAdminiNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncreaseAdminiNavigator.swift; sourceTree = "<group>"; };
 		1A1084FE20ECF1FC004E365A /* IncreaseAdminiDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncreaseAdminiDataManager.swift; sourceTree = "<group>"; };
 		1A1B88C320864D9500C5F4D9 /* MolueHomePart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MolueHomePart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -163,8 +173,6 @@
 		1A522ED521912BA200094A8A /* DangerUnitListBuilderRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DangerUnitListBuilderRouter.swift; sourceTree = "<group>"; };
 		1A58263920B7123E007FBFC7 /* MolueNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A5D5BF121912C3E003E7039 /* DangerUnitListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DangerUnitListViewController.storyboard; sourceTree = "<group>"; };
-		1A5D5BF521912E59003E7039 /* DangerUnitCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DangerUnitCollectionViewCell.swift; sourceTree = "<group>"; };
-		1A5D5BF621912E59003E7039 /* DangerUnitCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DangerUnitCollectionViewCell.xib; sourceTree = "<group>"; };
 		1A602F8420A87D58003AD583 /* HomeInfoTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInfoTableHeaderView.swift; sourceTree = "<group>"; };
 		1A602F8B20A88095003AD583 /* HomeInfoTableHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeInfoTableHeaderView.xib; sourceTree = "<group>"; };
 		1A65039520DD552A0017F91D /* MolueHome.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MolueHome.xcassets; sourceTree = "<group>"; };
@@ -368,6 +376,8 @@
 			children = (
 				1A346FCC21919A6C00CB534B /* DailyCheckTaskTableViewCell.swift */,
 				1A346FCD21919A6C00CB534B /* DailyCheckTaskTableViewCell.xib */,
+				1A0B89BD21933045000B1EBC /* DailyCheckTaskHeaderView.swift */,
+				1A0B89BF21933052000B1EBC /* DailyCheckTaskHeaderView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -440,8 +450,10 @@
 		1A5D5BF421912E24003E7039 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				1A5D5BF521912E59003E7039 /* DangerUnitCollectionViewCell.swift */,
-				1A5D5BF621912E59003E7039 /* DangerUnitCollectionViewCell.xib */,
+				1A0B89B521931B8F000B1EBC /* DangerUnitTableViewCell.swift */,
+				1A0B89B621931B8F000B1EBC /* DangerUnitTableViewCell.xib */,
+				1A0B89B921931BAD000B1EBC /* DangerUnitSectionHeaderView.swift */,
+				1A0B89BB21931BBA000B1EBC /* DangerUnitSectionHeaderView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -706,6 +718,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AAF7B7F20C1971B0051EC18 /* BasicArchivesViewController.storyboard in Resources */,
+				1A0B89BC21931BBA000B1EBC /* DangerUnitSectionHeaderView.xib in Resources */,
 				1A43BC3020C3CAA60093855B /* EnterpriseInfoTableViewCell.xib in Resources */,
 				1A346FCA21915C2100CB534B /* CheckTaskDetailViewController.storyboard in Resources */,
 				1A24021C20E52DFB00FC3EBA /* SelfRiskCheckViewController.storyboard in Resources */,
@@ -719,12 +732,13 @@
 				1A602F8C20A88095003AD583 /* HomeInfoTableHeaderView.xib in Resources */,
 				1ABDCA9B20C5798B0062DE71 /* SecurityAdminiTableViewCell.xib in Resources */,
 				1A5D5BF221912C3E003E7039 /* DangerUnitListViewController.storyboard in Resources */,
+				1A0B89B821931B8F000B1EBC /* DangerUnitTableViewCell.xib in Resources */,
 				1A522EC121902B0300094A8A /* HomeInfoPageViewController.storyboard in Resources */,
 				1A06557E20A9EE020016CA86 /* HomeInfoTableViewCell.xib in Resources */,
 				1A346FDD2191AC4100CB534B /* RiskCheckTaskViewController.storyboard in Resources */,
 				1A43BC2520C3AEE70093855B /* HomeInfoCollectionViewCell.xib in Resources */,
 				1A43BC2920C3AF2B0093855B /* HomeInfoHeaderView.xib in Resources */,
-				1A5D5BF821912E59003E7039 /* DangerUnitCollectionViewCell.xib in Resources */,
+				1A0B89C021933052000B1EBC /* DailyCheckTaskHeaderView.xib in Resources */,
 				1AB0670420EFB06B00619570 /* LawRegulationTableViewCell.xib in Resources */,
 				1A346FCF21919A6C00CB534B /* DailyCheckTaskTableViewCell.xib in Resources */,
 				1AAF7B8320C1971B0051EC18 /* SecurityAdminiViewController.storyboard in Resources */,
@@ -774,10 +788,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A24021A20E52CE100FC3EBA /* SelfRiskCheckViewController.swift in Sources */,
+				1A0B89BE21933045000B1EBC /* DailyCheckTaskHeaderView.swift in Sources */,
 				1A346FC621915C0400CB534B /* CheckTaskDetailViewController.swift in Sources */,
 				1AAF7B7E20C1971B0051EC18 /* BasicArchivesViewController.swift in Sources */,
 				1AAF7B8220C1971B0051EC18 /* SecurityAdminiViewController.swift in Sources */,
-				1A5D5BF721912E59003E7039 /* DangerUnitCollectionViewCell.swift in Sources */,
 				1A43BC2F20C3CAA60093855B /* EnterpriseInfoTableViewCell.swift in Sources */,
 				1A43BC2420C3AEE70093855B /* HomeInfoCollectionViewCell.swift in Sources */,
 				1A522ED821912BA200094A8A /* DangerUnitListBuilderRouter.swift in Sources */,
@@ -800,6 +814,7 @@
 				1A522ED721912BA200094A8A /* DangerUnitListPageInteractor.swift in Sources */,
 				1A522EC82190356100094A8A /* DailyCheckTaskBuilderRouter.swift in Sources */,
 				1A522EBF2190261900094A8A /* HomeInfoPageBuilderRouter.swift in Sources */,
+				1A0B89BA21931BAD000B1EBC /* DangerUnitSectionHeaderView.swift in Sources */,
 				1A43BC2720C3AF190093855B /* HomeInfoHeaderView.swift in Sources */,
 				1A1084FD20ECF1DD004E365A /* IncreaseAdminiNavigator.swift in Sources */,
 				1AAF7B8120C1971B0051EC18 /* IncreaseAdminiViewController.swift in Sources */,
@@ -816,6 +831,7 @@
 				1A346FDA2191ABF600CB534B /* RiskCheckTaskPageInteractor.swift in Sources */,
 				1ABDCA9520C5720F0062DE71 /* IncreaseAdminiFooterView.swift in Sources */,
 				1A346FCE21919A6C00CB534B /* DailyCheckTaskTableViewCell.swift in Sources */,
+				1A0B89B721931B8F000B1EBC /* DangerUnitTableViewCell.swift in Sources */,
 				1A522EBD2190261900094A8A /* HomeInfoPageViewController.swift in Sources */,
 				1AAF7B8820C1971B0051EC18 /* EnterpriseRiskViewController.swift in Sources */,
 				1A730AED20EBBC2E008831BC /* RegulationDetailViewController.swift in Sources */,
