@@ -27,7 +27,7 @@ final class DangerUnitListPageInteractor: MoluePresenterInteractable {
     
     weak var listener: DangerUnitListInteractListener?
     
-    var valueList: [String] = ["1", "2"]
+    var valueList: [String] = ["1", "2", "2", "2", "2", "2", "2"]
     
     required init(presenter: DangerUnitListPagePresentable) {
         self.presenter = presenter

@@ -30,7 +30,7 @@ extension RiskCheckTaskViewController: MLUserInterfaceProtocol {
     }
     
     func updateUserInterfaceElements() {
-        
+        self.title = "隐患自查"
     }
 }
 

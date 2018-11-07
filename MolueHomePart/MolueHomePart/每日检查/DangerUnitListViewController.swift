@@ -24,8 +24,20 @@ final class DangerUnitListViewController: MLBaseViewController  {
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
             collectionView.register(xibWithCellClass: DangerUnitCollectionViewCell.self)
+            collectionView.collectionViewLayout = self.collectionViewLayout
         }
     }
+    
+    lazy var collectionViewLayout: UICollectionViewFlowLayout = {
+        let viewLayout = UICollectionViewFlowLayout()
+        let size = (MLConfigure.ScreenWidth - 30) / 2 - 1
+        viewLayout.itemSize = CGSize(width: size, height: 90)
+        viewLayout.scrollDirection = .vertical
+        viewLayout.sectionInset = UIEdgeInsetsMake(10, 10, 0, 10)
+        viewLayout.minimumLineSpacing = 10
+        viewLayout.minimumInteritemSpacing = 10
+        return viewLayout
+    }()
     
     //MARK: View Controller Life Cycle
     override func viewDidLoad() {
@@ -41,6 +53,7 @@ extension DangerUnitListViewController: MLUserInterfaceProtocol {
     
     func updateUserInterfaceElements() {
         self.title = "风险单元"
+        self.collectionView.backgroundColor = .red
     }
 }
 
@@ -61,6 +74,7 @@ extension DangerUnitListViewController: UICollectionViewDelegate {
             MolueLogger.UIModule.error(error)
         }
     }
+    
 }
 
 extension DangerUnitListViewController: UICollectionViewDataSource {
@@ -73,7 +87,7 @@ extension DangerUnitListViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withClass: DangerUnitCollectionViewCell.self, for: indexPath)
-        cell.backgroundColor = .black
+        
         return cell
     }
 }
