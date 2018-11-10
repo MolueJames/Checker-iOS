@@ -8,6 +8,7 @@
 
 import MolueMediator
 import MolueCommon
+import MolueUtilities
 
 protocol DailyCheckTaskViewableRouting: class {
     // 定义一些页面跳转的方法, 比如Push, Presenter等.
@@ -40,5 +41,13 @@ extension DailyCheckTaskPageInteractor: DailyCheckTaskRouterInteractable {
 }
 
 extension DailyCheckTaskPageInteractor: DailyCheckTaskPresentableListener {
+    func jumpToCheckTaskDetailController() {
+        do {
+            let viewRouter = try self.viewRouter.unwrap()
+            viewRouter.pushToCheckTaskDetailController()
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+    }
   
 }

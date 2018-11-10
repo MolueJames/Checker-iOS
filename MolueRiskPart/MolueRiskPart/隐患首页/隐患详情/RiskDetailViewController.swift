@@ -17,6 +17,11 @@ final class RiskDetailViewController: MLBaseViewController  {
     //MARK: View Controller Properties
     var listener: RiskDetailPresentableListener?
     
+    lazy var headerView: PotentialRiskHeaderView = {
+        let headerView: PotentialRiskHeaderView = PotentialRiskHeaderView.createFromXib()
+        self.view.addSubview(headerView)
+        return headerView
+    }()
     //MARK: View Controller Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +35,14 @@ extension RiskDetailViewController: MLUserInterfaceProtocol {
     }
     
     func updateUserInterfaceElements() {
+        self.title = "隐患详情"
+        self.headerView.snp.makeConstraints { (make) in
+            make.left.right.equalToSuperview()
+            make.top.equalTo(self.navigationView.snp.bottom)
+        }
         
+        self.headerView.refreshSubviews(with: "=========================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================")
+        self.headerView.layoutIfNeeded()
     }
 }
 

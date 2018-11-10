@@ -17,9 +17,38 @@
                     <view key="view" contentMode="scaleToFill" id="c5F-Kr-yYM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gBd-f9-JK8">
+                                <rect key="frame" x="0.0" y="20" width="375" height="602"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IOI-Jb-E5b">
+                                <rect key="frame" x="0.0" y="622" width="375" height="45"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="fD9-CU-TUT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <state key="normal" title="提交任务">
+                                    <color key="titleColor" red="0.1058823529" green="0.50980392159999999" blue="0.82352941180000006" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="uD8-KB-XoS" firstAttribute="trailing" secondItem="IOI-Jb-E5b" secondAttribute="trailing" id="BLa-f1-jVy"/>
+                            <constraint firstItem="IOI-Jb-E5b" firstAttribute="top" secondItem="gBd-f9-JK8" secondAttribute="bottom" id="E0Q-Z0-2vt"/>
+                            <constraint firstItem="uD8-KB-XoS" firstAttribute="bottom" secondItem="IOI-Jb-E5b" secondAttribute="bottom" id="RjB-d2-2nP"/>
+                            <constraint firstItem="IOI-Jb-E5b" firstAttribute="leading" secondItem="uD8-KB-XoS" secondAttribute="leading" id="heI-2h-jb6"/>
+                            <constraint firstItem="gBd-f9-JK8" firstAttribute="top" secondItem="uD8-KB-XoS" secondAttribute="top" id="t7a-at-iXG"/>
+                            <constraint firstItem="gBd-f9-JK8" firstAttribute="leading" secondItem="uD8-KB-XoS" secondAttribute="leading" id="u8f-WV-HeU"/>
+                            <constraint firstItem="uD8-KB-XoS" firstAttribute="trailing" secondItem="gBd-f9-JK8" secondAttribute="trailing" id="yuw-hj-gXN"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="uD8-KB-XoS"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="gBd-f9-JK8" id="GAS-dF-WGG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GoC-Fm-jJi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

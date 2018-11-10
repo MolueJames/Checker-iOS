@@ -9,7 +9,7 @@
 import MolueMediator
 import MolueUtilities
 
-protocol PotentialRiskRouterInteractable: RiskPlanInteractListener {
+protocol PotentialRiskRouterInteractable: RiskDetailInteractListener {
     var viewRouter: PotentialRiskViewableRouting? { get set }
     var listener: PotentialRiskInteractListener? { get set }
 }
@@ -35,7 +35,7 @@ final class PotentialRiskViewableRouter: MolueViewableRouting {
 extension PotentialRiskViewableRouter: PotentialRiskViewableRouting {
     func pushToRiskDetailController() {
         do {
-            let builder: RiskPlanComponentBuildable = RiskPlanComponentBuilder()
+            let builder: RiskDetailComponentBuildable = RiskDetailComponentBuilder()
             let controller = try builder.build(listener: self.interactor.unwrap())
             controller.hidesBottomBarWhenPushed = true
             let navigator = try self.controller.unwrap()

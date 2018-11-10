@@ -8,6 +8,7 @@
 
 import UIKit
 import MolueFoundation
+import MolueUtilities
 
 protocol PotentialRiskPresentableListener: class {
     // 定义一些当前页面需要的业务逻辑, 比如网络请求.
@@ -48,7 +49,7 @@ extension PotentialRiskViewController: MLUserInterfaceProtocol {
             let listener = try self.listener.unwrap()
             listener.bindingTableViewAdapter(with: self.tableView)
         } catch {
-            
+            MolueLogger.UIModule.error(error)
         }
     }
 }

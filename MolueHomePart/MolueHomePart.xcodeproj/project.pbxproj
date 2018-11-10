@@ -15,13 +15,17 @@
 		1A0B89BC21931BBA000B1EBC /* DangerUnitSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A0B89BB21931BBA000B1EBC /* DangerUnitSectionHeaderView.xib */; };
 		1A0B89BE21933045000B1EBC /* DailyCheckTaskHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0B89BD21933045000B1EBC /* DailyCheckTaskHeaderView.swift */; };
 		1A0B89C021933052000B1EBC /* DailyCheckTaskHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A0B89BF21933052000B1EBC /* DailyCheckTaskHeaderView.xib */; };
+		1A0B89DB21968991000B1EBC /* DailyCheckSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0B89DA21968991000B1EBC /* DailyCheckSectionHeaderView.swift */; };
+		1A0B89DD219689A1000B1EBC /* DailyCheckSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A0B89DC219689A1000B1EBC /* DailyCheckSectionHeaderView.xib */; };
+		1A0B89DF21968CF7000B1EBC /* DailyCheckTaskFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0B89DE21968CF7000B1EBC /* DailyCheckTaskFooterView.swift */; };
+		1A0B89E121968D0A000B1EBC /* DailyCheckTaskFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A0B89E021968D0A000B1EBC /* DailyCheckTaskFooterView.xib */; };
 		1A1084FD20ECF1DD004E365A /* IncreaseAdminiNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1084FC20ECF1DD004E365A /* IncreaseAdminiNavigator.swift */; };
 		1A1084FF20ECF1FC004E365A /* IncreaseAdminiDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1084FE20ECF1FC004E365A /* IncreaseAdminiDataManager.swift */; };
 		1A1B88CD20864D9500C5F4D9 /* MolueHomePart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A1B88C320864D9500C5F4D9 /* MolueHomePart.framework */; };
 		1A1B88D220864D9500C5F4D9 /* MolueHomePartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1B88D120864D9500C5F4D9 /* MolueHomePartTests.swift */; };
 		1A1B88D420864D9500C5F4D9 /* MolueHomePart.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A1B88C620864D9500C5F4D9 /* MolueHomePart.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1A24021A20E52CE100FC3EBA /* SelfRiskCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A24021920E52CE100FC3EBA /* SelfRiskCheckViewController.swift */; };
-		1A24021C20E52DFB00FC3EBA /* SelfRiskCheckViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A24021B20E52DFB00FC3EBA /* SelfRiskCheckViewController.storyboard */; };
+		1A24021A20E52CE100FC3EBA /* RiskCheckTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A24021920E52CE100FC3EBA /* RiskCheckTaskViewController.swift */; };
+		1A24021C20E52DFB00FC3EBA /* RiskCheckTaskViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A24021B20E52DFB00FC3EBA /* RiskCheckTaskViewController.storyboard */; };
 		1A24022020E52F7800FC3EBA /* LawRegulationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A24021F20E52F7800FC3EBA /* LawRegulationViewController.swift */; };
 		1A24022220E52FA800FC3EBA /* PolicyNoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A24022120E52FA800FC3EBA /* PolicyNoticeViewController.swift */; };
 		1A24022420E5309100FC3EBA /* LawRegulationViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A24022320E5309100FC3EBA /* LawRegulationViewController.storyboard */; };
@@ -29,16 +33,20 @@
 		1A24022820E5337A00FC3EBA /* EnterpriseInfoNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A24022720E5337A00FC3EBA /* EnterpriseInfoNavigator.swift */; };
 		1A24022B20E5363600FC3EBA /* SecurityAdminiNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A24022A20E5363600FC3EBA /* SecurityAdminiNavigator.swift */; };
 		1A24022D20E536A700FC3EBA /* SecurityAdminiDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A24022C20E536A700FC3EBA /* SecurityAdminiDataManager.swift */; };
+		1A3465D521971E3400EBA57C /* CheckTaskDetailFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3465D421971E3400EBA57C /* CheckTaskDetailFooterView.swift */; };
+		1A3465D721971E3E00EBA57C /* CheckTaskDetailFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A3465D621971E3E00EBA57C /* CheckTaskDetailFooterView.xib */; };
+		1A3465E52197392000EBA57C /* RiskPlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3465E12197392000EBA57C /* RiskPlanViewController.swift */; };
+		1A3465E62197392000EBA57C /* RiskPlanPageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3465E22197392000EBA57C /* RiskPlanPageInteractor.swift */; };
+		1A3465E72197392000EBA57C /* RiskPlanBuilderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3465E32197392000EBA57C /* RiskPlanBuilderRouter.swift */; };
+		1A3465E82197392000EBA57C /* RiskPlanViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A3465E42197392000EBA57C /* RiskPlanViewController.storyboard */; };
 		1A346FC621915C0400CB534B /* CheckTaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A346FC321915C0400CB534B /* CheckTaskDetailViewController.swift */; };
 		1A346FC721915C0400CB534B /* CheckTaskDetailPageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A346FC421915C0400CB534B /* CheckTaskDetailPageInteractor.swift */; };
 		1A346FC821915C0400CB534B /* CheckTaskDetailBuilderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A346FC521915C0400CB534B /* CheckTaskDetailBuilderRouter.swift */; };
 		1A346FCA21915C2100CB534B /* CheckTaskDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A346FC921915C2100CB534B /* CheckTaskDetailViewController.storyboard */; };
 		1A346FCE21919A6C00CB534B /* DailyCheckTaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A346FCC21919A6C00CB534B /* DailyCheckTaskTableViewCell.swift */; };
 		1A346FCF21919A6C00CB534B /* DailyCheckTaskTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A346FCD21919A6C00CB534B /* DailyCheckTaskTableViewCell.xib */; };
-		1A346FD92191ABF600CB534B /* RiskCheckTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A346FD62191ABF600CB534B /* RiskCheckTaskViewController.swift */; };
 		1A346FDA2191ABF600CB534B /* RiskCheckTaskPageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A346FD72191ABF600CB534B /* RiskCheckTaskPageInteractor.swift */; };
 		1A346FDB2191ABF600CB534B /* RiskCheckTaskBuilderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A346FD82191ABF600CB534B /* RiskCheckTaskBuilderRouter.swift */; };
-		1A346FDD2191AC4100CB534B /* RiskCheckTaskViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A346FDC2191AC4100CB534B /* RiskCheckTaskViewController.storyboard */; };
 		1A35D7FA20DBC9BF002ED3CB /* EnterpriseInfoDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A35D7F920DBC9BF002ED3CB /* EnterpriseInfoDataManager.swift */; };
 		1A43BC2420C3AEE70093855B /* HomeInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A43BC2220C3AEE70093855B /* HomeInfoCollectionViewCell.swift */; };
 		1A43BC2520C3AEE70093855B /* HomeInfoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A43BC2320C3AEE70093855B /* HomeInfoCollectionViewCell.xib */; };
@@ -96,6 +104,8 @@
 		1ABDCA9720C5721B0062DE71 /* IncreaseAdminiFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1ABDCA9620C5721B0062DE71 /* IncreaseAdminiFooterView.xib */; };
 		1ABDCA9A20C5798B0062DE71 /* SecurityAdminiTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABDCA9820C5798B0062DE71 /* SecurityAdminiTableViewCell.swift */; };
 		1ABDCA9B20C5798B0062DE71 /* SecurityAdminiTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1ABDCA9920C5798B0062DE71 /* SecurityAdminiTableViewCell.xib */; };
+		1AD3DE8621971720005015A6 /* CheckTaskDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD3DE8421971720005015A6 /* CheckTaskDetailTableViewCell.swift */; };
+		1AD3DE8721971720005015A6 /* CheckTaskDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AD3DE8521971720005015A6 /* CheckTaskDetailTableViewCell.xib */; };
 		EF01F517C22ED0361C323767 /* Pods_MolueHomePart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 010F6973D5E1725577EE6B03 /* Pods_MolueHomePart.framework */; };
 /* End PBXBuildFile section */
 
@@ -119,6 +129,10 @@
 		1A0B89BB21931BBA000B1EBC /* DangerUnitSectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DangerUnitSectionHeaderView.xib; sourceTree = "<group>"; };
 		1A0B89BD21933045000B1EBC /* DailyCheckTaskHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyCheckTaskHeaderView.swift; sourceTree = "<group>"; };
 		1A0B89BF21933052000B1EBC /* DailyCheckTaskHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailyCheckTaskHeaderView.xib; sourceTree = "<group>"; };
+		1A0B89DA21968991000B1EBC /* DailyCheckSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyCheckSectionHeaderView.swift; sourceTree = "<group>"; };
+		1A0B89DC219689A1000B1EBC /* DailyCheckSectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailyCheckSectionHeaderView.xib; sourceTree = "<group>"; };
+		1A0B89DE21968CF7000B1EBC /* DailyCheckTaskFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyCheckTaskFooterView.swift; sourceTree = "<group>"; };
+		1A0B89E021968D0A000B1EBC /* DailyCheckTaskFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailyCheckTaskFooterView.xib; sourceTree = "<group>"; };
 		1A1084FC20ECF1DD004E365A /* IncreaseAdminiNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncreaseAdminiNavigator.swift; sourceTree = "<group>"; };
 		1A1084FE20ECF1FC004E365A /* IncreaseAdminiDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncreaseAdminiDataManager.swift; sourceTree = "<group>"; };
 		1A1B88C320864D9500C5F4D9 /* MolueHomePart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MolueHomePart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -127,8 +141,8 @@
 		1A1B88CC20864D9500C5F4D9 /* MolueHomePartTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MolueHomePartTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A1B88D120864D9500C5F4D9 /* MolueHomePartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueHomePartTests.swift; sourceTree = "<group>"; };
 		1A1B88D320864D9500C5F4D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1A24021920E52CE100FC3EBA /* SelfRiskCheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfRiskCheckViewController.swift; sourceTree = "<group>"; };
-		1A24021B20E52DFB00FC3EBA /* SelfRiskCheckViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelfRiskCheckViewController.storyboard; sourceTree = "<group>"; };
+		1A24021920E52CE100FC3EBA /* RiskCheckTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskCheckTaskViewController.swift; sourceTree = "<group>"; };
+		1A24021B20E52DFB00FC3EBA /* RiskCheckTaskViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RiskCheckTaskViewController.storyboard; sourceTree = "<group>"; };
 		1A24021F20E52F7800FC3EBA /* LawRegulationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LawRegulationViewController.swift; sourceTree = "<group>"; };
 		1A24022120E52FA800FC3EBA /* PolicyNoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyNoticeViewController.swift; sourceTree = "<group>"; };
 		1A24022320E5309100FC3EBA /* LawRegulationViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LawRegulationViewController.storyboard; sourceTree = "<group>"; };
@@ -136,16 +150,20 @@
 		1A24022720E5337A00FC3EBA /* EnterpriseInfoNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterpriseInfoNavigator.swift; sourceTree = "<group>"; };
 		1A24022A20E5363600FC3EBA /* SecurityAdminiNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityAdminiNavigator.swift; sourceTree = "<group>"; };
 		1A24022C20E536A700FC3EBA /* SecurityAdminiDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityAdminiDataManager.swift; sourceTree = "<group>"; };
+		1A3465D421971E3400EBA57C /* CheckTaskDetailFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTaskDetailFooterView.swift; sourceTree = "<group>"; };
+		1A3465D621971E3E00EBA57C /* CheckTaskDetailFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckTaskDetailFooterView.xib; sourceTree = "<group>"; };
+		1A3465E12197392000EBA57C /* RiskPlanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RiskPlanViewController.swift; sourceTree = "<group>"; };
+		1A3465E22197392000EBA57C /* RiskPlanPageInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RiskPlanPageInteractor.swift; sourceTree = "<group>"; };
+		1A3465E32197392000EBA57C /* RiskPlanBuilderRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RiskPlanBuilderRouter.swift; sourceTree = "<group>"; };
+		1A3465E42197392000EBA57C /* RiskPlanViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RiskPlanViewController.storyboard; sourceTree = "<group>"; };
 		1A346FC321915C0400CB534B /* CheckTaskDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTaskDetailViewController.swift; sourceTree = "<group>"; };
 		1A346FC421915C0400CB534B /* CheckTaskDetailPageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTaskDetailPageInteractor.swift; sourceTree = "<group>"; };
 		1A346FC521915C0400CB534B /* CheckTaskDetailBuilderRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTaskDetailBuilderRouter.swift; sourceTree = "<group>"; };
 		1A346FC921915C2100CB534B /* CheckTaskDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CheckTaskDetailViewController.storyboard; sourceTree = "<group>"; };
 		1A346FCC21919A6C00CB534B /* DailyCheckTaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyCheckTaskTableViewCell.swift; sourceTree = "<group>"; };
 		1A346FCD21919A6C00CB534B /* DailyCheckTaskTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailyCheckTaskTableViewCell.xib; sourceTree = "<group>"; };
-		1A346FD62191ABF600CB534B /* RiskCheckTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskCheckTaskViewController.swift; sourceTree = "<group>"; };
 		1A346FD72191ABF600CB534B /* RiskCheckTaskPageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskCheckTaskPageInteractor.swift; sourceTree = "<group>"; };
 		1A346FD82191ABF600CB534B /* RiskCheckTaskBuilderRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskCheckTaskBuilderRouter.swift; sourceTree = "<group>"; };
-		1A346FDC2191AC4100CB534B /* RiskCheckTaskViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RiskCheckTaskViewController.storyboard; sourceTree = "<group>"; };
 		1A35D7F920DBC9BF002ED3CB /* EnterpriseInfoDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterpriseInfoDataManager.swift; sourceTree = "<group>"; };
 		1A43BC2220C3AEE70093855B /* HomeInfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInfoCollectionViewCell.swift; sourceTree = "<group>"; };
 		1A43BC2320C3AEE70093855B /* HomeInfoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeInfoCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -204,6 +222,8 @@
 		1ABDCA9620C5721B0062DE71 /* IncreaseAdminiFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IncreaseAdminiFooterView.xib; sourceTree = "<group>"; };
 		1ABDCA9820C5798B0062DE71 /* SecurityAdminiTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityAdminiTableViewCell.swift; sourceTree = "<group>"; };
 		1ABDCA9920C5798B0062DE71 /* SecurityAdminiTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecurityAdminiTableViewCell.xib; sourceTree = "<group>"; };
+		1AD3DE8421971720005015A6 /* CheckTaskDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTaskDetailTableViewCell.swift; sourceTree = "<group>"; };
+		1AD3DE8521971720005015A6 /* CheckTaskDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckTaskDetailTableViewCell.xib; sourceTree = "<group>"; };
 		9468AE17912D4AEEBE6E1EFA /* Pods-MolueHomePart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueHomePart.release.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueHomePart/Pods-MolueHomePart.release.xcconfig"; sourceTree = "<group>"; };
 		C7C163FB01CFAE81C039463E /* Pods-MolueHomePart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueHomePart.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueHomePart/Pods-MolueHomePart.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -360,9 +380,21 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		1A3465E02197392000EBA57C /* 隐患安排 */ = {
+			isa = PBXGroup;
+			children = (
+				1A3465E12197392000EBA57C /* RiskPlanViewController.swift */,
+				1A3465E22197392000EBA57C /* RiskPlanPageInteractor.swift */,
+				1A3465E32197392000EBA57C /* RiskPlanBuilderRouter.swift */,
+				1A3465E42197392000EBA57C /* RiskPlanViewController.storyboard */,
+			);
+			path = "隐患安排";
+			sourceTree = "<group>";
+		};
 		1A346FC221915BAA00CB534B /* 检查详情 */ = {
 			isa = PBXGroup;
 			children = (
+				1AD3DE8821971725005015A6 /* Views */,
 				1A346FC321915C0400CB534B /* CheckTaskDetailViewController.swift */,
 				1A346FC421915C0400CB534B /* CheckTaskDetailPageInteractor.swift */,
 				1A346FC521915C0400CB534B /* CheckTaskDetailBuilderRouter.swift */,
@@ -378,6 +410,10 @@
 				1A346FCD21919A6C00CB534B /* DailyCheckTaskTableViewCell.xib */,
 				1A0B89BD21933045000B1EBC /* DailyCheckTaskHeaderView.swift */,
 				1A0B89BF21933052000B1EBC /* DailyCheckTaskHeaderView.xib */,
+				1A0B89DA21968991000B1EBC /* DailyCheckSectionHeaderView.swift */,
+				1A0B89DC219689A1000B1EBC /* DailyCheckSectionHeaderView.xib */,
+				1A0B89DE21968CF7000B1EBC /* DailyCheckTaskFooterView.swift */,
+				1A0B89E021968D0A000B1EBC /* DailyCheckTaskFooterView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -586,14 +622,24 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		1AD3DE8821971725005015A6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1AD3DE8421971720005015A6 /* CheckTaskDetailTableViewCell.swift */,
+				1AD3DE8521971720005015A6 /* CheckTaskDetailTableViewCell.xib */,
+				1A3465D421971E3400EBA57C /* CheckTaskDetailFooterView.swift */,
+				1A3465D621971E3E00EBA57C /* CheckTaskDetailFooterView.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		1AEEC11F20E52608006C3B75 /* 隐患自查 */ = {
 			isa = PBXGroup;
 			children = (
+				1A3465E02197392000EBA57C /* 隐患安排 */,
 				1A24023220E5391C00FC3EBA /* Models */,
-				1A24021920E52CE100FC3EBA /* SelfRiskCheckViewController.swift */,
-				1A24021B20E52DFB00FC3EBA /* SelfRiskCheckViewController.storyboard */,
-				1A346FD62191ABF600CB534B /* RiskCheckTaskViewController.swift */,
-				1A346FDC2191AC4100CB534B /* RiskCheckTaskViewController.storyboard */,
+				1A24021920E52CE100FC3EBA /* RiskCheckTaskViewController.swift */,
+				1A24021B20E52DFB00FC3EBA /* RiskCheckTaskViewController.storyboard */,
 				1A346FD72191ABF600CB534B /* RiskCheckTaskPageInteractor.swift */,
 				1A346FD82191ABF600CB534B /* RiskCheckTaskBuilderRouter.swift */,
 			);
@@ -721,9 +767,11 @@
 				1A0B89BC21931BBA000B1EBC /* DangerUnitSectionHeaderView.xib in Resources */,
 				1A43BC3020C3CAA60093855B /* EnterpriseInfoTableViewCell.xib in Resources */,
 				1A346FCA21915C2100CB534B /* CheckTaskDetailViewController.storyboard in Resources */,
-				1A24021C20E52DFB00FC3EBA /* SelfRiskCheckViewController.storyboard in Resources */,
+				1A24021C20E52DFB00FC3EBA /* RiskCheckTaskViewController.storyboard in Resources */,
 				1ABDCA9720C5721B0062DE71 /* IncreaseAdminiFooterView.xib in Resources */,
 				1A522ECA2190357300094A8A /* DailyCheckTaskViewController.storyboard in Resources */,
+				1A0B89DD219689A1000B1EBC /* DailyCheckSectionHeaderView.xib in Resources */,
+				1A3465D721971E3E00EBA57C /* CheckTaskDetailFooterView.xib in Resources */,
 				1A24022420E5309100FC3EBA /* LawRegulationViewController.storyboard in Resources */,
 				1AAF7B8620C1971B0051EC18 /* DangerMachineryViewController.storyboard in Resources */,
 				1A730AEF20EBBC49008831BC /* PolicyDetailViewController.storyboard in Resources */,
@@ -735,19 +783,21 @@
 				1A0B89B821931B8F000B1EBC /* DangerUnitTableViewCell.xib in Resources */,
 				1A522EC121902B0300094A8A /* HomeInfoPageViewController.storyboard in Resources */,
 				1A06557E20A9EE020016CA86 /* HomeInfoTableViewCell.xib in Resources */,
-				1A346FDD2191AC4100CB534B /* RiskCheckTaskViewController.storyboard in Resources */,
 				1A43BC2520C3AEE70093855B /* HomeInfoCollectionViewCell.xib in Resources */,
 				1A43BC2920C3AF2B0093855B /* HomeInfoHeaderView.xib in Resources */,
 				1A0B89C021933052000B1EBC /* DailyCheckTaskHeaderView.xib in Resources */,
 				1AB0670420EFB06B00619570 /* LawRegulationTableViewCell.xib in Resources */,
+				1A0B89E121968D0A000B1EBC /* DailyCheckTaskFooterView.xib in Resources */,
 				1A346FCF21919A6C00CB534B /* DailyCheckTaskTableViewCell.xib in Resources */,
 				1AAF7B8320C1971B0051EC18 /* SecurityAdminiViewController.storyboard in Resources */,
 				1AAF7B8920C1971B0051EC18 /* EnterpriseRiskViewController.storyboard in Resources */,
 				1AAF7B8420C1971B0051EC18 /* ContactInfoViewController.storyboard in Resources */,
+				1A3465E82197392000EBA57C /* RiskPlanViewController.storyboard in Resources */,
 				1AB0670820EFB61D00619570 /* PolicyNoticeTableViewCell.xib in Resources */,
 				1AAF7B8020C1971B0051EC18 /* IncreaseAdminiViewController.storyboard in Resources */,
 				1A24022620E530AE00FC3EBA /* PolicyNoticeViewController.storyboard in Resources */,
 				1A65039620DD552B0017F91D /* MolueHome.xcassets in Resources */,
+				1AD3DE8721971720005015A6 /* CheckTaskDetailTableViewCell.xib in Resources */,
 				1AAF7B6720C1970A0051EC18 /* EnterpriseInfoViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -787,7 +837,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A24021A20E52CE100FC3EBA /* SelfRiskCheckViewController.swift in Sources */,
+				1A24021A20E52CE100FC3EBA /* RiskCheckTaskViewController.swift in Sources */,
 				1A0B89BE21933045000B1EBC /* DailyCheckTaskHeaderView.swift in Sources */,
 				1A346FC621915C0400CB534B /* CheckTaskDetailViewController.swift in Sources */,
 				1AAF7B7E20C1971B0051EC18 /* BasicArchivesViewController.swift in Sources */,
@@ -805,22 +855,28 @@
 				1A24022820E5337A00FC3EBA /* EnterpriseInfoNavigator.swift in Sources */,
 				1AAF7B8B20C1971B0051EC18 /* RiskFeatureViewController.swift in Sources */,
 				1A24022220E52FA800FC3EBA /* PolicyNoticeViewController.swift in Sources */,
+				1A3465E72197392000EBA57C /* RiskPlanBuilderRouter.swift in Sources */,
 				1A522ED621912BA200094A8A /* DangerUnitListViewController.swift in Sources */,
 				1A24022020E52F7800FC3EBA /* LawRegulationViewController.swift in Sources */,
 				1AAF7B8720C1971B0051EC18 /* DangerMachineryViewController.swift in Sources */,
 				1A730AEB20EBBC02008831BC /* PolicyDetailViewController.swift in Sources */,
 				1A522EC62190356100094A8A /* DailyCheckTaskViewController.swift in Sources */,
 				1AB0670720EFB61D00619570 /* PolicyNoticeTableViewCell.swift in Sources */,
+				1A3465D521971E3400EBA57C /* CheckTaskDetailFooterView.swift in Sources */,
 				1A522ED721912BA200094A8A /* DangerUnitListPageInteractor.swift in Sources */,
 				1A522EC82190356100094A8A /* DailyCheckTaskBuilderRouter.swift in Sources */,
+				1A0B89DF21968CF7000B1EBC /* DailyCheckTaskFooterView.swift in Sources */,
+				1AD3DE8621971720005015A6 /* CheckTaskDetailTableViewCell.swift in Sources */,
 				1A522EBF2190261900094A8A /* HomeInfoPageBuilderRouter.swift in Sources */,
 				1A0B89BA21931BAD000B1EBC /* DangerUnitSectionHeaderView.swift in Sources */,
+				1A0B89DB21968991000B1EBC /* DailyCheckSectionHeaderView.swift in Sources */,
 				1A43BC2720C3AF190093855B /* HomeInfoHeaderView.swift in Sources */,
 				1A1084FD20ECF1DD004E365A /* IncreaseAdminiNavigator.swift in Sources */,
+				1A3465E52197392000EBA57C /* RiskPlanViewController.swift in Sources */,
 				1AAF7B8120C1971B0051EC18 /* IncreaseAdminiViewController.swift in Sources */,
+				1A3465E62197392000EBA57C /* RiskPlanPageInteractor.swift in Sources */,
 				1A602F8520A87D58003AD583 /* HomeInfoTableHeaderView.swift in Sources */,
 				1A24022D20E536A700FC3EBA /* SecurityAdminiDataManager.swift in Sources */,
-				1A346FD92191ABF600CB534B /* RiskCheckTaskViewController.swift in Sources */,
 				1A522EC72190356100094A8A /* DailyCheckTaskPageInteractor.swift in Sources */,
 				1AAF7B6820C1970A0051EC18 /* EnterpriseInfoViewController.swift in Sources */,
 				1A346FC821915C0400CB534B /* CheckTaskDetailBuilderRouter.swift in Sources */,

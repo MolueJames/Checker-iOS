@@ -17,6 +17,20 @@ final class CheckTaskDetailViewController: MLBaseViewController  {
     //MARK: View Controller Properties
     var listener: CheckTaskDetailPresentableListener?
     
+    @IBOutlet weak var tableView: UITableView! {
+        didSet {
+            tableView.register(xibWithCellClass: CheckTaskDetailTableViewCell.self)
+            tableView.backgroundColor = UIColor.init(hex: 0xf5f5f9)
+            tableView.tableFooterView = self.footerView
+            tableView.delegate = self
+            tableView.dataSource = self
+        }
+    }
+    
+    lazy var footerView: CheckTaskDetailFooterView = {
+        let footerView: CheckTaskDetailFooterView = CheckTaskDetailFooterView.createFromXib()
+        return footerView
+    }()
     //MARK: View Controller Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +44,8 @@ extension CheckTaskDetailViewController: MLUserInterfaceProtocol {
     }
     
     func updateUserInterfaceElements() {
-        
+        self.view.backgroundColor = .white
+        self.title = "风险详情"
     }
 }
 
@@ -40,4 +55,21 @@ extension CheckTaskDetailViewController: CheckTaskDetailPagePresentable {
 
 extension CheckTaskDetailViewController: CheckTaskDetailViewControllable {
     
+}
+
+extension CheckTaskDetailViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 7
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withClass: CheckTaskDetailTableViewCell.self)
+        return cell
+    }
+}
+
+extension CheckTaskDetailViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
 }

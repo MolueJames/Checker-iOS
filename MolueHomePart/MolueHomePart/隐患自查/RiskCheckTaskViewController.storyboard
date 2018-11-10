@@ -11,18 +11,103 @@
     </dependencies>
     <scenes>
         <!--Risk Check Task View Controller-->
-        <scene sceneID="ctQ-hd-GzM">
+        <scene sceneID="RSa-aJ-lPb">
             <objects>
-                <viewController storyboardIdentifier="RiskCheckTaskViewController" id="Nu4-Xu-87d" customClass="RiskCheckTaskViewController" customModule="MolueHomePart" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="MHp-jS-Brw">
+                <viewController storyboardIdentifier="RiskCheckTaskViewController" id="vfG-AK-Kvw" customClass="RiskCheckTaskViewController" customModule="MolueHomePart" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QZa-yw-QkI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aTc-Nz-H7w">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cso-bP-ddH" customClass="MLCommonClickView" customModule="MolueCommon">
+                                        <rect key="frame" x="0.0" y="10" width="375" height="55"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="zfv-ec-GDl"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mcO-hr-sYi" customClass="MLCommonClickView" customModule="MolueCommon">
+                                        <rect key="frame" x="0.0" y="65" width="375" height="55"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="9cD-4g-wLo"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sFu-tB-xsG" customClass="MLCommonClickView" customModule="MolueCommon">
+                                        <rect key="frame" x="0.0" y="120" width="375" height="55"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="JWq-GR-IkN"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hvt-WV-1nO" customClass="MLCommonClickView" customModule="MolueCommon">
+                                        <rect key="frame" x="0.0" y="175" width="375" height="55"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="MUi-NV-6Ve"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JWA-bk-yFp" customClass="MLCommonPhotoView" customModule="MolueCommon">
+                                        <rect key="frame" x="0.0" y="240" width="375" height="120"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="120" id="4ng-8I-FT6"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bIM-jN-1wb">
+                                        <rect key="frame" x="0.0" y="360" width="375" height="100"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="94I-k8-dMz"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="hvt-WV-1nO" secondAttribute="trailing" id="5fJ-Iz-QRg"/>
+                                    <constraint firstItem="sFu-tB-xsG" firstAttribute="leading" secondItem="aTc-Nz-H7w" secondAttribute="leading" id="Anb-Hd-IDr"/>
+                                    <constraint firstItem="mcO-hr-sYi" firstAttribute="leading" secondItem="aTc-Nz-H7w" secondAttribute="leading" id="B7S-O7-n38"/>
+                                    <constraint firstItem="Cso-bP-ddH" firstAttribute="top" secondItem="aTc-Nz-H7w" secondAttribute="top" constant="10" id="BPO-fP-TtM"/>
+                                    <constraint firstItem="JWA-bk-yFp" firstAttribute="top" secondItem="hvt-WV-1nO" secondAttribute="bottom" constant="10" id="HBE-AT-Zrc"/>
+                                    <constraint firstAttribute="trailing" secondItem="mcO-hr-sYi" secondAttribute="trailing" id="HkY-qp-Ojh"/>
+                                    <constraint firstAttribute="trailing" secondItem="JWA-bk-yFp" secondAttribute="trailing" id="IYG-5i-uq7"/>
+                                    <constraint firstItem="hvt-WV-1nO" firstAttribute="leading" secondItem="aTc-Nz-H7w" secondAttribute="leading" id="XXm-71-fBp"/>
+                                    <constraint firstItem="Cso-bP-ddH" firstAttribute="centerX" secondItem="aTc-Nz-H7w" secondAttribute="centerX" id="avM-8X-t56"/>
+                                    <constraint firstItem="JWA-bk-yFp" firstAttribute="leading" secondItem="aTc-Nz-H7w" secondAttribute="leading" id="ej6-SO-f7Y"/>
+                                    <constraint firstItem="bIM-jN-1wb" firstAttribute="top" secondItem="JWA-bk-yFp" secondAttribute="bottom" id="f5m-GT-WeE"/>
+                                    <constraint firstItem="bIM-jN-1wb" firstAttribute="leading" secondItem="aTc-Nz-H7w" secondAttribute="leading" id="nbt-Sh-QCH"/>
+                                    <constraint firstItem="sFu-tB-xsG" firstAttribute="top" secondItem="mcO-hr-sYi" secondAttribute="bottom" id="sWq-Ra-jtD"/>
+                                    <constraint firstAttribute="trailing" secondItem="bIM-jN-1wb" secondAttribute="trailing" id="sxq-6X-crZ"/>
+                                    <constraint firstItem="mcO-hr-sYi" firstAttribute="top" secondItem="Cso-bP-ddH" secondAttribute="bottom" id="tUJ-jR-4Nl"/>
+                                    <constraint firstAttribute="bottom" secondItem="bIM-jN-1wb" secondAttribute="bottom" id="u2Q-DK-mQV"/>
+                                    <constraint firstItem="Cso-bP-ddH" firstAttribute="leading" secondItem="aTc-Nz-H7w" secondAttribute="leading" id="uZm-4S-ukB"/>
+                                    <constraint firstAttribute="trailing" secondItem="Cso-bP-ddH" secondAttribute="trailing" id="vu1-Zj-KKK"/>
+                                    <constraint firstAttribute="trailing" secondItem="sFu-tB-xsG" secondAttribute="trailing" id="we2-gB-lkp"/>
+                                    <constraint firstItem="hvt-WV-1nO" firstAttribute="top" secondItem="sFu-tB-xsG" secondAttribute="bottom" id="ziv-7I-ehq"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="zfH-ig-a51"/>
+                        <constraints>
+                            <constraint firstItem="ySf-wE-RHm" firstAttribute="trailing" secondItem="aTc-Nz-H7w" secondAttribute="trailing" id="WoQ-7C-cZs"/>
+                            <constraint firstItem="ySf-wE-RHm" firstAttribute="bottom" secondItem="aTc-Nz-H7w" secondAttribute="bottom" id="bGk-oF-dh7"/>
+                            <constraint firstItem="aTc-Nz-H7w" firstAttribute="leading" secondItem="QZa-yw-QkI" secondAttribute="leading" id="mh5-OG-Gnc"/>
+                            <constraint firstItem="aTc-Nz-H7w" firstAttribute="top" secondItem="ySf-wE-RHm" secondAttribute="top" id="qZD-Fi-9o8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ySf-wE-RHm"/>
                     </view>
+                    <connections>
+                        <outlet property="riskCategoryClickView" destination="sFu-tB-xsG" id="Goa-gY-V77"/>
+                        <outlet property="riskDescriptionInputView" destination="mcO-hr-sYi" id="oC6-Xp-dkP"/>
+                        <outlet property="riskLevelClickView" destination="hvt-WV-1nO" id="63i-h5-2XU"/>
+                        <outlet property="riskPlaceClickView" destination="Cso-bP-ddH" id="C0i-jG-pWH"/>
+                        <outlet property="uploadPhotoView" destination="JWA-bk-yFp" id="nNc-r6-8eJ"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="J8L-7F-EW0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W4w-Nm-e5c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="253.59999999999999" y="230.73463268365819"/>
         </scene>
     </scenes>
 </document>
