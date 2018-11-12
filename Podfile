@@ -16,11 +16,12 @@ def molue_safty_shared_pods
     pod 'SnapKit', '~> 4.0.1'
     pod 'Kingfisher', '~> 4.10.0'
     pod 'ViewAnimator', '~> 2.0.1'
-    pod 'Gallery', '~> 2.0.6'
+    pod 'Gallery', '~> 2.0.5'
     pod 'RxSwift', '~> 4.1.2'
     pod 'ESPullToRefresh', '~> 2.7'
     pod 'ObjectMapper', '~> 3.3.0'
     pod 'Bolts-Swift', '~> 1.4.0'
+    pod 'Lightbox', '~> 2.3.0'
 end
 
 target 'MolueSafty' do

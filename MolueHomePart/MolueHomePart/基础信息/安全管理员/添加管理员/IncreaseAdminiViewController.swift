@@ -12,7 +12,6 @@ import MolueNavigator
 import MolueCommon
 import RxSwift
 import MolueUtilities
-import ImagePicker
 import Kingfisher
 import ObjectMapper
 
@@ -102,20 +101,20 @@ class IncreaseAdminiViewController: MLBaseViewController {
     //MARK: Interface Functions
     private func pushToImagePick(leftCount: Int) {
         if leftCount > 0 {
-            let pickerController = self.imagePickerController(leftCount)
-            self.navigator.present(pickerController)
+//            let pickerController = self.imagePickerController(leftCount)
+//            self.navigator.present(pickerController)
         } else {
             let limitCount = self.dataManager.uploadImageLimit
             self.showWarningHUD(text: "对不起,只允许选择\(limitCount)张图片")
         }
     }
     
-    private func imagePickerController(_ leftCount: Int) -> ImagePickerController {
-        let imagePickerController = ImagePickerController()
-        imagePickerController.delegate = self
-        imagePickerController.imageLimit = leftCount
-        return imagePickerController
-    }
+//    private func imagePickerController(_ leftCount: Int) -> ImagePickerController {
+//        let imagePickerController = ImagePickerController()
+//        imagePickerController.delegate = self
+//        imagePickerController.imageLimit = leftCount
+//        return imagePickerController
+//    }
     
     private func pushToSelectController(title: String, list: [MLSelectedTableViewModel]) {
         let list = self.dataManager.fullTimeList
@@ -156,21 +155,21 @@ extension IncreaseAdminiViewController: MLUserInterfaceProtocol {
 }
 
 //TODO: 实现这些协议方法
-extension IncreaseAdminiViewController: ImagePickerDelegate {
-    func wrapperDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
-        self.uploadPhotoInputView.appendImages(images)
-        imagePicker.dismiss(animated: true)
-    }
-    
-    func doneButtonDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
-        self.uploadPhotoInputView.appendImages(images)
-        imagePicker.dismiss(animated: true)
-    }
-    
-    func cancelButtonDidPress(_ imagePicker: ImagePickerController) {
-        imagePicker.dismiss(animated: true)
-    }
-}
+//extension IncreaseAdminiViewController: ImagePickerDelegate {
+//    func wrapperDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
+//        self.uploadPhotoInputView.appendImages(images)
+//        imagePicker.dismiss(animated: true)
+//    }
+//
+//    func doneButtonDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
+//        self.uploadPhotoInputView.appendImages(images)
+//        imagePicker.dismiss(animated: true)
+//    }
+//
+//    func cancelButtonDidPress(_ imagePicker: ImagePickerController) {
+//        imagePicker.dismiss(animated: true)
+//    }
+//}
 
 extension IncreaseAdminiViewController: MolueNavigatorProtocol {
     func doTransferParameters<T>(params: T?) {

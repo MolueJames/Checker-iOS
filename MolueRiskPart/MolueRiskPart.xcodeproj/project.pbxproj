@@ -41,6 +41,10 @@
 		1AA7355A20A9C37100DF7CD0 /* MolueNavigator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA7355920A9C37100DF7CD0 /* MolueNavigator.framework */; };
 		1AA7355C20A9C37100DF7CD0 /* MolueNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA7355B20A9C37100DF7CD0 /* MolueNetwork.framework */; };
 		1AA7355E20A9C37100DF7CD0 /* MolueUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA7355D20A9C37100DF7CD0 /* MolueUtilities.framework */; };
+		1ACD09DF2199C27800793AAC /* QuickCheckRiskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACD09DC2199C27800793AAC /* QuickCheckRiskViewController.swift */; };
+		1ACD09E02199C27800793AAC /* QuickCheckRiskPageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACD09DD2199C27800793AAC /* QuickCheckRiskPageInteractor.swift */; };
+		1ACD09E12199C27800793AAC /* QuickCheckRiskBuilderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACD09DE2199C27800793AAC /* QuickCheckRiskBuilderRouter.swift */; };
+		1ACD09E32199C28C00793AAC /* QuickCheckRiskViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1ACD09E22199C28C00793AAC /* QuickCheckRiskViewController.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +94,10 @@
 		1AA7355920A9C37100DF7CD0 /* MolueNavigator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueNavigator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AA7355B20A9C37100DF7CD0 /* MolueNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AA7355D20A9C37100DF7CD0 /* MolueUtilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueUtilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1ACD09DC2199C27800793AAC /* QuickCheckRiskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickCheckRiskViewController.swift; sourceTree = "<group>"; };
+		1ACD09DD2199C27800793AAC /* QuickCheckRiskPageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickCheckRiskPageInteractor.swift; sourceTree = "<group>"; };
+		1ACD09DE2199C27800793AAC /* QuickCheckRiskBuilderRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickCheckRiskBuilderRouter.swift; sourceTree = "<group>"; };
+		1ACD09E22199C28C00793AAC /* QuickCheckRiskViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QuickCheckRiskViewController.storyboard; sourceTree = "<group>"; };
 		1F7303D743A6A3BDD8783D8D /* Pods-MolueRiskPart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueRiskPart.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueRiskPart/Pods-MolueRiskPart.debug.xcconfig"; sourceTree = "<group>"; };
 		CF9033C8D71A897E2F825131 /* Pods_MolueRiskPart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MolueRiskPart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3274AE2F9F635301421FE61 /* Pods-MolueRiskPart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueRiskPart.release.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueRiskPart/Pods-MolueRiskPart.release.xcconfig"; sourceTree = "<group>"; };
@@ -176,6 +184,7 @@
 		1A602F4620A810DF003AD583 /* MolueRiskPart */ = {
 			isa = PBXGroup;
 			children = (
+				1ACD09DB2199C25A00793AAC /* 快速检查 */,
 				1A65039720DD55350017F91D /* MolueRisk.xcassets */,
 				1AA7353E20A9C0D700DF7CD0 /* 隐患首页 */,
 				1A602F4720A810DF003AD583 /* MolueRiskPart.h */,
@@ -237,6 +246,17 @@
 				1A05CC2E2189E9C4006D637C /* PotentialRiskViewController.storyboard */,
 			);
 			path = "隐患首页";
+			sourceTree = "<group>";
+		};
+		1ACD09DB2199C25A00793AAC /* 快速检查 */ = {
+			isa = PBXGroup;
+			children = (
+				1ACD09DC2199C27800793AAC /* QuickCheckRiskViewController.swift */,
+				1ACD09E22199C28C00793AAC /* QuickCheckRiskViewController.storyboard */,
+				1ACD09DD2199C27800793AAC /* QuickCheckRiskPageInteractor.swift */,
+				1ACD09DE2199C27800793AAC /* QuickCheckRiskBuilderRouter.swift */,
+			);
+			path = "快速检查";
 			sourceTree = "<group>";
 		};
 		646AC1F75E92D0DD827B0A4A /* Frameworks */ = {
@@ -362,6 +382,7 @@
 				1A0B89CC2193392D000B1EBC /* RiskRectifyViewController.storyboard in Resources */,
 				1A3465DF2197308200EBA57C /* PotentialRiskCollectionCell.xib in Resources */,
 				1A3465DB2197281C00EBA57C /* PotentialRiskHeaderView.xib in Resources */,
+				1ACD09E32199C28C00793AAC /* QuickCheckRiskViewController.storyboard in Resources */,
 				1A730ADA20E91D33008831BC /* PotentialRiskTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -411,10 +432,13 @@
 				1A05CC3D2189FAD7006D637C /* PotentialRiskModel.swift in Sources */,
 				1A05CC3A2189F8A1006D637C /* RiskPlanPageInteractor.swift in Sources */,
 				1A05CC2B2189E9AF006D637C /* PotentialRiskViewController.swift in Sources */,
+				1ACD09DF2199C27800793AAC /* QuickCheckRiskViewController.swift in Sources */,
 				1A0B89C82193391C000B1EBC /* RiskRectifyViewController.swift in Sources */,
 				1A0B89D1219339B4000B1EBC /* RiskDetailViewController.swift in Sources */,
+				1ACD09E02199C27800793AAC /* QuickCheckRiskPageInteractor.swift in Sources */,
 				1A0B89CA2193391C000B1EBC /* RiskRectifyBuilderRouter.swift in Sources */,
 				1A05CC2C2189E9AF006D637C /* PotentialRiskPageInteractor.swift in Sources */,
+				1ACD09E12199C27800793AAC /* QuickCheckRiskBuilderRouter.swift in Sources */,
 				1A0B89D2219339B4000B1EBC /* RiskDetailPageInteractor.swift in Sources */,
 				1A0B89C92193391C000B1EBC /* RiskRectifyPageInteractor.swift in Sources */,
 			);

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Quick Check Risk View Controller-->
+        <scene sceneID="PUT-hA-cna">
+            <objects>
+                <viewController storyboardIdentifier="QuickCheckRiskViewController" id="bvL-Rj-tRb" customClass="QuickCheckRiskViewController" customModule="MolueRiskPart" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3ga-m5-91j">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EF2-0u-eCW">
+                                <rect key="frame" x="30" y="158.5" width="315" height="350"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="omv-Uw-315">
+                                        <rect key="frame" x="107.5" y="199" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="C4o-If-qUG"/>
+                                            <constraint firstAttribute="width" constant="100" id="Vyn-1S-WLx"/>
+                                        </constraints>
+                                        <state key="normal" image="molue_take_photo"/>
+                                        <connections>
+                                            <action selector="scanQRCodeButtonClicked:" destination="bvL-Rj-tRb" eventType="touchUpInside" id="glM-aw-Dc1"/>
+                                            <action selector="takePhotoButtonClicked:" destination="bvL-Rj-tRb" eventType="touchUpInside" id="6dv-d8-fN7"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aba-ey-eJP">
+                                        <rect key="frame" x="107.5" y="20" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="b1C-Ba-hUl"/>
+                                            <constraint firstAttribute="width" constant="100" id="o8D-yH-w6l"/>
+                                        </constraints>
+                                        <state key="normal" image="molue_scan_QRCode"/>
+                                        <connections>
+                                            <action selector="scanQRCodeButtonClicked:" destination="bvL-Rj-tRb" eventType="touchUpInside" id="DbT-k5-RRe"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="扫描二维码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g0g-PI-kp1">
+                                        <rect key="frame" x="114" y="130" width="87" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="添加隐患" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZJ9-3k-bRh">
+                                        <rect key="frame" x="123" y="309" width="69.5" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="g0g-PI-kp1" firstAttribute="top" secondItem="Aba-ey-eJP" secondAttribute="bottom" constant="10" id="DmH-4D-SCn"/>
+                                    <constraint firstItem="ZJ9-3k-bRh" firstAttribute="centerX" secondItem="EF2-0u-eCW" secondAttribute="centerX" id="Fe5-xW-ami"/>
+                                    <constraint firstAttribute="bottom" secondItem="ZJ9-3k-bRh" secondAttribute="bottom" constant="20" id="Hch-as-exg"/>
+                                    <constraint firstItem="Aba-ey-eJP" firstAttribute="top" secondItem="EF2-0u-eCW" secondAttribute="top" constant="20" id="RUt-Q3-M1N"/>
+                                    <constraint firstItem="omv-Uw-315" firstAttribute="centerX" secondItem="EF2-0u-eCW" secondAttribute="centerX" id="T1w-Bu-Q3y"/>
+                                    <constraint firstItem="ZJ9-3k-bRh" firstAttribute="top" secondItem="omv-Uw-315" secondAttribute="bottom" constant="10" id="WPO-th-znv"/>
+                                    <constraint firstAttribute="height" constant="350" id="nyC-k8-E2O"/>
+                                    <constraint firstItem="Aba-ey-eJP" firstAttribute="centerX" secondItem="EF2-0u-eCW" secondAttribute="centerX" id="p5L-j9-wq4"/>
+                                    <constraint firstItem="g0g-PI-kp1" firstAttribute="centerX" secondItem="EF2-0u-eCW" secondAttribute="centerX" id="qPS-yw-oGt"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="EF2-0u-eCW" firstAttribute="centerX" secondItem="3ga-m5-91j" secondAttribute="centerX" id="Mel-ko-Jdo"/>
+                            <constraint firstItem="VDr-AU-Mz1" firstAttribute="trailing" secondItem="EF2-0u-eCW" secondAttribute="trailing" constant="30" id="Pbq-Ku-8gE"/>
+                            <constraint firstItem="EF2-0u-eCW" firstAttribute="leading" secondItem="VDr-AU-Mz1" secondAttribute="leading" constant="30" id="Y0B-4u-MYK"/>
+                            <constraint firstItem="EF2-0u-eCW" firstAttribute="centerY" secondItem="3ga-m5-91j" secondAttribute="centerY" id="frl-bn-3yV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="VDr-AU-Mz1"/>
+                    </view>
+                    <connections>
+                        <outlet property="scanQRCodeButton" destination="Aba-ey-eJP" id="9xK-HF-gCt"/>
+                        <outlet property="takePhotoButton" destination="omv-Uw-315" id="NlN-m4-Kue"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hUV-WV-xtS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="116" y="147"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="molue_scan_QRCode" width="50" height="50"/>
+        <image name="molue_take_photo" width="50" height="50"/>
+    </resources>
+</document>
