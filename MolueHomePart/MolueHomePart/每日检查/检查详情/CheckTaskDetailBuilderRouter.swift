@@ -5,10 +5,10 @@
 //  Created by JamesCheng on 2018-11-06.
 //  Copyright © 2018 MolueTech. All rights reserved.
 //
-
+import MolueUtilities
 import MolueMediator
 
-protocol CheckTaskDetailRouterInteractable: class {
+protocol CheckTaskDetailRouterInteractable: ExistedRiskDetailInteractListener {
     var viewRouter: CheckTaskDetailViewableRouting? { get set }
     var listener: CheckTaskDetailInteractListener? { get set }
 }
@@ -32,7 +32,18 @@ final class CheckTaskDetailViewableRouter: MolueViewableRouting {
 }
 
 extension CheckTaskDetailViewableRouter: CheckTaskDetailViewableRouting {
-    
+    func presentExistedRiskDetailController() {
+        do {
+            let listener = try self.interactor.unwrap()
+            let builder = ExistedRiskDetailComponentBuilder()
+            let controller = builder.build(listener: listener)
+            controller.modalPresentationStyle = .overCurrentContext
+            let navigator = try self.controller.unwrap()
+            navigator.presentViiewController(controller, animated: true, completion: nil)
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+    }
 }
 
 protocol CheckTaskDetailInteractListener: class {

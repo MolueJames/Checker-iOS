@@ -39,6 +39,10 @@
 		1A3465E62197392000EBA57C /* RiskPlanPageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3465E22197392000EBA57C /* RiskPlanPageInteractor.swift */; };
 		1A3465E72197392000EBA57C /* RiskPlanBuilderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3465E32197392000EBA57C /* RiskPlanBuilderRouter.swift */; };
 		1A3465E82197392000EBA57C /* RiskPlanViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A3465E42197392000EBA57C /* RiskPlanViewController.storyboard */; };
+		1A3465EE2197DAEF00EBA57C /* ExistedRiskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3465EB2197DAEF00EBA57C /* ExistedRiskDetailViewController.swift */; };
+		1A3465EF2197DAEF00EBA57C /* ExistedRiskDetailPageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3465EC2197DAEF00EBA57C /* ExistedRiskDetailPageInteractor.swift */; };
+		1A3465F02197DAEF00EBA57C /* ExistedRiskDetailBuilderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3465ED2197DAEF00EBA57C /* ExistedRiskDetailBuilderRouter.swift */; };
+		1A3465F22197DB0E00EBA57C /* ExistedRiskDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A3465F12197DB0E00EBA57C /* ExistedRiskDetailViewController.storyboard */; };
 		1A346FC621915C0400CB534B /* CheckTaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A346FC321915C0400CB534B /* CheckTaskDetailViewController.swift */; };
 		1A346FC721915C0400CB534B /* CheckTaskDetailPageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A346FC421915C0400CB534B /* CheckTaskDetailPageInteractor.swift */; };
 		1A346FC821915C0400CB534B /* CheckTaskDetailBuilderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A346FC521915C0400CB534B /* CheckTaskDetailBuilderRouter.swift */; };
@@ -156,6 +160,10 @@
 		1A3465E22197392000EBA57C /* RiskPlanPageInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RiskPlanPageInteractor.swift; sourceTree = "<group>"; };
 		1A3465E32197392000EBA57C /* RiskPlanBuilderRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RiskPlanBuilderRouter.swift; sourceTree = "<group>"; };
 		1A3465E42197392000EBA57C /* RiskPlanViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RiskPlanViewController.storyboard; sourceTree = "<group>"; };
+		1A3465EB2197DAEF00EBA57C /* ExistedRiskDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExistedRiskDetailViewController.swift; sourceTree = "<group>"; };
+		1A3465EC2197DAEF00EBA57C /* ExistedRiskDetailPageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExistedRiskDetailPageInteractor.swift; sourceTree = "<group>"; };
+		1A3465ED2197DAEF00EBA57C /* ExistedRiskDetailBuilderRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExistedRiskDetailBuilderRouter.swift; sourceTree = "<group>"; };
+		1A3465F12197DB0E00EBA57C /* ExistedRiskDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ExistedRiskDetailViewController.storyboard; sourceTree = "<group>"; };
 		1A346FC321915C0400CB534B /* CheckTaskDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTaskDetailViewController.swift; sourceTree = "<group>"; };
 		1A346FC421915C0400CB534B /* CheckTaskDetailPageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTaskDetailPageInteractor.swift; sourceTree = "<group>"; };
 		1A346FC521915C0400CB534B /* CheckTaskDetailBuilderRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTaskDetailBuilderRouter.swift; sourceTree = "<group>"; };
@@ -391,9 +399,21 @@
 			path = "隐患安排";
 			sourceTree = "<group>";
 		};
+		1A3465EA2197DA3F00EBA57C /* 存在隐患 */ = {
+			isa = PBXGroup;
+			children = (
+				1A3465EB2197DAEF00EBA57C /* ExistedRiskDetailViewController.swift */,
+				1A3465F12197DB0E00EBA57C /* ExistedRiskDetailViewController.storyboard */,
+				1A3465EC2197DAEF00EBA57C /* ExistedRiskDetailPageInteractor.swift */,
+				1A3465ED2197DAEF00EBA57C /* ExistedRiskDetailBuilderRouter.swift */,
+			);
+			path = "存在隐患";
+			sourceTree = "<group>";
+		};
 		1A346FC221915BAA00CB534B /* 检查详情 */ = {
 			isa = PBXGroup;
 			children = (
+				1A3465EA2197DA3F00EBA57C /* 存在隐患 */,
 				1AD3DE8821971725005015A6 /* Views */,
 				1A346FC321915C0400CB534B /* CheckTaskDetailViewController.swift */,
 				1A346FC421915C0400CB534B /* CheckTaskDetailPageInteractor.swift */,
@@ -771,6 +791,7 @@
 				1ABDCA9720C5721B0062DE71 /* IncreaseAdminiFooterView.xib in Resources */,
 				1A522ECA2190357300094A8A /* DailyCheckTaskViewController.storyboard in Resources */,
 				1A0B89DD219689A1000B1EBC /* DailyCheckSectionHeaderView.xib in Resources */,
+				1A3465F22197DB0E00EBA57C /* ExistedRiskDetailViewController.storyboard in Resources */,
 				1A3465D721971E3E00EBA57C /* CheckTaskDetailFooterView.xib in Resources */,
 				1A24022420E5309100FC3EBA /* LawRegulationViewController.storyboard in Resources */,
 				1AAF7B8620C1971B0051EC18 /* DangerMachineryViewController.storyboard in Resources */,
@@ -870,12 +891,15 @@
 				1A522EBF2190261900094A8A /* HomeInfoPageBuilderRouter.swift in Sources */,
 				1A0B89BA21931BAD000B1EBC /* DangerUnitSectionHeaderView.swift in Sources */,
 				1A0B89DB21968991000B1EBC /* DailyCheckSectionHeaderView.swift in Sources */,
+				1A3465EE2197DAEF00EBA57C /* ExistedRiskDetailViewController.swift in Sources */,
+				1A3465EF2197DAEF00EBA57C /* ExistedRiskDetailPageInteractor.swift in Sources */,
 				1A43BC2720C3AF190093855B /* HomeInfoHeaderView.swift in Sources */,
 				1A1084FD20ECF1DD004E365A /* IncreaseAdminiNavigator.swift in Sources */,
 				1A3465E52197392000EBA57C /* RiskPlanViewController.swift in Sources */,
 				1AAF7B8120C1971B0051EC18 /* IncreaseAdminiViewController.swift in Sources */,
 				1A3465E62197392000EBA57C /* RiskPlanPageInteractor.swift in Sources */,
 				1A602F8520A87D58003AD583 /* HomeInfoTableHeaderView.swift in Sources */,
+				1A3465F02197DAEF00EBA57C /* ExistedRiskDetailBuilderRouter.swift in Sources */,
 				1A24022D20E536A700FC3EBA /* SecurityAdminiDataManager.swift in Sources */,
 				1A522EC72190356100094A8A /* DailyCheckTaskPageInteractor.swift in Sources */,
 				1AAF7B6820C1970A0051EC18 /* EnterpriseInfoViewController.swift in Sources */,

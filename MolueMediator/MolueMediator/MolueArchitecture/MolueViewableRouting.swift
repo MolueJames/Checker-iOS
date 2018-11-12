@@ -21,6 +21,7 @@ public protocol MolueViewControllable: class {
     func popBackToRoot(animated flag: Bool)
     func doPopBackFromCurrent()
     func pushToViewController(_ controller: UIViewController, animated flag: Bool)
+    func presentViiewController(_ controller: UIViewController, animated flag: Bool, completion: (() -> Void)?)
 }
 
 public extension MolueViewControllable where Self: UIViewController {
@@ -42,5 +43,8 @@ public extension MolueViewControllable where Self: UIViewController {
     
     func pushToViewController(_ controller: UIViewController, animated flag: Bool) {
         self.navigationController?.pushViewController(controller, animated: flag)
+    }
+    func presentViiewController(_ controller: UIViewController, animated flag: Bool, completion: (() -> Void)?) {
+        self.present(controller, animated: flag, completion: completion)
     }
 }

@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import MolueUtilities
 import MolueFoundation
 
 protocol CheckTaskDetailPresentableListener: class {
     // 定义一些当前页面需要的业务逻辑, 比如网络请求.
+    func displayExistedRiskDetailController()
 }
 
 final class CheckTaskDetailViewController: MLBaseViewController  {
@@ -71,5 +73,13 @@ extension CheckTaskDetailViewController: UITableViewDataSource {
 extension CheckTaskDetailViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        do {
+            let listener = try self.listener.unwrap()
+            listener.displayExistedRiskDetailController()
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
     }
 }
