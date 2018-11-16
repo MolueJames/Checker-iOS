@@ -8,6 +8,7 @@
 
 import MolueMediator
 import MolueUtilities
+import MolueCommon
 import Gallery
 
 protocol QuickCheckRiskRouterInteractable: class {
@@ -47,7 +48,13 @@ extension QuickCheckRiskViewableRouter: QuickCheckRiskViewableRouting {
     }
     
     func pushToScanQRCodeController() {
-        
+        do {
+            let navigator = try self.controller.unwrap()
+            let controller = SWQRCodeViewController()
+            navigator.pushToViewController(controller, animated: true)
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
     }
 }
 

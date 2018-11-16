@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		06B680F23DF37F71DDAC1CD2 /* Pods_MolueCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F64AC0DDC4B2457896DB8640 /* Pods_MolueCommon.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		1A242C7A219EBE18007554E9 /* SWQRCodeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A242C74219EBE17007554E9 /* SWQRCodeManager.swift */; };
+		1A242C7B219EBE18007554E9 /* SWQRCodeConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A242C75219EBE17007554E9 /* SWQRCodeConfig.swift */; };
+		1A242C7C219EBE18007554E9 /* SWQRCode.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1A242C76219EBE17007554E9 /* SWQRCode.bundle */; };
+		1A242C7D219EBE18007554E9 /* SWScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A242C78219EBE17007554E9 /* SWScannerView.swift */; };
+		1A242C7E219EBE18007554E9 /* SWQRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A242C79219EBE17007554E9 /* SWQRCodeViewController.swift */; };
 		1A2D441B20A07E9900BA947A /* MLRefreshHeaderAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D441A20A07E9900BA947A /* MLRefreshHeaderAnimator.swift */; };
 		1A2D443D20A097E100BA947A /* MLInterfaceConfigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D443C20A097E100BA947A /* MLInterfaceConfigure.swift */; };
 		1A35D80020DD2893002ED3CB /* MolueFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A35D7FF20DD2893002ED3CB /* MolueFoundation.framework */; };
@@ -74,6 +79,11 @@
 
 /* Begin PBXFileReference section */
 		0B3FA8D5CD50C93A81938144 /* Pods-MolueCommon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueCommon.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueCommon/Pods-MolueCommon.debug.xcconfig"; sourceTree = "<group>"; };
+		1A242C74219EBE17007554E9 /* SWQRCodeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWQRCodeManager.swift; sourceTree = "<group>"; };
+		1A242C75219EBE17007554E9 /* SWQRCodeConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWQRCodeConfig.swift; sourceTree = "<group>"; };
+		1A242C76219EBE17007554E9 /* SWQRCode.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SWQRCode.bundle; sourceTree = "<group>"; };
+		1A242C78219EBE17007554E9 /* SWScannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWScannerView.swift; sourceTree = "<group>"; };
+		1A242C79219EBE17007554E9 /* SWQRCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWQRCodeViewController.swift; sourceTree = "<group>"; };
 		1A2D441A20A07E9900BA947A /* MLRefreshHeaderAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLRefreshHeaderAnimator.swift; sourceTree = "<group>"; };
 		1A2D443C20A097E100BA947A /* MLInterfaceConfigure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLInterfaceConfigure.swift; sourceTree = "<group>"; };
 		1A35D7FF20DD2893002ED3CB /* MolueFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,6 +154,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A242C72219EBE17007554E9 /* SWQRCode */ = {
+			isa = PBXGroup;
+			children = (
+				1A242C73219EBE17007554E9 /* Config */,
+				1A242C76219EBE17007554E9 /* SWQRCode.bundle */,
+				1A242C77219EBE17007554E9 /* View */,
+				1A242C79219EBE17007554E9 /* SWQRCodeViewController.swift */,
+			);
+			path = SWQRCode;
+			sourceTree = "<group>";
+		};
+		1A242C73219EBE17007554E9 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				1A242C74219EBE17007554E9 /* SWQRCodeManager.swift */,
+				1A242C75219EBE17007554E9 /* SWQRCodeConfig.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		1A242C77219EBE17007554E9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1A242C78219EBE17007554E9 /* SWScannerView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		1A2D441920A07E9900BA947A /* RefreshAnimator */ = {
 			isa = PBXGroup;
 			children = (
@@ -225,6 +263,7 @@
 			isa = PBXGroup;
 			children = (
 				1A65039120DD54F20017F91D /* MolueCommon.xcassets */,
+				1A242C72219EBE17007554E9 /* SWQRCode */,
 				1A4380182162A83900FA1C93 /* TableViewAdapter */,
 				1AA7822C20CCFC0800088923 /* CommonController */,
 				1A98F29B20C968F8000D0F8F /* CommonFunction */,
@@ -435,6 +474,7 @@
 				1A98F2A920C97331000D0F8F /* MLCommonAddPhotoCell.xib in Resources */,
 				1AA7823620CCFF3B00088923 /* MLSelectedTableViewCell.xib in Resources */,
 				1A98F2A520C972ED000D0F8F /* MLCommonPhotoCell.xib in Resources */,
+				1A242C7C219EBE18007554E9 /* SWQRCode.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -532,12 +572,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AEB87DB209218D3002230A3 /* MolueCryption.swift in Sources */,
+				1A242C7D219EBE18007554E9 /* SWScannerView.swift in Sources */,
 				1A98F29D20C96940000D0F8F /* MLCommonFunction.swift in Sources */,
+				1A242C7B219EBE18007554E9 /* SWQRCodeConfig.swift in Sources */,
 				1A5014B42094B90A00DB931E /* MolueCommonPath.swift in Sources */,
 				1A730ADC20EBB7F8008831BC /* MLCommonTitleView.swift in Sources */,
 				1A5014AB2094AFA400DB931E /* MoluePermissions.swift in Sources */,
 				1A2D443D20A097E100BA947A /* MLInterfaceConfigure.swift in Sources */,
 				1A43801A2162A86200FA1C93 /* MolueTableViewAdapter.swift in Sources */,
+				1A242C7A219EBE18007554E9 /* SWQRCodeManager.swift in Sources */,
 				1A5014B62094B9BA00DB931E /* MolueCommonColor.swift in Sources */,
 				1A52756520D51F7200CA0D68 /* MLSingleSelectController.swift in Sources */,
 				1A9BCA13210A26410035FC21 /* MolueNotificationName.swift in Sources */,
@@ -556,6 +599,7 @@
 				1ABDCAA120C594A50062DE71 /* MLCommonSegmentView.swift in Sources */,
 				1A52756D20D52A7600CA0D68 /* MLSingleSectionTableModel.swift in Sources */,
 				1A98F2A420C972ED000D0F8F /* MLCommonPhotoCell.swift in Sources */,
+				1A242C7E219EBE18007554E9 /* SWQRCodeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
