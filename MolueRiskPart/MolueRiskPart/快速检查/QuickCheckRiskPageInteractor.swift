@@ -7,11 +7,14 @@
 //
 import MolueUtilities
 import MolueMediator
+import MolueCommon
+import Gallery
 
 protocol QuickCheckRiskViewableRouting: class {
     // 定义一些页面跳转的方法, 比如Push, Presenter等.
     func pushToTakePhotoController()
     func pushToScanQRCodeController()
+    func pushToPhotoBrowser(with photos: [SKPhoto], controller: UIViewController)
 }
 
 protocol QuickCheckRiskPagePresentable: MolueInteractorPresentable {
@@ -38,8 +41,37 @@ extension QuickCheckRiskPageInteractor: QuickCheckRiskRouterInteractable {
 }
 
 extension QuickCheckRiskPageInteractor: QuickCheckRiskPresentableListener {
+    func jumpToPhotoBrowser(with images: [Image], controller: UIViewController) {
+        Image.resolve(images: images) { [weak self] resolvedImages in
+            do {
+                let images = resolvedImages.compactMap({$0})
+                try self.unwrap().showPhotoBrowser(images: images, controller: controller)
+            } catch {
+                MolueLogger.UIModule.error(error)
+            }
+        }
+    }
+    
+    func showPhotoBrowser(images: [UIImage], controller: UIViewController){
+        guard images.count > 0 else {return}
+        let photoImages:[SKPhoto] = images.map {
+            SKPhoto.photoWithImage($0)
+        }
+        do {
+            let viewRouter = try self.viewRouter.unwrap()
+            viewRouter.pushToPhotoBrowser(with: photoImages, controller: controller)
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+    }
+    
     func jumpToScanQRCodeController() {
-        
+        do {
+            let viewRouter = try self.viewRouter.unwrap()
+            viewRouter.pushToScanQRCodeController()
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
     }
     
     func jumpToTakePhotoController() {
@@ -50,6 +82,4 @@ extension QuickCheckRiskPageInteractor: QuickCheckRiskPresentableListener {
             MolueLogger.UIModule.error(error)
         }
     }
-    
-    
 }

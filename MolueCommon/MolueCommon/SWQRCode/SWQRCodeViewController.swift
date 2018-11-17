@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import MolueFoundation
 import AVFoundation
 
-public class SWQRCodeViewController: UIViewController {
+public class SWQRCodeViewController: MLBaseViewController {
     
     var config = SWQRCodeCompat()
     private let session = AVCaptureSession()
@@ -41,13 +42,8 @@ public class SWQRCodeViewController: UIViewController {
     
     private func _setupUI() {
         view.backgroundColor = .black
-        
-        let albumItem = UIBarButtonItem(title: "相册", style: .plain, target: self, action: #selector(showAlbum))
-        albumItem.tintColor = .black
-        navigationItem.rightBarButtonItem = albumItem;
-        
         view.addSubview(scannerView)
-        
+        navigationView.backgroundColor = .black
         // 校验相机权限
         SWQRCodeHelper.sw_checkCamera { (granted) in
             if granted {
@@ -56,6 +52,9 @@ public class SWQRCodeViewController: UIViewController {
                 }
             }
         }
+        //        let albumItem = UIBarButtonItem(title: "相册", style: .plain, target: self, action: #selector(showAlbum))
+        //        albumItem.tintColor = .black
+        //        navigationItem.rightBarButtonItem = albumItem;
     }
     
     /** 创建扫描器 */

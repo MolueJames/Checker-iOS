@@ -21,7 +21,7 @@ def molue_safty_shared_pods
     pod 'ESPullToRefresh', '~> 2.7'
     pod 'ObjectMapper', '~> 3.3.0'
     pod 'Bolts-Swift', '~> 1.4.0'
-    pod 'Lightbox', '~> 2.3.0'
+    
 end
 
 target 'MolueSafty' do

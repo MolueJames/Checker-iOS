@@ -36,12 +36,18 @@ final class QuickCheckRiskViewableRouter: MolueViewableRouting {
 }
 
 extension QuickCheckRiskViewableRouter: QuickCheckRiskViewableRouting {
+    func pushToPhotoBrowser(with photos: [SKPhoto], controller: UIViewController) {
+        let browser = SKPhotoBrowser(photos: photos)
+        browser.initializePageIndex(0)
+        controller.present(browser, animated: true, completion: nil)
+    }
+    
     func pushToTakePhotoController() {
         do {
             let navigator = try self.controller.unwrap()
             let controller = GalleryController()
             navigator.setTakePhotoConfigure(for: controller)
-            navigator.presentViiewController(controller, animated: true, completion: nil)
+            navigator.doPresentController(controller, animated: true, completion: nil)
         } catch {
             MolueLogger.UIModule.error(error)
         }
@@ -51,6 +57,7 @@ extension QuickCheckRiskViewableRouter: QuickCheckRiskViewableRouting {
         do {
             let navigator = try self.controller.unwrap()
             let controller = SWQRCodeViewController()
+            controller.hidesBottomBarWhenPushed = true
             navigator.pushToViewController(controller, animated: true)
         } catch {
             MolueLogger.UIModule.error(error)

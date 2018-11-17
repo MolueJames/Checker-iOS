@@ -9,13 +9,14 @@
 import UIKit
 import MolueUtilities
 import MolueFoundation
+import MolueCommon
 import Gallery
-import Lightbox
 
 protocol QuickCheckRiskPresentableListener: class {
     // 定义一些当前页面需要的业务逻辑, 比如网络请求.
     func jumpToScanQRCodeController()
     func jumpToTakePhotoController()
+    func jumpToPhotoBrowser(with images: [Image], controller: UIViewController)
 }
 
 final class QuickCheckRiskViewController: MLBaseViewController  {
@@ -89,7 +90,7 @@ extension QuickCheckRiskViewController: QuickCheckRiskViewControllable {
 
 extension QuickCheckRiskViewController: GalleryControllerDelegate {
     func galleryController(_ controller: GalleryController, didSelectImages images: [Image]) {
-        
+        controller.dismiss(animated: true, completion: nil)
     }
     
     func galleryController(_ controller: GalleryController, didSelectVideo video: Video) {
@@ -97,34 +98,16 @@ extension QuickCheckRiskViewController: GalleryControllerDelegate {
     }
     
     func galleryController(_ controller: GalleryController, requestLightbox images: [Image]) {
-        LightboxConfig.DeleteButton.enabled = true
-
-        Image.resolve(images: images, completion: { [weak self] resolvedImages in
-            self?.showLightbox(images: resolvedImages.compactMap({ $0 }), controller: controller)
-        })
+        do {
+            let listener = try self.listener.unwrap()
+            listener.jumpToPhotoBrowser(with: images, controller: controller)
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
     }
     
     func galleryControllerDidCancel(_ controller: GalleryController) {
         controller.dismiss(animated: true, completion: nil)
     }
-    
-    func showLightbox(images: [UIImage], controller: GalleryController) {
-        guard images.count > 0 else {
-            return
-        }
-        
-        let lightboxImages = images.map({ LightboxImage(image: $0) })
-        let lightbox = LightboxController(images: lightboxImages, startIndex: 0)
-        lightbox.dismissalDelegate = self
-        
-        controller.present(lightbox, animated: true, completion: nil)
-    }
 }
 
-extension QuickCheckRiskViewController: LightboxControllerDismissalDelegate {
-    func lightboxControllerWillDismiss(_ controller: LightboxController) {
-        
-    }
-    
-    
-}

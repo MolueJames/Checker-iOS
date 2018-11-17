@@ -29,7 +29,6 @@
                                         </constraints>
                                         <state key="normal" image="molue_take_photo"/>
                                         <connections>
-                                            <action selector="scanQRCodeButtonClicked:" destination="bvL-Rj-tRb" eventType="touchUpInside" id="glM-aw-Dc1"/>
                                             <action selector="takePhotoButtonClicked:" destination="bvL-Rj-tRb" eventType="touchUpInside" id="6dv-d8-fN7"/>
                                         </connections>
                                     </button>

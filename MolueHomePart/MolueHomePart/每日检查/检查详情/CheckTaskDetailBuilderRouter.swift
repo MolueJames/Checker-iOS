@@ -39,7 +39,7 @@ extension CheckTaskDetailViewableRouter: CheckTaskDetailViewableRouting {
             let controller = builder.build(listener: listener)
             controller.modalPresentationStyle = .overCurrentContext
             let navigator = try self.controller.unwrap()
-            navigator.presentViiewController(controller, animated: true, completion: nil)
+            navigator.doPresentController (controller, animated: true, completion: nil)
         } catch {
             MolueLogger.UIModule.error(error)
         }
