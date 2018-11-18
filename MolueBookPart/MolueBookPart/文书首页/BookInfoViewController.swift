@@ -10,8 +10,15 @@ import UIKit
 import RxSwift
 import MolueFoundation
 import MolueUtilities
+protocol BookInfoPresentableListener: class {
+    // 定义一些当前页面需要的业务逻辑, 比如网络请求.
+}
+
 class BookInfoViewController: MLBaseViewController {
+    var listener: BookInfoPresentableListener?
+    
     private let disposeBag = DisposeBag()
+    
     @IBOutlet private weak var selectedView: BookInfoSectionView! {
         didSet {
             self.selectedView.selectedCommand.subscribe(onNext: { [unowned self] (index) in
@@ -31,8 +38,8 @@ class BookInfoViewController: MLBaseViewController {
     
     private var viewControllers: [UIViewController] = {
         var viewControllers = [UIViewController]()
-        viewControllers.append(BookDetailViewController())
-        viewControllers.append(BookDetailViewController())
+        viewControllers.append(BookDetailViewController.initializeFromStoryboard())
+        viewControllers.append(BookDetailViewController.initializeFromStoryboard())
         return viewControllers
     }()
     
@@ -96,4 +103,12 @@ extension BookInfoViewController: UIPageViewControllerDataSource {
     public func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         return  self.selectedIndex < self.viewControllers.count - 1 ? self.viewControllers[self.selectedIndex + 1] : nil
     }
+}
+
+extension BookInfoViewController: BookInfoPagePresentable {
+    
+}
+
+extension BookInfoViewController: BookInfoViewControllable {
+    
 }

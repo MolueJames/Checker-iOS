@@ -11,14 +11,13 @@ import MolueUtilities
 import MolueCommon
 import Gallery
 
-protocol QuickCheckRiskRouterInteractable: class {
+protocol QuickCheckRiskRouterInteractable: EditRiskInfoInteractListener, SWScanQRCodeProtocol, GalleryControllerDelegate, DailyCheckTaskInteractListener {
     var viewRouter: QuickCheckRiskViewableRouting? { get set }
     var listener: QuickCheckRiskInteractListener? { get set }
 }
 
 protocol QuickCheckRiskViewControllable: MolueViewControllable {
     // 定义一些该页面需要的其他commponent的组件, 比如该页面的childViewController等.
-    func setTakePhotoConfigure(for controller: GalleryController)
 }
 
 final class QuickCheckRiskViewableRouter: MolueViewableRouting {
@@ -36,6 +35,31 @@ final class QuickCheckRiskViewableRouter: MolueViewableRouting {
 }
 
 extension QuickCheckRiskViewableRouter: QuickCheckRiskViewableRouting {
+    func pushToDailyCheckController() {
+        do {
+            let navigator = try self.controller.unwrap()
+            let builderFactory = MolueBuilderFactory<MolueComponent.Home>(.DailyCheck)
+            let builder: DailyCheckTaskComponentBuildable? = builderFactory.queryBuilder()
+            let controller = try builder.unwrap().build(listener: self.interactor.unwrap())
+            controller.hidesBottomBarWhenPushed = true
+            navigator.pushToViewController(controller, animated: true)
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+    }
+    
+    func pushToEditRiskController() {
+        do {
+            let builder: EditRiskInfoComponentBuildable = EditRiskInfoComponentBuilder()
+            let controller = try builder.build(listener: self.interactor.unwrap())
+            let navigator = try self.controller.unwrap()
+            controller.hidesBottomBarWhenPushed = true
+            navigator.pushToViewController(controller, animated: true)
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+    }
+    
     func pushToPhotoBrowser(with photos: [SKPhoto], controller: UIViewController) {
         let browser = SKPhotoBrowser(photos: photos)
         browser.initializePageIndex(0)
@@ -46,7 +70,8 @@ extension QuickCheckRiskViewableRouter: QuickCheckRiskViewableRouting {
         do {
             let navigator = try self.controller.unwrap()
             let controller = GalleryController()
-            navigator.setTakePhotoConfigure(for: controller)
+            Config.tabsToShow = [.cameraTab, .imageTab]
+            controller.delegate = self.interactor
             navigator.doPresentController(controller, animated: true, completion: nil)
         } catch {
             MolueLogger.UIModule.error(error)
@@ -57,6 +82,7 @@ extension QuickCheckRiskViewableRouter: QuickCheckRiskViewableRouting {
         do {
             let navigator = try self.controller.unwrap()
             let controller = SWQRCodeViewController()
+            controller.delegate = self.interactor
             controller.hidesBottomBarWhenPushed = true
             navigator.pushToViewController(controller, animated: true)
         } catch {

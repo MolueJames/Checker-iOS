@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -121,7 +121,7 @@
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="快捷功能" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iw4-Go-URs">
-                    <rect key="frame" x="25" y="283" width="61.5" height="15"/>
+                    <rect key="frame" x="20" y="283" width="61.5" height="15"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="15" id="ZBf-aR-TYO"/>
                     </constraints>
@@ -130,13 +130,13 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tjo-S2-ZVk">
-                    <rect key="frame" x="10" y="306" width="355" height="74"/>
+                    <rect key="frame" x="0.0" y="306" width="375" height="74"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AqB-1d-TAR">
-                            <rect key="frame" x="0.0" y="0.0" width="89" height="74"/>
+                            <rect key="frame" x="0.0" y="0.0" width="94" height="74"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_page_notification" translatesAutoresizingMaskIntoConstraints="NO" id="EXG-X9-FIE">
-                                    <rect key="frame" x="24.5" y="8" width="40" height="40"/>
+                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_page_check" translatesAutoresizingMaskIntoConstraints="NO" id="EXG-X9-FIE">
+                                    <rect key="frame" x="27" y="8" width="40" height="40"/>
                                     <color key="backgroundColor" red="0.2627450980392157" green="0.77647058823529413" blue="0.64313725490196072" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="40" id="gCz-EC-xa8"/>
@@ -148,8 +148,8 @@
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="政策通知" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xja-b3-WZt">
-                                    <rect key="frame" x="17.5" y="54" width="53.5" height="16"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="检查历史" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xja-b3-WZt">
+                                    <rect key="frame" x="20" y="54" width="53.5" height="16"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
@@ -164,10 +164,10 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Wo-tu-KSJ">
-                            <rect key="frame" x="89" y="0.0" width="88.5" height="74"/>
+                            <rect key="frame" x="94" y="0.0" width="93.5" height="74"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_page_law" translatesAutoresizingMaskIntoConstraints="NO" id="mE4-mw-0ap">
-                                    <rect key="frame" x="24" y="8" width="40" height="40"/>
+                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_page_history" translatesAutoresizingMaskIntoConstraints="NO" id="mE4-mw-0ap">
+                                    <rect key="frame" x="26.5" y="8" width="40" height="40"/>
                                     <color key="backgroundColor" red="1" green="0.76470588235294112" blue="0.047058823529411764" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="40" id="f8i-Ib-UkG"/>
@@ -179,8 +179,8 @@
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="法律法规" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mQT-uc-J80">
-                                    <rect key="frame" x="17.5" y="54" width="53.5" height="16"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="隐患历史" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mQT-uc-J80">
+                                    <rect key="frame" x="20" y="54" width="53.5" height="16"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
@@ -195,10 +195,10 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UFw-KS-2aH">
-                            <rect key="frame" x="177.5" y="0.0" width="89" height="74"/>
+                            <rect key="frame" x="187.5" y="0.0" width="94" height="74"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_page_edu" translatesAutoresizingMaskIntoConstraints="NO" id="6zg-fZ-lVI">
-                                    <rect key="frame" x="24.5" y="8" width="40" height="40"/>
+                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_page_notification" translatesAutoresizingMaskIntoConstraints="NO" id="6zg-fZ-lVI">
+                                    <rect key="frame" x="27" y="8" width="40" height="40"/>
                                     <color key="backgroundColor" red="0.10588235294117647" green="0.50980392156862742" blue="0.82352941176470584" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="40" id="UGT-kb-JSf"/>
@@ -210,8 +210,8 @@
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="教育培训" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7m7-E2-zt2">
-                                    <rect key="frame" x="17.5" y="54" width="54" height="16"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="政策通知" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7m7-E2-zt2">
+                                    <rect key="frame" x="20" y="54" width="54" height="16"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
@@ -226,10 +226,10 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dh4-KF-ecC">
-                            <rect key="frame" x="266.5" y="0.0" width="88.5" height="74"/>
+                            <rect key="frame" x="281.5" y="0.0" width="93.5" height="74"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_page_record" translatesAutoresizingMaskIntoConstraints="NO" id="ujh-q2-vSW">
-                                    <rect key="frame" x="24" y="8" width="40" height="40"/>
+                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_page_law" translatesAutoresizingMaskIntoConstraints="NO" id="ujh-q2-vSW">
+                                    <rect key="frame" x="26.5" y="8" width="40" height="40"/>
                                     <color key="backgroundColor" red="1" green="0.32549019607843138" blue="0.3411764705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="40" id="OXk-Lt-84K"/>
@@ -241,8 +241,8 @@
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="资料备案" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DhK-xk-YuN">
-                                    <rect key="frame" x="17" y="54" width="54" height="16"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="法律法规" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DhK-xk-YuN">
+                                    <rect key="frame" x="19.5" y="54" width="54" height="16"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
@@ -287,8 +287,8 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="w5K-QQ-sEs" secondAttribute="trailing" id="2aQ-uF-uda"/>
                 <constraint firstItem="TtC-yh-Mxf" firstAttribute="top" secondItem="XeD-Fp-XTg" secondAttribute="bottom" id="EYk-zv-MzO"/>
                 <constraint firstItem="iw4-Go-URs" firstAttribute="top" secondItem="TtC-yh-Mxf" secondAttribute="bottom" constant="8" id="Nse-kP-nGg"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Tjo-S2-ZVk" secondAttribute="trailing" constant="10" id="PnY-nZ-a7a"/>
-                <constraint firstItem="Tjo-S2-ZVk" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="SW8-gW-hAc"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Tjo-S2-ZVk" secondAttribute="trailing" id="PnY-nZ-a7a"/>
+                <constraint firstItem="Tjo-S2-ZVk" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="SW8-gW-hAc"/>
                 <constraint firstItem="XeD-Fp-XTg" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="TwV-lL-exi"/>
                 <constraint firstItem="XeD-Fp-XTg" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="VMx-Gz-qej"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="TtC-yh-Mxf" secondAttribute="trailing" id="dWa-du-78l"/>
@@ -296,14 +296,13 @@
                 <constraint firstItem="Tjo-S2-ZVk" firstAttribute="top" secondItem="iw4-Go-URs" secondAttribute="bottom" constant="8" id="lPm-zE-ylW"/>
                 <constraint firstAttribute="bottom" secondItem="Tjo-S2-ZVk" secondAttribute="bottom" id="qCQ-0x-o3C"/>
                 <constraint firstItem="w5K-QQ-sEs" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="sL7-uy-5vh"/>
-                <constraint firstItem="iw4-Go-URs" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="25" id="sNl-gb-vLR"/>
+                <constraint firstItem="iw4-Go-URs" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="sNl-gb-vLR"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="XeD-Fp-XTg" secondAttribute="trailing" id="v2g-Zg-fwQ"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="basicInfoView" destination="I1c-Xh-gty" id="Iul-oQ-GDX"/>
-                <outlet property="bottomView" destination="Tjo-S2-ZVk" id="p4l-Rl-a1S"/>
                 <outlet property="collectionView" destination="XeD-Fp-XTg" id="i5g-jB-dJP"/>
                 <outlet property="dataRecordView" destination="Dh4-KF-ecC" id="c7X-yc-POt"/>
                 <outlet property="educationView" destination="UFw-KS-2aH" id="kN9-Fn-ftu"/>
@@ -311,15 +310,15 @@
                 <outlet property="notificationView" destination="AqB-1d-TAR" id="RqE-Gr-7ak"/>
                 <outlet property="riskCheckView" destination="myr-GZ-Pip" id="FtN-et-OcY"/>
             </connections>
-            <point key="canvasLocation" x="33.5" y="54"/>
+            <point key="canvasLocation" x="32.799999999999997" y="53.973013493253376"/>
         </view>
     </objects>
     <resources>
         <image name="home_page_basicInfo" width="50" height="50"/>
-        <image name="home_page_edu" width="25" height="25"/>
+        <image name="home_page_check" width="25" height="25"/>
+        <image name="home_page_history" width="25" height="25"/>
         <image name="home_page_law" width="25" height="25"/>
         <image name="home_page_notification" width="25" height="25"/>
-        <image name="home_page_record" width="25" height="25"/>
         <image name="home_page_riskCheck" width="50" height="50"/>
     </resources>
 </document>

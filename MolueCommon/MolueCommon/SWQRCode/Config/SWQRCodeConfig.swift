@@ -43,3 +43,7 @@ struct SWQRCodeCompat {
     /// 指示器风格
     var indicatorViewStyle: UIActivityIndicatorViewStyle = .whiteLarge
 }
+
+public protocol SWScanQRCodeProtocol {
+    func didScannedQRCode(with QRCode: String, controller: SWQRCodeViewController)
+}

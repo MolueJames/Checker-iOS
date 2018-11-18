@@ -10,6 +10,7 @@
 		1A05CC312189EA4D006D637C /* MolueRiskProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A05CC302189EA4D006D637C /* MolueRiskProtocols.swift */; };
 		1A0B898E218EA02C000B1EBC /* MolueMineProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0B898D218EA02C000B1EBC /* MolueMineProtocols.swift */; };
 		1A2558DB21586A10007E58E0 /* MolueLoginProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2558DA21586A10007E58E0 /* MolueLoginProtocols.swift */; };
+		1A264B8A21A121DA00F452F9 /* MolueHomeModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A264B8921A121DA00F452F9 /* MolueHomeModels.swift */; };
 		1A43801D2163AFDE00FA1C93 /* MolueNavigatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A43801C2163AFDE00FA1C93 /* MolueNavigatorDelegate.swift */; };
 		1A43801F2163B09F00FA1C93 /* UIViewControllerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A43801E2163B09F00FA1C93 /* UIViewControllerType.swift */; };
 		1A4380212163B2C700FA1C93 /* UIViewController+MolueMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4380202163B2C700FA1C93 /* UIViewController+MolueMediator.swift */; };
@@ -44,6 +45,7 @@
 		1A05CC302189EA4D006D637C /* MolueRiskProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueRiskProtocols.swift; sourceTree = "<group>"; };
 		1A0B898D218EA02C000B1EBC /* MolueMineProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueMineProtocols.swift; sourceTree = "<group>"; };
 		1A2558DA21586A10007E58E0 /* MolueLoginProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueLoginProtocols.swift; sourceTree = "<group>"; };
+		1A264B8921A121DA00F452F9 /* MolueHomeModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueHomeModels.swift; sourceTree = "<group>"; };
 		1A43801C2163AFDE00FA1C93 /* MolueNavigatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueNavigatorDelegate.swift; sourceTree = "<group>"; };
 		1A43801E2163B09F00FA1C93 /* UIViewControllerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerType.swift; sourceTree = "<group>"; };
 		1A4380202163B2C700FA1C93 /* UIViewController+MolueMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+MolueMediator.swift"; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				1ABB8B6921902528005FB802 /* MolueHomeProtocols.swift */,
+				1A264B8921A121DA00F452F9 /* MolueHomeModels.swift */,
 			);
 			path = HomeProtocol;
 			sourceTree = "<group>";
@@ -408,6 +411,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A2558DB21586A10007E58E0 /* MolueLoginProtocols.swift in Sources */,
+				1A264B8A21A121DA00F452F9 /* MolueHomeModels.swift in Sources */,
 				1A43801F2163B09F00FA1C93 /* UIViewControllerType.swift in Sources */,
 				1AAB69E921566CF40037EF38 /* MolueBuilderFactory.swift in Sources */,
 				1A522EB9219025CB00094A8A /* MolueBookProtocols.swift in Sources */,

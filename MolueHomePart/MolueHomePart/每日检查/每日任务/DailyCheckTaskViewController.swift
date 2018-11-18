@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MolueCommon
 import MolueFoundation
 import MolueUtilities
 
@@ -18,6 +19,17 @@ protocol DailyCheckTaskPresentableListener: class {
 final class DailyCheckTaskViewController: MLBaseViewController  {
     //MARK: View Controller Properties
     var listener: DailyCheckTaskPresentableListener?
+    
+    @IBOutlet weak var submitButton: UIButton! {
+        didSet {
+            submitButton.layer.masksToBounds = false
+            let color = MLCommonColor.titleLabel.cgColor
+            submitButton.layer.borderColor = color
+            submitButton.layer.shadowOffset = CGSize(width: 0, height: -1)
+            submitButton.layer.shadowRadius = 1;
+            submitButton.layer.shadowOpacity = 0.2
+        }
+    }
     
     @IBOutlet weak var tableView: UITableView! {
         didSet {

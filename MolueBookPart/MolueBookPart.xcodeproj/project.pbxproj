@@ -20,6 +20,13 @@
 		1A10850320ED0E17004E365A /* BookInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A10850120ED0E17004E365A /* BookInfoTableViewCell.xib */; };
 		1A10850520ED0FB2004E365A /* BookInfoSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A10850420ED0FB2004E365A /* BookInfoSectionView.swift */; };
 		1A15491D20EE56F500AC37F9 /* BookDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A15491C20EE56F500AC37F9 /* BookDetailViewController.swift */; };
+		1A264B9A21A1830300F452F9 /* BookInfoPageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A264B9721A1830300F452F9 /* BookInfoPageInteractor.swift */; };
+		1A264B9B21A1830300F452F9 /* BookInfoBuilderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A264B9821A1830300F452F9 /* BookInfoBuilderRouter.swift */; };
+		1A264B9F21A1851A00F452F9 /* AppChatPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A264B9C21A1851A00F452F9 /* AppChatPageViewController.swift */; };
+		1A264BA021A1851A00F452F9 /* AppChatPagePageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A264B9D21A1851A00F452F9 /* AppChatPagePageInteractor.swift */; };
+		1A264BA121A1851A00F452F9 /* AppChatPageBuilderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A264B9E21A1851A00F452F9 /* AppChatPageBuilderRouter.swift */; };
+		1A264BA321A1855600F452F9 /* AppChatPageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A264BA221A1855600F452F9 /* AppChatPageViewController.storyboard */; };
+		1A264BA521A190B800F452F9 /* BookDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A264BA421A190B800F452F9 /* BookDetailViewController.storyboard */; };
 		1A65039A20DD553F0017F91D /* MolueBook.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A65039920DD553F0017F91D /* MolueBook.xcassets */; };
 		1AA7358D20A9E19700DF7CD0 /* MolueBookPart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA7358320A9E19700DF7CD0 /* MolueBookPart.framework */; };
 		1AA7359220A9E19700DF7CD0 /* MolueBookPartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA7359120A9E19700DF7CD0 /* MolueBookPartTests.swift */; };
@@ -49,6 +56,13 @@
 		1A10850120ED0E17004E365A /* BookInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookInfoTableViewCell.xib; sourceTree = "<group>"; };
 		1A10850420ED0FB2004E365A /* BookInfoSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookInfoSectionView.swift; sourceTree = "<group>"; };
 		1A15491C20EE56F500AC37F9 /* BookDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailViewController.swift; sourceTree = "<group>"; };
+		1A264B9721A1830300F452F9 /* BookInfoPageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookInfoPageInteractor.swift; sourceTree = "<group>"; };
+		1A264B9821A1830300F452F9 /* BookInfoBuilderRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookInfoBuilderRouter.swift; sourceTree = "<group>"; };
+		1A264B9C21A1851A00F452F9 /* AppChatPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppChatPageViewController.swift; sourceTree = "<group>"; };
+		1A264B9D21A1851A00F452F9 /* AppChatPagePageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppChatPagePageInteractor.swift; sourceTree = "<group>"; };
+		1A264B9E21A1851A00F452F9 /* AppChatPageBuilderRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppChatPageBuilderRouter.swift; sourceTree = "<group>"; };
+		1A264BA221A1855600F452F9 /* AppChatPageViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AppChatPageViewController.storyboard; sourceTree = "<group>"; };
+		1A264BA421A190B800F452F9 /* BookDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BookDetailViewController.storyboard; sourceTree = "<group>"; };
 		1A65039920DD553F0017F91D /* MolueBook.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MolueBook.xcassets; sourceTree = "<group>"; };
 		1AA7358320A9E19700DF7CD0 /* MolueBookPart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MolueBookPart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AA7358620A9E19700DF7CD0 /* MolueBookPart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MolueBookPart.h; sourceTree = "<group>"; };
@@ -87,18 +101,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1A06556720A9E2F70016CA86 /* 文书列表 */ = {
-			isa = PBXGroup;
-			children = (
-				1A24023620E539FC00FC3EBA /* Models */,
-				1A24023520E539F000FC3EBA /* Views */,
-				1A06557720A9E3E90016CA86 /* BookInfoViewController.swift */,
-				1A06557920A9E4070016CA86 /* BookInfoViewController.storyboard */,
-				1A15491C20EE56F500AC37F9 /* BookDetailViewController.swift */,
-			);
-			path = "文书列表";
-			sourceTree = "<group>";
-		};
 		1A06556820A9E30F0016CA86 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +132,32 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		1A264B9421A1829E00F452F9 /* 聊天首页 */ = {
+			isa = PBXGroup;
+			children = (
+				1A264B9C21A1851A00F452F9 /* AppChatPageViewController.swift */,
+				1A264B9D21A1851A00F452F9 /* AppChatPagePageInteractor.swift */,
+				1A264B9E21A1851A00F452F9 /* AppChatPageBuilderRouter.swift */,
+				1A264BA221A1855600F452F9 /* AppChatPageViewController.storyboard */,
+			);
+			path = "聊天首页";
+			sourceTree = "<group>";
+		};
+		1A264B9521A182C500F452F9 /* 文书首页 */ = {
+			isa = PBXGroup;
+			children = (
+				1A24023620E539FC00FC3EBA /* Models */,
+				1A24023520E539F000FC3EBA /* Views */,
+				1A06557920A9E4070016CA86 /* BookInfoViewController.storyboard */,
+				1A06557720A9E3E90016CA86 /* BookInfoViewController.swift */,
+				1A264B9721A1830300F452F9 /* BookInfoPageInteractor.swift */,
+				1A264B9821A1830300F452F9 /* BookInfoBuilderRouter.swift */,
+				1A15491C20EE56F500AC37F9 /* BookDetailViewController.swift */,
+				1A264BA421A190B800F452F9 /* BookDetailViewController.storyboard */,
+			);
+			path = "文书首页";
+			sourceTree = "<group>";
+		};
 		1AA7357920A9E19700DF7CD0 = {
 			isa = PBXGroup;
 			children = (
@@ -153,8 +181,9 @@
 		1AA7358520A9E19700DF7CD0 /* MolueBookPart */ = {
 			isa = PBXGroup;
 			children = (
+				1A264B9521A182C500F452F9 /* 文书首页 */,
+				1A264B9421A1829E00F452F9 /* 聊天首页 */,
 				1A65039920DD553F0017F91D /* MolueBook.xcassets */,
-				1A06556720A9E2F70016CA86 /* 文书列表 */,
 				1AA7358620A9E19700DF7CD0 /* MolueBookPart.h */,
 				1AA7358720A9E19700DF7CD0 /* Info.plist */,
 			);
@@ -272,8 +301,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A264BA321A1855600F452F9 /* AppChatPageViewController.storyboard in Resources */,
 				1A10850320ED0E17004E365A /* BookInfoTableViewCell.xib in Resources */,
 				1A06557A20A9E4070016CA86 /* BookInfoViewController.storyboard in Resources */,
+				1A264BA521A190B800F452F9 /* BookDetailViewController.storyboard in Resources */,
 				1A65039A20DD553F0017F91D /* MolueBook.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -313,10 +344,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A264BA021A1851A00F452F9 /* AppChatPagePageInteractor.swift in Sources */,
 				1A10850220ED0E17004E365A /* BookInfoTableViewCell.swift in Sources */,
+				1A264B9F21A1851A00F452F9 /* AppChatPageViewController.swift in Sources */,
 				1A06557820A9E3E90016CA86 /* BookInfoViewController.swift in Sources */,
+				1A264B9B21A1830300F452F9 /* BookInfoBuilderRouter.swift in Sources */,
 				1A15491D20EE56F500AC37F9 /* BookDetailViewController.swift in Sources */,
+				1A264B9A21A1830300F452F9 /* BookInfoPageInteractor.swift in Sources */,
 				1A10850520ED0FB2004E365A /* BookInfoSectionView.swift in Sources */,
+				1A264BA121A1851A00F452F9 /* AppChatPageBuilderRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,14 +14,16 @@ class BookDetailViewController: MLBaseViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    lazy private var tableView: UITableView! = {
-        let internalTableView = UITableView()
-        self.view.doBespreadOn(internalTableView)
-        internalTableView.delegate = self
-        internalTableView.register(xibWithCellClass: BookInfoTableViewCell.self)
-        internalTableView.dataSource = self
-        return internalTableView
-    }()
+
+    @IBOutlet weak var tableView: UITableView! {
+        didSet {
+            tableView.register(xibWithCellClass: BookInfoTableViewCell.self)
+            tableView.dataSource = self
+            tableView.delegate = self
+        }
+    }
+    
+    
 }
 
 extension BookDetailViewController: MLUserInterfaceProtocol {
@@ -30,8 +32,7 @@ extension BookDetailViewController: MLUserInterfaceProtocol {
     }
     
     func updateUserInterfaceElements() {
-        self.tableView.backgroundColor = .clear
-        self.tableView.separatorStyle = .none
+
     }
 }
 
@@ -42,7 +43,7 @@ extension BookDetailViewController: UITableViewDelegate {
 }
 extension BookDetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return 0
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withClass: BookInfoTableViewCell.self)

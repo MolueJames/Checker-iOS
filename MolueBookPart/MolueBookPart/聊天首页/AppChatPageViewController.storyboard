@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--App Chat Page View Controller-->
+        <scene sceneID="iV8-gy-Ti5">
+            <objects>
+                <viewController storyboardIdentifier="AppChatPageViewController" id="9pK-dh-8ZY" customClass="AppChatPageViewController" customModule="MolueBookPart" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kLy-gq-5Uy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="暂无联系人" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6NA-Hm-71e">
+                                <rect key="frame" x="152" y="184" width="71.5" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="molue_chat_nodata" translatesAutoresizingMaskIntoConstraints="NO" id="NtA-jI-z4z">
+                                <rect key="frame" x="170" y="139" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="hsL-UP-Hco"/>
+                                    <constraint firstAttribute="width" constant="35" id="ips-9Q-bmU"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="NtA-jI-z4z" firstAttribute="centerX" secondItem="kLy-gq-5Uy" secondAttribute="centerX" id="fp5-u9-AjI"/>
+                            <constraint firstItem="6NA-Hm-71e" firstAttribute="top" secondItem="NtA-jI-z4z" secondAttribute="bottom" constant="10" id="h0I-mr-oIb"/>
+                            <constraint firstItem="6NA-Hm-71e" firstAttribute="centerX" secondItem="kLy-gq-5Uy" secondAttribute="centerX" id="sHg-0f-Xa0"/>
+                            <constraint firstItem="6NA-Hm-71e" firstAttribute="top" secondItem="ise-Xw-eJQ" secondAttribute="top" constant="164" id="uxS-x7-Gd7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ise-Xw-eJQ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oqD-gF-xoU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="79" y="99"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="molue_chat_nodata" width="48" height="48"/>
+    </resources>
+</document>

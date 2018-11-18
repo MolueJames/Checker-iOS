@@ -66,13 +66,6 @@ class HomeInfoTableHeaderView: UIView {
         self.notificationCommand.onNext(())
     }
     
-    @IBOutlet private weak var bottomView: UIView! {
-        didSet {
-            bottomView.layer.cornerRadius = 6
-            bottomView.layer.masksToBounds = true
-        }
-    }
-    
     @IBOutlet private weak var notificationView: UIView! {
         didSet {
             let control = UIControl.init()
@@ -123,7 +116,7 @@ extension HomeInfoTableHeaderView: UICollectionViewDelegate {
 
 extension HomeInfoTableHeaderView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

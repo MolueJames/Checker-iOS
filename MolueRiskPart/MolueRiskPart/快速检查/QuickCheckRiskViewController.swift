@@ -16,7 +16,6 @@ protocol QuickCheckRiskPresentableListener: class {
     // 定义一些当前页面需要的业务逻辑, 比如网络请求.
     func jumpToScanQRCodeController()
     func jumpToTakePhotoController()
-    func jumpToPhotoBrowser(with images: [Image], controller: UIViewController)
 }
 
 final class QuickCheckRiskViewController: MLBaseViewController  {
@@ -82,32 +81,6 @@ extension QuickCheckRiskViewController: QuickCheckRiskPagePresentable {
 }
 
 extension QuickCheckRiskViewController: QuickCheckRiskViewControllable {
-    func setTakePhotoConfigure(for controller: GalleryController) {
-        Config.tabsToShow = [.cameraTab]
-        controller.delegate = self
-    }
-}
-
-extension QuickCheckRiskViewController: GalleryControllerDelegate {
-    func galleryController(_ controller: GalleryController, didSelectImages images: [Image]) {
-        controller.dismiss(animated: true, completion: nil)
-    }
     
-    func galleryController(_ controller: GalleryController, didSelectVideo video: Video) {
-        
-    }
-    
-    func galleryController(_ controller: GalleryController, requestLightbox images: [Image]) {
-        do {
-            let listener = try self.listener.unwrap()
-            listener.jumpToPhotoBrowser(with: images, controller: controller)
-        } catch {
-            MolueLogger.UIModule.error(error)
-        }
-    }
-    
-    func galleryControllerDidCancel(_ controller: GalleryController) {
-        controller.dismiss(animated: true, completion: nil)
-    }
 }
 

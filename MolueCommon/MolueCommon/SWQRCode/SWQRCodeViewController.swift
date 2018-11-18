@@ -13,7 +13,10 @@ import AVFoundation
 public class SWQRCodeViewController: MLBaseViewController {
     
     var config = SWQRCodeCompat()
+    
     private let session = AVCaptureSession()
+    
+    public var delegate: SWScanQRCodeProtocol?
     
     override public func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +46,7 @@ public class SWQRCodeViewController: MLBaseViewController {
     private func _setupUI() {
         view.backgroundColor = .black
         view.addSubview(scannerView)
-        navigationView.backgroundColor = .black
+        self.navigationView.backgroundColor = .black
         // 校验相机权限
         SWQRCodeHelper.sw_checkCamera { (granted) in
             if granted {
@@ -52,9 +55,6 @@ public class SWQRCodeViewController: MLBaseViewController {
                 }
             }
         }
-        //        let albumItem = UIBarButtonItem(title: "相册", style: .plain, target: self, action: #selector(showAlbum))
-        //        albumItem.tintColor = .black
-        //        navigationItem.rightBarButtonItem = albumItem;
     }
     
     /** 创建扫描器 */
@@ -133,7 +133,8 @@ extension SWQRCodeViewController {
     ///
     /// - Parameter value: 扫描结果
     func sw_handle(value: String) {
-        print("sw_handle === \(value)")
+        guard let delegate = self.delegate else {return}
+        delegate.didScannedQRCode(with: value, controller: self)
     }
     
     /// 相册选取图片无法读取数据
@@ -145,7 +146,8 @@ extension SWQRCodeViewController {
 // MARK: - 扫描结果处理
 extension SWQRCodeViewController: AVCaptureMetadataOutputObjectsDelegate {
     
-    private func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
+    public func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
+
         if metadataObjects.count > 0 {
             _pauseScanning()
 
@@ -161,7 +163,7 @@ extension SWQRCodeViewController: AVCaptureMetadataOutputObjectsDelegate {
 // MARK: - 监听光线亮度
 extension SWQRCodeViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
     
-    private func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+    public func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         let metadataDict = CMCopyDictionaryOfAttachments(nil, sampleBuffer, kCMAttachmentMode_ShouldPropagate)
         guard let metadata = metadataDict as? [AnyHashable: Any] else {return}
         guard let exifMetadata = metadata[kCGImagePropertyExifDictionary as String] as? [AnyHashable: Any] else {return}
@@ -180,7 +182,7 @@ extension SWQRCodeViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
 // MARK: - 识别选择图片
 extension SWQRCodeViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    private func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+    public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         picker.dismiss(animated: true) {
             if !self.handlePickInfo(info) {
                 self.sw_didReadFromAlbumFailed()

@@ -14,8 +14,7 @@ class HomeInfoCollectionViewCell: UICollectionViewCell {
         didSet {
             imageView.layer.cornerRadius = 8
             imageView.layer.masksToBounds = true
-            let url = URL.init(string: "https://car2.autoimg.cn/cardfs/product/g25/M0A/B4/4D/1024x0_1_q87_autohomecar__ChcCr1qeYluAX2fpAAegIXY-YTA697.jpg")
-            imageView.kf.setImage(with: url)
+            imageView.image = UIImage(named: "molue_home_banner")
         }
     }
     

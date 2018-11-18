@@ -43,9 +43,9 @@ extension AppDelegate {
     private func rootViewController() -> UIViewController {
         var viewControllers = [MLNavigationController]()
         self.buildHomePartEnter(with: &viewControllers)
-        self.buildRiskPartEnter(with: &viewControllers)
-//        self.addNavigationController(module: .Book, path: BookPath.BookInfo.rawValue, viewControllers: &viewControllers, title:"文书", imageName: "molue_tabbar_book")
-        self.buildQuickCheckEnter(with: &viewControllers)
+        self.buildBookPartEnter(with: &viewControllers)
+        self.buildCheckPartEnter(with: &viewControllers)
+        self.buildChatPartEnter(with: &viewControllers)
         self.buildMinePartEnter(with: &viewControllers)
         
         let tabbarController = MLTabBarController()
@@ -64,12 +64,24 @@ extension AppDelegate {
         }
     }
     
-    private func buildRiskPartEnter(with viewControllers: inout [MLNavigationController]) {
+    private func buildBookPartEnter(with viewControllers: inout [MLNavigationController]) {
         do {
-            let builderFactory = MolueBuilderFactory<MolueComponent.Risk>(.RiskList)
-            let builder: PotentialRiskComponentBuildable? = builderFactory.queryBuilder()
+            let builderFactory = MolueBuilderFactory<MolueComponent.Book>(.BookInfo)
+            let builder: BookInfoComponentBuildable? = builderFactory.queryBuilder()
             let controller = try builder.unwrap().build()
-            controller.tabBarItem = UITabBarItem(title: "隐患", image: UIImage.init(named: "molue_tabbar_risk"), tag: viewControllers.count)
+            controller.tabBarItem = UITabBarItem(title: "文书", image: UIImage.init(named: "molue_tabbar_book"), tag: viewControllers.count)
+            viewControllers.append(MLNavigationController(rootViewController: controller))
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+    }
+    
+    private func buildChatPartEnter(with viewControllers: inout [MLNavigationController]) {
+        do {
+            let builderFactory = MolueBuilderFactory<MolueComponent.Book>(.ChatPage)
+            let builder: AppChatPageComponentBuildable? = builderFactory.queryBuilder()
+            let controller = try builder.unwrap().build()
+            controller.tabBarItem = UITabBarItem(title: "聊天", image: UIImage.init(named: "molue_tabbar_chat"), tag: viewControllers.count)
             viewControllers.append(MLNavigationController(rootViewController: controller))
         } catch {
             MolueLogger.UIModule.error(error)
@@ -81,7 +93,7 @@ extension AppDelegate {
             let builderFactory = MolueBuilderFactory<MolueComponent.Mine>(.UserCenter)
             let builder: UserInfoCenterComponentBuildable? = builderFactory.queryBuilder()
             let controller = try builder.unwrap().build()
-            controller.tabBarItem = UITabBarItem(title: "首页", image: UIImage.init(named: "molue_tabbar_mine"), tag: viewControllers.count)
+            controller.tabBarItem = UITabBarItem(title: "我的", image: UIImage.init(named: "molue_tabbar_mine"), tag: viewControllers.count)
             viewControllers.append(MLNavigationController(rootViewController: controller))
         } catch {
             MolueLogger.UIModule.error(error)
@@ -93,14 +105,14 @@ extension AppDelegate {
             let builderFactory = MolueBuilderFactory<MolueComponent.Home>(.HomeInfoPage)
             let builder: HomeInfoPageComponentBuildable? = builderFactory.queryBuilder()
             let controller = try builder.unwrap().build()
-            controller.tabBarItem = UITabBarItem(title: "我的", image: UIImage.init(named: "molue_tabbar_home"), tag: viewControllers.count)
+            controller.tabBarItem = UITabBarItem(title: "首页", image: UIImage.init(named: "molue_tabbar_home"), tag: viewControllers.count)
             viewControllers.append(MLNavigationController(rootViewController: controller))
         } catch {
             MolueLogger.UIModule.error(error)
         }
     }
     
-    private func buildQuickCheckEnter(with viewControllers: inout [MLNavigationController]) {
+    private func buildCheckPartEnter(with viewControllers: inout [MLNavigationController]) {
         do {
             let builderFactory = MolueBuilderFactory<MolueComponent.Risk>(.QuickCheck)
             let builder: QuickCheckRiskComponentBuildable? = builderFactory.queryBuilder()

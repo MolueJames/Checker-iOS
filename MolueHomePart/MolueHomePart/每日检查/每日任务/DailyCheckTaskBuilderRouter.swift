@@ -47,15 +47,6 @@ extension DailyCheckTaskViewableRouter: DailyCheckTaskViewableRouting {
     }
 }
 
-protocol DailyCheckTaskInteractListener: class {
-    //用于定义其他的Component需要定义的协议方法
-}
-
-protocol DailyCheckTaskComponentBuildable: MolueComponentBuildable {
-    //定义当前的Component的构造方法.
-    func build(listener: DailyCheckTaskInteractListener) -> UIViewController
-}
-
 class DailyCheckTaskComponentBuilder: MolueComponentBuilder, DailyCheckTaskComponentBuildable {
     func build(listener: DailyCheckTaskInteractListener) -> UIViewController {
         let controller = DailyCheckTaskViewController.initializeFromStoryboard()

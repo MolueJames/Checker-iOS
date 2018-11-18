@@ -10,6 +10,8 @@ import UIKit
 
 class CheckTaskDetailTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var statusImageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -17,6 +19,12 @@ class CheckTaskDetailTableViewCell: UITableViewCell {
         self.layer.masksToBounds = true
     }
 
+    @IBAction func successButtonClicked(_ sender: UIButton) {
+        self.statusImageView.image = UIImage(named: "molue_check_success")
+    }
+    @IBAction func failureButtonClicked(_ sender: UIButton) {
+        self.statusImageView.image = UIImage(named: "molue_check_failure")
+    }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

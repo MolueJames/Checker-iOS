@@ -45,6 +45,10 @@
 		1ACD09E02199C27800793AAC /* QuickCheckRiskPageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACD09DD2199C27800793AAC /* QuickCheckRiskPageInteractor.swift */; };
 		1ACD09E12199C27800793AAC /* QuickCheckRiskBuilderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACD09DE2199C27800793AAC /* QuickCheckRiskBuilderRouter.swift */; };
 		1ACD09E32199C28C00793AAC /* QuickCheckRiskViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1ACD09E22199C28C00793AAC /* QuickCheckRiskViewController.storyboard */; };
+		1ACD0A1C21A05E4000793AAC /* EditRiskInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACD0A1921A05E4000793AAC /* EditRiskInfoViewController.swift */; };
+		1ACD0A1D21A05E4000793AAC /* EditRiskInfoPageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACD0A1A21A05E4000793AAC /* EditRiskInfoPageInteractor.swift */; };
+		1ACD0A1E21A05E4000793AAC /* EditRiskInfoBuilderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACD0A1B21A05E4000793AAC /* EditRiskInfoBuilderRouter.swift */; };
+		1ACD0A2021A05E5D00793AAC /* EditRiskInfoViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1ACD0A1F21A05E5D00793AAC /* EditRiskInfoViewController.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +102,10 @@
 		1ACD09DD2199C27800793AAC /* QuickCheckRiskPageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickCheckRiskPageInteractor.swift; sourceTree = "<group>"; };
 		1ACD09DE2199C27800793AAC /* QuickCheckRiskBuilderRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickCheckRiskBuilderRouter.swift; sourceTree = "<group>"; };
 		1ACD09E22199C28C00793AAC /* QuickCheckRiskViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QuickCheckRiskViewController.storyboard; sourceTree = "<group>"; };
+		1ACD0A1921A05E4000793AAC /* EditRiskInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRiskInfoViewController.swift; sourceTree = "<group>"; };
+		1ACD0A1A21A05E4000793AAC /* EditRiskInfoPageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRiskInfoPageInteractor.swift; sourceTree = "<group>"; };
+		1ACD0A1B21A05E4000793AAC /* EditRiskInfoBuilderRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRiskInfoBuilderRouter.swift; sourceTree = "<group>"; };
+		1ACD0A1F21A05E5D00793AAC /* EditRiskInfoViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditRiskInfoViewController.storyboard; sourceTree = "<group>"; };
 		1F7303D743A6A3BDD8783D8D /* Pods-MolueRiskPart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueRiskPart.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueRiskPart/Pods-MolueRiskPart.debug.xcconfig"; sourceTree = "<group>"; };
 		CF9033C8D71A897E2F825131 /* Pods_MolueRiskPart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MolueRiskPart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3274AE2F9F635301421FE61 /* Pods-MolueRiskPart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueRiskPart.release.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueRiskPart/Pods-MolueRiskPart.release.xcconfig"; sourceTree = "<group>"; };
@@ -251,12 +259,24 @@
 		1ACD09DB2199C25A00793AAC /* 快速检查 */ = {
 			isa = PBXGroup;
 			children = (
+				1ACD0A1821A05D8000793AAC /* 隐患编辑 */,
 				1ACD09DC2199C27800793AAC /* QuickCheckRiskViewController.swift */,
 				1ACD09E22199C28C00793AAC /* QuickCheckRiskViewController.storyboard */,
 				1ACD09DD2199C27800793AAC /* QuickCheckRiskPageInteractor.swift */,
 				1ACD09DE2199C27800793AAC /* QuickCheckRiskBuilderRouter.swift */,
 			);
 			path = "快速检查";
+			sourceTree = "<group>";
+		};
+		1ACD0A1821A05D8000793AAC /* 隐患编辑 */ = {
+			isa = PBXGroup;
+			children = (
+				1ACD0A1921A05E4000793AAC /* EditRiskInfoViewController.swift */,
+				1ACD0A1F21A05E5D00793AAC /* EditRiskInfoViewController.storyboard */,
+				1ACD0A1A21A05E4000793AAC /* EditRiskInfoPageInteractor.swift */,
+				1ACD0A1B21A05E4000793AAC /* EditRiskInfoBuilderRouter.swift */,
+			);
+			path = "隐患编辑";
 			sourceTree = "<group>";
 		};
 		646AC1F75E92D0DD827B0A4A /* Frameworks */ = {
@@ -383,6 +403,7 @@
 				1A3465DF2197308200EBA57C /* PotentialRiskCollectionCell.xib in Resources */,
 				1A3465DB2197281C00EBA57C /* PotentialRiskHeaderView.xib in Resources */,
 				1ACD09E32199C28C00793AAC /* QuickCheckRiskViewController.storyboard in Resources */,
+				1ACD0A2021A05E5D00793AAC /* EditRiskInfoViewController.storyboard in Resources */,
 				1A730ADA20E91D33008831BC /* PotentialRiskTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -426,9 +447,12 @@
 				1A05CC2D2189E9AF006D637C /* PotentialRiskBuilderRouter.swift in Sources */,
 				1A05CC3B2189F8A1006D637C /* RiskPlanBuilderRouter.swift in Sources */,
 				1A3465DE2197308200EBA57C /* PotentialRiskCollectionCell.swift in Sources */,
+				1ACD0A1D21A05E4000793AAC /* EditRiskInfoPageInteractor.swift in Sources */,
 				1A730AD920E91D33008831BC /* PotentialRiskTableViewCell.swift in Sources */,
 				1A3465D92197280F00EBA57C /* PotentialRiskHeaderView.swift in Sources */,
+				1ACD0A1C21A05E4000793AAC /* EditRiskInfoViewController.swift in Sources */,
 				1A0B89D3219339B4000B1EBC /* RiskDetailBuilderRouter.swift in Sources */,
+				1ACD0A1E21A05E4000793AAC /* EditRiskInfoBuilderRouter.swift in Sources */,
 				1A05CC3D2189FAD7006D637C /* PotentialRiskModel.swift in Sources */,
 				1A05CC3A2189F8A1006D637C /* RiskPlanPageInteractor.swift in Sources */,
 				1A05CC2B2189E9AF006D637C /* PotentialRiskViewController.swift in Sources */,

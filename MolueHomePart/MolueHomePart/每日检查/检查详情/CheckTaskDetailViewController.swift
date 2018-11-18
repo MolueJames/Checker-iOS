@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MolueCommon
 import MolueUtilities
 import MolueFoundation
 
@@ -33,6 +34,17 @@ final class CheckTaskDetailViewController: MLBaseViewController  {
         let footerView: CheckTaskDetailFooterView = CheckTaskDetailFooterView.createFromXib()
         return footerView
     }()
+    
+    @IBOutlet weak var submitButton: UIButton! {
+        didSet {
+            submitButton.layer.masksToBounds = false
+            let color = MLCommonColor.titleLabel.cgColor
+            submitButton.layer.borderColor = color
+            submitButton.layer.shadowOffset = CGSize(width: 0, height: -1)
+            submitButton.layer.shadowRadius = 1;
+            submitButton.layer.shadowOpacity = 0.2
+        }
+    }
     //MARK: View Controller Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()

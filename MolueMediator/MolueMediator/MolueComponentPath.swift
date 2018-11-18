@@ -14,30 +14,8 @@ public protocol MolueBuilderPathProtocol {
 
 public enum MolueComponent {
     public enum Home: String, MolueBuilderPathProtocol {
-        /// 应用首页
         case HomeInfoPage = "HomeInfoPageComponentBuilder"
-//        /// 基础信息
-//        case EnterpriseInfo = "EnterpriseInfoViewController"
-//        /// 基本档案
-//        case BasicArchives = "BasicArchivesViewController"
-//        /// 联络信息
-//        case ContactInfo = "ContactInfoViewController"
-//        /// 危险特征
-//        case DangerousFeature = "RiskFeatureViewController"
-//        /// 危险设备
-//        case DangerMachinery = "DangerMachineryViewController"
-//        /// 企业危险特征
-//        case EnterpriseRisk = "EnterpriseRiskViewController"
-//        /// 添加管理员
-//        case IncreaseAdmini = "IncreaseAdminiViewController"
-//        /// 安全管理员
-//        case SecurityAdmini = "SecurityAdminiViewController"
-//        /// 隐患自查
-//        case SelfRiskCheck = "SelfRiskCheckViewController"
-//        /// 政策通知
-//        case PolicyNotice = "PolicyNoticeViewController"
-//        /// 法律法规
-//        case LawRegulation = "LawRegulationViewController"
+        case DailyCheck = "DailyCheckTaskComponentBuilder"
         
         public func builderPath() -> String {
             return "MolueHomePart.\(self.rawValue)";
@@ -68,5 +46,12 @@ public enum MolueComponent {
             return "MolueLoginPart.\(self.rawValue)";
         }
     }
-    
+    public enum Book: String, MolueBuilderPathProtocol {
+        case BookInfo = "BookInfoComponentBuilder"
+        case ChatPage = "AppChatPageComponentBuilder"
+        
+        public func builderPath() -> String {
+            return "MolueBookPart.\(self.rawValue)";
+        }
+    }
 }
