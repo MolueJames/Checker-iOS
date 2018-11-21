@@ -34,7 +34,7 @@ final class UserLoginPageViewController: MLBaseViewController, UserLoginPagePage
     }
     @IBOutlet weak var loginContainView: UIView! {
         didSet {
-            loginContainView.clipsToBounds = false
+            loginContainView.layer.masksToBounds = false
             let color = MLCommonColor.titleLabel.cgColor
             loginContainView.layer.borderColor = color
             loginContainView.layer.shadowOffset = CGSize(width: 2, height: 4)

@@ -95,6 +95,15 @@ extension QuickCheckRiskPageInteractor: QuickCheckRiskRouterInteractable {
 }
 
 extension QuickCheckRiskPageInteractor: QuickCheckRiskPresentableListener {
+    func jumpToEditRiskController() {
+        do {
+            let viewRouter = try self.viewRouter.unwrap()
+            viewRouter.pushToEditRiskController()
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+    }
+    
     func jumpToScanQRCodeController() {
         do {
             let viewRouter = try self.viewRouter.unwrap()

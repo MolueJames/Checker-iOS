@@ -158,5 +158,12 @@ public extension UICollectionView {
         guard let bundle = Bundle.create(module: module) else {fatalError("bundle is nil")}
         register(UINib(nibName: identifier, bundle: bundle), forCellWithReuseIdentifier: identifier)
     }
+    
+    public func register<T: UICollectionReusableView>(forKind kind: String, withNibClass name: T.Type) {
+        let info = NSStringFromClass(T.self).separateTypeName()
+        guard let module = info.module, let identifier = info.file else {fatalError("module or idenitifer is nil")}
+        guard let bundle = Bundle.create(module: module) else {fatalError("bundle is nil")}
+        register(UINib(nibName: identifier, bundle: bundle), forSupplementaryViewOfKind: kind, withReuseIdentifier: identifier)
+    }
 }
 #endif

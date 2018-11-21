@@ -22,7 +22,7 @@ class SKButton: UIButton {
             return UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)
         }
     }
-    fileprivate let sksize: CGSize = CGSize(width: 44, height: 44)
+    fileprivate let sksize: CGSize = CGSize(width: 48, height: 48)
     fileprivate var marginX: CGFloat = 0
     fileprivate var marginY: CGFloat = 0
     fileprivate var extraMarginY: CGFloat = SKMesurement.isPhoneX ? 10 : 0
@@ -33,8 +33,7 @@ class SKButton: UIButton {
         translatesAutoresizingMaskIntoConstraints = true
         autoresizingMask = [.flexibleBottomMargin, .flexibleLeftMargin, .flexibleRightMargin, .flexibleTopMargin]
         
-//        let image = UIImage(named: "SKPhotoBrowser.bundle/images/\(imageName)", in: bundle, compatibleWith: nil) ?? UIImage()
-        let image = UIImage(named: imageName) ?? UIImage()
+        let image = UIImage(named: "SKPhotoBrowser.bundle/images/\(imageName)", in: bundle, compatibleWith: nil) ?? UIImage()
         setImage(image, for: .normal)
     }
   

@@ -29,7 +29,7 @@
                                         </constraints>
                                         <state key="normal" image="molue_take_photo"/>
                                         <connections>
-                                            <action selector="takePhotoButtonClicked:" destination="bvL-Rj-tRb" eventType="touchUpInside" id="6dv-d8-fN7"/>
+                                            <action selector="editRiskInfoButtonClicked:" destination="bvL-Rj-tRb" eventType="touchUpInside" id="A9G-jJ-iET"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aba-ey-eJP">

@@ -20,7 +20,7 @@ public struct SKPhotoBrowserOptions {
     public static var displayCounterLabel: Bool = true
     public static var displayBackAndForwardButton: Bool = true
 
-    public static var displayHorizontalScrollIndicator: Bool = true
+    public static var displayHorizontalScrollIndicator: Bool = false
     public static var displayVerticalScrollIndicator: Bool = true
     public static var displayPagingHorizontalScrollIndicator: Bool = true
     
@@ -50,8 +50,8 @@ public struct SKPhotoBrowserOptions {
 }
 
 public struct SKButtonOptions {
-    public static var closeButtonPadding: CGPoint = CGPoint(x: 5, y: 20)
-    public static var deleteButtonPadding: CGPoint = CGPoint(x: 5, y: 20)
+    public static var closeButtonPadding: CGPoint = CGPoint(x: 15, y: 35)
+    public static var deleteButtonPadding: CGPoint = CGPoint(x: 65, y: 35)
 }
 
 public struct SKCaptionOptions {

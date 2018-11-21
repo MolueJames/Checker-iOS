@@ -32,15 +32,15 @@ public class MLCommonClickView: UIView {
         return internalTextField
     }()
     lazy private var lineView: UIView! = {
-        let internalLineView = UIView()
-        self.addSubview(internalLineView)
-        internalLineView.snp.makeConstraints({ (make) in
+        let lineView = UIView()
+        self.addSubview(lineView)
+        lineView.snp.makeConstraints({ (make) in
             make.left.equalTo(20)
             make.bottom.equalToSuperview()
             make.right.equalToSuperview()
             make.height.equalTo(MLConfigure.singleLineHeight)
         })
-        return internalLineView
+        return lineView
     }()
     public let clickedCommand = PublishSubject<Void>()
 
@@ -51,10 +51,10 @@ public class MLCommonClickView: UIView {
     
     private func updateViewElements() {
         self.lineView.backgroundColor = MLCommonColor.commonLine
-        self.titleLabel.font = .systemFont(ofSize: 16)
+        self.titleLabel.font = .systemFont(ofSize: 15)
         self.titleLabel.textColor = MLCommonColor.titleLabel
         self.textField.delegate = self
-        self.textField.font = .systemFont(ofSize: 16)
+        self.textField.font = .systemFont(ofSize: 15)
         self.textField.textColor = MLCommonColor.titleLabel
         self.textField.textAlignment = .right
     }

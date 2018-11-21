@@ -536,11 +536,20 @@ public extension UIView {
         }
     }
     public func setDefalutShadow () {
-        let color = UIColor.init(hex: 0x333333).cgColor
-        self.layer.borderColor = color
+        let color = UIColor(hex: 0x333333).cgColor
+        self.layer.shadowColor = color
         self.layer.shadowOffset = CGSize(width: 1, height: 1)
         self.layer.shadowRadius = 1;
         self.layer.shadowOpacity = 0.1
+    }
+    
+    public func addLayerShadow() {
+        self.layer.masksToBounds = false
+        let color = UIColor(hex: 0x333333).cgColor
+        self.layer.shadowColor = color
+        self.layer.shadowOffset = CGSize(width: 0, height: 2)
+        self.layer.shadowRadius = 2;
+        self.layer.shadowOpacity = 0.2
     }
 }
 #endif

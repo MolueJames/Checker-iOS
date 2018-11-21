@@ -7,8 +7,11 @@
 //
 
 import MolueMediator
+import MolueUtilities
+import MolueCommon
+import Gallery
 
-protocol EditRiskInfoRouterInteractable: class {
+protocol EditRiskInfoRouterInteractable: GalleryControllerDelegate, SKPhotoBrowserDelegate {
     var viewRouter: EditRiskInfoViewableRouting? { get set }
     var listener: EditRiskInfoInteractListener? { get set }
 }
@@ -32,7 +35,37 @@ final class EditRiskInfoViewableRouter: MolueViewableRouting {
 }
 
 extension EditRiskInfoViewableRouter: EditRiskInfoViewableRouting {
+    func pushToTakePhotoController(with limit: Int) {
+        do {
+            let navigator = try self.controller.unwrap()
+            let controller = GalleryController()
+            Config.tabsToShow = [.cameraTab, .imageTab]
+            Config.Camera.imageLimit = limit
+            controller.delegate = self.interactor
+            navigator.doPresentController(controller, animated: false, completion: nil)
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+    }
     
+    func pushToPhotoBrowser(with photos: [SKPhoto], index: Int) {
+        do {
+            let navigator = try self.controller.unwrap()
+            let browser = SKPhotoBrowser(photos: photos)
+            browser.initializePageIndex(index)
+            browser.delegate = self.interactor
+            navigator.doPresentController(browser, animated: true, completion: nil)
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+    }
+    
+    func pushToPhotoBrowser(with photos: [SKPhoto], controller: UIViewController) {
+        let browser = SKPhotoBrowser(photos: photos)
+        browser.initializePageIndex(0)
+        browser.delegate = self.interactor
+        controller.present(browser, animated: true, completion: nil)
+    }
 }
 
 protocol EditRiskInfoInteractListener: class {

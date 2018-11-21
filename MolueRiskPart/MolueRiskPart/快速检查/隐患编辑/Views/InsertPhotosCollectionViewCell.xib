@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="InsertPhotosCollectionViewCell" customModule="MolueRiskPart" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="151" height="121"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="151" height="121"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nW4-Nw-Xe0">
+                        <rect key="frame" x="1" y="1" width="149" height="119"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="molue_risk_addImage" translatesAutoresizingMaskIntoConstraints="NO" id="2GA-NI-6EO">
+                        <rect key="frame" x="30.5" y="20.5" width="90" height="80"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="80" id="cd1-6u-JiF"/>
+                            <constraint firstAttribute="width" constant="90" id="nXf-cW-H37"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+            </view>
+            <color key="backgroundColor" red="0.74901960784313726" green="0.74901960784313726" blue="0.74901960784313726" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="nW4-Nw-Xe0" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="1" id="2Y1-Vb-i7x"/>
+                <constraint firstAttribute="trailing" secondItem="nW4-Nw-Xe0" secondAttribute="trailing" constant="1" id="CCR-Ia-ZFs"/>
+                <constraint firstItem="2GA-NI-6EO" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Fs2-CL-ILr"/>
+                <constraint firstAttribute="bottom" secondItem="nW4-Nw-Xe0" secondAttribute="bottom" constant="1" id="Hhe-7U-CE1"/>
+                <constraint firstItem="2GA-NI-6EO" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="JNL-kv-La9"/>
+                <constraint firstItem="nW4-Nw-Xe0" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="1" id="hmP-EU-P3C"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="151" height="121"/>
+            <point key="canvasLocation" x="213.59999999999999" y="161.46926536731635"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="molue_risk_addImage" width="90" height="90"/>
+    </resources>
+</document>

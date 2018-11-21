@@ -51,7 +51,7 @@ open class SKPhotoBrowser: UIViewController {
     private var statusbarHidden: Bool = UIApplication.shared.isStatusBarHidden
     
     // strings
-    open var cancelTitle = "Cancel"
+    open var cancelTitle = "取消"
     
     // MARK: - Initializer
     required public init?(coder aDecoder: NSCoder) {
