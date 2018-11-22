@@ -53,15 +53,15 @@ class HomeInfoTableHeaderView: UIView {
     @IBAction private func riskCheckControlClicked(_ sender: Any) {
         self.riskCheckCommand.onNext(())
     }
-    @IBAction private func dataRecordControlClicked(_ sender: Any) {
-        self.dataRecordCommand.onNext(())
-    }
+//    @IBAction private func dataRecordControlClicked(_ sender: Any) {
+//        self.dataRecordCommand.onNext(())
+//    }
     @IBAction private func legislationControlClicked(_ sender: Any) {
         self.legislationCommand.onNext(())
     }
-    @IBAction private func educationControlClicked(_ sender: Any) {
-        self.educationCommand.onNext(())
-    }
+//    @IBAction private func educationControlClicked(_ sender: Any) {
+//        self.educationCommand.onNext(())
+//    }
     @IBAction private func notificationControlClicked(_ sender: Any) {
         self.notificationCommand.onNext(())
     }
@@ -73,13 +73,13 @@ class HomeInfoTableHeaderView: UIView {
             control.addTarget(self, action: #selector(notificationControlClicked), for: .touchUpInside)
         }
     }
-    @IBOutlet private weak var educationView: UIView! {
-        didSet {
-            let control = UIControl.init()
-            educationView.doBespreadOn(control)
-            control.addTarget(self, action: #selector(educationControlClicked), for: .touchUpInside)
-        }
-    }
+//    @IBOutlet private weak var educationView: UIView! {
+//        didSet {
+//            let control = UIControl.init()
+//            educationView.doBespreadOn(control)
+//            control.addTarget(self, action: #selector(educationControlClicked), for: .touchUpInside)
+//        }
+//    }
     @IBOutlet private weak var legislationView: UIView! {
         didSet {
             let control = UIControl.init()
@@ -87,13 +87,13 @@ class HomeInfoTableHeaderView: UIView {
             control.addTarget(self, action: #selector(legislationControlClicked), for: .touchUpInside)
         }
     }
-    @IBOutlet private weak var dataRecordView: UIView! {
-        didSet {
-            let control = UIControl.init()
-            dataRecordView.doBespreadOn(control)
-            control.addTarget(self, action: #selector(dataRecordControlClicked), for: .touchUpInside)
-        }
-    }
+//    @IBOutlet private weak var dataRecordView: UIView! {
+//        didSet {
+//            let control = UIControl.init()
+//            dataRecordView.doBespreadOn(control)
+//            control.addTarget(self, action: #selector(dataRecordControlClicked), for: .touchUpInside)
+//        }
+//    }
     
     let selectedCommand = PublishSubject<String>()
     /// 基础信息
@@ -102,12 +102,12 @@ class HomeInfoTableHeaderView: UIView {
     let riskCheckCommand = PublishSubject<Void>()
     /// 政策通知
     let notificationCommand = PublishSubject<Void>()
-    /// 教育培训
-    let educationCommand = PublishSubject<Void>()
     /// 法律法规
     let legislationCommand = PublishSubject<Void>()
-    /// 资料备案
-    let dataRecordCommand = PublishSubject<Void>()
+    /// 检查历史
+    let dangerListCommand = PublishSubject<Void>()
+    /// 隐患历史
+    let riskHistoryCommand = PublishSubject<Void>()
 }
 
 extension HomeInfoTableHeaderView: UICollectionViewDelegate {

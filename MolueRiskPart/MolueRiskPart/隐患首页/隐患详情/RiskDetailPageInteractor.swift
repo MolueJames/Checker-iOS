@@ -7,9 +7,12 @@
 //
 
 import MolueMediator
+import MolueUtilities
+import MolueCommon
 
 protocol RiskDetailViewableRouting: class {
     // 定义一些页面跳转的方法, 比如Push, Presenter等.
+    func pushToPhotoBrowser(with photos: [SKPhoto], index: Int)
 }
 
 protocol RiskDetailPagePresentable: MolueInteractorPresentable {
@@ -20,6 +23,8 @@ protocol RiskDetailPagePresentable: MolueInteractorPresentable {
 final class RiskDetailPageInteractor: MoluePresenterInteractable {
     
     weak var presenter: RiskDetailPagePresentable?
+    
+    var photoImages: [UIImage]?
     
     var viewRouter: RiskDetailViewableRouting?
     
@@ -36,5 +41,16 @@ extension RiskDetailPageInteractor: RiskDetailRouterInteractable {
 }
 
 extension RiskDetailPageInteractor: RiskDetailPresentableListener {
-    
+    func jumpToBrowserController(with index: Int) {
+        do {
+            let router = try self.viewRouter.unwrap()
+            let images = try self.photoImages.unwrap()
+            let photoImages:[SKPhoto] = images.map {
+                SKPhoto.photoWithImage($0)
+            }
+            router.pushToPhotoBrowser(with: photoImages, index: index)
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+    }
 }

@@ -95,8 +95,8 @@ extension EditRiskInfoViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         do {
             let listener = try self.listener.unwrap()
-            let images = try listener.photoImages.unwrap()
-            if (indexPath.row == images.count) {
+            let imagesCount = listener.photoImages?.count ?? 0
+            if (indexPath.row >= imagesCount) {
                 listener.jumpToTakePhotoController()
             } else {
                 listener.jumpToBrowserController(with: indexPath.row)

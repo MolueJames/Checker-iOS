@@ -19,9 +19,9 @@ protocol HomeInfoPageViewableRouting: class {
     
     func pushToLegislationController()
     
-    func pushToEducationController()
+    func pushToRiskHistoryController()
     
-    func pushToDataRecordController()
+    func pushToDangerListController()
 }
 
 protocol HomeInfoPagePagePresentable: MolueInteractorPresentable {
@@ -51,6 +51,24 @@ extension HomeInfoPagePageInteractor: HomeInfoPageRouterInteractable {
 }
 
 extension HomeInfoPagePageInteractor: HomeInfoPagePresentableListener {
+    func jumpToRiskHistoryController() {
+        do {
+            let viewRouter = try self.viewRouter.unwrap()
+            viewRouter.pushToRiskHistoryController()
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+    }
+    
+    func jumpToDangerListController() {
+        do {
+            let viewRouter = try self.viewRouter.unwrap()
+            viewRouter.pushToDangerListController()
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+    }
+    
     func jumpToDailyTaskController() {
         do {
             let viewRouter = try self.viewRouter.unwrap()
@@ -85,27 +103,5 @@ extension HomeInfoPagePageInteractor: HomeInfoPagePresentableListener {
         } catch {
             MolueLogger.UIModule.error(error)
         }
-    }
-    
-    func jumpToEducationController() {
-        do {
-            let viewRouter = try self.viewRouter.unwrap()
-            viewRouter.pushToEducationController()
-        } catch {
-            MolueLogger.UIModule.error(error)
-        }
-    }
-    
-    func jumpToDataRecordController() {
-        do {
-            let viewRouter = try self.viewRouter.unwrap()
-            viewRouter.pushToDataRecordController()
-        } catch {
-            MolueLogger.UIModule.error(error)
-        }
-    }
-    
-    func bindingTableViewAdapter(with tableView: UITableView) {
-        
     }
 }

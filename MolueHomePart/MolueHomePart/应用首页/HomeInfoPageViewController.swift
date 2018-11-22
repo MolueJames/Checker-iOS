@@ -14,7 +14,6 @@ import MolueUtilities
 
 protocol HomeInfoPagePresentableListener: class {
     // 定义一些当前页面需要的业务逻辑, 比如网络请求.
-    func bindingTableViewAdapter(with tableView: UITableView)
     
     func jumpToDailyTaskController()
     
@@ -23,10 +22,10 @@ protocol HomeInfoPagePresentableListener: class {
     func jumpToNoticationController()
     
     func jumpToLegislationController()
+
+    func jumpToRiskHistoryController()
     
-    func jumpToEducationController()
-    
-    func jumpToDataRecordController()
+    func jumpToDangerListController()
     
     var valueList:[String] {get}
 }
@@ -60,11 +59,11 @@ final class HomeInfoPageViewController: MLBaseViewController  {
             headerView.legislationCommand.subscribe(onNext: { [unowned self] (_) in
                 self.listener?.jumpToLegislationController()
             }).disposed(by: disposeBag)
-            headerView.educationCommand.subscribe(onNext: { [unowned self] (_) in
-                self.listener?.jumpToEducationController()
+            headerView.riskHistoryCommand.subscribe(onNext: { [unowned self] (_) in
+                self.listener?.jumpToRiskHistoryController()
             }).disposed(by: disposeBag)
-            headerView.dataRecordCommand.subscribe(onNext: { [unowned self] (_) in
-                self.listener?.jumpToDataRecordController()
+            headerView.dangerListCommand.subscribe(onNext: { [unowned self] (_) in
+                self.listener?.jumpToDangerListController()
             }).disposed(by: disposeBag)
         }
     }

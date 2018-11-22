@@ -38,5 +38,5 @@ class EditRiskInfoResuableFooterView: UICollectionReusableView {
             reasonRemarkView.defaultValue(title: "请填写具体情况及整改措施方案", limit: 100)
         }
     }
-    
+    //TODO: 添加隐患级别
 }

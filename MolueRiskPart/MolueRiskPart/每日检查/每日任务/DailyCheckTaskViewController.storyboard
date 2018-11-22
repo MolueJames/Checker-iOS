@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Daily Check Task View Controller-->
+        <scene sceneID="5QZ-dT-9l6">
+            <objects>
+                <viewController storyboardIdentifier="DailyCheckTaskViewController" id="mmk-aT-Kem" customClass="DailyCheckTaskViewController" customModule="MolueHomePart" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rbJ-2f-INO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VpR-ek-NFb">
+                                <rect key="frame" x="0.0" y="20" width="375" height="601"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="mmk-aT-Kem" id="qdX-Yc-OSF"/>
+                                    <outlet property="delegate" destination="mmk-aT-Kem" id="QZn-15-olN"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ghi-rw-LRz">
+                                <rect key="frame" x="0.0" y="621" width="375" height="46"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="YZr-6r-WMA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <state key="normal" title="开始检查">
+                                    <color key="titleColor" red="0.1058823529" green="0.50980392159999999" blue="0.82352941180000006" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="submitButton:" destination="cCh-LY-rLZ" eventType="touchUpInside" id="0Hn-m8-GV4"/>
+                                    <action selector="submitButtonClicked:" destination="mmk-aT-Kem" eventType="touchUpInside" id="qu6-io-5pW"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ghi-rw-LRz" firstAttribute="top" secondItem="VpR-ek-NFb" secondAttribute="bottom" id="5Ny-0X-0P5"/>
+                            <constraint firstItem="ghi-rw-LRz" firstAttribute="trailing" secondItem="3dj-zO-NET" secondAttribute="trailing" id="Kk4-Us-xXU"/>
+                            <constraint firstItem="3dj-zO-NET" firstAttribute="trailing" secondItem="VpR-ek-NFb" secondAttribute="trailing" id="ZOk-21-Plj"/>
+                            <constraint firstItem="ghi-rw-LRz" firstAttribute="leading" secondItem="3dj-zO-NET" secondAttribute="leading" id="hIF-At-wno"/>
+                            <constraint firstItem="VpR-ek-NFb" firstAttribute="leading" secondItem="3dj-zO-NET" secondAttribute="leading" id="pVM-mt-Uky"/>
+                            <constraint firstItem="ghi-rw-LRz" firstAttribute="bottom" secondItem="3dj-zO-NET" secondAttribute="bottom" id="rEk-4k-GGz"/>
+                            <constraint firstItem="VpR-ek-NFb" firstAttribute="top" secondItem="3dj-zO-NET" secondAttribute="top" id="xIN-4R-uwC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3dj-zO-NET"/>
+                    </view>
+                    <connections>
+                        <outlet property="submitButton" destination="ghi-rw-LRz" id="F8N-Gx-IQR"/>
+                        <outlet property="tableView" destination="VpR-ek-NFb" id="5do-Rr-TUr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UyS-db-Ofu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="cCh-LY-rLZ" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-300" y="50.824587706146929"/>
+        </scene>
+    </scenes>
+</document>

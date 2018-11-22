@@ -33,6 +33,14 @@ final class HomeInfoPageViewableRouter: MolueViewableRouting {
 }
 
 extension HomeInfoPageViewableRouter: HomeInfoPageViewableRouting {
+    func pushToRiskHistoryController() {
+        
+    }
+    
+    func pushToDangerListController() {
+        
+    }
+    
     func pushToDailyTaskController() {
         do {
             let listener = try self.interactor.unwrap()
@@ -47,24 +55,36 @@ extension HomeInfoPageViewableRouter: HomeInfoPageViewableRouting {
     }
     
     func pushToRiskCheckController() {
+//        do {
+//            let listener = try self.interactor.unwrap()
+//            let builder = RiskCheckTaskComponentBuilder()
+//            let controller = builder.build(listener: listener)
+//            controller.hidesBottomBarWhenPushed = true
+//            let navigator = try self.controller.unwrap()
+//            navigator.pushToViewController(controller, animated: true)
+//        } catch {
+//            MolueLogger.UIModule.error(error)
+//        }
+    }
+    
+    func pushToNoticationController() {
         do {
-            let listener = try self.interactor.unwrap()
-            let builder = RiskCheckTaskComponentBuilder()
-            let controller = builder.build(listener: listener)
-            controller.hidesBottomBarWhenPushed = true
             let navigator = try self.controller.unwrap()
+            let controller = PolicyNoticeViewController.initializeFromStoryboard()
             navigator.pushToViewController(controller, animated: true)
         } catch {
             MolueLogger.UIModule.error(error)
         }
     }
     
-    func pushToNoticationController() {
-        
-    }
-    
     func pushToLegislationController() {
-        
+        do {
+            let navigator = try self.controller.unwrap()
+            let controller = LawRegulationViewController.initializeFromStoryboard()
+            navigator.pushToViewController(controller, animated: true)
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
     }
     
     func pushToEducationController() {

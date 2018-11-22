@@ -7,6 +7,8 @@
 //
 
 import MolueMediator
+import MolueUtilities
+import MolueCommon
 
 protocol RiskDetailRouterInteractable: class {
     var viewRouter: RiskDetailViewableRouting? { get set }
@@ -32,7 +34,17 @@ final class RiskDetailViewableRouter: MolueViewableRouting {
 }
 
 extension RiskDetailViewableRouter: RiskDetailViewableRouting {
-    
+    func pushToPhotoBrowser(with photos: [SKPhoto], index: Int) {
+        do {
+            let navigator = try self.controller.unwrap()
+            let browser = SKPhotoBrowser(photos: photos)
+            browser.initializePageIndex(index)
+            SKPhotoBrowserOptions.displayDeleteButton = false
+            navigator.doPresentController(browser, animated: true, completion: nil)
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+    }
 }
 
 protocol RiskDetailInteractListener: class {
