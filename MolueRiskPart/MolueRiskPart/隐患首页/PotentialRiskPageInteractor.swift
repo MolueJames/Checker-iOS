@@ -6,6 +6,7 @@
 //  Copyright © 2018 MolueTech. All rights reserved.
 //
 
+import MolueUtilities
 import MolueMediator
 import MolueCommon
 
@@ -28,9 +29,9 @@ final class PotentialRiskPageInteractor: MoluePresenterInteractable {
     
     weak var listener: PotentialRiskInteractListener?
     
-    var tableViewAdapter: MLTableViewAdapter<PotentialRiskTableViewCell, String>?
+    var selectedRisk: PotentialRiskModel?
     
-    var valueList: [String] = ["1","2","3","2","3","2","3","2","3","2","3","2","3","2","3"]
+    var valueList: [PotentialRiskModel] = AppRiskDocument.shared.riskList
     
     required init(presenter: PotentialRiskPagePresentable) {
         self.presenter = presenter
@@ -43,16 +44,13 @@ extension PotentialRiskPageInteractor: PotentialRiskRouterInteractable {
 }
 
 extension PotentialRiskPageInteractor: PotentialRiskPresentableListener {
-    func bindingTableViewAdapter(with tableView: UITableView) {
-        self.tableViewAdapter = MLTableViewAdapter<PotentialRiskTableViewCell, String>(with: self.valueList)
-        self.tableViewAdapter?.bindingTableView(tableView)
-        self.tableViewAdapter?.heightForEachRow(100)
-        self.tableViewAdapter?.cellForRowAtClosure({ (indexPath, cell, item) in
-            
-        })
-        self.tableViewAdapter?.didSelectRowAtClosure({ [weak self] (indexPath, item) in
-            guard let self = self, let router = self.viewRouter else {return}
-            router.pushToRiskDetailController()
-        })
+    func jumpToRiskDetailController(with index: Int) {
+        do {
+            self.selectedRisk = self.valueList.item(at: index)
+            let viewRouter = try self.viewRouter.unwrap()
+            viewRouter.pushToRiskDetailController()
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
     }
 }

@@ -9,7 +9,7 @@
 import MolueMediator
 import MolueUtilities
 
-protocol HomeInfoPageRouterInteractable: DangerUnitListInteractListener, RiskCheckTaskInteractListener {
+protocol HomeInfoPageRouterInteractable: CheckTaskHistoryInteractListener, DangerUnitListInteractListener, EditRiskInfoInteractListener, PotentialRiskInteractListener {
     var viewRouter: HomeInfoPageViewableRouting? { get set }
     var listener: HomeInfoPageInteractListener? { get set }
 }
@@ -34,11 +34,30 @@ final class HomeInfoPageViewableRouter: MolueViewableRouting {
 
 extension HomeInfoPageViewableRouter: HomeInfoPageViewableRouting {
     func pushToRiskHistoryController() {
-        
+        do {
+            let listener = try self.interactor.unwrap()
+            let builderFactory = MolueBuilderFactory<MolueComponent.Risk>(.RiskList)
+            let builder: PotentialRiskComponentBuildable? = builderFactory.queryBuilder()
+            let controller = try builder.unwrap().build(listener: listener)
+            controller.hidesBottomBarWhenPushed = true
+            let navigator = try self.controller.unwrap()
+            navigator.pushToViewController(controller, animated: true)
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
     }
     
     func pushToDangerListController() {
-        
+        do {
+            let listener = try self.interactor.unwrap()
+            let builder = CheckTaskHistoryComponentBuilder()
+            let controller = builder.build(listener: listener)
+            controller.hidesBottomBarWhenPushed = true
+            let navigator = try self.controller.unwrap()
+            navigator.pushToViewController(controller, animated: true)
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
     }
     
     func pushToDailyTaskController() {
@@ -55,22 +74,24 @@ extension HomeInfoPageViewableRouter: HomeInfoPageViewableRouting {
     }
     
     func pushToRiskCheckController() {
-//        do {
-//            let listener = try self.interactor.unwrap()
-//            let builder = RiskCheckTaskComponentBuilder()
-//            let controller = builder.build(listener: listener)
-//            controller.hidesBottomBarWhenPushed = true
-//            let navigator = try self.controller.unwrap()
-//            navigator.pushToViewController(controller, animated: true)
-//        } catch {
-//            MolueLogger.UIModule.error(error)
-//        }
+        do {
+            let listener = try self.interactor.unwrap()
+            let builderFactory = MolueBuilderFactory<MolueComponent.Risk>(.EditRisk)
+            let builder: EditRiskInfoComponentBuildable? = builderFactory.queryBuilder()
+            let controller = try builder.unwrap().build(listener: listener)
+            controller.hidesBottomBarWhenPushed = true
+            let navigator = try self.controller.unwrap()
+            navigator.pushToViewController(controller, animated: true)
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
     }
     
     func pushToNoticationController() {
         do {
             let navigator = try self.controller.unwrap()
             let controller = PolicyNoticeViewController.initializeFromStoryboard()
+            controller.hidesBottomBarWhenPushed = true
             navigator.pushToViewController(controller, animated: true)
         } catch {
             MolueLogger.UIModule.error(error)
@@ -81,19 +102,13 @@ extension HomeInfoPageViewableRouter: HomeInfoPageViewableRouting {
         do {
             let navigator = try self.controller.unwrap()
             let controller = LawRegulationViewController.initializeFromStoryboard()
+            controller.hidesBottomBarWhenPushed = true
             navigator.pushToViewController(controller, animated: true)
         } catch {
             MolueLogger.UIModule.error(error)
         }
     }
-    
-    func pushToEducationController() {
-        
-    }
-    
-    func pushToDataRecordController() {
-        
-    }
+
 }
 
 class HomeInfoPageComponentBuilder: MolueComponentBuilder, HomeInfoPageComponentBuildable {

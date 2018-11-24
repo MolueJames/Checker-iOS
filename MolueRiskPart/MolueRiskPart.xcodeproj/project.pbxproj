@@ -15,7 +15,6 @@
 		1A05CC392189F8A1006D637C /* RiskPlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A05CC362189F8A1006D637C /* RiskPlanViewController.swift */; };
 		1A05CC3A2189F8A1006D637C /* RiskPlanPageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A05CC372189F8A1006D637C /* RiskPlanPageInteractor.swift */; };
 		1A05CC3B2189F8A1006D637C /* RiskPlanBuilderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A05CC382189F8A1006D637C /* RiskPlanBuilderRouter.swift */; };
-		1A05CC3D2189FAD7006D637C /* PotentialRiskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A05CC3C2189FAD7006D637C /* PotentialRiskModel.swift */; };
 		1A0B89C82193391C000B1EBC /* RiskRectifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0B89C52193391C000B1EBC /* RiskRectifyViewController.swift */; };
 		1A0B89C92193391C000B1EBC /* RiskRectifyPageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0B89C62193391C000B1EBC /* RiskRectifyPageInteractor.swift */; };
 		1A0B89CA2193391C000B1EBC /* RiskRectifyBuilderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0B89C72193391C000B1EBC /* RiskRectifyBuilderRouter.swift */; };
@@ -30,8 +29,13 @@
 		1A15029021A6A0DB002CB333 /* RiskDetailReusableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A15028E21A6A0DB002CB333 /* RiskDetailReusableHeaderView.xib */; };
 		1A15029421A6AF75002CB333 /* NoHiddenRiskReusableFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A15029221A6AF75002CB333 /* NoHiddenRiskReusableFooterView.swift */; };
 		1A15029521A6AF75002CB333 /* NoHiddenRiskReusableFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A15029321A6AF75002CB333 /* NoHiddenRiskReusableFooterView.xib */; };
+		1A24971E21A90BE000937E05 /* AppRiskDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A24971D21A90BE000937E05 /* AppRiskDocument.swift */; };
 		1A2698E921A5B5E0007C37C8 /* InsertPhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2698E721A5B5E0007C37C8 /* InsertPhotosCollectionViewCell.swift */; };
 		1A2698EA21A5B5E0007C37C8 /* InsertPhotosCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A2698E821A5B5E0007C37C8 /* InsertPhotosCollectionViewCell.xib */; };
+		1A2698EE21A84E91007C37C8 /* NoHiddenRiskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2698EB21A84E91007C37C8 /* NoHiddenRiskViewController.swift */; };
+		1A2698EF21A84E91007C37C8 /* NoHiddenRiskPageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2698EC21A84E91007C37C8 /* NoHiddenRiskPageInteractor.swift */; };
+		1A2698F021A84E91007C37C8 /* NoHiddenRiskBuilderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2698ED21A84E91007C37C8 /* NoHiddenRiskBuilderRouter.swift */; };
+		1A2698F221A84EAC007C37C8 /* NoHiddenRiskViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A2698F121A84EAC007C37C8 /* NoHiddenRiskViewController.storyboard */; };
 		1A3465D92197280F00EBA57C /* PotentialRiskHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3465D82197280F00EBA57C /* PotentialRiskHeaderView.swift */; };
 		1A3465DB2197281C00EBA57C /* PotentialRiskHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A3465DA2197281C00EBA57C /* PotentialRiskHeaderView.xib */; };
 		1A3465DE2197308200EBA57C /* PotentialRiskCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3465DC2197308200EBA57C /* PotentialRiskCollectionCell.swift */; };
@@ -81,7 +85,6 @@
 		1A05CC362189F8A1006D637C /* RiskPlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskPlanViewController.swift; sourceTree = "<group>"; };
 		1A05CC372189F8A1006D637C /* RiskPlanPageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskPlanPageInteractor.swift; sourceTree = "<group>"; };
 		1A05CC382189F8A1006D637C /* RiskPlanBuilderRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskPlanBuilderRouter.swift; sourceTree = "<group>"; };
-		1A05CC3C2189FAD7006D637C /* PotentialRiskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PotentialRiskModel.swift; sourceTree = "<group>"; };
 		1A0B89C52193391C000B1EBC /* RiskRectifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskRectifyViewController.swift; sourceTree = "<group>"; };
 		1A0B89C62193391C000B1EBC /* RiskRectifyPageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskRectifyPageInteractor.swift; sourceTree = "<group>"; };
 		1A0B89C72193391C000B1EBC /* RiskRectifyBuilderRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskRectifyBuilderRouter.swift; sourceTree = "<group>"; };
@@ -96,8 +99,13 @@
 		1A15028E21A6A0DB002CB333 /* RiskDetailReusableHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RiskDetailReusableHeaderView.xib; sourceTree = "<group>"; };
 		1A15029221A6AF75002CB333 /* NoHiddenRiskReusableFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoHiddenRiskReusableFooterView.swift; sourceTree = "<group>"; };
 		1A15029321A6AF75002CB333 /* NoHiddenRiskReusableFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoHiddenRiskReusableFooterView.xib; sourceTree = "<group>"; };
+		1A24971D21A90BE000937E05 /* AppRiskDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppRiskDocument.swift; path = "MolueRiskPart/快速检查/AppRiskDocument.swift"; sourceTree = SOURCE_ROOT; };
 		1A2698E721A5B5E0007C37C8 /* InsertPhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertPhotosCollectionViewCell.swift; sourceTree = "<group>"; };
 		1A2698E821A5B5E0007C37C8 /* InsertPhotosCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InsertPhotosCollectionViewCell.xib; sourceTree = "<group>"; };
+		1A2698EB21A84E91007C37C8 /* NoHiddenRiskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoHiddenRiskViewController.swift; sourceTree = "<group>"; };
+		1A2698EC21A84E91007C37C8 /* NoHiddenRiskPageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoHiddenRiskPageInteractor.swift; sourceTree = "<group>"; };
+		1A2698ED21A84E91007C37C8 /* NoHiddenRiskBuilderRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoHiddenRiskBuilderRouter.swift; sourceTree = "<group>"; };
+		1A2698F121A84EAC007C37C8 /* NoHiddenRiskViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NoHiddenRiskViewController.storyboard; sourceTree = "<group>"; };
 		1A3465D82197280F00EBA57C /* PotentialRiskHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PotentialRiskHeaderView.swift; sourceTree = "<group>"; };
 		1A3465DA2197281C00EBA57C /* PotentialRiskHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PotentialRiskHeaderView.xib; sourceTree = "<group>"; };
 		1A3465DC2197308200EBA57C /* PotentialRiskCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PotentialRiskCollectionCell.swift; sourceTree = "<group>"; };
@@ -188,6 +196,10 @@
 			isa = PBXGroup;
 			children = (
 				1A15029621A6AF9F002CB333 /* Views */,
+				1A2698EB21A84E91007C37C8 /* NoHiddenRiskViewController.swift */,
+				1A2698F121A84EAC007C37C8 /* NoHiddenRiskViewController.storyboard */,
+				1A2698EC21A84E91007C37C8 /* NoHiddenRiskPageInteractor.swift */,
+				1A2698ED21A84E91007C37C8 /* NoHiddenRiskBuilderRouter.swift */,
 			);
 			path = "暂无隐患";
 			sourceTree = "<group>";
@@ -217,9 +229,16 @@
 		1A24023420E539E100FC3EBA /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				1A05CC3C2189FAD7006D637C /* PotentialRiskModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		1A24971B21A90BAF00937E05 /* 测试数据 */ = {
+			isa = PBXGroup;
+			children = (
+				1A24971D21A90BE000937E05 /* AppRiskDocument.swift */,
+			);
+			path = "测试数据";
 			sourceTree = "<group>";
 		};
 		1A602F3A20A810DF003AD583 = {
@@ -245,6 +264,7 @@
 		1A602F4620A810DF003AD583 /* MolueRiskPart */ = {
 			isa = PBXGroup;
 			children = (
+				1A24971B21A90BAF00937E05 /* 测试数据 */,
 				1ACD09DB2199C25A00793AAC /* 快速检查 */,
 				1A65039720DD55350017F91D /* MolueRisk.xcassets */,
 				1AA7353E20A9C0D700DF7CD0 /* 隐患首页 */,
@@ -471,6 +491,7 @@
 				1A65039820DD55350017F91D /* MolueRisk.xcassets in Resources */,
 				1A0B89CC2193392D000B1EBC /* RiskRectifyViewController.storyboard in Resources */,
 				1A3465DF2197308200EBA57C /* PotentialRiskCollectionCell.xib in Resources */,
+				1A2698F221A84EAC007C37C8 /* NoHiddenRiskViewController.storyboard in Resources */,
 				1A2698EA21A5B5E0007C37C8 /* InsertPhotosCollectionViewCell.xib in Resources */,
 				1A15029021A6A0DB002CB333 /* RiskDetailReusableHeaderView.xib in Resources */,
 				1A15029521A6AF75002CB333 /* NoHiddenRiskReusableFooterView.xib in Resources */,
@@ -517,21 +538,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A2698F021A84E91007C37C8 /* NoHiddenRiskBuilderRouter.swift in Sources */,
 				1A05CC392189F8A1006D637C /* RiskPlanViewController.swift in Sources */,
 				1A05CC2D2189E9AF006D637C /* PotentialRiskBuilderRouter.swift in Sources */,
+				1A2698EE21A84E91007C37C8 /* NoHiddenRiskViewController.swift in Sources */,
 				1A15028B21A6A091002CB333 /* RiskDetailCollectionViewCell.swift in Sources */,
 				1A05CC3B2189F8A1006D637C /* RiskPlanBuilderRouter.swift in Sources */,
 				1A3465DE2197308200EBA57C /* PotentialRiskCollectionCell.swift in Sources */,
 				1ACD0A1D21A05E4000793AAC /* EditRiskInfoPageInteractor.swift in Sources */,
 				1A730AD920E91D33008831BC /* PotentialRiskTableViewCell.swift in Sources */,
+				1A24971E21A90BE000937E05 /* AppRiskDocument.swift in Sources */,
 				1A3465D92197280F00EBA57C /* PotentialRiskHeaderView.swift in Sources */,
 				1A15028F21A6A0DB002CB333 /* RiskDetailReusableHeaderView.swift in Sources */,
 				1A7961EC21A3019F00D556B5 /* EditRiskInfoResuableFooterView.swift in Sources */,
 				1ACD0A1C21A05E4000793AAC /* EditRiskInfoViewController.swift in Sources */,
+				1A2698EF21A84E91007C37C8 /* NoHiddenRiskPageInteractor.swift in Sources */,
 				1A7961F021A307F000D556B5 /* EditRiskInfoCollectionViewCell.swift in Sources */,
 				1A0B89D3219339B4000B1EBC /* RiskDetailBuilderRouter.swift in Sources */,
 				1ACD0A1E21A05E4000793AAC /* EditRiskInfoBuilderRouter.swift in Sources */,
-				1A05CC3D2189FAD7006D637C /* PotentialRiskModel.swift in Sources */,
 				1A05CC3A2189F8A1006D637C /* RiskPlanPageInteractor.swift in Sources */,
 				1A05CC2B2189E9AF006D637C /* PotentialRiskViewController.swift in Sources */,
 				1ACD09DF2199C27800793AAC /* QuickCheckRiskViewController.swift in Sources */,
@@ -714,7 +738,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -745,7 +769,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Molue.MolueRiskPart;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

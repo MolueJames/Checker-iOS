@@ -91,6 +91,10 @@ public class MLCommonRemarkView: UIView {
         self.numberLabel.text = "0/\(limit)"
         self.textLimit = limit
     }
+    
+    public func remarkText() -> String {
+        return self.remarkTextView.text
+    }
 }
 
 extension MLCommonRemarkView: UITextViewDelegate {

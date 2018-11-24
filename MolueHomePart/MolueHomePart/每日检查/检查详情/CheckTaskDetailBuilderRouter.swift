@@ -8,7 +8,7 @@
 import MolueUtilities
 import MolueMediator
 
-protocol CheckTaskDetailRouterInteractable: ExistedRiskDetailInteractListener {
+protocol CheckTaskDetailRouterInteractable: NoHiddenRiskInteractListener, EditRiskInfoInteractListener {
     var viewRouter: CheckTaskDetailViewableRouting? { get set }
     var listener: CheckTaskDetailInteractListener? { get set }
 }
@@ -32,18 +32,33 @@ final class CheckTaskDetailViewableRouter: MolueViewableRouting {
 }
 
 extension CheckTaskDetailViewableRouter: CheckTaskDetailViewableRouting {
-    func presentExistedRiskDetailController() {
+    func pushToNoHiddenController() {
         do {
             let listener = try self.interactor.unwrap()
-            let builder = ExistedRiskDetailComponentBuilder()
-            let controller = builder.build(listener: listener)
-            controller.modalPresentationStyle = .overCurrentContext
+            let builderFactory = MolueBuilderFactory<MolueComponent.Risk>(.NoHidden)
+            let builder: NoHiddenRiskComponentBuildable? = builderFactory.queryBuilder()
+            let controller = try builder.unwrap().build(listener: listener)
             let navigator = try self.controller.unwrap()
-            navigator.doPresentController (controller, animated: true, completion: nil)
+            navigator.pushToViewController(controller, animated: true)
         } catch {
             MolueLogger.UIModule.error(error)
         }
     }
+    
+    func pushToEditRiskController() {
+        do {
+            let listener = try self.interactor.unwrap()
+            let builderFactory = MolueBuilderFactory<MolueComponent.Risk>(.EditRisk)
+            let builder: EditRiskInfoComponentBuildable? = builderFactory.queryBuilder()
+            let controller = try builder.unwrap().build(listener: listener)
+            controller.hidesBottomBarWhenPushed = true
+            let navigator = try self.controller.unwrap()
+            navigator.pushToViewController(controller, animated: true)
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+    }
+    
 }
 
 protocol CheckTaskDetailInteractListener: class {

@@ -10,7 +10,11 @@ import UIKit
 import MolueUtilities
 class EditRiskInfoCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var imageView: UIImageView! {
+        didSet {
+            imageView.clipsToBounds = true
+        }
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

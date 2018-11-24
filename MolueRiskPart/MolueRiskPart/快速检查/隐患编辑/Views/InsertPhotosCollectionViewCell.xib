@@ -19,10 +19,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="151" height="121"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nW4-Nw-Xe0">
-                        <rect key="frame" x="1" y="1" width="149" height="119"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </view>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="molue_risk_addImage" translatesAutoresizingMaskIntoConstraints="NO" id="2GA-NI-6EO">
                         <rect key="frame" x="30.5" y="20.5" width="90" height="80"/>
                         <constraints>
@@ -32,14 +28,10 @@
                     </imageView>
                 </subviews>
             </view>
-            <color key="backgroundColor" red="0.74901960784313726" green="0.74901960784313726" blue="0.74901960784313726" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="nW4-Nw-Xe0" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="1" id="2Y1-Vb-i7x"/>
-                <constraint firstAttribute="trailing" secondItem="nW4-Nw-Xe0" secondAttribute="trailing" constant="1" id="CCR-Ia-ZFs"/>
                 <constraint firstItem="2GA-NI-6EO" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Fs2-CL-ILr"/>
-                <constraint firstAttribute="bottom" secondItem="nW4-Nw-Xe0" secondAttribute="bottom" constant="1" id="Hhe-7U-CE1"/>
                 <constraint firstItem="2GA-NI-6EO" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="JNL-kv-La9"/>
-                <constraint firstItem="nW4-Nw-Xe0" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="1" id="hmP-EU-P3C"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="151" height="121"/>

@@ -10,18 +10,18 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Risk Detail View Controller-->
-        <scene sceneID="v9U-wm-Vjx">
+        <!--No Hidden Risk View Controller-->
+        <scene sceneID="ex0-I8-JQt">
             <objects>
-                <viewController storyboardIdentifier="RiskDetailViewController" id="6h9-1s-Spk" customClass="RiskDetailViewController" customModule="MolueRiskPart" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="LHe-nx-ttX">
+                <viewController storyboardIdentifier="NoHiddenRiskViewController" id="lJq-Rm-UpI" customClass="NoHiddenRiskViewController" customModule="MolueRiskPart" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="G7W-z3-1qQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Tve-lU-bul">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8wF-Gf-1ui">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pZN-aa-maF">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ZPA-xU-2An">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -32,20 +32,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Tve-lU-bul" firstAttribute="leading" secondItem="hdg-a3-Oui" secondAttribute="leading" id="Bog-yE-oer"/>
-                            <constraint firstItem="hdg-a3-Oui" firstAttribute="trailing" secondItem="Tve-lU-bul" secondAttribute="trailing" id="TJR-o5-PJU"/>
-                            <constraint firstItem="hdg-a3-Oui" firstAttribute="bottom" secondItem="Tve-lU-bul" secondAttribute="bottom" id="gcw-TI-gfh"/>
-                            <constraint firstItem="Tve-lU-bul" firstAttribute="top" secondItem="hdg-a3-Oui" secondAttribute="top" id="pGH-Bs-gxR"/>
+                            <constraint firstItem="bff-SC-rep" firstAttribute="trailing" secondItem="8wF-Gf-1ui" secondAttribute="trailing" id="Jm8-WB-3tk"/>
+                            <constraint firstItem="8wF-Gf-1ui" firstAttribute="top" secondItem="bff-SC-rep" secondAttribute="top" id="Ktz-o5-9aQ"/>
+                            <constraint firstItem="8wF-Gf-1ui" firstAttribute="leading" secondItem="bff-SC-rep" secondAttribute="leading" id="RuT-7J-h79"/>
+                            <constraint firstItem="bff-SC-rep" firstAttribute="bottom" secondItem="8wF-Gf-1ui" secondAttribute="bottom" id="Y5P-po-wtO"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="hdg-a3-Oui"/>
+                        <viewLayoutGuide key="safeArea" id="bff-SC-rep"/>
                     </view>
                     <connections>
-                        <outlet property="collectionView" destination="Tve-lU-bul" id="s5f-zb-zl3"/>
+                        <outlet property="collectionView" destination="8wF-Gf-1ui" id="kVW-yO-AEG"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fZh-iV-PlS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0D3-yo-fVz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="289" y="67"/>
+            <point key="canvasLocation" x="209" y="141"/>
         </scene>
     </scenes>
 </document>

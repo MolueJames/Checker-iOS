@@ -1,8 +1,8 @@
 //
-//  EditRiskInfoBuilderRouter.swift
+//  NoHiddenRiskBuilderRouter.swift
 //  MolueRiskPart
 //
-//  Created by MolueJames on 2018/11/17.
+//  Created by MolueJames on 2018/11/23.
 //  Copyright © 2018 MolueTech. All rights reserved.
 //
 
@@ -11,39 +11,30 @@ import MolueUtilities
 import MolueCommon
 import Gallery
 
-protocol EditRiskInfoRouterInteractable: GalleryControllerDelegate, SKPhotoBrowserDelegate {
-    var viewRouter: EditRiskInfoViewableRouting? { get set }
-    var listener: EditRiskInfoInteractListener? { get set }
+protocol NoHiddenRiskRouterInteractable: GalleryControllerDelegate, SKPhotoBrowserDelegate {
+    var viewRouter: NoHiddenRiskViewableRouting? { get set }
+    var listener: NoHiddenRiskInteractListener? { get set }
 }
 
-protocol EditRiskInfoViewControllable: MolueViewControllable {
+protocol NoHiddenRiskViewControllable: MolueViewControllable {
     // 定义一些该页面需要的其他commponent的组件, 比如该页面的childViewController等.
 }
 
-final class EditRiskInfoViewableRouter: MolueViewableRouting {
+final class NoHiddenRiskViewableRouter: MolueViewableRouting {
     
-    weak var interactor: EditRiskInfoRouterInteractable?
+    weak var interactor: NoHiddenRiskRouterInteractable?
     
-    weak var controller: EditRiskInfoViewControllable?
+    weak var controller: NoHiddenRiskViewControllable?
     
     @discardableResult
-    required init(interactor: EditRiskInfoRouterInteractable, controller: EditRiskInfoViewControllable) {
+    required init(interactor: NoHiddenRiskRouterInteractable, controller: NoHiddenRiskViewControllable) {
         self.controller = controller
         self.interactor = interactor
         interactor.viewRouter = self
     }
 }
 
-extension EditRiskInfoViewableRouter: EditRiskInfoViewableRouting {
-    func popToPreviewController() {
-        do {
-            let navigator = try self.controller.unwrap()
-            navigator.doPopBackFromCurrent()
-        } catch {
-            MolueLogger.UIModule.error(error)
-        }
-    }
-    
+extension NoHiddenRiskViewableRouter: NoHiddenRiskViewableRouting {
     func pushToTakePhotoController(with limit: Int) {
         do {
             let navigator = try self.controller.unwrap()
@@ -77,11 +68,11 @@ extension EditRiskInfoViewableRouter: EditRiskInfoViewableRouting {
     }
 }
 
-class EditRiskInfoComponentBuilder: MolueComponentBuilder, EditRiskInfoComponentBuildable {
-    func build(listener: EditRiskInfoInteractListener) -> UIViewController {
-        let controller = EditRiskInfoViewController.initializeFromStoryboard()
-        let interactor = EditRiskInfoPageInteractor(presenter: controller)
-        EditRiskInfoViewableRouter(interactor: interactor, controller: controller)
+class NoHiddenRiskComponentBuilder: MolueComponentBuilder, NoHiddenRiskComponentBuildable {
+    func build(listener: NoHiddenRiskInteractListener) -> UIViewController {
+        let controller = NoHiddenRiskViewController.initializeFromStoryboard()
+        let interactor = NoHiddenRiskPageInteractor(presenter: controller)
+        NoHiddenRiskViewableRouter(interactor: interactor, controller: controller)
         interactor.listener = listener
         return controller
     }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A24972221A945E100937E05 /* MolueFoundation.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A24972121A945E100937E05 /* MolueFoundation.xcassets */; };
 		1A2558DF21586BB3007E58E0 /* MolueMediator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A2558DE21586BB3007E58E0 /* MolueMediator.framework */; };
 		1A2558E121586BEB007E58E0 /* MolueMediator.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1A2558DE21586BB3007E58E0 /* MolueMediator.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1A5014BD2095647B00DB931E /* AppDelegate+ThirdPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5014BC2095647B00DB931E /* AppDelegate+ThirdPart.swift */; };
@@ -100,6 +101,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1A24972121A945E100937E05 /* MolueFoundation.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = MolueFoundation.xcassets; path = ../../MolueFoundation/MolueFoundation/MolueFoundation.xcassets; sourceTree = "<group>"; };
 		1A2558DE21586BB3007E58E0 /* MolueMediator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueMediator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A35D80420DD3113002ED3CB /* MolueSafty.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MolueSafty.xcassets; sourceTree = "<group>"; };
 		1A5014BC2095647B00DB931E /* AppDelegate+ThirdPart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+ThirdPart.swift"; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 		1A35D80320DD3065002ED3CB /* MolueImages */ = {
 			isa = PBXGroup;
 			children = (
+				1A24972121A945E100937E05 /* MolueFoundation.xcassets */,
 				1A9BC9FF210A03280035FC21 /* MolueLogin.xcassets */,
 				1A6503A320DD55940017F91D /* MolueCommon.xcassets */,
 				1A6503A120DD557C0017F91D /* MolueMine.xcassets */,
@@ -416,6 +419,7 @@
 				1A6503A420DD55950017F91D /* MolueCommon.xcassets in Resources */,
 				1A65039C20DD55530017F91D /* MolueBook.xcassets in Resources */,
 				1A6503A020DD55740017F91D /* MolueHome.xcassets in Resources */,
+				1A24972221A945E100937E05 /* MolueFoundation.xcassets in Resources */,
 				1A6503A220DD557C0017F91D /* MolueMine.xcassets in Resources */,
 				1A9BCA11210A23EA0035FC21 /* JingDianXingShuJian-1.ttf in Resources */,
 			);

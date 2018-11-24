@@ -1,19 +1,17 @@
 //
-//  EditRiskInfoViewController.swift
+//  NoHiddenRiskViewController.swift
 //  MolueRiskPart
 //
-//  Created by MolueJames on 2018/11/17.
+//  Created by MolueJames on 2018/11/23.
 //  Copyright © 2018 MolueTech. All rights reserved.
 //
 
 import UIKit
-import RxSwift
-import MolueCommon
-import MolueMediator
-import MolueUtilities
 import MolueFoundation
+import MolueUtilities
+import MolueCommon
 
-protocol EditRiskInfoPresentableListener: class {
+protocol NoHiddenRiskPresentableListener: class {
     // 定义一些当前页面需要的业务逻辑, 比如网络请求.
     var maxImageCount: Int {get}
     
@@ -22,27 +20,24 @@ protocol EditRiskInfoPresentableListener: class {
     func jumpToTakePhotoController()
     
     func jumpToBrowserController(with index: Int)
-    
-    func updateEditRiskInfo(with model: PotentialRiskModel)
 }
 
-final class EditRiskInfoViewController: MLBaseViewController  {
+final class NoHiddenRiskViewController: MLBaseViewController  {
     //MARK: View Controller Properties
-    var listener: EditRiskInfoPresentableListener?
-    private let disposeBag = DisposeBag()
+    var listener: NoHiddenRiskPresentableListener?
     
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
             collectionView.dataSource = self
             collectionView.delegate = self
-            collectionView.register(forKind:UICollectionView.elementKindSectionFooter, withNibClass: EditRiskInfoResuableFooterView.self)
+            collectionView.register(forKind:UICollectionView.elementKindSectionFooter, withNibClass: NoHiddenRiskReusableFooterView.self)
             collectionView.register(xibWithCellClass: EditRiskInfoCollectionViewCell.self)
             collectionView.register(xibWithCellClass: InsertPhotosCollectionViewCell.self)
             self.flowLayout = UICollectionViewFlowLayout()
             collectionView.collectionViewLayout = self.flowLayout
         }
     }
-
+    
     private var flowLayout: UICollectionViewFlowLayout! {
         didSet {
             flowLayout.scrollDirection = .vertical
@@ -51,9 +46,21 @@ final class EditRiskInfoViewController: MLBaseViewController  {
             flowLayout.sectionInset = UIEdgeInsets(top: 10, left: 15, bottom: 10, right: 15)
             let width: CGFloat = (MLConfigure.ScreenWidth - 56) / 3
             flowLayout.itemSize = CGSize(width: width, height: width)
-            flowLayout.footerReferenceSize = CGSize(width: MLConfigure.ScreenWidth, height: 375)
+//            let size = self.estimateFrameForText(text: text)
+            
+            flowLayout.footerReferenceSize = CGSize(width: MLConfigure.ScreenWidth, height: 230)
         }
     }
+    
+    func estimateFrameForText(text: String) -> CGRect {
+        let style = NSMutableParagraphStyle()
+        style.lineBreakMode = .byWordWrapping
+        let size = CGSize(width: MLConfigure.ScreenWidth - 40, height: CGFloat.infinity)
+        let options = NSStringDrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin)
+        let textFontAttributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 15), NSAttributedString.Key.paragraphStyle: style]
+        return NSString(string: text).boundingRect(with: size, options: options, attributes:textFontAttributes, context: nil)
+    }
+    
     //MARK: View Controller Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,13 +68,13 @@ final class EditRiskInfoViewController: MLBaseViewController  {
     }
 }
 
-extension EditRiskInfoViewController: MLUserInterfaceProtocol {
+extension NoHiddenRiskViewController: MLUserInterfaceProtocol {
     func queryInformationWithNetwork() {
         
     }
     
     func updateUserInterfaceElements() {
-        self.title = "隐患详情"
+        self.title = "检查详情"
         do {
             let listener = try self.listener.unwrap()
             listener.jumpToTakePhotoController()
@@ -77,42 +84,21 @@ extension EditRiskInfoViewController: MLUserInterfaceProtocol {
     }
 }
 
-extension EditRiskInfoViewController: EditRiskInfoPagePresentable {
-    func removeSelectedPhoto(with index: Int) {
-//        let indexPath = IndexPath(item: index,  : 0)
-//        self.collectionView.deleteItems(at: [indexPath])
-    }
-    
+extension NoHiddenRiskViewController: NoHiddenRiskPagePresentable {
     func reloadCollectionViewData() {
         self.collectionView.reloadData()
     }
 }
 
-extension EditRiskInfoViewController: EditRiskInfoViewControllable {
+extension NoHiddenRiskViewController: NoHiddenRiskViewControllable {
     
 }
 
-extension EditRiskInfoViewController: UICollectionViewDelegate {
+extension NoHiddenRiskViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let view = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withClass: EditRiskInfoResuableFooterView.self, for: indexPath)
-        view.refreshSubview(with: nil)
-        view.submitInfoCommand?.subscribe(onNext: { [unowned self] (model) in
-            self.doSuccessSubmitInfo(with: model)
-        }, onError: { [unowned self] (error) in
-            self.showFailureHUD(text: error.localizedDescription)
-        }).disposed(by: disposeBag)
+        let view = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withClass: NoHiddenRiskReusableFooterView.self, for: indexPath)
         return view
     }
-    
-    func doSuccessSubmitInfo(with model: PotentialRiskModel) {
-        do {
-            let listener = try self.listener.unwrap()
-            listener.updateEditRiskInfo(with: model)
-        } catch {
-            MolueLogger.UIModule.error(error)
-        }
-    }
-    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         do {
             let listener = try self.listener.unwrap()
@@ -128,8 +114,7 @@ extension EditRiskInfoViewController: UICollectionViewDelegate {
     }
 }
 
-extension EditRiskInfoViewController: UICollectionViewDataSource {
-    
+extension NoHiddenRiskViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         do {
             let listener = try self.listener.unwrap()
@@ -149,4 +134,6 @@ extension EditRiskInfoViewController: UICollectionViewDataSource {
         }
         return collectionView.dequeueReusableCell(withClass: InsertPhotosCollectionViewCell.self, for: indexPath)
     }
+    
+    
 }

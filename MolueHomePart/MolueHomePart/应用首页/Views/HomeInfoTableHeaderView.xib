@@ -304,13 +304,13 @@
             <connections>
                 <outlet property="basicInfoView" destination="I1c-Xh-gty" id="Iul-oQ-GDX"/>
                 <outlet property="collectionView" destination="XeD-Fp-XTg" id="i5g-jB-dJP"/>
-                <outlet property="dataRecordView" destination="Dh4-KF-ecC" id="c7X-yc-POt"/>
-                <outlet property="educationView" destination="UFw-KS-2aH" id="kN9-Fn-ftu"/>
-                <outlet property="legislationView" destination="2Wo-tu-KSJ" id="eyu-c2-lPf"/>
-                <outlet property="notificationView" destination="AqB-1d-TAR" id="RqE-Gr-7ak"/>
+                <outlet property="dangerListView" destination="AqB-1d-TAR" id="aEs-dc-ver"/>
+                <outlet property="legislationView" destination="Dh4-KF-ecC" id="CVy-pV-LHC"/>
+                <outlet property="notificationView" destination="UFw-KS-2aH" id="zQZ-CW-l7S"/>
                 <outlet property="riskCheckView" destination="myr-GZ-Pip" id="FtN-et-OcY"/>
+                <outlet property="riskHistoryView" destination="2Wo-tu-KSJ" id="fGe-9K-8vy"/>
             </connections>
-            <point key="canvasLocation" x="32.799999999999997" y="53.973013493253376"/>
+            <point key="canvasLocation" x="-345" y="50"/>
         </view>
     </objects>
     <resources>

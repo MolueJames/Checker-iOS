@@ -8,11 +8,12 @@
 //
 
 import Foundation
-
+private let single = MoluePageNavigator()
 open class MoluePageNavigator: MolueNavigatorType {
     open weak var delegate: MolueNavigatorDelegate?
-    
-    public init() {}
+    public static var shared: MoluePageNavigator {
+        return single
+    }
 }
 
 public protocol MolueNavigatorType {

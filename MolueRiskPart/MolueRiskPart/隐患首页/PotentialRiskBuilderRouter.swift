@@ -54,11 +54,4 @@ class PotentialRiskComponentBuilder: MolueComponentBuilder, PotentialRiskCompone
         interactor.listener = listener
         return controller
     }
-    
-    func build() -> UIViewController {
-        let controller = PotentialRiskViewController.initializeFromStoryboard()
-        let interactor = PotentialRiskPageInteractor(presenter: controller)
-        PotentialRiskViewableRouter(interactor: interactor, controller: controller)
-        return controller
-    }
 }

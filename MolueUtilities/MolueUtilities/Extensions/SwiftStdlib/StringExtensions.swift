@@ -138,6 +138,10 @@ public extension String {
 		// http://stackoverflow.com/questions/25471114/how-to-validate-an-e-mail-address-in-swift
 		return matches(pattern: "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}")
 	}
+    
+    public var isTrue: Bool {
+        return self == "true"
+    }
 	
 	/// SwifterSwift: Check if string is a valid URL.
 	///
@@ -1023,7 +1027,19 @@ public extension String {
 }
 
 public extension String {
-    public var isTrue: Bool {
-        get { return self == "true" }
+    
+    public func estimateFrame(with fontSize: CGFloat, width: CGFloat) -> CGRect {
+        let style = NSMutableParagraphStyle()
+        style.lineBreakMode = .byWordWrapping
+        style.lineSpacing = 6
+        let size = CGSize(width: width, height: CGFloat.infinity)
+        let options = NSStringDrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin)
+        let textFontAttributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: fontSize), NSAttributedString.Key.paragraphStyle: style]
+        return NSString(string: self).boundingRect(with: size, options: options, attributes:textFontAttributes, context: nil)
+    }
+    
+    public func estimateHeight(with fontSize: CGFloat, width: CGFloat) -> CGFloat {
+        let frame = self.estimateFrame(with: fontSize, width: width)
+        return frame.size.height
     }
 }

@@ -7,12 +7,17 @@
 //
 
 import UIKit
+import MolueMediator
 import MolueFoundation
 import MolueUtilities
 
 protocol RiskDetailPresentableListener: class {
     // 定义一些当前页面需要的业务逻辑, 比如网络请求.
     func jumpToBrowserController(with index: Int)
+    
+    var riskDetail: PotentialRiskModel? { get }
+    
+    var riskDetailImages: [UIImage]? {get}
 }
 
 final class RiskDetailViewController: MLBaseViewController  {
@@ -24,7 +29,7 @@ final class RiskDetailViewController: MLBaseViewController  {
             collectionView.dataSource = self
             collectionView.delegate = self
             collectionView.register(xibWithCellClass: RiskDetailCollectionViewCell.self)
-            collectionView.register(forKind:UICollectionElementKindSectionFooter, withNibClass: RiskDetailReusableHeaderView.self)
+            collectionView.register(forKind:UICollectionView.elementKindSectionFooter, withNibClass: RiskDetailReusableHeaderView.self)
             self.flowLayout = UICollectionViewFlowLayout()
             collectionView.collectionViewLayout = self.flowLayout
         }
@@ -38,7 +43,7 @@ final class RiskDetailViewController: MLBaseViewController  {
             flowLayout.sectionInset = UIEdgeInsets(top: 10, left: 15, bottom: 10, right: 15)
             let width: CGFloat = (MLConfigure.ScreenWidth - 56) / 3
             flowLayout.itemSize = CGSize(width: width, height: width)
-            flowLayout.footerReferenceSize = CGSize(width: MLConfigure.ScreenWidth, height: 330)
+            flowLayout.footerReferenceSize = CGSize(width: MLConfigure.ScreenWidth, height: 430)
         }
     }
     
@@ -69,19 +74,48 @@ extension RiskDetailViewController: RiskDetailViewControllable {
 
 extension RiskDetailViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10;
+        do {
+            let listener = try self.listener.unwrap()
+            let images = try listener.riskDetailImages.unwrap()
+            return images.count
+        } catch {return 0}
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withClass: RiskDetailCollectionViewCell.self, for: indexPath)
+        do {
+            let listener = try self.listener.unwrap()
+            let images = try listener.riskDetailImages.unwrap()
+            let image = try images.item(at: indexPath.row).unwrap()
+            cell.refreshSubviews(with: image)
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
         return cell
     }
 }
 
 extension RiskDetailViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let view = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionFooter, withClass: RiskDetailReusableHeaderView.self, for: indexPath)
+        let view = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withClass: RiskDetailReusableHeaderView.self, for: indexPath)
+        do {
+            let listener = try self.listener.unwrap()
+            let model = try listener.riskDetail.unwrap()
+            view.refreshSubviews(with: model)
+            self.estimateFooterViewHeight(with: model)
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+        
         return view
+    }
+    
+    func estimateFooterViewHeight(with model: PotentialRiskModel) {
+        let description = model.riskDetail ?? "暂无数据"
+        let width = MLConfigure.ScreenWidth - 40
+        let height = description.estimateHeight(with: 14, width: width) + 405
+        let footerSize = CGSize(width: MLConfigure.ScreenWidth, height: height)
+        self.flowLayout.footerReferenceSize = footerSize
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         do {

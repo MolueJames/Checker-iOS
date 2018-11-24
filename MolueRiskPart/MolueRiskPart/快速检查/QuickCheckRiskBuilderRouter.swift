@@ -9,9 +9,8 @@
 import MolueMediator
 import MolueUtilities
 import MolueCommon
-import Gallery
 
-protocol QuickCheckRiskRouterInteractable: EditRiskInfoInteractListener, SWScanQRCodeProtocol, GalleryControllerDelegate, DailyCheckTaskInteractListener {
+protocol QuickCheckRiskRouterInteractable: EditRiskInfoInteractListener, SWScanQRCodeProtocol, DailyCheckTaskInteractListener {
     var viewRouter: QuickCheckRiskViewableRouting? { get set }
     var listener: QuickCheckRiskInteractListener? { get set }
 }
@@ -35,6 +34,7 @@ final class QuickCheckRiskViewableRouter: MolueViewableRouting {
 }
 
 extension QuickCheckRiskViewableRouter: QuickCheckRiskViewableRouting {
+    
     func pushToDailyCheckController() {
         do {
             let navigator = try self.controller.unwrap()
@@ -60,23 +60,6 @@ extension QuickCheckRiskViewableRouter: QuickCheckRiskViewableRouting {
         }
     }
     
-    func pushToPhotoBrowser(with photos: [SKPhoto], controller: UIViewController) {
-        let browser = SKPhotoBrowser(photos: photos)
-        browser.initializePageIndex(0)
-        controller.present(browser, animated: true, completion: nil)
-    }
-    
-    func pushToTakePhotoController() {
-        do {
-            let navigator = try self.controller.unwrap()
-            let controller = GalleryController()
-            Config.tabsToShow = [.cameraTab, .imageTab]
-            controller.delegate = self.interactor
-            navigator.doPresentController(controller, animated: true, completion: nil)
-        } catch {
-            MolueLogger.UIModule.error(error)
-        }
-    }
     
     func pushToScanQRCodeController() {
         do {

@@ -111,18 +111,10 @@
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="molue_home_waitting" translatesAutoresizingMaskIntoConstraints="NO" id="bzw-Ew-KE3">
-                        <rect key="frame" x="287" y="-2" width="35" height="35"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="35" id="97p-Rc-xC8"/>
-                            <constraint firstAttribute="height" constant="35" id="Hh6-Dn-BOS"/>
-                        </constraints>
-                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="nsS-UY-gcl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="44W-n8-mYD"/>
                     <constraint firstItem="m3j-UV-RwJ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="4Vz-mb-YMA"/>
-                    <constraint firstItem="bzw-Ew-KE3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="-2" id="4Yc-Ho-6d8"/>
                     <constraint firstAttribute="bottom" secondItem="O7K-xg-43o" secondAttribute="bottom" id="9GI-JC-nya"/>
                     <constraint firstItem="4fO-0z-NSx" firstAttribute="leading" secondItem="OBk-Dy-ib3" secondAttribute="trailing" id="LTm-96-F51"/>
                     <constraint firstAttribute="trailing" secondItem="m3j-UV-RwJ" secondAttribute="trailing" id="LZc-H6-JAR"/>
@@ -131,7 +123,6 @@
                     <constraint firstItem="m3j-UV-RwJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="PLE-yU-CZd"/>
                     <constraint firstItem="4fO-0z-NSx" firstAttribute="width" secondItem="OBk-Dy-ib3" secondAttribute="width" id="Uk6-dO-Oh3"/>
                     <constraint firstItem="O7K-xg-43o" firstAttribute="width" secondItem="OBk-Dy-ib3" secondAttribute="width" id="VXX-xj-wGJ"/>
-                    <constraint firstAttribute="trailing" secondItem="bzw-Ew-KE3" secondAttribute="trailing" constant="-2" id="YRM-BA-0pS"/>
                     <constraint firstItem="nsS-UY-gcl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="ZD4-DR-SbT"/>
                     <constraint firstItem="OBk-Dy-ib3" firstAttribute="leading" secondItem="O7K-xg-43o" secondAttribute="trailing" id="ZW2-Qk-7JU"/>
                     <constraint firstItem="O7K-xg-43o" firstAttribute="height" secondItem="OBk-Dy-ib3" secondAttribute="height" id="aU8-dN-ILZ"/>
@@ -149,7 +140,4 @@
             <point key="canvasLocation" x="132.80000000000001" y="154.72263868065968"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="molue_home_waitting" width="15" height="15"/>
-    </resources>
 </document>

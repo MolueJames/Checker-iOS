@@ -90,12 +90,6 @@ extension HomeInfoPageViewController: MLUserInterfaceProtocol {
     func updateUserInterfaceElements() {
         self.titleLabel.text = "安监通"
         self.navigationItem.titleView = titleLabel
-        do {
-            let listener = try self.listener.unwrap()
-            listener.bindingTableViewAdapter(with: self.tableView)
-        } catch {
-            MolueLogger.UIModule.error(error)
-        }
     }
 }
 

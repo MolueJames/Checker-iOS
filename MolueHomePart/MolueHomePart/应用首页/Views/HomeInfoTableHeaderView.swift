@@ -53,15 +53,15 @@ class HomeInfoTableHeaderView: UIView {
     @IBAction private func riskCheckControlClicked(_ sender: Any) {
         self.riskCheckCommand.onNext(())
     }
-//    @IBAction private func dataRecordControlClicked(_ sender: Any) {
-//        self.dataRecordCommand.onNext(())
-//    }
+    @IBAction private func dangerListControlClicked(_ sender: Any) {
+        self.dangerListCommand.onNext(())
+    }
     @IBAction private func legislationControlClicked(_ sender: Any) {
         self.legislationCommand.onNext(())
     }
-//    @IBAction private func educationControlClicked(_ sender: Any) {
-//        self.educationCommand.onNext(())
-//    }
+    @IBAction private func riskHistoryControlClicked(_ sender: Any) {
+        self.riskHistoryCommand.onNext(())
+    }
     @IBAction private func notificationControlClicked(_ sender: Any) {
         self.notificationCommand.onNext(())
     }
@@ -73,13 +73,13 @@ class HomeInfoTableHeaderView: UIView {
             control.addTarget(self, action: #selector(notificationControlClicked), for: .touchUpInside)
         }
     }
-//    @IBOutlet private weak var educationView: UIView! {
-//        didSet {
-//            let control = UIControl.init()
-//            educationView.doBespreadOn(control)
-//            control.addTarget(self, action: #selector(educationControlClicked), for: .touchUpInside)
-//        }
-//    }
+    @IBOutlet private weak var riskHistoryView: UIView! {
+        didSet {
+            let control = UIControl.init()
+            riskHistoryView.doBespreadOn(control)
+            control.addTarget(self, action: #selector(riskHistoryControlClicked), for: .touchUpInside)
+        }
+    }
     @IBOutlet private weak var legislationView: UIView! {
         didSet {
             let control = UIControl.init()
@@ -87,13 +87,13 @@ class HomeInfoTableHeaderView: UIView {
             control.addTarget(self, action: #selector(legislationControlClicked), for: .touchUpInside)
         }
     }
-//    @IBOutlet private weak var dataRecordView: UIView! {
-//        didSet {
-//            let control = UIControl.init()
-//            dataRecordView.doBespreadOn(control)
-//            control.addTarget(self, action: #selector(dataRecordControlClicked), for: .touchUpInside)
-//        }
-//    }
+    @IBOutlet private weak var dangerListView: UIView! {
+        didSet {
+            let control = UIControl.init()
+            dangerListView.doBespreadOn(control)
+            control.addTarget(self, action: #selector(dangerListControlClicked), for: .touchUpInside)
+        }
+    }
     
     let selectedCommand = PublishSubject<String>()
     /// 基础信息

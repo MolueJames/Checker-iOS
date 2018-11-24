@@ -15,8 +15,6 @@ public protocol PotentialRiskInteractListener: class {
 public protocol PotentialRiskComponentBuildable: MolueComponentBuildable {
     //定义当前的Component的构造方法.
     func build(listener: PotentialRiskInteractListener) -> UIViewController
-    //定义当前的Component的构造方法.
-    func build() -> UIViewController
 }
 
 public protocol QuickCheckRiskInteractListener: class {
@@ -28,4 +26,22 @@ public protocol QuickCheckRiskComponentBuildable: MolueComponentBuildable {
     func build(listener: QuickCheckRiskInteractListener) -> UIViewController
     
     func build() -> UIViewController
+}
+
+public protocol EditRiskInfoInteractListener: class {
+    //用于定义其他的Component需要定义的协议方法
+}
+
+public protocol EditRiskInfoComponentBuildable: MolueComponentBuildable {
+    //定义当前的Component的构造方法.
+    func build(listener: EditRiskInfoInteractListener) -> UIViewController
+}
+
+public protocol NoHiddenRiskInteractListener: class {
+    //用于定义其他的Component需要定义的协议方法
+}
+
+public protocol NoHiddenRiskComponentBuildable: MolueComponentBuildable {
+    //定义当前的Component的构造方法.
+    func build(listener: NoHiddenRiskInteractListener) -> UIViewController
 }

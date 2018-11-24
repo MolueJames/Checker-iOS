@@ -1,52 +1,50 @@
 //
-//  EditRiskInfoPageInteractor.swift
+//  NoHiddenRiskPageInteractor.swift
 //  MolueRiskPart
 //
-//  Created by MolueJames on 2018/11/17.
+//  Created by MolueJames on 2018/11/23.
 //  Copyright © 2018 MolueTech. All rights reserved.
 //
 
-import MolueFoundation
 import MolueUtilities
 import MolueMediator
 import MolueCommon
 import Gallery
 import Photos
 
-protocol EditRiskInfoViewableRouting: class {
+protocol NoHiddenRiskViewableRouting: class {
     // 定义一些页面跳转的方法, 比如Push, Presenter等.
     func pushToTakePhotoController(with limit: Int)
     func pushToPhotoBrowser(with photos: [SKPhoto], controller: UIViewController)
     func pushToPhotoBrowser(with photos: [SKPhoto], index: Int)
-    func popToPreviewController()
 }
 
-protocol EditRiskInfoPagePresentable: MolueInteractorPresentable, MLControllerHUDProtocol  {
-    var listener: EditRiskInfoPresentableListener? { get set }
+protocol NoHiddenRiskPagePresentable: MolueInteractorPresentable {
+    var listener: NoHiddenRiskPresentableListener? { get set }
     // 定义一些页面需要的方法, 比如刷新页面的显示内容等.
     func reloadCollectionViewData()
 }
 
-final class EditRiskInfoPageInteractor: MoluePresenterInteractable {
+final class NoHiddenRiskPageInteractor: MoluePresenterInteractable {
     internal var maxImageCount: Int = 9
     
-    weak var presenter: EditRiskInfoPagePresentable?
+    internal var photoImages: [UIImage]?
+
+    weak var presenter: NoHiddenRiskPagePresentable?
     
-    var viewRouter: EditRiskInfoViewableRouting?
+    var viewRouter: NoHiddenRiskViewableRouting?
     
-    weak var listener: EditRiskInfoInteractListener?
+    weak var listener: NoHiddenRiskInteractListener?
     
     private weak var photoController: GalleryController?
     
-    internal var photoImages: [UIImage]?
-    
-    required init(presenter: EditRiskInfoPagePresentable) {
+    required init(presenter: NoHiddenRiskPagePresentable) {
         self.presenter = presenter
         presenter.listener = self
     }
 }
 
-extension EditRiskInfoPageInteractor: EditRiskInfoRouterInteractable {
+extension NoHiddenRiskPageInteractor: NoHiddenRiskRouterInteractable {
     func galleryController(_ controller: GalleryController, didSelectImages images: [Image]) {
         controller.dismiss(animated: true, completion: nil)
         Image.resolve(images: images) { [weak self] resolvedImages in
@@ -114,29 +112,11 @@ extension EditRiskInfoPageInteractor: EditRiskInfoRouterInteractable {
         }
         removePhoto(from: self.photoController)
     }
+    
+    
 }
 
-extension EditRiskInfoPageInteractor: EditRiskInfoPresentableListener {
-    func updateEditRiskInfo(with model: PotentialRiskModel) {
-        do {
-            var editModel: PotentialRiskModel = model
-            editModel.checkedRiskPhotos = self.photoImages
-            AppRiskDocument.shared.riskList.append(editModel)
-            let presenter = try self.presenter.unwrap()
-            presenter.showSuccessHUD(text: "隐患添加成功")
-            Async.main(after: 1.5) { [weak self] in
-                do {
-                    let router = try self.unwrap().viewRouter.unwrap()
-                    router.popToPreviewController()
-                } catch {
-                    MolueLogger.UIModule.message(error)
-                }
-            }
-        } catch {
-            MolueLogger.UIModule.error(error)
-        }
-    }
-    
+extension NoHiddenRiskPageInteractor: NoHiddenRiskPresentableListener {
     func jumpToBrowserController(with index: Int) {
         do {
             let router = try self.viewRouter.unwrap()

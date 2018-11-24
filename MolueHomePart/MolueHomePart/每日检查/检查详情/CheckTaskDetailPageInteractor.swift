@@ -10,7 +10,8 @@ import MolueMediator
 
 protocol CheckTaskDetailViewableRouting: class {
     // 定义一些页面跳转的方法, 比如Push, Presenter等.
-    func presentExistedRiskDetailController()
+    func pushToNoHiddenController()
+    func pushToEditRiskController()
 }
 
 protocol CheckTaskDetailPagePresentable: MolueInteractorPresentable {
@@ -37,12 +38,14 @@ extension CheckTaskDetailPageInteractor: CheckTaskDetailRouterInteractable {
 }
 
 extension CheckTaskDetailPageInteractor: CheckTaskDetailPresentableListener {
-    func displayExistedRiskDetailController() {
+    func jumpToTaskDetailController() {
         do {
             let viewRouter = try self.viewRouter.unwrap()
-            viewRouter.presentExistedRiskDetailController()
+            viewRouter.pushToNoHiddenController()
         } catch {
             MolueLogger.UIModule.error(error)
         }
     }
+    
+
 }

@@ -15,7 +15,6 @@ import Gallery
 protocol QuickCheckRiskPresentableListener: class {
     // 定义一些当前页面需要的业务逻辑, 比如网络请求.
     func jumpToScanQRCodeController()
-    func jumpToTakePhotoController()
     func jumpToEditRiskController()
 }
 
@@ -56,14 +55,6 @@ final class QuickCheckRiskViewController: MLBaseViewController  {
         }
     }
     
-    @IBAction func takePhotoButtonClicked(_ sender: UIButton) {
-        do {
-            let listener = try self.listener.unwrap()
-            listener.jumpToTakePhotoController()
-        } catch {
-            MolueLogger.UIModule.error(error)
-        }
-    }
     @IBAction func editRiskInfoButtonClicked(_ sender: UIButton) {
         do {
             let listener = try self.listener.unwrap()

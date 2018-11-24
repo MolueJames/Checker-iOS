@@ -24,11 +24,17 @@ final class RiskDetailPageInteractor: MoluePresenterInteractable {
     
     weak var presenter: RiskDetailPagePresentable?
     
-    var photoImages: [UIImage]?
-    
     var viewRouter: RiskDetailViewableRouting?
     
     weak var listener: RiskDetailInteractListener?
+    
+    lazy var riskDetail: PotentialRiskModel? = {
+        return self.listener?.selectedRisk
+    }()
+    
+    lazy var riskDetailImages: [UIImage]? = {
+        return self.riskDetail?.checkedRiskPhotos
+    }()
     
     required init(presenter: RiskDetailPagePresentable) {
         self.presenter = presenter
@@ -41,13 +47,16 @@ extension RiskDetailPageInteractor: RiskDetailRouterInteractable {
 }
 
 extension RiskDetailPageInteractor: RiskDetailPresentableListener {
+    
+    
     func jumpToBrowserController(with index: Int) {
         do {
-            let router = try self.viewRouter.unwrap()
-            let images = try self.photoImages.unwrap()
+            let riskDetail = try self.riskDetail.unwrap()
+            let images = try riskDetail.checkedRiskPhotos.unwrap()
             let photoImages:[SKPhoto] = images.map {
                 SKPhoto.photoWithImage($0)
             }
+            let router = try self.viewRouter.unwrap()
             router.pushToPhotoBrowser(with: photoImages, index: index)
         } catch {
             MolueLogger.UIModule.error(error)

@@ -25,15 +25,19 @@ extension UIViewController {
         do {
             let currentWindows = try self.sharedApplication.unwrap().windows
             var rootViewController: UIViewController?
-            currentWindows.forEach(where: { (window) -> Bool in
-                return ((window.rootViewController != nil))
-            }) { (window) in
-                rootViewController = window.rootViewController
+            for window in currentWindows {
+                do {
+                    let controller = try window.rootViewController.unwrap()
+                    rootViewController = controller
+                    break
+                } catch {}
             }
+            
             return self.topMost(of: rootViewController)
         } catch {
             return MolueLogger.UIModule.returnNil(error)
         }
+        
     }
     
     open class func topMost(of viewController: UIViewController?) -> UIViewController? {
