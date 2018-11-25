@@ -9,10 +9,11 @@
 import Foundation
 
 public struct DangerUnitSectionHeaderModel {
-    var unitName: String
-    var unitNumber: String
-    var unitClass: String
-    var unitRisks: [DangerUnitRiskModel]
+    public var unitName: String?
+    public var unitNumber: String?
+    public var unitClass: String?
+    public var unitRisks: [DangerUnitRiskModel]?
+    public init() {}
 }
 
 public enum DangerUnitRiskStatus {
@@ -22,16 +23,17 @@ public enum DangerUnitRiskStatus {
 }
 
 public struct DangerUnitRiskModel {
-    var riskName: String
-    var riskHead: String
-    var riskLevel: String
-    var riskClass: String
-    var riskReason: String
-    var accidentType: String
-    var dependence: String
-    var riskMeasure: [String]
-    var headPhone: String
-    var responseUnit: String
-    var riskRemarks: String
-    var riskStatus: String
+    public var riskName: String?
+    public var riskHead: String?
+    public var riskLevel: String?
+    public var riskClass: String?
+    public var riskReason: String?
+    public var accidentType: String?
+    public var dependence: String?
+    public var riskMeasure: [String]?
+    public var headPhone: String?
+    public var responseUnit: String?
+    public var riskRemarks: String?
+    public var riskStatus: String?
+    public init() {}
 }

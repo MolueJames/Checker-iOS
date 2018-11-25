@@ -53,15 +53,11 @@ class RiskDetailReusableHeaderView: UICollectionReusableView {
         let person: String = model.personDetail ?? "暂无数据"
         personTitleView.defaultValue(title: "检查人员", placeholder: person)
         let description: String = model.riskDetail ?? "暂无数据"
-//        let paragraphStyle = NSMutableParagraphStyle()
-//        paragraphStyle.lineSpacing = 6
-//        let attributes = [NSAttributedString.Key.paragraphStyle.rawValue : paragraphStyle]
-//        let attributeStr = NSMutableAttributedString(string: description)
-//        let range = NSRange(location: 0, length: description.count)
-//        attributeStr.addAttributes([attributes], range: range)
-//        self.remarkTextView.typingAttributes = attributes
-//        self.remarkTextView.font = .systemFont(ofSize: 15)
-        self.riskDescLabel.text = description
+        let attributedText = NSMutableAttributedString(string: description)
+        let paragraphStyle:NSMutableParagraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = 6 //大小调整
+        attributedText.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSMakeRange(0, description.count))
+        self.riskDescLabel.attributedText = attributedText
     }
     
     

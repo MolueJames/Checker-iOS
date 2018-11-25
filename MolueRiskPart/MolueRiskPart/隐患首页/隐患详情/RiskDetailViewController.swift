@@ -102,21 +102,12 @@ extension RiskDetailViewController: UICollectionViewDelegate {
             let listener = try self.listener.unwrap()
             let model = try listener.riskDetail.unwrap()
             view.refreshSubviews(with: model)
-            self.estimateFooterViewHeight(with: model)
         } catch {
             MolueLogger.UIModule.error(error)
         }
-        
         return view
     }
-    
-    func estimateFooterViewHeight(with model: PotentialRiskModel) {
-        let description = model.riskDetail ?? "暂无数据"
-        let width = MLConfigure.ScreenWidth - 40
-        let height = description.estimateHeight(with: 14, width: width) + 405
-        let footerSize = CGSize(width: MLConfigure.ScreenWidth, height: height)
-        self.flowLayout.footerReferenceSize = footerSize
-    }
+
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         do {
             let listener = try self.listener.unwrap()
@@ -124,5 +115,18 @@ extension RiskDetailViewController: UICollectionViewDelegate {
         } catch {
             MolueLogger.UIModule.error(error)
         }
+    }
+}
+
+extension RiskDetailViewController: UICollectionViewDelegateFlowLayout {
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        do {
+            let listener = try self.listener.unwrap()
+            let model = try listener.riskDetail.unwrap()
+            let description = model.riskDetail ?? "暂无数据"
+            let width: CGFloat = MLConfigure.ScreenWidth - 40
+            let height = description.estimateHeight(with: 14, width: width, lineSpacing: 6)
+            return CGSize(width: MLConfigure.ScreenWidth, height: height + 405)
+        } catch { return CGSize(width: 0, height: 0)}
     }
 }

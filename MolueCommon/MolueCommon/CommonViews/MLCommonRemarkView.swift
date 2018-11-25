@@ -32,7 +32,7 @@ public class MLCommonRemarkView: UIView {
         self.remarkTextView.font = .systemFont(ofSize: 15)
         self.remarkTextView.textColor = MLCommonColor.titleLabel
         self.lineView.backgroundColor = MLCommonColor.commonLine
-        self.placeholderLable.textColor = MLCommonColor.titleLabel
+        self.placeholderLable.textColor = UIColor.lightGray
         self.placeholderLable.font = .systemFont(ofSize: 15)
         self.numberLabel.font = .systemFont(ofSize: 13)
         self.numberLabel.textColor = MLCommonColor.commonLine

@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import MolueCommon
+import MolueUtilities
 import MolueMediator
 import JGProgressHUD
 
@@ -21,6 +22,7 @@ class EditRiskInfoResuableFooterView: UICollectionReusableView {
         var riskInfo = PotentialRiskModel()
         riskInfo.channel = .enterprise
         riskInfo.status = .never
+        riskInfo.personDetail = "张三"
         return riskInfo
     }()
     
@@ -162,7 +164,8 @@ class EditRiskInfoResuableFooterView: UICollectionReusableView {
             self.submitInfoCommand?.onError(riskInfoRrror.reasonInvalid)
             return
         }
-        self.riskInfo.checkedDate = Date().string()
+        let checkedDate = Date().string(withFormat: "yyyy年MM月dd日")
+        self.riskInfo.checkedDate = checkedDate
         self.riskInfo.riskDetail = self.reasonRemarkView.remarkText()
         self.submitInfoCommand?.onNext(self.riskInfo)
     }

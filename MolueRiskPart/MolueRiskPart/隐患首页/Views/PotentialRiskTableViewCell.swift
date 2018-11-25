@@ -7,9 +7,15 @@
 //
 
 import UIKit
+import MolueMediator
 
 class PotentialRiskTableViewCell: UITableViewCell {
-    @IBOutlet private weak var titleLabel: UILabel!
+    
+    @IBOutlet weak var riskNumberLabel: UILabel!
+    @IBOutlet weak var riskStatusLabel: UILabel!
+    @IBOutlet weak var riskChannelLabel: UILabel!
+    @IBOutlet weak var riskUnitLabel: UILabel!
+    @IBOutlet weak var riskLevelLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,11 +29,15 @@ class PotentialRiskTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
-    public func update(title: String) {
-        self.titleLabel.text = title
-    }
 
+    public func refreshSubviews(with model: PotentialRiskModel, index: Int) {
+        self.riskNumberLabel.text = "BER200000\(index)"
+        self.riskUnitLabel.text = model.riskUnit ?? "暂无数据"
+        self.riskLevelLabel.text = model.level?.description ?? "暂无数据"
+        self.riskStatusLabel.text = model.status?.description ?? "暂无数据"
+        self.riskChannelLabel.text = model.channel?.description ?? "暂无数据"
+    }
+    
     override var frame:CGRect{
         didSet {
             var new = self.frame

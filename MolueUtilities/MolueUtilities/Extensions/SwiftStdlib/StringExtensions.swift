@@ -1028,18 +1028,18 @@ public extension String {
 
 public extension String {
     
-    public func estimateFrame(with fontSize: CGFloat, width: CGFloat) -> CGRect {
+    public func estimateFrame(with fontSize: CGFloat, width: CGFloat, lineSpacing: CGFloat) -> CGRect {
         let style = NSMutableParagraphStyle()
         style.lineBreakMode = .byWordWrapping
-        style.lineSpacing = 6
-        let size = CGSize(width: width, height: CGFloat.infinity)
+        style.lineSpacing = lineSpacing
+        let size = CGSize(width: width, height: CGFloat.greatestFiniteMagnitude)
         let options = NSStringDrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin)
         let textFontAttributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: fontSize), NSAttributedString.Key.paragraphStyle: style]
         return NSString(string: self).boundingRect(with: size, options: options, attributes:textFontAttributes, context: nil)
     }
     
-    public func estimateHeight(with fontSize: CGFloat, width: CGFloat) -> CGFloat {
-        let frame = self.estimateFrame(with: fontSize, width: width)
+    public func estimateHeight(with fontSize: CGFloat, width: CGFloat, lineSpacing: CGFloat) -> CGFloat {
+        let frame = self.estimateFrame(with: fontSize, width: width, lineSpacing: lineSpacing)
         return frame.size.height
     }
 }

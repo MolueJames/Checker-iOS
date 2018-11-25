@@ -65,7 +65,7 @@ extension PotentialRiskViewController: UITableViewDelegate {
         }
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 142
     }
 }
 
@@ -79,6 +79,13 @@ extension PotentialRiskViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withClass: PotentialRiskTableViewCell.self)
+        do {
+            let listener = try self.listener.unwrap()
+            let item = try listener.valueList.item(at: indexPath.row).unwrap()
+            cell.refreshSubviews(with: item, index: indexPath.row)
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
         return cell
     }
     
