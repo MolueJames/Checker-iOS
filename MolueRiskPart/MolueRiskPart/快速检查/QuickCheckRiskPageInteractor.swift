@@ -30,6 +30,8 @@ final class QuickCheckRiskPageInteractor: MoluePresenterInteractable {
     
     weak var listener: QuickCheckRiskInteractListener?
     
+    var selectedItem: DangerUnitRiskModel?
+    
     required init(presenter: QuickCheckRiskPagePresentable) {
         self.presenter = presenter
         presenter.listener = self

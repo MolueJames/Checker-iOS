@@ -23,17 +23,17 @@ public enum DangerUnitRiskStatus {
 }
 
 public struct DangerUnitRiskModel {
-    public var riskName: String?
-    public var riskHead: String?
-    public var riskLevel: String?
-    public var riskClass: String?
-    public var riskReason: String?
-    public var accidentType: String?
-    public var dependence: String?
-    public var riskMeasure: [String]?
-    public var headPhone: String?
-    public var responseUnit: String?
-    public var riskRemarks: String?
-    public var riskStatus: String?
+    public var riskName: String? //风险点名称
+    public var riskHead: String? //负责人
+    public var riskLevel: String? //风险等级
+    public var riskClass: String? //涉及隐患分类
+    public var riskReason: String? //危险因素
+    public var accidentType: String? //可能发生事故
+    public var dependence: String? //依据的标准
+    public var riskMeasure: [String]? //管控措施
+    public var headPhone: String? //联系人手机号
+    public var responseUnit: String? //责任单位
+    public var riskRemarks: String? //备注
+    public var riskStatus: String? //风险点状态
     public init() {}
 }

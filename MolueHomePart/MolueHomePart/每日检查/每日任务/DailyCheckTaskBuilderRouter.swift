@@ -16,7 +16,6 @@ protocol DailyCheckTaskRouterInteractable: CheckTaskDetailInteractListener {
 
 protocol DailyCheckTaskViewControllable: MolueViewControllable {
     // 定义一些该页面需要的其他commponent的组件, 比如该页面的childViewController等.
-    
 }
 
 final class DailyCheckTaskViewableRouter: MolueViewableRouting {

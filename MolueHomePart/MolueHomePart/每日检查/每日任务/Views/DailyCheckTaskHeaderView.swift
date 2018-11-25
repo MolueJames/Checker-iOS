@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MolueMediator
 
 class DailyCheckTaskHeaderView: UIView {
 
@@ -16,16 +17,24 @@ class DailyCheckTaskHeaderView: UIView {
     override func draw(_ rect: CGRect) {
         // Drawing code
     }
-    */
+     @IBOutlet weak var riskReasonLabel: UILabel!
+     */
     override func awakeFromNib() {
         super.awakeFromNib()
         self.backgroundColor = UIColor.init(hex: 0x1B82D2)
     }
     
-    @IBOutlet weak var testLabel: UILabel!
     @IBOutlet weak var dangerReasonLabel: UILabel!
-    func refreshSubviews(with model: String) {
-        self.dangerReasonLabel.text = model
-        self.testLabel.text = model
+    @IBOutlet weak var accidentLabel: UILabel!
+    @IBOutlet weak var dependenceLabel: UILabel!
+    @IBOutlet weak var responseLabel: UILabel!
+    @IBOutlet weak var riskClassLabel: UILabel!
+    
+    func refreshSubviews(with model: DangerUnitRiskModel) {
+        dangerReasonLabel.text = model.riskReason
+        accidentLabel.text = model.accidentType
+        dependenceLabel.text = model.dependence
+        responseLabel.text = model.responseUnit
+        riskClassLabel.text = model.riskClass
     }
 }

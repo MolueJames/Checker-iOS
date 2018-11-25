@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MolueMediator
 import MolueUtilities
 import MolueFoundation
 
@@ -15,6 +16,8 @@ protocol DangerUnitListPresentableListener: class {
     var valueList: [String] {get}
     
     func jumpToDailyCheckTaskController()
+    
+    var selectedItem: DangerUnitRiskModel? { get set }
 }
 
 final class DangerUnitListViewController: MLBaseViewController  {
@@ -55,7 +58,14 @@ extension DangerUnitListViewController: DangerUnitListViewControllable {
 
 extension DangerUnitListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = DangerUnitSectionHeaderView.createFromXib()
+        let headerView: DangerUnitSectionHeaderView = DangerUnitSectionHeaderView.createFromXib()
+        do {
+            let list = AppHomeDocument.shared.unitList
+            let item = try list.item(at: section).unwrap()
+            headerView.refreshSubviews(with: item)
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
         return headerView
     }
     
@@ -80,6 +90,11 @@ extension DangerUnitListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         do {
             let listener = try self.listener.unwrap()
+            let unitList = AppHomeDocument.shared.unitList
+            let unit = try unitList.item(at: indexPath.section).unwrap()
+            let riskList = try unit.unitRisks.unwrap()
+            let item = try riskList.item(at: indexPath.row).unwrap()
+            listener.selectedItem = item
             listener.jumpToDailyCheckTaskController()
         } catch {
             MolueLogger.UIModule.error(error)
@@ -89,15 +104,25 @@ extension DangerUnitListViewController: UITableViewDelegate {
 
 extension DangerUnitListViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 4
+        return AppHomeDocument.shared.unitList.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        let unit = AppHomeDocument.shared.unitList[section]
+        return unit.unitRisks?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withClass: DangerUnitTableViewCell.self)
+        do {
+            let unitList = AppHomeDocument.shared.unitList
+            let unitItem = try unitList.item(at: indexPath.section).unwrap()
+            let riskList = try unitItem.unitRisks.unwrap()
+            let riskItem = try riskList.item(at: indexPath.row).unwrap()
+            cell.refreshSubviews(with: riskItem)
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
         return cell
     }
 }

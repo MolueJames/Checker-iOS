@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MolueMediator
 
 class DailyCheckTaskFooterView: UIView {
 
@@ -17,5 +18,15 @@ class DailyCheckTaskFooterView: UIView {
         // Drawing code
     }
     */
-
+    @IBOutlet weak var riskRemarkLabel: UILabel!
+    
+    @IBOutlet weak var riskHeadLabel: UILabel!
+    
+    @IBOutlet weak var headPhoneLabel: UILabel!
+    
+    public func refreshSubviews(with model: DangerUnitRiskModel) {
+        self.headPhoneLabel.text = model.headPhone
+        self.riskHeadLabel.text = model.riskHead
+        self.riskRemarkLabel.text = model.riskRemarks
+    }
 }

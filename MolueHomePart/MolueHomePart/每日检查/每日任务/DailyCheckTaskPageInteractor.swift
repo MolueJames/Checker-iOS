@@ -30,6 +30,10 @@ final class DailyCheckTaskPageInteractor: MoluePresenterInteractable {
     
     var valueList: [String] = ["1", "2", "3"]
     
+    lazy var item: DangerUnitRiskModel? = {
+        return self.listener?.selectedItem
+    }()
+    
     required init(presenter: DailyCheckTaskPagePresentable) {
         self.presenter = presenter
         presenter.listener = self

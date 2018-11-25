@@ -137,6 +137,12 @@
             </tableViewCellContentView>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="riskClassLabel" destination="vGV-ho-z1k" id="gqB-wf-STy"/>
+                <outlet property="riskHeadLabel" destination="pLL-If-hCx" id="kD4-6h-OVz"/>
+                <outlet property="riskLevelLabel" destination="leI-5D-8IC" id="pX7-NG-QWH"/>
+                <outlet property="riskNameLabel" destination="aPK-81-5Ig" id="Heo-8e-fpd"/>
+            </connections>
             <point key="canvasLocation" x="132.80000000000001" y="154.72263868065968"/>
         </tableViewCell>
     </objects>

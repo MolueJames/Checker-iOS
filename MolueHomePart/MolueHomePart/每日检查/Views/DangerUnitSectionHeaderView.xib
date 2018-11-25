@@ -17,8 +17,11 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="单元:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dkX-K6-HcV">
-                    <rect key="frame" x="15" y="12" width="42" height="22"/>
-                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                    <rect key="frame" x="15" y="12" width="42" height="19.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="42" id="PjD-ng-yPE"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -90,15 +93,24 @@
                         <constraint firstAttribute="height" constant="0.5" id="Yx1-QW-dXe"/>
                     </constraints>
                 </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="暂无数据" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KPQ-1t-qHw">
+                    <rect key="frame" x="62" y="12" width="298" height="19.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="dkX-K6-HcV" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="5p9-DZ-Gev"/>
                 <constraint firstItem="2Fr-g8-nRZ" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.5" id="5vD-FZ-kZA"/>
+                <constraint firstItem="KPQ-1t-qHw" firstAttribute="centerY" secondItem="dkX-K6-HcV" secondAttribute="centerY" id="6Cg-zL-ldS"/>
                 <constraint firstItem="T3E-Hi-pif" firstAttribute="width" secondItem="2Fr-g8-nRZ" secondAttribute="width" id="92O-c8-Fq0"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="KPQ-1t-qHw" secondAttribute="trailing" constant="15" id="AOY-1e-0Tb"/>
                 <constraint firstItem="2Fr-g8-nRZ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="cD5-jn-Jkf"/>
                 <constraint firstAttribute="bottom" secondItem="2Fr-g8-nRZ" secondAttribute="bottom" id="hdL-V1-gkA"/>
                 <constraint firstItem="hU0-1Q-PRm" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="lrC-PQ-RgI"/>
+                <constraint firstItem="KPQ-1t-qHw" firstAttribute="leading" secondItem="dkX-K6-HcV" secondAttribute="trailing" constant="5" id="mjU-o2-jVe"/>
                 <constraint firstAttribute="trailing" secondItem="T3E-Hi-pif" secondAttribute="trailing" id="nMK-Ax-Gkz"/>
                 <constraint firstAttribute="bottom" secondItem="T3E-Hi-pif" secondAttribute="bottom" id="ofo-D2-iaL"/>
                 <constraint firstItem="dkX-K6-HcV" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="12" id="qRN-AV-sag"/>
@@ -108,6 +120,11 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="dangerClassLabel" destination="ChP-21-ikJ" id="v5W-8q-1rm"/>
+                <outlet property="dangerNumberLabel" destination="ZNR-i4-y9t" id="pyr-ze-fcH"/>
+                <outlet property="dangerUnitLabel" destination="KPQ-1t-qHw" id="2mc-zS-lP2"/>
+            </connections>
             <point key="canvasLocation" x="-199.19999999999999" y="3.5982008995502253"/>
         </view>
     </objects>

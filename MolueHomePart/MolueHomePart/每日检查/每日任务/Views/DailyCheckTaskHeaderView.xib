@@ -143,8 +143,11 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="accidentLabel" destination="vYg-Tp-srv" id="71I-vv-r1H"/>
                 <outlet property="dangerReasonLabel" destination="cIw-6h-4aa" id="dZz-4r-Ydq"/>
-                <outlet property="testLabel" destination="mC5-Rt-TdD" id="wZQ-pV-4Ey"/>
+                <outlet property="dependenceLabel" destination="mC5-Rt-TdD" id="wLZ-Ze-xUz"/>
+                <outlet property="responseLabel" destination="SEE-tD-3FW" id="Grh-ym-YzO"/>
+                <outlet property="riskClassLabel" destination="yLI-qR-lxJ" id="6Ta-Ff-PUO"/>
             </connections>
             <point key="canvasLocation" x="36.799999999999997" y="46.776611694152926"/>
         </view>

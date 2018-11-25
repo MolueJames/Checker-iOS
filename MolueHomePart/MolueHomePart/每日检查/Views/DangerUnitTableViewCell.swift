@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MolueMediator
 
 class DangerUnitTableViewCell: UITableViewCell {
 
@@ -18,11 +19,23 @@ class DangerUnitTableViewCell: UITableViewCell {
         self.layer.masksToBounds = true
     }
 
+    @IBOutlet weak var riskHeadLabel: UILabel!
+    @IBOutlet weak var riskLevelLabel: UILabel!
+    @IBOutlet weak var riskClassLabel: UILabel!
+    @IBOutlet weak var riskNameLabel: UILabel!
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
+    
+    public func refreshSubviews(with model: DangerUnitRiskModel) {
+        self.riskHeadLabel.text = model.riskHead
+        self.riskLevelLabel.text = model.riskLevel
+        self.riskNameLabel.text = model.riskName
+        self.riskClassLabel.text = model.riskClass
+    }
+    
     override var frame:CGRect{
         didSet {
             var new = self.frame
