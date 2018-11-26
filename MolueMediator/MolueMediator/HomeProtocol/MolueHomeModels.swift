@@ -42,4 +42,10 @@ public struct RiskMeasureModel {
     public var measureName: String?
     public var measureState: String?
     public var riskModel: PotentialRiskModel?
+    public var taskModel: TaskSuccessModel?
+}
+
+public struct TaskSuccessModel {
+    var images: [UIImage]?
+    var detail: String?
 }
