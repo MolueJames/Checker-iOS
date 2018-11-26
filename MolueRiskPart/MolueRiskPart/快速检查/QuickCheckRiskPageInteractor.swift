@@ -30,7 +30,7 @@ final class QuickCheckRiskPageInteractor: MoluePresenterInteractable {
     
     weak var listener: QuickCheckRiskInteractListener?
     
-    var selectedItem: DangerUnitRiskModel?
+    var selectedIndex: IndexPath = IndexPath(row: 0, section: 1)
     
     required init(presenter: QuickCheckRiskPagePresentable) {
         self.presenter = presenter
@@ -39,7 +39,7 @@ final class QuickCheckRiskPageInteractor: MoluePresenterInteractable {
 }
 
 extension QuickCheckRiskPageInteractor: QuickCheckRiskRouterInteractable {
-    
+
     func didScannedQRCode(with QRCode: String, controller: SWQRCodeViewController) {
         do {
             let navigator = try controller.navigationController.unwrap()

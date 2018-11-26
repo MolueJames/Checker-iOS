@@ -16,7 +16,8 @@ protocol DailyCheckTaskPresentableListener: class {
     // 定义一些当前页面需要的业务逻辑, 比如网络请求.
     func jumpToCheckTaskDetailController()
     
-    var item: DangerUnitRiskModel? { get }
+    var selectedIndex: IndexPath {get}
+    var item: DangerUnitRiskModel? {get}
 }
 
 final class DailyCheckTaskViewController: MLBaseViewController  {
@@ -86,7 +87,12 @@ final class DailyCheckTaskViewController: MLBaseViewController  {
     @IBAction func submitButtonClicked(_ sender: UIButton) {
         do {
             let listener = try self.listener.unwrap()
-            listener.jumpToCheckTaskDetailController()
+            let item = try listener.item.unwrap()
+            if (item.riskStatus == "已检查") {
+                self.showWarningHUD(text: "该项目已检查")
+            } else {
+                listener.jumpToCheckTaskDetailController()
+            }
         } catch {
             MolueLogger.UIModule.error(error)
         }

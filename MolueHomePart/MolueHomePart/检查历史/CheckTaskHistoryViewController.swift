@@ -17,6 +17,7 @@ final class CheckTaskHistoryViewController: MLBaseViewController  {
     //MARK: View Controller Properties
     var listener: CheckTaskHistoryPresentableListener?
     
+    @IBOutlet weak var tableView: UITableView!
     //MARK: View Controller Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +31,7 @@ extension CheckTaskHistoryViewController: MLUserInterfaceProtocol {
     }
     
     func updateUserInterfaceElements() {
-        
+        self.title = "检查历史"
     }
 }
 

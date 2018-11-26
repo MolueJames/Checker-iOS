@@ -19,6 +19,8 @@ class AppHomeDocument {
         return list
     }()
     
+    var taskList: [DangerUnitRiskModel] = [DangerUnitRiskModel]()
+    
     func addDangerUnitModel(to list: inout [DangerUnitSectionHeaderModel]) {
         var model1 = DangerUnitSectionHeaderModel()
         model1.unitName = "生产车间1"
@@ -38,6 +40,7 @@ class AppHomeDocument {
         item11.accidentType = "火灾、高温灼伤、触电、其他伤害"
         item11.dependence = "生产经营单位安全管理体制、机制及程序"
         item11.riskRemarks = "暂无风险点的其他说明"
+        item11.riskStatus = "未检查"
         var item12 = DangerUnitRiskModel()
         item12.riskName = "清洗制绒机"
         item12.riskHead = "赵德胜"
@@ -51,6 +54,7 @@ class AppHomeDocument {
         item12.accidentType = "灼烫、触电、化学灼伤、火灾机械伤害"
         item12.dependence = "生产经营单位安全管理体制、机制及程序"
         item12.riskRemarks = "暂无风险点的其他说明"
+        item12.riskStatus = "未检查"
         var item13 = DangerUnitRiskModel()
         item13.riskName = "液氧低温储罐"
         item13.riskHead = "赵德胜"
@@ -64,6 +68,7 @@ class AppHomeDocument {
         item13.accidentType = "噪声、机械伤害"
         item13.dependence = "生产经营单位安全管理体制、机制及程序"
         item13.riskRemarks = "暂无风险点的其他说明"
+        item13.riskStatus = "未检查"
         model1.unitRisks?.append(item11)
         model1.unitRisks?.append(item12)
         model1.unitRisks?.append(item13)
@@ -86,6 +91,7 @@ class AppHomeDocument {
         item21.accidentType = "触电、机械伤害、火灾"
         item21.dependence = "生产经营单位安全管理体制、机制及程序"
         item21.riskRemarks = "暂无风险点的其他说明"
+        item21.riskStatus = "未检查"
         model2.unitRisks?.append(item21)
         list.append(model2)
     }

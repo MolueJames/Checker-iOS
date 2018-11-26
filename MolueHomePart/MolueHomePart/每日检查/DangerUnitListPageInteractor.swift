@@ -27,7 +27,7 @@ final class DangerUnitListPageInteractor: MoluePresenterInteractable {
     
     weak var listener: DangerUnitListInteractListener?
     
-    var selectedItem: DangerUnitRiskModel?
+    var selectedIndex: IndexPath = IndexPath(row: 0, section: 0)
     
     var valueList: [String] = ["1", "2", "2", "2", "2", "2", "2"]
     
@@ -38,7 +38,7 @@ final class DangerUnitListPageInteractor: MoluePresenterInteractable {
 }
 
 extension DangerUnitListPageInteractor: DangerUnitListRouterInteractable {
-
+    
 }
 
 extension DangerUnitListPageInteractor: DangerUnitListPresentableListener {

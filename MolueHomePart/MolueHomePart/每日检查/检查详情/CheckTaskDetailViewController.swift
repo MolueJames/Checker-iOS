@@ -8,12 +8,15 @@
 
 import UIKit
 import MolueCommon
+import MolueMediator
 import MolueUtilities
 import MolueFoundation
 
 protocol CheckTaskDetailPresentableListener: class {
     // 定义一些当前页面需要的业务逻辑, 比如网络请求.
     func jumpToTaskDetailController()
+    var selectedIndex: IndexPath {get}
+    var item: DangerUnitRiskModel? {get set}
 }
 
 final class CheckTaskDetailViewController: MLBaseViewController  {
@@ -50,6 +53,17 @@ final class CheckTaskDetailViewController: MLBaseViewController  {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+    @IBAction func submitButtonClicked(_ sender: UIButton) {
+        do {
+            let listener = try self.listener.unwrap()
+            var item = try listener.item.unwrap()
+            item.riskStatus = "已检查"
+            listener.item = item
+            AppHomeDocument.shared.taskList.append(item)
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+    }
 }
 
 extension CheckTaskDetailViewController: MLUserInterfaceProtocol {
@@ -59,7 +73,13 @@ extension CheckTaskDetailViewController: MLUserInterfaceProtocol {
     
     func updateUserInterfaceElements() {
         self.view.backgroundColor = .white
-        self.title = "风险详情"
+        do {
+            let listener = try self.listener.unwrap()
+            let item = try listener.item.unwrap()
+            self.title = item.riskName
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
     }
 }
 
@@ -73,18 +93,32 @@ extension CheckTaskDetailViewController: CheckTaskDetailViewControllable {
 
 extension CheckTaskDetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 7
+        do {
+            let listener = try self.listener.unwrap()
+            let item = try listener.item.unwrap()
+            let list = try item.riskMeasure.unwrap()
+            return list.count
+        } catch { return 0 }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withClass: CheckTaskDetailTableViewCell.self)
+        do {
+            let listener = try self.listener.unwrap()
+            let taskItem = try listener.item.unwrap()
+            let taskList = try taskItem.riskMeasure.unwrap()
+            let item = try taskList.item(at: indexPath.row).unwrap()
+            cell.refreshSubviews(with: item)
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
         return cell
     }
 }
 
 extension CheckTaskDetailViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return UITableViewAutomaticDimension
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         do {

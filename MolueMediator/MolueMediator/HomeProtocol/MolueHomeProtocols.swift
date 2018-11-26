@@ -21,8 +21,7 @@ public protocol HomeInfoPageComponentBuildable: MolueComponentBuildable {
 
 public protocol DailyCheckTaskInteractListener: class {
     //用于定义其他的Component需要定义的协议方法
-    var selectedItem: DangerUnitRiskModel? { get }
-    
+    var selectedIndex: IndexPath {get}
 }
 
 public protocol DailyCheckTaskComponentBuildable: MolueComponentBuildable {

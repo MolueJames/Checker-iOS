@@ -32,6 +32,9 @@
                                 <state key="normal" title="提交任务">
                                     <color key="titleColor" red="0.1058823529" green="0.50980392159999999" blue="0.82352941180000006" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="submitButtonClicked:" destination="oBR-hG-4Vl" eventType="touchUpInside" id="gtX-MW-6ht"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

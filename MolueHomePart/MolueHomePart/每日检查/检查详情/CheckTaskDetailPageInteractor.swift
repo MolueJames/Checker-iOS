@@ -26,6 +26,11 @@ final class CheckTaskDetailPageInteractor: MoluePresenterInteractable {
     var viewRouter: CheckTaskDetailViewableRouting?
     
     weak var listener: CheckTaskDetailInteractListener?
+
+    lazy var selectedIndex: IndexPath = {
+        let defaultIndex = IndexPath(row: 0, section: 0)
+        return self.listener?.selectedIndex ?? defaultIndex
+    }()
     
     required init(presenter: CheckTaskDetailPagePresentable) {
         self.presenter = presenter
@@ -38,6 +43,23 @@ extension CheckTaskDetailPageInteractor: CheckTaskDetailRouterInteractable {
 }
 
 extension CheckTaskDetailPageInteractor: CheckTaskDetailPresentableListener {
+    var item: DangerUnitRiskModel? {
+        get {
+            let list = AppHomeDocument.shared.unitList.item(at: selectedIndex.section)
+            return list?.unitRisks?.item(at: selectedIndex.row)
+        }
+        set {
+            var list = AppHomeDocument.shared.unitList.item(at: selectedIndex.section)
+            let row = self.selectedIndex.row
+            do {
+                list?.unitRisks?[row] = try newValue.unwrap()
+                AppHomeDocument.shared.unitList[self.selectedIndex.section] = try list.unwrap()
+            } catch {
+                MolueLogger.UIModule.error(error)
+            }
+        }
+    }
+    
     func jumpToTaskDetailController() {
         do {
             let viewRouter = try self.viewRouter.unwrap()

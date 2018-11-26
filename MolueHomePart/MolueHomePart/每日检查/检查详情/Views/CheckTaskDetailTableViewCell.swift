@@ -15,10 +15,10 @@ class CheckTaskDetailTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        self.layer.cornerRadius = 5
-        self.layer.masksToBounds = true
     }
 
+    @IBOutlet weak var taskNameLabel: UILabel!
+    
     @IBAction func successButtonClicked(_ sender: UIButton) {
         self.statusImageView.image = UIImage(named: "molue_check_success")
     }
@@ -30,14 +30,19 @@ class CheckTaskDetailTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    override var frame:CGRect{
-        didSet {
-            var new = self.frame
-            new.origin.x += 10
-            new.size.width -= 20
-            new.origin.y += 0
-            new.size.height -= 10
-            super.frame = new
-        }
+
+    public func refreshSubviews(with model: String) {
+        self.taskNameLabel.text = model
     }
+    
+//    override var frame:CGRect{
+//        didSet {
+//            var new = self.frame
+//            new.origin.x += 10
+//            new.size.width -= 20
+//            new.origin.y += 0
+//            new.size.height -= 10
+//            super.frame = new
+//        }
+//    }
 }

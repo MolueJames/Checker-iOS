@@ -17,7 +17,7 @@ protocol DangerUnitListPresentableListener: class {
     
     func jumpToDailyCheckTaskController()
     
-    var selectedItem: DangerUnitRiskModel? { get set }
+    var selectedIndex: IndexPath {get set}
 }
 
 final class DangerUnitListViewController: MLBaseViewController  {
@@ -90,11 +90,7 @@ extension DangerUnitListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         do {
             let listener = try self.listener.unwrap()
-            let unitList = AppHomeDocument.shared.unitList
-            let unit = try unitList.item(at: indexPath.section).unwrap()
-            let riskList = try unit.unitRisks.unwrap()
-            let item = try riskList.item(at: indexPath.row).unwrap()
-            listener.selectedItem = item
+            listener.selectedIndex = indexPath
             listener.jumpToDailyCheckTaskController()
         } catch {
             MolueLogger.UIModule.error(error)

@@ -37,3 +37,9 @@ public struct DangerUnitRiskModel {
     public var riskStatus: String? //风险点状态
     public init() {}
 }
+
+public struct RiskMeasureModel {
+    public var measureName: String?
+    public var measureState: String?
+    public var riskModel: PotentialRiskModel?
+}
