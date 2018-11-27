@@ -1,14 +1,15 @@
 //
-//  DailyCheckTaskTableViewCell.swift
+//  HistoryInfoTableViewCell.swift
 //  MolueHomePart
 //
-//  Created by JamesCheng on 2018-11-06.
+//  Created by JamesCheng on 2018-11-27.
 //  Copyright © 2018 MolueTech. All rights reserved.
 //
 
 import UIKit
+import MolueMediator
 
-class DailyCheckTaskTableViewCell: UITableViewCell {
+class HistoryInfoTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,10 +22,7 @@ class DailyCheckTaskTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    @IBOutlet weak var titleLabel: UILabel!
-    
-    public func refreshSubviews(with model: String) {
-        self.titleLabel.text = model
+    public func refreshSubviews(with item: RiskMeasureModel) {
+        
     }
-    
 }

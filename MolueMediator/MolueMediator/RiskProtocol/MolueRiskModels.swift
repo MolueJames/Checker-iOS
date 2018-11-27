@@ -56,7 +56,7 @@ public enum PotentialRiskLevel: CaseIterable, CustomStringConvertible {
     case general
 }
 
-public struct PotentialRiskModel {
+public class PotentialRiskModel {
     public var status: PotentialRiskStatus?
     public var channel: PotentialRiskChannel?
     public var level: PotentialRiskLevel?

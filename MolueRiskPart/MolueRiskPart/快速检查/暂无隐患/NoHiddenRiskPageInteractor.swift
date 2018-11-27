@@ -7,6 +7,7 @@
 //
 
 import MolueUtilities
+import MolueFoundation
 import MolueMediator
 import MolueCommon
 import Gallery
@@ -17,9 +18,10 @@ protocol NoHiddenRiskViewableRouting: class {
     func pushToTakePhotoController(with limit: Int)
     func pushToPhotoBrowser(with photos: [SKPhoto], controller: UIViewController)
     func pushToPhotoBrowser(with photos: [SKPhoto], index: Int)
+    func popToPreviewController()
 }
 
-protocol NoHiddenRiskPagePresentable: MolueInteractorPresentable {
+protocol NoHiddenRiskPagePresentable: MolueInteractorPresentable, MLControllerHUDProtocol {
     var listener: NoHiddenRiskPresentableListener? { get set }
     // 定义一些页面需要的方法, 比如刷新页面的显示内容等.
     func reloadCollectionViewData()
@@ -112,11 +114,39 @@ extension NoHiddenRiskPageInteractor: NoHiddenRiskRouterInteractable {
         }
         removePhoto(from: self.photoController)
     }
-    
-    
 }
 
 extension NoHiddenRiskPageInteractor: NoHiddenRiskPresentableListener {
+    func updateNoHiddenRisk(with text: String) {
+        do {
+            let taskModel: TaskSuccessModel = TaskSuccessModel()
+            taskModel.images = self.photoImages
+            taskModel.detail = text
+            let listener = try self.listener.unwrap()
+            listener.updateNoHiddenRiskModel(with: taskModel)
+            self.doUpdateTaskInfoModelPresenter()
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+    }
+    
+    func doUpdateTaskInfoModelPresenter() {
+        do {
+            let presenter = try self.presenter.unwrap()
+            presenter.showSuccessHUD(text: "任务检查完成")
+            Async.main(after: 1.5) { [weak self] in
+                do {
+                    let router = try self.unwrap().viewRouter.unwrap()
+                    router.popToPreviewController()
+                } catch {
+                    MolueLogger.UIModule.message(error)
+                }
+            }
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+    }
+    
     func jumpToBrowserController(with index: Int) {
         do {
             let router = try self.viewRouter.unwrap()

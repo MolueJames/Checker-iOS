@@ -119,9 +119,19 @@ extension EditRiskInfoPageInteractor: EditRiskInfoRouterInteractable {
 extension EditRiskInfoPageInteractor: EditRiskInfoPresentableListener {
     func updateEditRiskInfo(with model: PotentialRiskModel) {
         do {
-            var editModel: PotentialRiskModel = model
+            let editModel: PotentialRiskModel = model
             editModel.checkedRiskPhotos = self.photoImages
             AppRiskDocument.shared.riskList.append(editModel)
+            let listener = try self.listener.unwrap()
+            listener.updateEditRiskInfoModel(with: editModel)
+            self.doUpdateEditRiskInfoPresenter()
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+    }
+    
+    func doUpdateEditRiskInfoPresenter() {
+        do {
             let presenter = try self.presenter.unwrap()
             presenter.showSuccessHUD(text: "隐患添加成功")
             Async.main(after: 1.5) { [weak self] in

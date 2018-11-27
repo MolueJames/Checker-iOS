@@ -13,11 +13,11 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR" customClass="NoHiddenRiskReusableFooterView" customModule="MolueRiskPart" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="230"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="195"/>
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cxh-bz-cg0">
-                    <rect key="frame" x="15" y="185" width="290" height="45"/>
+                    <rect key="frame" x="15" y="150" width="290" height="45"/>
                     <color key="backgroundColor" red="0.1058823529" green="0.50980392159999999" blue="0.82352941180000006" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="45" id="32Q-iX-A7i"/>
@@ -30,57 +30,25 @@
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vCR-TL-J8S" customClass="MLCommonRemarkView" customModule="MolueCommon">
-                    <rect key="frame" x="0.0" y="35" width="320" height="120"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="120" id="fcU-rc-rm4"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cxV-x7-Omi">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="35"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dEV-lG-Gw3">
-                            <rect key="frame" x="20" y="12" width="280" height="18"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                            <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wBp-sG-Gqm">
-                            <rect key="frame" x="20" y="34.5" width="300" height="0.5"/>
-                            <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="0.5" id="Xor-4A-S5Z"/>
-                            </constraints>
-                        </view>
-                    </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="bottom" secondItem="wBp-sG-Gqm" secondAttribute="bottom" id="Am5-nv-FKp"/>
-                        <constraint firstItem="wBp-sG-Gqm" firstAttribute="leading" secondItem="cxV-x7-Omi" secondAttribute="leading" constant="20" id="LMc-Zj-0Pd"/>
-                        <constraint firstAttribute="trailing" secondItem="wBp-sG-Gqm" secondAttribute="trailing" id="fVQ-qG-USk"/>
-                        <constraint firstItem="dEV-lG-Gw3" firstAttribute="leading" secondItem="cxV-x7-Omi" secondAttribute="leading" constant="20" id="gjr-h4-Jq3"/>
-                        <constraint firstItem="dEV-lG-Gw3" firstAttribute="top" secondItem="cxV-x7-Omi" secondAttribute="top" constant="12" id="ozH-Jg-mD5"/>
-                        <constraint firstAttribute="trailing" secondItem="dEV-lG-Gw3" secondAttribute="trailing" constant="20" id="ssZ-ab-kPI"/>
-                        <constraint firstAttribute="bottom" secondItem="dEV-lG-Gw3" secondAttribute="bottom" constant="5" id="zyT-mg-vCU"/>
-                    </constraints>
-                </view>
             </subviews>
             <constraints>
                 <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="cxh-bz-cg0" secondAttribute="trailing" constant="15" id="1Yp-YF-kAN"/>
-                <constraint firstItem="cxV-x7-Omi" firstAttribute="top" secondItem="VXr-Tz-HHm" secondAttribute="top" id="4e4-7H-Uv9"/>
                 <constraint firstItem="cxh-bz-cg0" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" constant="15" id="4z9-x1-Eem"/>
-                <constraint firstItem="cxV-x7-Omi" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" id="5BM-Pm-EHJ"/>
-                <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="cxV-x7-Omi" secondAttribute="trailing" id="7fO-b2-1XN"/>
                 <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="vCR-TL-J8S" secondAttribute="trailing" id="9Dy-vD-w12"/>
                 <constraint firstItem="cxh-bz-cg0" firstAttribute="top" secondItem="vCR-TL-J8S" secondAttribute="bottom" constant="30" id="E0W-06-YGe"/>
                 <constraint firstItem="cxh-bz-cg0" firstAttribute="bottom" secondItem="VXr-Tz-HHm" secondAttribute="bottom" id="WYc-M8-zOp"/>
-                <constraint firstItem="vCR-TL-J8S" firstAttribute="top" secondItem="cxV-x7-Omi" secondAttribute="bottom" id="qf1-BD-iQt"/>
+                <constraint firstItem="vCR-TL-J8S" firstAttribute="top" secondItem="VXr-Tz-HHm" secondAttribute="top" id="cwd-Z3-qeW"/>
                 <constraint firstItem="vCR-TL-J8S" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" id="rBi-kX-Qqh"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
             <connections>
                 <outlet property="reasonRemarkView" destination="vCR-TL-J8S" id="eNn-et-mVf"/>
-                <outlet property="taskDetailLabel" destination="dEV-lG-Gw3" id="Av3-OA-T5q"/>
             </connections>
             <point key="canvasLocation" x="-598.39999999999998" y="13.493253373313344"/>
         </collectionReusableView>

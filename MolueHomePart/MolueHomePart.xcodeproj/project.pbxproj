@@ -35,6 +35,14 @@
 		1A264B9021A1792700F452F9 /* CheckTaskHistoryPageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A264B8D21A1792700F452F9 /* CheckTaskHistoryPageInteractor.swift */; };
 		1A264B9121A1792700F452F9 /* CheckTaskHistoryBuilderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A264B8E21A1792700F452F9 /* CheckTaskHistoryBuilderRouter.swift */; };
 		1A264B9321A1794700F452F9 /* CheckTaskHistoryViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A264B9221A1794700F452F9 /* CheckTaskHistoryViewController.storyboard */; };
+		1A2F407421AD355F00C436F9 /* CheckTaskHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2F407221AD355F00C436F9 /* CheckTaskHistoryTableViewCell.swift */; };
+		1A2F407521AD355F00C436F9 /* CheckTaskHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A2F407321AD355F00C436F9 /* CheckTaskHistoryTableViewCell.xib */; };
+		1A2F407921AD394F00C436F9 /* TaskHistoryInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2F407621AD394F00C436F9 /* TaskHistoryInfoViewController.swift */; };
+		1A2F407A21AD394F00C436F9 /* TaskHistoryInfoPageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2F407721AD394F00C436F9 /* TaskHistoryInfoPageInteractor.swift */; };
+		1A2F407B21AD394F00C436F9 /* TaskHistoryInfoBuilderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2F407821AD394F00C436F9 /* TaskHistoryInfoBuilderRouter.swift */; };
+		1A2F407D21AD397200C436F9 /* TaskHistoryInfoViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A2F407C21AD397200C436F9 /* TaskHistoryInfoViewController.storyboard */; };
+		1A2F408121AD3D4800C436F9 /* HistoryInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2F407F21AD3D4800C436F9 /* HistoryInfoTableViewCell.swift */; };
+		1A2F408221AD3D4800C436F9 /* HistoryInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A2F408021AD3D4800C436F9 /* HistoryInfoTableViewCell.xib */; };
 		1A3465D521971E3400EBA57C /* CheckTaskDetailFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3465D421971E3400EBA57C /* CheckTaskDetailFooterView.swift */; };
 		1A3465D721971E3E00EBA57C /* CheckTaskDetailFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A3465D621971E3E00EBA57C /* CheckTaskDetailFooterView.xib */; };
 		1A346FC621915C0400CB534B /* CheckTaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A346FC321915C0400CB534B /* CheckTaskDetailViewController.swift */; };
@@ -149,6 +157,14 @@
 		1A264B8D21A1792700F452F9 /* CheckTaskHistoryPageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTaskHistoryPageInteractor.swift; sourceTree = "<group>"; };
 		1A264B8E21A1792700F452F9 /* CheckTaskHistoryBuilderRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTaskHistoryBuilderRouter.swift; sourceTree = "<group>"; };
 		1A264B9221A1794700F452F9 /* CheckTaskHistoryViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CheckTaskHistoryViewController.storyboard; sourceTree = "<group>"; };
+		1A2F407221AD355F00C436F9 /* CheckTaskHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTaskHistoryTableViewCell.swift; sourceTree = "<group>"; };
+		1A2F407321AD355F00C436F9 /* CheckTaskHistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckTaskHistoryTableViewCell.xib; sourceTree = "<group>"; };
+		1A2F407621AD394F00C436F9 /* TaskHistoryInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskHistoryInfoViewController.swift; sourceTree = "<group>"; };
+		1A2F407721AD394F00C436F9 /* TaskHistoryInfoPageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskHistoryInfoPageInteractor.swift; sourceTree = "<group>"; };
+		1A2F407821AD394F00C436F9 /* TaskHistoryInfoBuilderRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskHistoryInfoBuilderRouter.swift; sourceTree = "<group>"; };
+		1A2F407C21AD397200C436F9 /* TaskHistoryInfoViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TaskHistoryInfoViewController.storyboard; sourceTree = "<group>"; };
+		1A2F407F21AD3D4800C436F9 /* HistoryInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryInfoTableViewCell.swift; sourceTree = "<group>"; };
+		1A2F408021AD3D4800C436F9 /* HistoryInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryInfoTableViewCell.xib; sourceTree = "<group>"; };
 		1A3465D421971E3400EBA57C /* CheckTaskDetailFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTaskDetailFooterView.swift; sourceTree = "<group>"; };
 		1A3465D621971E3E00EBA57C /* CheckTaskDetailFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckTaskDetailFooterView.xib; sourceTree = "<group>"; };
 		1A346FC321915C0400CB534B /* CheckTaskDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTaskDetailViewController.swift; sourceTree = "<group>"; };
@@ -283,7 +299,7 @@
 				1A7D5A3821AA73AB00931B0B /* 测试数据 */,
 				1A264B8B21A178EB00F452F9 /* 检查历史 */,
 				1A65039520DD552A0017F91D /* MolueHome.xcassets */,
-				1A522ED221912B0100094A8A /* 每日检查 */,
+				1A522ED221912B0100094A8A /* 任务列表 */,
 				1A24021E20E52F4C00FC3EBA /* 政策通知 */,
 				1A24021D20E52F3700FC3EBA /* 法律法规 */,
 				1AAF7B6420C1970A0051EC18 /* 基础信息 */,
@@ -371,6 +387,8 @@
 		1A264B8B21A178EB00F452F9 /* 检查历史 */ = {
 			isa = PBXGroup;
 			children = (
+				1A2F407121AD30C400C436F9 /* Views */,
+				1A2F407021AD30A600C436F9 /* 历史详情 */,
 				1A264B8C21A1792700F452F9 /* CheckTaskHistoryViewController.swift */,
 				1A264B8D21A1792700F452F9 /* CheckTaskHistoryPageInteractor.swift */,
 				1A264B8E21A1792700F452F9 /* CheckTaskHistoryBuilderRouter.swift */,
@@ -379,7 +397,37 @@
 			path = "检查历史";
 			sourceTree = "<group>";
 		};
-		1A346FC221915BAA00CB534B /* 检查详情 */ = {
+		1A2F407021AD30A600C436F9 /* 历史详情 */ = {
+			isa = PBXGroup;
+			children = (
+				1A2F407E21AD3D2D00C436F9 /* Views */,
+				1A2F407621AD394F00C436F9 /* TaskHistoryInfoViewController.swift */,
+				1A2F407C21AD397200C436F9 /* TaskHistoryInfoViewController.storyboard */,
+				1A2F407721AD394F00C436F9 /* TaskHistoryInfoPageInteractor.swift */,
+				1A2F407821AD394F00C436F9 /* TaskHistoryInfoBuilderRouter.swift */,
+			);
+			path = "历史详情";
+			sourceTree = "<group>";
+		};
+		1A2F407121AD30C400C436F9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1A2F407221AD355F00C436F9 /* CheckTaskHistoryTableViewCell.swift */,
+				1A2F407321AD355F00C436F9 /* CheckTaskHistoryTableViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1A2F407E21AD3D2D00C436F9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1A2F407F21AD3D4800C436F9 /* HistoryInfoTableViewCell.swift */,
+				1A2F408021AD3D4800C436F9 /* HistoryInfoTableViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1A346FC221915BAA00CB534B /* 检查点列表 */ = {
 			isa = PBXGroup;
 			children = (
 				1AD3DE8821971725005015A6 /* Views */,
@@ -388,7 +436,7 @@
 				1A346FC521915C0400CB534B /* CheckTaskDetailBuilderRouter.swift */,
 				1A346FC921915C2100CB534B /* CheckTaskDetailViewController.storyboard */,
 			);
-			path = "检查详情";
+			path = "检查点列表";
 			sourceTree = "<group>";
 		};
 		1A346FCB21919A0600CB534B /* Views */ = {
@@ -445,7 +493,7 @@
 			path = "应用首页";
 			sourceTree = "<group>";
 		};
-		1A522EC22190350A00094A8A /* 每日任务 */ = {
+		1A522EC22190350A00094A8A /* 任务详情 */ = {
 			isa = PBXGroup;
 			children = (
 				1A346FCB21919A0600CB534B /* Views */,
@@ -454,21 +502,21 @@
 				1A522EC42190356100094A8A /* DailyCheckTaskPageInteractor.swift */,
 				1A522EC52190356100094A8A /* DailyCheckTaskBuilderRouter.swift */,
 			);
-			path = "每日任务";
+			path = "任务详情";
 			sourceTree = "<group>";
 		};
-		1A522ED221912B0100094A8A /* 每日检查 */ = {
+		1A522ED221912B0100094A8A /* 任务列表 */ = {
 			isa = PBXGroup;
 			children = (
-				1A346FC221915BAA00CB534B /* 检查详情 */,
+				1A346FC221915BAA00CB534B /* 检查点列表 */,
 				1A5D5BF421912E24003E7039 /* Views */,
-				1A522EC22190350A00094A8A /* 每日任务 */,
+				1A522EC22190350A00094A8A /* 任务详情 */,
 				1A522ED321912BA200094A8A /* DangerUnitListViewController.swift */,
 				1A522ED421912BA200094A8A /* DangerUnitListPageInteractor.swift */,
 				1A522ED521912BA200094A8A /* DangerUnitListBuilderRouter.swift */,
 				1A5D5BF121912C3E003E7039 /* DangerUnitListViewController.storyboard */,
 			);
-			path = "每日检查";
+			path = "任务列表";
 			sourceTree = "<group>";
 		};
 		1A5D5BF421912E24003E7039 /* Views */ = {
@@ -752,6 +800,7 @@
 				1A346FCA21915C2100CB534B /* CheckTaskDetailViewController.storyboard in Resources */,
 				1ABDCA9720C5721B0062DE71 /* IncreaseAdminiFooterView.xib in Resources */,
 				1A522ECA2190357300094A8A /* DailyCheckTaskViewController.storyboard in Resources */,
+				1A2F407D21AD397200C436F9 /* TaskHistoryInfoViewController.storyboard in Resources */,
 				1A0B89DD219689A1000B1EBC /* DailyCheckSectionHeaderView.xib in Resources */,
 				1A3465D721971E3E00EBA57C /* CheckTaskDetailFooterView.xib in Resources */,
 				1A264B9321A1794700F452F9 /* CheckTaskHistoryViewController.storyboard in Resources */,
@@ -763,6 +812,7 @@
 				1A602F8C20A88095003AD583 /* HomeInfoTableHeaderView.xib in Resources */,
 				1ABDCA9B20C5798B0062DE71 /* SecurityAdminiTableViewCell.xib in Resources */,
 				1A5D5BF221912C3E003E7039 /* DangerUnitListViewController.storyboard in Resources */,
+				1A2F408221AD3D4800C436F9 /* HistoryInfoTableViewCell.xib in Resources */,
 				1A0B89B821931B8F000B1EBC /* DangerUnitTableViewCell.xib in Resources */,
 				1A522EC121902B0300094A8A /* HomeInfoPageViewController.storyboard in Resources */,
 				1A06557E20A9EE020016CA86 /* HomeInfoTableViewCell.xib in Resources */,
@@ -778,6 +828,7 @@
 				1AB0670820EFB61D00619570 /* PolicyNoticeTableViewCell.xib in Resources */,
 				1AAF7B8020C1971B0051EC18 /* IncreaseAdminiViewController.storyboard in Resources */,
 				1A24022620E530AE00FC3EBA /* PolicyNoticeViewController.storyboard in Resources */,
+				1A2F407521AD355F00C436F9 /* CheckTaskHistoryTableViewCell.xib in Resources */,
 				1A65039620DD552B0017F91D /* MolueHome.xcassets in Resources */,
 				1AD3DE8721971720005015A6 /* CheckTaskDetailTableViewCell.xib in Resources */,
 				1AAF7B6720C1970A0051EC18 /* EnterpriseInfoViewController.storyboard in Resources */,
@@ -828,10 +879,13 @@
 				1A522ED821912BA200094A8A /* DangerUnitListBuilderRouter.swift in Sources */,
 				1AB0670320EFB06B00619570 /* LawRegulationTableViewCell.swift in Sources */,
 				1A264B9021A1792700F452F9 /* CheckTaskHistoryPageInteractor.swift in Sources */,
+				1A2F407421AD355F00C436F9 /* CheckTaskHistoryTableViewCell.swift in Sources */,
 				1A522EBE2190261900094A8A /* HomeInfoPagePageInteractor.swift in Sources */,
 				1A35D7FA20DBC9BF002ED3CB /* EnterpriseInfoDataManager.swift in Sources */,
+				1A2F408121AD3D4800C436F9 /* HistoryInfoTableViewCell.swift in Sources */,
 				1A346FC721915C0400CB534B /* CheckTaskDetailPageInteractor.swift in Sources */,
 				1A264B9121A1792700F452F9 /* CheckTaskHistoryBuilderRouter.swift in Sources */,
+				1A2F407B21AD394F00C436F9 /* TaskHistoryInfoBuilderRouter.swift in Sources */,
 				1ABDCA9A20C5798B0062DE71 /* SecurityAdminiTableViewCell.swift in Sources */,
 				1AAF7B8520C1971B0051EC18 /* ContactInfoViewController.swift in Sources */,
 				1A24022820E5337A00FC3EBA /* EnterpriseInfoNavigator.swift in Sources */,
@@ -853,6 +907,7 @@
 				1A0B89BA21931BAD000B1EBC /* DangerUnitSectionHeaderView.swift in Sources */,
 				1A0B89DB21968991000B1EBC /* DailyCheckSectionHeaderView.swift in Sources */,
 				1A43BC2720C3AF190093855B /* HomeInfoHeaderView.swift in Sources */,
+				1A2F407A21AD394F00C436F9 /* TaskHistoryInfoPageInteractor.swift in Sources */,
 				1A1084FD20ECF1DD004E365A /* IncreaseAdminiNavigator.swift in Sources */,
 				1AAF7B8120C1971B0051EC18 /* IncreaseAdminiViewController.swift in Sources */,
 				1A602F8520A87D58003AD583 /* HomeInfoTableHeaderView.swift in Sources */,
@@ -860,6 +915,7 @@
 				1A522EC72190356100094A8A /* DailyCheckTaskPageInteractor.swift in Sources */,
 				1AAF7B6820C1970A0051EC18 /* EnterpriseInfoViewController.swift in Sources */,
 				1A264B8F21A1792700F452F9 /* CheckTaskHistoryViewController.swift in Sources */,
+				1A2F407921AD394F00C436F9 /* TaskHistoryInfoViewController.swift in Sources */,
 				1A346FC821915C0400CB534B /* CheckTaskDetailBuilderRouter.swift in Sources */,
 				1A06557D20A9EE020016CA86 /* HomeInfoTableViewCell.swift in Sources */,
 				1A43BC3320C3CEAA0093855B /* EnterpriseInfoModel.swift in Sources */,

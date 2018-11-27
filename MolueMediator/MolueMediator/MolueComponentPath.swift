@@ -35,6 +35,7 @@ public enum MolueComponent {
         case QuickCheck = "QuickCheckRiskComponentBuilder"
         case EditRisk = "EditRiskInfoComponentBuilder"
         case NoHidden = "NoHiddenRiskComponentBuilder"
+        case RiskDetail = "RiskDetailComponentBuilder"
         
         public func builderPath() -> String {
             return "MolueRiskPart.\(self.rawValue)"

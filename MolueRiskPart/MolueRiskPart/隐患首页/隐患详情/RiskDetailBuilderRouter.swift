@@ -47,16 +47,6 @@ extension RiskDetailViewableRouter: RiskDetailViewableRouting {
     }
 }
 
-protocol RiskDetailInteractListener: class {
-    //用于定义其他的Component需要定义的协议方法
-    var selectedRisk: PotentialRiskModel? { get }
-}
-
-protocol RiskDetailComponentBuildable: MolueComponentBuildable {
-    //定义当前的Component的构造方法.
-    func build(listener: RiskDetailInteractListener) -> UIViewController
-}
-
 class RiskDetailComponentBuilder: MolueComponentBuilder, RiskDetailComponentBuildable {
     func build(listener: RiskDetailInteractListener) -> UIViewController {
         let controller = RiskDetailViewController.initializeFromStoryboard()

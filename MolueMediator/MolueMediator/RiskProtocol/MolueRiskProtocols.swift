@@ -30,6 +30,7 @@ public protocol QuickCheckRiskComponentBuildable: MolueComponentBuildable {
 
 public protocol EditRiskInfoInteractListener: class {
     //用于定义其他的Component需要定义的协议方法
+    func updateEditRiskInfoModel(with item: PotentialRiskModel)
 }
 
 public protocol EditRiskInfoComponentBuildable: MolueComponentBuildable {
@@ -39,9 +40,20 @@ public protocol EditRiskInfoComponentBuildable: MolueComponentBuildable {
 
 public protocol NoHiddenRiskInteractListener: class {
     //用于定义其他的Component需要定义的协议方法
+    func updateNoHiddenRiskModel(with item: TaskSuccessModel)
 }
 
 public protocol NoHiddenRiskComponentBuildable: MolueComponentBuildable {
     //定义当前的Component的构造方法.
     func build(listener: NoHiddenRiskInteractListener) -> UIViewController
+}
+
+public protocol RiskDetailInteractListener: class {
+    //用于定义其他的Component需要定义的协议方法
+    var selectedRisk: PotentialRiskModel? { get }
+}
+
+public protocol RiskDetailComponentBuildable: MolueComponentBuildable {
+    //定义当前的Component的构造方法.
+    func build(listener: RiskDetailInteractListener) -> UIViewController
 }

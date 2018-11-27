@@ -35,6 +35,15 @@ final class NoHiddenRiskViewableRouter: MolueViewableRouting {
 }
 
 extension NoHiddenRiskViewableRouter: NoHiddenRiskViewableRouting {
+    func popToPreviewController() {
+        do {
+            let navigator = try self.controller.unwrap()
+            navigator.doPopBackFromCurrent()
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+    }
+    
     func pushToTakePhotoController(with limit: Int) {
         do {
             let navigator = try self.controller.unwrap()

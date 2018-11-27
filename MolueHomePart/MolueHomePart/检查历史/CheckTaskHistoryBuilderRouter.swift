@@ -7,8 +7,9 @@
 //
 
 import MolueMediator
+import MolueUtilities
 
-protocol CheckTaskHistoryRouterInteractable: class {
+protocol CheckTaskHistoryRouterInteractable: TaskHistoryInfoInteractListener {
     var viewRouter: CheckTaskHistoryViewableRouting? { get set }
     var listener: CheckTaskHistoryInteractListener? { get set }
 }
@@ -32,7 +33,17 @@ final class CheckTaskHistoryViewableRouter: MolueViewableRouting {
 }
 
 extension CheckTaskHistoryViewableRouter: CheckTaskHistoryViewableRouting {
-    
+    func pushToTaskHistoryController() {
+        do {
+            let builder: TaskHistoryInfoComponentBuildable = TaskHistoryInfoComponentBuilder()
+            let controller = try builder.build(listener: self.interactor.unwrap())
+            controller.hidesBottomBarWhenPushed = true
+            let navigator = try self.controller.unwrap()
+            navigator.pushToViewController(controller, animated: true)
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+    }
 }
 
 protocol CheckTaskHistoryInteractListener: class {

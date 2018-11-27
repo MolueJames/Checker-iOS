@@ -88,7 +88,7 @@ final class DailyCheckTaskViewController: MLBaseViewController  {
         do {
             let listener = try self.listener.unwrap()
             let item = try listener.item.unwrap()
-            if (item.riskStatus == "已检查") {
+            if (item.riskStatus == "已检查" || item.riskStatus == "有隐患") {
                 self.showWarningHUD(text: "该项目已检查")
             } else {
                 listener.jumpToCheckTaskDetailController()

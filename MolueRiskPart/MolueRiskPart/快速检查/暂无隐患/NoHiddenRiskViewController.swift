@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxSwift
 import MolueFoundation
 import MolueUtilities
 import MolueCommon
@@ -20,11 +21,15 @@ protocol NoHiddenRiskPresentableListener: class {
     func jumpToTakePhotoController()
     
     func jumpToBrowserController(with index: Int)
+    
+    func updateNoHiddenRisk(with text: String)
 }
 
-final class NoHiddenRiskViewController: MLBaseViewController  {
+final class NoHiddenRiskViewController: MLBaseViewController {
     //MARK: View Controller Properties
     var listener: NoHiddenRiskPresentableListener?
+    
+    private let disposeBag = DisposeBag()
     
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
@@ -46,9 +51,7 @@ final class NoHiddenRiskViewController: MLBaseViewController  {
             flowLayout.sectionInset = UIEdgeInsets(top: 10, left: 15, bottom: 10, right: 15)
             let width: CGFloat = (MLConfigure.ScreenWidth - 56) / 3
             flowLayout.itemSize = CGSize(width: width, height: width)
-//            let size = self.estimateFrameForText(text: text)
-            
-            flowLayout.footerReferenceSize = CGSize(width: MLConfigure.ScreenWidth, height: 230)
+            flowLayout.footerReferenceSize = CGSize(width: MLConfigure.ScreenWidth, height: 195)
         }
     }
     
@@ -97,8 +100,22 @@ extension NoHiddenRiskViewController: NoHiddenRiskViewControllable {
 extension NoHiddenRiskViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let view = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withClass: NoHiddenRiskReusableFooterView.self, for: indexPath)
+        view.refreshSubviews(with: "")
+        view.submitInfoCommand?.subscribe(onNext: { [unowned self] (text) in
+            self.doSuccessSubmitInfo(with: text)
+        }).disposed(by: self.disposeBag)
         return view
     }
+    
+    func doSuccessSubmitInfo(with model: String) {
+        do {
+            let listener = try self.listener.unwrap()
+            listener.updateNoHiddenRisk(with: model)
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         do {
             let listener = try self.listener.unwrap()
@@ -134,6 +151,4 @@ extension NoHiddenRiskViewController: UICollectionViewDataSource {
         }
         return collectionView.dequeueReusableCell(withClass: InsertPhotosCollectionViewCell.self, for: indexPath)
     }
-    
-    
 }

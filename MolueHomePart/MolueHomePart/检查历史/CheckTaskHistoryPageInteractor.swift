@@ -7,9 +7,11 @@
 //
 
 import MolueMediator
+import MolueUtilities
 
 protocol CheckTaskHistoryViewableRouting: class {
     // 定义一些页面跳转的方法, 比如Push, Presenter等.
+    func pushToTaskHistoryController()
 }
 
 protocol CheckTaskHistoryPagePresentable: MolueInteractorPresentable {
@@ -25,6 +27,10 @@ final class CheckTaskHistoryPageInteractor: MoluePresenterInteractable {
     
     weak var listener: CheckTaskHistoryInteractListener?
     
+    var valueList: [DangerUnitRiskModel] = AppHomeDocument.shared.taskList
+    
+    var taskItem: DangerUnitRiskModel?
+    
     required init(presenter: CheckTaskHistoryPagePresentable) {
         self.presenter = presenter
         presenter.listener = self
@@ -36,5 +42,13 @@ extension CheckTaskHistoryPageInteractor: CheckTaskHistoryRouterInteractable {
 }
 
 extension CheckTaskHistoryPageInteractor: CheckTaskHistoryPresentableListener {
-    
+    func jumpToTaskHistoryController(with item: DangerUnitRiskModel) {
+        do {
+            self.taskItem = item
+            let viewRouter = try self.viewRouter.unwrap()
+            viewRouter.pushToTaskHistoryController()
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+    }
 }
