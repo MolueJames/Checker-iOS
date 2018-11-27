@@ -29,7 +29,6 @@
 		1A15029021A6A0DB002CB333 /* RiskDetailReusableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A15028E21A6A0DB002CB333 /* RiskDetailReusableHeaderView.xib */; };
 		1A15029421A6AF75002CB333 /* NoHiddenRiskReusableFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A15029221A6AF75002CB333 /* NoHiddenRiskReusableFooterView.swift */; };
 		1A15029521A6AF75002CB333 /* NoHiddenRiskReusableFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A15029321A6AF75002CB333 /* NoHiddenRiskReusableFooterView.xib */; };
-		1A24971E21A90BE000937E05 /* AppRiskDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A24971D21A90BE000937E05 /* AppRiskDocument.swift */; };
 		1A2698E921A5B5E0007C37C8 /* InsertPhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2698E721A5B5E0007C37C8 /* InsertPhotosCollectionViewCell.swift */; };
 		1A2698EA21A5B5E0007C37C8 /* InsertPhotosCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A2698E821A5B5E0007C37C8 /* InsertPhotosCollectionViewCell.xib */; };
 		1A2698EE21A84E91007C37C8 /* NoHiddenRiskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2698EB21A84E91007C37C8 /* NoHiddenRiskViewController.swift */; };
@@ -44,6 +43,8 @@
 		1A3465DB2197281C00EBA57C /* PotentialRiskHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A3465DA2197281C00EBA57C /* PotentialRiskHeaderView.xib */; };
 		1A3465DE2197308200EBA57C /* PotentialRiskCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3465DC2197308200EBA57C /* PotentialRiskCollectionCell.swift */; };
 		1A3465DF2197308200EBA57C /* PotentialRiskCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A3465DD2197308200EBA57C /* PotentialRiskCollectionCell.xib */; };
+		1A50DA2121AD8DB400D71D12 /* NoHiddenDetailFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A50DA1F21AD8DB400D71D12 /* NoHiddenDetailFooterView.swift */; };
+		1A50DA2221AD8DB400D71D12 /* NoHiddenDetailFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A50DA2021AD8DB400D71D12 /* NoHiddenDetailFooterView.xib */; };
 		1A602F4E20A810DF003AD583 /* MolueRiskPart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A602F4420A810DF003AD583 /* MolueRiskPart.framework */; };
 		1A602F5320A810DF003AD583 /* MolueRiskPartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A602F5220A810DF003AD583 /* MolueRiskPartTests.swift */; };
 		1A602F5520A810DF003AD583 /* MolueRiskPart.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A602F4720A810DF003AD583 /* MolueRiskPart.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -103,7 +104,6 @@
 		1A15028E21A6A0DB002CB333 /* RiskDetailReusableHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RiskDetailReusableHeaderView.xib; sourceTree = "<group>"; };
 		1A15029221A6AF75002CB333 /* NoHiddenRiskReusableFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoHiddenRiskReusableFooterView.swift; sourceTree = "<group>"; };
 		1A15029321A6AF75002CB333 /* NoHiddenRiskReusableFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoHiddenRiskReusableFooterView.xib; sourceTree = "<group>"; };
-		1A24971D21A90BE000937E05 /* AppRiskDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppRiskDocument.swift; path = "MolueRiskPart/快速检查/AppRiskDocument.swift"; sourceTree = SOURCE_ROOT; };
 		1A2698E721A5B5E0007C37C8 /* InsertPhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertPhotosCollectionViewCell.swift; sourceTree = "<group>"; };
 		1A2698E821A5B5E0007C37C8 /* InsertPhotosCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InsertPhotosCollectionViewCell.xib; sourceTree = "<group>"; };
 		1A2698EB21A84E91007C37C8 /* NoHiddenRiskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoHiddenRiskViewController.swift; sourceTree = "<group>"; };
@@ -118,6 +118,8 @@
 		1A3465DA2197281C00EBA57C /* PotentialRiskHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PotentialRiskHeaderView.xib; sourceTree = "<group>"; };
 		1A3465DC2197308200EBA57C /* PotentialRiskCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PotentialRiskCollectionCell.swift; sourceTree = "<group>"; };
 		1A3465DD2197308200EBA57C /* PotentialRiskCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PotentialRiskCollectionCell.xib; sourceTree = "<group>"; };
+		1A50DA1F21AD8DB400D71D12 /* NoHiddenDetailFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoHiddenDetailFooterView.swift; sourceTree = "<group>"; };
+		1A50DA2021AD8DB400D71D12 /* NoHiddenDetailFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoHiddenDetailFooterView.xib; sourceTree = "<group>"; };
 		1A602F4420A810DF003AD583 /* MolueRiskPart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MolueRiskPart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A602F4720A810DF003AD583 /* MolueRiskPart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MolueRiskPart.h; sourceTree = "<group>"; };
 		1A602F4820A810DF003AD583 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -241,23 +243,25 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		1A24971B21A90BAF00937E05 /* 测试数据 */ = {
-			isa = PBXGroup;
-			children = (
-				1A24971D21A90BE000937E05 /* AppRiskDocument.swift */,
-			);
-			path = "测试数据";
-			sourceTree = "<group>";
-		};
 		1A2F408521AD3DAD00C436F9 /* 通过详情 */ = {
 			isa = PBXGroup;
 			children = (
+				1A50DA1E21AD8D8C00D71D12 /* Views */,
 				1A2F408621AD3DF000C436F9 /* NoHiddenDetailViewController.swift */,
 				1A2F408C21AD3E5000C436F9 /* NoHiddenDetailViewController.storyboard */,
 				1A2F408721AD3DF000C436F9 /* NoHiddenDetailPageInteractor.swift */,
 				1A2F408821AD3DF000C436F9 /* NoHiddenDetailBuilderRouter.swift */,
 			);
 			path = "通过详情";
+			sourceTree = "<group>";
+		};
+		1A50DA1E21AD8D8C00D71D12 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1A50DA1F21AD8DB400D71D12 /* NoHiddenDetailFooterView.swift */,
+				1A50DA2021AD8DB400D71D12 /* NoHiddenDetailFooterView.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		1A602F3A20A810DF003AD583 = {
@@ -283,7 +287,6 @@
 		1A602F4620A810DF003AD583 /* MolueRiskPart */ = {
 			isa = PBXGroup;
 			children = (
-				1A24971B21A90BAF00937E05 /* 测试数据 */,
 				1ACD09DB2199C25A00793AAC /* 快速检查 */,
 				1A65039720DD55350017F91D /* MolueRisk.xcassets */,
 				1AA7353E20A9C0D700DF7CD0 /* 隐患首页 */,
@@ -519,6 +522,7 @@
 				1A3465DB2197281C00EBA57C /* PotentialRiskHeaderView.xib in Resources */,
 				1ACD09E32199C28C00793AAC /* QuickCheckRiskViewController.storyboard in Resources */,
 				1A7961F121A307F000D556B5 /* EditRiskInfoCollectionViewCell.xib in Resources */,
+				1A50DA2221AD8DB400D71D12 /* NoHiddenDetailFooterView.xib in Resources */,
 				1ACD0A2021A05E5D00793AAC /* EditRiskInfoViewController.storyboard in Resources */,
 				1A730ADA20E91D33008831BC /* PotentialRiskTableViewCell.xib in Resources */,
 			);
@@ -569,7 +573,6 @@
 				1A2F408A21AD3DF000C436F9 /* NoHiddenDetailPageInteractor.swift in Sources */,
 				1ACD0A1D21A05E4000793AAC /* EditRiskInfoPageInteractor.swift in Sources */,
 				1A730AD920E91D33008831BC /* PotentialRiskTableViewCell.swift in Sources */,
-				1A24971E21A90BE000937E05 /* AppRiskDocument.swift in Sources */,
 				1A3465D92197280F00EBA57C /* PotentialRiskHeaderView.swift in Sources */,
 				1A15028F21A6A0DB002CB333 /* RiskDetailReusableHeaderView.swift in Sources */,
 				1A7961EC21A3019F00D556B5 /* EditRiskInfoResuableFooterView.swift in Sources */,
@@ -587,6 +590,7 @@
 				1ACD09E02199C27800793AAC /* QuickCheckRiskPageInteractor.swift in Sources */,
 				1A2F408921AD3DF000C436F9 /* NoHiddenDetailViewController.swift in Sources */,
 				1A0B89CA2193391C000B1EBC /* RiskRectifyBuilderRouter.swift in Sources */,
+				1A50DA2121AD8DB400D71D12 /* NoHiddenDetailFooterView.swift in Sources */,
 				1A15029421A6AF75002CB333 /* NoHiddenRiskReusableFooterView.swift in Sources */,
 				1A05CC2C2189E9AF006D637C /* PotentialRiskPageInteractor.swift in Sources */,
 				1A2698E921A5B5E0007C37C8 /* InsertPhotosCollectionViewCell.swift in Sources */,

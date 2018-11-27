@@ -121,7 +121,7 @@ extension EditRiskInfoPageInteractor: EditRiskInfoPresentableListener {
         do {
             let editModel: PotentialRiskModel = model
             editModel.checkedRiskPhotos = self.photoImages
-            AppRiskDocument.shared.riskList.append(editModel)
+
             let listener = try self.listener.unwrap()
             listener.updateEditRiskInfoModel(with: editModel)
             self.doUpdateEditRiskInfoPresenter()

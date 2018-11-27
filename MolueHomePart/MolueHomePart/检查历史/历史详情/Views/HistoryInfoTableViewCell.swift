@@ -22,7 +22,11 @@ class HistoryInfoTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    @IBOutlet weak var statusImageView: UIImageView!
+    @IBOutlet weak var measureNameLabel: UILabel!
     public func refreshSubviews(with item: RiskMeasureModel) {
-        
+        let name = item.measureState ? "molue_check_success" : "molue_check_failure"
+        self.statusImageView.image = UIImage(named: name)
+        self.measureNameLabel.text = item.measureName
     }
 }

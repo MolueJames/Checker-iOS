@@ -9,7 +9,7 @@
 import MolueMediator
 import MolueUtilities
 
-protocol TaskHistoryInfoRouterInteractable: RiskDetailInteractListener {
+protocol TaskHistoryInfoRouterInteractable: RiskDetailInteractListener, NoHiddenDetailInteractListener {
     var viewRouter: TaskHistoryInfoViewableRouting? { get set }
     var listener: TaskHistoryInfoInteractListener? { get set }
 }
@@ -47,7 +47,16 @@ extension TaskHistoryInfoViewableRouter: TaskHistoryInfoViewableRouting {
     }
     
     func pushToNoHiddenInfoController() {
-        
+        do {
+            let builderFactory = MolueBuilderFactory<MolueComponent.Risk>(.NoHiddenItem)
+            let builder: NoHiddenDetailComponentBuildable? = builderFactory.queryBuilder()
+            let controller = try builder.unwrap().build(listener: self.interactor.unwrap())
+            controller.hidesBottomBarWhenPushed = true
+            let navigator = try self.controller.unwrap()
+            navigator.pushToViewController(controller, animated: true)
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
     }
 }
 

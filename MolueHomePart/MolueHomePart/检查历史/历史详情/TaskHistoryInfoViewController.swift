@@ -27,8 +27,27 @@ final class TaskHistoryInfoViewController: MLBaseViewController  {
             tableView.dataSource = self
             tableView.delegate = self
             tableView.register(xibWithCellClass: HistoryInfoTableViewCell.self)
+            tableView.tableHeaderView = self.headerView
+            self.headerView.snp.makeConstraints { (make) in
+                make.top.bottom.equalToSuperview()
+                make.width.equalToSuperview()
+            }
+            tableView.layoutIfNeeded()
+            tableView.tableHeaderView = self.headerView
         }
     }
+    
+    lazy var headerView: DailyCheckTaskHeaderView = {
+        let headerView: DailyCheckTaskHeaderView = DailyCheckTaskHeaderView.createFromXib()
+        do {
+            let listener = try self.listener.unwrap()
+            let item = try listener.taskItem.unwrap()
+            headerView.refreshSubviews(with: item)
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+        return headerView
+    }()
     //MARK: View Controller Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +61,13 @@ extension TaskHistoryInfoViewController: MLUserInterfaceProtocol {
     }
     
     func updateUserInterfaceElements() {
-        self.title = "历史详情"
+        do {
+            let listener = try self.listener.unwrap()
+            let item = try listener.taskItem.unwrap()
+            self.title = item.riskName
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
     }
 }
 
@@ -90,5 +115,15 @@ extension TaskHistoryInfoViewController: UITableViewDelegate {
         } catch {
             MolueLogger.UIModule.error(error)
         }
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 40
+    }
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView: DailyCheckSectionHeaderView = DailyCheckSectionHeaderView.createFromXib()
+        return headerView
     }
 }

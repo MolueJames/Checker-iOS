@@ -7,14 +7,16 @@
 //
 import MolueUtilities
 import MolueMediator
+import MolueFoundation
 
 protocol CheckTaskDetailViewableRouting: class {
     // 定义一些页面跳转的方法, 比如Push, Presenter等.
     func pushToNoHiddenController()
     func pushToEditRiskController()
+    func popToPreviewController()
 }
 
-protocol CheckTaskDetailPagePresentable: MolueInteractorPresentable {
+protocol CheckTaskDetailPagePresentable: MolueInteractorPresentable, MLControllerHUDProtocol {
     var listener: CheckTaskDetailPresentableListener? { get set }
     // 定义一些页面需要的方法, 比如刷新页面的显示内容等.
 }
@@ -91,43 +93,51 @@ extension CheckTaskDetailPageInteractor: CheckTaskDetailPresentableListener {
     }
     
     func updateCurrentItem() {
-        do {
-            let currentItem = try self.item.unwrap()
-            var isSuccess: Bool = true
-            for item in try currentItem.riskMeasure.unwrap() {
+        func checkMeasureItemState(list: [RiskMeasureModel], riskItem: DangerUnitRiskModel) {
+            for item in list {
                 if item.measureState == false {
-                    isSuccess = false
+                    riskItem.riskStatus = "有隐患"
                     break
                 }
+                riskItem.riskStatus = "已检查"
             }
-            currentItem.riskStatus = isSuccess ? "已检查" : "有隐患"
-            self.item = currentItem
+        }
+        func doAppendRiskItem(to item: DangerUnitRiskModel) {
+            do {
+                let row = try self.measureIndexPath.unwrap().row
+                let risk = item.riskMeasure?[row].riskModel
+                try AppRiskDocument.shared.riskList.append(risk.unwrap())
+            } catch {
+                MolueLogger.UIModule.message(error)
+            }
+        }
+        do {
+            let currentItem = try self.item.unwrap()
+            let measureList = try currentItem.riskMeasure.unwrap()
+            checkMeasureItemState(list: measureList, riskItem: currentItem)
+            doAppendRiskItem(to: currentItem)
             AppHomeDocument.shared.taskList.append(currentItem)
+            self.doPopPreviewController()
         } catch {
             MolueLogger.UIModule.error(error)
         }
     }
     
-//    var item: DangerUnitRiskModel? {
-//        get {
-//            do {
-//                let unitList = AppHomeDocument.shared.unitList
-//                let unitItem = try unitList.item(at: selectedIndex.section).unwrap()
-//                let riskList = try unitItem.unitRisks.unwrap()
-//                return try riskList.item(at: selectedIndex.row).unwrap()
-//            } catch {
-//                return MolueLogger.UIModule.returnNil(error)
-//            }
-//        }
-//        set {
-//            do {
-//                let unitList = AppHomeDocument.shared.unitList
-//                let unitItem = try unitList.item(at: selectedIndex.section).unwrap()
-//                var unitRisk = try unitItem.unitRisks.unwrap()
-//                try unitRisk[self.selectedIndex.row] = newValue.unwrap()
-//            } catch {
-//                MolueLogger.UIModule.error(error)
-//            }
-//        }
-//    }
+    func doPopPreviewController() {
+        do {
+            let presenter = try self.presenter.unwrap()
+            presenter.showSuccessHUD(text: "任务提交成功")
+            Async.main(after: 1.5) { [weak self] in
+                do {
+                    let strongSelf = try self.unwrap()
+                    let listener = try strongSelf.listener.unwrap()
+                    listener.doPopToPreviewController()
+                } catch {
+                    MolueLogger.UIModule.message(error)
+                }
+            }
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+    }
 }

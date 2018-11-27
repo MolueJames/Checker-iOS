@@ -42,7 +42,14 @@ final class DailyCheckTaskPageInteractor: MoluePresenterInteractable {
 }
 
 extension DailyCheckTaskPageInteractor: DailyCheckTaskRouterInteractable {
-    
+    func doPopToPreviewController() {
+        do {
+            let listener = try self.listener.unwrap()
+            listener.popBackControllerWhenChecked()
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+    }
 }
 
 extension DailyCheckTaskPageInteractor: DailyCheckTaskPresentableListener {

@@ -49,6 +49,10 @@ extension DangerUnitListViewController: MLUserInterfaceProtocol {
 }
 
 extension DangerUnitListViewController: DangerUnitListPagePresentable {
+    func popBackWhenTaskChecked() {
+        self.tableView.reloadData()
+        self.navigationController?.popToViewController(self, animated: true)
+    }
     
 }
 

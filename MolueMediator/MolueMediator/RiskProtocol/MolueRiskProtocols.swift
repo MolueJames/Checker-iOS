@@ -57,3 +57,13 @@ public protocol RiskDetailComponentBuildable: MolueComponentBuildable {
     //定义当前的Component的构造方法.
     func build(listener: RiskDetailInteractListener) -> UIViewController
 }
+
+public protocol NoHiddenDetailInteractListener: class {
+    //用于定义其他的Component需要定义的协议方法
+    var noHiddenItem: TaskSuccessModel? {get}
+}
+
+public protocol NoHiddenDetailComponentBuildable: MolueComponentBuildable {
+    //定义当前的Component的构造方法.
+    func build(listener: NoHiddenDetailInteractListener) -> UIViewController
+}

@@ -20,6 +20,7 @@ protocol QuickCheckRiskViewableRouting: class {
 protocol QuickCheckRiskPagePresentable: MolueInteractorPresentable {
     var listener: QuickCheckRiskPresentableListener? { get set }
     // 定义一些页面需要的方法, 比如刷新页面的显示内容等.
+    func popBackWhenTaskChecked()
 }
 
 final class QuickCheckRiskPageInteractor: MoluePresenterInteractable {
@@ -41,8 +42,17 @@ final class QuickCheckRiskPageInteractor: MoluePresenterInteractable {
 }
 
 extension QuickCheckRiskPageInteractor: QuickCheckRiskRouterInteractable {
+    func popBackControllerWhenChecked() {
+        do {
+            let presenter = try self.presenter.unwrap()
+            presenter.popBackWhenTaskChecked()
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+    }
+    
     func updateEditRiskInfoModel(with item: PotentialRiskModel) {
-        
+        AppRiskDocument.shared.riskList.append(item)
     }
     
     func didScannedQRCode(with QRCode: String, controller: SWQRCodeViewController) {

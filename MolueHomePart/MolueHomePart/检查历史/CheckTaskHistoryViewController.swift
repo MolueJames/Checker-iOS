@@ -85,4 +85,8 @@ extension CheckTaskHistoryViewController: UITableViewDelegate {
             MolueLogger.UIModule.error(error)
         }
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 110
+    }
 }

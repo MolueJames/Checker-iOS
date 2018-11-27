@@ -48,7 +48,7 @@ final class HomeInfoPagePageInteractor: MoluePresenterInteractable {
 
 extension HomeInfoPagePageInteractor: HomeInfoPageRouterInteractable {
     func updateEditRiskInfoModel(with item: PotentialRiskModel) {
-        
+        AppRiskDocument.shared.riskList.append(item)
     }
 }
 

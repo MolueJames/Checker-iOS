@@ -17,6 +17,7 @@ protocol DangerUnitListViewableRouting: class {
 protocol DangerUnitListPagePresentable: MolueInteractorPresentable {
     var listener: DangerUnitListPresentableListener? { get set }
     // 定义一些页面需要的方法, 比如刷新页面的显示内容等.
+    func popBackWhenTaskChecked()
 }
 
 final class DangerUnitListPageInteractor: MoluePresenterInteractable {
@@ -38,7 +39,14 @@ final class DangerUnitListPageInteractor: MoluePresenterInteractable {
 }
 
 extension DangerUnitListPageInteractor: DangerUnitListRouterInteractable {
-    
+    func popBackControllerWhenChecked() {
+        do {
+            let presenter = try self.presenter.unwrap()
+            presenter.popBackWhenTaskChecked()
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+    }
 }
 
 extension DangerUnitListPageInteractor: DangerUnitListPresentableListener {

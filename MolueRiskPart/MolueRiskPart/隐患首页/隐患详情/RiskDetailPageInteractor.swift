@@ -48,7 +48,6 @@ extension RiskDetailPageInteractor: RiskDetailRouterInteractable {
 
 extension RiskDetailPageInteractor: RiskDetailPresentableListener {
     
-    
     func jumpToBrowserController(with index: Int) {
         do {
             let riskDetail = try self.riskDetail.unwrap()

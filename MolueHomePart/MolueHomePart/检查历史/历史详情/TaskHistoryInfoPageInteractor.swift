@@ -34,6 +34,8 @@ final class TaskHistoryInfoPageInteractor: MoluePresenterInteractable {
     
     var selectedRisk: PotentialRiskModel?
     
+    var noHiddenItem: TaskSuccessModel?
+    
     lazy var taskItem: DangerUnitRiskModel? = {
         return self.listener?.taskItem
     }()
@@ -48,14 +50,14 @@ extension TaskHistoryInfoPageInteractor: TaskHistoryInfoPresentableListener {
         do {
             let viewRouter = try self.viewRouter.unwrap()
             if item.measureState {
-                
+                self.noHiddenItem = try item.taskModel.unwrap()
                 viewRouter.pushToNoHiddenInfoController()
             } else {
-                self.selectedRisk = item.riskModel
+                self.selectedRisk = try item.riskModel.unwrap()
                 viewRouter.pushToRiskDetailController()
             }
         } catch {
-            MolueLogger.UIModule.error(error)
+            MolueLogger.UIModule.message(error)
         }
     }
 }

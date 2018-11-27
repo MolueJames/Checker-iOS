@@ -7,6 +7,8 @@
 //
 
 import MolueMediator
+import MolueUtilities
+import MolueCommon
 
 protocol NoHiddenDetailRouterInteractable: class {
     var viewRouter: NoHiddenDetailViewableRouting? { get set }
@@ -32,21 +34,23 @@ final class NoHiddenDetailViewableRouter: MolueViewableRouting {
 }
 
 extension NoHiddenDetailViewableRouter: NoHiddenDetailViewableRouting {
+    func pushToPhotoBrowser(with photos: [SKPhoto], index: Int) {
+        do {
+            let navigator = try self.controller.unwrap()
+            let browser = SKPhotoBrowser(photos: photos)
+            browser.initializePageIndex(index)
+            SKPhotoBrowserOptions.displayDeleteButton = false
+            navigator.doPresentController(browser, animated: true, completion: nil)
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+    }
     
-}
-
-protocol NoHiddenDetailInteractListener: class {
-    //用于定义其他的Component需要定义的协议方法
-}
-
-protocol NoHiddenDetailComponentBuildable: MolueComponentBuildable {
-    //定义当前的Component的构造方法.
-    func build(listener: NoHiddenDetailInteractListener) -> UIViewController
 }
 
 class NoHiddenDetailComponentBuilder: MolueComponentBuilder, NoHiddenDetailComponentBuildable {
     func build(listener: NoHiddenDetailInteractListener) -> UIViewController {
-        let controller = NoHiddenDetailViewController()
+        let controller = NoHiddenDetailViewController.initializeFromStoryboard()
         let interactor = NoHiddenDetailPageInteractor(presenter: controller)
         NoHiddenDetailViewableRouter(interactor: interactor, controller: controller)
         interactor.listener = listener

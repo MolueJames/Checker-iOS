@@ -77,7 +77,9 @@ extension QuickCheckRiskViewController: MLUserInterfaceProtocol {
 }
 
 extension QuickCheckRiskViewController: QuickCheckRiskPagePresentable {
-    
+    func popBackWhenTaskChecked() {
+        self.navigationController?.popToViewController(self, animated: true)
+    }
 }
 
 extension QuickCheckRiskViewController: QuickCheckRiskViewControllable {

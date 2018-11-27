@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MolueUtilities
 import MolueMediator
 
 class DangerUnitTableViewCell: UITableViewCell {
@@ -19,6 +20,7 @@ class DangerUnitTableViewCell: UITableViewCell {
         self.layer.masksToBounds = true
     }
 
+    @IBOutlet weak var riskStateLabel: UILabel!
     @IBOutlet weak var riskHeadLabel: UILabel!
     @IBOutlet weak var riskLevelLabel: UILabel!
     @IBOutlet weak var riskClassLabel: UILabel!
@@ -34,6 +36,22 @@ class DangerUnitTableViewCell: UITableViewCell {
         self.riskLevelLabel.text = model.riskLevel
         self.riskNameLabel.text = model.riskName
         self.riskClassLabel.text = model.riskClass
+        self.riskStateLabel.text = model.riskStatus
+        self.riskStateLabel.textColor = self.queryColor(with: model)
+    }
+    func queryColor(with item: DangerUnitRiskModel) -> UIColor {
+        do {
+            switch try item.riskStatus.unwrap() {
+            case "已检查":
+                return UIColor(hex: 0x33CC33)
+            case "有隐患":
+                return UIColor(hex: 0xCC0000)
+            default:
+                return UIColor(hex: 0xFFCC00)
+            }
+        } catch {
+            return UIColor(hex: 0xFFCC00)
+        }
     }
     
     override var frame:CGRect{

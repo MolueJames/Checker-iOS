@@ -21,7 +21,19 @@
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m3j-UV-RwJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="59.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="暂无数据" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HmV-DU-zqY">
+                                <rect key="frame" x="243.5" y="10" width="61.5" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="HmV-DU-zqY" secondAttribute="trailing" constant="15" id="9yo-u5-zgP"/>
+                            <constraint firstItem="HmV-DU-zqY" firstAttribute="top" secondItem="m3j-UV-RwJ" secondAttribute="top" constant="10" id="lrT-Jm-hpl"/>
+                        </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="风险点名称:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nsS-UY-gcl">
                         <rect key="frame" x="15" y="10" width="81" height="18"/>
@@ -142,6 +154,7 @@
                 <outlet property="riskHeadLabel" destination="pLL-If-hCx" id="kD4-6h-OVz"/>
                 <outlet property="riskLevelLabel" destination="leI-5D-8IC" id="pX7-NG-QWH"/>
                 <outlet property="riskNameLabel" destination="aPK-81-5Ig" id="Heo-8e-fpd"/>
+                <outlet property="riskStateLabel" destination="HmV-DU-zqY" id="QeU-re-vbV"/>
             </connections>
             <point key="canvasLocation" x="132.80000000000001" y="154.72263868065968"/>
         </tableViewCell>
