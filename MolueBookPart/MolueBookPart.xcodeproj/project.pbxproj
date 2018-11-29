@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		171B05F503793690274822B1 /* Pods_MolueBookPart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C88D5F32B4F80735FC8D514 /* Pods_MolueBookPart.framework */; };
-		1A06556A20A9E30F0016CA86 /* MolueCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A06556920A9E30F0016CA86 /* MolueCommon.framework */; };
-		1A06556C20A9E30F0016CA86 /* MolueDatabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A06556B20A9E30F0016CA86 /* MolueDatabase.framework */; };
-		1A06556E20A9E30F0016CA86 /* MolueFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A06556D20A9E30F0016CA86 /* MolueFoundation.framework */; };
-		1A06557020A9E30F0016CA86 /* MolueNavigator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A06556F20A9E30F0016CA86 /* MolueNavigator.framework */; };
-		1A06557220A9E30F0016CA86 /* MolueNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A06557120A9E30F0016CA86 /* MolueNetwork.framework */; };
-		1A06557420A9E30F0016CA86 /* MolueUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A06557320A9E30F0016CA86 /* MolueUtilities.framework */; };
+		1A06556A20A9E30F0016CA86 /* MolueCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A06556920A9E30F0016CA86 /* MolueCommon.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		1A06556C20A9E30F0016CA86 /* MolueDatabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A06556B20A9E30F0016CA86 /* MolueDatabase.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		1A06556E20A9E30F0016CA86 /* MolueFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A06556D20A9E30F0016CA86 /* MolueFoundation.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		1A06557020A9E30F0016CA86 /* MolueNavigator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A06556F20A9E30F0016CA86 /* MolueNavigator.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		1A06557220A9E30F0016CA86 /* MolueNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A06557120A9E30F0016CA86 /* MolueNetwork.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		1A06557420A9E30F0016CA86 /* MolueUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A06557320A9E30F0016CA86 /* MolueUtilities.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		1A06557820A9E3E90016CA86 /* BookInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A06557720A9E3E90016CA86 /* BookInfoViewController.swift */; };
 		1A06557A20A9E4070016CA86 /* BookInfoViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A06557920A9E4070016CA86 /* BookInfoViewController.storyboard */; };
 		1A10850220ED0E17004E365A /* BookInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A10850020ED0E17004E365A /* BookInfoTableViewCell.swift */; };
@@ -508,6 +508,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = MolueBookPart/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -540,6 +541,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = MolueBookPart/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;

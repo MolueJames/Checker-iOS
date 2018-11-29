@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		1A1328D3214BE5AF00767F7F /* MolueAppRoute+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1328D2214BE5AF00767F7F /* MolueAppRoute+Extension.swift */; };
 		1A1B889420864CE200C5F4D9 /* MolueAppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1B889320864CE200C5F4D9 /* MolueAppRouter.swift */; };
-		1A50149720941BE300DB931E /* MolueUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A50149620941BE300DB931E /* MolueUtilities.framework */; };
+		1A50149720941BE300DB931E /* MolueUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A50149620941BE300DB931E /* MolueUtilities.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		1A7D9B462086469200FA997D /* MolueNavigator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A7D9B3C2086469200FA997D /* MolueNavigator.framework */; };
 		1A7D9B4B2086469200FA997D /* MolueNavigatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7D9B4A2086469200FA997D /* MolueNavigatorTests.swift */; };
 		1A7D9B4D2086469200FA997D /* MolueNavigator.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A7D9B3F2086469200FA997D /* MolueNavigator.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -467,7 +467,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BE37C8A822DBA77136F6BCE7 /* Pods-MolueNavigator.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -475,6 +475,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = MolueNavigator/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -497,7 +498,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B5E46F1DED2681A903BE3ED9 /* Pods-MolueNavigator.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -505,6 +506,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = MolueNavigator/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;

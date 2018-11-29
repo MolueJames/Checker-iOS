@@ -16,9 +16,9 @@
 		1A7D9B222086460100FA997D /* MolueFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A7D9B182086460100FA997D /* MolueFoundation.framework */; };
 		1A7D9B272086460100FA997D /* MolueFoundationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7D9B262086460100FA997D /* MolueFoundationTests.swift */; };
 		1A7D9B292086460100FA997D /* MolueFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A7D9B1B2086460100FA997D /* MolueFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1AA7356E20A9CC5F00DF7CD0 /* MolueUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA7356D20A9CC5F00DF7CD0 /* MolueUtilities.framework */; };
+		1AA7356E20A9CC5F00DF7CD0 /* MolueUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA7356D20A9CC5F00DF7CD0 /* MolueUtilities.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		1AAB6A05215678E70037EF38 /* MolueLayoutProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAB6A04215678E70037EF38 /* MolueLayoutProtocol.swift */; };
-		1ABDCAA820C59BCE0062DE71 /* MolueNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ABDCAA720C59BCE0062DE71 /* MolueNetwork.framework */; };
+		1ABDCAA820C59BCE0062DE71 /* MolueNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ABDCAA720C59BCE0062DE71 /* MolueNetwork.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		1ABDCAAA20C59D400062DE71 /* MolueFoundation.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1ABDCAA920C59D400062DE71 /* MolueFoundation.xcassets */; };
 		2AE00B6FE82E4B4295A00FC8 /* Pods_MolueFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59F83AF9345B6D7476E8CBA9 /* Pods_MolueFoundation.framework */; };
 /* End PBXBuildFile section */
@@ -451,7 +451,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A9EB5D76F9F3405531151153 /* Pods-MolueFoundation.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -459,6 +459,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = MolueFoundation/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -481,7 +482,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3E9AC032042B4F8088E50751 /* Pods-MolueFoundation.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -489,6 +490,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = MolueFoundation/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;

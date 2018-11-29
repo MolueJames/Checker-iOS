@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1A5014C020962F3B00DB931E /* MolueDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5014BF20962F3B00DB931E /* MolueDatabaseManager.swift */; };
-		1A5014E22097603700DB931E /* MolueUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5014E12097603700DB931E /* MolueUtilities.framework */; };
+		1A5014E22097603700DB931E /* MolueUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5014E12097603700DB931E /* MolueUtilities.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		1A5014E32097612900DB931E /* MolueUtilities.framework in Resources */ = {isa = PBXBuildFile; fileRef = 1A5014E12097603700DB931E /* MolueUtilities.framework */; };
 		1A5014E8209953C000DB931E /* MolueDatabaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5014E7209953C000DB931E /* MolueDatabaseProtocol.swift */; };
 		1A5BE085209D8CE400160243 /* MolueDatabaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5BE084209D8CE400160243 /* MolueDatabaseTests.swift */; };
@@ -452,7 +452,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AD7F5DFF8FE6F7690909A737 /* Pods-MolueDatabase.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -460,6 +460,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = MolueDatabase/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -482,7 +483,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 23DA8BE3C023F19C0E4D3A97 /* Pods-MolueDatabase.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -490,6 +491,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = MolueDatabase/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1A2558E321586C30007E58E0 /* MolueMediator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A2558E221586C30007E58E0 /* MolueMediator.framework */; };
+		1A2558E321586C30007E58E0 /* MolueMediator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A2558E221586C30007E58E0 /* MolueMediator.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		1A91A48B218351A8003E906A /* RegisterAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A91A488218351A8003E906A /* RegisterAccountViewController.swift */; };
 		1A91A48C218351A8003E906A /* RegisterAccountPageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A91A489218351A8003E906A /* RegisterAccountPageInteractor.swift */; };
 		1A91A48D218351A8003E906A /* RegisterAccountBuilderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A91A48A218351A8003E906A /* RegisterAccountBuilderRouter.swift */; };
@@ -16,12 +16,12 @@
 		1A9BC9D22109F7380035FC21 /* MolueLoginPart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9BC9C82109F7370035FC21 /* MolueLoginPart.framework */; };
 		1A9BC9D72109F7380035FC21 /* MolueLoginPartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9BC9D62109F7380035FC21 /* MolueLoginPartTests.swift */; };
 		1A9BC9D92109F7380035FC21 /* MolueLoginPart.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A9BC9CB2109F7380035FC21 /* MolueLoginPart.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1A9BC9E52109F8D50035FC21 /* MolueCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9BC9E42109F8D50035FC21 /* MolueCommon.framework */; };
-		1A9BC9E72109F8D50035FC21 /* MolueDatabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9BC9E62109F8D50035FC21 /* MolueDatabase.framework */; };
-		1A9BC9E92109F8D50035FC21 /* MolueFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9BC9E82109F8D50035FC21 /* MolueFoundation.framework */; };
-		1A9BC9EB2109F8D50035FC21 /* MolueNavigator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9BC9EA2109F8D50035FC21 /* MolueNavigator.framework */; };
-		1A9BC9ED2109F8D50035FC21 /* MolueNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9BC9EC2109F8D50035FC21 /* MolueNetwork.framework */; };
-		1A9BC9EF2109F8D50035FC21 /* MolueUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9BC9EE2109F8D50035FC21 /* MolueUtilities.framework */; };
+		1A9BC9E52109F8D50035FC21 /* MolueCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9BC9E42109F8D50035FC21 /* MolueCommon.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		1A9BC9E72109F8D50035FC21 /* MolueDatabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9BC9E62109F8D50035FC21 /* MolueDatabase.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		1A9BC9E92109F8D50035FC21 /* MolueFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9BC9E82109F8D50035FC21 /* MolueFoundation.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		1A9BC9EB2109F8D50035FC21 /* MolueNavigator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9BC9EA2109F8D50035FC21 /* MolueNavigator.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		1A9BC9ED2109F8D50035FC21 /* MolueNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9BC9EC2109F8D50035FC21 /* MolueNetwork.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		1A9BC9EF2109F8D50035FC21 /* MolueUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9BC9EE2109F8D50035FC21 /* MolueUtilities.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		1A9BC9FE210A02F30035FC21 /* MolueLogin.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A9BC9FD210A02F30035FC21 /* MolueLogin.xcassets */; };
 		1AA281502162613B00F66915 /* ForgetPasswordViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AA2814F2162613A00F66915 /* ForgetPasswordViewController.storyboard */; };
 		1AB888BF2172DC9500862895 /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB888BC2172DC9500862895 /* ForgetPasswordViewController.swift */; };
@@ -502,6 +502,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = MolueLoginPart/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -530,6 +531,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = MolueLoginPart/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;

@@ -15,14 +15,14 @@
 		1A242C7E219EBE18007554E9 /* SWQRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A242C79219EBE17007554E9 /* SWQRCodeViewController.swift */; };
 		1A2D441B20A07E9900BA947A /* MLRefreshHeaderAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D441A20A07E9900BA947A /* MLRefreshHeaderAnimator.swift */; };
 		1A2D443D20A097E100BA947A /* MLInterfaceConfigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D443C20A097E100BA947A /* MLInterfaceConfigure.swift */; };
-		1A35D80020DD2893002ED3CB /* MolueFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A35D7FF20DD2893002ED3CB /* MolueFoundation.framework */; };
+		1A35D80020DD2893002ED3CB /* MolueFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A35D7FF20DD2893002ED3CB /* MolueFoundation.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		1A43801A2162A86200FA1C93 /* MolueTableViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4380192162A86200FA1C93 /* MolueTableViewAdapter.swift */; };
 		1A43BC3620C4031D0093855B /* MLCommonInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A43BC3520C4031D0093855B /* MLCommonInputView.swift */; };
 		1A43BC3C20C40FA30093855B /* MLCommonSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A43BC3B20C40FA30093855B /* MLCommonSelectView.swift */; };
 		1A5014AB2094AFA400DB931E /* MoluePermissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5014AA2094AFA400DB931E /* MoluePermissions.swift */; };
 		1A5014B42094B90A00DB931E /* MolueCommonPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5014B32094B90A00DB931E /* MolueCommonPath.swift */; };
 		1A5014B62094B9BA00DB931E /* MolueCommonColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5014B52094B9BA00DB931E /* MolueCommonColor.swift */; };
-		1A5014B92094C17B00DB931E /* MolueUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5014B72094BA3F00DB931E /* MolueUtilities.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		1A5014B92094C17B00DB931E /* MolueUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5014B72094BA3F00DB931E /* MolueUtilities.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		1A5014BB2094C27600DB931E /* MolueUtilities.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1A5014B72094BA3F00DB931E /* MolueUtilities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1A52756320D29F9C00CA0D68 /* MLSelectedTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A52756220D29F9C00CA0D68 /* MLSelectedTableViewModel.swift */; };
 		1A52756520D51F7200CA0D68 /* MLSingleSelectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A52756420D51F7200CA0D68 /* MLSingleSelectController.swift */; };
@@ -852,7 +852,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0B3FA8D5CD50C93A81938144 /* Pods-MolueCommon.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -860,6 +860,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = MolueCommon/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -883,7 +884,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 35A07F602272B6C2B8044368 /* Pods-MolueCommon.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -891,6 +892,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = MolueCommon/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;

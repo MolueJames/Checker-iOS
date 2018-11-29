@@ -26,7 +26,7 @@
 		1AAB69DD21566CB70037EF38 /* MolueMediatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAB69DC21566CB70037EF38 /* MolueMediatorTests.swift */; };
 		1AAB69DF21566CB70037EF38 /* MolueMediator.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AAB69D121566CB70037EF38 /* MolueMediator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1AAB69E921566CF40037EF38 /* MolueBuilderFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAB69E821566CF40037EF38 /* MolueBuilderFactory.swift */; };
-		1AAB69F621566D480037EF38 /* MolueUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AAB69F521566D480037EF38 /* MolueUtilities.framework */; };
+		1AAB69F621566D480037EF38 /* MolueUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AAB69F521566D480037EF38 /* MolueUtilities.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		1ABB8B6A21902529005FB802 /* MolueHomeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABB8B6921902528005FB802 /* MolueHomeProtocols.swift */; };
 		6344E71DC6FBC95D8F36BC93 /* Pods_MolueMediatorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80AFDD759C0FB45C34F8B6FE /* Pods_MolueMediatorTests.framework */; };
 		CE79835F7A5BF57CA840A80D /* Pods_MolueMediator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA2225FFDFCB629BF0A1F4BE /* Pods_MolueMediator.framework */; };
@@ -587,6 +587,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = MolueMediator/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -616,6 +617,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = MolueMediator/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
