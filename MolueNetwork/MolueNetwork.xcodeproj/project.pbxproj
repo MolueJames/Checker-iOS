@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1A00445E20B14C5500AA717D /* MolueNetwokTestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A00445D20B14C5500AA717D /* MolueNetwokTestModel.swift */; };
 		1A00450B20B4431E00AA717D /* MolueNetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A00450A20B4431E00AA717D /* MolueNetworkRequest.swift */; };
 		1A00450D20B4432D00AA717D /* MolueResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A00450C20B4432D00AA717D /* MolueResponseHandler.swift */; };
 		1A5BE08B209EC8CA00160243 /* MolueUtilities.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1AEB87D72092173C002230A3 /* MolueUtilities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -49,7 +48,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		1A00445D20B14C5500AA717D /* MolueNetwokTestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueNetwokTestModel.swift; sourceTree = "<group>"; };
 		1A00450A20B4431E00AA717D /* MolueNetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueNetworkRequest.swift; sourceTree = "<group>"; };
 		1A00450C20B4432D00AA717D /* MolueResponseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueResponseHandler.swift; sourceTree = "<group>"; };
 		1A7D9AD0208645B800FA997D /* MolueNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MolueNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,7 +120,6 @@
 				1A7D9AD3208645B800FA997D /* MolueNetwork.h */,
 				1A7D9AD4208645B800FA997D /* Info.plist */,
 				1AA41B6E20B71A33005A9217 /* MolueNetworkConfigure.swift */,
-				1A00445D20B14C5500AA717D /* MolueNetwokTestModel.swift */,
 				1A00450A20B4431E00AA717D /* MolueNetworkRequest.swift */,
 				1A00450C20B4432D00AA717D /* MolueResponseHandler.swift */,
 				1AA41B7020B71CE8005A9217 /* MolueResponseMapper.swift */,
@@ -348,7 +345,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AEFC77A20BEC978006B063F /* MolueOauthService.swift in Sources */,
-				1A00445E20B14C5500AA717D /* MolueNetwokTestModel.swift in Sources */,
 				1AA41B7120B71CE8005A9217 /* MolueResponseMapper.swift in Sources */,
 				1A00450D20B4432D00AA717D /* MolueResponseHandler.swift in Sources */,
 				1AEFC77E20BECD30006B063F /* MolueOauthHelper.swift in Sources */,

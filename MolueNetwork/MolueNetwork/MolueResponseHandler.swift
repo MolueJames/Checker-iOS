@@ -25,8 +25,8 @@ public extension DataRequest {
     private func handleDefaultError(_ error: Error?, delegate: MolueActivityDelegate?, failure: MolueResultClosure<Error>? = nil) -> Bool {
         do {
             let error = try error.unwrap()
-            delegate?.networkActivityFailure(error: error)
-            failure?(error)
+            try delegate.unwrap().networkActivityFailure(error: error)
+            try failure.unwrap()(error)
             return true
         } catch {
             MolueLogger.failure.error(error)
@@ -43,13 +43,17 @@ public extension DataRequest {
     }
     
     private func handleServiceResult(_ result: MolueServiceResponse, delegate: MolueActivityDelegate?, success:MolueResultClosure<Any?>? = nil, failure: MolueResultClosure<Error>? = nil) {
-        switch result {
-        case .resultSuccess(let result):
-            success?(result)
-            delegate?.networkActivitySuccess()
-        case .resultFailure(let result):
-            failure?(result)
-            delegate?.networkActivityFailure(error: result)
+        do {
+            switch result {
+            case .resultSuccess(let result):
+                try success.unwrap()(result)
+                try delegate.unwrap().networkActivitySuccess()
+            case .resultFailure(let result):
+                try failure.unwrap()(result)
+                try delegate.unwrap().networkActivityFailure(error: result)
+            }
+        } catch {
+            MolueLogger.network.message(error)
         }
     }
     

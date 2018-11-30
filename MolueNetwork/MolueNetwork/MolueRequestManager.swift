@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import BoltsSwift
 import MolueUtilities
 
 public typealias MolueResultClosure<Target> = (Target) -> Void
@@ -28,10 +29,11 @@ open class MolueRequestManager {
         self.delegate = delegate
     }
     
-    public func start() {
+    public func requestStart() {
         do {
             let component = try request.components.unwrap()
             let requestURL = try component.asURL()
+            //TODO: 判断是否需要放入Oauth队列
             self.dataRequest = SessionManager.default.doRequest(requestURL, method: request.method, parameters: request.parameter, encoding: request.encoding, headers: request.headers, delegate: delegate)
             let dataRequest = try self.dataRequest.unwrap()
             dataRequest.responseHandler(delegate: delegate, queue: queue, options: options, success: success, failure: failure)
@@ -39,6 +41,7 @@ open class MolueRequestManager {
             MolueLogger.failure.error(error)
         }
     }
+    
     @discardableResult
     public func handleSuccessResponse(_ success: MolueResultClosure<Any?>?) -> MolueRequestManager {
         self.success = success

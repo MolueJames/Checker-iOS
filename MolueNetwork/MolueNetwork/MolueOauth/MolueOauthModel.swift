@@ -22,10 +22,10 @@ public struct MolueOauthModel: Mappable, ReadableSecureStorable, CreateableSecur
     }
     
     private mutating func setExpires_data(expires_in: Double?) {
-        guard let expires_in = expires_in else {
-            MolueLogger.failure.error("expires in is nil"); return
-        }
-        expires_date = Date().addingTimeInterval(expires_in)
+        do {
+            let expires_in = try expires_in.unwrap()
+            expires_date = Date().addingTimeInterval(expires_in)
+        } catch { MolueLogger.network.error(error) }
     }
     
     public init?(map: Map) {
@@ -48,10 +48,9 @@ public struct MolueOauthModel: Mappable, ReadableSecureStorable, CreateableSecur
     public var token_type: String?
     
     public func validateNeedRefresh() -> Bool {
-        guard let expires_date = self.expires_date else {
-            MolueLogger.failure.error("the expires data is nil")
-            return false
-        }
-        return expires_date.isInFuture
+        do {
+            let expires_date = try self.expires_date.unwrap()
+            return expires_date.isInFuture
+        } catch { return false }
     }
 }

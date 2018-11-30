@@ -156,7 +156,7 @@ class EditRiskInfoResuableFooterView: UICollectionReusableView {
             self.submitInfoCommand?.onError(riskInfoRrror.unitInvalid)
             return
         }
-        guard let _ = self.riskInfo.level else {
+        guard self.riskInfo.level.isSome() else {
             self.submitInfoCommand?.onError(riskInfoRrror.levelInvalid)
             return
         }

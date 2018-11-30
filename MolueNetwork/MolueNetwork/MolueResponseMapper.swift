@@ -35,7 +35,7 @@ public extension MolueRequestManager {
         let resultClosure: MolueResultClosure<Any?> = { (result) in
             do {
                 let response: T? = try MolueResponseMapper.handleResultToDict(result)
-                success?(response)
+                try success.unwrap()(response)
             } catch {
                 MolueLogger.failure.error(error)
             }
@@ -48,7 +48,7 @@ public extension MolueRequestManager {
         let resultClosure: MolueResultClosure<Any?> = { (result) in
             do {
                 let response:[T]? = try MolueResponseMapper.handleResultToList(result)
-                success?(response)
+                try success.unwrap()(response)
             } catch {
                 MolueLogger.failure.error(error)
             }

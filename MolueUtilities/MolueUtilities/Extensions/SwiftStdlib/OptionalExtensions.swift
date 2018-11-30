@@ -75,7 +75,20 @@ public extension Optional {
 		guard let rhs = rhs else { return }
 		lhs = rhs
 	}
-	
+    
+    public func isNone() -> Bool {
+        switch self {
+        case .none:
+            return true
+        case .some:
+            return false
+        }
+    }
+    
+    /// 可选值非空返回 true
+    public func isSome() -> Bool {
+        return !isNone()
+    }
 }
 
 public struct MolueNilError: Error, CustomStringConvertible {

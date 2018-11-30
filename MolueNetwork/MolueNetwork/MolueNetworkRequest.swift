@@ -31,7 +31,11 @@ public struct MolueDataRequest {
 
 public extension SessionManager {
     public func doRequest(_ url: URLConvertible, method: HTTPMethod, parameters: Parameters? = nil, encoding: ParameterEncoding, headers: HTTPHeaders? = nil, delegate: MolueActivityDelegate? = nil)-> DataRequest {
-        delegate?.networkActivityStarted()
+        do {
+            try delegate.unwrap().networkActivityStarted()
+        } catch {
+            MolueLogger.network.message(error)
+        }
         return request(url, method: method, parameters: parameters, encoding: encoding, headers: headers)
     }
 }

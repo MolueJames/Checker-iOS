@@ -40,7 +40,7 @@ class MolueNetworkTests: XCTestCase {
             print(result)
             expectation.fulfill()
         }
-        manager.start()
+        manager.requestStart()
         waitForExpectations(timeout: 30, handler: nil)
     }
     
@@ -64,7 +64,7 @@ class MolueNetworkTests: XCTestCase {
         }
 //        let credential = URLCredential.init(user: "13063745829", password: "q1w2e3r4", persistence: .none)
 //        manager.start(usingCredential:credential)
-        manager.start()
+        manager.requestStart()
         waitForExpectations(timeout: 130, handler: nil)
     }
     
@@ -84,7 +84,7 @@ class MolueNetworkTests: XCTestCase {
             print(result)
             expectation.fulfill()
         }
-        manager.start()
+        manager.requestStart()
         waitForExpectations(timeout: 30, handler: nil)
     }
     
@@ -95,7 +95,7 @@ class MolueNetworkTests: XCTestCase {
             print(result)
             expectation.fulfill()
         }
-        service.start()
+        service.requestStart()
         waitForExpectations(timeout: 30, handler: nil)
     }
     override func tearDown() {

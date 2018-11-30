@@ -14,23 +14,27 @@ let secret = "jEOk3ZLDixlJWPyyoncEbcwp4z3Ij5VG05HfKGORg5357CCWeRnrY86OPFpCPF79Fa
 let key = "hj8LAJukEhrs37yPbvXlwX5kG8sk45q0gciIw1Ol"
 
 public struct MolueOauthHelper {
-    public static func authHeader() -> [String : String]? {
-        let header = Alamofire.Request.authorizationHeader(user: key, password: secret)
-        guard let authHeader = header else {
-            return MolueLogger.failure.returnNil("the header value is nil")
+    private static var oauthToken: String = String()
+    
+    public static func queryAuthHeader() -> [String : String]? {
+        do {
+            let header = Request.authorizationHeader(user: key, password: secret)
+            let authHeader = try header.unwrap()
+            return [authHeader.key: authHeader.value]
+        } catch {
+            return MolueLogger.network.returnNil(error)
         }
-        return [authHeader.key: authHeader.value]
     }
     
-//    public static func tokenHeader() -> [String : String]? {
+//    public static func storeTokenHeader() -> [String : String]? {
 //
 //    }
-//
-//    public static func storeToken(_ token: [String: String]) {
-//
-//    }
-//
-//    public static func oauthToken() -> String {
-//
-//    }
+
+    public static func storeOauthToken(_ token: String) {
+        self.oauthToken = token
+    }
+
+    public static func queryOauthToken() -> String {
+        return self.oauthToken
+    }
 }
