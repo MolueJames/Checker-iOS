@@ -80,10 +80,6 @@ class MolueNetworkTests: XCTestCase {
             print(result)
             expectation.fulfill()
         }
-        manager.handleSuccessResultToObjc { (result: MolueNetworkTestModel?) in
-            print(result)
-            expectation.fulfill()
-        }
         manager.requestStart()
         waitForExpectations(timeout: 30, handler: nil)
     }

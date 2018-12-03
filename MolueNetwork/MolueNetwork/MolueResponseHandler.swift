@@ -29,7 +29,7 @@ public extension DataRequest {
             try failure.unwrap()(error)
             return true
         } catch {
-            MolueLogger.failure.error(error)
+            MolueLogger.failure.message(error)
             return false
         }
     }

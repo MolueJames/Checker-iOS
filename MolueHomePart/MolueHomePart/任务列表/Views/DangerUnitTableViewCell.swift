@@ -35,7 +35,7 @@ class DangerUnitTableViewCell: UITableViewCell {
         self.riskHeadLabel.text = model.riskHead
         self.riskLevelLabel.text = model.riskLevel
         self.riskNameLabel.text = model.riskName
-        self.riskClassLabel.text = model.riskClass
+        self.riskClassLabel.text = "ABT00002"//model.riskClass
         self.riskStateLabel.text = model.riskStatus
         self.riskStateLabel.textColor = self.queryColor(with: model)
     }
