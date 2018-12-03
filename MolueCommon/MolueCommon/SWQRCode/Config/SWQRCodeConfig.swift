@@ -41,7 +41,7 @@ struct SWQRCodeCompat {
     var scannerBorderColor: UIColor = .white
     
     /// 指示器风格
-    var indicatorViewStyle: UIActivityIndicatorViewStyle = .whiteLarge
+    var indicatorViewStyle: UIActivityIndicatorView.Style = .whiteLarge
 }
 
 public protocol SWScanQRCodeProtocol {

@@ -15,7 +15,6 @@ import MolueMediator
 import Alamofire
 import LeakEye
 import SQLite
-
 import MolueFoundation
 
 @UIApplicationMain
@@ -23,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow? = UIWindow.init(frame: UIScreen.main.bounds)
     var leakEye = LeakEye()
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         self.registerJPushWithlaunchOptions(launchOptions)
         self.setUserInterfaceConfigure()

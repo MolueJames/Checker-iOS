@@ -27,7 +27,7 @@ public class MLCommonRemarkView: UIView {
     private func updateViewElements() {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineSpacing = 6
-        let attributes = [NSAttributedStringKey.paragraphStyle.rawValue : paragraphStyle]
+        let attributes: [NSAttributedString.Key : Any] = [NSAttributedString.Key.paragraphStyle : paragraphStyle]
         self.remarkTextView.typingAttributes = attributes
         self.remarkTextView.font = .systemFont(ofSize: 15)
         self.remarkTextView.textColor = MLCommonColor.titleLabel

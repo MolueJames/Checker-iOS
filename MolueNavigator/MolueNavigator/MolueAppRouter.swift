@@ -55,7 +55,7 @@ public class MolueAppRouter {
             navigator.register(scheme) { (url, values, context) -> UIViewController? in
                 do {
                     let style: String = try values.forKey("style").unwrap()
-                    let alertStyle: UIAlertControllerStyle = style == "alert" ? .alert : .actionSheet
+                    let alertStyle: UIAlertController.Style = style == "alert" ? .alert : .actionSheet
                     let title: String = try url.queryParameters["title"].unwrap()
                     let message: String = try url.queryParameters["message"].unwrap()
                     return self.createAlertController(url, style: alertStyle, title: title, message: message, context: context)
@@ -84,7 +84,7 @@ public class MolueAppRouter {
         }
     }
     
-    private func createAlertController(_ url: URLConvertible, style: UIAlertControllerStyle, title: String, message: String, context: Any?) -> UIViewController? {
+    private func createAlertController(_ url: URLConvertible, style: UIAlertController.Style, title: String, message: String, context: Any?) -> UIViewController? {
         let controller = UIAlertController(title: title, message: message, preferredStyle: style)
         do {
             let actions:[UIAlertAction] = try validateTarget(context)

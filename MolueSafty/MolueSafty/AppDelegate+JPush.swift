@@ -32,7 +32,7 @@ extension AppDelegate: JPUSHRegisterDelegate {
         completionHandler()
     }
     
-    func registerJPushWithlaunchOptions(_ launchOptions:[UIApplicationLaunchOptionsKey: Any]?) {
+    func registerJPushWithlaunchOptions(_ launchOptions:[UIApplication.LaunchOptionsKey: Any]?) {
         if #available(iOS 10.0, *) {
             let entity = JPUSHRegisterEntity()
             entity.types = NSInteger(UNAuthorizationOptions.alert.rawValue) | NSInteger(UNAuthorizationOptions.sound.rawValue) | NSInteger(UNAuthorizationOptions.badge.rawValue)

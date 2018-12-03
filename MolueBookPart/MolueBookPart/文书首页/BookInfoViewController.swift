@@ -30,7 +30,7 @@ class BookInfoViewController: MLBaseViewController {
         didSet {
             let list = [self.viewControllers[self.selectedIndex]]
             let isForward = oldValue < selectedIndex ? true : false
-            let direction: UIPageViewControllerNavigationDirection = isForward ? .forward : .reverse
+            let direction: UIPageViewController.NavigationDirection = isForward ? .forward : .reverse
             self.pageViewController.setViewControllers(list, direction: direction, animated: true)
             self.selectedView.setSelectedIndex(self.selectedIndex, animated: true)
         }

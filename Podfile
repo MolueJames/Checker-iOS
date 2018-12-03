@@ -20,8 +20,6 @@ def molue_safty_shared_pods
     pod 'RxSwift', '~> 4.1.2'
     pod 'ESPullToRefresh', '~> 2.7'
     pod 'ObjectMapper', '~> 3.3.0'
-    pod 'Bolts-Swift', '~> 1.4.0'
-    
 end
 
 target 'MolueSafty' do
@@ -41,6 +39,8 @@ target 'MolueSafty' do
         pod 'NVActivityIndicatorView', '~> 4.4.0'
         pod 'JGProgressHUD', '~> 1.4'
         pod 'LeakEye', '~> 1.2.0'
+        pod 'Bolts-Swift', '~> 1.4.0'
+        pod 'JTAppleCalendar', '~> 7.1.6'
         molue_safty_shared_pods
 end
 
@@ -51,6 +51,7 @@ end
 
 target 'MolueHomePart' do
     project 'MolueHomePart/MolueHomePart.xcodeproj'
+        pod 'JTAppleCalendar', '~> 7.1.6'
         molue_safty_shared_pods
 end
 

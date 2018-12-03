@@ -230,7 +230,7 @@ extension SWScannerView {
     /** 添加指示器 */
     func sw_addActivityIndicator() {
         if self.activityIndicator == nil {
-            self.activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: self.config.indicatorViewStyle)
+            self.activityIndicator = UIActivityIndicatorView(style: self.config.indicatorViewStyle)
             self.activityIndicator.center = self.center
             self.addSubview(self.activityIndicator)
         }

@@ -14,7 +14,8 @@ public extension UIImage {
 	
 	/// SwifterSwift: Size in bytes of UIImage
 	public var bytesSize: Int {
-		return UIImageJPEGRepresentation(self, 1)?.count ?? 0
+//        return UIImageJPEGRepresentation(self, 1)?.count ?? 0
+        return self.jpegData(compressionQuality: 1)?.count ?? 0
 	}
 	
 	/// SwifterSwift: Size in kilo bytes of UIImage
@@ -51,7 +52,8 @@ public extension UIImage {
 	/// - Parameter quality: The quality of the resulting JPEG image, expressed as a value from 0.0 to 1.0. The value 0.0 represents the maximum compression (or lowest quality) while the value 1.0 represents the least compression (or best quality), (default is 0.5).
 	/// - Returns: optional Data (if applicable).
 	public func compressedData(quality: CGFloat = 0.5) -> Data? {
-		return UIImageJPEGRepresentation(self, quality)
+//        return UIImageJPEGRepresentation(self, quality)
+        return self.jpegData(compressionQuality:quality)
 	}
 	
 	/// SwifterSwift: UIImage Cropped to CGRect.
@@ -70,7 +72,7 @@ public extension UIImage {
 	///   - toHeight: new height.
 	///   - orientation: optional UIImage orientation (default is nil).
 	/// - Returns: optional scaled UIImage (if applicable).
-	public func scaled(toHeight: CGFloat, with orientation: UIImageOrientation? = nil) -> UIImage? {
+    public func scaled(toHeight: CGFloat, with orientation: UIImage.Orientation? = nil) -> UIImage? {
 		let scale = toHeight / size.height
 		let newWidth = size.width * scale
 		UIGraphicsBeginImageContext(CGSize(width: newWidth, height: toHeight))
@@ -86,7 +88,7 @@ public extension UIImage {
 	///   - toWidth: new width.
 	///   - orientation: optional UIImage orientation (default is nil).
 	/// - Returns: optional scaled UIImage (if applicable).
-	public func scaled(toWidth: CGFloat, with orientation: UIImageOrientation? = nil) -> UIImage? {
+    public func scaled(toWidth: CGFloat, with orientation: UIImage.Orientation? = nil) -> UIImage? {
 		let scale = toWidth / size.width
 		let newHeight = size.height * scale
 		UIGraphicsBeginImageContext(CGSize(width: toWidth, height: newHeight))

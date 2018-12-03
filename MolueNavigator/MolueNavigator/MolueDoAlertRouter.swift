@@ -11,7 +11,7 @@ import MolueUtilities
 public class MolueDoAlertRouter {
     private var components = URLComponents()
     
-    public init(_ style: UIAlertControllerStyle, title: String? = nil, message: String? = nil) {
+    public init(_ style: UIAlertController.Style, title: String? = nil, message: String? = nil) {
         do {
             self.components.scheme = "navigator"
             self.components.host = "alert"
@@ -52,7 +52,7 @@ public class MolueDoAlertRouter {
     }
 }
 
-fileprivate extension UIAlertControllerStyle {
+fileprivate extension UIAlertController.Style {
     fileprivate func toString() -> String {
         switch self {
         case .alert:

@@ -15,7 +15,7 @@ public class MLInterfaceConfigure {
         let image = UIImage.init(color: .clear, size: CGSize.init(width: MLConfigure.ScreenWidth, height: 64))
         navigationBar.setBackgroundImage(image, for: .default)
         navigationBar.tintColor = .white
-        navigationBar.titleTextAttributes = [NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: 18), NSAttributedStringKey.foregroundColor: UIColor.white]
+        navigationBar.titleTextAttributes = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 18), NSAttributedString.Key.foregroundColor: UIColor.white]
         navigationBar.backIndicatorImage = UIImage.init(named: "common_navigation_back")
         navigationBar.backIndicatorTransitionMaskImage = UIImage.init(named: "common_navigation_back")
         navigationBar.shadowImage = UIImage()
@@ -23,7 +23,7 @@ public class MLInterfaceConfigure {
     
     private static func barButtonItemAppearance() {
         let item = UIBarButtonItem.appearance(whenContainedInInstancesOf:[UINavigationBar.self])
-        let itemAttributesDic = [NSAttributedStringKey.font : UIFont.systemFont(ofSize: 16), NSAttributedStringKey.foregroundColor: UIColor.white]
+        let itemAttributesDic = [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 16), NSAttributedString.Key.foregroundColor: UIColor.white]
         item.setTitleTextAttributes(itemAttributesDic, for: .normal)
     }
     

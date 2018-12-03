@@ -23,9 +23,9 @@ public class SWQRCodeViewController: MLBaseViewController {
         
         navigationItem.title = SWQRCodeHelper.sw_navigationItemTitle(type: self.config.scannerType)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(appDidBecomeActive), name: .UIApplicationDidBecomeActive, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(appDidBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(appWillResignActive), name: .UIApplicationWillResignActive, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(appWillResignActive), name: UIApplication.willResignActiveNotification, object: nil)
         
         _setupUI();
     }
@@ -164,7 +164,7 @@ extension SWQRCodeViewController: AVCaptureMetadataOutputObjectsDelegate {
 extension SWQRCodeViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
     
     public func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
-        let metadataDict = CMCopyDictionaryOfAttachments(nil, sampleBuffer, kCMAttachmentMode_ShouldPropagate)
+        let metadataDict = CMCopyDictionaryOfAttachments(allocator: nil, target: sampleBuffer, attachmentMode: kCMAttachmentMode_ShouldPropagate)
         guard let metadata = metadataDict as? [AnyHashable: Any] else {return}
         guard let exifMetadata = metadata[kCGImagePropertyExifDictionary as String] as? [AnyHashable: Any] else {return}
         guard let brightness = exifMetadata[kCGImagePropertyExifBrightnessValue as String] as? NSNumber else {return}
@@ -182,32 +182,32 @@ extension SWQRCodeViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
 // MARK: - 识别选择图片
 extension SWQRCodeViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        picker.dismiss(animated: true) {
-            if !self.handlePickInfo(info) {
-                self.sw_didReadFromAlbumFailed()
-            }
-        }
-    }
-    
-    /// 识别二维码并返回识别结果
-    private func handlePickInfo(_ info: [String : Any]) -> Bool {
-        if let pickImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            let ciImage = CIImage(cgImage: pickImage.cgImage!)
-            let detector = CIDetector(ofType: CIDetectorTypeQRCode, context: nil, options: [CIDetectorAccuracy:CIDetectorAccuracyHigh])
-            
-            if let features = detector?.features(in: ciImage),
-                let firstFeature = features.first as? CIQRCodeFeature{
-
-                if let stringValue = firstFeature.messageString {
-                    sw_handle(value: stringValue)
-                    return true
-                }
-                return false
-            }
-        }
-        return false
-    }
+//    public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+//        picker.dismiss(animated: true) {
+//            if !self.handlePickInfo(info) {
+//                self.sw_didReadFromAlbumFailed()
+//            }
+//        }
+//    }
+//
+//    /// 识别二维码并返回识别结果
+//    private func handlePickInfo(_ info: [String : Any]) -> Bool {
+//        if let pickImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+//            let ciImage = CIImage(cgImage: pickImage.cgImage!)
+//            let detector = CIDetector(ofType: CIDetectorTypeQRCode, context: nil, options: [CIDetectorAccuracy:CIDetectorAccuracyHigh])
+//
+//            if let features = detector?.features(in: ciImage),
+//                let firstFeature = features.first as? CIQRCodeFeature{
+//
+//                if let stringValue = firstFeature.messageString {
+//                    sw_handle(value: stringValue)
+//                    return true
+//                }
+//                return false
+//            }
+//        }
+//        return false
+//    }
 }
 
 // MARK: - 恢复/暂停扫一扫功能
