@@ -24,6 +24,8 @@
 		1A1B88CD20864D9500C5F4D9 /* MolueHomePart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A1B88C320864D9500C5F4D9 /* MolueHomePart.framework */; };
 		1A1B88D220864D9500C5F4D9 /* MolueHomePartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1B88D120864D9500C5F4D9 /* MolueHomePartTests.swift */; };
 		1A1B88D420864D9500C5F4D9 /* MolueHomePart.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A1B88C620864D9500C5F4D9 /* MolueHomePart.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1A1CA8DA21B50C3F00FDF4E2 /* CheckTaskHistoryCalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1CA8D821B50C3F00FDF4E2 /* CheckTaskHistoryCalendarCell.swift */; };
+		1A1CA8DB21B50C3F00FDF4E2 /* CheckTaskHistoryCalendarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A1CA8D921B50C3F00FDF4E2 /* CheckTaskHistoryCalendarCell.xib */; };
 		1A24022020E52F7800FC3EBA /* LawRegulationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A24021F20E52F7800FC3EBA /* LawRegulationViewController.swift */; };
 		1A24022220E52FA800FC3EBA /* PolicyNoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A24022120E52FA800FC3EBA /* PolicyNoticeViewController.swift */; };
 		1A24022420E5309100FC3EBA /* LawRegulationViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A24022320E5309100FC3EBA /* LawRegulationViewController.storyboard */; };
@@ -146,6 +148,8 @@
 		1A1B88CC20864D9500C5F4D9 /* MolueHomePartTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MolueHomePartTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A1B88D120864D9500C5F4D9 /* MolueHomePartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueHomePartTests.swift; sourceTree = "<group>"; };
 		1A1B88D320864D9500C5F4D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A1CA8D821B50C3F00FDF4E2 /* CheckTaskHistoryCalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTaskHistoryCalendarCell.swift; sourceTree = "<group>"; };
+		1A1CA8D921B50C3F00FDF4E2 /* CheckTaskHistoryCalendarCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckTaskHistoryCalendarCell.xib; sourceTree = "<group>"; };
 		1A24021F20E52F7800FC3EBA /* LawRegulationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LawRegulationViewController.swift; sourceTree = "<group>"; };
 		1A24022120E52FA800FC3EBA /* PolicyNoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyNoticeViewController.swift; sourceTree = "<group>"; };
 		1A24022320E5309100FC3EBA /* LawRegulationViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LawRegulationViewController.storyboard; sourceTree = "<group>"; };
@@ -414,6 +418,8 @@
 			children = (
 				1A2F407221AD355F00C436F9 /* CheckTaskHistoryTableViewCell.swift */,
 				1A2F407321AD355F00C436F9 /* CheckTaskHistoryTableViewCell.xib */,
+				1A1CA8D821B50C3F00FDF4E2 /* CheckTaskHistoryCalendarCell.swift */,
+				1A1CA8D921B50C3F00FDF4E2 /* CheckTaskHistoryCalendarCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -825,6 +831,7 @@
 				1AAF7B8320C1971B0051EC18 /* SecurityAdminiViewController.storyboard in Resources */,
 				1AAF7B8920C1971B0051EC18 /* EnterpriseRiskViewController.storyboard in Resources */,
 				1AAF7B8420C1971B0051EC18 /* ContactInfoViewController.storyboard in Resources */,
+				1A1CA8DB21B50C3F00FDF4E2 /* CheckTaskHistoryCalendarCell.xib in Resources */,
 				1AB0670820EFB61D00619570 /* PolicyNoticeTableViewCell.xib in Resources */,
 				1AAF7B8020C1971B0051EC18 /* IncreaseAdminiViewController.storyboard in Resources */,
 				1A24022620E530AE00FC3EBA /* PolicyNoticeViewController.storyboard in Resources */,
@@ -874,6 +881,7 @@
 				1A346FC621915C0400CB534B /* CheckTaskDetailViewController.swift in Sources */,
 				1AAF7B7E20C1971B0051EC18 /* BasicArchivesViewController.swift in Sources */,
 				1AAF7B8220C1971B0051EC18 /* SecurityAdminiViewController.swift in Sources */,
+				1A1CA8DA21B50C3F00FDF4E2 /* CheckTaskHistoryCalendarCell.swift in Sources */,
 				1A43BC2F20C3CAA60093855B /* EnterpriseInfoTableViewCell.swift in Sources */,
 				1A43BC2420C3AEE70093855B /* HomeInfoCollectionViewCell.swift in Sources */,
 				1A522ED821912BA200094A8A /* DangerUnitListBuilderRouter.swift in Sources */,

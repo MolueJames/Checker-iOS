@@ -10,6 +10,7 @@ import UIKit
 import MolueUtilities
 import MolueMediator
 import MolueFoundation
+import JTAppleCalendar
 
 protocol CheckTaskHistoryPresentableListener: class {
     // 定义一些当前页面需要的业务逻辑, 比如网络请求.
@@ -21,6 +22,15 @@ protocol CheckTaskHistoryPresentableListener: class {
 final class CheckTaskHistoryViewController: MLBaseViewController  {
     //MARK: View Controller Properties
     var listener: CheckTaskHistoryPresentableListener?
+    
+    @IBOutlet weak var calendarView: JTAppleCalendarView! {
+        didSet {
+            calendarView.calendarDelegate = self
+            calendarView.calendarDataSource = self
+            calendarView.register(xibWithCellClass: CheckTaskHistoryCalendarCell.self)
+            
+        }
+    }
     
     @IBOutlet weak var tableView: UITableView! {
         didSet {
@@ -34,15 +44,23 @@ final class CheckTaskHistoryViewController: MLBaseViewController  {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+    
+    func setupNavigationTitle(date: Date) {
+        self.title = date.string(withFormat: "yyyy MMM")
+    }
 }
 
 extension CheckTaskHistoryViewController: MLUserInterfaceProtocol {
     func queryInformationWithNetwork() {
-        
+        dump(self.calendarView.visibleDates())
+        self.calendarView.visibleDates { (visibleDate: DateSegmentInfo) in
+            dump(visibleDate)
+        }
     }
     
     func updateUserInterfaceElements() {
-        self.title = "检查历史"
+//        self.setupNavigationTitle(date: Date())
+        self.calendarView.scrollToDate(Date(), animateScroll: false)
     }
 }
 
@@ -88,5 +106,36 @@ extension CheckTaskHistoryViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 110
+    }
+}
+
+extension CheckTaskHistoryViewController: JTAppleCalendarViewDelegate {
+    func calendar(_ calendar: JTAppleCalendarView, willDisplay cell: JTAppleCell, forItemAt date: Date, cellState: CellState, indexPath: IndexPath) {
+        
+    }
+    
+    func calendar(_ calendar: JTAppleCalendarView, cellForItemAt date: Date, cellState: CellState, indexPath: IndexPath) -> JTAppleCell {
+        let cell = calendarView.dequeueReusableCell(withClass: CheckTaskHistoryCalendarCell.self, for: indexPath)
+        cell.refreshSubviews(with: cellState, model: "")
+        return cell
+    }
+    
+    func calendar(_ calendar: JTAppleCalendarView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo) {
+        setupNavigationTitle(date: visibleDates.monthDates.first!.date)
+    }
+    
+    func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
+        
+    }
+    
+    func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
+        
+    }
+}
+
+extension CheckTaskHistoryViewController: JTAppleCalendarViewDataSource {
+    func configureCalendar(_ calendar: JTAppleCalendarView) -> ConfigurationParameters {
+        let startDate = Date().adding(.year, value: -1)
+        return ConfigurationParameters(startDate: startDate, endDate: Date(), numberOfRows: 6, calendar: Calendar.current, generateInDates: .forAllMonths, generateOutDates: .off, firstDayOfWeek: .sunday, hasStrictBoundaries: true)
     }
 }

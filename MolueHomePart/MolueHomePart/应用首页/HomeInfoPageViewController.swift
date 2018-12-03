@@ -88,7 +88,7 @@ extension HomeInfoPageViewController: MLUserInterfaceProtocol {
     }
     
     func updateUserInterfaceElements() {
-        self.titleLabel.text = "安监通"
+        self.titleLabel.text = "安全助手"
         self.navigationItem.titleView = titleLabel
     }
 }
