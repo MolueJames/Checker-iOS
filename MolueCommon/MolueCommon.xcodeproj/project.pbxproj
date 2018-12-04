@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		06B680F23DF37F71DDAC1CD2 /* Pods_MolueCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F64AC0DDC4B2457896DB8640 /* Pods_MolueCommon.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		1A1CA8E621B6461A00FDF4E2 /* CalendarFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1CA8DD21B6461700FDF4E2 /* CalendarFlowLayout.swift */; };
+		1A1CA8E721B6461B00FDF4E2 /* CalendarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1CA8DE21B6461700FDF4E2 /* CalendarHeaderView.swift */; };
+		1A1CA8E821B6461B00FDF4E2 /* CalendarView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1CA8DF21B6461700FDF4E2 /* CalendarView+Extensions.swift */; };
+		1A1CA8E921B6461B00FDF4E2 /* CalendarDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1CA8E021B6461700FDF4E2 /* CalendarDayCell.swift */; };
+		1A1CA8EA21B6461B00FDF4E2 /* CalendarView+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1CA8E121B6461700FDF4E2 /* CalendarView+Style.swift */; };
+		1A1CA8EB21B6461B00FDF4E2 /* CalendarView+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1CA8E221B6461700FDF4E2 /* CalendarView+Delegate.swift */; };
+		1A1CA8EC21B6461B00FDF4E2 /* EventsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1CA8E321B6461700FDF4E2 /* EventsManager.swift */; };
+		1A1CA8ED21B6461B00FDF4E2 /* CalendarView+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1CA8E421B6461700FDF4E2 /* CalendarView+DataSource.swift */; };
+		1A1CA8EE21B6461B00FDF4E2 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1CA8E521B6461700FDF4E2 /* CalendarView.swift */; };
 		1A242C7A219EBE18007554E9 /* SWQRCodeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A242C74219EBE17007554E9 /* SWQRCodeManager.swift */; };
 		1A242C7B219EBE18007554E9 /* SWQRCodeConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A242C75219EBE17007554E9 /* SWQRCodeConfig.swift */; };
 		1A242C7C219EBE18007554E9 /* SWQRCode.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1A242C76219EBE17007554E9 /* SWQRCode.bundle */; };
@@ -103,6 +112,15 @@
 
 /* Begin PBXFileReference section */
 		0B3FA8D5CD50C93A81938144 /* Pods-MolueCommon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueCommon.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueCommon/Pods-MolueCommon.debug.xcconfig"; sourceTree = "<group>"; };
+		1A1CA8DD21B6461700FDF4E2 /* CalendarFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarFlowLayout.swift; sourceTree = "<group>"; };
+		1A1CA8DE21B6461700FDF4E2 /* CalendarHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarHeaderView.swift; sourceTree = "<group>"; };
+		1A1CA8DF21B6461700FDF4E2 /* CalendarView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CalendarView+Extensions.swift"; sourceTree = "<group>"; };
+		1A1CA8E021B6461700FDF4E2 /* CalendarDayCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarDayCell.swift; sourceTree = "<group>"; };
+		1A1CA8E121B6461700FDF4E2 /* CalendarView+Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CalendarView+Style.swift"; sourceTree = "<group>"; };
+		1A1CA8E221B6461700FDF4E2 /* CalendarView+Delegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CalendarView+Delegate.swift"; sourceTree = "<group>"; };
+		1A1CA8E321B6461700FDF4E2 /* EventsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsManager.swift; sourceTree = "<group>"; };
+		1A1CA8E421B6461700FDF4E2 /* CalendarView+DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CalendarView+DataSource.swift"; sourceTree = "<group>"; };
+		1A1CA8E521B6461700FDF4E2 /* CalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		1A242C74219EBE17007554E9 /* SWQRCodeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWQRCodeManager.swift; sourceTree = "<group>"; };
 		1A242C75219EBE17007554E9 /* SWQRCodeConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWQRCodeConfig.swift; sourceTree = "<group>"; };
 		1A242C76219EBE17007554E9 /* SWQRCode.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SWQRCode.bundle; sourceTree = "<group>"; };
@@ -202,6 +220,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A1CA8DC21B6461700FDF4E2 /* CalendarView */ = {
+			isa = PBXGroup;
+			children = (
+				1A1CA8DD21B6461700FDF4E2 /* CalendarFlowLayout.swift */,
+				1A1CA8DE21B6461700FDF4E2 /* CalendarHeaderView.swift */,
+				1A1CA8DF21B6461700FDF4E2 /* CalendarView+Extensions.swift */,
+				1A1CA8E021B6461700FDF4E2 /* CalendarDayCell.swift */,
+				1A1CA8E121B6461700FDF4E2 /* CalendarView+Style.swift */,
+				1A1CA8E221B6461700FDF4E2 /* CalendarView+Delegate.swift */,
+				1A1CA8E321B6461700FDF4E2 /* EventsManager.swift */,
+				1A1CA8E421B6461700FDF4E2 /* CalendarView+DataSource.swift */,
+				1A1CA8E521B6461700FDF4E2 /* CalendarView.swift */,
+			);
+			path = CalendarView;
+			sourceTree = "<group>";
+		};
 		1A242C72219EBE17007554E9 /* SWQRCode */ = {
 			isa = PBXGroup;
 			children = (
@@ -311,6 +345,7 @@
 			isa = PBXGroup;
 			children = (
 				1A65039120DD54F20017F91D /* MolueCommon.xcassets */,
+				1A1CA8DC21B6461700FDF4E2 /* CalendarView */,
 				1ACD09E421A0094400793AAC /* SKPhotoBrowser */,
 				1A242C72219EBE17007554E9 /* SWQRCode */,
 				1A4380182162A83900FA1C93 /* TableViewAdapter */,
@@ -657,13 +692,17 @@
 				1ACD0A0E21A0094400793AAC /* SKCaptionView.swift in Sources */,
 				1AEB87DB209218D3002230A3 /* MolueCryption.swift in Sources */,
 				1A242C7D219EBE18007554E9 /* SWScannerView.swift in Sources */,
+				1A1CA8EA21B6461B00FDF4E2 /* CalendarView+Style.swift in Sources */,
 				1A98F29D20C96940000D0F8F /* MLCommonFunction.swift in Sources */,
 				1A242C7B219EBE18007554E9 /* SWQRCodeConfig.swift in Sources */,
 				1ACD0A0C21A0094400793AAC /* UIImage+Rotation.swift in Sources */,
+				1A1CA8EB21B6461B00FDF4E2 /* CalendarView+Delegate.swift in Sources */,
 				1A5014B42094B90A00DB931E /* MolueCommonPath.swift in Sources */,
+				1A1CA8E821B6461B00FDF4E2 /* CalendarView+Extensions.swift in Sources */,
 				1A730ADC20EBB7F8008831BC /* MLCommonTitleView.swift in Sources */,
 				1A5014AB2094AFA400DB931E /* MoluePermissions.swift in Sources */,
 				1ACD0A0921A0094400793AAC /* SKPagingScrollView.swift in Sources */,
+				1A1CA8E621B6461A00FDF4E2 /* CalendarFlowLayout.swift in Sources */,
 				1A2D443D20A097E100BA947A /* MLInterfaceConfigure.swift in Sources */,
 				1ACD0A0D21A0094400793AAC /* UIView+Radius.swift in Sources */,
 				1A43801A2162A86200FA1C93 /* MolueTableViewAdapter.swift in Sources */,
@@ -673,6 +712,7 @@
 				1A5014B62094B9BA00DB931E /* MolueCommonColor.swift in Sources */,
 				1A52756520D51F7200CA0D68 /* MLSingleSelectController.swift in Sources */,
 				1A9BCA13210A26410035FC21 /* MolueNotificationName.swift in Sources */,
+				1A1CA8EC21B6461B00FDF4E2 /* EventsManager.swift in Sources */,
 				1ACD0A0B21A0094400793AAC /* SKCache.swift in Sources */,
 				1ACD0A1021A0094400793AAC /* SKPhoto.swift in Sources */,
 				1A2D441B20A07E9900BA947A /* MLRefreshHeaderAnimator.swift in Sources */,
@@ -683,8 +723,10 @@
 				1ACD0A0021A0094400793AAC /* SKPhotoBrowser.swift in Sources */,
 				1AA7822E20CCFDC200088923 /* MLSelectedTableController.swift in Sources */,
 				1ACD0A0421A0094400793AAC /* SKIndicatorView.swift in Sources */,
+				1A1CA8ED21B6461B00FDF4E2 /* CalendarView+DataSource.swift in Sources */,
 				1ACD0A1121A0094400793AAC /* SKActionView.swift in Sources */,
 				1A944CB420F1D08A002BD1E9 /* MLCommonRemarkView.swift in Sources */,
+				1A1CA8E921B6461B00FDF4E2 /* CalendarDayCell.swift in Sources */,
 				1A43BC3620C4031D0093855B /* MLCommonInputView.swift in Sources */,
 				1AA7823520CCFF3B00088923 /* MLSelectedTableViewCell.swift in Sources */,
 				1A98F29F20C96E87000D0F8F /* MLCommonPhotoView.swift in Sources */,
@@ -695,6 +737,8 @@
 				1ACD0A0821A0094400793AAC /* UIApplication+UIWindow.swift in Sources */,
 				1ACD0A1621A0094400793AAC /* SKButtons.swift in Sources */,
 				1ABDCAA120C594A50062DE71 /* MLCommonSegmentView.swift in Sources */,
+				1A1CA8E721B6461B00FDF4E2 /* CalendarHeaderView.swift in Sources */,
+				1A1CA8EE21B6461B00FDF4E2 /* CalendarView.swift in Sources */,
 				1A52756D20D52A7600CA0D68 /* MLSingleSectionTableModel.swift in Sources */,
 				1A98F2A420C972ED000D0F8F /* MLCommonPhotoCell.swift in Sources */,
 				1ACD0A0321A0094400793AAC /* SKPaginationView.swift in Sources */,
