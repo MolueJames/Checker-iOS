@@ -11,6 +11,7 @@ import MolueNetwork
 import MolueCommon
 import Kingfisher
 import Alamofire
+import MolueUtilities
 
 extension AppDelegate {
     func setUserInterfaceConfigure() {
@@ -25,19 +26,17 @@ extension AppDelegate {
         let xxx = [header.key : header.value]
         let dict = ["username":"13063745829", "password":"q1w2e3r4","grant_type":"password"]
 
-        let request = MolueDataRequest.init(parameter:dict, method: .post, path: "oauth/token/", headers: xxx)
-        let manager = MolueRequestManager(request: request)
-        manager.handleFailureResponse { (error) in
-            print(error.localizedDescription)
-            print(error)
-
+        let request = MolueDataRequest(parameter:dict, method: .post, path: "oauth/token/", headers: xxx)
+        request.handleFailureResponse { (error) in
+            MolueLogger.network.message(error.localizedDescription)
+//            print(error)
         }
-
-        manager.handleSuccessResultToObjc { (result: MolueOauthModel?) in
-            print(result)
-            print(result?.validateNeedRefresh())
+        request.handleSuccessResultToObjc { (result: MolueOauthModel?) in
+            print(result ?? "null value")
+            print(result?.validateNeedRefresh() ?? "null value")
         }
-        manager.requestStart()
+        MolueRequestManager().doRequestStart(with: request)
+        MolueRequestManager().doRequestStart(with: request)
     }
     
     private func setDefaultWebImageConfigure() {

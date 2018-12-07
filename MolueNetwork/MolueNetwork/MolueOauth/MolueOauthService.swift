@@ -10,17 +10,15 @@ import Foundation
 
 public struct MolueOauthService {
     
-    public static func doLogin(username: String, password: String, delegate: MolueActivityDelegate? = nil) -> MolueRequestManager {
+    public static func doLogin(username: String, password: String, delegate: MolueActivityDelegate? = nil) -> MolueDataRequest {
         let header = MolueOauthHelper.queryAuthHeader()
         let parameter = ["username":username, "password":password, "grant_type":"password"]
-        let request = MolueDataRequest(parameter:parameter, method: .post, path: "oauth/token/", headers: header)
-        return MolueRequestManager(request: request, delegate: delegate)
+        return MolueDataRequest(parameter:parameter, method: .post, path: "oauth/token/", headers: header)
     }
     
-    public static func refreshToken(delegate: MolueActivityDelegate? = nil) -> MolueRequestManager {
+    public static func refreshToken(delegate: MolueActivityDelegate? = nil) -> MolueDataRequest {
         let header = MolueOauthHelper.queryAuthHeader()
         let parameter = ["grant_type":"password"]
-        let request = MolueDataRequest(parameter:parameter, method: .post, path: "oauth/token/", headers: header)
-        return MolueRequestManager(request: request, delegate: delegate)
+        return MolueDataRequest(parameter:parameter, method: .post, path: "oauth/token/", headers: header)
     }
 }

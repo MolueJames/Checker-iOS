@@ -17,7 +17,7 @@ public extension DataRequest {
             if self.handleDefaultError(self.delegate.error, delegate: observer, failure: failure) {return}
             let serviceResult = self.handleResponseStatus(self.response, options: options)
             self.handleServiceResult(serviceResult, delegate: observer, success: success, failure: failure)
-            self.startRequestInfoLogger()
+//            self.startRequestInfoLogger()
         }
         delegate.queue.addOperation(operation)
     }
@@ -29,7 +29,7 @@ public extension DataRequest {
             try failure.unwrap()(error)
             return true
         } catch {
-            MolueLogger.failure.message(error)
+//            MolueLogger.failure.message(error)
             return false
         }
     }
@@ -53,7 +53,7 @@ public extension DataRequest {
                 try delegate.unwrap().networkActivityFailure(error: result)
             }
         } catch {
-            MolueLogger.network.message(error)
+//            MolueLogger.network.message(error)
         }
     }
     

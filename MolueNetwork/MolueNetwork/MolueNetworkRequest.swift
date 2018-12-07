@@ -10,13 +10,15 @@ import Foundation
 import Alamofire
 import MolueUtilities
 
-public struct MolueDataRequest {
+public class MolueDataRequest {
     var parameter: [String: Any]?
     var method: HTTPMethod
     var encoding: ParameterEncoding = URLEncoding.default
     var components: URLComponents?
     var headers: HTTPHeaders?
-
+    private(set) var failure: MolueResultClosure<Error>?
+    private(set) var success: MolueResultClosure<Any?>?
+    
     public init(baseURL: String! = HTTPConfigure.baseURL, parameter: [String: Any]?, method: HTTPMethod, path: String, headers: HTTPHeaders? = nil, encoding:ParameterEncoding! = URLEncoding.default) {
         let urlPath = path.hasPrefix("/") ? path : "/" + path
         let requestURL = baseURL + urlPath
@@ -26,6 +28,18 @@ public struct MolueDataRequest {
         self.method = method
         self.encoding = encoding
         self.headers = headers
+    }
+    
+    @discardableResult
+    public func handleSuccessResponse(_ success: MolueResultClosure<Any?>?) -> MolueDataRequest {
+        self.success = success
+        return self
+    }
+    
+    @discardableResult
+    public func handleFailureResponse(_ failure: MolueResultClosure<Error>?) -> MolueDataRequest {
+        self.failure = failure
+        return self
     }
 }
 

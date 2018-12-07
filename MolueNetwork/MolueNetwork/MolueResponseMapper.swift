@@ -29,9 +29,9 @@ private struct MolueResponseMapper {
     }
 }
 
-public extension MolueRequestManager {
+public extension MolueDataRequest {
     @discardableResult
-    public func handleSuccessResultToObjc<T: Mappable>(_ success: MolueResultClosure<T?>?) -> MolueRequestManager {
+    public func handleSuccessResultToObjc<T: Mappable>(_ success: MolueResultClosure<T?>?) -> MolueDataRequest {
         let resultClosure: MolueResultClosure<Any?> = { (result) in
             do {
                 let response: T? = try MolueResponseMapper.handleResultToDict(result)
@@ -44,7 +44,7 @@ public extension MolueRequestManager {
         return self
     }
     @discardableResult
-    public func handleSuccessResultToList<T: Mappable>(_ success: MolueResultClosure<[T]?>?) -> MolueRequestManager {
+    public func handleSuccessResultToList<T: Mappable>(_ success: MolueResultClosure<[T]?>?) -> MolueDataRequest {
         let resultClosure: MolueResultClosure<Any?> = { (result) in
             do {
                 let response:[T]? = try MolueResponseMapper.handleResultToList(result)

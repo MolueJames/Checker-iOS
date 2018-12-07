@@ -34,6 +34,9 @@ extension AppDelegate {
             let controller = try builder.unwrap().build()
             let navController = MLNavigationController(rootViewController: controller)
             window.rootViewController = navController
+            
+            let viewController = UIViewController()
+            window.rootViewController = viewController
             window.makeKeyAndVisible()
         } catch {
             MolueLogger.UIModule.error(error)
