@@ -71,15 +71,15 @@ class IncreaseAdminiViewController: MLBaseViewController {
             }).disposed(by: disposeBag)
         }
     }
-    @IBOutlet private weak var uploadPhotoInputView: MLCommonPhotoView! {
-        didSet {
-            let count = self.dataManager.uploadImageLimit
-            uploadPhotoInputView.defaultValue(title: "上传证书", list: [UIImage](), count: count)
-            uploadPhotoInputView.appendCommand.subscribe(onNext: { [unowned self] (leftCount) in
-                self.pushToImagePick(leftCount: leftCount)
-            }).disposed(by: disposeBag)
-        }
-    }
+//    @IBOutlet private weak var uploadPhotoInputView: MLCommonPhotoView! {
+//        didSet {
+//            let count = self.dataManager.uploadImageLimit
+//            uploadPhotoInputView.defaultValue(title: "上传证书", list: [UIImage](), count: count)
+//            uploadPhotoInputView.appendCommand.subscribe(onNext: { [unowned self] (leftCount) in
+//                self.pushToImagePick(leftCount: leftCount)
+//            }).disposed(by: disposeBag)
+//        }
+//    }
     
     @IBOutlet weak var telephoneInputView: MLCommonInputView! {
         didSet {
@@ -126,13 +126,13 @@ class IncreaseAdminiViewController: MLBaseViewController {
     }
     
     private func presentDatePicker() {
-        let router = MolueNavigatorRouter(.Common, path: CommonPath.DatePicker.rawValue)
-        let controller: MLDatePickerViewController! = MolueAppRouter.shared.viewController(router)
-        controller.modalPresentationStyle = .overCurrentContext
-        controller.selectDateCommand.subscribe(onNext: { [unowned self] (date, string) in
-            self.updateDeadLineValue(date: date, string: string)
-        }).disposed(by: disposeBag)
-        self.navigator.present(controller)
+//        let router = MolueNavigatorRouter(.Common, path: CommonPath.DatePicker.rawValue)
+//        let controller: MLDatePickerViewController! = MolueAppRouter.shared.viewController(router)
+//        controller.modalPresentationStyle = .overCurrentContext
+//        controller.selectDateCommand.subscribe(onNext: { [unowned self] (date, string) in
+//            self.updateDeadLineValue(date: date, string: string)
+//        }).disposed(by: disposeBag)
+//        self.navigator.present(controller)
     }
     private func updateDeadLineValue(date: Date, string: String) {
         self.deadLineInputView.update(description: string)

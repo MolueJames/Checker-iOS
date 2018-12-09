@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -106,7 +106,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Ije-tH-S3C" firstAttribute="bottom" secondItem="rp0-H4-SYB" secondAttribute="bottom" id="B1S-pE-uZ7"/>
+                            <constraint firstAttribute="bottom" secondItem="Ije-tH-S3C" secondAttribute="bottom" id="0G8-FV-LFK"/>
                             <constraint firstItem="Ije-tH-S3C" firstAttribute="trailing" secondItem="rp0-H4-SYB" secondAttribute="trailing" id="a0j-pv-9gO"/>
                             <constraint firstItem="Ije-tH-S3C" firstAttribute="leading" secondItem="rp0-H4-SYB" secondAttribute="leading" id="uBt-xD-hlg"/>
                         </constraints>

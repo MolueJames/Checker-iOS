@@ -13,5 +13,5 @@ public struct EnterpriseInfoDataManager: MLNeedListDataProtocol, EnterpriseInfoD
 
     public typealias ItemTarget = EnterpriseInfoModel
     
-    public var items: [EnterpriseInfoModel] = EnterpriseInfoModel.defaultValues()
+    public var items: [EnterpriseInfoModel] = EnterpriseInfoModel.defaultValues()!
 }

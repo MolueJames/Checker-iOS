@@ -11,7 +11,7 @@ import MolueNavigator
 import MolueCommon
 public struct SecurityAdminiNavigator: SecurityAdminiNavigatorProtocol {
     func pushToIncreaseAdmini() {
-        let target = MolueNavigatorRouter(.Home, path: HomePath.IncreaseAdmini.rawValue)
-        router.push(target)
+//        let target = MolueNavigatorRouter(.Home, path: HomePath.IncreaseAdmini.rawValue)
+//        router.push(target)
     }
 }

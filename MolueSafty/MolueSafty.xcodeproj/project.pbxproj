@@ -371,12 +371,12 @@
 					};
 					1A7D9A922084E73600FA997D = {
 						CreatedOnToolsVersion = 9.3;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1010;
 						TestTargetID = 1A7D9A7E2084E73500FA997D;
 					};
 					1A7D9A9D2084E73600FA997D = {
 						CreatedOnToolsVersion = 9.3;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1010;
 						TestTargetID = 1A7D9A7E2084E73500FA997D;
 					};
 				};
@@ -683,7 +683,6 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "./MolueSafty/Objective-C-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
-				VALID_ARCHS = "arm64 arm64e armv7 armv7s";
 			};
 			name = Release;
 		};
@@ -701,7 +700,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Molue.MolueSaftyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MolueSafty.app/MolueSafty";
 			};
@@ -720,7 +719,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Molue.MolueSaftyUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = MolueSafty;
 			};
@@ -827,7 +826,6 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "./MolueSafty/Objective-C-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
-				VALID_ARCHS = "arm64 arm64e armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -845,7 +843,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Molue.MolueSaftyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MolueSafty.app/MolueSafty";
 			};
@@ -864,7 +862,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Molue.MolueSaftyUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = MolueSafty;
 			};
