@@ -37,7 +37,7 @@ extension AppChatPageViewController: MLUserInterfaceProtocol {
     }
     
     func updateUserInterfaceElements() {
-        self.titleLabel.text = "联系人列表"
+        self.titleLabel.text = "常用联系人"
         self.navigationItem.titleView = self.titleLabel
     }
 }

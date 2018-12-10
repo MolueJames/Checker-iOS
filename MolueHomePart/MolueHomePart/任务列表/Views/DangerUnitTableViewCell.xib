@@ -13,36 +13,40 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="KGk-i7-Jjw" customClass="DangerUnitTableViewCell" customModule="MolueHomePart" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="125"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="119.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="124.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m3j-UV-RwJ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="59.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="64.5"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="暂无数据" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HmV-DU-zqY">
-                                <rect key="frame" x="243.5" y="10" width="61.5" height="18"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="暂无数据" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HmV-DU-zqY">
+                                <rect key="frame" x="237" y="10" width="68" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="CbZ-8Q-grW"/>
+                                    <constraint firstAttribute="width" constant="68" id="xaV-Xp-sKQ"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="HmV-DU-zqY" secondAttribute="trailing" constant="15" id="9yo-u5-zgP"/>
-                            <constraint firstItem="HmV-DU-zqY" firstAttribute="top" secondItem="m3j-UV-RwJ" secondAttribute="top" constant="10" id="lrT-Jm-hpl"/>
+                            <constraint firstItem="HmV-DU-zqY" firstAttribute="top" secondItem="m3j-UV-RwJ" secondAttribute="top" constant="10" id="pD7-Rc-rr2"/>
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="风险点名称:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nsS-UY-gcl">
-                        <rect key="frame" x="15" y="10" width="81" height="18"/>
-                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                        <rect key="frame" x="15" y="10" width="86.5" height="19.5"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O7K-xg-43o">
-                        <rect key="frame" x="0.0" y="59.5" width="106.5" height="60"/>
+                        <rect key="frame" x="0.0" y="64.5" width="106.5" height="60"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="负责人" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sjr-r4-4fc">
                                 <rect key="frame" x="32" y="13" width="43" height="17"/>
@@ -68,7 +72,7 @@
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OBk-Dy-ib3">
-                        <rect key="frame" x="106.5" y="59.5" width="107" height="60"/>
+                        <rect key="frame" x="106.5" y="64.5" width="107" height="60"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="风险等级" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1et-ER-W0S">
                                 <rect key="frame" x="24.5" y="13" width="58" height="17"/>
@@ -93,7 +97,7 @@
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4fO-0z-NSx">
-                        <rect key="frame" x="213.5" y="59.5" width="106.5" height="60"/>
+                        <rect key="frame" x="213.5" y="64.5" width="106.5" height="60"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="风险编号" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="48u-rw-v7A">
                                 <rect key="frame" x="24.5" y="13" width="57.5" height="17"/>
@@ -118,7 +122,7 @@
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="暂无数据" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aPK-81-5Ig">
-                        <rect key="frame" x="15" y="35" width="290" height="17"/>
+                        <rect key="frame" x="15" y="36.5" width="290" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -156,7 +160,7 @@
                 <outlet property="riskNameLabel" destination="aPK-81-5Ig" id="Heo-8e-fpd"/>
                 <outlet property="riskStateLabel" destination="HmV-DU-zqY" id="QeU-re-vbV"/>
             </connections>
-            <point key="canvasLocation" x="132.80000000000001" y="154.72263868065968"/>
+            <point key="canvasLocation" x="-133" y="147"/>
         </tableViewCell>
     </objects>
 </document>

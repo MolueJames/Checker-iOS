@@ -9,6 +9,7 @@
 import UIKit
 import MolueFoundation
 import MolueUtilities
+import MolueCommon
 import MolueMediator
 
 protocol PotentialRiskPresentableListener: class {
@@ -27,6 +28,14 @@ final class PotentialRiskViewController: MLBaseViewController  {
             tableView.dataSource = self
             tableView.delegate = self
             tableView.register(xibWithCellClass: PotentialRiskTableViewCell.self)
+        }
+    }
+    
+    @IBOutlet weak var segementView: MLCommonSegementView! {
+        didSet {
+            segementView.delegate = self
+            let list = ["已发现", "已安排", "已整改", "已验收"]
+            segementView.updateSegementList(with: list)
         }
     }
     
@@ -83,11 +92,13 @@ extension PotentialRiskViewController: UITableViewDataSource {
             let listener = try self.listener.unwrap()
             let item = try listener.valueList.item(at: indexPath.row).unwrap()
             cell.refreshSubviews(with: item, index: indexPath.row)
-        } catch {
-            MolueLogger.UIModule.error(error)
-        }
+        } catch { MolueLogger.UIModule.error(error) }
         return cell
     }
-    
-    
+}
+
+extension PotentialRiskViewController: MLSegementViewDelegate {
+    func segementView(_ segementView: MLCommonSegementView, didSelectItemAt index: Int) {
+        
+    }
 }

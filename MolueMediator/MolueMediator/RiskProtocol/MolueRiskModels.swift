@@ -49,11 +49,17 @@ public enum PotentialRiskLevel: CaseIterable, CustomStringConvertible {
             return "重大事故隐患"
         case .general:
             return "一般事故隐患"
+        case .higher:
+            return "较高事故隐患"
+        case .atLower:
+            return "较低事故隐患"
         }
     }
     
     case serious
+    case higher
     case general
+    case atLower
 }
 
 public class PotentialRiskModel {

@@ -8,6 +8,7 @@
 
 import UIKit
 import Photos
+import MolueMediator
 
 struct SWQRCodeHelper {
     
@@ -26,8 +27,10 @@ struct SWQRCodeHelper {
             })
         // 用户拒绝授权或权限受限
         case .denied, .restricted:
-            let alter = UIAlertView(title: "请在”设置-隐私-相机”选项中，允许访问你的相机", message: nil, delegate: nil, cancelButtonTitle: "确定")
-            alter.show()
+            let alertController = UIAlertController(title: "请在”设置-隐私-相机”选项中，允许访问你的相机", message: nil, preferredStyle: .alert)
+            let cancelAction = UIAlertAction(title: "确定", style: .cancel)
+            alertController.addAction(cancelAction)
+            MoluePageNavigator.shared.presentViewController(alertController)
             completion(false)
         }
     }
@@ -47,8 +50,10 @@ struct SWQRCodeHelper {
             })
         // 用户拒绝授权或权限受限
         case .denied, .restricted:
-            let alter = UIAlertView(title: "请在”设置-隐私-相片”选项中，允许访问你的相册", message: nil, delegate: nil, cancelButtonTitle: "确定")
-            alter.show()
+            let alertController = UIAlertController(title: "请在”设置-隐私-相片”选项中，允许访问你的相册", message: nil, preferredStyle: .alert)
+            let cancelAction = UIAlertAction(title: "确定", style: .cancel)
+            alertController.addAction(cancelAction)
+            MoluePageNavigator.shared.presentViewController(alertController)
             completion(false)
         }
     }

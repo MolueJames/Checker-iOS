@@ -20,7 +20,12 @@ class DangerUnitTableViewCell: UITableViewCell {
         self.layer.masksToBounds = true
     }
 
-    @IBOutlet weak var riskStateLabel: UILabel!
+    @IBOutlet weak var riskStateLabel: UILabel! {
+        didSet {
+            riskStateLabel.layer.masksToBounds = true
+            riskStateLabel.layer.cornerRadius = 12
+        }
+    }
     @IBOutlet weak var riskHeadLabel: UILabel!
     @IBOutlet weak var riskLevelLabel: UILabel!
     @IBOutlet weak var riskClassLabel: UILabel!
@@ -37,8 +42,10 @@ class DangerUnitTableViewCell: UITableViewCell {
         self.riskNameLabel.text = model.riskName
         self.riskClassLabel.text = "ABT00002"//model.riskClass
         self.riskStateLabel.text = model.riskStatus
-        self.riskStateLabel.textColor = self.queryColor(with: model)
+        let color = self.queryColor(with: model)
+        self.riskStateLabel.backgroundColor = color
     }
+    
     func queryColor(with item: DangerUnitRiskModel) -> UIColor {
         do {
             switch try item.riskStatus.unwrap() {
@@ -49,9 +56,7 @@ class DangerUnitTableViewCell: UITableViewCell {
             default:
                 return UIColor(hex: 0xFFCC00)
             }
-        } catch {
-            return UIColor(hex: 0xFFCC00)
-        }
+        } catch { return UIColor(hex: 0xFFCC00) }
     }
     
     override var frame:CGRect{

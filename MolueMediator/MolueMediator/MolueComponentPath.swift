@@ -23,11 +23,11 @@ public enum MolueComponent {
     }
     
     public enum Mine: String, MolueBuilderPathProtocol {
+        case UserCenter = "UserInfoCenterComponentBuilder"
+        
         public func builderPath() -> String {
             return "MolueMinePart.\(self.rawValue)";
         }
-    
-        case UserCenter = "UserInfoCenterComponentBuilder"
     }
     
     public enum Risk: String, MolueBuilderPathProtocol {
@@ -46,6 +46,7 @@ public enum MolueComponent {
     public enum Login: String, MolueBuilderPathProtocol {
         case LoginPage = "UserLoginPageComponentBuilder"
         case ForgetPwd = "ForgetPasswordComponentBuilder"
+        
         public func builderPath() -> String {
             return "MolueLoginPart.\(self.rawValue)";
         }
@@ -56,6 +57,14 @@ public enum MolueComponent {
         
         public func builderPath() -> String {
             return "MolueBookPart.\(self.rawValue)";
+        }
+    }
+    
+    public enum Common: String, MolueBuilderPathProtocol {
+        case CommonWeb = "CommonWebComponentBuilder"
+        
+        public func builderPath() -> String {
+            return "MolueCommonPart.\(self.rawValue)";
         }
     }
 }

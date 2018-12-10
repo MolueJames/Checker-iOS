@@ -197,7 +197,7 @@ public extension UIView {
 	}
 	
 	/// SwifterSwift: x origin of view.
-	public var x: CGFloat {
+	public var originX: CGFloat {
 		get {
 			return frame.origin.x
 		}
@@ -207,7 +207,7 @@ public extension UIView {
 	}
 	
 	/// SwifterSwift: y origin of view.
-	public var y: CGFloat {
+	public var originY: CGFloat {
 		get {
 			return frame.origin.y
 		}
@@ -216,6 +216,23 @@ public extension UIView {
 		}
 	}
 	
+    public var centerX: CGFloat {
+        get {
+            return center.x
+        }
+        set {
+            center.x = newValue
+        }
+    }
+    
+    public var centerY: CGFloat {
+        get {
+            return center.y
+        }
+        set {
+            center.y = newValue
+        }
+    }
 }
 
 // MARK: - Methods

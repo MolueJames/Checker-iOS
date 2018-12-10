@@ -8,11 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		06B680F23DF37F71DDAC1CD2 /* Pods_MolueCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F64AC0DDC4B2457896DB8640 /* Pods_MolueCommon.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		1A01B56721BEC0C000F4F3A0 /* CommonWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A01B56421BEC0C000F4F3A0 /* CommonWebViewController.swift */; };
+		1A01B56821BEC0C000F4F3A0 /* CommonWebPageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A01B56521BEC0C000F4F3A0 /* CommonWebPageInteractor.swift */; };
+		1A01B56921BEC0C000F4F3A0 /* CommonWebBuilderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A01B56621BEC0C000F4F3A0 /* CommonWebBuilderRouter.swift */; };
 		1A242C7A219EBE18007554E9 /* SWQRCodeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A242C74219EBE17007554E9 /* SWQRCodeManager.swift */; };
 		1A242C7B219EBE18007554E9 /* SWQRCodeConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A242C75219EBE17007554E9 /* SWQRCodeConfig.swift */; };
 		1A242C7C219EBE18007554E9 /* SWQRCode.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1A242C76219EBE17007554E9 /* SWQRCode.bundle */; };
 		1A242C7D219EBE18007554E9 /* SWScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A242C78219EBE17007554E9 /* SWScannerView.swift */; };
 		1A242C7E219EBE18007554E9 /* SWQRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A242C79219EBE17007554E9 /* SWQRCodeViewController.swift */; };
+		1A2C558821BE96830032FEFD /* MLCommonSegementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2C558721BE96830032FEFD /* MLCommonSegementView.swift */; };
+		1A2C558B21BE98DD0032FEFD /* MLSegementCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2C558921BE98DD0032FEFD /* MLSegementCollectionCell.swift */; };
+		1A2C558C21BE98DD0032FEFD /* MLSegementCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A2C558A21BE98DD0032FEFD /* MLSegementCollectionCell.xib */; };
+		1A2C559521BEBEAA0032FEFD /* CommonWebViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A2C559421BEBEAA0032FEFD /* CommonWebViewController.storyboard */; };
 		1A2D441B20A07E9900BA947A /* MLRefreshHeaderAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D441A20A07E9900BA947A /* MLRefreshHeaderAnimator.swift */; };
 		1A2D443D20A097E100BA947A /* MLInterfaceConfigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D443C20A097E100BA947A /* MLInterfaceConfigure.swift */; };
 		1A35D80020DD2893002ED3CB /* MolueFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A35D7FF20DD2893002ED3CB /* MolueFoundation.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -95,11 +102,18 @@
 
 /* Begin PBXFileReference section */
 		0B3FA8D5CD50C93A81938144 /* Pods-MolueCommon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueCommon.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueCommon/Pods-MolueCommon.debug.xcconfig"; sourceTree = "<group>"; };
+		1A01B56421BEC0C000F4F3A0 /* CommonWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonWebViewController.swift; sourceTree = "<group>"; };
+		1A01B56521BEC0C000F4F3A0 /* CommonWebPageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonWebPageInteractor.swift; sourceTree = "<group>"; };
+		1A01B56621BEC0C000F4F3A0 /* CommonWebBuilderRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonWebBuilderRouter.swift; sourceTree = "<group>"; };
 		1A242C74219EBE17007554E9 /* SWQRCodeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWQRCodeManager.swift; sourceTree = "<group>"; };
 		1A242C75219EBE17007554E9 /* SWQRCodeConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWQRCodeConfig.swift; sourceTree = "<group>"; };
 		1A242C76219EBE17007554E9 /* SWQRCode.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SWQRCode.bundle; sourceTree = "<group>"; };
 		1A242C78219EBE17007554E9 /* SWScannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWScannerView.swift; sourceTree = "<group>"; };
 		1A242C79219EBE17007554E9 /* SWQRCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWQRCodeViewController.swift; sourceTree = "<group>"; };
+		1A2C558721BE96830032FEFD /* MLCommonSegementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLCommonSegementView.swift; sourceTree = "<group>"; };
+		1A2C558921BE98DD0032FEFD /* MLSegementCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLSegementCollectionCell.swift; sourceTree = "<group>"; };
+		1A2C558A21BE98DD0032FEFD /* MLSegementCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MLSegementCollectionCell.xib; sourceTree = "<group>"; };
+		1A2C559421BEBEAA0032FEFD /* CommonWebViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CommonWebViewController.storyboard; sourceTree = "<group>"; };
 		1A2D441A20A07E9900BA947A /* MLRefreshHeaderAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLRefreshHeaderAnimator.swift; sourceTree = "<group>"; };
 		1A2D443C20A097E100BA947A /* MLInterfaceConfigure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLInterfaceConfigure.swift; sourceTree = "<group>"; };
 		1A35D7FF20DD2893002ED3CB /* MolueFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -214,6 +228,17 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		1A2C558D21BEBE2F0032FEFD /* WebController */ = {
+			isa = PBXGroup;
+			children = (
+				1A2C559421BEBEAA0032FEFD /* CommonWebViewController.storyboard */,
+				1A01B56421BEC0C000F4F3A0 /* CommonWebViewController.swift */,
+				1A01B56521BEC0C000F4F3A0 /* CommonWebPageInteractor.swift */,
+				1A01B56621BEC0C000F4F3A0 /* CommonWebBuilderRouter.swift */,
+			);
+			path = WebController;
+			sourceTree = "<group>";
+		};
 		1A2D441920A07E9900BA947A /* RefreshAnimator */ = {
 			isa = PBXGroup;
 			children = (
@@ -241,11 +266,14 @@
 		1A43BC3420C402F10093855B /* CommonViews */ = {
 			isa = PBXGroup;
 			children = (
+				1A2C558721BE96830032FEFD /* MLCommonSegementView.swift */,
 				1A43BC3520C4031D0093855B /* MLCommonInputView.swift */,
 				1A43BC3B20C40FA30093855B /* MLCommonSelectView.swift */,
 				1ABDCA9C20C5946B0062DE71 /* MLCommonClickView.swift */,
 				1A730ADB20EBB7F8008831BC /* MLCommonTitleView.swift */,
 				1A944CB320F1D08A002BD1E9 /* MLCommonRemarkView.swift */,
+				1A2C558921BE98DD0032FEFD /* MLSegementCollectionCell.swift */,
+				1A2C558A21BE98DD0032FEFD /* MLSegementCollectionCell.xib */,
 			);
 			path = CommonViews;
 			sourceTree = "<group>";
@@ -329,6 +357,7 @@
 		1AA7822C20CCFC0800088923 /* CommonController */ = {
 			isa = PBXGroup;
 			children = (
+				1A2C558D21BEBE2F0032FEFD /* WebController */,
 				1A52756120D29F7A00CA0D68 /* Models */,
 				1AA7823220CCFE8300088923 /* Views */,
 				1AA7822D20CCFDC200088923 /* MLSelectedTableController.swift */,
@@ -527,6 +556,8 @@
 				1AA7825820CEA01500088923 /* MLDatePickerViewController.storyboard in Resources */,
 				1A65039220DD54F20017F91D /* MolueCommon.xcassets in Resources */,
 				1A52756B20D523B500CA0D68 /* MLSignleSelectTableCell.xib in Resources */,
+				1A2C559521BEBEAA0032FEFD /* CommonWebViewController.storyboard in Resources */,
+				1A2C558C21BE98DD0032FEFD /* MLSegementCollectionCell.xib in Resources */,
 				1ACD0A1521A0094400793AAC /* SKPhotoBrowser.bundle in Resources */,
 				1AA7823620CCFF3B00088923 /* MLSelectedTableViewCell.xib in Resources */,
 				1A242C7C219EBE18007554E9 /* SWQRCode.bundle in Resources */,
@@ -631,6 +662,7 @@
 				1A2D443D20A097E100BA947A /* MLInterfaceConfigure.swift in Sources */,
 				1ACD0A0D21A0094400793AAC /* UIView+Radius.swift in Sources */,
 				1A43801A2162A86200FA1C93 /* MolueTableViewAdapter.swift in Sources */,
+				1A01B56921BEC0C000F4F3A0 /* CommonWebBuilderRouter.swift in Sources */,
 				1ACD0A0521A0094400793AAC /* SKAnimator.swift in Sources */,
 				1ACD0A1321A0094400793AAC /* SKPhotoBrowserDelegate.swift in Sources */,
 				1A242C7A219EBE18007554E9 /* SWQRCodeManager.swift in Sources */,
@@ -640,6 +672,7 @@
 				1ACD0A0B21A0094400793AAC /* SKCache.swift in Sources */,
 				1ACD0A1021A0094400793AAC /* SKPhoto.swift in Sources */,
 				1A2D441B20A07E9900BA947A /* MLRefreshHeaderAnimator.swift in Sources */,
+				1A2C558B21BE98DD0032FEFD /* MLSegementCollectionCell.swift in Sources */,
 				1ACD0A0121A0094400793AAC /* SKMesurement.swift in Sources */,
 				1A52756320D29F9C00CA0D68 /* MLSelectedTableViewModel.swift in Sources */,
 				1A52756A20D523B500CA0D68 /* MLSignleSelectTableCell.swift in Sources */,
@@ -648,10 +681,13 @@
 				1ACD0A0421A0094400793AAC /* SKIndicatorView.swift in Sources */,
 				1ACD0A1121A0094400793AAC /* SKActionView.swift in Sources */,
 				1A944CB420F1D08A002BD1E9 /* MLCommonRemarkView.swift in Sources */,
+				1A01B56721BEC0C000F4F3A0 /* CommonWebViewController.swift in Sources */,
 				1A43BC3620C4031D0093855B /* MLCommonInputView.swift in Sources */,
+				1A01B56821BEC0C000F4F3A0 /* CommonWebPageInteractor.swift in Sources */,
 				1AA7823520CCFF3B00088923 /* MLSelectedTableViewCell.swift in Sources */,
 				1AA7825420CE9F3300088923 /* MLDatePickerViewController.swift in Sources */,
 				1ACD0A0721A0094400793AAC /* SKDetectingImageView.swift in Sources */,
+				1A2C558821BE96830032FEFD /* MLCommonSegementView.swift in Sources */,
 				1ABDCA9D20C5946B0062DE71 /* MLCommonClickView.swift in Sources */,
 				1A43BC3C20C40FA30093855B /* MLCommonSelectView.swift in Sources */,
 				1ACD0A0821A0094400793AAC /* UIApplication+UIWindow.swift in Sources */,

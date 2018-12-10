@@ -55,25 +55,6 @@ class EditRiskInfoResuableFooterView: UICollectionReusableView {
         self.submitInfoCommand = PublishSubject<PotentialRiskModel>()
     }
     
-    @IBOutlet weak var deadLineClickView: MLCommonClickView! {
-        didSet {
-            deadLineClickView.defaultValue(title: "整改日期", placeholder: "请选择整改完成日期")
-            deadLineClickView.clickedCommand.subscribe(onNext: { [unowned self] (_) in
-                self.presentDeadLineController()
-            }).disposed(by: disposeBag)
-        }
-    }
-    
-    private func presentDeadLineController() {
-        let controller = MLDatePickerViewController.initializeFromStoryboard()
-        controller.modalPresentationStyle = .overCurrentContext
-        controller.selectDateCommand.subscribe(onNext: { [unowned self] (date, string) in
-            self.deadLineClickView.update(description: string)
-            self.riskInfo.finishDate = string
-        }).disposed(by: disposeBag)
-        MoluePageNavigator.shared.presentViewController(controller)
-    }
-    
     @IBOutlet weak var riskUnitClickView: MLCommonClickView! {
         didSet {
             riskUnitClickView.defaultValue(title: "风险单元", placeholder: "请选择风险单元")
@@ -96,7 +77,7 @@ class EditRiskInfoResuableFooterView: UICollectionReusableView {
     
     @IBOutlet weak var reasonRemarkView: MLCommonRemarkView! {
         didSet {
-            reasonRemarkView.defaultValue(title: "请填写具体情况及整改措施方案", limit: 100)
+            reasonRemarkView.defaultValue(title: "请填写当前的隐患说明", limit: 100)
         }
     }
     
@@ -122,7 +103,6 @@ class EditRiskInfoResuableFooterView: UICollectionReusableView {
     }
     private enum riskInfoRrror: LocalizedError {
         case typeInvalid
-        case dateInvalid
         case unitInvalid
         case levelInvalid
         case reasonInvalid
@@ -131,14 +111,12 @@ class EditRiskInfoResuableFooterView: UICollectionReusableView {
             switch self {
             case .typeInvalid:
                 return "请选择隐患类别"
-            case .dateInvalid:
-                return "请选择整改完成日期"
             case .unitInvalid:
                 return "请选择风险单元"
             case .levelInvalid:
                 return "请选择隐患级别"
             case .reasonInvalid:
-                return "请填写具体情况及整改措施方案"
+                return "请填写当前的隐患说明"
             }
         }
     }
@@ -146,10 +124,6 @@ class EditRiskInfoResuableFooterView: UICollectionReusableView {
     @IBAction func submitButtonClicked(_ sender: UIButton) {
         guard let type = self.riskInfo.riskClass, type.isEmpty == false else{
             self.submitInfoCommand?.onError(riskInfoRrror.typeInvalid)
-            return
-        }
-        guard let date = self.riskInfo.finishDate, date.isEmpty == false else {
-            self.submitInfoCommand?.onError(riskInfoRrror.dateInvalid)
             return
         }
         guard let unit = self.riskInfo.riskUnit, unit.isEmpty == false else {
