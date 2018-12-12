@@ -9,9 +9,12 @@
 import Foundation
 import MolueNetwork
 import MolueCommon
+import KeychainAccess
 import Kingfisher
 import Alamofire
 import MolueUtilities
+
+import MolueHomePart
 
 extension AppDelegate {
     func setUserInterfaceConfigure() {
@@ -21,21 +24,30 @@ extension AppDelegate {
     }
     
     private func networkLoginRequest() {
-        let headerInfo = Alamofire.Request.authorizationHeader(user: "hj8LAJukEhrs37yPbvXlwX5kG8sk45q0gciIw1Ol", password: "jEOk3ZLDixlJWPyyoncEbcwp4z3Ij5VG05HfKGORg5357CCWeRnrY86OPFpCPF79FaRiUGHnUcb68uCp5NScHg3z5roBqkVY3eB2LHrEaByULCY4JFMRDvXTa7a3ITq9")
-        guard let header = headerInfo else {return}
-        let xxx = [header.key : header.value]
-        let dict = ["username":"13063745829", "password":"q1w2e3r4","grant_type":"password"]
-
-        let request = MolueDataRequest(parameter:dict, method: .post, path: "oauth/token/", headers: xxx)
+        let request = MolueOauthService.doLogin(username: "182828282828", password: "-1234Asdf")
         request.handleFailureResponse { (error) in
             MolueLogger.network.message(error.localizedDescription)
-//            print(error)
         }
-        request.handleSuccessResultToObjc { (result: MolueOauthModel?) in
-            print(result ?? "null value")
-            print(result?.validateNeedRefresh() ?? "null value")
+        request.handleSuccessResultToObjc { [weak self] (result: MolueOauthModel?) in
+            dump(result)
+            do {
+                let oauthItem = try result.unwrap()
+                MolueOauthModel.updateOauthItem(with: oauthItem)
+                MolueLogger.database.message(MolueOauthModel.queryOauthItem())
+                try self.unwrap().queryDailyPlanList()
+            } catch { MolueLogger.network.message(error) }
         }
-        MolueRequestManager().doRequestStart(with: request)
+        MolueRequestManager().doRequestStart(with: request ,needOauth: false)
+    }
+    
+    private func queryDailyPlanList() {
+        let request = MolueCheckService.queryDailyPlanList(page: 1, pagesize: 1)
+        request.handleFailureResponse { (error) in
+            MolueLogger.network.message(error.localizedDescription)
+        }
+        request.handleSuccessResultToList { (list: [MLDailyPlanDetailModel]?) in
+            dump(list)
+        }
         MolueRequestManager().doRequestStart(with: request)
     }
     

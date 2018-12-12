@@ -19,11 +19,10 @@ public class MolueDataRequest {
     private(set) var failure: MolueResultClosure<Error>?
     private(set) var success: MolueResultClosure<Any?>?
     
-    public init(baseURL: String! = HTTPConfigure.baseURL, parameter: [String: Any]?, method: HTTPMethod, path: String, headers: HTTPHeaders? = nil, encoding:ParameterEncoding! = URLEncoding.default) {
+    public init(baseURL: String! = HTTPConfigure.baseURL, parameter: [String: Any]?, method: HTTPMethod, path: String, headers: HTTPHeaders? = MolueOauthHelper.queryUserOauthHeaders(), encoding:ParameterEncoding! = URLEncoding.default) {
         let urlPath = path.hasPrefix("/") ? path : "/" + path
         let requestURL = baseURL + urlPath
         self.components = URLComponents(string: requestURL)
-        self.components?.port = 50002
         self.parameter = parameter
         self.method = method
         self.encoding = encoding

@@ -10,14 +10,14 @@ import Foundation
 
 public struct MolueOauthService {
     
-    public static func doLogin(username: String, password: String, delegate: MolueActivityDelegate? = nil) -> MolueDataRequest {
-        let header = MolueOauthHelper.queryAuthHeader()
-        let parameter = ["username":username, "password":password, "grant_type":"password"]
+    public static func doLogin(username: String, password: String) -> MolueDataRequest {
+        let header = MolueOauthHelper.queryUserLoginHeaders()
+        let parameter = ["username": username, "password": password, "grant_type": "password"]
         return MolueDataRequest(parameter:parameter, method: .post, path: "oauth/token/", headers: header)
     }
     
-    public static func refreshToken(delegate: MolueActivityDelegate? = nil) -> MolueDataRequest {
-        let header = MolueOauthHelper.queryAuthHeader()
+    public static func refreshToken() -> MolueDataRequest {
+        let header = MolueOauthHelper.queryUserLoginHeaders()
         let parameter = ["grant_type":"password"]
         return MolueDataRequest(parameter:parameter, method: .post, path: "oauth/token/", headers: header)
     }

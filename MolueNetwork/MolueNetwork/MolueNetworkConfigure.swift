@@ -24,7 +24,7 @@ public struct HTTPConfigure {
     public static var baseURL: String  {
         switch AppSchemeStatus.base() {
         case .debug:
-            return "http://39.104.119.97"
+            return "http://www.safety-saas.com"
         case .release:
             return "https://api.fushuninsurance.com/insurance-guide"
         }

@@ -10,13 +10,13 @@ import Foundation
 import Alamofire
 import MolueUtilities
 
-let secret = "jEOk3ZLDixlJWPyyoncEbcwp4z3Ij5VG05HfKGORg5357CCWeRnrY86OPFpCPF79FaRiUGHnUcb68uCp5NScHg3z5roBqkVY3eB2LHrEaByULCY4JFMRDvXTa7a3ITq9"
-let key = "hj8LAJukEhrs37yPbvXlwX5kG8sk45q0gciIw1Ol"
+private let secret = "v2J5dobvIPYJLuVHNOlvYFWfAnhUokY1TppV1t5DHDKXJXAcW8kSMdzN6NKfrPZuSJLt62TVDV1HKX0sNEmreZPr7iplJ7CuxtLVUvQd8YbV1U1tlBYCc0anLJsrh6u4"
+private let key = "biSNqztvIm9QW4GqCNHoTwWBiTrpq89M9xFjnq3J"
 
 public struct MolueOauthHelper {
     private static var oauthToken: String = String()
     
-    public static func queryAuthHeader() -> [String : String]? {
+    public static func queryUserLoginHeaders() -> [String : String]? {
         do {
             let header = Request.authorizationHeader(user: key, password: secret)
             let authHeader = try header.unwrap()
@@ -25,11 +25,18 @@ public struct MolueOauthHelper {
             return MolueLogger.network.returnNil(error)
         }
     }
-    
-//    public static func storeTokenHeader() -> [String : String]? {
-//
-//    }
 
+    public static func queryUserOauthHeaders() -> [String : String]? {
+        do {
+            let item = try MolueOauthModel.queryOauthItem().unwrap()
+            let access_token = try item.access_token.unwrap()
+            let token_type = try item.token_type.unwrap()
+            let authorization = token_type + " " + access_token
+            return ["authorization" : authorization]
+        } catch {
+            return MolueLogger.network.returnNil(error)
+        }
+    }
     public static func storeOauthToken(_ token: String) {
         self.oauthToken = token
     }

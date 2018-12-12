@@ -29,17 +29,24 @@ extension AppDelegate {
         do {
             let window = try self.window.unwrap()
             window.isHidden = false
-            let builderFactory = MolueBuilderFactory<MolueComponent.Login>(.LoginPage)
-            let builder: UserLoginPageComponentBuildable? = builderFactory.queryBuilder()
-            let controller = try builder.unwrap().build()
-            let navController = MLNavigationController(rootViewController: controller)
-            window.rootViewController = navController
-            
-//            let viewController = UIViewController()
-//            window.rootViewController = viewController
+//            let navController = self.createLoginPageViewController()
+//            window.rootViewController = navController
+            let viewController = UIViewController()
+            window.rootViewController = viewController
             window.makeKeyAndVisible()
         } catch {
             MolueLogger.UIModule.error(error)
+        }
+    }
+    
+    private func createLoginPageViewController() -> UIViewController? {
+        do {
+            let builderFactory = MolueBuilderFactory<MolueComponent.Login>(.LoginPage)
+            let builder: UserLoginPageComponentBuildable? = builderFactory.queryBuilder()
+            let controller = try builder.unwrap().build()
+            return MLNavigationController(rootViewController: controller)
+        } catch {
+            return MolueLogger.UIModule.returnNil(error)
         }
     }
     

@@ -20,6 +20,7 @@ def molue_safty_shared_pods
     pod 'RxSwift', '~> 4.1.2'
     pod 'ESPullToRefresh', '~> 2.7'
     pod 'ObjectMapper', '~> 3.3.0'
+    pod 'KeychainAccess', '~> 3.1.2'
 end
 
 target 'MolueSafty' do
@@ -28,7 +29,6 @@ target 'MolueSafty' do
         pod 'IQKeyboardManagerSwift', '~> 6.1.1'
         pod 'Alamofire', '~> 4.7'
         pod 'SQLite.swift', '~> 0.11.5'
-        pod 'Locksmith', '~> 4.0.0'
         pod 'JPush', '~> 3.0.9'
         pod 'AMapSearch', '~> 5.7.0'
         pod 'AMap3DMap', '~> 5.7.0'
@@ -90,7 +90,7 @@ end
 target 'MolueNetwork' do
     project 'MolueNetwork/MolueNetwork.xcodeproj'
         pod 'Alamofire', '~> 4.7'
-        pod 'Locksmith', '~> 4.0.0'
+        pod 'KeychainAccess', '~> 3.1.2'
         pod 'ObjectMapper', '~> 3.3'
         pod 'Bolts-Swift', '~> 1.4.0'
     target 'MolueNetworkTests' do

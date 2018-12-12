@@ -8,6 +8,7 @@
 
 import MolueMediator
 import MolueUtilities
+import MolueNetwork
 
 protocol DangerUnitListViewableRouting: class {
     // 定义一些页面跳转的方法, 比如Push, Presenter等.
@@ -50,6 +51,14 @@ extension DangerUnitListPageInteractor: DangerUnitListRouterInteractable {
 }
 
 extension DangerUnitListPageInteractor: DangerUnitListPresentableListener {
+    func queryDailyCheckDangerUnit() {
+        let request = MolueCheckService.queryDailyPlanList(page: 1, pagesize: 1)
+        request.handleSuccessResponse { (result) in
+            MolueLogger.network.message(result)
+        }
+        MolueRequestManager().doRequestStart(with: request)
+    }
+    
     func jumpToDailyCheckTaskController() {
         do {
             let viewRouter = try self.viewRouter.unwrap()

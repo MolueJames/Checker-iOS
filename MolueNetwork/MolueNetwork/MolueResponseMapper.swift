@@ -46,6 +46,7 @@ public extension MolueDataRequest {
     @discardableResult
     public func handleSuccessResultToList<T: Mappable>(_ success: MolueResultClosure<[T]?>?) -> MolueDataRequest {
         let resultClosure: MolueResultClosure<Any?> = { (result) in
+            MolueLogger.network.message(result)
             do {
                 let response:[T]? = try MolueResponseMapper.handleResultToList(result)
                 try success.unwrap()(response)

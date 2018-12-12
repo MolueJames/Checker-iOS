@@ -18,6 +18,8 @@ protocol DangerUnitListPresentableListener: class {
     func jumpToDailyCheckTaskController()
     
     var selectedIndex: IndexPath {get set}
+    
+    func queryDailyCheckDangerUnit()
 }
 
 final class DangerUnitListViewController: MLBaseViewController  {
@@ -40,7 +42,12 @@ final class DangerUnitListViewController: MLBaseViewController  {
 
 extension DangerUnitListViewController: MLUserInterfaceProtocol {
     func queryInformationWithNetwork() {
-        
+        do {
+            let listener = try self.listener.unwrap()
+            listener.queryDailyCheckDangerUnit()
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
     }
     
     func updateUserInterfaceElements() {
