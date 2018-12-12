@@ -15,9 +15,9 @@ public class MLRiskUnitCategoryModel: Mappable {
     
     public func mapping(map: Map) {
         description <- map["description"]
-        categoryId <- map["id"]
-        prefix <- map["prefix"]
-        title <- map["title"]
+        categoryId  <- map["id"]
+        prefix      <- map["prefix"]
+        title       <- map["title"]
     }
     
     var description: String?
@@ -31,25 +31,25 @@ public class MLRiskTaskDetailModel: Mappable {
     public required init?(map: Map) {}
     
     public func mapping(map: Map) {
-        code <- map["code"]
-        contact_phone <- map["contact_phone"]
-        created <- map["created"]
-        dangers <- map["dangers"]
-        extensions <- map["extension"]
-        grade <- map["grade"]
-        taskId <- map["id"]
-        level <- map["level"]
-        calculation <- map["method_of_calculation"]
-        name <- map["name"]
-        remark <- map["remark"]
+        code            <- map["code"]
+        contact_phone   <- map["contact_phone"]
+        created         <- map["created"]
+        dangers         <- map["dangers"]
+        extensions      <- map["extension"]
+        grade           <- map["grade"]
+        taskId          <- map["id"]
+        level           <- map["level"]
+        calculation     <- map["method_of_calculation"]
+        name            <- map["name"]
+        remark          <- map["remark"]
         response_person <- map["response_person"]
-        response_unit <- map["response_unit"]
-        risk_unit <- map["risk_unit"]
-        standards <- map["standards"]
-        status <- map["status"]
-        updated <- map["updated"]
-        accidents <- map["accidents"]
-        classification <- map["classification"]
+        response_unit   <- map["response_unit"]
+        risk_unit       <- map["risk_unit"]
+        standards       <- map["standards"]
+        status          <- map["status"]
+        updated         <- map["updated"]
+        accidents       <- map["accidents"]
+        classification  <- map["classification"]
     }
     
     var code: String?
@@ -77,10 +77,10 @@ public class MLRiskAccidentModel: Mappable {
     public required init?(map: Map) {}
     
     public func mapping(map: Map) {
-        code <- map["code"]
+        code        <- map["code"]
         description <- map["description"]
-        accidentId <- map["id"]
-        name <- map["name"]
+        accidentId  <- map["id"]
+        name        <- map["name"]
     }
     
     var code: String?
@@ -107,15 +107,15 @@ public class MLDailyPlanDetailModel: Mappable {
     public required init?(map: Map) {}
     
     public func mapping(map: Map) {
-        expiration <- map["time_of_expiration"]
+        expiration     <- map["time_of_expiration"]
         time_of_finish <- map["time_of_finish"]
-        time_of_start <- map["time_of_start"]
-        enterprise <- map["enterprise"]
-        risk_unit <- map["risk_unit"]
-        created <- map["created"]
-        updated <- map["updated"]
-        status <- map["status"]
-        planId <- map["id"]
+        time_of_start  <- map["time_of_start"]
+        enterprise     <- map["enterprise"]
+        risk_unit      <- map["risk_unit"]
+        created        <- map["created"]
+        updated        <- map["updated"]
+        status         <- map["status"]
+        planId         <- map["id"]
     }
     
     var enterprise: Int?
@@ -136,14 +136,14 @@ public class MLRiskUnitDetailModel: Mappable {
     public func mapping(map: Map) {
         cycle_type <- map["cycle_type"]
         enterprise <- map["enterprise"]
-        unit_code <- map["unit_code"]
-        unit_name <- map["unit_name"]
-        category <- map["category"]
-        updated <- map["updated"]
-        status <- map["status"]
-        cycle <- map["cycle"]
-        risks <- map["risks"]
-        unitId <- map["id"]
+        unit_code  <- map["unit_code"]
+        unit_name  <- map["unit_name"]
+        category   <- map["category"]
+        updated    <- map["updated"]
+        status     <- map["status"]
+        cycle      <- map["cycle"]
+        risks      <- map["risks"]
+        unitId     <- map["id"]
     }
     
     var category: MLRiskUnitCategoryModel?

@@ -20,7 +20,7 @@ extension AppDelegate {
     func setUserInterfaceConfigure() {
         MLInterfaceConfigure.setInterfaceConfigure()
         self.setDefaultWebImageConfigure()
-        self.networkLoginRequest()
+        self.queryDailyPlanList()
     }
     
     private func networkLoginRequest() {
@@ -41,12 +41,12 @@ extension AppDelegate {
     }
     
     private func queryDailyPlanList() {
-        let request = MolueCheckService.queryDailyPlanList(page: 1, pagesize: 1)
+        let request = MolueCheckService.queryDailyPlanList(page: 1, pagesize: 2)
         request.handleFailureResponse { (error) in
             MolueLogger.network.message(error.localizedDescription)
         }
-        request.handleSuccessResultToList { (list: [MLDailyPlanDetailModel]?) in
-            dump(list)
+        request.handleSuccessResultToObjc { (item: MolueListModel<MLDailyPlanDetailModel>?) in
+            dump(item)
         }
         MolueRequestManager().doRequestStart(with: request)
     }

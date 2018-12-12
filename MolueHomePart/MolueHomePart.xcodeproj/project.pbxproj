@@ -107,7 +107,7 @@
 		1AB0670420EFB06B00619570 /* LawRegulationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AB0670220EFB06B00619570 /* LawRegulationTableViewCell.xib */; };
 		1AB0670720EFB61D00619570 /* PolicyNoticeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB0670520EFB61D00619570 /* PolicyNoticeTableViewCell.swift */; };
 		1AB0670820EFB61D00619570 /* PolicyNoticeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AB0670620EFB61D00619570 /* PolicyNoticeTableViewCell.xib */; };
-		1ABA9A9821C0F6FF007E54D3 /* MLRiskUitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABA9A9721C0F6FF007E54D3 /* MLRiskUitModel.swift */; };
+		1ABA9A9821C0F6FF007E54D3 /* MLDailyPlanDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABA9A9721C0F6FF007E54D3 /* MLDailyPlanDetailModel.swift */; };
 		1ABDCA9520C5720F0062DE71 /* IncreaseAdminiFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABDCA9420C5720F0062DE71 /* IncreaseAdminiFooterView.swift */; };
 		1ABDCA9720C5721B0062DE71 /* IncreaseAdminiFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1ABDCA9620C5721B0062DE71 /* IncreaseAdminiFooterView.xib */; };
 		1ABDCA9A20C5798B0062DE71 /* SecurityAdminiTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABDCA9820C5798B0062DE71 /* SecurityAdminiTableViewCell.swift */; };
@@ -233,7 +233,7 @@
 		1AB0670220EFB06B00619570 /* LawRegulationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LawRegulationTableViewCell.xib; sourceTree = "<group>"; };
 		1AB0670520EFB61D00619570 /* PolicyNoticeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyNoticeTableViewCell.swift; sourceTree = "<group>"; };
 		1AB0670620EFB61D00619570 /* PolicyNoticeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PolicyNoticeTableViewCell.xib; sourceTree = "<group>"; };
-		1ABA9A9721C0F6FF007E54D3 /* MLRiskUitModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLRiskUitModel.swift; sourceTree = "<group>"; };
+		1ABA9A9721C0F6FF007E54D3 /* MLDailyPlanDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLDailyPlanDetailModel.swift; sourceTree = "<group>"; };
 		1ABDCA9420C5720F0062DE71 /* IncreaseAdminiFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncreaseAdminiFooterView.swift; sourceTree = "<group>"; };
 		1ABDCA9620C5721B0062DE71 /* IncreaseAdminiFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IncreaseAdminiFooterView.xib; sourceTree = "<group>"; };
 		1ABDCA9820C5798B0062DE71 /* SecurityAdminiTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityAdminiTableViewCell.swift; sourceTree = "<group>"; };
@@ -667,7 +667,7 @@
 		1ABA9A9621C0F6CC007E54D3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				1ABA9A9721C0F6FF007E54D3 /* MLRiskUitModel.swift */,
+				1ABA9A9721C0F6FF007E54D3 /* MLDailyPlanDetailModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -927,7 +927,7 @@
 				1A0B89DB21968991000B1EBC /* DailyCheckSectionHeaderView.swift in Sources */,
 				1A43BC2720C3AF190093855B /* HomeInfoHeaderView.swift in Sources */,
 				1A2F407A21AD394F00C436F9 /* TaskHistoryInfoPageInteractor.swift in Sources */,
-				1ABA9A9821C0F6FF007E54D3 /* MLRiskUitModel.swift in Sources */,
+				1ABA9A9821C0F6FF007E54D3 /* MLDailyPlanDetailModel.swift in Sources */,
 				1A1084FD20ECF1DD004E365A /* IncreaseAdminiNavigator.swift in Sources */,
 				1AAF7B8120C1971B0051EC18 /* IncreaseAdminiViewController.swift in Sources */,
 				1A602F8520A87D58003AD583 /* HomeInfoTableHeaderView.swift in Sources */,
