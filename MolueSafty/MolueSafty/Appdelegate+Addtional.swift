@@ -46,7 +46,7 @@ extension AppDelegate {
             MolueLogger.network.message(error.localizedDescription)
         }
         request.handleSuccessResultToObjc { (item: MolueListModel<MLDailyPlanDetailModel>?) in
-            dump(item)
+            dump("xxxxx" + (String(describing: item)))
         }
         MolueRequestManager().doRequestStart(with: request)
     }

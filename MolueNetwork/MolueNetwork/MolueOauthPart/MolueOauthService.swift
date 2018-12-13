@@ -16,7 +16,7 @@ public struct MolueOauthService {
         return MolueDataRequest(parameter:parameter, method: .post, path: "oauth/token/", headers: header)
     }
     
-    public static func refreshToken(refreshToken: String?) -> MolueDataRequest {
+    public static func doRefreshToken(with refreshToken: String?) -> MolueDataRequest {
         let header = MolueOauthHelper.queryClientInfoHeaders()
         let refresh_token: String = refreshToken ?? ""
         let parameter = ["grant_type" : "refresh_token", "refresh_token" : refresh_token]
