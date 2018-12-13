@@ -11,14 +11,13 @@ import Alamofire
 import MolueUtilities
 
 private let secret = "v2J5dobvIPYJLuVHNOlvYFWfAnhUokY1TppV1t5DHDKXJXAcW8kSMdzN6NKfrPZuSJLt62TVDV1HKX0sNEmreZPr7iplJ7CuxtLVUvQd8YbV1U1tlBYCc0anLJsrh6u4"
-private let key = "biSNqztvIm9QW4GqCNHoTwWBiTrpq89M9xFjnq3J"
+private let appKey = "biSNqztvIm9QW4GqCNHoTwWBiTrpq89M9xFjnq3J"
 
 public struct MolueOauthHelper {
-    private static var oauthToken: String = String()
     
-    public static func queryUserLoginHeaders() -> [String : String]? {
+    public static func queryClientInfoHeaders() -> [String : String]? {
         do {
-            let header = Request.authorizationHeader(user: key, password: secret)
+            let header = Request.authorizationHeader(user: appKey, password: secret)
             let authHeader = try header.unwrap()
             return [authHeader.key: authHeader.value]
         } catch {
@@ -37,11 +36,13 @@ public struct MolueOauthHelper {
             return MolueLogger.network.returnNil(error)
         }
     }
-    public static func storeOauthToken(_ token: String) {
-        self.oauthToken = token
-    }
-
-    public static func queryOauthToken() -> String {
-        return self.oauthToken
+    
+    public static func queryRefreshToken() -> String? {
+        do {
+            let item = try MolueOauthModel.queryOauthItem().unwrap()
+            return try item.refresh_token.unwrap()
+        } catch {
+            return MolueLogger.network.returnNil(error)
+        }
     }
 }

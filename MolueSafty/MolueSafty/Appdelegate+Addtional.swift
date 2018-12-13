@@ -51,6 +51,10 @@ extension AppDelegate {
         MolueRequestManager().doRequestStart(with: request)
     }
     
+    private func queryUserDetail() {
+        
+    }
+    
     private func setDefaultWebImageConfigure() {
         let cache = KingfisherManager.shared.cache
         // 设置硬盘最大缓存50M ，默认无限

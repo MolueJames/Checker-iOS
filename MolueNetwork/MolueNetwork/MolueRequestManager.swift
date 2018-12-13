@@ -9,13 +9,11 @@
 import Foundation
 import Alamofire
 import BoltsSwift
+import ObjectMapper
 import MolueUtilities
 
 public typealias MolueRequestItem = (request: MolueDataRequest, manager: MolueRequestManager)
 public typealias MolueResultClosure<Target> = (Target) -> Void
-
-private let userKey = "hj8LAJukEhrs37yPbvXlwX5kG8sk45q0gciIw1Ol"
-private let password = "jEOk3ZLDixlJWPyyoncEbcwp4z3Ij5VG05HfKGORg5357CCWeRnrY86OPFpCPF79FaRiUGHnUcb68uCp5NScHg3z5roBqkVY3eB2LHrEaByULCY4JFMRDvXTa7a3ITq9"
 
 open class MolueRequestManager {
     private(set) weak var delegate: MolueActivityDelegate?
@@ -49,7 +47,7 @@ open class MolueRequestManager {
     func queryTokenFromServer(with request: MolueDataRequest) {
         let requestItem: MolueRequestItem = (request: request, manager: self)
         MolueOauthRequestManager.shared.insert(with: requestItem)
-        MolueOauthRequestManager.shared.startOauthRequest()
+        MolueOauthRequestManager.shared.startRefreshTokenRequest()
     }
     
     func queryDataFromServer(with request: MolueDataRequest) {
@@ -113,24 +111,23 @@ public class MolueOauthRequestManager: MolueRequestManager {
         self.isRefreshing = false
     }
     
-    public func startOauthRequest() {
+    public func startRefreshTokenRequest() {
         if self.validateOauthRequest() == false {return}
-        let parameters = ["username":"13063745829", "password":"q1w2e3r4","grant_type":"password"]
-        let headers = self.queryOauthRequestHeaders()
-        let request = MolueDataRequest(parameter: parameters, method: .post, path: "oauth/token/", headers: headers)
+        let refreshToken = MolueOauthHelper.queryRefreshToken()
+        let request = MolueOauthService.refreshToken(refreshToken: refreshToken)
         self.doGenerateDataRequestTask(with: request).continueOnSuccessWith { result in
+            self.saveOauthItemToKeyChain(with: result)
             self.doOperationWithOauthSuccess(with: self.requestItems)
         }.continueOnErrorWith { (error) in
             self.doOpertionsWhenOauthFailure(with: self.requestItems, error: error)
         }
     }
-
-    private func queryOauthRequestHeaders() -> HTTPHeaders? {
+    
+    private func saveOauthItemToKeyChain(with result: Any?) {
         do {
-            let header = Request.authorizationHeader(user: userKey, password: password)
-            let oauthHeader = try header.unwrap()
-            return [oauthHeader.key : oauthHeader.value]
-        } catch { return nil}
+            let item = Mapper<MolueOauthModel>().map(JSONObject: result)
+            try MolueOauthModel.updateOauthItem(with: item.unwrap())
+        } catch { MolueLogger.network.message(error) }
     }
 }
 
@@ -147,6 +144,7 @@ extension MolueOauthRequestManager {
         defer {self.dofinishRequestOperation()}
         list.forEach { (request: MolueDataRequest, manager: MolueRequestManager) in
             doRequestItemSuccess(with: manager)
+            request.headers = MolueOauthHelper.queryUserOauthHeaders()
             manager.queryDataFromServer(with: request)
         }
     }

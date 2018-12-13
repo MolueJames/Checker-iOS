@@ -26,7 +26,7 @@ public struct MolueOauthModel: Mappable {
     
     private mutating func setExpires_data(expires_in: Double?) {
         do {
-            let expires_in = try expires_in.unwrap() - 600
+            let expires_in = try expires_in.unwrap() - 35980
             let date = Date().addingTimeInterval(expires_in)
             expires_date = date.string(withFormat: "yyyy/MM/dd HH:mm:ss")
         } catch { MolueLogger.network.error(error) }
