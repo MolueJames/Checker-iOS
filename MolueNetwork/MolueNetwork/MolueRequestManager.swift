@@ -27,15 +27,14 @@ open class MolueRequestManager {
     }
     
     public func doRequestStart(with request: MolueDataRequest, needOauth: Bool = true) {
-        func checkNeedQueryToken(with needOauth: Bool, OauthItem: MolueOauthModel?) -> Bool {
+        func checkNeedQueryToken(with needOauth: Bool) -> Bool {
             do {
-                let item = try OauthItem.unwrap()
+                let item = try MolueOauthModel.queryOauthItem().unwrap()
                 return needOauth && item.validateNeedRefresh()
             } catch { return needOauth }
         }
         
-        let oauthItem = MolueOauthModel.queryOauthItem()
-        if (checkNeedQueryToken(with: needOauth, OauthItem: oauthItem)) {
+        if (checkNeedQueryToken(with: needOauth)) {
             self.queryTokenFromServer(with: request)
         } else {
             self.queryDataFromServer(with: request)

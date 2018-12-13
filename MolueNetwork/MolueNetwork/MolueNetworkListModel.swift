@@ -8,10 +8,11 @@
 
 import Foundation
 import ObjectMapper
-public class MolueListModel<T: Mappable>: Mappable {
+public class MolueListItem<T: Mappable>: Mappable {
     public required init?(map: Map) {}
     
     public func mapping(map: Map) {
+        pagesize <- map["page_size"]
         previous <- map["previous"]
         results  <- map["results"]
         count    <- map["count"]
@@ -19,7 +20,8 @@ public class MolueListModel<T: Mappable>: Mappable {
     }
     
     var count: Int?
-    var next: String?
-    var previous: String?
+    var next: Int?
+    var pagesize: Int?
+    var previous: Int?
     var results: [T]?
 }

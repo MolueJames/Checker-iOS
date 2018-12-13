@@ -45,8 +45,8 @@ extension AppDelegate {
         request.handleFailureResponse { (error) in
             MolueLogger.network.message(error.localizedDescription)
         }
-        request.handleSuccessResultToObjc { (item: MolueListModel<MLDailyPlanDetailModel>?) in
-            dump("xxxxx" + (String(describing: item)))
+        request.handleSuccessResultToObjc { (item: MolueListItem<MLDailyPlanDetailModel>?) in
+            MolueLogger.network.message(item)
         }
         MolueRequestManager().doRequestStart(with: request)
     }
