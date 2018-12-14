@@ -27,8 +27,8 @@ public struct MLCommonFunction {
 
 private let databaseSevice: String = "com.safety-saas.db.path"
 
-public class MLUserLogicHelper {
-    public static func updateDatabasePath(with path: String?) {
+public class MolueUserLogic {
+    public static func updateDatabasePath(_ path: String?) {
         let keychain = Keychain(service: databaseSevice)
         keychain["databasePath"] = path
     }

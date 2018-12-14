@@ -1043,3 +1043,17 @@ public extension String {
         return frame.size.height
     }
 }
+
+public extension String {
+    
+    public var isPhoneNo: Bool {
+//        let regex: String = "^1[3456789]\\d{9}$"
+//        let predicate = NSPredicate(format: "SELF MATCHES %@", regex)
+//        return predicate.evaluate(with: self)
+        return !self.isEmpty
+    }
+    
+    public var isPassword: Bool {
+        return !self.isEmpty
+    }
+}

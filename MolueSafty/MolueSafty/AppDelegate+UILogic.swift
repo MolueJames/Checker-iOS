@@ -29,10 +29,10 @@ extension AppDelegate {
         do {
             let window = try self.window.unwrap()
             window.isHidden = false
-//            let navController = self.createLoginPageViewController()
-//            window.rootViewController = navController
-            let viewController = UIViewController()
-            window.rootViewController = viewController
+            let navController = self.createLoginPageViewController()
+            window.rootViewController = navController
+//            let viewController = UIViewController()
+//            window.rootViewController = viewController
             window.makeKeyAndVisible()
         } catch {
             MolueLogger.UIModule.error(error)

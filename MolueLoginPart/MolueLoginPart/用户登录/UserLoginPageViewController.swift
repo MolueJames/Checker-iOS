@@ -14,6 +14,7 @@ import MolueCommon
 protocol UserLoginPagePresentableListener: class {
     // 定义一些当前页面需要的业务逻辑, 比如网络请求.
     func routerToForgetPassword()
+    func doUserLogin(with username: String, password: String)
 }
 
 final class UserLoginPageViewController: MLBaseViewController, UserLoginPagePagePresentable, UserLoginPageViewControllable {
@@ -27,6 +28,10 @@ final class UserLoginPageViewController: MLBaseViewController, UserLoginPagePage
             appIconView.addShadow(ofColor: color, offset: offset)
         }
     }
+    @IBOutlet weak var usernameTextField: UITextField!
+    
+    @IBOutlet weak var passwordTextField: UITextField!
+    
     @IBOutlet weak var submitButton: UIButton! {
         didSet {
             submitButton.layer.cornerRadius = 5
@@ -60,15 +65,60 @@ extension UserLoginPageViewController: MLUserInterfaceProtocol {
     }
     
     @IBAction func submitButtonClicked(_ sender: UIButton) {
-        let name = MolueNotification.molue_user_login.toName()
-        NotificationCenter.default.post(name: name, object: nil)
+        do {
+            let listener = try self.listener.unwrap()
+            let username = try self.isUsername(with: usernameTextField)
+            let password = try self.isPassword(with: passwordTextField)
+            listener.doUserLogin(with: username, password: password)
+        } catch {
+            let message = error.localizedDescription
+            self.showFailureHUD(text: message)
+        }
+
     }
+    
+    private enum ValidInputError: LocalizedError {
+        case username
+        case password
+        
+        public var errorDescription: String? {
+            switch self {
+            case .username:
+                return "请输入正确的手机号码"
+            case .password:
+                return "请输入正确的登录密码"
+            }
+        }
+    }
+    
+    private func isUsername(with textfield: UITextField) throws -> String {
+        do {
+            let username = try textfield.text.unwrap()
+            if username.isPhoneNo { return username }
+            textfield.becomeFirstResponder()
+            throw ValidInputError.username
+        } catch {
+            throw ValidInputError.username
+        }
+    }
+    
+    private func isPassword(with textfield: UITextField) throws -> String {
+        do {
+            let password = try textfield.text.unwrap()
+            if password.isPassword { return password }
+            textfield.becomeFirstResponder()
+            throw ValidInputError.password
+        } catch {
+            throw ValidInputError.password
+        }
+    }
+    
     
     @IBAction func forgetButtonClicked(_ sender: UIButton) {
         do {
             try self.listener.unwrap().routerToForgetPassword()
         } catch {
-            MolueLogger.failure.error(error)
+            MolueLogger.UIModule.error(error)
         }
     }
 }

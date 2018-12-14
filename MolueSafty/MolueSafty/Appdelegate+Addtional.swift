@@ -20,7 +20,7 @@ extension AppDelegate {
     func setUserInterfaceConfigure() {
         MLInterfaceConfigure.setInterfaceConfigure()
         self.setDefaultWebImageConfigure()
-        self.networkLoginRequest()
+//        self.networkLoginRequest()
     }
     
     private func networkLoginRequest() {
@@ -53,7 +53,6 @@ extension AppDelegate {
     private func queryUserInformation() {
         let request = MolueUserInfoService.queryUserInformation()
         request.handleSuccessResultToObjc { (result: MolueUserInfoModel?) in
-            dump(result)
             MolueLogger.network.message(result)
         }
         request.handleFailureResponse { (error) in
@@ -78,22 +77,22 @@ public class MolueUserInfoModel: Mappable {
     
     public func mapping(map: Map) {
         enterpriseId <- map["enterprise_id"]
-        adminAreaId <- map["admin_area_id"]
-        permissions <- map["permissions"]
-        screenName <- map["screen_name"]
-        dateJoined <- map["date_joined"]
-        lastLogin <- map["last_login"]
-        lastName <- map["last_name"]
-        username <- map["username"]
-        position <- map["position"]
-        userMobile <- map["mobile"]
-        userOrder <- map["order"]
-        userPhone <- map["phone"]
-        userEmail <- map["email"]
-        profile <- map["profile"]
-        userName <- map["name"]
-        userRole <- map["role"]
-        userID <- map["id"]
+        adminAreaId  <- map["admin_area_id"]
+        permissions  <- map["permissions"]
+        screenName   <- map["screen_name"]
+        dateJoined   <- map["date_joined"]
+        lastLogin    <- map["last_login"]
+        lastName     <- map["last_name"]
+        username     <- map["username"]
+        position     <- map["position"]
+        userMobile   <- map["mobile"]
+        userOrder    <- map["order"]
+        userPhone    <- map["phone"]
+        userEmail    <- map["email"]
+        profile      <- map["profile"]
+        userName     <- map["name"]
+        userRole     <- map["role"]
+        userID       <- map["id"]
     }
     
     var adminAreaId: String?
