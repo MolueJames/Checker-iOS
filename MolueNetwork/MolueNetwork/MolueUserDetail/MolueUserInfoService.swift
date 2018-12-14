@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+public struct MolueUserInfoService {
+    public static func queryUserInformation() -> MolueDataRequest {
+        return MolueDataRequest(parameter: nil, method: .get, path: "api/auths/info/")
+    }
+}

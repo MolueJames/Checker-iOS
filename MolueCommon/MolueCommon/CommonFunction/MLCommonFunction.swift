@@ -8,6 +8,7 @@
 
 import Foundation
 import MolueUtilities
+import KeychainAccess
 
 public struct MLCommonFunction {
     public static func makeTelephoneCall(_ phone: String) {
@@ -21,5 +22,19 @@ public struct MLCommonFunction {
         } catch {
             MolueLogger.failure.error(error)
         }
+    }
+}
+
+private let databaseSevice: String = "com.safety-saas.db.path"
+
+public class MLUserLogicHelper {
+    public static func updateDatabasePath(with path: String?) {
+        let keychain = Keychain(service: databaseSevice)
+        keychain["databasePath"] = path
+    }
+    
+    public static func queryDatabasePath() -> String? {
+        let keychain = Keychain(service: databaseSevice)
+        return keychain["databasePath"]
     }
 }

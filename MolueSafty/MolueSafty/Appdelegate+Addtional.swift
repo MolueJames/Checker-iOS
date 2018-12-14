@@ -20,7 +20,7 @@ extension AppDelegate {
     func setUserInterfaceConfigure() {
         MLInterfaceConfigure.setInterfaceConfigure()
         self.setDefaultWebImageConfigure()
-        self.queryDailyPlanList()
+        self.networkLoginRequest()
     }
     
     private func networkLoginRequest() {
@@ -29,7 +29,6 @@ extension AppDelegate {
             MolueLogger.network.message(error.localizedDescription)
         }
         request.handleSuccessResultToObjc { [weak self] (result: MolueOauthModel?) in
-            dump(result)
             do {
                 let oauthItem = try result.unwrap()
                 MolueOauthModel.updateOauthItem(with: oauthItem)
@@ -51,8 +50,16 @@ extension AppDelegate {
         MolueRequestManager().doRequestStart(with: request)
     }
     
-    private func queryUserDetail() {
-        
+    private func queryUserInformation() {
+        let request = MolueUserInfoService.queryUserInformation()
+        request.handleSuccessResultToObjc { (result: MolueUserInfoModel?) in
+            dump(result)
+            MolueLogger.network.message(result)
+        }
+        request.handleFailureResponse { (error) in
+            MolueLogger.network.message(error.localizedDescription)
+        }
+        MolueRequestManager().doRequestStart(with: request)
     }
     
     private func setDefaultWebImageConfigure() {
@@ -62,4 +69,48 @@ extension AppDelegate {
         // 设置硬盘最大保存3天 ， 默认1周
         cache.maxCachePeriodInSecond = 60 * 60 * 24 * 3
     }
+}
+
+import ObjectMapper
+
+public class MolueUserInfoModel: Mappable {
+    public required init?(map: Map) {}
+    
+    public func mapping(map: Map) {
+        enterpriseId <- map["enterprise_id"]
+        adminAreaId <- map["admin_area_id"]
+        permissions <- map["permissions"]
+        screenName <- map["screen_name"]
+        dateJoined <- map["date_joined"]
+        lastLogin <- map["last_login"]
+        lastName <- map["last_name"]
+        username <- map["username"]
+        position <- map["position"]
+        userMobile <- map["mobile"]
+        userOrder <- map["order"]
+        userPhone <- map["phone"]
+        userEmail <- map["email"]
+        profile <- map["profile"]
+        userName <- map["name"]
+        userRole <- map["role"]
+        userID <- map["id"]
+    }
+    
+    var adminAreaId: String?
+    var dateJoined: String?
+    var userEmail: String?
+    var enterpriseId: Int?
+    var userID: Int?
+    var lastLogin: String?
+    var lastName: String?
+    var userMobile: String?
+    var userName: String?
+    var userOrder: Int?
+    var userPhone: String?
+    var position: String?
+    var profile: String?
+    var userRole: String?
+    var screenName: String?
+    var username: String?
+    var permissions: [Any]?
 }

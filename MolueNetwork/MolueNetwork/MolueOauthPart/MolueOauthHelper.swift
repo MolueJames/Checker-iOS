@@ -33,7 +33,7 @@ public struct MolueOauthHelper {
             let authorization = token_type + " " + access_token
             return ["authorization" : authorization]
         } catch {
-            return MolueLogger.network.returnNil(error)
+            return MolueLogger.network.allowNil(error)
         }
     }
     
@@ -42,7 +42,7 @@ public struct MolueOauthHelper {
             let item = try MolueOauthModel.queryOauthItem().unwrap()
             return try item.refresh_token.unwrap()
         } catch {
-            return MolueLogger.network.returnNil(error)
+            return MolueLogger.network.allowNil(error)
         }
     }
 }

@@ -37,7 +37,7 @@ public extension DataRequest {
     private func startRequestInfoLogger () {
         MolueLogger.network.message(self.request)
         MolueLogger.network.message(self.request?.allHTTPHeaderFields)
-        MolueLogger.network.message(self.response)
+        MolueLogger.network.message(self.response?.statusCode)
     }
     
     private func handleServiceResult(_ result: MolueServiceResponse, delegate: MolueActivityDelegate?, success:MolueResultClosure<Any?>? = nil, failure: MolueResultClosure<Error>? = nil) {
