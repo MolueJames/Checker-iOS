@@ -9,6 +9,7 @@
 import Foundation
 import MolueUtilities
 import KeychainAccess
+import MolueDatabase
 
 public struct MLCommonFunction {
     public static func makeTelephoneCall(_ phone: String) {
@@ -36,5 +37,12 @@ public class MolueUserLogic {
     public static func queryDatabasePath() -> String? {
         let keychain = Keychain(service: databaseSevice)
         return keychain["databasePath"]
+    }
+    
+    public static func doConnectWithDatabase() {
+        do {
+            let path = try self.queryDatabasePath().unwrap()
+            MLDatabaseManager.shared.doConnection(path)
+        } catch { MolueLogger.database.message(error) }
     }
 }

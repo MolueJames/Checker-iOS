@@ -19,6 +19,8 @@ protocol DangerUnitListPagePresentable: MolueInteractorPresentable {
     var listener: DangerUnitListPresentableListener? { get set }
     // 定义一些页面需要的方法, 比如刷新页面的显示内容等.
     func popBackWhenTaskChecked()
+    
+    func reloadTableViewData()
 }
 
 final class DangerUnitListPageInteractor: MoluePresenterInteractable {
@@ -31,7 +33,7 @@ final class DangerUnitListPageInteractor: MoluePresenterInteractable {
     
     var selectedIndex: IndexPath = IndexPath(row: 0, section: 0)
     
-    var valueList: [String] = ["1", "2", "2", "2", "2", "2", "2"]
+    var listModel: MolueListItem<MLDailyPlanDetailModel>?
     
     required init(presenter: DangerUnitListPagePresentable) {
         self.presenter = presenter
@@ -51,10 +53,56 @@ extension DangerUnitListPageInteractor: DangerUnitListRouterInteractable {
 }
 
 extension DangerUnitListPageInteractor: DangerUnitListPresentableListener {
+    func queryRisKItem(with indexPath: IndexPath) -> MLRiskTaskDetailModel? {
+        do {
+            let plan = self.queryUnitItem(with: indexPath.section)
+            let unit = try plan.unwrap().risk_unit.unwrap()
+            let itemList = try unit.risks.unwrap()
+            return try itemList.item(at: indexPath.row).unwrap()
+        } catch {
+            return MolueLogger.UIModule.allowNil(error)
+        }
+    }
+    
+    func numberOfSections() -> Int? {
+        do {
+            let listItem = try self.listModel.unwrap()
+            return try listItem.results.unwrap().count
+        } catch {
+            return MolueLogger.UIModule.allowNil(error)
+        }
+    }
+    
+    func numberOfRows(in section: Int) -> Int? {
+        do {
+            let item = self.queryUnitItem(with: section)
+            let risk_unit = try item.unwrap().risk_unit.unwrap()
+            return try risk_unit.risks.unwrap().count
+        } catch {
+            return MolueLogger.UIModule.allowNil(error)
+        }
+    }
+    
+    func queryUnitItem(with section: Int) -> MLDailyPlanDetailModel? {
+        do {
+            let listItem = try self.listModel.unwrap()
+            let itemList = try listItem.results.unwrap()
+            return try itemList.item(at: section).unwrap()
+        } catch {
+            return MolueLogger.UIModule.allowNil(error)
+        }
+    }
+    
     func queryDailyCheckDangerUnit() {
         let request = MolueCheckService.queryDailyPlanList(page: 1, pagesize: 1)
-        request.handleSuccessResponse { (result) in
-            MolueLogger.network.message(result)
+        request.handleSuccessResultToObjc { [weak self] (item: MolueListItem<MLDailyPlanDetailModel>?) in
+            dump(item)
+            do {
+                let strongSelf = try self.unwrap()
+                strongSelf.listModel = item
+                let presenter = try strongSelf.presenter.unwrap()
+                presenter.reloadTableViewData()
+            } catch {MolueLogger.UIModule.error(error)}
         }
         MolueRequestManager().doRequestStart(with: request)
     }

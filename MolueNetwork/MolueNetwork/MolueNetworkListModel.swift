@@ -19,9 +19,9 @@ public class MolueListItem<T: Mappable>: Mappable {
         next     <- map["next"]
     }
     
-    var count: Int?
-    var next: Int?
-    var pagesize: Int?
-    var previous: Int?
-    var results: [T]?
+    public var count: Int?
+    public var next: Int?
+    public var pagesize: Int?
+    public var previous: Int?
+    public var results: [T]?
 }

@@ -14,10 +14,13 @@ import MolueUtilities
 import MolueCommon
 import MolueMediator
 import ObjectMapper
+import MolueNetwork
+import MolueDatabase
 
 extension AppDelegate {
     func setDefaultRootViewController() {
-        self.setAppWindowConfigure()
+        let hasOauth = MolueOauthModel.queryOauthItem().isSome()
+        self.setAppWindowConfigure(with: hasOauth)
         let name = MolueNotification.molue_user_login.toName()
         NotificationCenter.default.addObserver(forName: name, object: nil, queue: OperationQueue.main) { [unowned self] (_) in
             self.window?.rootViewController = self.rootViewController()
@@ -25,21 +28,27 @@ extension AppDelegate {
         }
     }
     
-    public func setAppWindowConfigure() {
+    public func setAppWindowConfigure(with hasOauth: Bool) {
         do {
             let window = try self.window.unwrap()
             window.isHidden = false
-            let navController = self.createLoginPageViewController()
-            window.rootViewController = navController
-//            let viewController = UIViewController()
-//            window.rootViewController = viewController
-            window.makeKeyAndVisible()
+            self.setRootViewController(for: window, hasOauth: hasOauth)
         } catch {
             MolueLogger.UIModule.error(error)
         }
     }
     
-    private func createLoginPageViewController() -> UIViewController? {
+    private func setRootViewController(for window: UIWindow, hasOauth: Bool) {
+        defer { window.makeKeyAndVisible() }
+        if hasOauth {
+            MolueUserLogic.doConnectWithDatabase()
+            window.rootViewController = self.rootViewController()
+        } else {
+            window.rootViewController = self.loginViewController()
+        }
+    }
+    
+    private func loginViewController() -> UIViewController? {
         do {
             let builderFactory = MolueBuilderFactory<MolueComponent.Login>(.LoginPage)
             let builder: UserLoginPageComponentBuildable? = builderFactory.queryBuilder()

@@ -27,9 +27,9 @@ class DangerUnitSectionHeaderView: UIView {
         self.backgroundColor = UIColor.init(hex: 0x1B82D2)
     }
     
-    public func refreshSubviews(with model: DangerUnitSectionHeaderModel) {
-        self.dangerUnitLabel.text = model.unitName
-        self.dangerNumberLabel.text = model.unitNumber
-        self.dangerClassLabel.text = model.unitClass
+    public func refreshSubviews(with model: MLDailyPlanDetailModel) {
+//        self.dangerUnitLabel.text = model.unitName
+//        self.dangerNumberLabel.text = model.unitNumber
+//        self.dangerClassLabel.text = model.unitClass
     }
 }

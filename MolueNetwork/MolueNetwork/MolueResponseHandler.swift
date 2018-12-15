@@ -12,14 +12,14 @@ import MolueUtilities
 
 public extension DataRequest {
     
-    public func responseHandler(delegate observer: MolueActivityDelegate?, queue: DispatchQueue? = nil, options: JSONSerialization.ReadingOptions = .allowFragments, success:MolueResultClosure<Any?>? = nil, failure: MolueResultClosure<Error>? = nil) {
+    public func responseHandler(delegate observer: MolueActivityDelegate?, options: JSONSerialization.ReadingOptions = .allowFragments, success:MolueResultClosure<Any?>? = nil, failure: MolueResultClosure<Error>? = nil) {
         let operation = BlockOperation.init { [weak observer]  in
             if self.handleDefaultError(self.delegate.error, delegate: observer, failure: failure) {return}
             let serviceResult = self.handleResponseStatus(self.response, options: options)
             self.handleServiceResult(serviceResult, delegate: observer, success: success, failure: failure)
             self.startRequestInfoLogger()
         }
-        delegate.queue.addOperation(operation)
+        self.delegate.queue.addOperation(operation)
     }
     
     private func handleDefaultError(_ error: Error?, delegate: MolueActivityDelegate?, failure: MolueResultClosure<Error>? = nil) -> Bool {

@@ -73,10 +73,10 @@ open class MolueRequestManager {
         let taskCompletionSource = TaskCompletionSource<Any?>()
         do {
             let dataRequest = try self.createDataRequest(with: request).unwrap()
-            dataRequest.responseHandler(delegate: delegate, queue: requestQueue, options: options, success: { (result) in
-                taskCompletionSource.set(result: result)
+            dataRequest.responseHandler(delegate: delegate, options: options, success: { (result) in
+                self.requestQueue.async {taskCompletionSource.set(result: result)}
             }) { (error) in
-                taskCompletionSource.set(error: error)
+                self.requestQueue.async {taskCompletionSource.set(error: error)}
             }
         } catch { MolueLogger.failure.message(error) }
         return taskCompletionSource.task
@@ -88,6 +88,7 @@ open class MolueRequestManager {
             return SessionManager.default.doRequest(requestURL, method: request.method, parameters: request.parameter, encoding: request.encoding, headers: request.headers, delegate: delegate)
         } catch { return MolueLogger.network.returnNil(error) }
     }
+    
 }
 
 private let single = MolueOauthRequestManager()

@@ -8,9 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1A2558E321586C30007E58E0 /* MolueMediator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A2558E221586C30007E58E0 /* MolueMediator.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		1A91A48B218351A8003E906A /* RegisterAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A91A488218351A8003E906A /* RegisterAccountViewController.swift */; };
-		1A91A48C218351A8003E906A /* RegisterAccountPageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A91A489218351A8003E906A /* RegisterAccountPageInteractor.swift */; };
-		1A91A48D218351A8003E906A /* RegisterAccountBuilderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A91A48A218351A8003E906A /* RegisterAccountBuilderRouter.swift */; };
 		1A91A49121836242003E906A /* ForgetPasswordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A91A48F21836242003E906A /* ForgetPasswordTableViewCell.swift */; };
 		1A91A49221836242003E906A /* ForgetPasswordTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A91A49021836242003E906A /* ForgetPasswordTableViewCell.xib */; };
 		1A9BC9D22109F7380035FC21 /* MolueLoginPart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9BC9C82109F7370035FC21 /* MolueLoginPart.framework */; };
@@ -46,9 +43,6 @@
 
 /* Begin PBXFileReference section */
 		1A2558E221586C30007E58E0 /* MolueMediator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueMediator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1A91A488218351A8003E906A /* RegisterAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAccountViewController.swift; sourceTree = "<group>"; };
-		1A91A489218351A8003E906A /* RegisterAccountPageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAccountPageInteractor.swift; sourceTree = "<group>"; };
-		1A91A48A218351A8003E906A /* RegisterAccountBuilderRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAccountBuilderRouter.swift; sourceTree = "<group>"; };
 		1A91A48F21836242003E906A /* ForgetPasswordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordTableViewCell.swift; sourceTree = "<group>"; };
 		1A91A49021836242003E906A /* ForgetPasswordTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgetPasswordTableViewCell.xib; sourceTree = "<group>"; };
 		1A9BC9C82109F7370035FC21 /* MolueLoginPart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MolueLoginPart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,9 +155,6 @@
 				1AB888C32172DF4000862895 /* UserLoginPagePageInteractor.swift */,
 				1AB888C42172DF4000862895 /* UserLoginPageBuilderRouter.swift */,
 				1AB888C82172DF6C00862895 /* UserLoginPageViewController.storyboard */,
-				1A91A488218351A8003E906A /* RegisterAccountViewController.swift */,
-				1A91A489218351A8003E906A /* RegisterAccountPageInteractor.swift */,
-				1A91A48A218351A8003E906A /* RegisterAccountBuilderRouter.swift */,
 			);
 			path = "用户登录";
 			sourceTree = "<group>";
@@ -339,15 +330,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A91A48C218351A8003E906A /* RegisterAccountPageInteractor.swift in Sources */,
 				1AB888C52172DF4000862895 /* UserLoginPageViewController.swift in Sources */,
-				1A91A48D218351A8003E906A /* RegisterAccountBuilderRouter.swift in Sources */,
 				1A91A49121836242003E906A /* ForgetPasswordTableViewCell.swift in Sources */,
 				1AB888C72172DF4000862895 /* UserLoginPageBuilderRouter.swift in Sources */,
 				1AB888C02172DC9500862895 /* ForgetPasswordPageInteractor.swift in Sources */,
 				1AB888C12172DC9500862895 /* ForgetPasswordBuilderRouter.swift in Sources */,
 				1AB888BF2172DC9500862895 /* ForgetPasswordViewController.swift in Sources */,
-				1A91A48B218351A8003E906A /* RegisterAccountViewController.swift in Sources */,
 				1AB888C62172DF4000862895 /* UserLoginPagePageInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

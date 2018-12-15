@@ -36,14 +36,14 @@ class DangerUnitTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    public func refreshSubviews(with model: DangerUnitRiskModel) {
-        self.riskHeadLabel.text = model.riskHead
-        self.riskLevelLabel.text = model.riskLevel
-        self.riskNameLabel.text = model.riskName
-        self.riskClassLabel.text = "ABT00002"//model.riskClass
-        self.riskStateLabel.text = model.riskStatus
-        let color = self.queryColor(with: model)
-        self.riskStateLabel.backgroundColor = color
+    public func refreshSubviews(with model: MLRiskTaskDetailModel) {
+//        self.riskHeadLabel.text = model.riskHead
+//        self.riskLevelLabel.text = model.riskLevel
+//        self.riskNameLabel.text = model.riskName
+//        self.riskClassLabel.text = "ABT00002"//model.riskClass
+//        self.riskStateLabel.text = model.riskStatus
+//        let color = self.queryColor(with: model)
+//        self.riskStateLabel.backgroundColor = color
     }
     
     func queryColor(with item: DangerUnitRiskModel) -> UIColor {

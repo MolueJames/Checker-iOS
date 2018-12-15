@@ -71,22 +71,23 @@ extension MolueOauthModel {
     private static func updateKeyChain(with newValue: MolueOauthModel?) {
         let keychain = Keychain(service: keychainSevice)
         keychain["refresh_token"] = newValue?.refresh_token
-        keychain["access_token"]  = newValue?.access_token
-        keychain["expires_date"]  = newValue?.expires_date
-        keychain["token_type"]    = newValue?.token_type
-        keychain["scope"]         = newValue?.scope
+        keychain["access_token"] = newValue?.access_token
+        keychain["expires_date"] = newValue?.expires_date
+        keychain["token_type"]   = newValue?.token_type
+        keychain["scope"]        = newValue?.scope
     }
     
     private static func queryFromKeyChain() -> MolueOauthModel? {
         do {
             let keychain = Keychain(service: keychainSevice)
-            var result: [String : String] = [String : String]()
-            result["refresh_token"] = try keychain["refresh_token"].unwrap()
-            result["access_token"]  = try keychain["access_token"].unwrap()
-            result["expires_date"]  = try keychain["expires_date"].unwrap()
-            result["token_type"]    = try keychain["token_type"].unwrap()
-            result["scope"]         = try keychain["scope"].unwrap()
-            return Mapper<MolueOauthModel>().map(JSONObject: result)
+            var oauthItem: MolueOauthModel = MolueOauthModel()
+            oauthItem.refresh_token = try keychain["refresh_token"].unwrap()
+            oauthItem.access_token  = try keychain["access_token"].unwrap()
+            oauthItem.expires_date  = try keychain["expires_date"].unwrap()
+            oauthItem.token_type    = try keychain["token_type"].unwrap()
+            oauthItem.scope         = try keychain["scope"].unwrap()
+            MolueOauthModel.OauthItem = oauthItem
+            return MolueOauthModel.OauthItem
         } catch {
             return MolueLogger.network.allowNil(error)
         }
