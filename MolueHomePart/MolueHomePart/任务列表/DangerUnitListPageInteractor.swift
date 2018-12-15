@@ -21,6 +21,10 @@ protocol DangerUnitListPagePresentable: MolueInteractorPresentable {
     func popBackWhenTaskChecked()
     
     func reloadTableViewData()
+    
+    func endHeaderRefreshing()
+    
+    func endFooterRefreshing(with hasMore: Bool)
 }
 
 final class DangerUnitListPageInteractor: MoluePresenterInteractable {
@@ -53,6 +57,40 @@ extension DangerUnitListPageInteractor: DangerUnitListRouterInteractable {
 }
 
 extension DangerUnitListPageInteractor: DangerUnitListPresentableListener {
+    
+    func moreDailyCheckDangerUnit() {
+        do {
+            let listModel = try self.listModel.unwrap()
+            let page: Int = try listModel.next.unwrap()
+            let size: Int = listModel.pagesize ?? 1
+            self.qureyMoreDailyPlanItem(with: page, size: size)
+        } catch {
+            self.presenter?.endFooterRefreshing(with: false)
+        }
+    }
+    
+    func qureyMoreDailyPlanItem(with page: Int, size: Int) {
+        let request = MolueCheckService.queryDailyPlanList(page: page, pagesize: size)
+        request.handleSuccessResultToObjc { [weak self] (item: MolueListItem<MLDailyPlanDetailModel>?) in
+            do {
+                try self.unwrap().handleMoreItems(item)
+            } catch { MolueLogger.UIModule.message(error) }
+        }
+        MolueRequestManager().doRequestStart(with: request)
+    }
+    
+    private func handleMoreItems(_ listModel :MolueListItem<MLDailyPlanDetailModel>?) {
+        let hasMore = listModel?.next.isSome() ?? false
+        self.presenter?.endFooterRefreshing(with: hasMore)
+        do {
+            let listModel = try listModel.unwrap()
+            self.listModel?.next = listModel.next
+            let results = try listModel.results.unwrap()
+            self.listModel?.results?.append(contentsOf: results)
+            self.presenter?.reloadTableViewData()
+        } catch { MolueLogger.UIModule.message(error) }
+    }
+    
     func queryRisKItem(with indexPath: IndexPath) -> MLRiskTaskDetailModel? {
         do {
             let plan = self.queryUnitItem(with: indexPath.section)
@@ -96,15 +134,17 @@ extension DangerUnitListPageInteractor: DangerUnitListPresentableListener {
     func queryDailyCheckDangerUnit() {
         let request = MolueCheckService.queryDailyPlanList(page: 1, pagesize: 1)
         request.handleSuccessResultToObjc { [weak self] (item: MolueListItem<MLDailyPlanDetailModel>?) in
-            dump(item)
             do {
-                let strongSelf = try self.unwrap()
-                strongSelf.listModel = item
-                let presenter = try strongSelf.presenter.unwrap()
-                presenter.reloadTableViewData()
-            } catch {MolueLogger.UIModule.error(error)}
+                try self.unwrap().handleQueryItem(item)
+            } catch {MolueLogger.UIModule.message(error)}
         }
         MolueRequestManager().doRequestStart(with: request)
+    }
+    
+    private func handleQueryItem(_ listModel: MolueListItem<MLDailyPlanDetailModel>?) {
+        self.listModel = listModel
+        self.presenter?.endHeaderRefreshing()
+        self.presenter?.reloadTableViewData()
     }
     
     func jumpToDailyCheckTaskController() {

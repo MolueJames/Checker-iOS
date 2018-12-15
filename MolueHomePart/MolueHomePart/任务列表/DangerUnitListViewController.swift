@@ -11,16 +11,18 @@ import MolueMediator
 import MolueUtilities
 import MolueFoundation
 import MolueNetwork
+import MolueCommon
+import ESPullToRefresh
 
 protocol DangerUnitListPresentableListener: class {
     // 定义一些当前页面需要的业务逻辑, 比如网络请求.
-    var listModel: MolueListItem<MLDailyPlanDetailModel>? {get}
-    
     func jumpToDailyCheckTaskController()
     
     var selectedIndex: IndexPath {get set}
     
     func queryDailyCheckDangerUnit()
+    
+    func moreDailyCheckDangerUnit()
     
     func numberOfSections() -> Int?
     
@@ -43,6 +45,16 @@ final class DangerUnitListViewController: MLBaseViewController  {
             tableView.register(xibWithCellClass: DangerUnitTableViewCell.self)
         }
     }
+    
+    lazy var header: MLRefreshHeaderAnimator = {
+        let header = MLRefreshHeaderAnimator(frame: CGRect.zero)
+        return header
+    }()
+    
+    lazy var footer: ESRefreshFooterAnimator = {
+        let footer = ESRefreshFooterAnimator(frame: CGRect.zero)
+        return footer
+    }()
     //MARK: View Controller Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,10 +74,37 @@ extension DangerUnitListViewController: MLUserInterfaceProtocol {
     
     func updateUserInterfaceElements() {
         self.title = "风险列表"
+        self.tableView.es.addInfiniteScrolling(animator: self.footer) { [weak self] in
+            do {
+                let listener = try self.unwrap().listener.unwrap()
+                listener.moreDailyCheckDangerUnit()
+            } catch {MolueLogger.UIModule.message(error)}
+        }
+        self.tableView.es.addPullToRefresh(animator: self.header) { [weak self] in
+            do {
+                let listener = try self.unwrap().listener.unwrap()
+                listener.queryDailyCheckDangerUnit()
+            } catch {MolueLogger.UIModule.message(error)}
+        }
+        self.tableView.refreshIdentifier = "Identifier"
+        self.tableView.expiredTimeInterval = 20.0
+        self.tableView.es.autoPullToRefresh()
     }
 }
 
 extension DangerUnitListViewController: DangerUnitListPagePresentable {
+    func endHeaderRefreshing() {
+        self.tableView.es.stopPullToRefresh()
+    }
+    
+    func endFooterRefreshing(with hasMore: Bool) {
+        if hasMore {
+            self.tableView.es.stopLoadingMore()
+        } else {
+            self.tableView.es.noticeNoMoreData()
+        }
+    }
+    
     func reloadTableViewData() {
         self.tableView.reloadData()
     }

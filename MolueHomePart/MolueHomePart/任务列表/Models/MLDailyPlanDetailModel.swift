@@ -32,45 +32,70 @@ public class MLRiskTaskDetailModel: Mappable {
     
     public func mapping(map: Map) {
         code            <- map["code"]
-        contact_phone   <- map["contact_phone"]
+        phone           <- map["contact_phone"]
         created         <- map["created"]
         dangers         <- map["dangers"]
         extensions      <- map["extension"]
         grade           <- map["grade"]
         taskId          <- map["id"]
-        level           <- map["level"]
         calculation     <- map["method_of_calculation"]
         name            <- map["name"]
         remark          <- map["remark"]
-        response_person <- map["response_person"]
-        response_unit   <- map["response_unit"]
+        person          <- map["response_person"]
+        unit            <- map["response_unit"]
         risk_unit       <- map["risk_unit"]
         standards       <- map["standards"]
         status          <- map["status"]
         updated         <- map["updated"]
         accidents       <- map["accidents"]
         classification  <- map["classification"]
+        level = RiskLevel.map(map["level"].value())
     }
     
     var code: String?
-    var contact_phone: String?
+    var phone: String?
     var created: String?
     var dangers: String?
     var extensions: String?
     var grade: String?
     var taskId: Int?
-    var level: String?
+    var level: RiskLevel = .lower
     var calculation: String?
     var name: String?
     var remark: String?
-    var response_person: String?
-    var response_unit: String?
+    var person: String?
+    var unit: String?
     var risk_unit: Int?
     var standards: String?
     var status: String?
     var updated: String?
     var accidents: [MLRiskAccidentModel]?
     var classification: [MLRiskClassificationModel]?
+    
+    public enum RiskLevel: CustomStringConvertible {
+        public var description: String {
+            switch self {
+            case .normal:
+                return "一般风险"
+            default:
+                return "较低风险"
+            }
+        }
+        
+        case normal
+        case lower
+        case higher
+        case serious
+        
+        public static func map(_ value: String?) -> RiskLevel {
+            switch value {
+            case "normal":
+                return normal
+            default:
+                return lower
+            }
+        }
+    }
 }
 
 public class MLRiskAccidentModel: Mappable {

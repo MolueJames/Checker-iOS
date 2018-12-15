@@ -107,6 +107,14 @@ public extension Optional {
     }
 }
 
+public extension Optional where Wrapped == String {
+    public func data() -> String {
+        do {
+            return try self.unwrap()
+        } catch {return "暂无数据"}
+    }
+}
+
 
 // MARK: - Operators
 infix operator ??= : AssignmentPrecedence

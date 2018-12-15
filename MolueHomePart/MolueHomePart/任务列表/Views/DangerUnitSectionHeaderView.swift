@@ -8,6 +8,7 @@
 
 import UIKit
 import MolueMediator
+import MolueUtilities
 
 class DangerUnitSectionHeaderView: UIView {
 
@@ -28,8 +29,12 @@ class DangerUnitSectionHeaderView: UIView {
     }
     
     public func refreshSubviews(with model: MLDailyPlanDetailModel) {
-//        self.dangerUnitLabel.text = model.unitName
-//        self.dangerNumberLabel.text = model.unitNumber
-//        self.dangerClassLabel.text = model.unitClass
+        do {
+            let risk_unit = try model.risk_unit.unwrap()
+            self.dangerUnitLabel.text = risk_unit.unit_name.data()
+            self.dangerNumberLabel.text = risk_unit.unit_code.data()
+            let category = try risk_unit.category.unwrap()
+            self.dangerClassLabel.text = category.title.data()
+        } catch { MolueLogger.UIModule.error(error) }
     }
 }

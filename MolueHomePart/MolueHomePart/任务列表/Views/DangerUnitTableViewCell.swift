@@ -37,26 +37,38 @@ class DangerUnitTableViewCell: UITableViewCell {
     }
     
     public func refreshSubviews(with model: MLRiskTaskDetailModel) {
-//        self.riskHeadLabel.text = model.riskHead
-//        self.riskLevelLabel.text = model.riskLevel
-//        self.riskNameLabel.text = model.riskName
-//        self.riskClassLabel.text = "ABT00002"//model.riskClass
-//        self.riskStateLabel.text = model.riskStatus
-//        let color = self.queryColor(with: model)
-//        self.riskStateLabel.backgroundColor = color
+        self.riskHeadLabel.text = model.person.data()
+        self.riskLevelLabel.text = model.level.description
+        self.riskNameLabel.text = model.name.data()
+        self.riskClassLabel.text = model.code.data()
+        self.riskStateLabel.text = model.status.data()
+        let color = self.queryColor(with: model.status)
+        self.riskStateLabel.backgroundColor = color
     }
     
-    func queryColor(with item: DangerUnitRiskModel) -> UIColor {
+    private func queryLevel(_ level: String?) -> String {
         do {
-            switch try item.riskStatus.unwrap() {
-            case "已检查":
+            switch try level.unwrap() {
+            case "normal":
+                return "一般风险"
+            default:
+                return "较低风险"
+            }
+        } catch {return "暂无数据"}
+    }
+    
+    
+    func queryColor(with item: String?) -> UIColor {
+        do {
+            switch try item.unwrap() {
+            case "valid":
                 return UIColor(hex: 0x33CC33)
             case "有隐患":
                 return UIColor(hex: 0xCC0000)
             default:
                 return UIColor(hex: 0xFFCC00)
             }
-        } catch { return UIColor(hex: 0xFFCC00) }
+        } catch { return UIColor.white }
     }
     
     override var frame:CGRect{

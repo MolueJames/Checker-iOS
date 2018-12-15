@@ -8,17 +8,18 @@
 
 import UIKit
 import ESPullToRefresh
+
 public class MLRefreshHeaderAnimator: UIView, ESRefreshProtocol, ESRefreshAnimatorProtocol {
     
     public var insets: UIEdgeInsets = UIEdgeInsets.zero
     public var view: UIView { return self }
     public var trigger: CGFloat = 56.0
-    public var executeIncremental: CGFloat = 0.0
+    public var executeIncremental: CGFloat = 56.0
     public var state: ESRefreshViewState = .pullToRefresh
     
     private var timer: Timer?
     private var timerProgress: Double = 0.0
-
+    
     private let imageView: UIImageView = {
         let imageView = UIImageView.init()
         imageView.image = UIImage.init(named: "common_icon_refresh")
@@ -42,7 +43,7 @@ public class MLRefreshHeaderAnimator: UIView, ESRefreshProtocol, ESRefreshAnimat
         UIView.animate(withDuration: 0.2, delay: 0, options: .curveLinear, animations: {
             let size = self.imageView.image?.size ?? CGSize.zero
             self.imageView.center = CGPoint.init(x: UIScreen.main.bounds.size.width / 2.0, y: 16.0 + size.height / 2.0)
-            }, completion: { (finished) in })
+        }, completion: { (finished) in })
     }
     
     public func refreshAnimationEnd(view: ESRefreshComponent) {
@@ -74,8 +75,9 @@ public class MLRefreshHeaderAnimator: UIView, ESRefreshProtocol, ESRefreshAnimat
             return
         }
         self.state = state
+        self.setNeedsLayout()
     }
-
+    
     @objc func timerAction() {
         timerProgress += 0.01
         self.imageView.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi) * CGFloat(timerProgress))
