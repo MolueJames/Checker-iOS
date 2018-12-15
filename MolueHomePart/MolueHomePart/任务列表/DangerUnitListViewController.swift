@@ -88,7 +88,6 @@ extension DangerUnitListViewController: MLUserInterfaceProtocol {
         }
         self.tableView.refreshIdentifier = "Identifier"
         self.tableView.expiredTimeInterval = 20.0
-        self.tableView.es.autoPullToRefresh()
     }
 }
 

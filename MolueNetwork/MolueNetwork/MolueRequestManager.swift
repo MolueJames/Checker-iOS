@@ -17,7 +17,7 @@ public typealias MolueResultClosure<Target> = (Target) -> Void
 
 open class MolueRequestManager {
     private(set) weak var delegate: MolueActivityDelegate?
-    private var requestQueue: DispatchQueue
+    private(set) var requestQueue: DispatchQueue
     private var options: JSONSerialization.ReadingOptions
     
     public init(delegate: MolueActivityDelegate? = nil, queue: DispatchQueue! = DispatchQueue.main, options: JSONSerialization.ReadingOptions! = .allowFragments) {
@@ -73,10 +73,10 @@ open class MolueRequestManager {
         let taskCompletionSource = TaskCompletionSource<Any?>()
         do {
             let dataRequest = try self.createDataRequest(with: request).unwrap()
-            dataRequest.responseHandler(delegate: delegate, options: options, success: { (result) in
-                self.requestQueue.async {taskCompletionSource.set(result: result)}
+            dataRequest.responseHandler(delegate: delegate, options: options, queue: self.requestQueue, success: { (result) in
+                taskCompletionSource.set(result: result)
             }) { (error) in
-                self.requestQueue.async {taskCompletionSource.set(error: error)}
+                taskCompletionSource.set(error: error)
             }
         } catch { MolueLogger.failure.message(error) }
         return taskCompletionSource.task
@@ -85,7 +85,7 @@ open class MolueRequestManager {
     private func createDataRequest(with request: MolueDataRequest) -> DataRequest? {
         do {
             let requestURL = try request.components.unwrap().asURL()
-            return SessionManager.default.doRequest(requestURL, method: request.method, parameters: request.parameter, encoding: request.encoding, headers: request.headers, delegate: delegate)
+            return SessionManager.default.doRequest(requestURL, method: request.method, parameters: request.parameter, encoding: request.encoding, headers: request.headers, delegate: delegate, requestQueue: self.requestQueue)
         } catch { return MolueLogger.network.returnNil(error) }
     }
     

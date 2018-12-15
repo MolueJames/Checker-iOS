@@ -12,17 +12,23 @@ import MolueUtilities
 
 public extension DataRequest {
     
-    public func responseHandler(delegate observer: MolueActivityDelegate?, options: JSONSerialization.ReadingOptions = .allowFragments, success:MolueResultClosure<Any?>? = nil, failure: MolueResultClosure<Error>? = nil) {
+    public func responseHandler(delegate observer: MolueActivityDelegate?, options: JSONSerialization.ReadingOptions = .allowFragments, queue: DispatchQueue, success:MolueResultClosure<Any?>? = nil, failure: MolueResultClosure<Error>? = nil) {
         let operation = BlockOperation.init { [weak observer]  in
-            if self.handleDefaultError(self.delegate.error, delegate: observer, failure: failure) {return}
-            let serviceResult = self.handleResponseStatus(self.response, options: options)
-            self.handleServiceResult(serviceResult, delegate: observer, success: success, failure: failure)
-            self.startRequestInfoLogger()
+            self.doResponseHandler(delegate: observer, options: options, queue: queue, success: success, failure: failure)
         }
         self.delegate.queue.addOperation(operation)
     }
+    public func doResponseHandler(delegate observer: MolueActivityDelegate?, options: JSONSerialization.ReadingOptions , queue: DispatchQueue, success:MolueResultClosure<Any?>?, failure: MolueResultClosure<Error>?) {
+        queue.async {
+            if self.handleDefaultError(self.delegate.error, delegate: observer, failure: failure, queue: queue) {return}
+            let serviceResult = self.handleResponseStatus(self.response, options: options)
+            self.handleServiceResult(serviceResult, delegate: observer, success: success, failure: failure, queue: queue)
+            self.startRequestInfoLogger()
+        }
+    }
     
-    private func handleDefaultError(_ error: Error?, delegate: MolueActivityDelegate?, failure: MolueResultClosure<Error>? = nil) -> Bool {
+    
+    private func handleDefaultError(_ error: Error?, delegate: MolueActivityDelegate?, failure: MolueResultClosure<Error>? = nil, queue: DispatchQueue) -> Bool {
         do {
             let error = try error.unwrap()
             try delegate.unwrap().networkActivityFailure(error: error)
@@ -40,7 +46,7 @@ public extension DataRequest {
         MolueLogger.network.message(self.response?.statusCode)
     }
     
-    private func handleServiceResult(_ result: MolueServiceResponse, delegate: MolueActivityDelegate?, success:MolueResultClosure<Any?>? = nil, failure: MolueResultClosure<Error>? = nil) {
+    private func handleServiceResult(_ result: MolueServiceResponse, delegate: MolueActivityDelegate?, success:MolueResultClosure<Any?>? = nil, failure: MolueResultClosure<Error>? = nil, queue: DispatchQueue) {
         do {
             switch result {
             case .resultSuccess(let result):
