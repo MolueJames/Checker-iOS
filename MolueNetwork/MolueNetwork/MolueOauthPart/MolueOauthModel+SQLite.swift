@@ -13,11 +13,11 @@ import SQLite
 
 extension MolueOauthModel: MLDatabaseProtocol {
     public static var table_name = Table("MolueOauthTable")
-    private static let access_token = Expression<String?>("access_token")
-    private static let expires_date = Expression<String?>("expires_date")
+    private static let access_token  = Expression<String?>("access_token")
+    private static let expires_date  = Expression<String?>("expires_date")
     private static let refresh_token = Expression<String?>("refresh_token")
-    private static let user_scope = Expression<String?>("scope")
-    private static let token_type = Expression<String?>("token_type")
+    private static let user_scope    = Expression<String?>("scope")
+    private static let token_type    = Expression<String?>("token_type")
 
     public static func createOperation() {
         let operation = table_name.create (ifNotExists: true){ t in

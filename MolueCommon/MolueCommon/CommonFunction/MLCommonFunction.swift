@@ -32,28 +32,27 @@ private let databaseSevice: String = "com.safety-saas.db.path"
 public class MolueUserLogic {
     
     public static func doConnectWithDatabase(path: String) {
-        MolueUserLoginUtily.updateDatabasePath(path)
+        MolueUserLogicUtily.updateDatabasePath(path)
         MLDatabaseManager.shared.doConnection(path)
-        MolueUserLoginUtily.doDatabaseTableRegist()
-        
+        MolueUserLogicUtily.doDatabaseTableRegist()
     }
     
     public static func disconnectWithDatabase() {
-        MolueUserLoginUtily.updateDatabasePath(nil)
+        MolueUserLogicUtily.updateDatabasePath(nil)
         MLDatabaseManager.shared.disconnect()
     }
     
     public static func connectWithLastDatabase() throws {
         do {
-            let path =  MolueUserLoginUtily.queryDatabasePath()
+            let path =  MolueUserLogicUtily.queryDatabasePath()
             try MLDatabaseManager.shared.doConnection(path.unwrap())
-            MolueUserLoginUtily.doDatabaseTableRegist()
+            MolueUserLogicUtily.doDatabaseTableRegist()
         } catch { throw error }
     }
     
 }
 
-fileprivate struct MolueUserLoginUtily {
+fileprivate struct MolueUserLogicUtily {
     fileprivate static func updateDatabasePath(_ path: String?) {
         let keychain = Keychain(service: databaseSevice)
         keychain["databasePath"] = path

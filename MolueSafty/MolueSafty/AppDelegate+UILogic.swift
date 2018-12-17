@@ -19,8 +19,12 @@ import MolueDatabase
 
 extension AppDelegate {
     func setDefaultRootViewController() {
-        
-        self.setAppWindowConfigure()
+        self.setAppWindowConfiguration()
+        self.setUserLoginNotification()
+        self.setNeedLoginNotification()
+    }
+    
+   private func setUserLoginNotification() {
         let name = MolueNotification.molue_user_login.toName()
         NotificationCenter.default.addObserver(forName: name, object: nil, queue: OperationQueue.main) { [unowned self] (_) in
             self.window?.rootViewController = self.rootViewController()
@@ -28,7 +32,16 @@ extension AppDelegate {
         }
     }
     
-    public func setAppWindowConfigure() {
+    private func setNeedLoginNotification() {
+        let name = MolueNotification.molue_need_login.toName()
+        NotificationCenter.default.addObserver(forName: name, object: nil, queue: OperationQueue.main) { [unowned self] (_) in
+            MolueUserLogic.disconnectWithDatabase()
+            self.window?.rootViewController = self.loginViewController()
+            self.window?.makeKeyAndVisible()
+        }
+    }
+    
+    public func setAppWindowConfiguration() {
         do {
             let window = try self.window.unwrap()
             window.isHidden = false
@@ -46,7 +59,7 @@ extension AppDelegate {
         } catch {
             window.rootViewController = self.loginViewController()
         }
-        window.rootViewController = UIViewController()
+//        window.rootViewController = UIViewController()
     }
     
     private func loginViewController() -> UIViewController? {

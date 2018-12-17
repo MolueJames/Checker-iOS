@@ -37,16 +37,12 @@ final class UserLoginPagePageInteractor: MoluePresenterInteractable, UserLoginPa
     }
     
     private func successOperation(_ item: MolueOauthModel, username: String) {
+        let filePath = MolueCryption.MD5(username)
+        MolueUserLogic.doConnectWithDatabase(path: filePath)
         MolueOauthModel.updateOauthItem(with: item)
-        self.handleDatabaseSuccess(with: username)
+        
         let name = MolueNotification.molue_user_login.toName()
         NotificationCenter.default.post(name: name, object: nil)
-    }
-    
-    private func handleDatabaseSuccess(with username: String) {
-//        let dbPath = MolueCryption.MD5(username)
-//        MolueUserLogic.updateDatabasePath(dbPath)
-//        MLDatabaseManager.shared.doConnection(dbPath)
     }
     
     func routerToForgetPassword() {

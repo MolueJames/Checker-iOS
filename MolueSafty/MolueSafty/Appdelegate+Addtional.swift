@@ -20,7 +20,7 @@ extension AppDelegate {
     func setUserInterfaceConfigure() {
         MLInterfaceConfigure.setInterfaceConfigure()
         self.setDefaultWebImageConfigure()
-        self.networkLoginRequest()
+//        self.networkLoginRequest()
     }
     
     private func networkLoginRequest() {

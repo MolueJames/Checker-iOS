@@ -80,7 +80,7 @@ public extension DataRequest {
     }
     
     private func authenticateFailureHandler() -> MolueServiceResponse {
-        let name = NSNotification.Name(rawValue: "com.authorization.timeout.molue")
+        let name = NSNotification.Name(rawValue: "molue_need_login")
         NotificationCenter.default.post(name: name, object: nil)
         let error = MolueStatusError.authenticateFailure
         return MolueServiceResponse.resultFailure(result: error)
