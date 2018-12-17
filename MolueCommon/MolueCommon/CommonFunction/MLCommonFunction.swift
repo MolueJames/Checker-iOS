@@ -9,6 +9,7 @@
 import Foundation
 import MolueUtilities
 import KeychainAccess
+import MolueNetwork
 import MolueDatabase
 
 public struct MLCommonFunction {
@@ -29,20 +30,42 @@ public struct MLCommonFunction {
 private let databaseSevice: String = "com.safety-saas.db.path"
 
 public class MolueUserLogic {
-    public static func updateDatabasePath(_ path: String?) {
+    
+    public static func doConnectWithDatabase(path: String) {
+        MolueUserLoginUtily.updateDatabasePath(path)
+        MLDatabaseManager.shared.doConnection(path)
+        MolueUserLoginUtily.doDatabaseTableRegist()
+        
+    }
+    
+    public static func disconnectWithDatabase() {
+        MolueUserLoginUtily.updateDatabasePath(nil)
+        MLDatabaseManager.shared.disconnect()
+    }
+    
+    public static func connectWithLastDatabase() throws {
+        do {
+            let path =  MolueUserLoginUtily.queryDatabasePath()
+            try MLDatabaseManager.shared.doConnection(path.unwrap())
+            MolueUserLoginUtily.doDatabaseTableRegist()
+        } catch { throw error }
+    }
+    
+}
+
+fileprivate struct MolueUserLoginUtily {
+    fileprivate static func updateDatabasePath(_ path: String?) {
         let keychain = Keychain(service: databaseSevice)
         keychain["databasePath"] = path
     }
     
-    public static func queryDatabasePath() -> String? {
+    fileprivate static func queryDatabasePath() -> String? {
         let keychain = Keychain(service: databaseSevice)
         return keychain["databasePath"]
     }
     
-    public static func doConnectWithDatabase() {
-        do {
-            let path = try self.queryDatabasePath().unwrap()
-            MLDatabaseManager.shared.doConnection(path)
-        } catch { MolueLogger.database.message(error) }
+    fileprivate static func doDatabaseTableRegist() {
+        MLDatabaseRegister.addDatabaseTarget(MolueOauthModel.self)
+        MLDatabaseRegister.excuteProtocols()
     }
 }

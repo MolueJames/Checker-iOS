@@ -20,7 +20,7 @@ extension AppDelegate {
     func setUserInterfaceConfigure() {
         MLInterfaceConfigure.setInterfaceConfigure()
         self.setDefaultWebImageConfigure()
-//        self.networkLoginRequest()
+        self.networkLoginRequest()
     }
     
     private func networkLoginRequest() {
@@ -28,12 +28,13 @@ extension AppDelegate {
         request.handleFailureResponse { (error) in
             MolueLogger.network.message(error.localizedDescription)
         }
-        request.handleSuccessResultToObjc { [weak self] (result: MolueOauthModel?) in
+        request.handleSuccessResultToObjc { (result: MolueOauthModel?) in
             do {
                 let oauthItem = try result.unwrap()
+                let filePath = MolueCryption.MD5("182828282828")
+                MolueUserLogic.doConnectWithDatabase(path: filePath)
                 MolueOauthModel.updateOauthItem(with: oauthItem)
-                MolueLogger.database.message(MolueOauthModel.queryOauthItem())
-                try self.unwrap().queryDailyPlanList()
+                MolueLogger.network.message(MolueOauthModel.queryOauthItem())
             } catch { MolueLogger.network.message(error) }
         }
         MolueRequestManager().doRequestStart(with: request ,needOauth: false)

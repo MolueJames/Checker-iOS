@@ -7,20 +7,18 @@
 //
 
 import Foundation
-import ObjectMapper
 import MolueUtilities
 import KeychainAccess
+import ObjectMapper
 
-private let keychainSevice: String = "com.safety-saas.api-token"
+public struct MolueOauthModel: Mappable, Codable {
 
-public struct MolueOauthModel: Mappable {
-    
     public mutating func mapping(map: Map) {
         access_token   <- map["access_token"]
-        expires_in     <- map["expires_in"]
         refresh_token  <- map["refresh_token"]
         scope          <- map["scope"]
         token_type     <- map["token_type"]
+        let expires_in: Double? = map["expires_in"].value()
         self.setExpires_data(expires_in: expires_in)
     }
     
@@ -34,10 +32,7 @@ public struct MolueOauthModel: Mappable {
     
     public init?(map: Map) {}
     
-    private init() {}
-    
     public var access_token: String?
-    public var expires_in: Double?
     public var expires_date: String?
     public var refresh_token: String?
     public var scope: String?
@@ -50,47 +45,5 @@ public struct MolueOauthModel: Mappable {
             return try !expires_date.unwrap().isInFuture
         } catch { return true }
     }
-    
-    private static var OauthItem: MolueOauthModel?
-    
-    public static func updateOauthItem(with newValue: MolueOauthModel?) {
-        MolueOauthModel.OauthItem = newValue
-        MolueOauthModel.updateKeyChain(with: newValue)
-    }
-    
-    public static func queryOauthItem() -> MolueOauthModel? {
-        if MolueOauthModel.OauthItem.isSome() {
-            return MolueOauthModel.OauthItem
-        } else {
-            return self.queryFromKeyChain()
-        }
-    }
 }
 
-extension MolueOauthModel {
-    private static func updateKeyChain(with newValue: MolueOauthModel?) {
-        let keychain = Keychain(service: keychainSevice)
-        keychain["refresh_token"] = newValue?.refresh_token
-        keychain["access_token"] = newValue?.access_token
-        keychain["expires_date"] = newValue?.expires_date
-        keychain["token_type"]   = newValue?.token_type
-        keychain["scope"]        = newValue?.scope
-    }
-    
-    private static func queryFromKeyChain() -> MolueOauthModel? {
-        do {
-            let keychain = Keychain(service: keychainSevice)
-            var oauthItem: MolueOauthModel = MolueOauthModel()
-            oauthItem.refresh_token = try keychain["refresh_token"].unwrap()
-            oauthItem.access_token  = try keychain["access_token"].unwrap()
-            oauthItem.expires_date  = try keychain["expires_date"].unwrap()
-            oauthItem.token_type    = try keychain["token_type"].unwrap()
-            oauthItem.scope         = try keychain["scope"].unwrap()
-            MolueOauthModel.OauthItem = oauthItem
-            return MolueOauthModel.OauthItem
-        } catch {
-            return MolueLogger.network.allowNil(error)
-        }
-        
-    }
-}

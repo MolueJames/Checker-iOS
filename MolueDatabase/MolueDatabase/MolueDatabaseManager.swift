@@ -39,6 +39,10 @@ public class MLDatabaseManager {
             }
         }
     }
+    
+    public func disconnect() {
+        databaseQueue.sync { connection = nil }
+    }
 }
 
 extension MLDatabaseManager {
@@ -133,6 +137,6 @@ extension MLDatabaseManager {
         return false
     }
     fileprivate func handleDatabaseError<T>(_ error: Error) -> T? {
-        return MolueLogger.failure.returnNil(error)
+        return MolueLogger.failure.allowNil(error)
     }
 }

@@ -28,6 +28,7 @@ open class MolueRequestManager {
     
     public func doRequestStart(with request: MolueDataRequest, needOauth: Bool = true) {
         func checkNeedQueryToken(with needOauth: Bool) -> Bool {
+            guard needOauth == true else { return needOauth }
             do {
                 let item = try MolueOauthModel.queryOauthItem().unwrap()
                 return needOauth && item.validateNeedRefresh()

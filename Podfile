@@ -90,6 +90,7 @@ end
 target 'MolueNetwork' do
     project 'MolueNetwork/MolueNetwork.xcodeproj'
         pod 'Alamofire', '~> 4.7'
+        pod 'SQLite.swift', '~> 0.11.5'
         pod 'KeychainAccess', '~> 3.1.2'
         pod 'ObjectMapper', '~> 3.3'
         pod 'Bolts-Swift', '~> 1.4.0'

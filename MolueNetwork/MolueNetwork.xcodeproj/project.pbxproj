@@ -11,6 +11,8 @@
 		1A00450D20B4432D00AA717D /* MolueResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A00450C20B4432D00AA717D /* MolueResponseHandler.swift */; };
 		1A01B56B21C14A7D00F4F3A0 /* MolueNetworkListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A01B56A21C14A7D00F4F3A0 /* MolueNetworkListModel.swift */; };
 		1A5BE08B209EC8CA00160243 /* MolueUtilities.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1AEB87D72092173C002230A3 /* MolueUtilities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1A5E87E121C73EF300BA4DB5 /* MolueDatabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5E87E021C73EF300BA4DB5 /* MolueDatabase.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		1A5E87E321C741D800BA4DB5 /* MolueOauthModel+SQLite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5E87E221C741D800BA4DB5 /* MolueOauthModel+SQLite.swift */; };
 		1A7D9ADA208645B800FA997D /* MolueNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A7D9AD0208645B800FA997D /* MolueNetwork.framework */; };
 		1A7D9ADF208645B800FA997D /* MolueNetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7D9ADE208645B800FA997D /* MolueNetworkTests.swift */; };
 		1A7D9AE1208645B800FA997D /* MolueNetwork.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A7D9AD3208645B800FA997D /* MolueNetwork.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -54,6 +56,8 @@
 		1A00450A20B4431E00AA717D /* MolueNetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueNetworkRequest.swift; sourceTree = "<group>"; };
 		1A00450C20B4432D00AA717D /* MolueResponseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueResponseHandler.swift; sourceTree = "<group>"; };
 		1A01B56A21C14A7D00F4F3A0 /* MolueNetworkListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueNetworkListModel.swift; sourceTree = "<group>"; };
+		1A5E87E021C73EF300BA4DB5 /* MolueDatabase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueDatabase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A5E87E221C741D800BA4DB5 /* MolueOauthModel+SQLite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MolueOauthModel+SQLite.swift"; sourceTree = "<group>"; };
 		1A7D9AD0208645B800FA997D /* MolueNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MolueNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A7D9AD3208645B800FA997D /* MolueNetwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MolueNetwork.h; sourceTree = "<group>"; };
 		1A7D9AD4208645B800FA997D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -82,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A5E87E121C73EF300BA4DB5 /* MolueDatabase.framework in Frameworks */,
 				1AEB87D82092173C002230A3 /* MolueUtilities.framework in Frameworks */,
 				BC189391F27A554850E68EE3 /* Pods_MolueNetwork.framework in Frameworks */,
 			);
@@ -160,6 +165,7 @@
 				1AEFC77D20BECD30006B063F /* MolueOauthHelper.swift */,
 				1AEFC77920BEC978006B063F /* MolueOauthService.swift */,
 				1AEFC78220BEE795006B063F /* MolueOauthModel.swift */,
+				1A5E87E221C741D800BA4DB5 /* MolueOauthModel+SQLite.swift */,
 			);
 			path = MolueOauthPart;
 			sourceTree = "<group>";
@@ -186,6 +192,7 @@
 		C7366F21188078BBDA2DDF9A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1A5E87E021C73EF300BA4DB5 /* MolueDatabase.framework */,
 				1AEB87D72092173C002230A3 /* MolueUtilities.framework */,
 				26543693E5EB9CE1B9CB8CAF /* Pods_MolueNetwork.framework */,
 				5102C4172D88E1753D4AF8A5 /* Pods_MolueNetworkTests.framework */,
@@ -313,6 +320,7 @@
 				"${BUILT_PRODUCTS_DIR}/Bolts-Swift/BoltsSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -320,6 +328,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BoltsSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLite.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -377,6 +386,7 @@
 				1AEFC78320BEE795006B063F /* MolueOauthModel.swift in Sources */,
 				1AA41B6F20B71A33005A9217 /* MolueNetworkConfigure.swift in Sources */,
 				1A01B56B21C14A7D00F4F3A0 /* MolueNetworkListModel.swift in Sources */,
+				1A5E87E321C741D800BA4DB5 /* MolueOauthModel+SQLite.swift in Sources */,
 				1ABA9A9521C0E966007E54D3 /* MolueCheckService.swift in Sources */,
 				1AFFF39021C2A51600B639D8 /* MolueUserInfoService.swift in Sources */,
 				1A00450B20B4431E00AA717D /* MolueNetworkRequest.swift in Sources */,

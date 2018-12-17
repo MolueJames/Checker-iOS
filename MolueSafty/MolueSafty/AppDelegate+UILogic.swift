@@ -19,8 +19,8 @@ import MolueDatabase
 
 extension AppDelegate {
     func setDefaultRootViewController() {
-        let hasOauth = MolueOauthModel.queryOauthItem().isSome()
-        self.setAppWindowConfigure(with: hasOauth)
+        
+        self.setAppWindowConfigure()
         let name = MolueNotification.molue_user_login.toName()
         NotificationCenter.default.addObserver(forName: name, object: nil, queue: OperationQueue.main) { [unowned self] (_) in
             self.window?.rootViewController = self.rootViewController()
@@ -28,24 +28,25 @@ extension AppDelegate {
         }
     }
     
-    public func setAppWindowConfigure(with hasOauth: Bool) {
+    public func setAppWindowConfigure() {
         do {
             let window = try self.window.unwrap()
             window.isHidden = false
-            self.setRootViewController(for: window, hasOauth: hasOauth)
+            self.setRootViewController(for: window)
         } catch {
             MolueLogger.UIModule.error(error)
         }
     }
     
-    private func setRootViewController(for window: UIWindow, hasOauth: Bool) {
+    private func setRootViewController(for window: UIWindow) {
         defer { window.makeKeyAndVisible() }
-        if hasOauth {
-            MolueUserLogic.doConnectWithDatabase()
+        do {
+            try MolueUserLogic.connectWithLastDatabase()
             window.rootViewController = self.rootViewController()
-        } else {
+        } catch {
             window.rootViewController = self.loginViewController()
         }
+        window.rootViewController = UIViewController()
     }
     
     private func loginViewController() -> UIViewController? {
