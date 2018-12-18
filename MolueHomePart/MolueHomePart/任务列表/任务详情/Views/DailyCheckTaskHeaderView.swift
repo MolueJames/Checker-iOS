@@ -34,7 +34,7 @@ class DailyCheckTaskHeaderView: UIView {
     
     func refreshSubviews(with model: MLRiskTaskDetailModel) {
         self.dangerReasonLabel.text = model.dangers.data()
-        self.dangerReasonLabel.setLineSpace(5)
+        self.dangerReasonLabel.setLineSpacing(5)
         self.dependenceLabel.text = model.standards.data()
         self.responseLabel.text = model.unit.data()
         
@@ -43,11 +43,12 @@ class DailyCheckTaskHeaderView: UIView {
         })
         let classificationText = classification?.joined(separator: ", ")
         self.riskClassLabel.text = classificationText.data()
-        
+        self.riskClassLabel.setLineSpacing(5)
         let accident: [String]? = model.accidents?.compactMap({ item in
             return item.name
         })
         let accidentText = accident?.joined(separator: ", ")
         self.accidentLabel.text = accidentText.data()
+        self.accidentLabel.setLineSpacing(5)
     }
 }

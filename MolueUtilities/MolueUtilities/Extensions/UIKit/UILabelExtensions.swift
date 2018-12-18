@@ -30,13 +30,13 @@ public extension UILabel {
 		return label.frame.height
 	}
     
-    public func setLineSpace(_ lineSpace: CGFloat) {
+    public func setLineSpacing(_ lineSpacing: CGFloat) {
         do {
             let text = try self.text.unwrap()
             let attributedText = NSMutableAttributedString(string: text)
             let paragraphStye = NSMutableParagraphStyle()
-            paragraphStye.lineSpacing = lineSpace
-            let range = NSRangeFromString(text)
+            paragraphStye.lineSpacing = lineSpacing
+            let range = NSRange(location: 0, length: text.count)
             let style = NSAttributedString.Key.paragraphStyle
             attributedText.addAttribute(style, value: paragraphStye, range: range)
             self.attributedText = attributedText

@@ -18,6 +18,8 @@
 		1A0B89B2218EBAB8000B1EBC /* AboutUsInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0B89AF218EBAB8000B1EBC /* AboutUsInfoViewController.swift */; };
 		1A0B89B3218EBAB8000B1EBC /* AboutUsInfoPageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0B89B0218EBAB8000B1EBC /* AboutUsInfoPageInteractor.swift */; };
 		1A0B89B4218EBAB8000B1EBC /* AboutUsInfoBuilderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0B89B1218EBAB8000B1EBC /* AboutUsInfoBuilderRouter.swift */; };
+		1A17520F21C93D7D00794FAE /* UserInfoCenterTableFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A17520E21C93D7D00794FAE /* UserInfoCenterTableFooterView.swift */; };
+		1A17521121C93D8F00794FAE /* UserInfoCenterTableFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A17521021C93D8F00794FAE /* UserInfoCenterTableFooterView.xib */; };
 		1A1B88A920864D8500C5F4D9 /* MolueMinePart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A1B889F20864D8400C5F4D9 /* MolueMinePart.framework */; };
 		1A1B88AE20864D8500C5F4D9 /* MolueMinePartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1B88AD20864D8500C5F4D9 /* MolueMinePartTests.swift */; };
 		1A1B88B020864D8500C5F4D9 /* MolueMinePart.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A1B88A220864D8500C5F4D9 /* MolueMinePart.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -57,6 +59,8 @@
 		1A0B89AF218EBAB8000B1EBC /* AboutUsInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsInfoViewController.swift; sourceTree = "<group>"; };
 		1A0B89B0218EBAB8000B1EBC /* AboutUsInfoPageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsInfoPageInteractor.swift; sourceTree = "<group>"; };
 		1A0B89B1218EBAB8000B1EBC /* AboutUsInfoBuilderRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsInfoBuilderRouter.swift; sourceTree = "<group>"; };
+		1A17520E21C93D7D00794FAE /* UserInfoCenterTableFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoCenterTableFooterView.swift; sourceTree = "<group>"; };
+		1A17521021C93D8F00794FAE /* UserInfoCenterTableFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserInfoCenterTableFooterView.xib; sourceTree = "<group>"; };
 		1A1B889F20864D8400C5F4D9 /* MolueMinePart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MolueMinePart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A1B88A220864D8500C5F4D9 /* MolueMinePart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MolueMinePart.h; sourceTree = "<group>"; };
 		1A1B88A320864D8500C5F4D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -180,6 +184,8 @@
 				1A730AD020E90D0A008831BC /* UserInfoCenterTableViewCell.xib */,
 				1A730AD320E9155B008831BC /* UserInfoCenterTableHeaderView.swift */,
 				1A730AD520E9156C008831BC /* UserInfoCenterTableHeaderView.xib */,
+				1A17520E21C93D7D00794FAE /* UserInfoCenterTableFooterView.swift */,
+				1A17521021C93D8F00794FAE /* UserInfoCenterTableFooterView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -318,6 +324,7 @@
 				1A730AD220E90D0A008831BC /* UserInfoCenterTableViewCell.xib in Resources */,
 				1A0B8996218EA416000B1EBC /* UserInfoCenterViewController.storyboard in Resources */,
 				1A730AD620E9156C008831BC /* UserInfoCenterTableHeaderView.xib in Resources */,
+				1A17521121C93D8F00794FAE /* UserInfoCenterTableFooterView.xib in Resources */,
 				1A65039420DD550E0017F91D /* MolueMine.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -361,6 +368,7 @@
 				1A0B89B2218EBAB8000B1EBC /* AboutUsInfoViewController.swift in Sources */,
 				1A0B8992218EA0B1000B1EBC /* UserInfoCenterViewController.swift in Sources */,
 				1A730AD120E90D0A008831BC /* UserInfoCenterTableViewCell.swift in Sources */,
+				1A17520F21C93D7D00794FAE /* UserInfoCenterTableFooterView.swift in Sources */,
 				1A0B89A8218EBA51000B1EBC /* MessageCenterBuilderRouter.swift in Sources */,
 				1A0B89B3218EBAB8000B1EBC /* AboutUsInfoPageInteractor.swift in Sources */,
 				1A0B8993218EA0B1000B1EBC /* UserInfoCenterPageInteractor.swift in Sources */,

@@ -46,6 +46,12 @@ extension UserInfoCenterPageInteractor: UserInfoCenterRouterInteractable {
 }
 
 extension UserInfoCenterPageInteractor: UserInfoCenterPresentableListener {
+    func doUserLogoutOperater() {
+        MolueUserLogic.disconnectWithDatabase()
+        let name = MolueNotification.molue_need_login.toName()
+        NotificationCenter.default.post(name: name, object: nil)
+    }
+    
     func bindingTableViewAdapter(with tableView: UITableView) {
         self.tableViewAdapter = MLTableViewAdapter<UserInfoCenterTableViewCell, UserInfoCenterMethod>(with: self.valueList)
         self.tableViewAdapter?.bindingTableView(tableView)
@@ -98,8 +104,7 @@ extension UserInfoCenterPageInteractor: UserInfoCenterPresentableListener {
                 MolueLogger.network.message(error)
             }
         }
-        let requestManager = MolueRequestManager(delegate: self.presenter)
-        requestManager.doRequestStart(with: request)
+        MolueRequestManager().doRequestStart(with: request)
     }
     
     func queryUserInfoFromDatabase() {

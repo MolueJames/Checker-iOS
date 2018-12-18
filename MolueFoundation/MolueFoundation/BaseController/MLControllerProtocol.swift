@@ -34,7 +34,7 @@ protocol MLLoadingIndicatorProtocol {
 
 extension MLLoadingIndicatorProtocol where Self: UIViewController {
     func showLoadingIndicatorView() {
-        let data = ActivityData()
+        let data = ActivityData(size: CGSize(width: 35, height: 35))
         NVActivityIndicatorPresenter.sharedInstance.startAnimating(data, nil)
     }
     func hideLoadingIndicatorView() {
@@ -42,7 +42,7 @@ extension MLLoadingIndicatorProtocol where Self: UIViewController {
         NVActivityIndicatorPresenter.sharedInstance.stopAnimating(nil)
     }
     func needToDo(newValue: Int, oldValue: Int) {
-        let value = showOrLoadIndicatorView.switchShowHide(new: newValue, old: oldValue)
+        let value = ShowOrHideIndicator.doSwitch(newValue, old: oldValue)
         if value == .needHide {
             self.hideLoadingIndicatorView()
         } else if value == .needShow {
@@ -51,11 +51,11 @@ extension MLLoadingIndicatorProtocol where Self: UIViewController {
     }
 }
 
-fileprivate enum showOrLoadIndicatorView {
+fileprivate enum ShowOrHideIndicator {
     case needShow
     case needHide
     case keepLoad
-    static func switchShowHide(new: Int, old: Int) -> showOrLoadIndicatorView {
+    static func doSwitch(_ new: Int, old: Int) -> ShowOrHideIndicator {
         if new > 0 && old <= 0 {
             return .needShow
         } else if old > 0 && new <= 0 {

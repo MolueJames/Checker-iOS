@@ -150,10 +150,10 @@ extension DangerUnitListPageInteractor: DangerUnitListPresentableListener {
     }
     
     private func handleQueryItem(_ listModel: MolueListItem<MLDailyPlanDetailModel>?) {
-        self.presenter?.endHeaderRefreshing()
-        self.presenter?.reloadTableViewData()
         do {
             try self.listModel = listModel.unwrap()
         } catch {MolueLogger.network.message(error)}
+        self.presenter?.endHeaderRefreshing()
+        self.presenter?.reloadTableViewData()
     }
 }

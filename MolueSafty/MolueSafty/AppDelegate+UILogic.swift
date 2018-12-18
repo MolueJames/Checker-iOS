@@ -52,14 +52,14 @@ extension AppDelegate {
     }
     
     private func setRootViewController(for window: UIWindow) {
-        defer { window.makeKeyAndVisible() }
         do {
             try MolueUserLogic.connectWithLastDatabase()
             window.rootViewController = self.rootViewController()
         } catch {
             window.rootViewController = self.loginViewController()
         }
-        window.rootViewController = UIViewController()
+//        window.rootViewController = UIViewController()
+        window.makeKeyAndVisible()
     }
     
     private func loginViewController() -> UIViewController? {

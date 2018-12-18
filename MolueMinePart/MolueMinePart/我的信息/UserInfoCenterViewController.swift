@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxSwift
 import MolueCommon
 import MolueMediator
 import MolueFoundation
@@ -19,21 +20,36 @@ protocol UserInfoCenterPresentableListener: class {
     func queryUserInfoFromServer()
     
     func queryUserInfoFromDatabase()
+    
+    func doUserLogoutOperater()
 }
 
 final class UserInfoCenterViewController: MLBaseViewController  {
     //MARK: View Controller Properties
     var listener: UserInfoCenterPresentableListener?
     
+    private let disposeBag = DisposeBag()
+    
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.tableHeaderView = headerView
+            tableView.tableFooterView = footerView
         }
     }
+    
     lazy private var headerView: UserInfoCenterTableHeaderView! = {
         let headerView: UserInfoCenterTableHeaderView = UserInfoCenterTableHeaderView.createFromXib()
         headerView.frame = CGRect(x: 0, y: 0, width: MLConfigure.ScreenWidth, height: 75)
         return headerView
+    }()
+    
+    lazy private var footerView: UserInfoCenterTableFooterView! = {
+        let footerView: UserInfoCenterTableFooterView = UserInfoCenterTableFooterView.createFromXib()
+        footerView.frame = CGRect(x: 0, y: 0, width: MLConfigure.ScreenWidth, height: 70)
+        footerView.logoutCommand.subscribe(onNext: { [unowned self] (_) in
+            self.listener?.doUserLogoutOperater()
+        }).disposed(by: disposeBag)
+        return footerView
     }()
     
     lazy var titleLabel: UILabel! = {
