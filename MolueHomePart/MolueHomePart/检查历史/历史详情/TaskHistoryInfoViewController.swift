@@ -42,7 +42,7 @@ final class TaskHistoryInfoViewController: MLBaseViewController  {
         do {
             let listener = try self.listener.unwrap()
             let item = try listener.taskItem.unwrap()
-            headerView.refreshSubviews(with: item)
+//            headerView.refreshSubviews(with: item)
         } catch {
             MolueLogger.UIModule.error(error)
         }

@@ -8,12 +8,17 @@
 
 import UIKit
 import MolueCommon
+import MolueMediator
 import MolueFoundation
 import MolueUtilities
 
 protocol UserInfoCenterPresentableListener: class {
     // 定义一些当前页面需要的业务逻辑, 比如网络请求.
     func bindingTableViewAdapter(with tableView: UITableView)
+    
+    func queryUserInfoFromServer()
+    
+    func queryUserInfoFromDatabase()
 }
 
 final class UserInfoCenterViewController: MLBaseViewController  {
@@ -47,7 +52,13 @@ final class UserInfoCenterViewController: MLBaseViewController  {
 
 extension UserInfoCenterViewController: MLUserInterfaceProtocol {
     func queryInformationWithNetwork() {
-        
+        do {
+            let listener = try self.listener.unwrap()
+            listener.queryUserInfoFromDatabase()
+            listener.queryUserInfoFromServer()
+        } catch {
+            MolueLogger.UIModule.message(error)
+        }
     }
     
     func updateUserInterfaceElements() {
@@ -58,12 +69,16 @@ extension UserInfoCenterViewController: MLUserInterfaceProtocol {
             let listener = try self.listener.unwrap()
             listener.bindingTableViewAdapter(with: self.tableView)
         } catch {
-            
+            MolueLogger.UIModule.message(error)
         }
     }
 }
 
 extension UserInfoCenterViewController: UserInfoCenterPagePresentable {
+    func refreshHeaderView(with user: MolueUserInfoModel) {
+        self.headerView.refreshSubviews(with: user)
+    }
+    
     
 }
 

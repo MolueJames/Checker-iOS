@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Foundation
+import MolueUtilities
 import MolueMediator
 
 class DailyCheckTaskHeaderView: UIView {
@@ -30,11 +32,22 @@ class DailyCheckTaskHeaderView: UIView {
     @IBOutlet weak var responseLabel: UILabel!
     @IBOutlet weak var riskClassLabel: UILabel!
     
-    func refreshSubviews(with model: DangerUnitRiskModel) {
-        dangerReasonLabel.text = model.riskReason
-        accidentLabel.text = model.accidentType
-        dependenceLabel.text = model.dependence
-        responseLabel.text = model.responseUnit
-        riskClassLabel.text = model.riskClass
+    func refreshSubviews(with model: MLRiskTaskDetailModel) {
+        self.dangerReasonLabel.text = model.dangers.data()
+        self.dangerReasonLabel.setLineSpace(5)
+        self.dependenceLabel.text = model.standards.data()
+        self.responseLabel.text = model.unit.data()
+        
+        let classification: [String]? = model.classification?.compactMap({ item in
+            return item.name
+        })
+        let classificationText = classification?.joined(separator: ", ")
+        self.riskClassLabel.text = classificationText.data()
+        
+        let accident: [String]? = model.accidents?.compactMap({ item in
+            return item.name
+        })
+        let accidentText = accident?.joined(separator: ", ")
+        self.accidentLabel.text = accidentText.data()
     }
 }

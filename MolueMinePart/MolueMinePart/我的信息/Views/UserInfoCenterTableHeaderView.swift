@@ -7,7 +7,10 @@
 //
 
 import UIKit
+import MolueMediator
 
 class UserInfoCenterTableHeaderView: UIView {
-
+    func refreshSubviews(with user: MolueUserInfoModel) {
+        
+    }
 }

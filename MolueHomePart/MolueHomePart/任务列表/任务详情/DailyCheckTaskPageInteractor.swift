@@ -28,11 +28,16 @@ final class DailyCheckTaskPageInteractor: MoluePresenterInteractable {
     
     weak var listener: DailyCheckTaskInteractListener?
     
-    var valueList: [String] = ["1", "2", "3"]
+//    var selectedCheckTask: MLRiskTaskDetailModel?
 
-    lazy var selectedIndex: IndexPath = {
-        let defaultIndex = IndexPath(row: 0, section: 0)
-        return self.listener?.selectedIndex ?? defaultIndex
+    lazy var currentItem: MLRiskTaskDetailModel? = {
+        do {
+            let listener = try self.listener.unwrap()
+            dump(listener.selectedCheckTask)
+            return try listener.selectedCheckTask.unwrap()
+        } catch {
+            return MolueLogger.UIModule.allowNil(error)
+        }
     }()
     
     required init(presenter: DailyCheckTaskPagePresentable) {
@@ -42,21 +47,10 @@ final class DailyCheckTaskPageInteractor: MoluePresenterInteractable {
 }
 
 extension DailyCheckTaskPageInteractor: DailyCheckTaskRouterInteractable {
-    func doPopToPreviewController() {
-        do {
-            let listener = try self.listener.unwrap()
-            listener.popBackControllerWhenChecked()
-        } catch {
-            MolueLogger.UIModule.error(error)
-        }
-    }
+    
 }
 
 extension DailyCheckTaskPageInteractor: DailyCheckTaskPresentableListener {
-    var item: DangerUnitRiskModel? {
-        let list = AppHomeDocument.shared.unitList.item(at: selectedIndex.section)
-        return list?.unitRisks?.item(at: selectedIndex.row)
-    }
     
     func jumpToCheckTaskDetailController() {
         do {

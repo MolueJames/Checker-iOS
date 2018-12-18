@@ -21,9 +21,11 @@ public protocol HomeInfoPageComponentBuildable: MolueComponentBuildable {
 
 public protocol DailyCheckTaskInteractListener: class {
     //用于定义其他的Component需要定义的协议方法
-    var selectedIndex: IndexPath {get}
+//    var selectedIndex: IndexPath {get}
     
-    func popBackControllerWhenChecked()
+//    func popBackControllerWhenChecked()
+    
+    var selectedCheckTask: MLRiskTaskDetailModel? {get}
 }
 
 public protocol DailyCheckTaskComponentBuildable: MolueComponentBuildable {

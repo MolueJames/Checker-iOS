@@ -59,7 +59,7 @@ extension AppDelegate {
         } catch {
             window.rootViewController = self.loginViewController()
         }
-//        window.rootViewController = UIViewController()
+        window.rootViewController = UIViewController()
     }
     
     private func loginViewController() -> UIViewController? {

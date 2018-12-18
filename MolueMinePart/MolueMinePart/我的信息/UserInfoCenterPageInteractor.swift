@@ -9,6 +9,7 @@
 import MolueMediator
 import MolueCommon
 import MolueUtilities
+import MolueNetwork
 
 protocol UserInfoCenterViewableRouting: class {
     // 定义一些页面跳转的方法, 比如Push, Presenter等.
@@ -16,9 +17,10 @@ protocol UserInfoCenterViewableRouting: class {
     func pushToAboutUsInfoController()
 }
 
-protocol UserInfoCenterPagePresentable: MolueInteractorPresentable {
+protocol UserInfoCenterPagePresentable: MolueInteractorPresentable, MolueActivityDelegate {
     var listener: UserInfoCenterPresentableListener? { get set }
     // 定义一些页面需要的方法, 比如刷新页面的显示内容等.
+    func refreshHeaderView(with user: MolueUserInfoModel)
 }
 
 final class UserInfoCenterPageInteractor: MoluePresenterInteractable {
@@ -85,5 +87,22 @@ extension UserInfoCenterPageInteractor: UserInfoCenterPresentableListener {
         }
     }
     
+    func queryUserInfoFromServer () {
+        let request = MolueUserInfoService.queryUserInformation()
+        request.handleSuccessResultToObjc { [weak self] (result: MolueUserInfoModel?) in
+            MolueLogger.network.message(result)
+            do {
+                let presenter = try self.unwrap().presenter.unwrap()
+                try presenter.refreshHeaderView(with: result.unwrap())
+            } catch {
+                MolueLogger.network.message(error)
+            }
+        }
+        let requestManager = MolueRequestManager(delegate: self.presenter)
+        requestManager.doRequestStart(with: request)
+    }
     
+    func queryUserInfoFromDatabase() {
+        
+    }
 }

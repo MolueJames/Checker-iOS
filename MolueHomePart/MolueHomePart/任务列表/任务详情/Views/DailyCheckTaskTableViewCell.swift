@@ -24,8 +24,9 @@ class DailyCheckTaskTableViewCell: UITableViewCell {
     
     @IBOutlet weak var titleLabel: UILabel!
     
-    public func refreshSubviews(with model: RiskMeasureModel) {
-        self.titleLabel.text = model.measureName
+    public func refreshSubviews(with model: MLRiskAccidentModel) {
+        dump(model)
+        self.titleLabel.text = model.name
     }
     
 }

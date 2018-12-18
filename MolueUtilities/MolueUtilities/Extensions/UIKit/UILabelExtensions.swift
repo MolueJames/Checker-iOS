@@ -29,6 +29,21 @@ public extension UILabel {
 		label.sizeToFit()
 		return label.frame.height
 	}
-	
+    
+    public func setLineSpace(_ lineSpace: CGFloat) {
+        do {
+            let text = try self.text.unwrap()
+            let attributedText = NSMutableAttributedString(string: text)
+            let paragraphStye = NSMutableParagraphStyle()
+            paragraphStye.lineSpacing = lineSpace
+            let range = NSRangeFromString(text)
+            let style = NSAttributedString.Key.paragraphStyle
+            attributedText.addAttribute(style, value: paragraphStye, range: range)
+            self.attributedText = attributedText
+            self.sizeToFit()
+        } catch {
+            MolueLogger.UIModule.message(error)
+        }
+    }
 }
 #endif

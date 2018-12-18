@@ -20,10 +20,10 @@ public class MLRiskUnitCategoryModel: Mappable {
         title       <- map["title"]
     }
     
-    var description: String?
-    var categoryId: Int?
-    var prefix: String?
-    var title: String?
+    public var description: String?
+    public var categoryId: Int?
+    public var prefix: String?
+    public var title: String?
 }
 
 //MARK: 用户需要检查的风险点的详情
@@ -52,25 +52,25 @@ public class MLRiskTaskDetailModel: Mappable {
         level = RiskLevel.map(map["level"].value())
     }
     
-    var code: String?
-    var phone: String?
-    var created: String?
-    var dangers: String?
-    var extensions: String?
-    var grade: String?
-    var taskId: Int?
-    var level: RiskLevel = .lower
-    var calculation: String?
-    var name: String?
-    var remark: String?
-    var person: String?
-    var unit: String?
-    var risk_unit: Int?
-    var standards: String?
-    var status: String?
-    var updated: String?
-    var accidents: [MLRiskAccidentModel]?
-    var classification: [MLRiskClassificationModel]?
+    public var code: String?
+    public var phone: String?
+    public var created: String?
+    public var dangers: String?
+    public var extensions: String?
+    public var grade: String?
+    public var taskId: Int?
+    public var level: RiskLevel = .lower
+    public var calculation: String?
+    public var name: String?
+    public var remark: String?
+    public var person: String?
+    public var unit: String?
+    public var risk_unit: Int?
+    public var standards: String?
+    public var status: String?
+    public var updated: String?
+    public var accidents: [MLRiskAccidentModel]?
+    public var classification: [MLRiskClassificationModel]?
     
     public enum RiskLevel: CustomStringConvertible {
         public var description: String {
@@ -108,10 +108,10 @@ public class MLRiskAccidentModel: Mappable {
         name        <- map["name"]
     }
     
-    var code: String?
-    var description: String?
-    var accidentId: Int?
-    var name: String?
+    public var code: String?
+    public var description: String?
+    public var accidentId: Int?
+    public var name: String?
 }
 
 //MARK:
@@ -123,8 +123,8 @@ public class MLRiskClassificationModel: Mappable {
         name <- map["name"]
     }
     
-    var code: String?
-    var name: String?
+    public var code: String?
+    public var name: String?
 }
 
 //MARK: 用户每日的任务列表
@@ -143,15 +143,15 @@ public class MLDailyPlanDetailModel: Mappable {
         planId         <- map["id"]
     }
     
-    var enterprise: Int?
-    var planId: Int?
-    var created: String?
-    var risk_unit: MLRiskUnitDetailModel?
-    var status: String?
-    var updated: String?
-    var expiration: String?
-    var time_of_finish: String?
-    var time_of_start: String?
+    public var enterprise: Int?
+    public var planId: Int?
+    public var created: String?
+    public var risk_unit: MLRiskUnitDetailModel?
+    public var status: String?
+    public var updated: String?
+    public var expiration: String?
+    public var time_of_finish: String?
+    public var time_of_start: String?
 }
 
 //MARK: 用户需要检查的单元
@@ -171,14 +171,14 @@ public class MLRiskUnitDetailModel: Mappable {
         unitId     <- map["id"]
     }
     
-    var category: MLRiskUnitCategoryModel?
-    var cycle: Int?
-    var cycle_type: String?
-    var enterprise: Int?
-    var unitId: Int?
-    var risks: [MLRiskTaskDetailModel]?
-    var status: String?
-    var unit_code: String?
-    var unit_name: String?
-    var updated: String?
+    public var category: MLRiskUnitCategoryModel?
+    public var cycle: Int?
+    public var cycle_type: String?
+    public var enterprise: Int?
+    public var unitId: Int?
+    public var risks: [MLRiskTaskDetailModel]?
+    public var status: String?
+    public var unit_code: String?
+    public var unit_name: String?
+    public var updated: String?
 }

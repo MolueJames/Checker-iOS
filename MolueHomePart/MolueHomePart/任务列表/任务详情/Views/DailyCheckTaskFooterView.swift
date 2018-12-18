@@ -24,9 +24,9 @@ class DailyCheckTaskFooterView: UIView {
     
     @IBOutlet weak var headPhoneLabel: UILabel!
     
-    public func refreshSubviews(with model: DangerUnitRiskModel) {
-        self.headPhoneLabel.text = model.headPhone
-        self.riskHeadLabel.text = model.riskHead
-        self.riskRemarkLabel.text = model.riskRemarks
+    public func refreshSubviews(with model: MLRiskTaskDetailModel) {
+        self.headPhoneLabel.text = model.phone.data()
+        self.riskHeadLabel.text = model.person.data()
+        self.riskRemarkLabel.text = model.remark.data()
     }
 }

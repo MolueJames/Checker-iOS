@@ -31,9 +31,9 @@ final class QuickCheckRiskPageInteractor: MoluePresenterInteractable {
     
     weak var listener: QuickCheckRiskInteractListener?
     
-    var selectedIndex: IndexPath = IndexPath(row: 0, section: 1)
-    
     var measureItem: RiskMeasureModel?
+    
+    var selectedCheckTask: MLRiskTaskDetailModel?
     
     required init(presenter: QuickCheckRiskPagePresentable) {
         self.presenter = presenter
@@ -42,14 +42,6 @@ final class QuickCheckRiskPageInteractor: MoluePresenterInteractable {
 }
 
 extension QuickCheckRiskPageInteractor: QuickCheckRiskRouterInteractable {
-    func popBackControllerWhenChecked() {
-        do {
-            let presenter = try self.presenter.unwrap()
-            presenter.popBackWhenTaskChecked()
-        } catch {
-            MolueLogger.UIModule.error(error)
-        }
-    }
     
     func updateEditRiskInfoModel(with item: PotentialRiskModel) {
         AppRiskDocument.shared.riskList.append(item)

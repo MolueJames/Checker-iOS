@@ -16,10 +16,6 @@ import ESPullToRefresh
 
 protocol DangerUnitListPresentableListener: class {
     // 定义一些当前页面需要的业务逻辑, 比如网络请求.
-    func jumpToDailyCheckTaskController()
-    
-    var selectedIndex: IndexPath {get set}
-    
     func queryDailyCheckDangerUnit()
     
     func moreDailyCheckDangerUnit()
@@ -31,6 +27,8 @@ protocol DangerUnitListPresentableListener: class {
     func queryUnitItem(with section: Int) -> MLDailyPlanDetailModel?
     
     func queryRisKItem(with indexPath: IndexPath) -> MLRiskTaskDetailModel?
+    
+    func jumpToCheckTaskDetail(with indexPath: IndexPath)
     
 }
 
@@ -153,8 +151,7 @@ extension DangerUnitListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         do {
             let listener = try self.listener.unwrap()
-            listener.selectedIndex = indexPath
-            listener.jumpToDailyCheckTaskController()
+            listener.jumpToCheckTaskDetail(with: indexPath)
         } catch {
             MolueLogger.UIModule.error(error)
         }

@@ -7,7 +7,9 @@
 //
 
 import Foundation
+import MolueUtilities
 import ObjectMapper
+
 public class MolueListItem<T: Mappable>: Mappable {
     public required init?(map: Map) {}
     
@@ -19,9 +21,28 @@ public class MolueListItem<T: Mappable>: Mappable {
         next     <- map["next"]
     }
     
+    public init(_ pagesize: Int = 10) {
+        self.pagesize = pagesize
+    }
+    
+    public var pagesize: Int = 0
     public var count: Int?
     public var next: Int?
-    public var pagesize: Int?
     public var previous: Int?
     public var results: [T]?
+    
+    public func appendMoreResults(with item: MolueListItem<T>?) throws {
+        func appendResults(with results: [T]?) throws {
+            do {
+                let newItems = try results.unwrap()
+                var results = try self.results.unwrap()
+                results.append(contentsOf: newItems)
+            } catch { throw error }
+        }
+        
+        do {
+            let newValue = try item.unwrap()
+            try appendResults(with: newValue.results)
+        } catch { throw error }
+    }
 }
