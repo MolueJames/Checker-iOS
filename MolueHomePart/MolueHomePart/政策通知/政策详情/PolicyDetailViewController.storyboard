@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,50 +17,7 @@
                     <view key="view" contentMode="scaleToFill" id="u0A-dv-sdD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aqh-V6-Fb8">
-                                <rect key="frame" x="0.0" y="20" width="375" height="50"/>
-                                <subviews>
-                                    <searchBar contentMode="redraw" searchBarStyle="prominent" placeholder="搜索" translatesAutoresizingMaskIntoConstraints="NO" id="EW5-aM-RKj">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
-                                        <color key="barTintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </searchBar>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zzx-WA-33b">
-                                        <rect key="frame" x="0.0" y="49.5" width="375" height="0.5"/>
-                                        <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="0.5" id="VRU-JV-HSY"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="Zzx-WA-33b" secondAttribute="bottom" id="9tW-Op-TVk"/>
-                                    <constraint firstAttribute="height" constant="50" id="BbL-Ac-scL"/>
-                                    <constraint firstAttribute="trailing" secondItem="EW5-aM-RKj" secondAttribute="trailing" id="D4H-uf-sEo"/>
-                                    <constraint firstItem="EW5-aM-RKj" firstAttribute="top" secondItem="aqh-V6-Fb8" secondAttribute="top" id="EJY-J1-6PM"/>
-                                    <constraint firstItem="Zzx-WA-33b" firstAttribute="leading" secondItem="aqh-V6-Fb8" secondAttribute="leading" id="LyT-mD-jFk"/>
-                                    <constraint firstAttribute="bottom" secondItem="EW5-aM-RKj" secondAttribute="bottom" id="cTu-3E-j8E"/>
-                                    <constraint firstItem="EW5-aM-RKj" firstAttribute="leading" secondItem="aqh-V6-Fb8" secondAttribute="leading" id="i5U-VZ-Eau"/>
-                                    <constraint firstAttribute="trailing" secondItem="Zzx-WA-33b" secondAttribute="trailing" id="qd0-2I-zhJ"/>
-                                </constraints>
-                            </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="81Y-9f-OoP">
-                                <rect key="frame" x="0.0" y="70" width="375" height="597"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </tableView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="aqh-V6-Fb8" firstAttribute="leading" secondItem="0Co-ti-xSZ" secondAttribute="leading" id="RYL-1I-3jx"/>
-                            <constraint firstItem="0Co-ti-xSZ" firstAttribute="trailing" secondItem="81Y-9f-OoP" secondAttribute="trailing" id="amF-cz-ydz"/>
-                            <constraint firstItem="0Co-ti-xSZ" firstAttribute="trailing" secondItem="aqh-V6-Fb8" secondAttribute="trailing" id="bFT-vm-FQn"/>
-                            <constraint firstItem="81Y-9f-OoP" firstAttribute="top" secondItem="aqh-V6-Fb8" secondAttribute="bottom" id="fEV-mP-ycQ"/>
-                            <constraint firstItem="81Y-9f-OoP" firstAttribute="leading" secondItem="0Co-ti-xSZ" secondAttribute="leading" id="oGs-mu-kuI"/>
-                            <constraint firstItem="0Co-ti-xSZ" firstAttribute="bottom" secondItem="81Y-9f-OoP" secondAttribute="bottom" id="wqS-th-Qv1"/>
-                            <constraint firstItem="aqh-V6-Fb8" firstAttribute="top" secondItem="0Co-ti-xSZ" secondAttribute="top" id="yNa-fT-zvc"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="0Co-ti-xSZ"/>
                     </view>
                 </viewController>

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MolueNetwork
 
 class PolicyNoticeTableViewCell: UITableViewCell {
 
@@ -21,4 +22,7 @@ class PolicyNoticeTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func refreshSubviews(with item: MLPolicyNoticeModel) {
+        
+    }
 }

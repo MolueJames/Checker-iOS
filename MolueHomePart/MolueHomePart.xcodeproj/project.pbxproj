@@ -84,11 +84,13 @@
 		1A602F8520A87D58003AD583 /* HomeInfoTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A602F8420A87D58003AD583 /* HomeInfoTableHeaderView.swift */; };
 		1A602F8C20A88095003AD583 /* HomeInfoTableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A602F8B20A88095003AD583 /* HomeInfoTableHeaderView.xib */; };
 		1A65039620DD552B0017F91D /* MolueHome.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A65039520DD552A0017F91D /* MolueHome.xcassets */; };
-		1A730AEB20EBBC02008831BC /* PolicyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A730AEA20EBBC02008831BC /* PolicyDetailViewController.swift */; };
 		1A730AED20EBBC2E008831BC /* RegulationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A730AEC20EBBC2E008831BC /* RegulationDetailViewController.swift */; };
 		1A730AEF20EBBC49008831BC /* PolicyDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A730AEE20EBBC49008831BC /* PolicyDetailViewController.storyboard */; };
 		1A730AF120EBBC5E008831BC /* RegulationDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A730AF020EBBC5E008831BC /* RegulationDetailViewController.storyboard */; };
 		1A7D5A3A21AA73D800931B0B /* AppHomeDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7D5A3921AA73D800931B0B /* AppHomeDocument.swift */; };
+		1AAB20D621CA8E8D003FA7F8 /* PolicyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAB20D321CA8E8D003FA7F8 /* PolicyDetailViewController.swift */; };
+		1AAB20D721CA8E8D003FA7F8 /* PolicyDetailPageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAB20D421CA8E8D003FA7F8 /* PolicyDetailPageInteractor.swift */; };
+		1AAB20D821CA8E8D003FA7F8 /* PolicyDetailBuilderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAB20D521CA8E8D003FA7F8 /* PolicyDetailBuilderRouter.swift */; };
 		1AAF7B6720C1970A0051EC18 /* EnterpriseInfoViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AAF7B6520C1970A0051EC18 /* EnterpriseInfoViewController.storyboard */; };
 		1AAF7B6820C1970A0051EC18 /* EnterpriseInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAF7B6620C1970A0051EC18 /* EnterpriseInfoViewController.swift */; };
 		1AAF7B7E20C1971B0051EC18 /* BasicArchivesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAF7B6A20C1971B0051EC18 /* BasicArchivesViewController.swift */; };
@@ -211,11 +213,13 @@
 		1A602F8420A87D58003AD583 /* HomeInfoTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInfoTableHeaderView.swift; sourceTree = "<group>"; };
 		1A602F8B20A88095003AD583 /* HomeInfoTableHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeInfoTableHeaderView.xib; sourceTree = "<group>"; };
 		1A65039520DD552A0017F91D /* MolueHome.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MolueHome.xcassets; sourceTree = "<group>"; };
-		1A730AEA20EBBC02008831BC /* PolicyDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyDetailViewController.swift; sourceTree = "<group>"; };
 		1A730AEC20EBBC2E008831BC /* RegulationDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegulationDetailViewController.swift; sourceTree = "<group>"; };
 		1A730AEE20EBBC49008831BC /* PolicyDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PolicyDetailViewController.storyboard; sourceTree = "<group>"; };
 		1A730AF020EBBC5E008831BC /* RegulationDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegulationDetailViewController.storyboard; sourceTree = "<group>"; };
 		1A7D5A3921AA73D800931B0B /* AppHomeDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHomeDocument.swift; sourceTree = "<group>"; };
+		1AAB20D321CA8E8D003FA7F8 /* PolicyDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyDetailViewController.swift; sourceTree = "<group>"; };
+		1AAB20D421CA8E8D003FA7F8 /* PolicyDetailPageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyDetailPageInteractor.swift; sourceTree = "<group>"; };
+		1AAB20D521CA8E8D003FA7F8 /* PolicyDetailBuilderRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyDetailBuilderRouter.swift; sourceTree = "<group>"; };
 		1AAF7B6520C1970A0051EC18 /* EnterpriseInfoViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EnterpriseInfoViewController.storyboard; sourceTree = "<group>"; };
 		1AAF7B6620C1970A0051EC18 /* EnterpriseInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterpriseInfoViewController.swift; sourceTree = "<group>"; };
 		1AAF7B6A20C1971B0051EC18 /* BasicArchivesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicArchivesViewController.swift; sourceTree = "<group>"; };
@@ -570,8 +574,10 @@
 		1A730AE920EBBBE7008831BC /* 政策详情 */ = {
 			isa = PBXGroup;
 			children = (
-				1A730AEA20EBBC02008831BC /* PolicyDetailViewController.swift */,
 				1A730AEE20EBBC49008831BC /* PolicyDetailViewController.storyboard */,
+				1AAB20D321CA8E8D003FA7F8 /* PolicyDetailViewController.swift */,
+				1AAB20D421CA8E8D003FA7F8 /* PolicyDetailPageInteractor.swift */,
+				1AAB20D521CA8E8D003FA7F8 /* PolicyDetailBuilderRouter.swift */,
 			);
 			path = "政策详情";
 			sourceTree = "<group>";
@@ -894,6 +900,7 @@
 				1A0B89BE21933045000B1EBC /* DailyCheckTaskHeaderView.swift in Sources */,
 				1A346FC621915C0400CB534B /* CheckTaskDetailViewController.swift in Sources */,
 				1AAF7B7E20C1971B0051EC18 /* BasicArchivesViewController.swift in Sources */,
+				1AAB20D721CA8E8D003FA7F8 /* PolicyDetailPageInteractor.swift in Sources */,
 				1AAF7B8220C1971B0051EC18 /* SecurityAdminiViewController.swift in Sources */,
 				1A1CA8DA21B50C3F00FDF4E2 /* CheckTaskHistoryCalendarCell.swift in Sources */,
 				1A43BC2F20C3CAA60093855B /* EnterpriseInfoTableViewCell.swift in Sources */,
@@ -913,12 +920,12 @@
 				1AAF7B8520C1971B0051EC18 /* ContactInfoViewController.swift in Sources */,
 				1A24022820E5337A00FC3EBA /* EnterpriseInfoNavigator.swift in Sources */,
 				1AAF7B8B20C1971B0051EC18 /* RiskFeatureViewController.swift in Sources */,
+				1AAB20D621CA8E8D003FA7F8 /* PolicyDetailViewController.swift in Sources */,
 				1A522ED621912BA200094A8A /* DangerUnitListViewController.swift in Sources */,
 				1A24022020E52F7800FC3EBA /* LawRegulationViewController.swift in Sources */,
 				1A5E87F721C9DC4B00BA4DB5 /* PolicyNoticeBuilderRouter.swift in Sources */,
 				1AAF7B8720C1971B0051EC18 /* DangerMachineryViewController.swift in Sources */,
 				1A7D5A3A21AA73D800931B0B /* AppHomeDocument.swift in Sources */,
-				1A730AEB20EBBC02008831BC /* PolicyDetailViewController.swift in Sources */,
 				1A5E87F621C9DC4B00BA4DB5 /* PolicyNoticePageInteractor.swift in Sources */,
 				1A522EC62190356100094A8A /* DailyCheckTaskViewController.swift in Sources */,
 				1AB0670720EFB61D00619570 /* PolicyNoticeTableViewCell.swift in Sources */,
@@ -943,6 +950,7 @@
 				1A346FC821915C0400CB534B /* CheckTaskDetailBuilderRouter.swift in Sources */,
 				1A06557D20A9EE020016CA86 /* HomeInfoTableViewCell.swift in Sources */,
 				1A43BC3320C3CEAA0093855B /* EnterpriseInfoModel.swift in Sources */,
+				1AAB20D821CA8E8D003FA7F8 /* PolicyDetailBuilderRouter.swift in Sources */,
 				1A1084FF20ECF1FC004E365A /* IncreaseAdminiDataManager.swift in Sources */,
 				1A24022B20E5363600FC3EBA /* SecurityAdminiNavigator.swift in Sources */,
 				1ABDCA9520C5720F0062DE71 /* IncreaseAdminiFooterView.swift in Sources */,

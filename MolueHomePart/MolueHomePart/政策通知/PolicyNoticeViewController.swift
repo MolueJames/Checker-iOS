@@ -28,6 +28,13 @@ final class PolicyNoticeViewController: MLBaseViewController  {
     //MARK: View Controller Properties
     var listener: PolicyNoticePresentableListener?
     
+    @IBOutlet weak var tableView: UITableView! {
+        didSet {
+            tableView.dataSource = self
+            tableView.delegate = self
+            tableView.register(xibWithCellClass: PolicyNoticeTableViewCell.self)
+        }
+    }
     //MARK: View Controller Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +48,7 @@ extension PolicyNoticeViewController: MLUserInterfaceProtocol {
     }
     
     func updateUserInterfaceElements() {
+        self.title = "政策通知"
         do {
             let listener = try self.listener.unwrap()
             listener.queryPolicyNoticeList()
@@ -50,7 +58,7 @@ extension PolicyNoticeViewController: MLUserInterfaceProtocol {
 
 extension PolicyNoticeViewController: PolicyNoticePagePresentable {
     func reloadTableViewData() {
-        
+        self.tableView.reloadData()
     }
     
     func endHeaderRefreshing() {
@@ -63,5 +71,43 @@ extension PolicyNoticeViewController: PolicyNoticePagePresentable {
 }
 
 extension PolicyNoticeViewController: PolicyNoticeViewControllable {
+    
+}
+
+extension PolicyNoticeViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        do {
+            let listener = try self.listener.unwrap()
+            listener.jumpToPolicyNoticeDetail(with: indexPath)
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+    }
+}
+
+extension PolicyNoticeViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        do {
+            let listener = try self.listener.unwrap()
+            return try listener.numberOfRows(in: section).unwrap()
+        } catch { return 0 }
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withClass: PolicyNoticeTableViewCell.self)
+        do {
+            let listener = try self.listener.unwrap()
+            let item = listener.queryPolicyNotice(with: indexPath)
+            try cell.refreshSubviews(with: item.unwrap())
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+        return cell
+    }
+    
     
 }

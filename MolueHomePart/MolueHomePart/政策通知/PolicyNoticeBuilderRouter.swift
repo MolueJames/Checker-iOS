@@ -7,8 +7,9 @@
 //
 
 import MolueMediator
+import MolueUtilities
 
-protocol PolicyNoticeRouterInteractable: class {
+protocol PolicyNoticeRouterInteractable: PolicyDetailInteractListener {
     var viewRouter: PolicyNoticeViewableRouting? { get set }
     var listener: PolicyNoticeInteractListener? { get set }
 }
@@ -32,7 +33,17 @@ final class PolicyNoticeViewableRouter: MolueViewableRouting {
 }
 
 extension PolicyNoticeViewableRouter: PolicyNoticeViewableRouting {
-    
+    func pushToPolicyDetailController() {
+        do {
+            let listener = try self.interactor.unwrap()
+            let builder = PolicyDetailComponentBuilder()
+            let controller = builder.build(listener: listener)
+            let navigator = try self.controller.unwrap()
+            navigator.pushToViewController(controller, animated: true)
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+    }
 }
 
 protocol PolicyNoticeInteractListener: class {
@@ -56,7 +67,7 @@ class PolicyNoticeComponentBuilder: MolueComponentBuilder, PolicyNoticeComponent
     }
     
     func build() -> UIViewController {
-        let controller = PolicyNoticeViewController()
+        let controller = PolicyNoticeViewController.initializeFromStoryboard()
         let interactor = PolicyNoticePageInteractor(presenter: controller)
         PolicyNoticeViewableRouter(interactor: interactor, controller: controller)
         return controller

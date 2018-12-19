@@ -90,7 +90,7 @@ extension HomeInfoPageViewableRouter: HomeInfoPageViewableRouting {
     func pushToNoticationController() {
         do {
             let navigator = try self.controller.unwrap()
-            let controller = PolicyNoticeViewController.initializeFromStoryboard()
+            let controller = PolicyNoticeComponentBuilder().build()
             controller.hidesBottomBarWhenPushed = true
             navigator.pushToViewController(controller, animated: true)
         } catch {

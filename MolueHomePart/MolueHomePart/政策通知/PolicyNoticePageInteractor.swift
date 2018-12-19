@@ -12,6 +12,7 @@ import MolueUtilities
 
 protocol PolicyNoticeViewableRouting: class {
     // 定义一些页面跳转的方法, 比如Push, Presenter等.
+    func pushToPolicyDetailController()
 }
 
 protocol PolicyNoticePagePresentable: MolueInteractorPresentable {
@@ -34,6 +35,8 @@ final class PolicyNoticePageInteractor: MoluePresenterInteractable {
     weak var listener: PolicyNoticeInteractListener?
     
     var listModel = MolueListItem<MLPolicyNoticeModel>()
+    
+    var selectedPolicyNotice: MLPolicyNoticeModel?
     
     required init(presenter: PolicyNoticePagePresentable) {
         self.presenter = presenter
@@ -66,7 +69,14 @@ extension PolicyNoticePageInteractor: PolicyNoticePresentableListener {
     }
     
     func jumpToPolicyNoticeDetail(with indexPath: IndexPath) {
-        
+        let policyNotice = self.queryPolicyNotice(with: indexPath)
+        self.selectedPolicyNotice = policyNotice
+        do {
+            let viewRouter = try self.viewRouter.unwrap()
+            viewRouter.pushToPolicyDetailController()
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
     }
     
     
