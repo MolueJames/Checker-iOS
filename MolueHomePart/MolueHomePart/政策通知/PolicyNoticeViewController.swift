@@ -1,25 +1,37 @@
 //
-//  NotificationPolicyViewController.swift
+//  PolicyNoticeViewController.swift
 //  MolueHomePart
 //
-//  Created by MolueJames on 2018/6/28.
-//  Copyright © 2018年 MolueTech. All rights reserved.
+//  Created by JamesCheng on 2018-12-19.
+//  Copyright © 2018 MolueTech. All rights reserved.
 //
 
 import UIKit
+import MolueUtilities
 import MolueFoundation
-class PolicyNoticeViewController: MLBaseViewController {
-    @IBOutlet private weak var tableView: UITableView! {
-        didSet {
-            tableView.delegate = self
-            tableView.dataSource = self
-            tableView.register(xibWithCellClass: PolicyNoticeTableViewCell.self)
-        }
-    }
+import MolueNetwork
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+protocol PolicyNoticePresentableListener: class {
+    // 定义一些当前页面需要的业务逻辑, 比如网络请求.
+    func queryPolicyNoticeList()
+    
+    func morePolicyNoticeList()
+    
+    func numberOfRows(in section: Int) -> Int?
+    
+    func queryPolicyNotice(with indexPath: IndexPath) -> MLPolicyNoticeModel?
+    
+    func jumpToPolicyNoticeDetail(with indexPath: IndexPath)
+}
+
+final class PolicyNoticeViewController: MLBaseViewController  {
+    //MARK: View Controller Properties
+    var listener: PolicyNoticePresentableListener?
+    
+    //MARK: View Controller Life Cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
     }
 }
 
@@ -29,22 +41,27 @@ extension PolicyNoticeViewController: MLUserInterfaceProtocol {
     }
     
     func updateUserInterfaceElements() {
-        self.title = "政策通知"
+        do {
+            let listener = try self.listener.unwrap()
+            listener.queryPolicyNoticeList()
+        } catch { MolueLogger.UIModule.error(error) }
     }
 }
 
-extension PolicyNoticeViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+extension PolicyNoticeViewController: PolicyNoticePagePresentable {
+    func reloadTableViewData() {
+        
     }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withClass: PolicyNoticeTableViewCell.self)
-        return cell
+    
+    func endHeaderRefreshing() {
+        
+    }
+    
+    func endFooterRefreshing(with hasMore: Bool) {
+        
     }
 }
 
-extension PolicyNoticeViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
-    }
+extension PolicyNoticeViewController: PolicyNoticeViewControllable {
+    
 }
