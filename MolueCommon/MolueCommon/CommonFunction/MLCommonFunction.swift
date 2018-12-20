@@ -9,7 +9,7 @@
 import Foundation
 import MolueUtilities
 import KeychainAccess
-import MolueNetwork
+import MolueMediator
 import MolueDatabase
 
 public struct MLCommonFunction {

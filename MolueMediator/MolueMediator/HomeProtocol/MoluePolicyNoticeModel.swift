@@ -45,7 +45,7 @@ public class MoluePolicyNotification: Mappable {
         type <- map["type"]
     }
     
-    public var createUser: Int?
+    public var createUser: String?
     public var published: String?
     public var needSignature: Bool?
     public var notificationId: Int?

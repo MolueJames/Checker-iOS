@@ -16,7 +16,9 @@ protocol DailyCheckTaskPresentableListener: class {
     // 定义一些当前页面需要的业务逻辑, 比如网络请求.
     func jumpToCheckTaskDetailController()
     
-    var currentItem: MLRiskTaskDetailModel? {get}
+    var currentItem: MLDailyCheckTask? {get}
+    
+    func queryDailyCheckTask()
 }
 
 final class DailyCheckTaskViewController: MLBaseViewController  {
@@ -56,11 +58,11 @@ final class DailyCheckTaskViewController: MLBaseViewController  {
         do {
             let listener = try self.listener.unwrap()
             let item = try listener.currentItem.unwrap()
-            footerView.refreshSubviews(with: item)
-            let remarks = try item.remark.unwrap()
-            let width = MLConfigure.ScreenWidth - 30
-            let height = remarks.estimateHeight(with: 14, width: width, lineSpacing: 3) + 110
-            footerView.frame = CGRect(x: 0, y: 0, width: MLConfigure.ScreenWidth, height: height)
+//            footerView.refreshSubviews(with: item)
+//            let remarks = try item.remark.unwrap()
+//            let width = MLConfigure.ScreenWidth - 30
+//            let height = remarks.estimateHeight(with: 14, width: width, lineSpacing: 3) + 110
+//            footerView.frame = CGRect(x: 0, y: 0, width: MLConfigure.ScreenWidth, height: height)
         } catch {
             MolueLogger.UIModule.error(error)
         }
@@ -72,7 +74,7 @@ final class DailyCheckTaskViewController: MLBaseViewController  {
         do {
             let listener = try self.listener.unwrap()
             let item = try listener.currentItem.unwrap()
-            headerView.refreshSubviews(with: item)
+//            headerView.refreshSubviews(with: item)
         } catch {
             MolueLogger.UIModule.error(error)
         }
@@ -100,7 +102,12 @@ final class DailyCheckTaskViewController: MLBaseViewController  {
 
 extension DailyCheckTaskViewController: MLUserInterfaceProtocol {
     func queryInformationWithNetwork() {
-        
+        do {
+            let listener = try self.listener.unwrap()
+            listener.queryDailyCheckTask()
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
     }
     
     func updateUserInterfaceElements() {
@@ -108,7 +115,7 @@ extension DailyCheckTaskViewController: MLUserInterfaceProtocol {
         do {
             let listener = try self.listener.unwrap()
             let item = try listener.currentItem.unwrap()
-            self.title = item.name
+            self.title = try item.risk.unwrap().unitName
         } catch {
             MolueLogger.UIModule.error(error)
         }
@@ -139,25 +146,26 @@ extension DailyCheckTaskViewController: UITableViewDelegate {
 
 extension DailyCheckTaskViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        do {
-            let listener = try self.listener.unwrap()
-            let riskItem = try listener.currentItem.unwrap()
-            let accidents = try riskItem.accidents.unwrap()
-            return accidents.count
-        } catch { return 0 }
+//        do {
+//            let listener = try self.listener.unwrap()
+//            let riskItem = try listener.currentItem.unwrap()
+//            let accidents = try riskItem.accidents.unwrap()
+//            return accidents.count
+//        } catch { return 0 }
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withClass: DailyCheckTaskTableViewCell.self)
-        do {
-            let listener = try self.listener.unwrap()
-            let riskItem = try listener.currentItem.unwrap()
-            let accidents = try riskItem.accidents.unwrap()
-            let item = try accidents.item(at: indexPath.row).unwrap()
-            cell.refreshSubviews(with: item)
-        } catch {
-            MolueLogger.UIModule.error(error)
-        }
+//        do {
+//            let listener = try self.listener.unwrap()
+//            let riskItem = try listener.currentItem.unwrap()
+//            let accidents = try riskItem.accidents.unwrap()
+//            let item = try accidents.item(at: indexPath.row).unwrap()
+//            cell.refreshSubviews(with: item)
+//        } catch {
+//            MolueLogger.UIModule.error(error)
+//        }
         return cell
     }
     

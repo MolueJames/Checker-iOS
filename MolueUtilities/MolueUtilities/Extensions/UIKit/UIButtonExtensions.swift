@@ -172,5 +172,9 @@ public extension UIButton {
         contentEdgeInsets = UIEdgeInsets(top: 0, left: insetAmount, bottom: 0, right: insetAmount)
     }
 	
+    public func setColor(_ color: UIColor, state: UIControl.State) {
+        let image = UIImage(color: color, size: self.frame.size)
+        self.setImage(image, for: state)
+    }
 }
 #endif

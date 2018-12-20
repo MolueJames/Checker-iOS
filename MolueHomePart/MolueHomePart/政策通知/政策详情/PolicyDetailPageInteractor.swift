@@ -27,7 +27,17 @@ final class PolicyDetailPageInteractor: MoluePresenterInteractable {
     
     weak var listener: PolicyDetailInteractListener?
     
-    lazy var selectedNotification: MLPolicyNoticeModel? = {
+    lazy var notificationItem: MoluePolicyNotification? = {
+        do {
+            let listener = try self.listener.unwrap()
+            let notice = try listener.selectedPolicyNotice.unwrap()
+            return try notice.notification.unwrap()
+        } catch {
+            return MolueLogger.database.returnNil(error)
+        }
+    }()
+    
+    lazy var selectedNotice: MLPolicyNoticeModel? = {
         do {
             let listener = try self.listener.unwrap()
             return try listener.selectedPolicyNotice.unwrap()
@@ -47,7 +57,5 @@ extension PolicyDetailPageInteractor: PolicyDetailRouterInteractable {
 }
 
 extension PolicyDetailPageInteractor: PolicyDetailPresentableListener {
-    
-    
     
 }

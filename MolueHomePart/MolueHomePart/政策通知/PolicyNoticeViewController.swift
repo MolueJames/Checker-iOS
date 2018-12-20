@@ -9,7 +9,7 @@
 import UIKit
 import MolueUtilities
 import MolueFoundation
-import MolueNetwork
+import MolueMediator
 
 protocol PolicyNoticePresentableListener: class {
     // 定义一些当前页面需要的业务逻辑, 比如网络请求.

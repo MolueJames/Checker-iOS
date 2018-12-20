@@ -24,9 +24,9 @@ protocol DangerUnitListPresentableListener: class {
     
     func numberOfRows(in section: Int) -> Int?
     
-    func queryUnitItem(with section: Int) -> MLDailyPlanDetailModel?
+    func queryPlanItem(with section: Int) -> MLDailyCheckPlan?
     
-    func queryRisKItem(with indexPath: IndexPath) -> MLRiskTaskDetailModel?
+    func queryTaskItem(with indexPath: IndexPath) -> MLDailyCheckTask?
     
     func jumpToCheckTaskDetail(with indexPath: IndexPath)
     
@@ -122,7 +122,7 @@ extension DangerUnitListViewController: UITableViewDelegate {
         let headerView: DangerUnitSectionHeaderView = DangerUnitSectionHeaderView.createFromXib()
         do {
             let listener = try self.listener.unwrap()
-            let item = listener.queryUnitItem(with: section)
+            let item = listener.queryPlanItem(with: section)
             try headerView.refreshSubviews(with: item.unwrap())
         } catch {
             MolueLogger.UIModule.error(error)
@@ -177,7 +177,7 @@ extension DangerUnitListViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withClass: DangerUnitTableViewCell.self)
         do {
             let listener = try self.listener.unwrap()
-            let item = listener.queryRisKItem(with: indexPath)
+            let item = listener.queryTaskItem(with: indexPath)
             try cell.refreshSubviews(with: item.unwrap())
         } catch {
             MolueLogger.UIModule.error(error)

@@ -8,6 +8,7 @@
 
 import MolueMediator
 import MolueCommon
+import MolueNetwork
 import MolueUtilities
 
 protocol DailyCheckTaskViewableRouting: class {
@@ -28,12 +29,11 @@ final class DailyCheckTaskPageInteractor: MoluePresenterInteractable {
     
     weak var listener: DailyCheckTaskInteractListener?
     
-//    var selectedCheckTask: MLRiskTaskDetailModel?
+    var selectedCheckTask: MLDailyCheckTask?
 
-    lazy var currentItem: MLRiskTaskDetailModel? = {
+    lazy var currentItem: MLDailyCheckTask? = {
         do {
             let listener = try self.listener.unwrap()
-            dump(listener.selectedCheckTask)
             return try listener.selectedCheckTask.unwrap()
         } catch {
             return MolueLogger.UIModule.allowNil(error)
@@ -51,6 +51,17 @@ extension DailyCheckTaskPageInteractor: DailyCheckTaskRouterInteractable {
 }
 
 extension DailyCheckTaskPageInteractor: DailyCheckTaskPresentableListener {
+    func queryDailyCheckTask() {
+        do {
+            let taskId = try self.currentItem.unwrap().taskId.unwrap()
+            let dataRequest = MolueCheckService.queryDailyCheckTask(with: taskId)
+            dataRequest.handleSuccessResponse { (result) in
+                dump(result)
+                MolueLogger.network.message(result)
+            }
+            MolueRequestManager().doRequestStart(with: dataRequest)
+        } catch { MolueLogger.network.message(error) }
+    }
     
     func jumpToCheckTaskDetailController() {
         do {

@@ -90,8 +90,6 @@ end
 target 'MolueNetwork' do
     project 'MolueNetwork/MolueNetwork.xcodeproj'
         pod 'Alamofire', '~> 4.7'
-        pod 'SQLite.swift', '~> 0.11.5'
-        pod 'KeychainAccess', '~> 3.1.2'
         pod 'ObjectMapper', '~> 3.3'
         pod 'Bolts-Swift', '~> 1.4.0'
     target 'MolueNetworkTests' do
@@ -111,6 +109,7 @@ end
 target 'MolueMediator' do
     project 'MolueMediator/MolueMediator.xcodeproj'
         pod 'ObjectMapper', '~> 3.3'
+        pod 'SQLite.swift', '~> 0.11.5'
     target 'MolueMediatorTests' do
         inherit! :search_paths
     end

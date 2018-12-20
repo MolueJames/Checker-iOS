@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import MolueNetwork
+import MolueMediator
 
 class PolicyNoticeTableViewCell: UITableViewCell {
 

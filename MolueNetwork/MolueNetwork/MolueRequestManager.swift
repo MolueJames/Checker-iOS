@@ -11,6 +11,7 @@ import Alamofire
 import BoltsSwift
 import ObjectMapper
 import MolueUtilities
+import MolueMediator
 
 public typealias MolueRequestItem = (request: MolueDataRequest, manager: MolueRequestManager)
 public typealias MolueResultClosure<Target> = (Target) -> Void

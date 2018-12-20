@@ -8,6 +8,7 @@
 
 import MolueMediator
 import MolueNetwork
+import MolueFoundation
 import MolueUtilities
 
 protocol PolicyNoticeViewableRouting: class {
@@ -15,7 +16,7 @@ protocol PolicyNoticeViewableRouting: class {
     func pushToPolicyDetailController()
 }
 
-protocol PolicyNoticePagePresentable: MolueInteractorPresentable {
+protocol PolicyNoticePagePresentable: MolueInteractorPresentable, MLControllerHUDProtocol {
     var listener: PolicyNoticePresentableListener? { get set }
     // 定义一些页面需要的方法, 比如刷新页面的显示内容等.
     
@@ -79,7 +80,6 @@ extension PolicyNoticePageInteractor: PolicyNoticePresentableListener {
         }
     }
     
-    
     func queryPolicyNoticeList() {
         let pagesize: Int = self.listModel.pagesize
         let page: Int = self.listModel.next ?? 1
@@ -88,6 +88,11 @@ extension PolicyNoticePageInteractor: PolicyNoticePresentableListener {
             do {
                 try self.unwrap().handleQueryItem(item)
             } catch {MolueLogger.UIModule.message(error)}
+        }
+        request.handleFailureResponse { [weak self] (error) in
+            do {
+                try self.unwrap().handleQueryNotice(with: error, isMore: true)
+            } catch { MolueLogger.UIModule.message(error) }
         }
         MolueRequestManager().doRequestStart(with: request)
     }
@@ -104,20 +109,37 @@ extension PolicyNoticePageInteractor: PolicyNoticePresentableListener {
         do {
             let page: Int = try self.listModel.next.unwrap()
             let size: Int = self.listModel.pagesize
-            self.qureyMoreDailyPlanItem(with: page, size: size)
+            self.qureyMorePolicyNotice(with: page, size: size)
         } catch {
             self.presenter?.endFooterRefreshing(with: false)
         }
     }
     
-    func qureyMoreDailyPlanItem(with page: Int, size: Int) {
+    func qureyMorePolicyNotice(with page: Int, size: Int) {
         let request = MoluePolicyNoticeService.queryPolicyNoticeList(page: page, pagesize: size)
         request.handleSuccessResultToObjc { [weak self] (item: MolueListItem<MLPolicyNoticeModel>?) in
             do {
                 try self.unwrap().handleMoreItems(item)
             } catch { MolueLogger.UIModule.message(error) }
         }
+        request.handleFailureResponse { [weak self] (error) in
+            do {
+                try self.unwrap().handleQueryNotice(with: error, isMore: false)
+            } catch { MolueLogger.UIModule.message(error) }
+        }
         MolueRequestManager().doRequestStart(with: request)
+    }
+    
+    func handleQueryNotice(with error: Error, isMore: Bool) {
+        do {
+            let presenter = try self.presenter.unwrap()
+            if isMore {
+                presenter.endFooterRefreshing(with: true)
+            } else {
+                presenter.endHeaderRefreshing()
+            }
+            presenter.showWarningHUD(text: error.localizedDescription)
+        } catch { MolueLogger.UIModule.error(error) }
     }
     
     private func handleMoreItems(_ listModel :MolueListItem<MLPolicyNoticeModel>?) {
