@@ -85,6 +85,7 @@ extension PolicyNoticePageInteractor: PolicyNoticePresentableListener {
         let page: Int = self.listModel.next ?? 1
         let request = MoluePolicyNoticeService.queryPolicyNoticeList(page: page, pagesize: pagesize)
         request.handleSuccessResultToObjc { [weak self] (item: MolueListItem<MLPolicyNoticeModel>?) in
+            dump(item)
             do {
                 try self.unwrap().handleQueryItem(item)
             } catch {MolueLogger.UIModule.message(error)}

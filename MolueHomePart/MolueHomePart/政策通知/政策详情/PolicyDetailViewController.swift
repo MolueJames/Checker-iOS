@@ -42,8 +42,10 @@ final class PolicyDetailViewController: MLBaseViewController  {
     
     @IBOutlet weak var submitButton: UIButton! {
         didSet {
+            let appDefault = MLCommonColor.appDefault
+            submitButton.setColor(appDefault, state: .normal)
             submitButton.setColor(.lightGray, state: .disabled)
-            submitButton.setColor(MLCommonColor.appDefault, state: .normal)
+            submitButton.layer.masksToBounds = true
         }
     }
     

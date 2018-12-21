@@ -21,8 +21,16 @@ class PolicyNoticeTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    @IBOutlet weak var publishLabel: UILabel!
+    @IBOutlet weak var titileLabel: UILabel!
+    @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var updatedLabel: UILabel!
     
     func refreshSubviews(with item: MLPolicyNoticeModel) {
-        
+        guard let notification = item.notification else {return}
+        self.titileLabel.text = notification.title.data()
+        self.statusLabel.text = item.signatureTime.data()
+        self.updatedLabel.text = item.signatureTime.data()
+        self.publishLabel.text = notification.createUser.data()
     }
 }

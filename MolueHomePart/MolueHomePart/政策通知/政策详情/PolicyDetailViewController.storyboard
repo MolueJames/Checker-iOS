@@ -19,10 +19,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NhY-58-iRV">
-                                <rect key="frame" x="0.0" y="667" width="375" height="0.0"/>
-                                <color key="backgroundColor" red="0.2274509804" green="0.4823529412" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="0.0" y="622" width="375" height="45"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" id="hAO-dC-FPo"/>
+                                    <constraint firstAttribute="height" constant="45" id="hAO-dC-FPo"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                 <state key="normal" title="签阅">
@@ -55,7 +55,7 @@
                             <constraint firstItem="0Co-ti-xSZ" firstAttribute="trailing" secondItem="vw7-ZY-9qb" secondAttribute="trailing" constant="15" id="Prd-in-HsP"/>
                             <constraint firstItem="vw7-ZY-9qb" firstAttribute="top" secondItem="0Co-ti-xSZ" secondAttribute="top" id="Q5k-Ze-LQN"/>
                             <constraint firstItem="DMf-6j-oBl" firstAttribute="top" secondItem="0Co-ti-xSZ" secondAttribute="top" id="eKB-gl-H1c"/>
-                            <constraint firstItem="0Co-ti-xSZ" firstAttribute="bottom" secondItem="NhY-58-iRV" secondAttribute="bottom" id="ffS-1I-C3O"/>
+                            <constraint firstItem="NhY-58-iRV" firstAttribute="bottom" secondItem="0Co-ti-xSZ" secondAttribute="bottom" id="vdI-ZP-zoM"/>
                             <constraint firstItem="0Co-ti-xSZ" firstAttribute="trailing" secondItem="NhY-58-iRV" secondAttribute="trailing" id="xV1-Xw-4xY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0Co-ti-xSZ"/>

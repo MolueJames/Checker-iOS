@@ -173,8 +173,8 @@ public extension UIButton {
     }
 	
     public func setColor(_ color: UIColor, state: UIControl.State) {
-        let image = UIImage(color: color, size: self.frame.size)
-        self.setImage(image, for: state)
+        let image = UIImage(color: color, size: CGSize(width: 1, height: 1))
+        self.setBackgroundImage(image, for: state)
     }
 }
 #endif
