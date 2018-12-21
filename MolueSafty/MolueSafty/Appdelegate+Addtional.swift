@@ -41,10 +41,9 @@ extension AppDelegate {
         MolueRequestManager().doRequestStart(with: request ,needOauth: false)
     }
     
-    
     private func queryUserInformation() {
         let request = MolueUserInfoService.queryUserInformation()
-        request.handleSuccessResultToObjc { (result: MolueUserInfoModel?) in
+        request.handleSuccessResultToObjc { (result: MolueUserInfo?) in
             MolueLogger.network.message(result)
         }
         request.handleFailureResponse { (error) in

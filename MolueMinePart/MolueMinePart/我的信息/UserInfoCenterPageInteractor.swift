@@ -20,7 +20,7 @@ protocol UserInfoCenterViewableRouting: class {
 protocol UserInfoCenterPagePresentable: MolueInteractorPresentable, MolueActivityDelegate {
     var listener: UserInfoCenterPresentableListener? { get set }
     // 定义一些页面需要的方法, 比如刷新页面的显示内容等.
-    func refreshHeaderView(with user: MolueUserInfoModel)
+    func refreshHeaderView(with user: MolueUserInfo)
 }
 
 final class UserInfoCenterPageInteractor: MoluePresenterInteractable {
@@ -95,7 +95,7 @@ extension UserInfoCenterPageInteractor: UserInfoCenterPresentableListener {
     
     func queryUserInfoFromServer () {
         let request = MolueUserInfoService.queryUserInformation()
-        request.handleSuccessResultToObjc { [weak self] (result: MolueUserInfoModel?) in
+        request.handleSuccessResultToObjc { [weak self] (result: MolueUserInfo?) in
             MolueLogger.network.message(result)
             do {
                 let presenter = try self.unwrap().presenter.unwrap()

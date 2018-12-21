@@ -10,7 +10,7 @@ import UIKit
 import MolueMediator
 
 class UserInfoCenterTableHeaderView: UIView {
-    func refreshSubviews(with user: MolueUserInfoModel) {
+    func refreshSubviews(with user: MolueUserInfo) {
         self.usernameLabel.text = user.screenName.data()
         self.userRoleLabel.text = user.userRole.data()
     }

@@ -91,7 +91,7 @@ extension UserInfoCenterViewController: MLUserInterfaceProtocol {
 }
 
 extension UserInfoCenterViewController: UserInfoCenterPagePresentable {
-    func refreshHeaderView(with user: MolueUserInfoModel) {
+    func refreshHeaderView(with user: MolueUserInfo) {
         self.headerView.refreshSubviews(with: user)
     }
     

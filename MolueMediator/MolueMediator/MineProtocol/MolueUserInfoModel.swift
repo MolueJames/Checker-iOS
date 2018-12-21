@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-public class MolueUserInfoModel: Mappable {
+public class MolueUserInfo: Mappable, Codable {
     public required init?(map: Map) {}
     
     public func mapping(map: Map) {
@@ -48,5 +48,5 @@ public class MolueUserInfoModel: Mappable {
     public var userRole: String?
     public var screenName: String?
     public var username: String?
-    public var permissions: [Any]?
+    public var permissions: [String]?
 }
