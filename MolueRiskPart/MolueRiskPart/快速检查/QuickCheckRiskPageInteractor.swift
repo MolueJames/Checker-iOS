@@ -33,7 +33,7 @@ final class QuickCheckRiskPageInteractor: MoluePresenterInteractable {
     
     var measureItem: RiskMeasureModel?
     
-    var selectedCheckTask: MLDailyCheckTask?
+    var selectedCheckTask: String?
     
     required init(presenter: QuickCheckRiskPagePresentable) {
         self.presenter = presenter

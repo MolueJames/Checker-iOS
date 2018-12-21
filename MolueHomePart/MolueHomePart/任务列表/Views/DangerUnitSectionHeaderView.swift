@@ -29,12 +29,13 @@ class DangerUnitSectionHeaderView: UIView {
     }
     
     public func refreshSubviews(with model: MLDailyCheckPlan) {
-//        do {
-//            let risk_unit = try model.risk_unit.unwrap()
-//            self.dangerUnitLabel.text = risk_unit.unit_name.data()
-//            self.dangerNumberLabel.text = risk_unit.unit_code.data()
-//            let category = try risk_unit.category.unwrap()
-//            self.dangerClassLabel.text = category.title.data()
-//        } catch { MolueLogger.UIModule.error(error) }
+        do {
+            let category = try model.category.unwrap()
+            self.dangerClassLabel.text = category.title.data()
+        } catch {
+            MolueLogger.UIModule.message(error)
+        }
+        self.dangerUnitLabel.text = model.unitName.data()
+        self.dangerNumberLabel.text = model.unitCode.data()
     }
 }

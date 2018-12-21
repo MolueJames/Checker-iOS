@@ -28,22 +28,6 @@ final class CheckTaskDetailPageInteractor: MoluePresenterInteractable {
     var viewRouter: CheckTaskDetailViewableRouting?
     
     weak var listener: CheckTaskDetailInteractListener?
-
-//    lazy var selectedIndex: IndexPath = {
-//        let defaultIndex = IndexPath(row: 0, section: 0)
-//        return self.listener?.selectedIndex ?? defaultIndex
-//    }()
-    
-//    lazy var item: DangerUnitRiskModel? = {
-//        do {
-//            let unitList = AppHomeDocument.shared.unitList
-//            let unitItem = try unitList.item(at: selectedIndex.section).unwrap()
-//            let riskList = try unitItem.unitRisks.unwrap()
-//            return try riskList.item(at: selectedIndex.row).unwrap()
-//        } catch {
-//            return MolueLogger.UIModule.returnNil(error)
-//        }
-//    }()
     
     var measureIndexPath: IndexPath?
     
@@ -55,25 +39,11 @@ final class CheckTaskDetailPageInteractor: MoluePresenterInteractable {
 
 extension CheckTaskDetailPageInteractor: CheckTaskDetailRouterInteractable {
     func updateNoHiddenRiskModel(with item: TaskSuccessModel) {
-//        do {
-//            let currentItem = try self.item.unwrap()
-//            let row = try self.measureIndexPath.unwrap().row
-//            currentItem.riskMeasure?[row].taskModel = item
-//            self.item = currentItem
-//        } catch {
-//            MolueLogger.UIModule.error(error)
-//        }
+
     }
     
     func updateEditRiskInfoModel(with item: PotentialRiskModel) {
-//        do {
-//            let currentItem = try self.item.unwrap()
-//            let row = try self.measureIndexPath.unwrap().row
-//            currentItem.riskMeasure?[row].riskModel = item
-//            self.item = currentItem
-//        } catch {
-//            MolueLogger.UIModule.error(error)
-//        }
+
     }
 }
 
@@ -111,16 +81,6 @@ extension CheckTaskDetailPageInteractor: CheckTaskDetailPresentableListener {
                 MolueLogger.UIModule.message(error)
             }
         }
-//        do {
-//            let currentItem = try self.item.unwrap()
-//            let measureList = try currentItem.riskMeasure.unwrap()
-//            checkMeasureItemState(list: measureList, riskItem: currentItem)
-//            doAppendRiskItem(to: currentItem)
-//            AppHomeDocument.shared.taskList.append(currentItem)
-//            self.doPopPreviewController()
-//        } catch {
-//            MolueLogger.UIModule.error(error)
-//        }
     }
     
     func doPopPreviewController() {

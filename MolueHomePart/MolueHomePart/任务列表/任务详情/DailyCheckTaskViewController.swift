@@ -14,11 +14,13 @@ import MolueUtilities
 
 protocol DailyCheckTaskPresentableListener: class {
     // 定义一些当前页面需要的业务逻辑, 比如网络请求.
-    func jumpToCheckTaskDetailController()
+    func numberOfRows(with sections: Int) -> Int?
     
-    var currentItem: MLDailyCheckTask? {get}
+    func querySolutionItem(with indexPath: IndexPath) -> MLRiskUnitSolution?
     
     func queryDailyCheckTask()
+    
+    func jumpToCheckTaskDetailController(with indexPath: IndexPath)
 }
 
 final class DailyCheckTaskViewController: MLBaseViewController  {
@@ -42,43 +44,16 @@ final class DailyCheckTaskViewController: MLBaseViewController  {
             tableView.dataSource = self
             tableView.delegate = self
             tableView.tableHeaderView = self.headerView
-            self.headerView.snp.makeConstraints { (make) in
-                make.top.bottom.equalToSuperview()
-                make.width.equalToSuperview()
-            }
-            tableView.layoutIfNeeded()
-            tableView.tableHeaderView = self.headerView
-            
             tableView.tableFooterView = self.footerView
         }
     }
     
     lazy var footerView: DailyCheckTaskFooterView = {
-        let footerView: DailyCheckTaskFooterView = DailyCheckTaskFooterView.createFromXib()
-        do {
-            let listener = try self.listener.unwrap()
-            let item = try listener.currentItem.unwrap()
-//            footerView.refreshSubviews(with: item)
-//            let remarks = try item.remark.unwrap()
-//            let width = MLConfigure.ScreenWidth - 30
-//            let height = remarks.estimateHeight(with: 14, width: width, lineSpacing: 3) + 110
-//            footerView.frame = CGRect(x: 0, y: 0, width: MLConfigure.ScreenWidth, height: height)
-        } catch {
-            MolueLogger.UIModule.error(error)
-        }
-        return footerView
+        return DailyCheckTaskFooterView.createFromXib()
     }()
     
     lazy var headerView: DailyCheckTaskHeaderView = {
-        let headerView: DailyCheckTaskHeaderView = DailyCheckTaskHeaderView.createFromXib()
-        do {
-            let listener = try self.listener.unwrap()
-            let item = try listener.currentItem.unwrap()
-//            headerView.refreshSubviews(with: item)
-        } catch {
-            MolueLogger.UIModule.error(error)
-        }
-        return headerView
+        return DailyCheckTaskHeaderView.createFromXib()
     }()
     //MARK: View Controller Life Cycle
     override func viewDidLoad() {
@@ -86,17 +61,7 @@ final class DailyCheckTaskViewController: MLBaseViewController  {
         // Do any additional setup after loading the view.
     }
     @IBAction func submitButtonClicked(_ sender: UIButton) {
-//        do {
-//            let listener = try self.listener.unwrap()
-//            let item = try listener.item.unwrap()
-//            if (item.riskStatus == "已检查" || item.riskStatus == "有隐患") {
-//                self.showWarningHUD(text: "该项目已检查")
-//            } else {
-//                listener.jumpToCheckTaskDetailController()
-//            }
-//        } catch {
-//            MolueLogger.UIModule.error(error)
-//        }
+
     }
 }
 
@@ -112,18 +77,40 @@ extension DailyCheckTaskViewController: MLUserInterfaceProtocol {
     
     func updateUserInterfaceElements() {
         self.view.backgroundColor = .white
-        do {
-            let listener = try self.listener.unwrap()
-            let item = try listener.currentItem.unwrap()
-            self.title = try item.risk.unwrap().unitName
-        } catch {
-            MolueLogger.UIModule.error(error)
-        }
+        
     }
 }
 
 extension DailyCheckTaskViewController: DailyCheckTaskPagePresentable {
+    func refreshSubviews(with task: MLDailyCheckTask) {
+        do {
+            let riskUnit = try task.risk.unwrap()
+            self.title = riskUnit.unitName
+            self.updateHeaderViewLayout(with: riskUnit)
+            self.updateFooterViewLayout(with: riskUnit)
+            self.tableView.reloadData()
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+    }
     
+    func updateHeaderViewLayout(with risk: MLRiskDetailUnit) {
+        self.headerView.refreshSubviews(with: risk)
+        self.headerView.snp.makeConstraints { (make) in
+            make.top.bottom.equalToSuperview()
+            make.width.equalToSuperview()
+        }
+        self.tableView.layoutIfNeeded()
+        self.tableView.tableHeaderView = self.headerView
+    }
+    
+    func updateFooterViewLayout(with risk: MLRiskDetailUnit) {
+        self.footerView.refreshSubviews(with: risk)
+        let remark: String = risk.remark.data()
+        let width: CGFloat = MLConfigure.ScreenWidth - 30
+        let height = remark.estimateHeight(with: 14, width: width, lineSpacing: 0)
+        self.footerView.height = height + 110
+    }
 }
 
 extension DailyCheckTaskViewController: DailyCheckTaskViewControllable {
@@ -142,30 +129,34 @@ extension DailyCheckTaskViewController: UITableViewDelegate {
         let headerView: DailyCheckSectionHeaderView = DailyCheckSectionHeaderView.createFromXib()
         return headerView
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        do {
+            let listener = try self.listener.unwrap()
+            listener.jumpToCheckTaskDetailController(with: indexPath)
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+    }
 }
 
 extension DailyCheckTaskViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        do {
-//            let listener = try self.listener.unwrap()
-//            let riskItem = try listener.currentItem.unwrap()
-//            let accidents = try riskItem.accidents.unwrap()
-//            return accidents.count
-//        } catch { return 0 }
-        return 0
+        do {
+            let listener = try self.listener.unwrap()
+            return try listener.numberOfRows(with: section).unwrap()
+        } catch { return 0 }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withClass: DailyCheckTaskTableViewCell.self)
-//        do {
-//            let listener = try self.listener.unwrap()
-//            let riskItem = try listener.currentItem.unwrap()
-//            let accidents = try riskItem.accidents.unwrap()
-//            let item = try accidents.item(at: indexPath.row).unwrap()
-//            cell.refreshSubviews(with: item)
-//        } catch {
-//            MolueLogger.UIModule.error(error)
-//        }
+        do {
+            let listener = try self.listener.unwrap()
+            let item = listener.querySolutionItem(with: indexPath)
+            try cell.refreshSubviews(with: item.unwrap())
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
         return cell
     }
     

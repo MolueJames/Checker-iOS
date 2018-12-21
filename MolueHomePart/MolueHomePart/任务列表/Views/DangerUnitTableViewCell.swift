@@ -37,13 +37,19 @@ class DangerUnitTableViewCell: UITableViewCell {
     }
     
     public func refreshSubviews(with model: MLDailyCheckTask) {
-//        self.riskHeadLabel.text = model.person.data()
-//        self.riskLevelLabel.text = model.level.description
-//        self.riskNameLabel.text = model.name.data()
-//        self.riskClassLabel.text = model.code.data()
-//        self.riskStateLabel.text = model.status.data()
-//        let color = self.queryColor(with: model.status)
-//        self.riskStateLabel.backgroundColor = color
+        do {
+            let risk = try model.risk.unwrap()
+            self.riskHeadLabel.text = risk.person.data()
+            self.riskLevelLabel.text = queryLevel(risk.level)
+            self.riskNameLabel.text = risk.unitName.data()
+            self.riskClassLabel.text = risk.unitCode.data()
+        } catch {
+            MolueLogger.UIModule.message(error)
+        }
+        
+        self.riskStateLabel.text = model.status.data()
+        let color = self.queryColor(with: model.status)
+        self.riskStateLabel.backgroundColor = color
     }
     
     private func queryLevel(_ level: String?) -> String {

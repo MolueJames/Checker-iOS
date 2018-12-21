@@ -21,7 +21,7 @@ public protocol HomeInfoPageComponentBuildable: MolueComponentBuildable {
 
 public protocol DailyCheckTaskInteractListener: class {
     //用于定义其他的Component需要定义的协议方法
-    var selectedCheckTask: MLDailyCheckTask? {get}
+    var selectedCheckTask: String? {get}
 }
 
 public protocol DailyCheckTaskComponentBuildable: MolueComponentBuildable {

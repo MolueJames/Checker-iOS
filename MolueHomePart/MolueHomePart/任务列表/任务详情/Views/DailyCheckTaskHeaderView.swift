@@ -32,11 +32,11 @@ class DailyCheckTaskHeaderView: UIView {
     @IBOutlet weak var responseLabel: UILabel!
     @IBOutlet weak var riskClassLabel: UILabel!
     
-    func refreshSubviews(with model: MLRiskTaskDetailModel) {
+    func refreshSubviews(with model: MLRiskDetailUnit) {
         self.dangerReasonLabel.text = model.dangers.data()
         self.dangerReasonLabel.setLineSpacing(5)
         self.dependenceLabel.text = model.standards.data()
-        self.responseLabel.text = model.unit.data()
+        self.responseLabel.text = model.responseUnit.data()
         
         let classification: [String]? = model.classification?.compactMap({ item in
             return item.name

@@ -35,7 +35,7 @@ final class DangerUnitListPageInteractor: MoluePresenterInteractable {
     
     weak var listener: DangerUnitListInteractListener?
     
-    var selectedCheckTask: MLDailyCheckTask?
+    var selectedCheckTask: String?
     
     var listModel = MolueListItem<MLDailyCheckPlan>()
     
@@ -52,8 +52,9 @@ extension DangerUnitListPageInteractor: DangerUnitListRouterInteractable {
 extension DangerUnitListPageInteractor: DangerUnitListPresentableListener {
     
     func jumpToCheckTaskDetail(with indexPath: IndexPath) {
-        self.selectedCheckTask = self.queryTaskItem(with: indexPath)
         do {
+            let checkTask = self.queryTaskItem(with: indexPath)
+            self.selectedCheckTask = try checkTask.unwrap().taskId
             let viewRouter = try self.viewRouter.unwrap()
             viewRouter.pushToDailyCheckTaskController()
         } catch {
@@ -137,7 +138,7 @@ extension DangerUnitListPageInteractor: DangerUnitListPresentableListener {
         request.handleSuccessResultToObjc { [weak self] (item: MolueListItem<MLDailyCheckPlan>?) in
             do {
                 try self.unwrap().handleQueryItem(item)
-            } catch {MolueLogger.UIModule.message(error)}
+            } catch { MolueLogger.UIModule.message(error) }
         }
         MolueRequestManager().doRequestStart(with: request)
     }
@@ -145,7 +146,7 @@ extension DangerUnitListPageInteractor: DangerUnitListPresentableListener {
     private func handleQueryItem(_ listModel: MolueListItem<MLDailyCheckPlan>?) {
         do {
             try self.listModel = listModel.unwrap()
-        } catch {MolueLogger.network.message(error)}
+        } catch { MolueLogger.network.message(error) }
         self.presenter?.endHeaderRefreshing()
         self.presenter?.reloadTableViewData()
     }

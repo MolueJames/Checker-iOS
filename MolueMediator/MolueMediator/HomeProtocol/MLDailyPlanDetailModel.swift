@@ -9,74 +9,8 @@
 import Foundation
 import ObjectMapper
 
-//MARK: 用户需要检查的单元类别的详情 TO DELETE
-public class MLRiskUnitCategoryModel: Mappable {
-    public required init?(map: Map) {}
-    
-    public func mapping(map: Map) {
-        description <- map["description"]
-        categoryId  <- map["id"]
-        prefix      <- map["prefix"]
-        title       <- map["title"]
-    }
-    
-    public var description: String?
-    public var categoryId: Int?
-    public var prefix: String?
-    public var title: String?
-}
-
-//MARK: 用户需要检查的风险点的详情 TO DELETE
-public class MLRiskTaskDetailModel: Mappable {
-    public required init?(map: Map) {}
-    
-    public func mapping(map: Map) {
-        code            <- map["code"]
-        phone           <- map["contact_phone"]
-        created         <- map["created"]
-        dangers         <- map["dangers"]
-        extensions      <- map["extension"]
-        grade           <- map["grade"]
-        taskId          <- map["id"]
-        calculation     <- map["method_of_calculation"]
-        name            <- map["name"]
-        remark          <- map["remark"]
-        person          <- map["response_person"]
-        unit            <- map["response_unit"]
-        risk_unit       <- map["risk_unit"]
-        standards       <- map["standards"]
-        status          <- map["status"]
-        updated         <- map["updated"]
-        accidents       <- map["accidents"]
-        classification  <- map["classification"]
-        level = MLUnitRiskLevel.map(map["level"].value())
-    }
-    
-    public var code: String?
-    public var phone: String?
-    public var created: String?
-    public var dangers: String?
-    public var extensions: String?
-    public var grade: String?
-    public var taskId: Int?
-    public var level: MLUnitRiskLevel = .lower
-    public var calculation: String?
-    public var name: String?
-    public var remark: String?
-    public var person: String?
-    public var unit: String?
-    public var risk_unit: Int?
-    public var standards: String?
-    public var status: String?
-    public var updated: String?
-    public var accidents: [MLRiskAccidentModel]?
-    public var classification: [MLRiskClassificationModel]?
-    
-    
-}
-
-// TO CHANGE
-public class MLRiskAccidentModel: Mappable {
+//
+public class MLRiskUnitAccident: Mappable {
     public required init?(map: Map) {}
     
     public func mapping(map: Map) {
@@ -92,8 +26,30 @@ public class MLRiskAccidentModel: Mappable {
     public var name: String?
 }
 
+public class MLRiskUnitSolution: Mappable {
+    public required init?(map: Map) {}
+    
+    public func mapping(map: Map) {
+        answers <- map["answers"]
+        solutionId <- map["id"]
+        order <- map["order"]
+        rightAnswer <- map["right_answer"]
+        risk <- map["risk"]
+        score <- map["score"]
+        title <- map["title"]
+    }
+    
+    public var answers: String?
+    public var solutionId: Int?
+    public var order: Int?
+    public var rightAnswer: String?
+    public var risk: Int?
+    public var score: Int?
+    public var title: String?
+}
+
 //MARK:
-public class MLRiskClassificationModel: Mappable {
+public class MLRiskClassification: Mappable {
     public required init?(map: Map) {}
     
     public func mapping(map: Map) {
@@ -157,11 +113,25 @@ public class MLDailyCheckTask: Mappable {
         taskId <- map["id"]
         risk <- map["risk"]
         status <- map["status"]
+        created <- map["created"]
+        enterprise <- map["enterprise"]
+        items <- map["items"]
+        expiration <- map["time_of_expiration"]
+        finish <- map["time_of_finish"]
+        start <- map["time_of_start"]
+        updated <- map["updated"]
     }
     
     public var taskId: String?
     public var risk: MLRiskDetailUnit?
     public var status: String?
+    public var created: String?
+    public var enterprise: Int?
+    public var items: [MLTaskAttachment]?
+    public var updated: String?
+    public var expiration: String?
+    public var finish: String?
+    public var start: String?
 }
 
 //MARK: 用户每日的任务单元
@@ -173,68 +143,65 @@ public class MLRiskDetailUnit: Mappable {
         person <- map["response_person"]
         unitCode <- map["code"]
         unitName <- map["name"]
-        let aLevel: String? = map["level"].value()
-        self.level = MLUnitRiskLevel.map(aLevel)
+        level <- map["level"]
+        accidents <- map["accidents"]
+        classification <- map["classification"]
+        contact <- map["contact_phone"]
+        created <- map["created"]
+        dangers <- map["dangers"]
+        aExtension <- map["extension"]
+        grade <- map["grade"]
+        calculation <- map["method_of_calculation"]
+        remark <- map["remark"]
+        responseUnit <- map["response_unit"]
+        riskUnit <- map["risk_unit"]
+        solutions <- map["solutions"]
+        standards <- map["standards"]
+        status <- map["status"]
+        updated <- map["updated"]
     }
     
     public var unitId: String?
     public var unitCode: String?
     public var unitName: String?
     public var person: String?
-    public var level: MLUnitRiskLevel?
+    public var level: String?
+    public var calculation: String?
+    public var remark: String?
+    public var riskUnit: Int?
+    public var responseUnit: String?
+    public var grade: Int?
+    public var aExtension: String?
+    public var dangers: String?
+    public var created: String?
+    public var contact: String?
+    public var standards: String?
+    public var status: String?
+    public var updated: String?
+    public var solutions: [MLRiskUnitSolution]?
+    public var accidents: [MLRiskUnitAccident]?
+    public var classification: [MLRiskClassification]?
 }
 
-//MARK: 用户每日的任务单元的风险等级
-public enum MLUnitRiskLevel: CustomStringConvertible {
-    public var description: String {
-        switch self {
-        case .normal:
-            return "一般风险"
-        default:
-            return "较低风险"
-        }
-    }
-    
-    case normal
-    case lower
-    case higher
-    case large
-    
-    public static func map(_ value: String?) -> MLUnitRiskLevel {
-        switch value {
-        case "normal":
-            return normal
-        default:
-            return lower
-        }
-    }
-}
-
-//MARK: 用户需要检查的单元 TO DELETE
-public class MLRiskUnitDetailModel: Mappable {
+public class MLTaskAttachment: Mappable {
     public required init?(map: Map) {}
     
     public func mapping(map: Map) {
-        cycle_type <- map["cycle_type"]
-        enterprise <- map["enterprise"]
-        unit_code  <- map["unit_code"]
-        unit_name  <- map["unit_name"]
-        category   <- map["category"]
-        updated    <- map["updated"]
-        status     <- map["status"]
-        cycle      <- map["cycle"]
-        risks      <- map["risks"]
-        unitId     <- map["id"]
+        attachments <- map["attachments"]
+        committed <- map["time_committed"]
+        content <- map["content"]
+        attachmentId <- map["id"]
+        remark <- map["remark"]
+        result <- map["result"]
+        taskId <- map["task"]
     }
     
-    public var category: MLRiskUnitCategoryModel?
-    public var cycle: Int?
-    public var cycle_type: String?
-    public var enterprise: Int?
-    public var unitId: Int?
-    public var risks: [MLRiskTaskDetailModel]?
-    public var status: String?
-    public var unit_code: String?
-    public var unit_name: String?
-    public var updated: String?
+    public var attachments: String?
+    public var content: String?
+    public var attachmentId: String?
+    public var remark: String?
+    public var result: String?
+    public var taskId: Int?
+    public var committed: String?
 }
+
