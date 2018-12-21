@@ -61,7 +61,8 @@ extension MolueUserInfo: MLDatabaseProtocol {
     }
     
     private static func updateDatabaseUser(with newValue: MolueUserInfo, oldValues: [MolueUserInfo]?) {
-        if let oldValue = oldValues?.first {
+        do {
+            let oldValue = try oldValues.unwrap().first.unwrap()
             do {
                 let userId: Int = try oldValue.userID.unwrap()
                 let query = table_name.filter(userID == userId)
@@ -69,7 +70,7 @@ extension MolueUserInfo: MLDatabaseProtocol {
             } catch {
                 MolueLogger.database.message(error)
             }
-        } else {
+        } catch {
             self.insertObjectOperation(newValue)
         }
     }
