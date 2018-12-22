@@ -1057,3 +1057,12 @@ public extension String {
         return !self.isEmpty
     }
 }
+
+public extension String {
+    public func transfer(from: String = "yyyy-MM-dd'T'HH:mm:ss.SSS", to: String) throws -> String {
+        do {
+            let date: Date? = self.date(withFormat: from)
+            return try date.unwrap().string(withFormat: to)
+        } catch { throw error }
+    }
+}

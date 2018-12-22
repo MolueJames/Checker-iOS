@@ -47,34 +47,40 @@ class DangerUnitTableViewCell: UITableViewCell {
             MolueLogger.UIModule.message(error)
         }
         
-        self.riskStateLabel.text = model.status.data()
-        let color = self.queryColor(with: model.status)
-        self.riskStateLabel.backgroundColor = color
+        self.riskStateLabel.text = queryStatus(model.status)
+        self.riskStateLabel.backgroundColor = queryColor(model.status)
+    }
+    
+    private func queryStatus(_ status: String?) -> String {
+        switch status {
+        case "pending":
+            return "未检查"
+        case "done":
+            return "已检查"
+        default:
+            return "有隐患"
+        }
     }
     
     private func queryLevel(_ level: String?) -> String {
-        do {
-            switch try level.unwrap() {
-            case "normal":
-                return "一般风险"
-            default:
-                return "较低风险"
-            }
-        } catch {return "暂无数据"}
+        switch level {
+        case "normal":
+            return "一般风险"
+        default:
+            return "较低风险"
+        }
     }
     
     
-    func queryColor(with item: String?) -> UIColor {
-        do {
-            switch try item.unwrap() {
-            case "valid":
-                return UIColor(hex: 0x33CC33)
-            case "有隐患":
-                return UIColor(hex: 0xCC0000)
-            default:
-                return UIColor(hex: 0xFFCC00)
-            }
-        } catch { return UIColor.white }
+    func queryColor(_ status: String?) -> UIColor {
+        switch status {
+        case "pending":
+            return UIColor(hex: 0xFFCC00)
+        case "done":
+            return UIColor(hex: 0x33CC33)
+        default:
+            return UIColor(hex: 0xCC0000)
+        }
     }
     
     override var frame:CGRect{

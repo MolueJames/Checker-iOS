@@ -15,21 +15,26 @@ public class MLPolicyNoticeModel: Mappable {
     public func mapping(map: Map) {
         noticeId <- map["id"]
         notification <- map["notification"]
-        enterprise <- map["enterprise"]
+        enterpriseId <- map["enterprise_id"]
         signatureUser <- map["signature_user"]
         readUser <- map["read_user"]
         signatureTime <- map["signature_time"]
         readTime <- map["read_time"]
+        readed <- map["read"]
+        signed <- map["signed"]
+        status <- map["status"]
     }
     
     public var noticeId: Int?
     public var notification: MoluePolicyNotification?
-    public var enterprise: Int?
-    public var signatureUser: String?
-    public var readUser: String?
+    public var enterpriseId: Int?
+    public var signatureUser: MolueUserInfo?
+    public var readUser: MolueUserInfo?
     public var signatureTime: String?
     public var readTime: String?
-    
+    public var readed: Bool?
+    public var signed: Bool?
+    public var status: String?
 }
 
 public class MoluePolicyNotification: Mappable {
@@ -45,7 +50,7 @@ public class MoluePolicyNotification: Mappable {
         type <- map["type"]
     }
     
-    public var createUser: String?
+    public var createUser: MolueUserInfo?
     public var published: String?
     public var needSignature: Bool?
     public var notificationId: Int?

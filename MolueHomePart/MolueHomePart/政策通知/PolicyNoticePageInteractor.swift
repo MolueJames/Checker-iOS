@@ -83,9 +83,8 @@ extension PolicyNoticePageInteractor: PolicyNoticePresentableListener {
     func queryPolicyNoticeList() {
         let pagesize: Int = self.listModel.pagesize
         let page: Int = self.listModel.next ?? 1
-        let request = MoluePolicyNoticeService.queryPolicyNoticeList(page: page, pagesize: pagesize)
+        let request = MolueNoticeService.queryPolicyNoticeList(page: page, pagesize: pagesize)
         request.handleSuccessResultToObjc { [weak self] (item: MolueListItem<MLPolicyNoticeModel>?) in
-            dump(item)
             do {
                 try self.unwrap().handleQueryItem(item)
             } catch {MolueLogger.UIModule.message(error)}
@@ -117,7 +116,7 @@ extension PolicyNoticePageInteractor: PolicyNoticePresentableListener {
     }
     
     func qureyMorePolicyNotice(with page: Int, size: Int) {
-        let request = MoluePolicyNoticeService.queryPolicyNoticeList(page: page, pagesize: size)
+        let request = MolueNoticeService.queryPolicyNoticeList(page: page, pagesize: size)
         request.handleSuccessResultToObjc { [weak self] (item: MolueListItem<MLPolicyNoticeModel>?) in
             do {
                 try self.unwrap().handleMoreItems(item)

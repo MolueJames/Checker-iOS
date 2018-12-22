@@ -62,12 +62,6 @@ final class DangerUnitListViewController: MLBaseViewController  {
 
 extension DangerUnitListViewController: MLUserInterfaceProtocol {
     func queryInformationWithNetwork() {
-        do {
-            let listener = try self.listener.unwrap()
-            listener.queryDailyCheckDangerUnit()
-        } catch {
-            MolueLogger.UIModule.error(error)
-        }
     }
     
     func updateUserInterfaceElements() {
@@ -86,7 +80,7 @@ extension DangerUnitListViewController: MLUserInterfaceProtocol {
         }
         self.tableView.refreshIdentifier = "Identifier"
         self.tableView.expiredTimeInterval = 20.0
-        self.tableView.es.autoPullToRefresh()
+        self.tableView.es.startPullToRefresh()
     }
 }
 

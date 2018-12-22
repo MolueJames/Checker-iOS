@@ -8,17 +8,25 @@
 
 import Foundation
 
-public struct MoluePolicyNoticeService {
+public struct MolueNoticeService {
     public static func queryPolicyNoticeList(page: Int, pagesize: Int) -> MolueDataRequest {
         let parameters = ["page": page, "page_size": pagesize]
         return MolueDataRequest(parameter: parameters, method: .get, path: "api/document/received_notification/")
     }
     
-    public static func signaturePolicyNotice(with noticeId: String) {
-        
+    public static func signPolicyNotification(with noticeId: Int) -> MolueDataRequest {
+        let path = "api/document/received_notification/\(noticeId)/"
+        let parameters = ["signed" : true]
+        return MolueDataRequest(parameter: parameters, method: .put, path: path)
     }
     
-    public static func searchPolicyNoticeList(with text: String) {
-        
+    public static func readPolicyNotification(with noticeId: Int) -> MolueDataRequest {
+        let path = "api/document/received_notification/\(noticeId)/"
+        let parameters = ["read" : true]
+        return MolueDataRequest(parameter: parameters, method: .put, path: path)
     }
+    
+//    public static func searchPolicyNoticeList(with text: String) -> MolueDataRequest {
+//
+//    }
 }

@@ -17,6 +17,10 @@ protocol PolicyDetailPresentableListener: class {
     // 定义一些当前页面需要的业务逻辑, 比如网络请求.
     var notificationItem: MoluePolicyNotification? {get}
     var selectedNotice: MLPolicyNoticeModel? {get}
+    
+    func signCurrentNotification()
+    
+    func readCurrentNotification()
 }
 
 final class PolicyDetailViewController: MLBaseViewController  {
@@ -46,6 +50,8 @@ final class PolicyDetailViewController: MLBaseViewController  {
             submitButton.setColor(appDefault, state: .normal)
             submitButton.setColor(.lightGray, state: .disabled)
             submitButton.layer.masksToBounds = true
+            submitButton.setTitle("签阅", for: .normal)
+            submitButton.setTitle("已签阅", for: .disabled)
         }
     }
     
@@ -64,43 +70,60 @@ final class PolicyDetailViewController: MLBaseViewController  {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+    @IBAction func submitButtonClicked(_ sender: UIButton) {
+        do {
+            let listener = try self.listener.unwrap()
+            listener.signCurrentNotification()
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+    }
 }
 
 extension PolicyDetailViewController: MLUserInterfaceProtocol {
     func queryInformationWithNetwork() {
-        
+        do {
+            let listener = try self.listener.unwrap()
+            listener.readCurrentNotification()
+        } catch {
+            MolueLogger.UIModule.message(error)
+        }
     }
     
     func updateUserInterfaceElements() {
         do {
             let listener = try self.listener.unwrap()
             let notification = try listener.notificationItem.unwrap()
-            self.refreshSubviewsLayout(with: notification)
+            self.refreshSubviews(with: notification)
+            let policyNotice = try listener.selectedNotice.unwrap()
+            self.refreshSubviews(with: policyNotice)
             self.loadWebViewRequest(with: notification)
         } catch {
             MolueLogger.UIModule.error(error)
         }
     }
     
-    func refreshSubviewsLayout(with notification: MoluePolicyNotification)  {
+    func refreshSubviews(with notification: MoluePolicyNotification)  {
         func queryTime(with date: String?) -> String? {
             do {
-                let format: String = "yyyy-MM-dd'T'HH:mm:ss.SSS"
-                let publishDate = try date.unwrap().date(withFormat: format)
-                let value = try publishDate.unwrap().string(withFormat: "yyyy-MM-dd")
-                return "发布时间: " + value
+                let aDate = try date.unwrap()
+                let publish = try aDate.transfer(to: "yyyy-MM-dd")
+                return "发布时间: " + publish
             } catch { return "发布时间: 暂无数据" }
         }
         
         do {
             let needSignature = try notification.needSignature.unwrap()
             self.submitButtonHeight.constant = needSignature ? 45 : 0
-            self.submitButton.isEnabled = true
-            let createUser = "发布者: " + notification.createUser.data()
-            let published = queryTime(with: notification.published.data())
+            
+            let published = queryTime(with: notification.published)
             self.createTimeLabel.text = published
-            self.createUserLabel.text = createUser
+            
             self.titleLabel.text = notification.title.data()
+            
+            let user = try notification.createUser.unwrap()
+            let createUser = "发布者: " + user.screenName.data()
+            self.createUserLabel.text = createUser
         } catch {
             MolueLogger.UIModule.error(error)
         }
@@ -108,8 +131,9 @@ extension PolicyDetailViewController: MLUserInterfaceProtocol {
     
     func loadWebViewRequest(with notification: MoluePolicyNotification) {
         do {
+            let header = "<header><meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no'></header>"
             let content = try notification.content.unwrap()
-            self.webview.loadHTMLString(content, baseURL: nil)
+            self.webview.loadHTMLString(header + content, baseURL: nil)
         } catch {
             MolueLogger.UIModule.error(error)
         }
@@ -117,7 +141,10 @@ extension PolicyDetailViewController: MLUserInterfaceProtocol {
 }
 
 extension PolicyDetailViewController: PolicyDetailPagePresentable {
-    
+    func refreshSubviews(with notice: MLPolicyNoticeModel) {
+        let isSigned: Bool = notice.signed ?? false
+        self.submitButton.isEnabled = !isSigned
+    }
 }
 
 extension PolicyDetailViewController: PolicyDetailViewControllable {

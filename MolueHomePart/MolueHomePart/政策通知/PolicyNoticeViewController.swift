@@ -10,6 +10,8 @@ import UIKit
 import MolueUtilities
 import MolueFoundation
 import MolueMediator
+import MolueCommon
+import ESPullToRefresh
 
 protocol PolicyNoticePresentableListener: class {
     // 定义一些当前页面需要的业务逻辑, 比如网络请求.
@@ -35,6 +37,17 @@ final class PolicyNoticeViewController: MLBaseViewController  {
             tableView.register(xibWithCellClass: PolicyNoticeTableViewCell.self)
         }
     }
+    
+    lazy var header: MLRefreshHeaderAnimator = {
+        let header = MLRefreshHeaderAnimator(frame: CGRect.zero)
+        return header
+    }()
+    
+    lazy var footer: ESRefreshFooterAnimator = {
+        let footer = ESRefreshFooterAnimator(frame: CGRect.zero)
+        return footer
+    }()
+    
     //MARK: View Controller Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,15 +57,25 @@ final class PolicyNoticeViewController: MLBaseViewController  {
 
 extension PolicyNoticeViewController: MLUserInterfaceProtocol {
     func queryInformationWithNetwork() {
-        
     }
     
     func updateUserInterfaceElements() {
         self.title = "政策通知"
-        do {
-            let listener = try self.listener.unwrap()
-            listener.queryPolicyNoticeList()
-        } catch { MolueLogger.UIModule.error(error) }
+        self.tableView.es.addInfiniteScrolling(animator: self.footer) { [weak self] in
+            do {
+                let listener = try self.unwrap().listener.unwrap()
+                listener.morePolicyNoticeList()
+            } catch {MolueLogger.UIModule.message(error)}
+        }
+        self.tableView.es.addPullToRefresh(animator: self.header) { [weak self] in
+            do {
+                let listener = try self.unwrap().listener.unwrap()
+                listener.queryPolicyNoticeList()
+            } catch {MolueLogger.UIModule.message(error)}
+        }
+        self.tableView.refreshIdentifier = "Identifier"
+        self.tableView.expiredTimeInterval = 20.0
+        self.tableView.es.startPullToRefresh()
     }
 }
 
@@ -62,11 +85,15 @@ extension PolicyNoticeViewController: PolicyNoticePagePresentable {
     }
     
     func endHeaderRefreshing() {
-        
+        self.tableView.es.stopPullToRefresh()
     }
     
     func endFooterRefreshing(with hasMore: Bool) {
-        
+        if hasMore {
+            self.tableView.es.stopLoadingMore()
+        } else {
+            self.tableView.es.noticeNoMoreData()
+        }
     }
 }
 
