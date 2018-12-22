@@ -28,28 +28,20 @@ class PolicyNoticeTableViewCell: UITableViewCell {
     @IBOutlet weak var updatedLabel: UILabel!
     
     func refreshSubviews(with item: MLPolicyNoticeModel) {
-        let updated = self.queryUpdated(with: item)
-        self.updatedLabel.text = updated
-        let status = self.queryStatus(with: item)
-        self.statusLabel.text = status
-        let create = self.queryCreate(with: item)
-        self.createLabel.text = "发布时间: " + create
-        dump(item)
+        self.updatedLabel.text = queryUpdated(item)
+        self.statusLabel.text = queryStatus(item)
+        self.createLabel.text = "发布时间: " + queryCreate(item)
         guard let notification = item.notification else {return}
         self.titileLabel.text = notification.title.data()
     }
     
-    func queryUpdated(with item: MLPolicyNoticeModel) -> String {
-        if item.signed == true {
-            return self.querySigned(with: item)
-        }
-        if item.readed == true {
-           return self.queryReaded(with: item)
-        }
-        return self.queryCreate(with: item)
+    private func queryUpdated(_ item: MLPolicyNoticeModel) -> String {
+        if item.signed == true { return querySigned(item) }
+        if item.readed == true { return queryReaded(item) }
+        return queryCreate(item)
     }
     
-    func querySigned(with item: MLPolicyNoticeModel) -> String {
+    private func querySigned(_ item: MLPolicyNoticeModel) -> String {
         do {
             let signatureTime = try item.signatureTime.unwrap()
             return try signatureTime.transfer(to: "MM-dd")
@@ -58,7 +50,7 @@ class PolicyNoticeTableViewCell: UITableViewCell {
         }
     }
     
-    func queryReaded(with item: MLPolicyNoticeModel) -> String {
+    private func queryReaded(_ item: MLPolicyNoticeModel) -> String {
         do {
             let readTime = try item.readTime.unwrap()
             return try readTime.transfer(to: "MM-dd")
@@ -67,7 +59,7 @@ class PolicyNoticeTableViewCell: UITableViewCell {
         }
     }
     
-    func queryCreate(with item: MLPolicyNoticeModel) -> String {
+    private func queryCreate(_ item: MLPolicyNoticeModel) -> String {
         do {
             let notification = try item.notification.unwrap()
             let published = try notification.published.unwrap()
@@ -77,7 +69,7 @@ class PolicyNoticeTableViewCell: UITableViewCell {
         }
     }
     
-    func queryStatus(with item: MLPolicyNoticeModel) -> String {
+    private func queryStatus(_ item: MLPolicyNoticeModel) -> String {
         if item.signed == true {return "已签阅"}
         if item.readed == true {return "已阅读"}
         return "未阅读"

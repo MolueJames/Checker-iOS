@@ -72,7 +72,7 @@ class DangerUnitTableViewCell: UITableViewCell {
     }
     
     
-    func queryColor(_ status: String?) -> UIColor {
+    private func queryColor(_ status: String?) -> UIColor {
         switch status {
         case "pending":
             return UIColor(hex: 0xFFCC00)
