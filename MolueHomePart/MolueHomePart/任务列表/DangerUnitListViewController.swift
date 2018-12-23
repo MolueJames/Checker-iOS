@@ -58,6 +58,11 @@ final class DangerUnitListViewController: MLBaseViewController  {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+    
+    deinit {
+        self.tableView.es.removeRefreshFooter()
+        self.tableView.es.removeRefreshHeader()
+    }
 }
 
 extension DangerUnitListViewController: MLUserInterfaceProtocol {
@@ -78,8 +83,6 @@ extension DangerUnitListViewController: MLUserInterfaceProtocol {
                 listener.queryDailyCheckDangerUnit()
             } catch {MolueLogger.UIModule.message(error)}
         }
-        self.tableView.refreshIdentifier = "Identifier"
-        self.tableView.expiredTimeInterval = 20.0
         self.tableView.es.startPullToRefresh()
     }
 }

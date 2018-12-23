@@ -31,19 +31,15 @@ public class MolueListItem<T: Mappable>: Mappable {
     public var previous: Int?
     public var results: [T]?
     
-    public func appendMoreResults(with item: MolueListItem<T>?) throws {
-        func appendResults(with results: [T]?) throws {
-            do {
-                let newItems = try results.unwrap()
-                var results = try self.results.unwrap()
-                results.append(contentsOf: newItems)
-                self.results = results
-            } catch { throw error }
-        }
-        
+    public func append(with item: MolueListItem<T>?) throws {
         do {
-            let newValue = try item.unwrap()
-            try appendResults(with: newValue.results)
+            let newItem = try item.unwrap()
+            let results = try newItem.results.unwrap()
+            self.results?.append(contentsOf: results)
         } catch { throw error }
+    }
+    
+    public func replace(with result: T, index: Int) {
+        self.results?[index] = result
     }
 }

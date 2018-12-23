@@ -17,6 +17,7 @@ protocol PolicyDetailRouterInteractable: class {
 
 protocol PolicyDetailViewControllable: MolueViewControllable {
     // 定义一些该页面需要的其他commponent的组件, 比如该页面的childViewController等.
+    
 }
 
 final class PolicyDetailViewableRouter: MolueViewableRouting {
@@ -40,6 +41,8 @@ extension PolicyDetailViewableRouter: PolicyDetailViewableRouting {
 protocol PolicyDetailInteractListener: class {
     //用于定义其他的Component需要定义的协议方法
     var selectedPolicyNotice: MLPolicyNoticeModel? {get}
+    
+    func updatePolicyNotice(with notice: MLPolicyNoticeModel)
 }
 
 protocol PolicyDetailComponentBuildable: MolueComponentBuildable {

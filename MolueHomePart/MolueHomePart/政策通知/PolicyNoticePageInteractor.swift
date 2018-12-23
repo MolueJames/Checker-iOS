@@ -38,6 +38,8 @@ final class PolicyNoticePageInteractor: MoluePresenterInteractable {
     var listModel = MolueListItem<MLPolicyNoticeModel>()
     
     var selectedPolicyNotice: MLPolicyNoticeModel?
+
+    private var selectedIndexPath: IndexPath?
     
     required init(presenter: PolicyNoticePagePresentable) {
         self.presenter = presenter
@@ -46,7 +48,15 @@ final class PolicyNoticePageInteractor: MoluePresenterInteractable {
 }
 
 extension PolicyNoticePageInteractor: PolicyNoticeRouterInteractable {
-    
+    func updatePolicyNotice(with notice: MLPolicyNoticeModel) {
+        do {
+            let indexPath = try self.selectedIndexPath.unwrap()
+            self.listModel.replace(with: notice, index: indexPath.row)
+            try self.presenter.unwrap().reloadTableViewData()
+        } catch {
+            MolueLogger.UIModule.message(error)
+        }
+    }
 }
 
 extension PolicyNoticePageInteractor: PolicyNoticePresentableListener {
@@ -71,6 +81,7 @@ extension PolicyNoticePageInteractor: PolicyNoticePresentableListener {
     
     func jumpToPolicyNoticeDetail(with indexPath: IndexPath) {
         let policyNotice = self.queryPolicyNotice(with: indexPath)
+        self.selectedIndexPath = indexPath
         self.selectedPolicyNotice = policyNotice
         do {
             let viewRouter = try self.viewRouter.unwrap()
@@ -144,7 +155,7 @@ extension PolicyNoticePageInteractor: PolicyNoticePresentableListener {
     
     private func handleMoreItems(_ listModel :MolueListItem<MLPolicyNoticeModel>?) {
         do {
-            try self.listModel.appendMoreResults(with: listModel)
+            try self.listModel.append(with: listModel)
         } catch { MolueLogger.UIModule.message(error)}
         
         let hasNext = listModel?.next.isSome() ?? false

@@ -63,7 +63,7 @@ extension PolicyDetailPageInteractor: PolicyDetailPresentableListener {
         do {
             let notice = try self.selectedNotice.unwrap()
             let noticeId = try notice.noticeId.unwrap()
-            self.doSingCurrentNotice(with: noticeId)
+            self.doSignCurrentNotice(with: noticeId)
         } catch {
             MolueLogger.network.message(error)
         }
@@ -83,13 +83,17 @@ extension PolicyDetailPageInteractor: PolicyDetailPresentableListener {
         }
     }
     
-    func doSingCurrentNotice(with noticeId: Int) {
+    func doSignCurrentNotice(with noticeId: Int) {
         let dataRequest = MolueNoticeService.signPolicyNotification(with: noticeId)
-        dataRequest.handleSuccessResponse { (result) in
-            MolueLogger.network.message(result)
-        }
-        dataRequest.handleFailureResponse { (error) in
-            MolueLogger.network.message(error)
+        dataRequest.handleSuccessResultToObjc { [weak self] (item: MLPolicyNoticeModel?) in
+            do {
+                let strongSelf = try self.unwrap()
+                let presenter = try strongSelf.presenter.unwrap()
+                try presenter.refreshSubviews(with: item.unwrap())
+                try strongSelf.refreshTableCells(with: item.unwrap())
+            } catch {
+                MolueLogger.network.message(error)
+            }
         }
         let requestManager = MolueRequestManager(delegate: self.presenter)
         requestManager.doRequestStart(with: dataRequest)
@@ -100,12 +104,21 @@ extension PolicyDetailPageInteractor: PolicyDetailPresentableListener {
         dataRequest.handleSuccessResultToObjc { [weak self] (item: MLPolicyNoticeModel?) in
             do {
                 let strongSelf = try self.unwrap()
-                let presenter = try strongSelf.presenter.unwrap()
-                try presenter.refreshSubviews(with: item.unwrap())
+                
+                try strongSelf.refreshTableCells(with: item.unwrap())
             } catch {
                 MolueLogger.network.message(error)
             }
         }
         MolueRequestManager().doRequestStart(with: dataRequest)
+    }
+    
+    func refreshTableCells(with item: MLPolicyNoticeModel) {
+        do {
+            let listener = try self.listener.unwrap()
+            listener.updatePolicyNotice(with: item)
+        } catch {
+            MolueLogger.network.message(error)
+        }
     }
 }

@@ -84,7 +84,7 @@ extension DangerUnitListPageInteractor: DangerUnitListPresentableListener {
     
     private func handleMoreItems(_ listModel :MolueListItem<MLDailyCheckPlan>?) {
         do {
-            try self.listModel.appendMoreResults(with: listModel)
+            try self.listModel.append(with: listModel)
         } catch { MolueLogger.UIModule.message(error)}
         
         let hasNext = listModel?.next.isSome() ?? false

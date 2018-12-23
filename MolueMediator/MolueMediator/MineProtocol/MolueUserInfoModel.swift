@@ -27,7 +27,7 @@ public class MolueUserInfo: Mappable, Codable {
         userPhone    <- map["phone"]
         userEmail    <- map["email"]
         profile      <- map["profile"]
-        userName     <- map["name"]
+        nameUser     <- map["name"]
         userRole     <- map["role"]
         userID       <- map["id"]
     }
@@ -40,7 +40,7 @@ public class MolueUserInfo: Mappable, Codable {
     public var lastLogin: String?
     public var lastName: String?
     public var userMobile: String?
-    public var userName: String?
+    public var nameUser: String?
     public var userOrder: Int?
     public var userPhone: String?
     public var position: String?
@@ -48,5 +48,5 @@ public class MolueUserInfo: Mappable, Codable {
     public var userRole: String?
     public var screenName: String?
     public var username: String?
-    public var permissions: [String]?
+    public var permissions: String?
 }

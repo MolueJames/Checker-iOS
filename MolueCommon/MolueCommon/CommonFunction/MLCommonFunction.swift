@@ -64,6 +64,7 @@ fileprivate struct MolueUserLogicUtily {
     }
     
     fileprivate static func doDatabaseTableRegist() {
+        MLDatabaseRegister.addDatabaseTarget(MolueUserInfo.self)
         MLDatabaseRegister.addDatabaseTarget(MolueOauthModel.self)
         MLDatabaseRegister.excuteProtocols()
     }

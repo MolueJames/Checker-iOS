@@ -30,6 +30,8 @@ final class PolicyNoticeViewController: MLBaseViewController  {
     //MARK: View Controller Properties
     var listener: PolicyNoticePresentableListener?
     
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.dataSource = self
@@ -53,6 +55,11 @@ final class PolicyNoticeViewController: MLBaseViewController  {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+    
+    deinit {
+        self.tableView.es.removeRefreshFooter()
+        self.tableView.es.removeRefreshHeader()
+    }
 }
 
 extension PolicyNoticeViewController: MLUserInterfaceProtocol {
@@ -73,8 +80,6 @@ extension PolicyNoticeViewController: MLUserInterfaceProtocol {
                 listener.queryPolicyNoticeList()
             } catch {MolueLogger.UIModule.message(error)}
         }
-        self.tableView.refreshIdentifier = "Identifier"
-        self.tableView.expiredTimeInterval = 20.0
         self.tableView.es.startPullToRefresh()
     }
 }
@@ -135,6 +140,4 @@ extension PolicyNoticeViewController: UITableViewDataSource {
         }
         return cell
     }
-    
-    
 }

@@ -96,10 +96,10 @@ extension UserInfoCenterPageInteractor: UserInfoCenterPresentableListener {
     func queryUserInfoFromServer () {
         let request = MolueUserInfoService.queryUserInformation()
         request.handleSuccessResultToObjc { [weak self] (result: MolueUserInfo?) in
-            MolueLogger.network.message(result)
             do {
                 let presenter = try self.unwrap().presenter.unwrap()
                 try presenter.refreshHeaderView(with: result.unwrap())
+                try MolueUserInfo.updateUserInfo(with: result.unwrap())
             } catch {
                 MolueLogger.network.message(error)
             }
@@ -108,6 +108,12 @@ extension UserInfoCenterPageInteractor: UserInfoCenterPresentableListener {
     }
     
     func queryUserInfoFromDatabase() {
-        
+        do {
+            let user = MolueUserInfo.queryUserInfo()
+            let presenter = try self.presenter.unwrap()
+            try presenter.refreshHeaderView(with: user.unwrap())
+        } catch {
+            MolueLogger.database.message(error)
+        }
     }
 }
