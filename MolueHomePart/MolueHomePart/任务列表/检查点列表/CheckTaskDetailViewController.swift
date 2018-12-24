@@ -14,10 +14,12 @@ import MolueFoundation
 
 protocol CheckTaskDetailPresentableListener: class {
     // 定义一些当前页面需要的业务逻辑, 比如网络请求.
-    func jumpToTaskDetailController(with item: RiskMeasureModel, indexPath: IndexPath)
-//    var selectedIndex: IndexPath {get}
-//    var item: DangerUnitRiskModel? {get set}
-    func updateCurrentItem()
+    
+    func numberOfRows(in section: Int) -> Int?
+    
+    func postCheckTaskDetailToServer()
+    
+    func queryTaskSolution(with indexPath: IndexPath) -> MLRiskUnitSolution?
 }
 
 final class CheckTaskDetailViewController: MLBaseViewController  {
@@ -57,7 +59,7 @@ final class CheckTaskDetailViewController: MLBaseViewController  {
     @IBAction func submitButtonClicked(_ sender: UIButton) {
         do {
             let listener = try self.listener.unwrap()
-            listener.updateCurrentItem()
+            listener.postCheckTaskDetailToServer()
         } catch {
             MolueLogger.UIModule.error(error)
         }
@@ -71,13 +73,6 @@ extension CheckTaskDetailViewController: MLUserInterfaceProtocol {
     
     func updateUserInterfaceElements() {
         self.view.backgroundColor = .white
-//        do {
-//            let listener = try self.listener.unwrap()
-//            let item = try listener.item.unwrap()
-//            self.title = item.riskName
-//        } catch {
-//            MolueLogger.UIModule.error(error)
-//        }
     }
 }
 
@@ -91,42 +86,22 @@ extension CheckTaskDetailViewController: CheckTaskDetailViewControllable {
 
 extension CheckTaskDetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        do {
-//            let listener = try self.listener.unwrap()
-//            let item = try listener.item.unwrap()
-//            let list = try item.riskMeasure.unwrap()
-//            return list.count
-//        } catch { return 0 }
-        return 0
+        do {
+            let listener = try self.listener.unwrap()
+            return try listener.numberOfRows(in: section).unwrap()
+        } catch { return 0 }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withClass: CheckTaskDetailTableViewCell.self)
-//        do {
-//            let listener = try self.listener.unwrap()
-//            let taskItem = try listener.item.unwrap()
-//            let taskList = try taskItem.riskMeasure.unwrap()
-//            let item = try taskList.item(at: indexPath.row).unwrap()
-//            cell.refreshSubviews(with: item, indexPath: indexPath)
-//            cell.updateBlock = { [unowned self] (item, currentPath) -> Void in
-//                self.updateRiskMeasureItem(item, indexPath: currentPath)
-//            }
-//        } catch {
-//            MolueLogger.UIModule.error(error)
-//        }
+        do {
+            let listener = try self.listener.unwrap()
+            let solution = listener.queryTaskSolution(with: indexPath)
+            
+        } catch {
+            MolueLogger.UIModule.message(error)
+        }
         return cell
-    }
-    
-    func updateRiskMeasureItem(_ item: RiskMeasureModel, indexPath: IndexPath) {
-//        do {
-//            let listener = try self.listener.unwrap()
-//            let taskItem = try listener.item.unwrap()
-//            var measureList = try taskItem.riskMeasure.unwrap()
-//            measureList[indexPath.row] = item
-//            MolueLogger.UIModule.message(self.listener?.item)
-//        } catch {
-//            MolueLogger.UIModule.error(error)
-//        }
     }
 }
 
@@ -134,15 +109,8 @@ extension CheckTaskDetailViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        do {
-//            let listener = try self.listener.unwrap()
-//            let taskItem = try listener.item.unwrap()
-//            let taskList = try taskItem.riskMeasure.unwrap()
-//            let item = try taskList.item(at: indexPath.row).unwrap()
-//            listener.jumpToTaskDetailController(with: item,  indexPath: indexPath)
-//        } catch {
-//            MolueLogger.UIModule.error(error)
-//        }
+        
     }
 }

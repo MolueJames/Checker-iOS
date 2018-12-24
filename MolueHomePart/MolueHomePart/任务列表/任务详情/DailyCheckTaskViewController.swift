@@ -20,7 +20,7 @@ protocol DailyCheckTaskPresentableListener: class {
     
     func queryDailyCheckTask()
     
-    func jumpToCheckTaskDetailController(with indexPath: IndexPath)
+    func jumpToCheckTaskDetailController()
 }
 
 final class DailyCheckTaskViewController: MLBaseViewController  {
@@ -61,7 +61,12 @@ final class DailyCheckTaskViewController: MLBaseViewController  {
         // Do any additional setup after loading the view.
     }
     @IBAction func submitButtonClicked(_ sender: UIButton) {
-
+        do {
+            let listener = try self.listener.unwrap()
+            listener.jumpToCheckTaskDetailController()
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
     }
 }
 
@@ -77,7 +82,6 @@ extension DailyCheckTaskViewController: MLUserInterfaceProtocol {
     
     func updateUserInterfaceElements() {
         self.view.backgroundColor = .white
-        
     }
 }
 
@@ -88,10 +92,16 @@ extension DailyCheckTaskViewController: DailyCheckTaskPagePresentable {
             self.title = riskUnit.unitName
             self.updateHeaderViewLayout(with: riskUnit)
             self.updateFooterViewLayout(with: riskUnit)
+            self.updateSubmitButton(with: riskUnit)
             self.tableView.reloadData()
         } catch {
             MolueLogger.UIModule.error(error)
         }
+    }
+    
+    func updateSubmitButton(with risk: MLRiskDetailUnit) {
+        let title = risk.status == "pending" ? "开始检查" : "检查详情"
+        self.submitButton.setTitle(title, for: .normal)
     }
     
     func updateHeaderViewLayout(with risk: MLRiskDetailUnit) {
@@ -128,15 +138,6 @@ extension DailyCheckTaskViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView: DailyCheckSectionHeaderView = DailyCheckSectionHeaderView.createFromXib()
         return headerView
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        do {
-            let listener = try self.listener.unwrap()
-            listener.jumpToCheckTaskDetailController(with: indexPath)
-        } catch {
-            MolueLogger.UIModule.error(error)
-        }
     }
 }
 

@@ -33,6 +33,10 @@ final class DailyCheckTaskViewableRouter: MolueViewableRouting {
 }
 
 extension DailyCheckTaskViewableRouter: DailyCheckTaskViewableRouting {
+    func pushToCheckTaskReportController() {
+        
+    }
+    
     func pushToCheckTaskDetailController() {
         do {
             let listener = try self.interactor.unwrap()

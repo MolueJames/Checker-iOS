@@ -17,6 +17,8 @@ import ObjectMapper
 import MolueNetwork
 import MolueDatabase
 
+import MolueHomePart
+
 extension AppDelegate {
     func setDefaultRootViewController() {
         self.setAppWindowConfiguration()
@@ -52,13 +54,13 @@ extension AppDelegate {
     }
     
     private func setRootViewController(for window: UIWindow) {
-        do {
-            try MolueUserLogic.connectWithLastDatabase()
+        if MolueUserLogic.connectWithLastDatabase() {
             window.rootViewController = self.rootViewController()
-        } catch {
+        } else {
             window.rootViewController = self.loginViewController()
         }
-//        window.rootViewController = UIViewController()
+        let builder = TaskCheckReportComponentBuilder()
+        window.rootViewController = MLNavigationController(rootViewController: builder.build())
         window.makeKeyAndVisible()
     }
     

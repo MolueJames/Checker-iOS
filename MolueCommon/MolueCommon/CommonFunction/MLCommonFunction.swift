@@ -42,12 +42,13 @@ public class MolueUserLogic {
         MLDatabaseManager.shared.disconnect()
     }
     
-    public static func connectWithLastDatabase() throws {
+    public static func connectWithLastDatabase() -> Bool {
         do {
-            let path =  MolueUserLogicUtily.queryDatabasePath()
-            try MLDatabaseManager.shared.doConnection(path.unwrap())
+            let path = try MolueUserLogicUtily.queryDatabasePath().unwrap()
+            let isConnected = MLDatabaseManager.shared.doConnection(path)
             MolueUserLogicUtily.doDatabaseTableRegist()
-        } catch { throw error }
+            return isConnected
+        } catch { return false }
     }
     
 }

@@ -60,6 +60,12 @@
 		1A43BC2F20C3CAA60093855B /* EnterpriseInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A43BC2D20C3CAA60093855B /* EnterpriseInfoTableViewCell.swift */; };
 		1A43BC3020C3CAA60093855B /* EnterpriseInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A43BC2E20C3CAA60093855B /* EnterpriseInfoTableViewCell.xib */; };
 		1A43BC3320C3CEAA0093855B /* EnterpriseInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A43BC3220C3CEAA0093855B /* EnterpriseInfoModel.swift */; };
+		1A4F89D821D09CB200B560E1 /* TaskCheckReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4F89D521D09CB200B560E1 /* TaskCheckReportViewController.swift */; };
+		1A4F89D921D09CB200B560E1 /* TaskCheckReportPageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4F89D621D09CB200B560E1 /* TaskCheckReportPageInteractor.swift */; };
+		1A4F89DA21D09CB200B560E1 /* TaskCheckReportBuilderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4F89D721D09CB200B560E1 /* TaskCheckReportBuilderRouter.swift */; };
+		1A4F89DC21D09CC900B560E1 /* TaskCheckReportViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A4F89DB21D09CC900B560E1 /* TaskCheckReportViewController.storyboard */; };
+		1A4F89EC21D0A0DD00B560E1 /* TaskCheckReportTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4F89EA21D0A0DD00B560E1 /* TaskCheckReportTableViewCell.swift */; };
+		1A4F89ED21D0A0DD00B560E1 /* TaskCheckReportTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A4F89EB21D0A0DD00B560E1 /* TaskCheckReportTableViewCell.xib */; };
 		1A5014AD2094B13400DB931E /* MolueCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5014AC2094B13400DB931E /* MolueCommon.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		1A5014C22097494600DB931E /* MolueDatabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5014C12097494600DB931E /* MolueDatabase.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		1A5014C42097495300DB931E /* MolueNavigator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5014C32097495300DB931E /* MolueNavigator.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -188,6 +194,12 @@
 		1A43BC2D20C3CAA60093855B /* EnterpriseInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterpriseInfoTableViewCell.swift; sourceTree = "<group>"; };
 		1A43BC2E20C3CAA60093855B /* EnterpriseInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EnterpriseInfoTableViewCell.xib; sourceTree = "<group>"; };
 		1A43BC3220C3CEAA0093855B /* EnterpriseInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterpriseInfoModel.swift; sourceTree = "<group>"; };
+		1A4F89D521D09CB200B560E1 /* TaskCheckReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCheckReportViewController.swift; sourceTree = "<group>"; };
+		1A4F89D621D09CB200B560E1 /* TaskCheckReportPageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCheckReportPageInteractor.swift; sourceTree = "<group>"; };
+		1A4F89D721D09CB200B560E1 /* TaskCheckReportBuilderRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCheckReportBuilderRouter.swift; sourceTree = "<group>"; };
+		1A4F89DB21D09CC900B560E1 /* TaskCheckReportViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TaskCheckReportViewController.storyboard; sourceTree = "<group>"; };
+		1A4F89EA21D0A0DD00B560E1 /* TaskCheckReportTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCheckReportTableViewCell.swift; sourceTree = "<group>"; };
+		1A4F89EB21D0A0DD00B560E1 /* TaskCheckReportTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskCheckReportTableViewCell.xib; sourceTree = "<group>"; };
 		1A5014AC2094B13400DB931E /* MolueCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A5014C12097494600DB931E /* MolueDatabase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueDatabase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A5014C32097495300DB931E /* MolueNavigator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueNavigator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -496,6 +508,27 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		1A4F89D421D09C8100B560E1 /* 检查报告 */ = {
+			isa = PBXGroup;
+			children = (
+				1A4F89DD21D09CE000B560E1 /* Views */,
+				1A4F89D521D09CB200B560E1 /* TaskCheckReportViewController.swift */,
+				1A4F89D621D09CB200B560E1 /* TaskCheckReportPageInteractor.swift */,
+				1A4F89D721D09CB200B560E1 /* TaskCheckReportBuilderRouter.swift */,
+				1A4F89DB21D09CC900B560E1 /* TaskCheckReportViewController.storyboard */,
+			);
+			path = "检查报告";
+			sourceTree = "<group>";
+		};
+		1A4F89DD21D09CE000B560E1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1A4F89EA21D0A0DD00B560E1 /* TaskCheckReportTableViewCell.swift */,
+				1A4F89EB21D0A0DD00B560E1 /* TaskCheckReportTableViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		1A50149B20944D7A00DB931E /* 应用首页 */ = {
 			isa = PBXGroup;
 			children = (
@@ -524,6 +557,7 @@
 		1A522ED221912B0100094A8A /* 任务列表 */ = {
 			isa = PBXGroup;
 			children = (
+				1A4F89D421D09C8100B560E1 /* 检查报告 */,
 				1ABA9A9621C0F6CC007E54D3 /* Models */,
 				1A346FC221915BAA00CB534B /* 检查点列表 */,
 				1A5D5BF421912E24003E7039 /* Views */,
@@ -790,7 +824,7 @@
 				TargetAttributes = {
 					1A1B88C220864D9500C5F4D9 = {
 						CreatedOnToolsVersion = 9.3;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1010;
 					};
 					1A1B88CB20864D9500C5F4D9 = {
 						CreatedOnToolsVersion = 9.3;
@@ -855,8 +889,10 @@
 				1AB0670820EFB61D00619570 /* PolicyNoticeTableViewCell.xib in Resources */,
 				1AAF7B8020C1971B0051EC18 /* IncreaseAdminiViewController.storyboard in Resources */,
 				1A24022620E530AE00FC3EBA /* PolicyNoticeViewController.storyboard in Resources */,
+				1A4F89DC21D09CC900B560E1 /* TaskCheckReportViewController.storyboard in Resources */,
 				1A2F407521AD355F00C436F9 /* CheckTaskHistoryTableViewCell.xib in Resources */,
 				1A65039620DD552B0017F91D /* MolueHome.xcassets in Resources */,
+				1A4F89ED21D0A0DD00B560E1 /* TaskCheckReportTableViewCell.xib in Resources */,
 				1AD3DE8721971720005015A6 /* CheckTaskDetailTableViewCell.xib in Resources */,
 				1AAF7B6720C1970A0051EC18 /* EnterpriseInfoViewController.storyboard in Resources */,
 			);
@@ -898,6 +934,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A0B89BE21933045000B1EBC /* DailyCheckTaskHeaderView.swift in Sources */,
+				1A4F89D821D09CB200B560E1 /* TaskCheckReportViewController.swift in Sources */,
 				1A346FC621915C0400CB534B /* CheckTaskDetailViewController.swift in Sources */,
 				1AAF7B7E20C1971B0051EC18 /* BasicArchivesViewController.swift in Sources */,
 				1AAB20D721CA8E8D003FA7F8 /* PolicyDetailPageInteractor.swift in Sources */,
@@ -923,6 +960,7 @@
 				1AAB20D621CA8E8D003FA7F8 /* PolicyDetailViewController.swift in Sources */,
 				1A522ED621912BA200094A8A /* DangerUnitListViewController.swift in Sources */,
 				1A24022020E52F7800FC3EBA /* LawRegulationViewController.swift in Sources */,
+				1A4F89D921D09CB200B560E1 /* TaskCheckReportPageInteractor.swift in Sources */,
 				1A5E87F721C9DC4B00BA4DB5 /* PolicyNoticeBuilderRouter.swift in Sources */,
 				1AAF7B8720C1971B0051EC18 /* DangerMachineryViewController.swift in Sources */,
 				1A7D5A3A21AA73D800931B0B /* AppHomeDocument.swift in Sources */,
@@ -940,7 +978,9 @@
 				1A43BC2720C3AF190093855B /* HomeInfoHeaderView.swift in Sources */,
 				1A2F407A21AD394F00C436F9 /* TaskHistoryInfoPageInteractor.swift in Sources */,
 				1A1084FD20ECF1DD004E365A /* IncreaseAdminiNavigator.swift in Sources */,
+				1A4F89EC21D0A0DD00B560E1 /* TaskCheckReportTableViewCell.swift in Sources */,
 				1AAF7B8120C1971B0051EC18 /* IncreaseAdminiViewController.swift in Sources */,
+				1A4F89DA21D09CB200B560E1 /* TaskCheckReportBuilderRouter.swift in Sources */,
 				1A602F8520A87D58003AD583 /* HomeInfoTableHeaderView.swift in Sources */,
 				1A24022D20E536A700FC3EBA /* SecurityAdminiDataManager.swift in Sources */,
 				1A522EC72190356100094A8A /* DailyCheckTaskPageInteractor.swift in Sources */,

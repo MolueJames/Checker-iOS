@@ -12,8 +12,8 @@ import MolueFoundation
 protocol CheckTaskDetailViewableRouting: class {
     // 定义一些页面跳转的方法, 比如Push, Presenter等.
     func pushToNoHiddenController()
-    func pushToEditRiskController()
-    func popToPreviewController()
+    
+    func pushToCheckDetailReport()
 }
 
 protocol CheckTaskDetailPagePresentable: MolueInteractorPresentable, MLControllerHUDProtocol {
@@ -28,6 +28,16 @@ final class CheckTaskDetailPageInteractor: MoluePresenterInteractable {
     var viewRouter: CheckTaskDetailViewableRouting?
     
     weak var listener: CheckTaskDetailInteractListener?
+    
+    lazy var selectedCheckTask: MLDailyCheckTask? = {
+        do {
+            let listener = try self.listener.unwrap()
+            let checkTask = try listener.currentCheckTask.unwrap()
+            return checkTask
+        } catch {
+            return MolueLogger.UIModule.returnNil(error)
+        }
+    }()
     
     var measureIndexPath: IndexPath?
     
@@ -48,56 +58,29 @@ extension CheckTaskDetailPageInteractor: CheckTaskDetailRouterInteractable {
 }
 
 extension CheckTaskDetailPageInteractor: CheckTaskDetailPresentableListener {
-    func jumpToTaskDetailController(with item: RiskMeasureModel, indexPath: IndexPath) {
+    func queryTaskSolution(with indexPath: IndexPath) -> MLRiskUnitSolution? {
         do {
-            self.measureIndexPath = indexPath
-            let viewRouter = try self.viewRouter.unwrap()
-            if item.measureState {
-                viewRouter.pushToNoHiddenController()
-            } else {
-                viewRouter.pushToEditRiskController()
-            }
+            let currentTask = try self.selectedCheckTask.unwrap()
+            let currentRisk = try currentTask.risk.unwrap()
+            let solutions = try currentRisk.solutions.unwrap()
+            return try solutions.item(at: indexPath.row).unwrap()
         } catch {
-            MolueLogger.UIModule.error(error)
+            return MolueLogger.UIModule.allowNil(error)
         }
     }
     
-    func updateCurrentItem() {
-        func checkMeasureItemState(list: [RiskMeasureModel], riskItem: DangerUnitRiskModel) {
-            for item in list {
-                if item.measureState == false {
-                    riskItem.riskStatus = "有隐患"
-                    break
-                }
-                riskItem.riskStatus = "已检查"
-            }
-        }
-        func doAppendRiskItem(to item: DangerUnitRiskModel) {
-            do {
-                let row = try self.measureIndexPath.unwrap().row
-                let risk = item.riskMeasure?[row].riskModel
-                try AppRiskDocument.shared.riskList.append(risk.unwrap())
-            } catch {
-                MolueLogger.UIModule.message(error)
-            }
-        }
+    func postCheckTaskDetailToServer() {
+        
     }
     
-    func doPopPreviewController() {
+    func numberOfRows(in section: Int) -> Int? {
         do {
-            let presenter = try self.presenter.unwrap()
-            presenter.showSuccessHUD(text: "任务提交成功")
-            Async.main(after: 1.5) { [weak self] in
-                do {
-                    let strongSelf = try self.unwrap()
-                    let listener = try strongSelf.listener.unwrap()
-//                    listener.doPopToPreviewController()
-                } catch {
-                    MolueLogger.UIModule.message(error)
-                }
-            }
+            let currentTask = try self.selectedCheckTask.unwrap()
+            let currentRisk = try currentTask.risk.unwrap()
+            let solutions = try currentRisk.solutions.unwrap()
+            return solutions.count
         } catch {
-            MolueLogger.UIModule.error(error)
+            return MolueLogger.UIModule.allowNil(error)
         }
     }
 }

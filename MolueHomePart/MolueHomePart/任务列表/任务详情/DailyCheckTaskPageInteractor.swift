@@ -14,6 +14,8 @@ import MolueUtilities
 protocol DailyCheckTaskViewableRouting: class {
     // 定义一些页面跳转的方法, 比如Push, Presenter等.
     func pushToCheckTaskDetailController()
+    
+    func pushToCheckTaskReportController()
 }
 
 protocol DailyCheckTaskPagePresentable: MolueInteractorPresentable, MolueActivityDelegate {
@@ -46,6 +48,7 @@ extension DailyCheckTaskPageInteractor: DailyCheckTaskRouterInteractable {
 }
 
 extension DailyCheckTaskPageInteractor: DailyCheckTaskPresentableListener {
+    
     func numberOfRows(with sections: Int) -> Int? {
         do {
             let currentTask = try self.currentCheckTask.unwrap()
@@ -91,11 +94,15 @@ extension DailyCheckTaskPageInteractor: DailyCheckTaskPresentableListener {
         } catch { MolueLogger.network.message(error) }
     }
     
-    func jumpToCheckTaskDetailController(with indexPath: IndexPath) {
+    func jumpToCheckTaskDetailController() {
         do {
             let viewRouter = try self.viewRouter.unwrap()
-            viewRouter.pushToCheckTaskDetailController()
-            
+            let currentCheckTask = try self.currentCheckTask.unwrap()
+            if currentCheckTask.status == "pending" {
+                viewRouter.pushToCheckTaskDetailController()
+            } else {
+                viewRouter.pushToCheckTaskReportController()
+            }
         } catch {
             MolueLogger.UIModule.error(error)
         }

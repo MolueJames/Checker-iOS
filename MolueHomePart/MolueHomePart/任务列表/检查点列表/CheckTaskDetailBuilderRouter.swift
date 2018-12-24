@@ -32,14 +32,10 @@ final class CheckTaskDetailViewableRouter: MolueViewableRouting {
 }
 
 extension CheckTaskDetailViewableRouter: CheckTaskDetailViewableRouting {
-    func popToPreviewController() {
-        do {
-            let navigator = try self.controller.unwrap()
-            navigator.doPopBackFromCurrent()
-        } catch {
-            MolueLogger.UIModule.error(error)
-        }
+    func pushToCheckDetailReport() {
+        
     }
+    
     
     func pushToNoHiddenController() {
         do {
@@ -53,26 +49,11 @@ extension CheckTaskDetailViewableRouter: CheckTaskDetailViewableRouting {
             MolueLogger.UIModule.error(error)
         }
     }
-    
-    func pushToEditRiskController() {
-        do {
-            let listener = try self.interactor.unwrap()
-            let builderFactory = MolueBuilderFactory<MolueComponent.Risk>(.EditRisk)
-            let builder: EditRiskInfoComponentBuildable? = builderFactory.queryBuilder()
-            let controller = try builder.unwrap().build(listener: listener)
-            controller.hidesBottomBarWhenPushed = true
-            let navigator = try self.controller.unwrap()
-            navigator.pushToViewController(controller, animated: true)
-        } catch {
-            MolueLogger.UIModule.error(error)
-        }
-    }
-    
 }
 
 protocol CheckTaskDetailInteractListener: class {
     //用于定义其他的Component需要定义的协议方法
-
+    var currentCheckTask: MLDailyCheckTask? {get}
 }
 
 protocol CheckTaskDetailComponentBuildable: MolueComponentBuildable {
