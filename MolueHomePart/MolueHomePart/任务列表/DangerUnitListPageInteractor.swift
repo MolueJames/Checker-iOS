@@ -8,6 +8,7 @@
 
 import MolueMediator
 import MolueUtilities
+import MolueFoundation
 import MolueNetwork
 
 protocol DangerUnitListViewableRouting: class {
@@ -15,7 +16,7 @@ protocol DangerUnitListViewableRouting: class {
     func pushToDailyCheckTaskController()
 }
 
-protocol DangerUnitListPagePresentable: MolueInteractorPresentable {
+protocol DangerUnitListPagePresentable: MolueInteractorPresentable, MLControllerHUDProtocol {
     var listener: DangerUnitListPresentableListener? { get set }
     // 定义一些页面需要的方法, 比如刷新页面的显示内容等.
     func popBackWhenTaskChecked()
@@ -79,6 +80,11 @@ extension DangerUnitListPageInteractor: DangerUnitListPresentableListener {
                 try self.unwrap().handleMoreItems(item)
             } catch { MolueLogger.UIModule.message(error) }
         }
+        request.handleFailureResponse { [weak self] (error) in
+            do {
+                try self.unwrap().handlePlanList(with: error, isMore: true)
+            } catch { MolueLogger.UIModule.message(error) }
+        }
         MolueRequestManager().doRequestStart(with: request)
     }
     
@@ -140,6 +146,11 @@ extension DangerUnitListPageInteractor: DangerUnitListPresentableListener {
                 try self.unwrap().handleQueryItem(item)
             } catch { MolueLogger.UIModule.message(error) }
         }
+        request.handleFailureResponse { [weak self] (error) in
+            do {
+                try self.unwrap().handlePlanList(with: error, isMore: false)
+            } catch { MolueLogger.UIModule.message(error) }
+        }
         MolueRequestManager().doRequestStart(with: request)
     }
     
@@ -149,5 +160,17 @@ extension DangerUnitListPageInteractor: DangerUnitListPresentableListener {
         } catch { MolueLogger.network.message(error) }
         self.presenter?.endHeaderRefreshing()
         self.presenter?.reloadTableViewData()
+    }
+    
+    private func handlePlanList(with error: Error, isMore: Bool) {
+        do {
+            let presenter = try self.presenter.unwrap()
+            if isMore {
+                presenter.endFooterRefreshing(with: true)
+            } else {
+                presenter.endHeaderRefreshing()
+            }
+            presenter.showWarningHUD(text: error.localizedDescription)
+        } catch { MolueLogger.UIModule.error(error) }
     }
 }

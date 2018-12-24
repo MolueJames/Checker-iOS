@@ -84,8 +84,8 @@ extension PolicyDetailPageInteractor: PolicyDetailPresentableListener {
     }
     
     func doSignCurrentNotice(with noticeId: Int) {
-        let dataRequest = MolueNoticeService.signPolicyNotification(with: noticeId)
-        dataRequest.handleSuccessResultToObjc { [weak self] (item: MLPolicyNoticeModel?) in
+        let request = MolueNoticeService.signPolicyNotification(with: noticeId)
+        request.handleSuccessResultToObjc { [weak self] (item: MLPolicyNoticeModel?) in
             do {
                 let strongSelf = try self.unwrap()
                 let presenter = try strongSelf.presenter.unwrap()
@@ -96,12 +96,12 @@ extension PolicyDetailPageInteractor: PolicyDetailPresentableListener {
             }
         }
         let requestManager = MolueRequestManager(delegate: self.presenter)
-        requestManager.doRequestStart(with: dataRequest)
+        requestManager.doRequestStart(with: request)
     }
     
     func doReadCurrentNotice(with noticeId: Int) {
-        let dataRequest = MolueNoticeService.readPolicyNotification(with: noticeId)
-        dataRequest.handleSuccessResultToObjc { [weak self] (item: MLPolicyNoticeModel?) in
+        let request = MolueNoticeService.readPolicyNotification(with: noticeId)
+        request.handleSuccessResultToObjc { [weak self] (item: MLPolicyNoticeModel?) in
             do {
                 let strongSelf = try self.unwrap()
                 
@@ -110,7 +110,7 @@ extension PolicyDetailPageInteractor: PolicyDetailPresentableListener {
                 MolueLogger.network.message(error)
             }
         }
-        MolueRequestManager().doRequestStart(with: dataRequest)
+        MolueRequestManager().doRequestStart(with: request)
     }
     
     func refreshTableCells(with item: MLPolicyNoticeModel) {

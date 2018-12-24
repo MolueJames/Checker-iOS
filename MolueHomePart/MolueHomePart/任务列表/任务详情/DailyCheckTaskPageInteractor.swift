@@ -73,15 +73,15 @@ extension DailyCheckTaskPageInteractor: DailyCheckTaskPresentableListener {
     func queryDailyCheckTask() {
         do {
             let taskId = try self.listener.unwrap().selectedCheckTask.unwrap()
-            let dataRequest = MolueCheckService.queryDailyCheckTask(with: taskId)
-            dataRequest.handleSuccessResultToObjc { [weak self] (result: MLDailyCheckTask?) in
+            let request = MolueCheckService.queryDailyCheckTask(with: taskId)
+            request.handleSuccessResultToObjc { [weak self] (result: MLDailyCheckTask?) in
                 dump(result)
                 do {
                     try self.unwrap().handleSuccessResult(with: result)
                 } catch { MolueLogger.UIModule.message(error) }
             }
             let requestManager = MolueRequestManager(delegate: self.presenter)
-            requestManager.doRequestStart(with: dataRequest)
+            requestManager.doRequestStart(with: request)
         } catch { MolueLogger.network.message(error) }
     }
     

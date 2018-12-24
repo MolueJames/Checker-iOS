@@ -34,6 +34,7 @@ final class TaskCheckReportViewController: MLBaseViewController  {
             tableView.delegate = self
             tableView.allowsMultipleSelectionDuringEditing = true
             tableView.register(xibWithCellClass: TaskCheckReportTableViewCell.self)
+            tableView.register(xibWithCellClass: PotentialRiskTableViewCell.self)
         }
     }
     
@@ -101,7 +102,7 @@ extension TaskCheckReportViewController: TaskCheckReportViewControllable {
 
 extension TaskCheckReportViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return indexPath.section == 1 ? 142 : 90
     }
     
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
@@ -111,16 +112,33 @@ extension TaskCheckReportViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return section == 1 ? "相关隐患" : nil
+    }
 }
 
 extension TaskCheckReportViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withClass: TaskCheckReportTableViewCell.self)
-        
-        return cell
+        if indexPath.section == 0 {
+            let cell = tableView.dequeueReusableCell(withClass: TaskCheckReportTableViewCell.self)
+            cell.selectionStyle = indexPath.row == 0 ? .none : .blue
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withClass: PotentialRiskTableViewCell.self)
+            return cell
+        }
     }
 }

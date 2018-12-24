@@ -9,7 +9,7 @@
 import MolueMediator
 import MolueUtilities
 
-protocol DailyCheckTaskRouterInteractable: CheckTaskDetailInteractListener {
+protocol DailyCheckTaskRouterInteractable: CheckTaskDetailInteractListener, TaskCheckReportInteractListener {
     var viewRouter: DailyCheckTaskViewableRouting? { get set }
     var listener: DailyCheckTaskInteractListener? { get set }
 }
@@ -34,7 +34,15 @@ final class DailyCheckTaskViewableRouter: MolueViewableRouting {
 
 extension DailyCheckTaskViewableRouter: DailyCheckTaskViewableRouting {
     func pushToCheckTaskReportController() {
-        
+        do {
+            let listener = try self.interactor.unwrap()
+            let builder = TaskCheckReportComponentBuilder()
+            let controller = builder.build(listener: listener)
+            let navigator = try self.controller.unwrap()
+            navigator.pushToViewController(controller, animated: true)
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
     }
     
     func pushToCheckTaskDetailController() {

@@ -11,55 +11,106 @@ import MolueMediator
 import MolueUtilities
 
 class CheckTaskDetailTableViewCell: UITableViewCell {
-
-    public var updateBlock: ((RiskMeasureModel, IndexPath) -> Void)?
+    
+    @IBOutlet weak var remarkTitleLabel: UILabel!
+    
+    @IBOutlet weak var containView: UIView! {
+        didSet {
+            containView.layer.cornerRadius = 5
+        }
+    }
+    @IBOutlet weak var taskNameTop: NSLayoutConstraint!
+    
+    private var imageList: [UIImage] = [UIImage]()
     
     @IBOutlet weak var statusImageView: UIImageView!
+  
+    @IBOutlet weak var taskNameLabel: UILabel!
     
-    private var measureItem: RiskMeasureModel?
+    @IBOutlet weak var answerView: UIView!
+    
+    @IBOutlet weak var additionView: UIView!
+    
+    @IBOutlet weak var successButton: UIButton!
+    
+    @IBOutlet weak var failureButton: UIButton!
+    
+    @IBOutlet weak var detailButton: UIButton!
+    
+    @IBOutlet weak var deleteButton: UIButton!
+    
+    @IBOutlet weak var collectionHeight: NSLayoutConstraint!
+    
+    @IBOutlet weak var remarkTitleTop: NSLayoutConstraint!
+    @IBOutlet weak var remarkBottom: NSLayoutConstraint!
+    
+    @IBOutlet weak var collectionView: UICollectionView! {
+        didSet {
+            collectionView.dataSource = self
+            collectionView.delegate = self
+        }
+    }
+    
+    @IBOutlet weak var remarkLabel: UILabel!
+    
+    @IBAction func successButtonClicked(_ sender: UIButton) {
+        self.switchToAddtionView(true)
+    }
+    
+    @IBAction func failureButtonClicked(_ sender: UIButton) {
+        self.switchToAddtionView(true)
+    }
+    
+    @IBAction func detailButtonClicked(_ sender: UIButton) {
+        
+    }
+    
+    @IBAction func deleteButtonClicked(_ sender: UIButton) {
+        self.switchToAddtionView(false)
+    }
+    
+    @IBOutlet weak var collectionTop: NSLayoutConstraint!
+    
+    private func switchToAddtionView(_ isTo: Bool) {
+        self.additionView.isHidden = !isTo
+        self.answerView.isHidden = isTo
+    }
     
     private var currentIndexPath: IndexPath?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        self.remarkLabel.text = nil
+        self.remarkTitleLabel.text = nil
+        self.taskNameTop.constant = 15
+        self.collectionHeight.constant = 0
+        self.remarkBottom.constant = 0
+        self.remarkTitleTop.constant = 0
     }
-
-    @IBOutlet weak var taskNameLabel: UILabel!
     
-    @IBAction func successButtonClicked(_ sender: UIButton) {
-        self.statusImageView.image = UIImage(named: "molue_check_success")
-        do {
-            let item = try self.measureItem.unwrap()
-            item.measureState = true
-            let successBlock = try self.updateBlock.unwrap()
-            let indexPath = try self.currentIndexPath.unwrap()
-            successBlock(item, indexPath)
-        } catch {
-            MolueLogger.UIModule.error(error)
-        }
-    }
-    @IBAction func failureButtonClicked(_ sender: UIButton) {
-        self.statusImageView.image = UIImage(named: "molue_check_failure")
-        do {
-            let item = try self.measureItem.unwrap()
-            item.measureState = false
-            let failureBlock = try self.updateBlock.unwrap()
-            let indexPath = try self.currentIndexPath.unwrap()
-            failureBlock(item, indexPath)
-        } catch {
-            MolueLogger.UIModule.error(error)
-        }
-    }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
+    
+    public func refreshSubviews(with item: MLRiskUnitSolution, indexPath: IndexPath) {
+        self.taskNameLabel.text = "\(indexPath.row + 1) " + item.title.data()
+        
+    }
+}
 
-    public func refreshSubviews(with model: RiskMeasureModel, indexPath: IndexPath) {
-        self.measureItem = model
-        self.currentIndexPath = indexPath
-        self.taskNameLabel.text = model.measureName
+extension CheckTaskDetailTableViewCell: UICollectionViewDelegate {
+    
+}
+
+extension CheckTaskDetailTableViewCell: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.imageList.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        return UICollectionViewCell()
     }
 }
