@@ -118,16 +118,16 @@ extension EditRiskInfoPageInteractor: EditRiskInfoRouterInteractable {
 
 extension EditRiskInfoPageInteractor: EditRiskInfoPresentableListener {
     func updateEditRiskInfo(with model: PotentialRiskModel) {
-        do {
-            let editModel: PotentialRiskModel = model
-            editModel.checkedRiskPhotos = self.photoImages
-
-            let listener = try self.listener.unwrap()
-            listener.updateEditRiskInfoModel(with: editModel)
-            self.doUpdateEditRiskInfoPresenter()
-        } catch {
-            MolueLogger.UIModule.error(error)
-        }
+//        do {
+//            let editModel: PotentialRiskModel = model
+//            editModel.checkedRiskPhotos = self.photoImages
+//
+//            let listener = try self.listener.unwrap()
+//            listener.updateEditRiskInfoModel(with: editModel)
+//            self.doUpdateEditRiskInfoPresenter()
+//        } catch {
+//            MolueLogger.UIModule.error(error)
+//        }
     }
     
     func doUpdateEditRiskInfoPresenter() {

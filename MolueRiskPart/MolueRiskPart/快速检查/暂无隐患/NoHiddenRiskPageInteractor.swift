@@ -118,16 +118,16 @@ extension NoHiddenRiskPageInteractor: NoHiddenRiskRouterInteractable {
 
 extension NoHiddenRiskPageInteractor: NoHiddenRiskPresentableListener {
     func updateNoHiddenRisk(with text: String) {
-        do {
-            let taskModel: TaskSuccessModel = TaskSuccessModel()
-            taskModel.images = self.photoImages
-            taskModel.detail = text
-            let listener = try self.listener.unwrap()
-            listener.updateNoHiddenRiskModel(with: taskModel)
-            self.doUpdateTaskInfoModelPresenter()
-        } catch {
-            MolueLogger.UIModule.error(error)
-        }
+//        do {
+//            let taskModel: TaskSuccessModel = TaskSuccessModel()
+//            taskModel.images = self.photoImages
+//            taskModel.detail = text
+//            let listener = try self.listener.unwrap()
+//            listener.updateNoHiddenRiskModel(with: taskModel)
+//            self.doUpdateTaskInfoModelPresenter()
+//        } catch {
+//            MolueLogger.UIModule.error(error)
+//        }
     }
     
     func doUpdateTaskInfoModelPresenter() {

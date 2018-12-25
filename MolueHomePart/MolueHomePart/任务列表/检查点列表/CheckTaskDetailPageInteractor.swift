@@ -19,6 +19,8 @@ protocol CheckTaskDetailViewableRouting: class {
 protocol CheckTaskDetailPagePresentable: MolueInteractorPresentable, MLControllerHUDProtocol {
     var listener: CheckTaskDetailPresentableListener? { get set }
     // 定义一些页面需要的方法, 比如刷新页面的显示内容等.
+    
+    func reloadTableViewCell(for indexPath: IndexPath)
 }
 
 final class CheckTaskDetailPageInteractor: MoluePresenterInteractable {
@@ -32,14 +34,15 @@ final class CheckTaskDetailPageInteractor: MoluePresenterInteractable {
     lazy var selectedCheckTask: MLDailyCheckTask? = {
         do {
             let listener = try self.listener.unwrap()
-            let checkTask = try listener.currentCheckTask.unwrap()
-            return checkTask
+            return try listener.currentCheckTask.unwrap()
         } catch {
             return MolueLogger.UIModule.returnNil(error)
         }
     }()
     
-    var measureIndexPath: IndexPath?
+    private var currentIndexPath: IndexPath?
+    
+    var currentAttachment: MLTaskAttachment?
     
     required init(presenter: CheckTaskDetailPagePresentable) {
         self.presenter = presenter
@@ -48,16 +51,62 @@ final class CheckTaskDetailPageInteractor: MoluePresenterInteractable {
 }
 
 extension CheckTaskDetailPageInteractor: CheckTaskDetailRouterInteractable {
-    func updateNoHiddenRiskModel(with item: TaskSuccessModel) {
-
-    }
-    
-    func updateEditRiskInfoModel(with item: PotentialRiskModel) {
-
+    func updateCurrentAttachment(with item: MLTaskAttachment) {
+        do {
+            let indexPath = try self.currentIndexPath.unwrap()
+            self.updateAttachment(with: item, indexPath: indexPath)
+            let presenter = try self.presenter.unwrap()
+            presenter.reloadTableViewCell(for: indexPath)
+        } catch {
+            MolueLogger.UIModule.message(error)
+        }
     }
 }
 
 extension CheckTaskDetailPageInteractor: CheckTaskDetailPresentableListener {
+    func queryTaskAttachment(with indexPath: IndexPath) -> MLTaskAttachment? {
+        do {
+            let task = try self.selectedCheckTask.unwrap()
+            let attachments = try task.items.unwrap()
+            let item = attachments.item(at: indexPath.row)
+            return try item.unwrap()
+        } catch {
+            return MolueLogger.UIModule.returnNil(error)
+        }
+    }
+    
+    func updateAttachmentClosures(for cell: CheckTaskDetailTableViewCell) {
+        cell.detailClosure = { [unowned self] (attachment, indexPath) in
+            self.jumpToAttachment(with: attachment, indexPath: indexPath)
+        }
+        
+        cell.updateClosure = { [unowned self] (attachment, indexPath) in
+            self.updateAttachment(with: attachment, indexPath: indexPath)
+        }
+    }
+    
+    private func jumpToAttachment(with attachment: MLTaskAttachment, indexPath: IndexPath) {
+        do {
+            let viewRouter = try self.viewRouter.unwrap()
+            viewRouter.pushToNoHiddenController()
+            self.currentAttachment = attachment
+            self.currentIndexPath = indexPath
+        } catch {
+            MolueLogger.UIModule.message(error)
+        }
+    }
+    
+    private func updateAttachment(with attachment: MLTaskAttachment, indexPath: IndexPath)  {
+        do {
+            let task = try self.selectedCheckTask.unwrap()
+            var attachments = try task.items.unwrap()
+            attachments[indexPath.row] = attachment
+            self.selectedCheckTask?.items = attachments
+        } catch {
+            MolueLogger.UIModule.message(error)
+        }
+    }
+    
     func queryTaskSolution(with indexPath: IndexPath) -> MLRiskUnitSolution? {
         do {
             let currentTask = try self.selectedCheckTask.unwrap()

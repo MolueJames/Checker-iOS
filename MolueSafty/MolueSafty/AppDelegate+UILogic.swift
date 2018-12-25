@@ -61,8 +61,7 @@ extension AppDelegate {
         }
 //        let builder = TaskCheckReportComponentBuilder()
 //        window.rootViewController = MLNavigationController(rootViewController: builder.build())
-
-        window.rootViewController = UIViewController()
+//        window.rootViewController = UIViewController()
 
         window.makeKeyAndVisible()
     }

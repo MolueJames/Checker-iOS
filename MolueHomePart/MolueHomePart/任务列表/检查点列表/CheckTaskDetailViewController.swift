@@ -20,6 +20,10 @@ protocol CheckTaskDetailPresentableListener: class {
     func postCheckTaskDetailToServer()
     
     func queryTaskSolution(with indexPath: IndexPath) -> MLRiskUnitSolution?
+    
+    func queryTaskAttachment(with indexPath: IndexPath) -> MLTaskAttachment?
+    
+    func updateAttachmentClosures(for cell: CheckTaskDetailTableViewCell)
 }
 
 final class CheckTaskDetailViewController: MLBaseViewController  {
@@ -30,16 +34,10 @@ final class CheckTaskDetailViewController: MLBaseViewController  {
         didSet {
             tableView.register(xibWithCellClass: CheckTaskDetailTableViewCell.self)
             tableView.backgroundColor = UIColor.init(hex: 0xf5f5f9)
-            tableView.tableFooterView = self.footerView
             tableView.delegate = self
             tableView.dataSource = self
         }
     }
-    
-    lazy var footerView: CheckTaskDetailFooterView = {
-        let footerView: CheckTaskDetailFooterView = CheckTaskDetailFooterView.createFromXib()
-        return footerView
-    }()
     
     @IBOutlet weak var submitButton: UIButton! {
         didSet {
@@ -77,7 +75,9 @@ extension CheckTaskDetailViewController: MLUserInterfaceProtocol {
 }
 
 extension CheckTaskDetailViewController: CheckTaskDetailPagePresentable {
-    
+    func reloadTableViewCell(for indexPath: IndexPath) {
+        self.tableView.reloadRows(at: [indexPath], with: .none)
+    }
 }
 
 extension CheckTaskDetailViewController: CheckTaskDetailViewControllable {
@@ -96,8 +96,10 @@ extension CheckTaskDetailViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withClass: CheckTaskDetailTableViewCell.self)
         do {
             let listener = try self.listener.unwrap()
-            let solution = listener.queryTaskSolution(with: indexPath)
-            
+            cell.attachment = listener.queryTaskAttachment(with: indexPath)
+            let item = listener.queryTaskSolution(with: indexPath)
+            try cell.refreshSubviews(with: item.unwrap(), indexPath: indexPath)
+            listener.updateAttachmentClosures(for: cell)
         } catch {
             MolueLogger.UIModule.message(error)
         }
