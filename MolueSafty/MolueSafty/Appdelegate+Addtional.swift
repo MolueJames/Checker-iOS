@@ -22,6 +22,22 @@ extension AppDelegate {
         MLInterfaceConfigure.setInterfaceConfigure()
         self.setDefaultWebImageConfigure()
 //        self.networkLoginRequest()
+        self.uploadFile()
+    }
+    
+    private func uploadFile() {
+        
+        let a = MLTaskAttachment();
+        a.result = "xxxx"
+        dump(a.toJSON())
+        
+        let image = UIImage(named: "danger_risk_done")
+        MolueFileService.uploadPicture(with: image!, success: { (result) in
+            guard let result = result as? [String : String] else {return}
+            MolueLogger.network.message(result["id"])
+        }) { (error) in
+            MolueLogger.network.message(error)
+        }
     }
     
     private func networkLoginRequest() {

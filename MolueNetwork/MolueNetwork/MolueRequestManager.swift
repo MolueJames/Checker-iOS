@@ -90,7 +90,6 @@ open class MolueRequestManager {
             return SessionManager.default.doRequest(requestURL, method: request.method, parameters: request.parameter, encoding: request.encoding, headers: request.headers, delegate: delegate, requestQueue: self.requestQueue)
         } catch { return MolueLogger.network.returnNil(error) }
     }
-    
 }
 
 private let single = MolueOauthRequestManager()

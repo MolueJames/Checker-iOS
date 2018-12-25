@@ -18,4 +18,9 @@ public struct MolueCheckService {
         let path: String = "/api/task/\(taskId)/"
         return MolueDataRequest(parameter: nil, method: .get, path: path)
     }
+    
+    public static func updateDailyCheckTask(with taskId: String, paramaters: [String: Any]) -> MolueDataRequest {
+        let path: String = "api/task/\(taskId)"
+        return MolueDataRequest(parameter: paramaters, method: .put, path: path)
+    }
 }

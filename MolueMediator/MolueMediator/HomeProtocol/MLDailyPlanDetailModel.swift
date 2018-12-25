@@ -185,7 +185,7 @@ public class MLRiskDetailUnit: Mappable {
 
 public class MLTaskAttachment: Mappable {
     public required init?(map: Map) {}
-    
+    public required init() {}
     public func mapping(map: Map) {
         attachments <- map["attachments"]
         committed <- map["time_committed"]
@@ -194,14 +194,42 @@ public class MLTaskAttachment: Mappable {
         remark <- map["remark"]
         result <- map["result"]
         taskId <- map["task"]
+        score <- map["score"]
+        answers <- map["answers"]
+        rightAnswer <- map["right_answer"]
+        
+        attachments >>> map["attachments"]
+        committed >>> map["time_committed"]
+        content >>> map["content"]
+        attachmentId >>> map["id"]
+        remark >>> map["remark"]
+        result >>> map["result"]
+        taskId >>> map["task_id"]
+        score >>> map["score"]
+        answers >>> map["answers"]
+        rightAnswer >>> map["right_answer"]
     }
     
-    public var attachments: String?
+    public var attachments: [MLAttachmentDetail]?
     public var content: String?
     public var attachmentId: String?
     public var remark: String?
     public var result: String?
     public var taskId: Int?
     public var committed: String?
+    public var rightAnswer: String?
+    public var score: String?
+    public var answers: String?
 }
 
+public class MLAttachmentDetail: Mappable {
+    public required init?(map: Map) {
+        
+    }
+    
+    public func mapping(map: Map) {
+        
+    }
+    
+    
+}

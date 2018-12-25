@@ -10,6 +10,7 @@
 		1A00450B20B4431E00AA717D /* MolueNetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A00450A20B4431E00AA717D /* MolueNetworkRequest.swift */; };
 		1A00450D20B4432D00AA717D /* MolueResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A00450C20B4432D00AA717D /* MolueResponseHandler.swift */; };
 		1A01B56B21C14A7D00F4F3A0 /* MolueNetworkListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A01B56A21C14A7D00F4F3A0 /* MolueNetworkListModel.swift */; };
+		1A4F89F021D202B700B560E1 /* MolueUploadFileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4F89EF21D202B700B560E1 /* MolueUploadFileService.swift */; };
 		1A5BE08B209EC8CA00160243 /* MolueUtilities.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1AEB87D72092173C002230A3 /* MolueUtilities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1A5E87E121C73EF300BA4DB5 /* MolueDatabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5E87E021C73EF300BA4DB5 /* MolueDatabase.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		1A5E87FA21C9DD7900BA4DB5 /* MoluePolicyNoticeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5E87F921C9DD7900BA4DB5 /* MoluePolicyNoticeService.swift */; };
@@ -56,6 +57,7 @@
 		1A00450A20B4431E00AA717D /* MolueNetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueNetworkRequest.swift; sourceTree = "<group>"; };
 		1A00450C20B4432D00AA717D /* MolueResponseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueResponseHandler.swift; sourceTree = "<group>"; };
 		1A01B56A21C14A7D00F4F3A0 /* MolueNetworkListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueNetworkListModel.swift; sourceTree = "<group>"; };
+		1A4F89EF21D202B700B560E1 /* MolueUploadFileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueUploadFileService.swift; sourceTree = "<group>"; };
 		1A5E87E021C73EF300BA4DB5 /* MolueDatabase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueDatabase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A5E87F921C9DD7900BA4DB5 /* MoluePolicyNoticeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoluePolicyNoticeService.swift; sourceTree = "<group>"; };
 		1A5E880321CB765300BA4DB5 /* MolueMediator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueMediator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,6 +107,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A4F89EE21D201B900B560E1 /* MolueUploadFile */ = {
+			isa = PBXGroup;
+			children = (
+				1A4F89EF21D202B700B560E1 /* MolueUploadFileService.swift */,
+			);
+			path = MolueUploadFile;
+			sourceTree = "<group>";
+		};
 		1A5E87F821C9DD1300BA4DB5 /* MoluePolicyNotice */ = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +146,7 @@
 		1A7D9AD2208645B800FA997D /* MolueNetwork */ = {
 			isa = PBXGroup;
 			children = (
+				1A4F89EE21D201B900B560E1 /* MolueUploadFile */,
 				1A5E87F821C9DD1300BA4DB5 /* MoluePolicyNotice */,
 				1AFFF38E21C2A4F100B639D8 /* MolueUserDetail */,
 				1ABA9A9321C0E91D007E54D3 /* MolueCheckTask */,
@@ -386,6 +397,7 @@
 				1AEFC77A20BEC978006B063F /* MolueOauthService.swift in Sources */,
 				1AA41B7120B71CE8005A9217 /* MolueResponseMapper.swift in Sources */,
 				1A00450D20B4432D00AA717D /* MolueResponseHandler.swift in Sources */,
+				1A4F89F021D202B700B560E1 /* MolueUploadFileService.swift in Sources */,
 				1AEFC77E20BECD30006B063F /* MolueOauthHelper.swift in Sources */,
 				1AEFC77C20BECA16006B063F /* MolueRequestManager.swift in Sources */,
 				1AA41B6F20B71A33005A9217 /* MolueNetworkConfigure.swift in Sources */,

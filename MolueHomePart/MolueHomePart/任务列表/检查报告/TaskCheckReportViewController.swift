@@ -74,7 +74,7 @@ final class TaskCheckReportViewController: MLBaseViewController  {
     }
     
     @IBAction func doneCheckButtonClicked(_ sender: UIButton) {
-        self.tableView.indexPathsForSelectedRows
+        
     }
     
     private var selectedIndexRow = [Int]()
