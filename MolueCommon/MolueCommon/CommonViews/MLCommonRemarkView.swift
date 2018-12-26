@@ -92,6 +92,12 @@ public class MLCommonRemarkView: UIView {
         self.textLimit = limit
     }
     
+    public func updateRemark(with text: String) {
+        self.numberLabel.text = "\(text.count)/\(self.textLimit)"
+        self.placeholderLable.isHidden = !text.isEmpty
+        self.remarkTextView.text = text
+    }
+    
     public func remarkText() -> String {
         return self.remarkTextView.text
     }
@@ -111,7 +117,8 @@ extension MLCommonRemarkView: UITextViewDelegate {
             let currentText: NSString = try textView.text.toTarget()
             let targetText = currentText.replacingCharacters(in: range, with: text)
             self.placeholderLable.isHidden = targetText.count > 0
-            let count = targetText.count > 100 ? 100 : targetText.count
+            let willOut: Bool = targetText.count > self.textLimit
+            let count =  willOut ? self.textLimit : targetText.count
             self.numberLabel.text = "\(count)/\(self.textLimit)"
         } catch {
             MolueLogger.UIModule.error(error)

@@ -8,6 +8,8 @@
 
 import UIKit
 import MolueUtilities
+import MolueMediator
+
 class EditRiskInfoCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var imageView: UIImageView! {
@@ -21,7 +23,12 @@ class EditRiskInfoCollectionViewCell: UICollectionViewCell {
         self.addLayerShadow()
     }
     
-    func reloadSubView(with image: UIImage) {
+    func refreshSubView(with detail: MLAttachmentDetail) {
+        self.imageView.image = detail.image
+    }
+    
+    func refreshSubview(with image: UIImage) {
         self.imageView.image = image
     }
+    
 }

@@ -25,8 +25,9 @@ class NoHiddenRiskReusableFooterView: UICollectionReusableView {
         }
     }
     
-    public func refreshSubviews(with item: String) {
+    public func refreshSubviews(with text: String) {
         self.submitInfoCommand = PublishSubject<String>()
+        self.reasonRemarkView.updateRemark(with: text)
     }
     
     @IBAction func submitButtonClicked(_ sender: UIButton) {

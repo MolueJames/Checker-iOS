@@ -193,7 +193,7 @@ public class MLTaskAttachment: Mappable {
         attachmentId <- map["id"]
         remark <- map["remark"]
         result <- map["result"]
-        taskId <- map["task"]
+        taskId <- map["task_id"]
         score <- map["score"]
         answers <- map["answers"]
         rightAnswer <- map["right_answer"]
@@ -223,13 +223,18 @@ public class MLTaskAttachment: Mappable {
 }
 
 public class MLAttachmentDetail: Mappable {
-    public required init?(map: Map) {
-        
-    }
+    public required init?(map: Map) {}
     
     public func mapping(map: Map) {
-        
+        detailId <- map["id"]
+        screenName <- map["screen_name"]
+        type <- map["type"]
+        urlPath <- map["url"]
     }
     
-    
+    public var detailId: String?
+    public var screenName: String?
+    public var image: UIImage?
+    public var type: String?
+    public var urlPath: String?
 }

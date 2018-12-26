@@ -10,26 +10,34 @@ import UIKit
 import RxSwift
 import MolueFoundation
 import MolueUtilities
+import MolueMediator
 import MolueCommon
 
 protocol NoHiddenRiskPresentableListener: class {
     // 定义一些当前页面需要的业务逻辑, 比如网络请求.
-    var maxImageCount: Int {get}
     
-    var photoImages: [UIImage]? {get}
+    func numberOfItemsInSection() -> Int?
+    
+    func queryAttactment(with indexPath: IndexPath) -> MLAttachmentDetail?
     
     func jumpToTakePhotoController()
     
+    func queryCurrentAttachmentRemark() -> String
+    
     func jumpToBrowserController(with index: Int)
     
-    func updateNoHiddenRisk(with text: String)
+    func didSelectItemAt(indexPath: IndexPath)
+    
+    func querySubmitCommand() -> PublishSubject<String>
+    
+    func queryNavigationTitle() -> String
+    
+    func queryCurrentImageCount() -> Int?
 }
 
 final class NoHiddenRiskViewController: MLBaseViewController {
     //MARK: View Controller Properties
     var listener: NoHiddenRiskPresentableListener?
-    
-    private let disposeBag = DisposeBag()
     
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
@@ -77,10 +85,9 @@ extension NoHiddenRiskViewController: MLUserInterfaceProtocol {
     }
     
     func updateUserInterfaceElements() {
-        self.title = "检查详情"
         do {
             let listener = try self.listener.unwrap()
-            listener.jumpToTakePhotoController()
+            self.title = listener.queryNavigationTitle()
         } catch {
             MolueLogger.UIModule.error(error)
         }
@@ -100,31 +107,19 @@ extension NoHiddenRiskViewController: NoHiddenRiskViewControllable {
 extension NoHiddenRiskViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let view = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withClass: NoHiddenRiskReusableFooterView.self, for: indexPath)
-        view.refreshSubviews(with: "")
-        view.submitInfoCommand?.subscribe(onNext: { [unowned self] (text) in
-            self.doSuccessSubmitInfo(with: text)
-        }).disposed(by: self.disposeBag)
-        return view
-    }
-    
-    func doSuccessSubmitInfo(with model: String) {
         do {
             let listener = try self.listener.unwrap()
-            listener.updateNoHiddenRisk(with: model)
-        } catch {
-            MolueLogger.UIModule.error(error)
-        }
+            let remark = listener.queryCurrentAttachmentRemark()
+            view.refreshSubviews(with: remark)
+            view.submitInfoCommand = listener.querySubmitCommand()
+        } catch { MolueLogger.UIModule.message(error) }
+        return view
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         do {
             let listener = try self.listener.unwrap()
-            let imagesCount = listener.photoImages?.count ?? 0
-            if (indexPath.row >= imagesCount) {
-                listener.jumpToTakePhotoController()
-            } else {
-                listener.jumpToBrowserController(with: indexPath.row)
-            }
+            listener.didSelectItemAt(indexPath: indexPath)
         } catch {
             MolueLogger.UIModule.error(error)
         }
@@ -135,20 +130,24 @@ extension NoHiddenRiskViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         do {
             let listener = try self.listener.unwrap()
-            let images = try listener.photoImages.unwrap()
-            let imageCount = listener.maxImageCount
-            return images.count >= imageCount ? imageCount : images.count + 1
+            return try listener.numberOfItemsInSection().unwrap()
         } catch { return 1 }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let imagesCount = self.listener?.photoImages?.count ?? 0
-        if indexPath.row < imagesCount {
-            let cell = collectionView.dequeueReusableCell(withClass: EditRiskInfoCollectionViewCell.self, for: indexPath)
-            let image = self.listener?.photoImages?[indexPath.row]
-            cell.reloadSubView(with: image!)
-            return cell
+        if indexPath.row < self.listener?.queryCurrentImageCount() ?? 0 {
+            return self.queryCollectionCell(with: collectionView, indexPath: indexPath)
         }
         return collectionView.dequeueReusableCell(withClass: InsertPhotosCollectionViewCell.self, for: indexPath)
+    }
+    
+    func queryCollectionCell(with collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withClass: EditRiskInfoCollectionViewCell.self, for: indexPath)
+        do {
+            let listener = try self.listener.unwrap()
+            let item = listener.queryAttactment(with: indexPath)
+            try cell.refreshSubView(with: item.unwrap())
+        } catch { MolueLogger.UIModule.message(error) }
+        return cell
     }
 }

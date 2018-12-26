@@ -7,8 +7,8 @@
 //
 
 import UIKit
-import MolueMediator
 import MolueUtilities
+import MolueMediator
 
 typealias AttachmentClosure = (_ item: MLTaskAttachment, _ indexPath: IndexPath) -> Void
 
@@ -45,8 +45,20 @@ class CheckTaskDetailTableViewCell: UITableViewCell {
     
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
+            collectionView.register(xibWithCellClass: TaskAttachmentCollectionCell.self)
             collectionView.dataSource = self
             collectionView.delegate = self
+            self.flowLayout = UICollectionViewFlowLayout()
+            collectionView.collectionViewLayout = self.flowLayout
+        }
+    }
+    
+    private var flowLayout: UICollectionViewFlowLayout! {
+        didSet {
+            flowLayout.scrollDirection = .horizontal
+            flowLayout.minimumInteritemSpacing = 10
+            flowLayout.itemSize = CGSize(width: 50, height: 50)
+            flowLayout.sectionInset = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
         }
     }
     
@@ -112,10 +124,6 @@ class CheckTaskDetailTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        self.statusLabel.isHidden = true
-        self.remarkLabel.text = nil
-        self.remarkTitleLabel.text = nil
-        self.collectionHeight.constant = 0
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -124,19 +132,31 @@ class CheckTaskDetailTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    public func refreshSubviews(with item: MLRiskUnitSolution, indexPath: IndexPath) {
-        self.taskNameLabel.text = "\(indexPath.row + 1), " + item.title.data()
-        self.updateAnswerButton(with: item)
-        self.updateAttachment(with: item)
+    public func refreshSubviews(with attachment: MLTaskAttachment, indexPath: IndexPath) {
+        self.attachment = attachment
+        self.updateSubviewsLayout(with: attachment)
+        self.updateAnswerButton(with: attachment)
         self.selectedIndexPath = indexPath
     }
     
-    private func updateAnswerButton(with solution: MLRiskUnitSolution) {
+    private func updateSubviewsLayout(with attachment: MLTaskAttachment) {
+        self.taskNameLabel.text = attachment.content.data()
+        
+        let constant:CGFloat = numberOfItems() == 0 ? 0 : 70
+        self.collectionHeight.constant = constant
+        self.collectionView.reloadData()
+        
+        self.remarkLabel.text = attachment.remark
+        let title = attachment.remark.isSome() ? "备注:" : nil
+        self.remarkTitleLabel.text = title
+    }
+    
+    private func updateAnswerButton(with attachmetn: MLTaskAttachment) {
         do {
-            let answers = try solution.answers.unwrap()
+            let answers = try attachmetn.answers.unwrap()
             let answerList = answers.components(separatedBy: ",")
             for title in answerList {
-                if (title == solution.rightAnswer) {
+                if (title == attachmetn.rightAnswer) {
                     self.successButton.setTitle(title, for: .normal)
                 } else {
                     self.failureButton.setTitle(title, for: .normal)
@@ -145,10 +165,6 @@ class CheckTaskDetailTableViewCell: UITableViewCell {
         } catch { MolueLogger.UIModule.message(error) }
     }
     
-    private func updateAttachment(with solution: MLRiskUnitSolution) {
-        self.attachment?.rightAnswer = solution.rightAnswer
-        self.attachment?.answers = solution.answers
-    }
 }
 
 extension CheckTaskDetailTableViewCell: UICollectionViewDelegate {
@@ -157,10 +173,26 @@ extension CheckTaskDetailTableViewCell: UICollectionViewDelegate {
 
 extension CheckTaskDetailTableViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.imageList.count
+        return self.numberOfItems()
+    }
+    
+    private func numberOfItems() -> Int {
+        do {
+            let attachment = try self.attachment.unwrap()
+            return try attachment.attachments.unwrap().count
+        } catch { return 0 }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+        let cell = collectionView.dequeueReusableCell(withClass: TaskAttachmentCollectionCell.self, for: indexPath)
+        do {
+            let attachment = try self.attachment.unwrap()
+            let details = try attachment.attachments.unwrap()
+            let item = try details.item(at: indexPath.row).unwrap()
+            cell.refreshSubviews(with: item)
+        } catch {
+            MolueLogger.UIModule.message(error)
+        }
+        return cell
     }
 }

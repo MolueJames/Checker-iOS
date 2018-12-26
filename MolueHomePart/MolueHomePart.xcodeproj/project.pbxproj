@@ -66,6 +66,8 @@
 		1A4F89DC21D09CC900B560E1 /* TaskCheckReportViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A4F89DB21D09CC900B560E1 /* TaskCheckReportViewController.storyboard */; };
 		1A4F89EC21D0A0DD00B560E1 /* TaskCheckReportTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4F89EA21D0A0DD00B560E1 /* TaskCheckReportTableViewCell.swift */; };
 		1A4F89ED21D0A0DD00B560E1 /* TaskCheckReportTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A4F89EB21D0A0DD00B560E1 /* TaskCheckReportTableViewCell.xib */; };
+		1A4F89F321D3272500B560E1 /* TaskAttachmentCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4F89F121D3272500B560E1 /* TaskAttachmentCollectionCell.swift */; };
+		1A4F89F421D3272500B560E1 /* TaskAttachmentCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A4F89F221D3272500B560E1 /* TaskAttachmentCollectionCell.xib */; };
 		1A5014AD2094B13400DB931E /* MolueCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5014AC2094B13400DB931E /* MolueCommon.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		1A5014C22097494600DB931E /* MolueDatabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5014C12097494600DB931E /* MolueDatabase.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		1A5014C42097495300DB931E /* MolueNavigator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5014C32097495300DB931E /* MolueNavigator.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -202,6 +204,8 @@
 		1A4F89DB21D09CC900B560E1 /* TaskCheckReportViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TaskCheckReportViewController.storyboard; sourceTree = "<group>"; };
 		1A4F89EA21D0A0DD00B560E1 /* TaskCheckReportTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCheckReportTableViewCell.swift; sourceTree = "<group>"; };
 		1A4F89EB21D0A0DD00B560E1 /* TaskCheckReportTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskCheckReportTableViewCell.xib; sourceTree = "<group>"; };
+		1A4F89F121D3272500B560E1 /* TaskAttachmentCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskAttachmentCollectionCell.swift; sourceTree = "<group>"; };
+		1A4F89F221D3272500B560E1 /* TaskAttachmentCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskAttachmentCollectionCell.xib; sourceTree = "<group>"; };
 		1A5014AC2094B13400DB931E /* MolueCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A5014C12097494600DB931E /* MolueDatabase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueDatabase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A5014C32097495300DB931E /* MolueNavigator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueNavigator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -739,6 +743,8 @@
 				1AD3DE8521971720005015A6 /* CheckTaskDetailTableViewCell.xib */,
 				1A3465D421971E3400EBA57C /* CheckTaskDetailFooterView.swift */,
 				1A3465D621971E3E00EBA57C /* CheckTaskDetailFooterView.xib */,
+				1A4F89F121D3272500B560E1 /* TaskAttachmentCollectionCell.swift */,
+				1A4F89F221D3272500B560E1 /* TaskAttachmentCollectionCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -877,6 +883,7 @@
 				1A730AF120EBBC5E008831BC /* RegulationDetailViewController.storyboard in Resources */,
 				1AAF7B8A20C1971B0051EC18 /* RiskFeatureViewController.storyboard in Resources */,
 				1A602F8C20A88095003AD583 /* HomeInfoTableHeaderView.xib in Resources */,
+				1A4F89F421D3272500B560E1 /* TaskAttachmentCollectionCell.xib in Resources */,
 				1ABDCA9B20C5798B0062DE71 /* SecurityAdminiTableViewCell.xib in Resources */,
 				1A5D5BF221912C3E003E7039 /* DangerUnitListViewController.storyboard in Resources */,
 				1A2F408221AD3D4800C436F9 /* HistoryInfoTableViewCell.xib in Resources */,
@@ -965,6 +972,7 @@
 				1A24022820E5337A00FC3EBA /* EnterpriseInfoNavigator.swift in Sources */,
 				1AAF7B8B20C1971B0051EC18 /* RiskFeatureViewController.swift in Sources */,
 				1AAB20D621CA8E8D003FA7F8 /* PolicyDetailViewController.swift in Sources */,
+				1A4F89F321D3272500B560E1 /* TaskAttachmentCollectionCell.swift in Sources */,
 				1A522ED621912BA200094A8A /* DangerUnitListViewController.swift in Sources */,
 				1A24022020E52F7800FC3EBA /* LawRegulationViewController.swift in Sources */,
 				1A4F89D921D09CB200B560E1 /* TaskCheckReportPageInteractor.swift in Sources */,

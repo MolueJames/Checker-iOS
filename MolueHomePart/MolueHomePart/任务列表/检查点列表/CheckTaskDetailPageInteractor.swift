@@ -87,10 +87,10 @@ extension CheckTaskDetailPageInteractor: CheckTaskDetailPresentableListener {
     
     private func jumpToAttachment(with attachment: MLTaskAttachment, indexPath: IndexPath) {
         do {
-            let viewRouter = try self.viewRouter.unwrap()
-            viewRouter.pushToNoHiddenController()
             self.currentAttachment = attachment
             self.currentIndexPath = indexPath
+            let viewRouter = try self.viewRouter.unwrap()
+            viewRouter.pushToNoHiddenController()
         } catch {
             MolueLogger.UIModule.message(error)
         }

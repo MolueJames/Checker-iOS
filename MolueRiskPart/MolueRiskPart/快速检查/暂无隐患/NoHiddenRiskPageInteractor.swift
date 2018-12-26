@@ -6,10 +6,11 @@
 //  Copyright © 2018 MolueTech. All rights reserved.
 //
 
-import MolueUtilities
 import MolueFoundation
 import MolueMediator
 import MolueCommon
+import MolueUtilities
+import RxSwift
 import Gallery
 import Photos
 
@@ -39,6 +40,26 @@ final class NoHiddenRiskPageInteractor: MoluePresenterInteractable {
     weak var listener: NoHiddenRiskInteractListener?
     
     private weak var photoController: GalleryController?
+    
+    private let disposeBag: DisposeBag = DisposeBag()
+    
+    lazy var currentAttachment: MLTaskAttachment? = {
+        do {
+            let listener = try self.listener.unwrap()
+            return try listener.currentAttachment.unwrap()
+        } catch {
+            return MolueLogger.database.returnNil(error)
+        }
+    }()
+    
+    var attachmentDetails: [MLAttachmentDetail]? {
+        do {
+            let attachment = try self.currentAttachment.unwrap()
+            return try attachment.attachments.unwrap()
+        } catch {
+            return MolueLogger.database.returnNil(error)
+        }
+    }
     
     required init(presenter: NoHiddenRiskPagePresentable) {
         self.presenter = presenter
@@ -117,31 +138,74 @@ extension NoHiddenRiskPageInteractor: NoHiddenRiskRouterInteractable {
 }
 
 extension NoHiddenRiskPageInteractor: NoHiddenRiskPresentableListener {
-    func updateNoHiddenRisk(with text: String) {
-//        do {
-//            let taskModel: TaskSuccessModel = TaskSuccessModel()
-//            taskModel.images = self.photoImages
-//            taskModel.detail = text
-//            let listener = try self.listener.unwrap()
-//            listener.updateNoHiddenRiskModel(with: taskModel)
-//            self.doUpdateTaskInfoModelPresenter()
-//        } catch {
-//            MolueLogger.UIModule.error(error)
-//        }
+    func queryCurrentImageCount() -> Int? {
+        do {
+            let details = try self.attachmentDetails.unwrap()
+            let imageCount: Int = details.count
+            return imageCount > maxImageCount ? maxImageCount : imageCount + 1
+        } catch {
+            return MolueLogger.UIModule.allowNil(error)
+        }
     }
     
-    func doUpdateTaskInfoModelPresenter() {
+    func queryNavigationTitle() -> String {
         do {
-            let presenter = try self.presenter.unwrap()
-            presenter.showSuccessHUD(text: "任务检查完成")
-            Async.main(after: 1.5) { [weak self] in
-                do {
-                    let router = try self.unwrap().viewRouter.unwrap()
-                    router.popToPreviewController()
-                } catch {
-                    MolueLogger.UIModule.message(error)
-                }
-            }
+            let current = try self.currentAttachment.unwrap()
+            return try current.content.unwrap()
+        } catch { return "检查详情" }
+    }
+    
+    func querySubmitCommand() -> PublishSubject<String> {
+        let submitCommand = PublishSubject<String>()
+        submitCommand.subscribe(onNext: { [unowned self] (remark) in
+            self.updateCurrentAttachment(with: remark)
+        }).disposed(by: self.disposeBag)
+        return submitCommand
+    }
+    
+    func queryCurrentAttachmentRemark() -> String {
+        do {
+            let attachment = try self.currentAttachment.unwrap()
+            return try attachment.remark.unwrap()
+        } catch { return "" }
+    }
+    
+    func didSelectItemAt(indexPath: IndexPath) {
+        let count = self.attachmentDetails?.count ?? 0
+        if (indexPath.row < count) {
+            self.jumpToBrowserController(with: indexPath.row)
+        } else {
+            self.jumpToTakePhotoController()
+        }
+    }
+    
+    func numberOfItemsInSection() -> Int? {
+        do {
+            let details = try self.attachmentDetails.unwrap()
+            let imageCount: Int = details.count
+            return imageCount > maxImageCount ? maxImageCount : imageCount + 1
+        } catch {
+            return MolueLogger.UIModule.allowNil(error)
+        }
+    }
+    
+    func queryAttactment(with indexPath: IndexPath) -> MLAttachmentDetail? {
+        do {
+            let details = try self.attachmentDetails.unwrap()
+            return try details.item(at: indexPath.row).unwrap()
+        } catch {
+            return MolueLogger.UIModule.allowNil(error)
+        }
+    }
+    
+    func updateCurrentAttachment(with remark: String) {
+        do {
+            self.currentAttachment?.remark = remark
+            let listener = try self.listener.unwrap()
+            let updatedAttachment = try self.currentAttachment.unwrap()
+            listener.updateCurrentAttachment(with: updatedAttachment)
+            let router = try self.viewRouter.unwrap()
+            router.popToPreviewController()
         } catch {
             MolueLogger.UIModule.error(error)
         }

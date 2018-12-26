@@ -15,6 +15,7 @@ import Alamofire
 import MolueUtilities
 
 import MolueMediator
+import BoltsSwift
 import MolueHomePart
 
 extension AppDelegate {
@@ -22,7 +23,64 @@ extension AppDelegate {
         MLInterfaceConfigure.setInterfaceConfigure()
         self.setDefaultWebImageConfigure()
 //        self.networkLoginRequest()
-        self.uploadFile()
+        self.uploadFiles()
+    }
+    
+    
+    private func testTask(index: Int) -> Task<Any?> {
+        let taskCompletionSource = TaskCompletionSource<Any?>()
+        let image = UIImage(named: "task_report_selected")
+        MolueFileService.uploadPicture(with: image!, success: { (result) in
+            if (index == 3 || index ==  4) {
+                let error = NSError(domain: "bolts", code: 1, userInfo: nil)
+                taskCompletionSource.set(error: error)
+            } else {
+                taskCompletionSource.set(result: result)
+            }
+            
+        }) { (error) in
+            taskCompletionSource.set(result: error)
+        }
+        return taskCompletionSource.task
+    }
+    
+    
+    
+    private func uploadFiles() {
+        var tasks = [Task<Any?>]()
+        for i in 0...10 {
+            tasks.append(testTask(index: i))
+        }
+        
+//        Task.whenAll(tasks).continueOnSuccessWith { task in
+//            dump(task)
+//        }.continueOnErrorWith { (error) in
+//            dump(error)
+//        }
+    }
+    
+    
+    private func queryPlan() {
+        let request = MolueCheckService.queryDailyPlanList(page: 1, pagesize: 10)
+        request.handleSuccessResultToObjc { [weak self] (item: MolueListItem<MLDailyCheckPlan>?) in
+            
+        }
+        
+        request.handleSuccessResponse { (result) in
+            MolueLogger.network.message(result)
+        }
+        MolueRequestManager().doRequestStart(with: request)
+    }
+    
+    private func queryDetail() {
+        let request = MolueCheckService.queryDailyCheckTask(with: "2018-12-24-002-013")
+        request.handleSuccessResultToObjc { (result: MLDailyCheckTask?) in
+            dump(result?.toJSONString())
+        }
+        request.handleSuccessResponse { (result) in
+            MolueLogger.network.message(result!)
+        }
+        MolueRequestManager().doRequestStart(with: request)
     }
     
     private func uploadFile() {
@@ -31,10 +89,11 @@ extension AppDelegate {
         a.result = "xxxx"
         dump(a.toJSON())
         
-        let image = UIImage(named: "danger_risk_done")
+        let image = UIImage(named: "task_report_selected")
         MolueFileService.uploadPicture(with: image!, success: { (result) in
-            guard let result = result as? [String : String] else {return}
-            MolueLogger.network.message(result["id"])
+            MolueLogger.network.message(result)
+//            guard let result = result as? [String : String] else {return}
+//            MolueLogger.network.message(result["id"])
         }) { (error) in
             MolueLogger.network.message(error)
         }

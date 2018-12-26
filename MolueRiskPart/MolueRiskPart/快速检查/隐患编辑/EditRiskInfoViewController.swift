@@ -144,7 +144,7 @@ extension EditRiskInfoViewController: UICollectionViewDataSource {
         if indexPath.row < imagesCount {
             let cell = collectionView.dequeueReusableCell(withClass: EditRiskInfoCollectionViewCell.self, for: indexPath)
             let image = self.listener?.photoImages?[indexPath.row]
-            cell.reloadSubView(with: image!)
+            cell.refreshSubview(with: image!)
             return cell
         }
         return collectionView.dequeueReusableCell(withClass: InsertPhotosCollectionViewCell.self, for: indexPath)

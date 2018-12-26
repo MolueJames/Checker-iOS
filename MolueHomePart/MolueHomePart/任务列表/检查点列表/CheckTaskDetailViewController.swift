@@ -96,8 +96,7 @@ extension CheckTaskDetailViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withClass: CheckTaskDetailTableViewCell.self)
         do {
             let listener = try self.listener.unwrap()
-            cell.attachment = listener.queryTaskAttachment(with: indexPath)
-            let item = listener.queryTaskSolution(with: indexPath)
+            let item = listener.queryTaskAttachment(with: indexPath)
             try cell.refreshSubviews(with: item.unwrap(), indexPath: indexPath)
             listener.updateAttachmentClosures(for: cell)
         } catch {
