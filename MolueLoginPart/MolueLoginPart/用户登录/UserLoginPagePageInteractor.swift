@@ -30,7 +30,6 @@ final class UserLoginPagePageInteractor: MoluePresenterInteractable, UserLoginPa
                 let oauthItem = try result.unwrap()
                 let strongSelf = try self.unwrap()
                 strongSelf.successOperation(oauthItem, username: username)
-                strongSelf.queryUserInfoFromServer()
             } catch { MolueLogger.network.message(error) }
         }
         let requestManager = MolueRequestManager(delegate: self.presenter)
@@ -45,19 +44,6 @@ final class UserLoginPagePageInteractor: MoluePresenterInteractable, UserLoginPa
         let name = MolueNotification.molue_user_login.toName()
         NotificationCenter.default.post(name: name, object: nil)
     }
-    
-    func queryUserInfoFromServer () {
-        let request = MolueUserInfoService.queryUserInformation()
-        request.handleSuccessResultToObjc { (result: MolueUserInfo?) in
-            do {
-                try MolueUserInfo.updateUserInfo(with: result.unwrap())
-            } catch {
-                MolueLogger.network.message(error)
-            }
-        }
-        MolueRequestManager().doRequestStart(with: request)
-    }
-
     
     func routerToForgetPassword() {
         do {

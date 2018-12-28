@@ -14,7 +14,7 @@ typealias MultipartFormDataResult = SessionManager.MultipartFormDataEncodingResu
 
 public class MolueFileService {
     //TODO: 添加Oauth校验
-    public static func uploadPicture(with picture: UIImage, prefix: String = "taskitem.png", delegate: MolueActivityDelegate? = nil, success: @escaping (Any?) -> Void, failure: @escaping (Error) -> Void)  {
+    public static func uploadPicture(with picture: UIImage, prefix: String = "taskitem.png", success: @escaping (Any?) -> Void, failure: @escaping (Error) -> Void)  {
         let path = HTTPConfigure.baseURL + "/core/upload_picture/"
         let fileData = picture.compressedData(quality: 0.7)
         let headers = MolueOauthHelper.queryClientInfoHeaders()
@@ -24,17 +24,12 @@ public class MolueFileService {
         }, to: path, method: .post, headers: headers) { (result) in
             self.handleFormDataResult(result, success: success, failure: failure)
         }
-        delegate?.networkActivityStarted()
     }
     
-    private static func handleFormDataResult(_ result: MultipartFormDataResult, success: @escaping (Any?) -> Void, failure: @escaping (Error) -> Void, delegate: MolueActivityDelegate? = nil) {
+    private static func handleFormDataResult(_ result: MultipartFormDataResult, success: @escaping (Any?) -> Void, failure: @escaping (Error) -> Void) {
         if case let .success(upload, _, _) = result {
-            let targetQueue = DispatchQueue.main
-            upload.responseHandler(delegate: delegate, queue: targetQueue, success: success, failure: failure)
-        }
-        if case let .failure(error) = result {
-            delegate?.networkActivityFailure(error: error)
-            failure(error)
-        }
+            upload.responseHandler(queue: .main, success: success, failure: failure)
+        } 
+        if case let .failure(error) = result { failure(error) }
     }
 }

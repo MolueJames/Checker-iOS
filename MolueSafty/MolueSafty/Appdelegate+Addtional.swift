@@ -22,8 +22,11 @@ extension AppDelegate {
     func setUserInterfaceConfigure() {
         MLInterfaceConfigure.setInterfaceConfigure()
         self.setDefaultWebImageConfigure()
-//        self.networkLoginRequest()
-        self.uploadFiles()
+        
+        Task.whenAll([self.queryDetail(), self.queryDetail()]).continueOnSuccessWith { (result) in
+            MolueLogger.network.message(result)
+            self.queryDetail()
+        }
     }
     
     
@@ -62,9 +65,6 @@ extension AppDelegate {
     
     private func queryPlan() {
         let request = MolueCheckService.queryDailyPlanList(page: 1, pagesize: 10)
-        request.handleSuccessResultToObjc { [weak self] (item: MolueListItem<MLDailyCheckPlan>?) in
-            
-        }
         
         request.handleSuccessResponse { (result) in
             MolueLogger.network.message(result)
@@ -72,15 +72,21 @@ extension AppDelegate {
         MolueRequestManager().doRequestStart(with: request)
     }
     
-    private func queryDetail() {
+    private func queryDetail() -> Task<Any?> {
         let request = MolueCheckService.queryDailyCheckTask(with: "2018-12-24-002-013")
         request.handleSuccessResultToObjc { (result: MLDailyCheckTask?) in
             dump(result?.toJSONString())
         }
         request.handleSuccessResponse { (result) in
-            MolueLogger.network.message(result!)
+            MolueLogger.network.message(result)
         }
-        MolueRequestManager().doRequestStart(with: request)
+        request.handleFailureResponse { (error) in
+            MolueLogger.network.message(error)
+        }
+        let requestManager = MolueRequestManager()
+        return requestManager.doRequestStart(with: request)
+//        requestManager.doRequestStart(with: request)
+//        requestManager.doRequestStart(with: request)
     }
     
     private func uploadFile() {
@@ -99,7 +105,7 @@ extension AppDelegate {
         }
     }
     
-    private func networkLoginRequest() {
+    private func networkLoginRequest() -> Task<Any?>{
         let request = MolueOauthService.doLogin(username: "182828282828", password: "-1234Asdf")
         request.handleFailureResponse { (error) in
             MolueLogger.network.message(error.localizedDescription)
@@ -113,7 +119,7 @@ extension AppDelegate {
                 MolueLogger.network.message(MolueOauthModel.queryOauthItem())
             } catch { MolueLogger.network.message(error) }
         }
-        MolueRequestManager().doRequestStart(with: request ,needOauth: false)
+        return MolueRequestManager().doRequestStart(with: request ,needOauth: false)
     }
     
     private func queryUserInformation() {

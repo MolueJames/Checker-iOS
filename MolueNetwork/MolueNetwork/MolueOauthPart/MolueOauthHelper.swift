@@ -46,4 +46,12 @@ public struct MolueOauthHelper {
             return MolueLogger.network.allowNil(error)
         }
     }
+    
+    public static func checkNeedQueryToken(with needOauth: Bool) -> Bool {
+        guard needOauth == true else { return needOauth }
+        do {
+            let item = try MolueOauthModel.queryOauthItem().unwrap()
+            return needOauth && item.validateNeedRefresh()
+        } catch { return needOauth }
+    }
 }

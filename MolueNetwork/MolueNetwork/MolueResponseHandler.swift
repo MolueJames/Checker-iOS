@@ -12,7 +12,7 @@ import MolueUtilities
 
 public extension DataRequest {
     
-    public func responseHandler(delegate observer: MolueActivityDelegate?, options: JSONSerialization.ReadingOptions = .allowFragments, queue: DispatchQueue, success:MolueResultClosure<Any?>? = nil, failure: MolueResultClosure<Error>? = nil) {
+    public func responseHandler(delegate observer: MolueActivityDelegate? = nil, options: JSONSerialization.ReadingOptions = .allowFragments, queue: DispatchQueue, success:MolueResultClosure<Any?>? = nil, failure: MolueResultClosure<Error>? = nil) {
         let operation = BlockOperation.init { [weak observer]  in
             self.doResponseHandler(delegate: observer, options: options, queue: queue, success: success, failure: failure)
         }

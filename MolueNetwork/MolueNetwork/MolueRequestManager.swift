@@ -27,34 +27,20 @@ open class MolueRequestManager {
         self.delegate = delegate
     }
     
-    public func doRequestStart(with request: MolueDataRequest, needOauth: Bool = true) {
-        func checkNeedQueryToken(with needOauth: Bool) -> Bool {
-            guard needOauth == true else { return needOauth }
-            do {
-                let item = try MolueOauthModel.queryOauthItem().unwrap()
-                return needOauth && item.validateNeedRefresh()
-            } catch { return needOauth }
-        }
-        
-        if (checkNeedQueryToken(with: needOauth)) {
-            self.queryTokenFromServer(with: request)
+    @discardableResult
+    public func doRequestStart(with request: MolueDataRequest, needOauth: Bool = true) -> Task<Any?> {
+        if (MolueOauthHelper.checkNeedQueryToken(with: needOauth)) {
+            return self.queryTokenFromServer(with: request)
         } else {
-            self.queryDataFromServer(with: request)
+            return self.queryDataFromServer(with: request)
         }
     }
     
-    func queryTokenFromServer(with request: MolueDataRequest) {
+    @discardableResult
+    func queryTokenFromServer(with request: MolueDataRequest) -> Task<Any?> {
         let requestItem: MolueRequestItem = (request: request, manager: self)
         MolueOauthRequestManager.shared.insert(with: requestItem)
-        MolueOauthRequestManager.shared.startRefreshTokenRequest()
-    }
-    
-    func queryDataFromServer(with request: MolueDataRequest) {
-        self.doGenerateDataRequestTask(with: request).continueOnSuccessWith { result in
-            self.handleSuccessResult(with: result, request: request)
-        }.continueOnErrorWith { (error) in
-            self.handleFailureResult(with: error, request: request)
-        }
+        return MolueOauthRequestManager.shared.startRefreshTokenRequest()
     }
     
     func handleSuccessResult(with result: Any?, request: MolueDataRequest?) {
@@ -71,124 +57,96 @@ open class MolueRequestManager {
         } catch { MolueLogger.network.message(error) }
     }
     
-    func doGenerateDataRequestTask(with request: MolueDataRequest) -> Task<Any?> {
+    @discardableResult
+    func queryDataFromServer(with request: MolueDataRequest) -> Task<Any?> {
         let taskCompletionSource = TaskCompletionSource<Any?>()
-        do {
-            let dataRequest = try self.createDataRequest(with: request).unwrap()
-            dataRequest.responseHandler(delegate: delegate, options: options, queue: self.requestQueue, success: { (result) in
-                taskCompletionSource.set(result: result)
-            }) { (error) in
-                taskCompletionSource.set(error: error)
-            }
-        } catch { MolueLogger.failure.message(error) }
+        let dataRequest = self.createDataRequest(with: request)
+        dataRequest.responseHandler(delegate: delegate, options: options, queue: requestQueue, success: { (result) in
+            self.handleSuccessResult(with: result, request: request)
+            taskCompletionSource.set(result: result)
+        }) { (error) in
+            self.handleFailureResult(with: error, request: request)
+            taskCompletionSource.set(error: error)
+        }
         return taskCompletionSource.task
     }
     
-    private func createDataRequest(with request: MolueDataRequest) -> DataRequest? {
+    private func createDataRequest(with request: MolueDataRequest) -> DataRequest {
         do {
             let requestURL = try request.components.unwrap().asURL()
-            return SessionManager.default.doRequest(requestURL, method: request.method, parameters: request.parameter, encoding: request.encoding, headers: request.headers, delegate: delegate, requestQueue: self.requestQueue)
-        } catch { return MolueLogger.network.returnNil(error) }
+            return SessionManager.default.doRequest(requestURL, method: request.method, parameters: request.parameter, encoding: request.encoding, headers: request.headers, delegate: delegate, requestQueue: requestQueue)
+        } catch { fatalError(error.localizedDescription) }
     }
 }
 
 private let single = MolueOauthRequestManager()
 
 fileprivate class MolueOauthRequestManager: MolueRequestManager {
-    private let insertLock = NSLock()
-    var isRefreshing: Bool = false
     var requestItems = [MolueRequestItem]()
+    var currentTask: Task<Any?>?
     
     fileprivate static var shared: MolueOauthRequestManager {
         return single
     }
     
     fileprivate func insert(with request: MolueRequestItem) {
-        insertLock.lock(); defer {insertLock.unlock()}
+        objc_sync_enter(self); defer {objc_sync_exit(self)}
         requestItems.append(request)
     }
     
     private func dofinishRequestOperation() {
-        insertLock.lock(); defer {insertLock.unlock()}
+        objc_sync_enter(self); defer {objc_sync_exit(self)}
         self.requestItems.removeAll()
-        self.isRefreshing = false
+        self.currentTask = nil
     }
-    
-    public func startRefreshTokenRequest() {
-        guard self.validateOauthRequest() == true else {return}
-        let refreshToken = MolueOauthHelper.queryRefreshToken()
-        let request = MolueOauthService.doRefreshToken(with: refreshToken)
-        self.doRefreshTokenRequest(with: request)
-    }
-    
-    private func doRefreshTokenRequest(with request: MolueDataRequest) {
-        self.doGenerateDataRequestTask(with: request).continueOnSuccessWith { result in
-            self.saveOauthItemToKeyChain(with: result)
-            self.doOperationWithOauthSuccess(with: self.requestItems)
-        }.continueOnErrorWith { (error) in
-            self.doOpertionsWhenOauthFailure(with: self.requestItems, error: error)
+
+    public func startRefreshTokenRequest() -> Task<Any?> {
+        if let currentTask = self.currentTask {
+            return currentTask
         }
+        let refreshToken:String? = MolueOauthHelper.queryRefreshToken()
+        let request = MolueOauthService.doRefreshToken(with: refreshToken)
+        self.currentTask = self.doRefreshTokenRequest(with: request)
+        return self.currentTask!
     }
     
+    @discardableResult
+    private func doRefreshTokenRequest(with request: MolueDataRequest) -> Task<Any?> {
+        let taskCompletionSource = TaskCompletionSource<Any?>()
+        self.queryDataFromServer(with: request).continueOnSuccessWith { result in
+            self.doOperationWithOauthSuccess(with: self.requestItems, result: result)
+            taskCompletionSource.set(result: result)
+        }.continueOnErrorWith(continuation: { error in
+            self.doOpertionsWhenOauthFailure(with: self.requestItems, error: error)
+            taskCompletionSource.set(error: error)
+        })
+        return taskCompletionSource.task
+    }
+    
+}
+
+extension MolueOauthRequestManager {
+
     private func saveOauthItemToKeyChain(with result: Any?) {
         do {
             let item = Mapper<MolueOauthModel>().map(JSONObject: result)
             try MolueOauthModel.updateOauthItem(with: item.unwrap())
         } catch { MolueLogger.network.message(error) }
     }
-}
-
-extension MolueOauthRequestManager {
     
-    private func doOperationWithOauthSuccess(with list: [MolueRequestItem]) {
-        func doRequestItemSuccess(with manager: MolueRequestManager) {
-            do {
-                let delegate = try manager.delegate.unwrap()
-                delegate.networkActivitySuccess()
-            } catch { MolueLogger.network.message(error)}
-        }
-        
-        defer {self.dofinishRequestOperation()}
+    private func doOperationWithOauthSuccess(with list: [MolueRequestItem], result: Any?) {
+        self.saveOauthItemToKeyChain(with: result)
         list.forEach { (request: MolueDataRequest, manager: MolueRequestManager) in
-            doRequestItemSuccess(with: manager)
             request.headers = MolueOauthHelper.queryUserOauthHeaders()
             manager.queryDataFromServer(with: request)
         }
+        self.dofinishRequestOperation()
     }
     
-    private func doOpertionsWhenOauthFailure(with list: [MolueRequestItem], error: Error) {
-        func doRequestItemFailure(with manager: MolueRequestManager, error: Error) {
-            do {
-                let delegate = try manager.delegate.unwrap()
-                delegate.networkActivityFailure(error: error)
-            } catch { MolueLogger.network.message(error)}
-        }
-        
-        defer {self.dofinishRequestOperation()}
+    private func doOpertionsWhenOauthFailure(with list: [MolueRequestItem], error: Error)  {
         list.forEach { (request: MolueDataRequest, manager: MolueRequestManager) in
-            doRequestItemFailure(with: manager, error: error)
             manager.handleFailureResult(with: error, request: request)
         }
-    }
-    
-    private func validateOauthRequest() -> Bool {
-        insertLock.lock(); defer {insertLock.unlock()}
-        defer {self.isRefreshing = true}
-        guard self.isRefreshing == false else { return false }
-        self.requestItemsStarted(with: self.requestItems)
-        return true
-    }
-    
-    private func requestItemsStarted(with list: [MolueRequestItem]) {
-        func doRequestItemStarted(with manager: MolueRequestManager) {
-            do {
-                let delegate = try manager.delegate.unwrap()
-                delegate.networkActivityStarted()
-            } catch { MolueLogger.network.message(error)}
-        }
-        
-        list.forEach { (request: MolueDataRequest, manager: MolueRequestManager) in
-            doRequestItemStarted(with: manager)
-        }
+        self.dofinishRequestOperation()
     }
 }
