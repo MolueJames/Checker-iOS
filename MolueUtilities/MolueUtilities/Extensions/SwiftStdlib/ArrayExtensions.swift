@@ -616,13 +616,3 @@ public extension Array where Element: Equatable {
 	}
 	
 }
-
-
-public extension Array {
-    public func forEach(body: (Element, Int) -> Void) {
-        for index in 0...self.count {
-            let element: Element = self[index]
-            body(element, index)
-        }
-    }
-}

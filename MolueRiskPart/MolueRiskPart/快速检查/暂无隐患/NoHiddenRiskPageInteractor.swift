@@ -162,8 +162,9 @@ extension NoHiddenRiskPageInteractor: NoHiddenRiskRouterInteractable {
     
     func createUploadTasks(with attachments: [MLAttachmentDetail]) -> [Task<Any?>]{
         var uploadTasks:[Task<Any?>] = [Task<Any?>]()
-        attachments.forEach { (item, index) in
+        for index in 0...attachments.count {
             do {
+                let item = try attachments.item(at: index).unwrap()
                 let task = uploadPhotoTask(with: item, index: index)
                 try uploadTasks.append(task.unwrap())
             } catch { MolueLogger.network.message(error) }
