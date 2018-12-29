@@ -13,6 +13,8 @@ import MolueUtilities
 import RxSwift
 import Gallery
 import Photos
+import MolueNetwork
+import BoltsSwift
 
 protocol NoHiddenRiskViewableRouting: class {
     // 定义一些页面跳转的方法, 比如Push, Presenter等.
@@ -52,14 +54,14 @@ final class NoHiddenRiskPageInteractor: MoluePresenterInteractable {
         }
     }()
     
-    var attachmentDetails: [MLAttachmentDetail]? {
+    lazy var attachmentDetails: [MLAttachmentDetail]? = {
         do {
             let attachment = try self.currentAttachment.unwrap()
             return try attachment.attachments.unwrap()
         } catch {
             return MolueLogger.database.returnNil(error)
         }
-    }
+    }()
     
     required init(presenter: NoHiddenRiskPagePresentable) {
         self.presenter = presenter
@@ -134,6 +136,77 @@ extension NoHiddenRiskPageInteractor: NoHiddenRiskRouterInteractable {
             MolueLogger.UIModule.message(error)
         }
         removePhoto(from: self.photoController)
+    }
+    
+    func queryAttactmentDetail(with index: Int) -> MLAttachmentDetail? {
+        do {
+            let details = try self.attachmentDetails.unwrap()
+            return try details.item(at: index).unwrap()
+        } catch {
+            return MolueLogger.UIModule.allowNil(error)
+        }
+    }
+    
+    func uploadAttachmentPhotos(with attachments: [MLAttachmentDetail]) {
+        let uploadTasks = self.createUploadTasks(with: attachments)
+        Task.whenAll(uploadTasks).continueOnSuccessWith { [weak self] result in
+            do {
+                try self.unwrap().handleSuccessOperation()
+            } catch { MolueLogger.network.message(error) }
+        }.continueOnErrorWith { [weak self] (error) in
+            do {
+                try self.unwrap().handleFailureOperation()
+            } catch { MolueLogger.network.message(error) }
+        }
+    }
+    
+    func createUploadTasks(with attachments: [MLAttachmentDetail]) -> [Task<Any?>]{
+        var uploadTasks:[Task<Any?>] = [Task<Any?>]()
+        attachments.forEach { (item, index) in
+            do {
+                let task = uploadPhotoTask(with: item, index: index)
+                try uploadTasks.append(task.unwrap())
+            } catch { MolueLogger.network.message(error) }
+        }
+        return uploadTasks
+    }
+    
+    func handleSuccessOperation() {
+        do {
+            let presenter = try self.presenter.unwrap()
+            presenter.showSuccessHUD(text: "上传图片成功")
+        } catch { MolueLogger.UIModule.error(error) }
+    }
+    
+    func handleFailureOperation() {
+        do {
+            let presenter = try self.presenter.unwrap()
+            presenter.showFailureHUD(text: "上传图片失败,请重新上传")
+        } catch { MolueLogger.UIModule.error(error) }
+    }
+    
+    func uploadPhotoTask(with attachment: MLAttachmentDetail, index: Int) -> Task<Any?>? {
+        do {
+            let picture = try attachment.image.unwrap()
+            let taskCompletionSource = TaskCompletionSource<Any?>()
+            MolueFileService.uploadPicture(with: picture, success: { [weak self] result in
+                taskCompletionSource.set(result: result)
+                do {
+                    try self.unwrap().update(with: attachment, result: result, index: index)
+                } catch { MolueLogger.network.message(error) }
+                
+            }) { (error) in
+                taskCompletionSource.set(error: error)
+            }
+            return taskCompletionSource.task
+        } catch {
+            return MolueLogger.UIModule.allowNil(error)
+        }
+    }
+    
+    func update(with attachment:MLAttachmentDetail, result: Any?, index: Int) {
+        attachment.updateAttachment(with: result)
+        self.attachmentDetails?[index] = attachment
     }
 }
 

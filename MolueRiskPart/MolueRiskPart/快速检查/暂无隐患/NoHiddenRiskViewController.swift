@@ -148,6 +148,6 @@ extension NoHiddenRiskViewController: UICollectionViewDataSource {
             let item = listener.queryAttactment(with: indexPath)
             try cell.refreshSubView(with: item.unwrap())
         } catch { MolueLogger.UIModule.message(error) }
-        return cell
+        return cell 
     }
 }

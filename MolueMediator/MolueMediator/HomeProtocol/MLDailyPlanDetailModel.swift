@@ -7,9 +7,9 @@
 //
 
 import Foundation
+import MolueUtilities
 import ObjectMapper
 
-//
 public class MLRiskUnitAccident: Mappable {
     public required init?(map: Map) {}
     
@@ -237,4 +237,16 @@ public class MLAttachmentDetail: Mappable {
     public var image: UIImage?
     public var type: String?
     public var urlPath: String?
+    
+    public func updateAttachment(with result: Any?) {
+        do {
+            let result = try (result as? [String : String]).unwrap()
+            self.detailId = result["id"]
+            self.screenName = result["screen_name"]
+            self.type = result["type"]
+            self.urlPath = result["url"]
+        } catch {
+            MolueLogger.network.message(error)
+        }
+    }
 }
