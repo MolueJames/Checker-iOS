@@ -568,7 +568,6 @@
 			isa = PBXGroup;
 			children = (
 				1A4F89D421D09C8100B560E1 /* 检查报告 */,
-				1ABA9A9621C0F6CC007E54D3 /* Models */,
 				1A346FC221915BAA00CB534B /* 检查点列表 */,
 				1A5D5BF421912E24003E7039 /* Views */,
 				1A522EC22190350A00094A8A /* 任务详情 */,
@@ -716,13 +715,6 @@
 				1AAF7B7B20C1971B0051EC18 /* EnterpriseRiskViewController.storyboard */,
 			);
 			path = "企业危险特征";
-			sourceTree = "<group>";
-		};
-		1ABA9A9621C0F6CC007E54D3 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		1ABDCA9320C571D00062DE71 /* Views */ = {

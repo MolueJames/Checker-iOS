@@ -20,7 +20,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4ex-h5-jQI">
-                        <rect key="frame" x="15" y="10" width="290" height="184.5"/>
+                        <rect key="frame" x="15" y="15" width="290" height="184.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="地面是否清理干净" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QOj-mF-X9A">
                                 <rect key="frame" x="10" y="15" width="237" height="20"/>
@@ -184,8 +184,8 @@
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstItem="4ex-h5-jQI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="DoG-m7-hME"/>
-                    <constraint firstAttribute="bottom" secondItem="4ex-h5-jQI" secondAttribute="bottom" constant="5" id="ND2-3w-3Yp"/>
+                    <constraint firstItem="4ex-h5-jQI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="DoG-m7-hME"/>
+                    <constraint firstAttribute="bottom" secondItem="4ex-h5-jQI" secondAttribute="bottom" id="ND2-3w-3Yp"/>
                     <constraint firstItem="4ex-h5-jQI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="dyj-rm-eBx"/>
                     <constraint firstAttribute="trailing" secondItem="4ex-h5-jQI" secondAttribute="trailing" constant="15" id="zth-cX-t18"/>
                 </constraints>

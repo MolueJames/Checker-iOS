@@ -64,6 +64,13 @@ extension CheckTaskDetailPageInteractor: CheckTaskDetailRouterInteractable {
 }
 
 extension CheckTaskDetailPageInteractor: CheckTaskDetailPresentableListener {
+    func queryCheckTaskName() -> String {
+        do {
+            let task = try self.selectedCheckTask.unwrap()
+            return try task.risk.unwrap().unitName.unwrap()
+        } catch { return "任务详情" }
+    }
+    
     func queryTaskAttachment(with indexPath: IndexPath) -> MLTaskAttachment? {
         do {
             let task = try self.selectedCheckTask.unwrap()
@@ -101,7 +108,9 @@ extension CheckTaskDetailPageInteractor: CheckTaskDetailPresentableListener {
             let task = try self.selectedCheckTask.unwrap()
             var attachments = try task.items.unwrap()
             attachments[indexPath.row] = attachment
-            self.selectedCheckTask?.items = attachments
+            try self.selectedCheckTask.unwrap().items = attachments
+            let presenter = try self.presenter.unwrap()
+            presenter.reloadTableViewCell(for: indexPath)
         } catch {
             MolueLogger.UIModule.message(error)
         }

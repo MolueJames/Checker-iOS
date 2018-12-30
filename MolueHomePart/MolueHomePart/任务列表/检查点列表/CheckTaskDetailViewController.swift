@@ -24,6 +24,8 @@ protocol CheckTaskDetailPresentableListener: class {
     func queryTaskAttachment(with indexPath: IndexPath) -> MLTaskAttachment?
     
     func updateAttachmentClosures(for cell: CheckTaskDetailTableViewCell)
+    
+    func queryCheckTaskName() -> String
 }
 
 final class CheckTaskDetailViewController: MLBaseViewController  {
@@ -71,6 +73,10 @@ extension CheckTaskDetailViewController: MLUserInterfaceProtocol {
     
     func updateUserInterfaceElements() {
         self.view.backgroundColor = .white
+        do {
+            let listener = try self.listener.unwrap()
+            self.title = listener.queryCheckTaskName()
+        } catch { MolueLogger.UIModule.message(error)}
     }
 }
 

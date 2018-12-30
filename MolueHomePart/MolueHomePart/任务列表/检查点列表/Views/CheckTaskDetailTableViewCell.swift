@@ -66,24 +66,19 @@ class CheckTaskDetailTableViewCell: UITableViewCell {
     
     @IBAction func successButtonClicked(_ sender: UIButton) {
         self.switchToAddtionView(true)
-        self.updateStatusLabel(with: sender)
-        
+        let title = sender.titleLabel?.text
+        self.attachment?.result = title
+        self.doUpdateAttachmentClosure()
     }
     
     @IBAction func failureButtonClicked(_ sender: UIButton) {
         self.switchToAddtionView(true)
-        self.updateStatusLabel(with: sender)
+        let title = sender.titleLabel?.text
+        self.attachment?.result = title
+        self.doUpdateAttachmentClosure()
     }
     
-    private func updateStatusLabel(with button: UIButton) {
-        let color = button.backgroundColor
-        self.statusLabel.backgroundColor = color
-        
-        self.statusLabel.isHidden = false
-        let title = button.titleLabel?.text
-        self.statusLabel.text = title
-        self.attachment?.result = title
-        
+    private func doUpdateAttachmentClosure() {
         do {
             let updateClosure = try self.updateClosure.unwrap()
             let attachment = try self.attachment.unwrap()
@@ -107,7 +102,18 @@ class CheckTaskDetailTableViewCell: UITableViewCell {
     
     @IBAction func deleteButtonClicked(_ sender: UIButton) {
         self.switchToAddtionView(false)
-        self.statusLabel.isHidden = true
+        do {
+            let attachment = try self.attachment.unwrap()
+            self.clearTaskAttachment(with: attachment)
+            self.attachment = attachment
+            self.doUpdateAttachmentClosure()
+        } catch { MolueLogger.UIModule.message(error) }
+    }
+    
+    private func clearTaskAttachment(with attachment: MLTaskAttachment) {
+        attachment.attachments = nil
+        attachment.remark = nil
+        attachment.result = nil
     }
     
     @IBOutlet weak var collectionTop: NSLayoutConstraint!
@@ -142,12 +148,19 @@ class CheckTaskDetailTableViewCell: UITableViewCell {
     private func updateSubviewsLayout(with attachment: MLTaskAttachment) {
         self.taskNameLabel.text = attachment.content.data()
         
+        self.statusLabel.isHidden = attachment.result.isNone()
+        self.statusLabel.text = attachment.result
+        let isRight = attachment.result == attachment.rightAnswer
+        let color = isRight ? UIColor(hex: 0x009966) : UIColor(hex: 0xFF0000)
+        self.statusLabel.backgroundColor = color
+        self.switchToAddtionView(attachment.result.isSome())
+        
         let constant:CGFloat = numberOfItems() == 0 ? 0 : 70
         self.collectionHeight.constant = constant
         self.collectionView.reloadData()
         
         self.remarkLabel.text = attachment.remark
-        let title = attachment.remark.isSome() ? "备注:" : nil
+        let title = attachment.remark.isSome() ? "检查备注:" : nil
         self.remarkTitleLabel.text = title
     }
     
@@ -190,9 +203,7 @@ extension CheckTaskDetailTableViewCell: UICollectionViewDataSource {
             let details = try attachment.attachments.unwrap()
             let item = try details.item(at: indexPath.row).unwrap()
             cell.refreshSubviews(with: item)
-        } catch {
-            MolueLogger.UIModule.message(error)
-        }
+        } catch { MolueLogger.UIModule.message(error) }
         return cell
     }
 }

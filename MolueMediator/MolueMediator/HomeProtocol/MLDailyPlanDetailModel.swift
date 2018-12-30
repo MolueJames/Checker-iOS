@@ -225,6 +225,8 @@ public class MLTaskAttachment: Mappable {
 public class MLAttachmentDetail: Mappable {
     public required init?(map: Map) {}
     
+//    public init() {}
+    
     public func mapping(map: Map) {
         detailId <- map["id"]
         screenName <- map["screen_name"]
