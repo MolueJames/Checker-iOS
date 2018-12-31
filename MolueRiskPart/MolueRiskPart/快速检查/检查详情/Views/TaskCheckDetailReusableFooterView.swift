@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import MolueCommon
 
-class NoHiddenRiskReusableFooterView: UICollectionReusableView {
+class TaskCheckDetailReusableFooterView: UICollectionReusableView {
     private let disposeBag = DisposeBag()
     
     public var submitInfoCommand: PublishSubject<String>?

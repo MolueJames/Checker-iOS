@@ -35,7 +35,7 @@ protocol NoHiddenRiskPresentableListener: class {
     func queryCurrentImageCount() -> Int?
 }
 
-final class NoHiddenRiskViewController: MLBaseViewController {
+final class TaskCheckDetailViewController: MLBaseViewController {
     //MARK: View Controller Properties
     var listener: NoHiddenRiskPresentableListener?
     
@@ -43,7 +43,7 @@ final class NoHiddenRiskViewController: MLBaseViewController {
         didSet {
             collectionView.dataSource = self
             collectionView.delegate = self
-            collectionView.register(forKind:UICollectionView.elementKindSectionFooter, withNibClass: NoHiddenRiskReusableFooterView.self)
+            collectionView.register(forKind:UICollectionView.elementKindSectionFooter, withNibClass: TaskCheckDetailReusableFooterView.self)
             collectionView.register(xibWithCellClass: EditRiskInfoCollectionViewCell.self)
             collectionView.register(xibWithCellClass: InsertPhotosCollectionViewCell.self)
             self.flowLayout = UICollectionViewFlowLayout()
@@ -79,7 +79,7 @@ final class NoHiddenRiskViewController: MLBaseViewController {
     }
 }
 
-extension NoHiddenRiskViewController: MLUserInterfaceProtocol {
+extension TaskCheckDetailViewController: MLUserInterfaceProtocol {
     func queryInformationWithNetwork() {
         
     }
@@ -94,19 +94,19 @@ extension NoHiddenRiskViewController: MLUserInterfaceProtocol {
     }
 }
 
-extension NoHiddenRiskViewController: NoHiddenRiskPagePresentable {
+extension TaskCheckDetailViewController: NoHiddenRiskPagePresentable {
     func reloadCollectionViewData() {
         self.collectionView.reloadData()
     }
 }
 
-extension NoHiddenRiskViewController: NoHiddenRiskViewControllable {
+extension TaskCheckDetailViewController: NoHiddenRiskViewControllable {
     
 }
 
-extension NoHiddenRiskViewController: UICollectionViewDelegate {
+extension TaskCheckDetailViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let view = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withClass: NoHiddenRiskReusableFooterView.self, for: indexPath)
+        let view = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withClass: TaskCheckDetailReusableFooterView.self, for: indexPath)
         do {
             let listener = try self.listener.unwrap()
             let remark = listener.queryCurrentAttachmentRemark()
@@ -126,7 +126,7 @@ extension NoHiddenRiskViewController: UICollectionViewDelegate {
     }
 }
 
-extension NoHiddenRiskViewController: UICollectionViewDataSource {
+extension TaskCheckDetailViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         do {
             let listener = try self.listener.unwrap()

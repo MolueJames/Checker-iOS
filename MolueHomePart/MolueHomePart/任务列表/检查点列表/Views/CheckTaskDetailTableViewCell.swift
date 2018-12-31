@@ -57,8 +57,8 @@ class CheckTaskDetailTableViewCell: UITableViewCell {
         didSet {
             flowLayout.scrollDirection = .horizontal
             flowLayout.minimumInteritemSpacing = 10
-            flowLayout.itemSize = CGSize(width: 50, height: 50)
-            flowLayout.sectionInset = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
+            flowLayout.itemSize = CGSize(width: 80, height: 80)
+            flowLayout.sectionInset = UIEdgeInsets(top: 10, left: 15, bottom: 10, right: 15)
         }
     }
     
@@ -155,7 +155,7 @@ class CheckTaskDetailTableViewCell: UITableViewCell {
         self.statusLabel.backgroundColor = color
         self.switchToAddtionView(attachment.result.isSome())
         
-        let constant:CGFloat = numberOfItems() == 0 ? 0 : 70
+        let constant:CGFloat = numberOfItems() == 0 ? 0 : 100
         self.collectionHeight.constant = constant
         self.collectionView.reloadData()
         

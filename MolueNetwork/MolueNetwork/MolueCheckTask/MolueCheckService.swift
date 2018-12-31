@@ -20,7 +20,7 @@ public struct MolueCheckService {
     }
     
     public static func updateDailyCheckTask(with taskId: String, paramaters: [String: Any]) -> MolueDataRequest {
-        let path: String = "api/task/\(taskId)"
+        let path: String = "api/task/\(taskId)/"
         return MolueDataRequest(parameter: paramaters, method: .put, path: path)
     }
 }

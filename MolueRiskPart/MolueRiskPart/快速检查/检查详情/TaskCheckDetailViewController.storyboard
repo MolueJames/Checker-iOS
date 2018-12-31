@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--No Hidden Risk View Controller-->
+        <!--Task Check Detail View Controller-->
         <scene sceneID="ex0-I8-JQt">
             <objects>
-                <viewController storyboardIdentifier="NoHiddenRiskViewController" id="lJq-Rm-UpI" customClass="NoHiddenRiskViewController" customModule="MolueRiskPart" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TaskCheckDetailViewController" id="lJq-Rm-UpI" customClass="TaskCheckDetailViewController" customModule="MolueRiskPart" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="G7W-z3-1qQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

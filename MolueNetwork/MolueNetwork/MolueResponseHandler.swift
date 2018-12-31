@@ -167,11 +167,11 @@ public enum MolueStatusError: LocalizedError {
     func handleErrorResult(result: Any?) -> String {
         do {
             let response: [String: Any] = try validateTarget(result)
-            let code = try response["code"].unwrap()
-            let message = try response["message"].unwrap()
-            return "错误ID:" + String(describing: code) + "\n错误信息:" + String(describing: message)
+            let items = try response["items"].unwrap()
+            let message = try (items as? [String]).unwrap()
+            return try "错误信息:" + message.first.unwrap()
         } catch {
-            MolueLogger.network.error(error)
+            MolueLogger.network.message(error)
             return "服务器发生了未知错误"
         }
     }

@@ -1,30 +1,31 @@
 //
-//  EditRiskInfoCollectionViewCell.swift
+//  TaskCheckDetailCollectionViewCell.swift
 //  MolueRiskPart
 //
-//  Created by MolueJames on 2018/11/19.
+//  Created by MolueJames on 2018/12/31.
 //  Copyright © 2018 MolueTech. All rights reserved.
 //
 
-import UIKit
-import MolueUtilities
 import MolueMediator
+import Kingfisher
+import UIKit
 
-class EditRiskInfoCollectionViewCell: UICollectionViewCell {
+class TaskCheckDetailCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var imageView: UIImageView! {
         didSet {
             imageView.clipsToBounds = true
         }
     }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         self.addLayerShadow()
     }
-    
-    func refreshSubview(with image: UIImage) {
-        self.imageView.image = image
+
+    func refreshSubView(with detail: MLAttachmentDetail) {
+        self.imageView.image = detail.image
     }
     
 }

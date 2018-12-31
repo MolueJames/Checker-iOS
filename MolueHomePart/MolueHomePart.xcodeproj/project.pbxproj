@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A027C8321D9E8E1002A0099 /* FailureTaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A027C8021D9E8E1002A0099 /* FailureTaskListViewController.swift */; };
+		1A027C8421D9E8E1002A0099 /* FailureTaskListPageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A027C8121D9E8E1002A0099 /* FailureTaskListPageInteractor.swift */; };
+		1A027C8521D9E8E1002A0099 /* FailureTaskListBuilderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A027C8221D9E8E1002A0099 /* FailureTaskListBuilderRouter.swift */; };
+		1A027C8721D9E8F9002A0099 /* FailureTaskListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A027C8621D9E8F9002A0099 /* FailureTaskListViewController.storyboard */; };
+		1A027C8B21D9EB85002A0099 /* FailureTaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A027C8921D9EB85002A0099 /* FailureTaskTableViewCell.swift */; };
+		1A027C8C21D9EB85002A0099 /* FailureTaskTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A027C8A21D9EB85002A0099 /* FailureTaskTableViewCell.xib */; };
 		1A06557D20A9EE020016CA86 /* HomeInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A06557B20A9EE020016CA86 /* HomeInfoTableViewCell.swift */; };
 		1A06557E20A9EE020016CA86 /* HomeInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A06557C20A9EE020016CA86 /* HomeInfoTableViewCell.xib */; };
 		1A0B89B721931B8F000B1EBC /* DangerUnitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0B89B521931B8F000B1EBC /* DangerUnitTableViewCell.swift */; };
@@ -142,6 +148,12 @@
 
 /* Begin PBXFileReference section */
 		010F6973D5E1725577EE6B03 /* Pods_MolueHomePart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MolueHomePart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A027C8021D9E8E1002A0099 /* FailureTaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailureTaskListViewController.swift; sourceTree = "<group>"; };
+		1A027C8121D9E8E1002A0099 /* FailureTaskListPageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailureTaskListPageInteractor.swift; sourceTree = "<group>"; };
+		1A027C8221D9E8E1002A0099 /* FailureTaskListBuilderRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailureTaskListBuilderRouter.swift; sourceTree = "<group>"; };
+		1A027C8621D9E8F9002A0099 /* FailureTaskListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FailureTaskListViewController.storyboard; sourceTree = "<group>"; };
+		1A027C8921D9EB85002A0099 /* FailureTaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailureTaskTableViewCell.swift; sourceTree = "<group>"; };
+		1A027C8A21D9EB85002A0099 /* FailureTaskTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FailureTaskTableViewCell.xib; sourceTree = "<group>"; };
 		1A06557B20A9EE020016CA86 /* HomeInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInfoTableViewCell.swift; sourceTree = "<group>"; };
 		1A06557C20A9EE020016CA86 /* HomeInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeInfoTableViewCell.xib; sourceTree = "<group>"; };
 		1A0B89B521931B8F000B1EBC /* DangerUnitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DangerUnitTableViewCell.swift; sourceTree = "<group>"; };
@@ -296,6 +308,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A027C7F21D9E89C002A0099 /* 风险列表 */ = {
+			isa = PBXGroup;
+			children = (
+				1A027C8821D9EB5E002A0099 /* Views */,
+				1A027C8021D9E8E1002A0099 /* FailureTaskListViewController.swift */,
+				1A027C8121D9E8E1002A0099 /* FailureTaskListPageInteractor.swift */,
+				1A027C8221D9E8E1002A0099 /* FailureTaskListBuilderRouter.swift */,
+				1A027C8621D9E8F9002A0099 /* FailureTaskListViewController.storyboard */,
+			);
+			path = "风险列表";
+			sourceTree = "<group>";
+		};
+		1A027C8821D9EB5E002A0099 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1A027C8921D9EB85002A0099 /* FailureTaskTableViewCell.swift */,
+				1A027C8A21D9EB85002A0099 /* FailureTaskTableViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		1A1084FB20ECF139004E365A /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -567,6 +600,7 @@
 		1A522ED221912B0100094A8A /* 任务列表 */ = {
 			isa = PBXGroup;
 			children = (
+				1A027C7F21D9E89C002A0099 /* 风险列表 */,
 				1A4F89D421D09C8100B560E1 /* 检查报告 */,
 				1A346FC221915BAA00CB534B /* 检查点列表 */,
 				1A5D5BF421912E24003E7039 /* Views */,
@@ -878,6 +912,7 @@
 				1A4F89F421D3272500B560E1 /* TaskAttachmentCollectionCell.xib in Resources */,
 				1ABDCA9B20C5798B0062DE71 /* SecurityAdminiTableViewCell.xib in Resources */,
 				1A5D5BF221912C3E003E7039 /* DangerUnitListViewController.storyboard in Resources */,
+				1A027C8C21D9EB85002A0099 /* FailureTaskTableViewCell.xib in Resources */,
 				1A2F408221AD3D4800C436F9 /* HistoryInfoTableViewCell.xib in Resources */,
 				1A0B89B821931B8F000B1EBC /* DangerUnitTableViewCell.xib in Resources */,
 				1A522EC121902B0300094A8A /* HomeInfoPageViewController.storyboard in Resources */,
@@ -891,6 +926,7 @@
 				1AAF7B8320C1971B0051EC18 /* SecurityAdminiViewController.storyboard in Resources */,
 				1AAF7B8920C1971B0051EC18 /* EnterpriseRiskViewController.storyboard in Resources */,
 				1AAF7B8420C1971B0051EC18 /* ContactInfoViewController.storyboard in Resources */,
+				1A027C8721D9E8F9002A0099 /* FailureTaskListViewController.storyboard in Resources */,
 				1A1CA8DB21B50C3F00FDF4E2 /* CheckTaskHistoryCalendarCell.xib in Resources */,
 				1AB0670820EFB61D00619570 /* PolicyNoticeTableViewCell.xib in Resources */,
 				1AAF7B8020C1971B0051EC18 /* IncreaseAdminiViewController.storyboard in Resources */,
@@ -964,6 +1000,7 @@
 				1A24022820E5337A00FC3EBA /* EnterpriseInfoNavigator.swift in Sources */,
 				1AAF7B8B20C1971B0051EC18 /* RiskFeatureViewController.swift in Sources */,
 				1AAB20D621CA8E8D003FA7F8 /* PolicyDetailViewController.swift in Sources */,
+				1A027C8521D9E8E1002A0099 /* FailureTaskListBuilderRouter.swift in Sources */,
 				1A4F89F321D3272500B560E1 /* TaskAttachmentCollectionCell.swift in Sources */,
 				1A522ED621912BA200094A8A /* DangerUnitListViewController.swift in Sources */,
 				1A24022020E52F7800FC3EBA /* LawRegulationViewController.swift in Sources */,
@@ -985,6 +1022,7 @@
 				1A43BC2720C3AF190093855B /* HomeInfoHeaderView.swift in Sources */,
 				1A2F407A21AD394F00C436F9 /* TaskHistoryInfoPageInteractor.swift in Sources */,
 				1A1084FD20ECF1DD004E365A /* IncreaseAdminiNavigator.swift in Sources */,
+				1A027C8321D9E8E1002A0099 /* FailureTaskListViewController.swift in Sources */,
 				1A4F89EC21D0A0DD00B560E1 /* TaskCheckReportTableViewCell.swift in Sources */,
 				1AAF7B8120C1971B0051EC18 /* IncreaseAdminiViewController.swift in Sources */,
 				1A4F89DA21D09CB200B560E1 /* TaskCheckReportBuilderRouter.swift in Sources */,
@@ -993,12 +1031,14 @@
 				1A522EC72190356100094A8A /* DailyCheckTaskPageInteractor.swift in Sources */,
 				1AAF7B6820C1970A0051EC18 /* EnterpriseInfoViewController.swift in Sources */,
 				1AC8A5D121D1231A009CCAC5 /* PotentialRiskTableViewCell.swift in Sources */,
+				1A027C8421D9E8E1002A0099 /* FailureTaskListPageInteractor.swift in Sources */,
 				1A264B8F21A1792700F452F9 /* CheckTaskHistoryViewController.swift in Sources */,
 				1A2F407921AD394F00C436F9 /* TaskHistoryInfoViewController.swift in Sources */,
 				1A346FC821915C0400CB534B /* CheckTaskDetailBuilderRouter.swift in Sources */,
 				1A06557D20A9EE020016CA86 /* HomeInfoTableViewCell.swift in Sources */,
 				1A43BC3320C3CEAA0093855B /* EnterpriseInfoModel.swift in Sources */,
 				1AAB20D821CA8E8D003FA7F8 /* PolicyDetailBuilderRouter.swift in Sources */,
+				1A027C8B21D9EB85002A0099 /* FailureTaskTableViewCell.swift in Sources */,
 				1A1084FF20ECF1FC004E365A /* IncreaseAdminiDataManager.swift in Sources */,
 				1A24022B20E5363600FC3EBA /* SecurityAdminiNavigator.swift in Sources */,
 				1ABDCA9520C5720F0062DE71 /* IncreaseAdminiFooterView.swift in Sources */,

@@ -8,7 +8,7 @@
 import MolueUtilities
 import MolueMediator
 
-protocol CheckTaskDetailRouterInteractable: NoHiddenRiskInteractListener, EditRiskInfoInteractListener {
+protocol CheckTaskDetailRouterInteractable: TaskCheckDetailInteractListener, EditRiskInfoInteractListener {
     var viewRouter: CheckTaskDetailViewableRouting? { get set }
     var listener: CheckTaskDetailInteractListener? { get set }
 }
@@ -32,6 +32,21 @@ final class CheckTaskDetailViewableRouter: MolueViewableRouting {
 }
 
 extension CheckTaskDetailViewableRouter: CheckTaskDetailViewableRouting {
+    func jumpToFailureTaskListController() {
+        
+    }
+    
+    func presentAlertController(with finished: UIAlertAction, addRisks: UIAlertAction) {
+        do {
+            let alert = UIAlertController(title: "请确认下一步操作", message: nil, preferredStyle: .alert)
+            alert.addActions([finished, addRisks])
+            let navigator = try self.controller.unwrap()
+            navigator.doPresentController(alert, animated: true, completion: nil)
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+    }
+    
     func pushToCheckDetailReport() {
         
     }
@@ -40,8 +55,8 @@ extension CheckTaskDetailViewableRouter: CheckTaskDetailViewableRouting {
     func pushToNoHiddenController() {
         do {
             let listener = try self.interactor.unwrap()
-            let builderFactory = MolueBuilderFactory<MolueComponent.Risk>(.NoHiddenRisk)
-            let builder: NoHiddenRiskComponentBuildable? = builderFactory.queryBuilder()
+            let builderFactory = MolueBuilderFactory<MolueComponent.Risk>(.TaskDetail)
+            let builder: TaskCheckDetailComponentBuildable? = builderFactory.queryBuilder()
             let controller = try builder.unwrap().build(listener: listener)
             let navigator = try self.controller.unwrap()
             navigator.pushToViewController(controller, animated: true)

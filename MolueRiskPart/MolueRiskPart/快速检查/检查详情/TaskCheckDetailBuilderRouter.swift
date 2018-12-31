@@ -1,5 +1,5 @@
 //
-//  NoHiddenRiskBuilderRouter.swift
+//  TaskCheckDetailBuilderRouter.swift
 //  MolueRiskPart
 //
 //  Created by MolueJames on 2018/11/23.
@@ -11,30 +11,30 @@ import MolueUtilities
 import MolueCommon
 import Gallery
 
-protocol NoHiddenRiskRouterInteractable: GalleryControllerDelegate, SKPhotoBrowserDelegate {
-    var viewRouter: NoHiddenRiskViewableRouting? { get set }
-    var listener: NoHiddenRiskInteractListener? { get set }
+protocol TaskCheckDetailRouterInteractable: GalleryControllerDelegate, SKPhotoBrowserDelegate {
+    var viewRouter: TaskCheckDetailViewableRouting? { get set }
+    var listener: TaskCheckDetailInteractListener? { get set }
 }
 
-protocol NoHiddenRiskViewControllable: MolueViewControllable {
+protocol TaskCheckDetailViewControllable: MolueViewControllable {
     // 定义一些该页面需要的其他commponent的组件, 比如该页面的childViewController等.
 }
 
-final class NoHiddenRiskViewableRouter: MolueViewableRouting {
+final class TaskCheckDetailViewableRouter: MolueViewableRouting {
     
-    weak var interactor: NoHiddenRiskRouterInteractable?
+    weak var interactor: TaskCheckDetailRouterInteractable?
     
-    weak var controller: NoHiddenRiskViewControllable?
+    weak var controller: TaskCheckDetailViewControllable?
     
     @discardableResult
-    required init(interactor: NoHiddenRiskRouterInteractable, controller: NoHiddenRiskViewControllable) {
+    required init(interactor: TaskCheckDetailRouterInteractable, controller: TaskCheckDetailViewControllable) {
         self.controller = controller
         self.interactor = interactor
         interactor.viewRouter = self
     }
 }
 
-extension NoHiddenRiskViewableRouter: NoHiddenRiskViewableRouting {
+extension TaskCheckDetailViewableRouter: TaskCheckDetailViewableRouting {
     func popToPreviewController() {
         do {
             let navigator = try self.controller.unwrap()
@@ -77,11 +77,11 @@ extension NoHiddenRiskViewableRouter: NoHiddenRiskViewableRouting {
     }
 }
 
-class NoHiddenRiskComponentBuilder: MolueComponentBuilder, NoHiddenRiskComponentBuildable {
-    func build(listener: NoHiddenRiskInteractListener) -> UIViewController {
-        let controller = NoHiddenRiskViewController.initializeFromStoryboard()
-        let interactor = NoHiddenRiskPageInteractor(presenter: controller)
-        NoHiddenRiskViewableRouter(interactor: interactor, controller: controller)
+class TaskCheckDetailComponentBuilder: MolueComponentBuilder, TaskCheckDetailComponentBuildable {
+    func build(listener: TaskCheckDetailInteractListener) -> UIViewController {
+        let controller = TaskCheckDetailViewController.initializeFromStoryboard()
+        let interactor = TaskCheckDetailPageInteractor(presenter: controller)
+        TaskCheckDetailViewableRouter(interactor: interactor, controller: controller)
         interactor.listener = listener
         return controller
     }

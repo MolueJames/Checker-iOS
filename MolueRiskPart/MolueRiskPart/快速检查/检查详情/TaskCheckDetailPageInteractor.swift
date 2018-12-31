@@ -1,5 +1,5 @@
 //
-//  NoHiddenRiskPageInteractor.swift
+//  TaskCheckDetailPageInteractor.swift
 //  MolueRiskPart
 //
 //  Created by MolueJames on 2018/11/23.
@@ -16,7 +16,7 @@ import Photos
 import MolueNetwork
 import BoltsSwift
 
-protocol NoHiddenRiskViewableRouting: class {
+protocol TaskCheckDetailViewableRouting: class {
     // 定义一些页面跳转的方法, 比如Push, Presenter等.
     func pushToTakePhotoController(with limit: Int)
     func pushToPhotoBrowser(with photos: [SKPhoto], controller: UIViewController)
@@ -24,22 +24,22 @@ protocol NoHiddenRiskViewableRouting: class {
     func popToPreviewController()
 }
 
-protocol NoHiddenRiskPagePresentable: MolueInteractorPresentable, MLControllerHUDProtocol {
-    var listener: NoHiddenRiskPresentableListener? { get set }
+protocol TaskCheckDetailPagePresentable: MolueInteractorPresentable, MLControllerHUDProtocol {
+    var listener: TaskCheckDetailPresentableListener? { get set }
     // 定义一些页面需要的方法, 比如刷新页面的显示内容等.
     func reloadCollectionViewData()
 }
 
-final class NoHiddenRiskPageInteractor: MoluePresenterInteractable {
+final class TaskCheckDetailPageInteractor: MoluePresenterInteractable {
     internal var maxImageCount: Int = 9
     
-    internal var photoImages: [UIImage]?
+//    internal var photoImages: [UIImage]?
 
-    weak var presenter: NoHiddenRiskPagePresentable?
+    weak var presenter: TaskCheckDetailPagePresentable?
     
-    var viewRouter: NoHiddenRiskViewableRouting?
+    var viewRouter: TaskCheckDetailViewableRouting?
     
-    weak var listener: NoHiddenRiskInteractListener?
+    weak var listener: TaskCheckDetailInteractListener?
     
     private weak var photoController: GalleryController?
     
@@ -59,34 +59,45 @@ final class NoHiddenRiskPageInteractor: MoluePresenterInteractable {
             let attachment = try self.currentAttachment.unwrap()
             return try attachment.attachments.unwrap()
         } catch {
-            return MolueLogger.database.returnNil(error)
+            return MolueLogger.database.allowNil(error)
         }
     }()
     
-    required init(presenter: NoHiddenRiskPagePresentable) {
+    required init(presenter: TaskCheckDetailPagePresentable) {
         self.presenter = presenter
         presenter.listener = self
     }
 }
 
-extension NoHiddenRiskPageInteractor: NoHiddenRiskRouterInteractable {
+extension TaskCheckDetailPageInteractor: TaskCheckDetailRouterInteractable {
     func galleryController(_ controller: GalleryController, didSelectImages images: [Image]) {
         controller.dismiss(animated: true, completion: nil)
-        Image.resolve(images: images) { [weak self] resolvedImages in
+        Image.resolve(images: images) { [weak self] images in
             do {
-                let images = resolvedImages.compactMap({$0})
-                let strongSelf = try self.unwrap()
-                if strongSelf.photoImages == nil {
-                    strongSelf.photoImages = images
-                } else {
-                    strongSelf.photoImages?.append(contentsOf: images)
-                }
-                let presenter = try strongSelf.presenter.unwrap()
+                let attachments: [MLAttachmentDetail] = images.compactMap({ image in
+                    return MLAttachmentDetail(image)
+                })
+                try self.unwrap().updateAttacments(with: attachments)
+                let presenter = try self.unwrap().presenter.unwrap()
                 presenter.reloadCollectionViewData()
             } catch {
                 MolueLogger.UIModule.error(error)
             }
         }
+    }
+    
+    private func updateAttacments(with attachments: [MLAttachmentDetail]) {
+        if var oldAttachments = self.attachmentDetails {
+            oldAttachments.append(contentsOf: attachments)
+            self.attachmentDetails = oldAttachments
+        } else {
+            self.attachmentDetails = attachments
+        }
+        self.updateCurrentAttachment(with: self.attachmentDetails)
+    }
+    
+    func updateCurrentAttachment(with attachments: [MLAttachmentDetail]?) {
+        self.currentAttachment?.attachments = attachments
     }
     
     func galleryController(_ controller: GalleryController, didSelectVideo video: Video) {
@@ -129,7 +140,8 @@ extension NoHiddenRiskPageInteractor: NoHiddenRiskRouterInteractable {
         }
         defer { reload() }
         do {
-            self.photoImages?.remove(at: index)
+            self.attachmentDetails?.remove(at: index)
+            self.updateCurrentAttachment(with: self.attachmentDetails)
             let presenter = try self.presenter.unwrap()
             presenter.reloadCollectionViewData()
         } catch {
@@ -176,6 +188,12 @@ extension NoHiddenRiskPageInteractor: NoHiddenRiskRouterInteractable {
         do {
             let presenter = try self.presenter.unwrap()
             presenter.showSuccessHUD(text: "上传图片成功")
+            
+            let listener = try self.listener.unwrap()
+            let updatedAttachment = try self.currentAttachment.unwrap()
+            listener.updateCurrentAttachment(with: updatedAttachment)
+            let router = try self.viewRouter.unwrap()
+            router.popToPreviewController()
         } catch { MolueLogger.UIModule.error(error) }
     }
     
@@ -195,7 +213,6 @@ extension NoHiddenRiskPageInteractor: NoHiddenRiskRouterInteractable {
                 do {
                     try self.unwrap().update(with: attachment, result: result, index: index)
                 } catch { MolueLogger.network.message(error) }
-                
             }) { (error) in
                 taskCompletionSource.set(error: error)
             }
@@ -211,12 +228,12 @@ extension NoHiddenRiskPageInteractor: NoHiddenRiskRouterInteractable {
     }
 }
 
-extension NoHiddenRiskPageInteractor: NoHiddenRiskPresentableListener {
+extension TaskCheckDetailPageInteractor: TaskCheckDetailPresentableListener {
     func queryCurrentImageCount() -> Int? {
         do {
             let details = try self.attachmentDetails.unwrap()
             let imageCount: Int = details.count
-            return imageCount > maxImageCount ? maxImageCount : imageCount + 1
+            return imageCount > maxImageCount ? maxImageCount : imageCount
         } catch {
             return MolueLogger.UIModule.allowNil(error)
         }
@@ -274,12 +291,9 @@ extension NoHiddenRiskPageInteractor: NoHiddenRiskPresentableListener {
     
     func updateCurrentAttachment(with remark: String) {
         do {
-            self.currentAttachment?.remark = remark
-            let listener = try self.listener.unwrap()
-            let updatedAttachment = try self.currentAttachment.unwrap()
-            listener.updateCurrentAttachment(with: updatedAttachment)
-            let router = try self.viewRouter.unwrap()
-            router.popToPreviewController()
+            try self.currentAttachment.unwrap().remark = remark
+            let attachmentDetails = try self.attachmentDetails.unwrap()
+            self.uploadAttachmentPhotos(with: attachmentDetails)
         } catch {
             MolueLogger.UIModule.error(error)
         }
@@ -288,9 +302,14 @@ extension NoHiddenRiskPageInteractor: NoHiddenRiskPresentableListener {
     func jumpToBrowserController(with index: Int) {
         do {
             let router = try self.viewRouter.unwrap()
-            let images = try self.photoImages.unwrap()
-            let photoImages:[SKPhoto] = images.map {
-                SKPhoto.photoWithImage($0)
+            let attachment = try self.attachmentDetails.unwrap()
+            let photoImages:[SKPhoto] = attachment.compactMap { attachment in
+                do {
+                    let image = try attachment.image.unwrap()
+                    return SKPhoto.photoWithImage(image)
+                } catch {
+                    return MolueLogger.UIModule.allowNil(error)
+                }
             }
             router.pushToPhotoBrowser(with: photoImages, index: index)
         } catch {
@@ -301,7 +320,7 @@ extension NoHiddenRiskPageInteractor: NoHiddenRiskPresentableListener {
     func jumpToTakePhotoController() {
         do {
             let viewRouter = try self.viewRouter.unwrap()
-            let current = self.photoImages?.count ?? 0
+            let current = self.attachmentDetails?.count ?? 0
             let limit = self.maxImageCount - current
             viewRouter.pushToTakePhotoController(with: limit)
         } catch {

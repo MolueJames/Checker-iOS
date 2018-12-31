@@ -38,16 +38,16 @@ public protocol EditRiskInfoComponentBuildable: MolueComponentBuildable {
     func build(listener: EditRiskInfoInteractListener) -> UIViewController
 }
 
-public protocol NoHiddenRiskInteractListener: class {
+public protocol TaskCheckDetailInteractListener: class {
     //用于定义其他的Component需要定义的协议方法
     var currentAttachment: MLTaskAttachment? { get }
     
     func updateCurrentAttachment(with item: MLTaskAttachment)
 }
 
-public protocol NoHiddenRiskComponentBuildable: MolueComponentBuildable {
+public protocol TaskCheckDetailComponentBuildable: MolueComponentBuildable {
     //定义当前的Component的构造方法.
-    func build(listener: NoHiddenRiskInteractListener) -> UIViewController
+    func build(listener: TaskCheckDetailInteractListener) -> UIViewController
 }
 
 public protocol RiskDetailInteractListener: class {

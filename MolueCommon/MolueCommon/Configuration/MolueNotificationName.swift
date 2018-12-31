@@ -21,6 +21,9 @@ public enum MolueNotification: String {
     case molue_user_cancel = "molue_user_cancel"
     // MARK: - 用户退出成功
     case molue_user_logout = "molue_user_logout"
+    
+    // MARK: - 当前的检查任务提交完成
+    case check_task_finish = "check_task_finish"
 }
 
 extension MolueNotification: MolueToNotification {

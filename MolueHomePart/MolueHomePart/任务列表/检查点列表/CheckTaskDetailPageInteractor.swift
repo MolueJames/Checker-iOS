@@ -7,6 +7,8 @@
 //
 import MolueUtilities
 import MolueMediator
+import MolueNetwork
+import MolueCommon
 import MolueFoundation
 
 protocol CheckTaskDetailViewableRouting: class {
@@ -14,9 +16,13 @@ protocol CheckTaskDetailViewableRouting: class {
     func pushToNoHiddenController()
     
     func pushToCheckDetailReport()
+    
+    func jumpToFailureTaskListController()
+    
+    func presentAlertController(with finished: UIAlertAction, addRisks: UIAlertAction)
 }
 
-protocol CheckTaskDetailPagePresentable: MolueInteractorPresentable, MLControllerHUDProtocol {
+protocol CheckTaskDetailPagePresentable: MolueInteractorPresentable, MLControllerHUDProtocol , MolueActivityDelegate {
     var listener: CheckTaskDetailPresentableListener? { get set }
     // 定义一些页面需要的方法, 比如刷新页面的显示内容等.
     
@@ -128,7 +134,51 @@ extension CheckTaskDetailPageInteractor: CheckTaskDetailPresentableListener {
     }
     
     func postCheckTaskDetailToServer() {
-        
+        do {
+            let checkTask = try self.selectedCheckTask.unwrap()
+            let taskId = try checkTask.taskId.unwrap()
+            let items = try checkTask.items.unwrap().toJSON()
+            let parameters:[String : Any] = ["items" : items, "id" : taskId]
+            print(parameters.description)
+            let request = MolueCheckService.updateDailyCheckTask(with: taskId, paramaters: parameters)
+            request.handleSuccessResponse { (result) in
+                
+            }
+            let requestManager = MolueRequestManager(delegate: self.presenter)
+            requestManager.doRequestStart(with: request)
+        } catch {
+            MolueLogger.UIModule.message(error)
+        }
+        self.handleSuccessOpertaion(with: "nil")
+    }
+    
+    func handleSuccessOpertaion(with result: Any?) {
+        do {
+            let finished = UIAlertAction(title: "完成检查", style: .default) { [unowned self] _ in
+                self.doFinishedOperation(with: result)
+            }
+            let addRisks = UIAlertAction(title: "添加隐患", style: .default) { [unowned self] _ in
+                self.doAddRisksOperation(with: result)
+            }
+            let router = try self.viewRouter.unwrap()
+            router.presentAlertController(with: finished, addRisks: addRisks)
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+    }
+    
+    private func doFinishedOperation(with result: Any?) {
+        let name = MolueNotification.check_task_finish.toName()
+        NotificationCenter.default.post(name: name, object: result)
+    }
+    
+    private func doAddRisksOperation(with result: Any?) {
+        do {
+            let router = try self.viewRouter.unwrap()
+            router.jumpToFailureTaskListController()
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
     }
     
     func numberOfRows(in section: Int) -> Int? {

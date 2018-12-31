@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MolueUtilities
 import Kingfisher
 import MolueMediator
 
@@ -19,12 +20,18 @@ class TaskAttachmentCollectionCell: UICollectionViewCell {
     
     @IBOutlet weak var taskImageView: UIImageView!
     
-    func refreshSubviews(with detail: MLAttachmentDetail) {
-        if let urlPath = detail.urlPath {
-            let url = URL(string: urlPath)
-            self.taskImageView.kf.setImage(with: url)
-        } else {
-            self.taskImageView.image = detail.image
+    func refreshSubviews(with attachment: MLAttachmentDetail) {
+        self.taskImageView.image = attachment.image
+    }
+    
+    func loadAttachmentURL(with attachment: MLAttachmentDetail) {
+        do {
+            let path = try attachment.urlPath.unwrap()
+            let urlPath = URL(string: path)
+            self.taskImageView.kf.indicatorType = .activity
+            self.taskImageView.kf.setImage(with: urlPath)
+        } catch {
+            MolueLogger.UIModule.message(error)
         }
     }
 }
