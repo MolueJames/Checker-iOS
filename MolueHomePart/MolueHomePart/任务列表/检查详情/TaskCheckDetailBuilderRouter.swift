@@ -86,3 +86,15 @@ class TaskCheckDetailComponentBuilder: MolueComponentBuilder, TaskCheckDetailCom
         return controller
     }
 }
+
+protocol TaskCheckDetailInteractListener: class {
+    //用于定义其他的Component需要定义的协议方法
+    var currentAttachment: MLTaskAttachment? { get }
+    
+    func updateCurrentAttachment(with item: MLTaskAttachment)
+}
+
+protocol TaskCheckDetailComponentBuildable: MolueComponentBuildable {
+    //定义当前的Component的构造方法.
+    func build(listener: TaskCheckDetailInteractListener) -> UIViewController
+}

@@ -37,13 +37,12 @@ extension TaskCheckReportViewableRouter: TaskCheckReportViewableRouting {
 
 protocol TaskCheckReportInteractListener: class {
     //用于定义其他的Component需要定义的协议方法
+    var currentCheckTask: MLDailyCheckTask? {get}
 }
 
 protocol TaskCheckReportComponentBuildable: MolueComponentBuildable {
     //定义当前的Component的构造方法.
     func build(listener: TaskCheckReportInteractListener) -> UIViewController
-    
-    func build() -> UIViewController
 }
 
 public class TaskCheckReportComponentBuilder: MolueComponentBuilder, TaskCheckReportComponentBuildable {
@@ -52,13 +51,6 @@ public class TaskCheckReportComponentBuilder: MolueComponentBuilder, TaskCheckRe
         let interactor = TaskCheckReportPageInteractor(presenter: controller)
         TaskCheckReportViewableRouter(interactor: interactor, controller: controller)
         interactor.listener = listener
-        return controller
-    }
-    
-    public func build() -> UIViewController {
-        let controller = TaskCheckReportViewController.initializeFromStoryboard()
-        let interactor = TaskCheckReportPageInteractor(presenter: controller)
-        TaskCheckReportViewableRouter(interactor: interactor, controller: controller)
         return controller
     }
 }

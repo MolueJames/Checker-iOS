@@ -13,9 +13,7 @@ import MolueFoundation
 
 protocol CheckTaskDetailViewableRouting: class {
     // 定义一些页面跳转的方法, 比如Push, Presenter等.
-    func pushToNoHiddenController()
-    
-    func pushToCheckDetailReport()
+    func pushTaskCheckDetailController()
     
     func jumpToFailureTaskListController()
     
@@ -57,6 +55,7 @@ final class CheckTaskDetailPageInteractor: MoluePresenterInteractable {
 }
 
 extension CheckTaskDetailPageInteractor: CheckTaskDetailRouterInteractable {
+    
     func updateCurrentAttachment(with item: MLTaskAttachment) {
         do {
             let indexPath = try self.currentIndexPath.unwrap()
@@ -103,7 +102,7 @@ extension CheckTaskDetailPageInteractor: CheckTaskDetailPresentableListener {
             self.currentAttachment = attachment
             self.currentIndexPath = indexPath
             let viewRouter = try self.viewRouter.unwrap()
-            viewRouter.pushToNoHiddenController()
+            viewRouter.pushTaskCheckDetailController()
         } catch {
             MolueLogger.UIModule.message(error)
         }
@@ -157,7 +156,7 @@ extension CheckTaskDetailPageInteractor: CheckTaskDetailPresentableListener {
             let finished = UIAlertAction(title: "完成检查", style: .default) { [unowned self] _ in
                 self.doFinishedOperation(with: result)
             }
-            let addRisks = UIAlertAction(title: "添加隐患", style: .default) { [unowned self] _ in
+            let addRisks = UIAlertAction(title: "添加隐患", style: .destructive) { [unowned self] _ in
                 self.doAddRisksOperation(with: result)
             }
             let router = try self.viewRouter.unwrap()

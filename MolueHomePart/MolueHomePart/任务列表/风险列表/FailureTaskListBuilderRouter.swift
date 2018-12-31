@@ -15,6 +15,7 @@ protocol FailureTaskListRouterInteractable: class {
 
 protocol FailureTaskListViewControllable: MolueViewControllable {
     // 定义一些该页面需要的其他commponent的组件, 比如该页面的childViewController等.
+    
 }
 
 final class FailureTaskListViewableRouter: MolueViewableRouting {
@@ -37,6 +38,7 @@ extension FailureTaskListViewableRouter: FailureTaskListViewableRouting {
 
 protocol FailureTaskListInteractListener: class {
     //用于定义其他的Component需要定义的协议方法
+    var selectedCheckTask: MLDailyCheckTask? {get}
 }
 
 protocol FailureTaskListComponentBuildable: MolueComponentBuildable {
@@ -46,7 +48,7 @@ protocol FailureTaskListComponentBuildable: MolueComponentBuildable {
 
 class FailureTaskListComponentBuilder: MolueComponentBuilder, FailureTaskListComponentBuildable {
     func build(listener: FailureTaskListInteractListener) -> UIViewController {
-        let controller = FailureTaskListViewController()
+        let controller = FailureTaskListViewController.initializeFromStoryboard()
         let interactor = FailureTaskListPageInteractor(presenter: controller)
         FailureTaskListViewableRouter(interactor: interactor, controller: controller)
         interactor.listener = listener

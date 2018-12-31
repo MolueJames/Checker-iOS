@@ -32,8 +32,6 @@ protocol TaskCheckDetailPagePresentable: MolueInteractorPresentable, MLControlle
 
 final class TaskCheckDetailPageInteractor: MoluePresenterInteractable {
     internal var maxImageCount: Int = 9
-    
-//    internal var photoImages: [UIImage]?
 
     weak var presenter: TaskCheckDetailPagePresentable?
     

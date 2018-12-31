@@ -66,12 +66,12 @@ public class MLDailyCheckPlan: Mappable {
     public required init?(map: Map) {}
     
     public func mapping(map: Map) {
-        enterprise     <- map["enterprise"]
-        tasks          <- map["tasks"]
-        created        <- map["created"]
-        updated        <- map["updated"]
-        status         <- map["status"]
-        planId         <- map["id"]
+        enterprise <- map["enterprise"]
+        tasks <- map["tasks"]
+        created <- map["created"]
+        updated <- map["updated"]
+        status <- map["status"]
+        planId <- map["id"]
         cycleType <- map["cycle_type"]
         planCycle <- map["cycle"]
         unitCode <- map["unit_code"]

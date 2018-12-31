@@ -19,56 +19,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="y6k-Fz-xA7">
-                                <rect key="frame" x="0.0" y="20" width="375" height="602"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iCf-NP-qAD">
-                                <rect key="frame" x="188" y="622" width="187" height="45"/>
-                                <color key="backgroundColor" red="1" green="0.32549019610000002" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="cPS-Y7-Sdd"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
-                                <state key="normal" title="添加隐患">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="insertRiskButtonClicked:" destination="fGf-s5-iqV" eventType="touchUpInside" id="sKy-Yj-0y2"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mLF-96-WRV">
-                                <rect key="frame" x="0.0" y="622" width="187.5" height="45"/>
-                                <color key="backgroundColor" red="0.2274509804" green="0.4823529412" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="SJU-po-2kg"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
-                                <state key="normal" title="完成检查">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="doneCheckButtonClicked:" destination="fGf-s5-iqV" eventType="touchUpInside" id="LzL-rz-ylp"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="gDt-Rt-C9E" firstAttribute="trailing" secondItem="y6k-Fz-xA7" secondAttribute="trailing" id="4mU-1h-Bu3"/>
-                            <constraint firstItem="mLF-96-WRV" firstAttribute="leading" secondItem="gDt-Rt-C9E" secondAttribute="leading" id="5hr-Kt-S3Z"/>
-                            <constraint firstItem="gDt-Rt-C9E" firstAttribute="bottom" secondItem="mLF-96-WRV" secondAttribute="bottom" id="9Z7-Oj-LDD"/>
-                            <constraint firstItem="iCf-NP-qAD" firstAttribute="leading" secondItem="mLF-96-WRV" secondAttribute="trailing" constant="0.5" id="dpM-IV-saX"/>
                             <constraint firstItem="y6k-Fz-xA7" firstAttribute="leading" secondItem="gDt-Rt-C9E" secondAttribute="leading" id="eVB-04-N3l"/>
-                            <constraint firstItem="iCf-NP-qAD" firstAttribute="width" secondItem="mLF-96-WRV" secondAttribute="width" id="emo-Rc-uCh"/>
-                            <constraint firstItem="gDt-Rt-C9E" firstAttribute="bottom" secondItem="iCf-NP-qAD" secondAttribute="bottom" id="jxe-V8-YQQ"/>
-                            <constraint firstItem="iCf-NP-qAD" firstAttribute="top" secondItem="y6k-Fz-xA7" secondAttribute="bottom" id="qaP-RK-c2S"/>
+                            <constraint firstItem="gDt-Rt-C9E" firstAttribute="bottom" secondItem="y6k-Fz-xA7" secondAttribute="bottom" id="nFq-zc-OGs"/>
                             <constraint firstItem="y6k-Fz-xA7" firstAttribute="top" secondItem="gDt-Rt-C9E" secondAttribute="top" id="rmg-cu-sLR"/>
-                            <constraint firstItem="gDt-Rt-C9E" firstAttribute="trailing" secondItem="iCf-NP-qAD" secondAttribute="trailing" id="vuf-Aq-2jd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gDt-Rt-C9E"/>
                     </view>
                     <connections>
-                        <outlet property="doneCheckButton" destination="mLF-96-WRV" id="so2-xE-IY8"/>
-                        <outlet property="insertRiskButton" destination="iCf-NP-qAD" id="Ung-Rb-Aba"/>
                         <outlet property="tableView" destination="y6k-Fz-xA7" id="0TX-4r-bF6"/>
                     </connections>
                 </viewController>

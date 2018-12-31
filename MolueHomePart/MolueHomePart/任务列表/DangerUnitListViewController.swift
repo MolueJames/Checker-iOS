@@ -67,6 +67,14 @@ final class DangerUnitListViewController: MLBaseViewController  {
 
 extension DangerUnitListViewController: MLUserInterfaceProtocol {
     func queryInformationWithNetwork() {
+        let name = MolueNotification.check_task_finish.toName()
+        let selector: Selector = #selector(checkTaskFinished)
+        NotificationCenter.default.addObserver(self, selector: selector, name: name, object: nil)
+    }
+    
+    @IBAction func checkTaskFinished(_ notification: NSNotification) {
+        MolueLogger.database.message(notification.object)
+        self.navigationController?.popToViewController(self, animated: true)
     }
     
     func updateUserInterfaceElements() {

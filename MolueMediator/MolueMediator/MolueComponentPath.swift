@@ -34,7 +34,7 @@ public enum MolueComponent {
         case RiskList = "PotentialRiskComponentBuilder"
         case QuickCheck = "QuickCheckRiskComponentBuilder"
         case EditRisk = "EditRiskInfoComponentBuilder"
-        case TaskDetail = "TaskCheckDetailComponentBuilder"
+//        case TaskDetail = "TaskCheckDetailComponentBuilder"
         case RiskDetail = "RiskDetailComponentBuilder"
         case NoHiddenItem = "NoHiddenDetailComponentBuilder"
         

@@ -6,9 +6,10 @@
 //  Copyright © 2018 MolueTech. All rights reserved.
 //
 import MolueUtilities
+import MolueFoundation
 import MolueMediator
 
-protocol CheckTaskDetailRouterInteractable: TaskCheckDetailInteractListener, EditRiskInfoInteractListener {
+protocol CheckTaskDetailRouterInteractable: TaskCheckDetailInteractListener, EditRiskInfoInteractListener, FailureTaskListInteractListener {
     var viewRouter: CheckTaskDetailViewableRouting? { get set }
     var listener: CheckTaskDetailInteractListener? { get set }
 }
@@ -32,8 +33,18 @@ final class CheckTaskDetailViewableRouter: MolueViewableRouting {
 }
 
 extension CheckTaskDetailViewableRouter: CheckTaskDetailViewableRouting {
+    
     func jumpToFailureTaskListController() {
-        
+        do {
+            let listener = try self.interactor.unwrap()
+            let builder = FailureTaskListComponentBuilder()
+            let controller = builder.build(listener: listener)
+            let navigator = try self.controller.unwrap()
+            let navigation = MLNavigationController(rootViewController: controller)
+            navigator.doPresentController(navigation, animated: true, completion: nil)
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
     }
     
     func presentAlertController(with finished: UIAlertAction, addRisks: UIAlertAction) {
@@ -52,12 +63,11 @@ extension CheckTaskDetailViewableRouter: CheckTaskDetailViewableRouting {
     }
     
     
-    func pushToNoHiddenController() {
+    func pushTaskCheckDetailController() {
         do {
             let listener = try self.interactor.unwrap()
-            let builderFactory = MolueBuilderFactory<MolueComponent.Risk>(.TaskDetail)
-            let builder: TaskCheckDetailComponentBuildable? = builderFactory.queryBuilder()
-            let controller = try builder.unwrap().build(listener: listener)
+            let builder = TaskCheckDetailComponentBuilder()
+            let controller = builder.build(listener: listener)
             let navigator = try self.controller.unwrap()
             navigator.pushToViewController(controller, animated: true)
         } catch {

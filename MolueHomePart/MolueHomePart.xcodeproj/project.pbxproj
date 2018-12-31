@@ -13,6 +13,16 @@
 		1A027C8721D9E8F9002A0099 /* FailureTaskListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A027C8621D9E8F9002A0099 /* FailureTaskListViewController.storyboard */; };
 		1A027C8B21D9EB85002A0099 /* FailureTaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A027C8921D9EB85002A0099 /* FailureTaskTableViewCell.swift */; };
 		1A027C8C21D9EB85002A0099 /* FailureTaskTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A027C8A21D9EB85002A0099 /* FailureTaskTableViewCell.xib */; };
+		1A027C9921DA3648002A0099 /* TaskCheckDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A027C8E21DA3648002A0099 /* TaskCheckDetailViewController.storyboard */; };
+		1A027C9B21DA3648002A0099 /* TaskCheckDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A027C9021DA3648002A0099 /* TaskCheckDetailViewController.swift */; };
+		1A027C9C21DA3648002A0099 /* TaskCheckDetailPageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A027C9121DA3648002A0099 /* TaskCheckDetailPageInteractor.swift */; };
+		1A027C9D21DA3648002A0099 /* TaskCheckDetailBuilderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A027C9221DA3648002A0099 /* TaskCheckDetailBuilderRouter.swift */; };
+		1A027C9E21DA3648002A0099 /* TaskCheckDetailCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A027C9421DA3648002A0099 /* TaskCheckDetailCollectionViewCell.xib */; };
+		1A027C9F21DA3648002A0099 /* TaskCheckDetailReusableFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A027C9521DA3648002A0099 /* TaskCheckDetailReusableFooterView.xib */; };
+		1A027CA021DA3648002A0099 /* TaskCheckDetailReusableFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A027C9621DA3648002A0099 /* TaskCheckDetailReusableFooterView.swift */; };
+		1A027CA121DA3648002A0099 /* TaskCheckDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A027C9721DA3648002A0099 /* TaskCheckDetailCollectionViewCell.swift */; };
+		1A027CA521DA3990002A0099 /* InsertPhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A027CA321DA398F002A0099 /* InsertPhotosCollectionViewCell.swift */; };
+		1A027CA621DA3990002A0099 /* InsertPhotosCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A027CA421DA3990002A0099 /* InsertPhotosCollectionViewCell.xib */; };
 		1A06557D20A9EE020016CA86 /* HomeInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A06557B20A9EE020016CA86 /* HomeInfoTableViewCell.swift */; };
 		1A06557E20A9EE020016CA86 /* HomeInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A06557C20A9EE020016CA86 /* HomeInfoTableViewCell.xib */; };
 		1A0B89B721931B8F000B1EBC /* DangerUnitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0B89B521931B8F000B1EBC /* DangerUnitTableViewCell.swift */; };
@@ -154,6 +164,16 @@
 		1A027C8621D9E8F9002A0099 /* FailureTaskListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FailureTaskListViewController.storyboard; sourceTree = "<group>"; };
 		1A027C8921D9EB85002A0099 /* FailureTaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailureTaskTableViewCell.swift; sourceTree = "<group>"; };
 		1A027C8A21D9EB85002A0099 /* FailureTaskTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FailureTaskTableViewCell.xib; sourceTree = "<group>"; };
+		1A027C8E21DA3648002A0099 /* TaskCheckDetailViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TaskCheckDetailViewController.storyboard; sourceTree = "<group>"; };
+		1A027C9021DA3648002A0099 /* TaskCheckDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCheckDetailViewController.swift; sourceTree = "<group>"; };
+		1A027C9121DA3648002A0099 /* TaskCheckDetailPageInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCheckDetailPageInteractor.swift; sourceTree = "<group>"; };
+		1A027C9221DA3648002A0099 /* TaskCheckDetailBuilderRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCheckDetailBuilderRouter.swift; sourceTree = "<group>"; };
+		1A027C9421DA3648002A0099 /* TaskCheckDetailCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskCheckDetailCollectionViewCell.xib; sourceTree = "<group>"; };
+		1A027C9521DA3648002A0099 /* TaskCheckDetailReusableFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskCheckDetailReusableFooterView.xib; sourceTree = "<group>"; };
+		1A027C9621DA3648002A0099 /* TaskCheckDetailReusableFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCheckDetailReusableFooterView.swift; sourceTree = "<group>"; };
+		1A027C9721DA3648002A0099 /* TaskCheckDetailCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCheckDetailCollectionViewCell.swift; sourceTree = "<group>"; };
+		1A027CA321DA398F002A0099 /* InsertPhotosCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsertPhotosCollectionViewCell.swift; sourceTree = "<group>"; };
+		1A027CA421DA3990002A0099 /* InsertPhotosCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InsertPhotosCollectionViewCell.xib; sourceTree = "<group>"; };
 		1A06557B20A9EE020016CA86 /* HomeInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInfoTableViewCell.swift; sourceTree = "<group>"; };
 		1A06557C20A9EE020016CA86 /* HomeInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeInfoTableViewCell.xib; sourceTree = "<group>"; };
 		1A0B89B521931B8F000B1EBC /* DangerUnitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DangerUnitTableViewCell.swift; sourceTree = "<group>"; };
@@ -325,6 +345,31 @@
 			children = (
 				1A027C8921D9EB85002A0099 /* FailureTaskTableViewCell.swift */,
 				1A027C8A21D9EB85002A0099 /* FailureTaskTableViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1A027C8D21DA3648002A0099 /* 检查详情 */ = {
+			isa = PBXGroup;
+			children = (
+				1A027C8E21DA3648002A0099 /* TaskCheckDetailViewController.storyboard */,
+				1A027C9021DA3648002A0099 /* TaskCheckDetailViewController.swift */,
+				1A027C9121DA3648002A0099 /* TaskCheckDetailPageInteractor.swift */,
+				1A027C9221DA3648002A0099 /* TaskCheckDetailBuilderRouter.swift */,
+				1A027C9321DA3648002A0099 /* Views */,
+			);
+			path = "检查详情";
+			sourceTree = "<group>";
+		};
+		1A027C9321DA3648002A0099 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1A027CA421DA3990002A0099 /* InsertPhotosCollectionViewCell.xib */,
+				1A027CA321DA398F002A0099 /* InsertPhotosCollectionViewCell.swift */,
+				1A027C9521DA3648002A0099 /* TaskCheckDetailReusableFooterView.xib */,
+				1A027C9621DA3648002A0099 /* TaskCheckDetailReusableFooterView.swift */,
+				1A027C9421DA3648002A0099 /* TaskCheckDetailCollectionViewCell.xib */,
+				1A027C9721DA3648002A0099 /* TaskCheckDetailCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -600,6 +645,7 @@
 		1A522ED221912B0100094A8A /* 任务列表 */ = {
 			isa = PBXGroup;
 			children = (
+				1A027C8D21DA3648002A0099 /* 检查详情 */,
 				1A027C7F21D9E89C002A0099 /* 风险列表 */,
 				1A4F89D421D09C8100B560E1 /* 检查报告 */,
 				1A346FC221915BAA00CB534B /* 检查点列表 */,
@@ -903,6 +949,7 @@
 				1A0B89DD219689A1000B1EBC /* DailyCheckSectionHeaderView.xib in Resources */,
 				1A3465D721971E3E00EBA57C /* CheckTaskDetailFooterView.xib in Resources */,
 				1A264B9321A1794700F452F9 /* CheckTaskHistoryViewController.storyboard in Resources */,
+				1A027C9E21DA3648002A0099 /* TaskCheckDetailCollectionViewCell.xib in Resources */,
 				1A24022420E5309100FC3EBA /* LawRegulationViewController.storyboard in Resources */,
 				1AAF7B8620C1971B0051EC18 /* DangerMachineryViewController.storyboard in Resources */,
 				1A730AEF20EBBC49008831BC /* PolicyDetailViewController.storyboard in Resources */,
@@ -926,9 +973,12 @@
 				1AAF7B8320C1971B0051EC18 /* SecurityAdminiViewController.storyboard in Resources */,
 				1AAF7B8920C1971B0051EC18 /* EnterpriseRiskViewController.storyboard in Resources */,
 				1AAF7B8420C1971B0051EC18 /* ContactInfoViewController.storyboard in Resources */,
+				1A027C9921DA3648002A0099 /* TaskCheckDetailViewController.storyboard in Resources */,
+				1A027CA621DA3990002A0099 /* InsertPhotosCollectionViewCell.xib in Resources */,
 				1A027C8721D9E8F9002A0099 /* FailureTaskListViewController.storyboard in Resources */,
 				1A1CA8DB21B50C3F00FDF4E2 /* CheckTaskHistoryCalendarCell.xib in Resources */,
 				1AB0670820EFB61D00619570 /* PolicyNoticeTableViewCell.xib in Resources */,
+				1A027C9F21DA3648002A0099 /* TaskCheckDetailReusableFooterView.xib in Resources */,
 				1AAF7B8020C1971B0051EC18 /* IncreaseAdminiViewController.storyboard in Resources */,
 				1A24022620E530AE00FC3EBA /* PolicyNoticeViewController.storyboard in Resources */,
 				1A4F89DC21D09CC900B560E1 /* TaskCheckReportViewController.storyboard in Resources */,
@@ -984,12 +1034,14 @@
 				1A1CA8DA21B50C3F00FDF4E2 /* CheckTaskHistoryCalendarCell.swift in Sources */,
 				1A43BC2F20C3CAA60093855B /* EnterpriseInfoTableViewCell.swift in Sources */,
 				1A43BC2420C3AEE70093855B /* HomeInfoCollectionViewCell.swift in Sources */,
+				1A027C9B21DA3648002A0099 /* TaskCheckDetailViewController.swift in Sources */,
 				1A522ED821912BA200094A8A /* DangerUnitListBuilderRouter.swift in Sources */,
 				1A5E87F521C9DC4B00BA4DB5 /* PolicyNoticeViewController.swift in Sources */,
 				1AB0670320EFB06B00619570 /* LawRegulationTableViewCell.swift in Sources */,
 				1A264B9021A1792700F452F9 /* CheckTaskHistoryPageInteractor.swift in Sources */,
 				1A2F407421AD355F00C436F9 /* CheckTaskHistoryTableViewCell.swift in Sources */,
 				1A522EBE2190261900094A8A /* HomeInfoPagePageInteractor.swift in Sources */,
+				1A027C9D21DA3648002A0099 /* TaskCheckDetailBuilderRouter.swift in Sources */,
 				1A35D7FA20DBC9BF002ED3CB /* EnterpriseInfoDataManager.swift in Sources */,
 				1A2F408121AD3D4800C436F9 /* HistoryInfoTableViewCell.swift in Sources */,
 				1A346FC721915C0400CB534B /* CheckTaskDetailPageInteractor.swift in Sources */,
@@ -1007,11 +1059,13 @@
 				1A4F89D921D09CB200B560E1 /* TaskCheckReportPageInteractor.swift in Sources */,
 				1A5E87F721C9DC4B00BA4DB5 /* PolicyNoticeBuilderRouter.swift in Sources */,
 				1AAF7B8720C1971B0051EC18 /* DangerMachineryViewController.swift in Sources */,
+				1A027CA021DA3648002A0099 /* TaskCheckDetailReusableFooterView.swift in Sources */,
 				1A7D5A3A21AA73D800931B0B /* AppHomeDocument.swift in Sources */,
 				1A5E87F621C9DC4B00BA4DB5 /* PolicyNoticePageInteractor.swift in Sources */,
 				1A522EC62190356100094A8A /* DailyCheckTaskViewController.swift in Sources */,
 				1AB0670720EFB61D00619570 /* PolicyNoticeTableViewCell.swift in Sources */,
 				1A3465D521971E3400EBA57C /* CheckTaskDetailFooterView.swift in Sources */,
+				1A027CA521DA3990002A0099 /* InsertPhotosCollectionViewCell.swift in Sources */,
 				1A522ED721912BA200094A8A /* DangerUnitListPageInteractor.swift in Sources */,
 				1A522EC82190356100094A8A /* DailyCheckTaskBuilderRouter.swift in Sources */,
 				1A0B89DF21968CF7000B1EBC /* DailyCheckTaskFooterView.swift in Sources */,
@@ -1026,12 +1080,14 @@
 				1A4F89EC21D0A0DD00B560E1 /* TaskCheckReportTableViewCell.swift in Sources */,
 				1AAF7B8120C1971B0051EC18 /* IncreaseAdminiViewController.swift in Sources */,
 				1A4F89DA21D09CB200B560E1 /* TaskCheckReportBuilderRouter.swift in Sources */,
+				1A027CA121DA3648002A0099 /* TaskCheckDetailCollectionViewCell.swift in Sources */,
 				1A602F8520A87D58003AD583 /* HomeInfoTableHeaderView.swift in Sources */,
 				1A24022D20E536A700FC3EBA /* SecurityAdminiDataManager.swift in Sources */,
 				1A522EC72190356100094A8A /* DailyCheckTaskPageInteractor.swift in Sources */,
 				1AAF7B6820C1970A0051EC18 /* EnterpriseInfoViewController.swift in Sources */,
 				1AC8A5D121D1231A009CCAC5 /* PotentialRiskTableViewCell.swift in Sources */,
 				1A027C8421D9E8E1002A0099 /* FailureTaskListPageInteractor.swift in Sources */,
+				1A027C9C21DA3648002A0099 /* TaskCheckDetailPageInteractor.swift in Sources */,
 				1A264B8F21A1792700F452F9 /* CheckTaskHistoryViewController.swift in Sources */,
 				1A2F407921AD394F00C436F9 /* TaskHistoryInfoViewController.swift in Sources */,
 				1A346FC821915C0400CB534B /* CheckTaskDetailBuilderRouter.swift in Sources */,
