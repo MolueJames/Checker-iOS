@@ -24,7 +24,7 @@ protocol TaskCheckDetailViewableRouting: class {
     func popToPreviewController()
 }
 
-protocol TaskCheckDetailPagePresentable: MolueInteractorPresentable, MLControllerHUDProtocol {
+protocol TaskCheckDetailPagePresentable: MolueInteractorPresentable, MLControllerHUDProtocol, MolueActivityDelegate {
     var listener: TaskCheckDetailPresentableListener? { get set }
     // 定义一些页面需要的方法, 比如刷新页面的显示内容等.
     func reloadCollectionViewData()
@@ -175,6 +175,7 @@ extension TaskCheckDetailPageInteractor: TaskCheckDetailRouterInteractable {
         for index in 0...attachments.count {
             do {
                 let item = try attachments.item(at: index).unwrap()
+                guard item.detailId.isNone() else { break }
                 let task = uploadPhotoTask(with: item, index: index)
                 try uploadTasks.append(task.unwrap())
             } catch { MolueLogger.network.message(error) }
@@ -184,9 +185,6 @@ extension TaskCheckDetailPageInteractor: TaskCheckDetailRouterInteractable {
     
     func handleSuccessOperation() {
         do {
-            let presenter = try self.presenter.unwrap()
-            presenter.showSuccessHUD(text: "上传图片成功")
-            
             let listener = try self.listener.unwrap()
             let updatedAttachment = try self.currentAttachment.unwrap()
             listener.updateCurrentAttachment(with: updatedAttachment)
@@ -204,15 +202,22 @@ extension TaskCheckDetailPageInteractor: TaskCheckDetailRouterInteractable {
     
     func uploadPhotoTask(with attachment: MLAttachmentDetail, index: Int) -> Task<Any?>? {
         do {
-            let picture = try attachment.image.unwrap()
             let taskCompletionSource = TaskCompletionSource<Any?>()
+            try self.presenter.unwrap().networkActivityStarted()
+            let picture = try attachment.image.unwrap()
             MolueFileService.uploadPicture(with: picture, success: { [weak self] result in
                 taskCompletionSource.set(result: result)
                 do {
-                    try self.unwrap().update(with: attachment, result: result, index: index)
+                    let strongSelf = try self.unwrap()
+                    try strongSelf.presenter.unwrap().networkActivitySuccess()
+                    strongSelf.update(with: attachment, result: result, index: index)
                 } catch { MolueLogger.network.message(error) }
-            }) { (error) in
+            }) { [weak self] (error) in
                 taskCompletionSource.set(error: error)
+                do {
+                    let presenter = try self.unwrap().presenter.unwrap()
+                    presenter.networkActivityFailure(error: error)
+                } catch { MolueLogger.network.message(error) }
             }
             return taskCompletionSource.task
         } catch {
@@ -293,7 +298,7 @@ extension TaskCheckDetailPageInteractor: TaskCheckDetailPresentableListener {
             let attachmentDetails = try self.attachmentDetails.unwrap()
             self.uploadAttachmentPhotos(with: attachmentDetails)
         } catch {
-            MolueLogger.UIModule.error(error)
+            MolueLogger.UIModule.message(error)
         }
     }
     

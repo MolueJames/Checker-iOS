@@ -25,7 +25,7 @@ extension AppDelegate {
         
         Task.whenAll([self.queryDetail(), self.queryDetail()]).continueOnSuccessWith { (result) in
             MolueLogger.network.message(result)
-            self.queryDetail()
+//            self.queryDetail()
         }
     }
     

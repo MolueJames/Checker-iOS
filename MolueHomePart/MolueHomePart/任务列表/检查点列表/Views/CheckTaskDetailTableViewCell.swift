@@ -111,7 +111,7 @@ class CheckTaskDetailTableViewCell: UITableViewCell {
     }
     
     private func clearTaskAttachment(with attachment: MLTaskAttachment) {
-        attachment.attachments = nil
+        attachment.attachments = [MLAttachmentDetail]()
         attachment.remark = nil
         attachment.result = nil
     }

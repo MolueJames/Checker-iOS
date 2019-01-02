@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Alamofire
 
 public struct MolueCheckService {
     public static func queryDailyPlanList(page: Int, pagesize: Int) -> MolueDataRequest {
@@ -21,6 +22,6 @@ public struct MolueCheckService {
     
     public static func updateDailyCheckTask(with taskId: String, paramaters: [String: Any]) -> MolueDataRequest {
         let path: String = "api/task/\(taskId)/"
-        return MolueDataRequest(parameter: paramaters, method: .put, path: path)
+        return MolueDataRequest(parameter: paramaters, method: .put, path: path, encoding: JSONEncoding.default)
     }
 }

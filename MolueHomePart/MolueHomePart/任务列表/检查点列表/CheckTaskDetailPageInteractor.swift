@@ -136,22 +136,30 @@ extension CheckTaskDetailPageInteractor: CheckTaskDetailPresentableListener {
         do {
             let checkTask = try self.selectedCheckTask.unwrap()
             let taskId = try checkTask.taskId.unwrap()
-            let items = try checkTask.items.unwrap().toJSON()
-            let parameters:[String : Any] = ["items" : items, "id" : taskId]
-            print(parameters.description)
+            let parameters:[String : Any] = checkTask.toJSON()
             let request = MolueCheckService.updateDailyCheckTask(with: taskId, paramaters: parameters)
-            request.handleSuccessResponse { (result) in
-                
+            request.handleSuccessResultToObjc { [weak self](result: MLDailyCheckTask?) in
+                do {
+                    let checkTask = try result.unwrap()
+                    try self.unwrap().handleSuccessOpertaion(with: checkTask)
+                } catch { MolueLogger.network.message(error) }
             }
             let requestManager = MolueRequestManager(delegate: self.presenter)
             requestManager.doRequestStart(with: request)
         } catch {
             MolueLogger.UIModule.message(error)
         }
-        self.handleSuccessOpertaion(with: "nil")
     }
     
-    func handleSuccessOpertaion(with result: Any?) {
+    func handleSuccessOpertaion(with result: MLDailyCheckTask) {
+        if result.status == "risky" {
+            self.presentChoiceController(with: result)
+        } else {
+            self.doFinishedOperation(with: result)
+        }
+    }
+    
+    func presentChoiceController(with result: MLDailyCheckTask) {
         do {
             let finished = UIAlertAction(title: "完成检查", style: .default) { [unowned self] _ in
                 self.doFinishedOperation(with: result)
@@ -166,12 +174,12 @@ extension CheckTaskDetailPageInteractor: CheckTaskDetailPresentableListener {
         }
     }
     
-    private func doFinishedOperation(with result: Any?) {
+    private func doFinishedOperation(with result: MLDailyCheckTask) {
         let name = MolueNotification.check_task_finish.toName()
         NotificationCenter.default.post(name: name, object: result)
     }
     
-    private func doAddRisksOperation(with result: Any?) {
+    private func doAddRisksOperation(with result: MLDailyCheckTask) {
         do {
             let router = try self.viewRouter.unwrap()
             router.jumpToFailureTaskListController()

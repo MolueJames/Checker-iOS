@@ -32,7 +32,7 @@ public struct MolueOauthHelper {
             let access_token = try item.access_token.unwrap()
             let token_type = try item.token_type.unwrap()
             let authorization = token_type + " " + access_token
-            return ["authorization" : authorization]
+            return ["authorization":authorization, "Content-Type":"application/json"]
         } catch {
             return MolueLogger.network.allowNil(error)
         }
