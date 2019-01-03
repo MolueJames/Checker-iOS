@@ -135,20 +135,34 @@ extension CheckTaskDetailPageInteractor: CheckTaskDetailPresentableListener {
     func postCheckTaskDetailToServer() {
         do {
             let checkTask = try self.selectedCheckTask.unwrap()
-            let taskId = try checkTask.taskId.unwrap()
-            let parameters:[String : Any] = checkTask.toJSON()
-            let request = MolueCheckService.updateDailyCheckTask(with: taskId, paramaters: parameters)
-            request.handleSuccessResultToObjc { [weak self](result: MLDailyCheckTask?) in
-                do {
-                    let checkTask = try result.unwrap()
-                    try self.unwrap().handleSuccessOpertaion(with: checkTask)
-                } catch { MolueLogger.network.message(error) }
+            if try self.isAllTaskChecked(with: checkTask.items.unwrap()) {
+                let taskId = try checkTask.taskId.unwrap()
+                self.updateCheckTask(with: taskId, parameters: checkTask.toJSON())
+            } else {
+                let presenter = try self.presenter.unwrap()
+                presenter.showWarningHUD(text: "尚有未完成的检查项")
             }
-            let requestManager = MolueRequestManager(delegate: self.presenter)
-            requestManager.doRequestStart(with: request)
         } catch {
             MolueLogger.UIModule.message(error)
         }
+    }
+    
+    func updateCheckTask(with taskId: String, parameters: [String : Any]) {
+        let request = MolueCheckService.updateDailyCheckTask(with: taskId, paramaters: parameters)
+        request.handleSuccessResultToObjc { [weak self](result: MLDailyCheckTask?) in
+            do {
+                let checkTask = try result.unwrap()
+                try self.unwrap().handleSuccessOpertaion(with: checkTask)
+            } catch { MolueLogger.network.message(error) }
+        }
+        let requestManager = MolueRequestManager(delegate: self.presenter)
+        requestManager.doRequestStart(with: request)
+    }
+    
+    func isAllTaskChecked(with attachments: [MLTaskAttachment])  -> Bool {
+        return !attachments.contains(where: { (item) -> Bool in
+            return item.result.isNone()
+        })
     }
     
     func handleSuccessOpertaion(with result: MLDailyCheckTask) {

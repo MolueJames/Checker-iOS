@@ -75,7 +75,6 @@ extension DailyCheckTaskPageInteractor: DailyCheckTaskPresentableListener {
             let taskId = try self.listener.unwrap().selectedCheckTask.unwrap()
             let request = MolueCheckService.queryDailyCheckTask(with: taskId)
             request.handleSuccessResultToObjc { [weak self] (result: MLDailyCheckTask?) in
-                dump(result)
                 do {
                     try self.unwrap().handleSuccessResult(with: result)
                 } catch { MolueLogger.UIModule.message(error) }
