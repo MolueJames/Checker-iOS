@@ -37,7 +37,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="obd-kw-lba">
                         <rect key="frame" x="0.0" y="34.5" width="320" height="60"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="风险类型:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="beL-je-2dg">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="风险编号:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="beL-je-2dg">
                                 <rect key="frame" x="15" y="10" width="61.5" height="17"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="61.5" id="s6P-op-Ei3"/>
@@ -55,7 +55,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vmy-8q-lTB">
                                 <rect key="frame" x="160" y="30" width="160" height="30"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="检查人员:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p0U-z1-VOr">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="负责单位:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p0U-z1-VOr">
                                         <rect key="frame" x="15" y="5" width="61.5" height="17"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="61.5" id="835-4E-wZF"/>
@@ -143,8 +143,8 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="checkTaskLabel" destination="ly3-0g-9Gf" id="6ic-UC-kXr"/>
-                <outlet property="riskCheckerLabel" destination="J3b-H2-oKD" id="1Zx-H1-VIF"/>
-                <outlet property="taskClassLabel" destination="kmu-WQ-a8E" id="oLi-Ko-bVp"/>
+                <outlet property="responseLabel" destination="J3b-H2-oKD" id="RRK-ww-dYz"/>
+                <outlet property="riskCodeLabel" destination="kmu-WQ-a8E" id="wdF-G7-zq1"/>
                 <outlet property="taskStateLabel" destination="oca-Sa-mRU" id="6vL-u9-orT"/>
             </connections>
             <point key="canvasLocation" x="132.80000000000001" y="157.87106446776613"/>

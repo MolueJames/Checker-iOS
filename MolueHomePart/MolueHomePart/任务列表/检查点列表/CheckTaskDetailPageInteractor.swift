@@ -38,7 +38,7 @@ final class CheckTaskDetailPageInteractor: MoluePresenterInteractable {
     lazy var selectedCheckTask: MLDailyCheckTask? = {
         do {
             let listener = try self.listener.unwrap()
-            return try listener.currentCheckTask.unwrap()
+            return try listener.currentTask.unwrap()
         } catch {
             return MolueLogger.UIModule.returnNil(error)
         }

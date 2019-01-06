@@ -35,7 +35,7 @@ final class DailyCheckTaskPageInteractor: MoluePresenterInteractable {
     
     var selectedCheckTask: String?
     
-    var currentCheckTask: MLDailyCheckTask?
+    var currentTask: MLDailyCheckTask?
     
     required init(presenter: DailyCheckTaskPagePresentable) {
         self.presenter = presenter
@@ -51,7 +51,7 @@ extension DailyCheckTaskPageInteractor: DailyCheckTaskPresentableListener {
     
     func numberOfRows(with sections: Int) -> Int? {
         do {
-            let currentTask = try self.currentCheckTask.unwrap()
+            let currentTask = try self.currentTask.unwrap()
             let riskUnit = try currentTask.risk.unwrap()
             return try riskUnit.solutions.unwrap().count
         } catch {
@@ -61,7 +61,7 @@ extension DailyCheckTaskPageInteractor: DailyCheckTaskPresentableListener {
     
     func querySolutionItem(with indexPath: IndexPath) -> MLRiskUnitSolution? {
         do {
-            let currentTask = try self.currentCheckTask.unwrap()
+            let currentTask = try self.currentTask.unwrap()
             let riskUnit = try currentTask.risk.unwrap()
             let solutions = try riskUnit.solutions.unwrap()
             return try solutions.item(at: indexPath.row).unwrap()
@@ -87,7 +87,7 @@ extension DailyCheckTaskPageInteractor: DailyCheckTaskPresentableListener {
     func handleSuccessResult(with task: MLDailyCheckTask?) {
         do {
             let currentTask = try task.unwrap()
-            self.currentCheckTask = currentTask
+            self.currentTask = currentTask
             let presenter = try self.presenter.unwrap()
             presenter.refreshSubviews(with: currentTask)
         } catch { MolueLogger.network.message(error) }
@@ -96,7 +96,7 @@ extension DailyCheckTaskPageInteractor: DailyCheckTaskPresentableListener {
     func jumpToCheckTaskDetailController() {
         do {
             let viewRouter = try self.viewRouter.unwrap()
-            let currentCheckTask = try self.currentCheckTask.unwrap()
+            let currentCheckTask = try self.currentTask.unwrap()
             if currentCheckTask.status == "pending" {
                 viewRouter.pushToCheckTaskDetailController()
             } else {

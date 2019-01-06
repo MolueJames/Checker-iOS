@@ -31,6 +31,6 @@ public struct MolueCheckService {
     }
     
     public static func queryDailyTaskHistory(with created: String) -> MolueDataRequest {
-        return MolueDataRequest(parameter: ["created" : created], method: .get, path: "aip/task/")
+        return MolueDataRequest(parameter: ["created" : created], method: .get, path: "api/task/")
     }
 }

@@ -37,7 +37,7 @@ final class TaskHistoryInfoPageInteractor: MoluePresenterInteractable {
     var noHiddenItem: TaskSuccessModel?
     
     lazy var taskItem: DangerUnitRiskModel? = {
-        return self.listener?.taskItem
+        return nil
     }()
 }
 

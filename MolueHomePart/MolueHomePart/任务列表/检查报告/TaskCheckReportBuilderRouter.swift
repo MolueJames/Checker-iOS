@@ -37,7 +37,7 @@ extension TaskCheckReportViewableRouter: TaskCheckReportViewableRouting {
 
 protocol TaskCheckReportInteractListener: class {
     //用于定义其他的Component需要定义的协议方法
-    var currentCheckTask: MLDailyCheckTask? {get}
+    var currentTask: MLDailyCheckTask? {get}
 }
 
 protocol TaskCheckReportComponentBuildable: MolueComponentBuildable {

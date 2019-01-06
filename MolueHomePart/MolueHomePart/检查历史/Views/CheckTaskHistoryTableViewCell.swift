@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MolueUtilities
 import MolueMediator
 
 class CheckTaskHistoryTableViewCell: UITableViewCell {
@@ -25,32 +26,53 @@ class CheckTaskHistoryTableViewCell: UITableViewCell {
     
     @IBOutlet weak var checkTaskLabel: UILabel!
     
-    @IBOutlet weak var taskClassLabel: UILabel!
+    @IBOutlet weak var riskCodeLabel: UILabel!
     
-    @IBOutlet weak var riskCheckerLabel: UILabel!
+    @IBOutlet weak var responseLabel: UILabel!
     
     @IBOutlet weak var taskStateLabel: UILabel!
     
-    public func refreshSubviews(with item: DangerUnitRiskModel) {
-        self.checkTaskLabel.text = item.riskName
-        self.taskClassLabel.text = item.riskClass
-        self.taskStateLabel.text = item.riskStatus
-        self.taskStateLabel.textColor = self.queryColor(with: item)
-        self.riskCheckerLabel.text = "张建国"
+    public func refreshSubviews(with task: MLDailyCheckTask) {
+        do {
+            let risk = try task.risk.unwrap()
+            self.checkTaskLabel.text = risk.unitName.data()
+            self.riskCodeLabel.text = risk.unitCode.data()
+            self.responseLabel.text = risk.responseUnit.data()
+        } catch { MolueLogger.UIModule.message(error) }
+        self.refreshStatusLabel(with: task)
     }
     
-    func queryColor(with item: DangerUnitRiskModel) -> UIColor {
+    public func refreshStatusLabel(with task: MLDailyCheckTask) {
         do {
-            switch try item.riskStatus.unwrap() {
-            case "已检查":
-                return UIColor(hex: 0x33CC33)
-            case "有隐患":
-                return UIColor(hex: 0xCC0000)
-            default:
-                return UIColor(hex: 0xFFCC00)
-            }
+            let status = try task.status.unwrap()
+            let textColor = self.queryColor(with: status)
+            self.taskStateLabel.textColor = textColor
+            let statusText = self.queryTitle(with: status)
+            self.taskStateLabel.text = statusText
         } catch {
+            MolueLogger.UIModule.message(error)
+        }
+    }
+    
+    func queryColor(with status: String) -> UIColor {
+        switch status {
+        case "done":
+            return UIColor(hex: 0x33CC33)
+        case "risky":
+            return UIColor(hex: 0xCC0000)
+        default:
             return UIColor(hex: 0xFFCC00)
+        }
+    }
+    
+    func queryTitle(with status: String) -> String {
+        switch status {
+        case "done":
+            return "已检查"
+        case "risky":
+            return "有风险"
+        default:
+            return "未检查"
         }
     }
     

@@ -13,29 +13,42 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CheckTaskHistoryCalendarCell" customModule="MolueHomePart" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+            <rect key="frame" x="0.0" y="0.0" width="80" height="40"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                <rect key="frame" x="0.0" y="0.0" width="80" height="40"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dnb-Jx-hwI">
-                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dnb-Jx-hwI">
+                        <rect key="frame" x="29.5" y="7" width="40.5" height="20.5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20.5" id="aF6-OU-LPd"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                        <color key="textColor" red="0.1058823529" green="0.50980392159999999" blue="0.82352941180000006" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kVC-eN-MBm">
+                        <rect key="frame" x="8" y="30" width="64" height="3"/>
+                        <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="3" id="ge7-ZT-c03"/>
+                        </constraints>
+                    </view>
                 </subviews>
             </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="dnb-Jx-hwI" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="AM3-dq-Dsw"/>
-                <constraint firstItem="dnb-Jx-hwI" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Sbf-uO-ej3"/>
-                <constraint firstAttribute="trailing" secondItem="dnb-Jx-hwI" secondAttribute="trailing" id="hCB-tz-sbv"/>
-                <constraint firstAttribute="bottom" secondItem="dnb-Jx-hwI" secondAttribute="bottom" id="nfM-Z7-ePP"/>
+                <constraint firstAttribute="trailing" secondItem="kVC-eN-MBm" secondAttribute="trailing" constant="8" id="EGI-Y9-G0l"/>
+                <constraint firstItem="kVC-eN-MBm" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="Hj0-e9-0TL"/>
+                <constraint firstItem="dnb-Jx-hwI" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="7" id="Sbf-uO-ej3"/>
+                <constraint firstAttribute="bottom" secondItem="kVC-eN-MBm" secondAttribute="bottom" constant="7" id="UyS-NA-6e2"/>
+                <constraint firstAttribute="trailing" secondItem="dnb-Jx-hwI" secondAttribute="trailing" constant="10" id="hCB-tz-sbv"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <connections>
                 <outlet property="numberLabel" destination="dnb-Jx-hwI" id="Xq0-bl-YSQ"/>
+                <outlet property="statusView" destination="kVC-eN-MBm" id="dTq-zE-3Mp"/>
             </connections>
             <point key="canvasLocation" x="132.80000000000001" y="154.72263868065968"/>
         </collectionViewCell>

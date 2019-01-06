@@ -37,6 +37,8 @@
 		1A0B89E121968D0A000B1EBC /* DailyCheckTaskFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A0B89E021968D0A000B1EBC /* DailyCheckTaskFooterView.xib */; };
 		1A1084FD20ECF1DD004E365A /* IncreaseAdminiNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1084FC20ECF1DD004E365A /* IncreaseAdminiNavigator.swift */; };
 		1A1084FF20ECF1FC004E365A /* IncreaseAdminiDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1084FE20ECF1FC004E365A /* IncreaseAdminiDataManager.swift */; };
+		1A1550D321E0F2660004BD1C /* CheckTaskHistoryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1550D121E0F2660004BD1C /* CheckTaskHistoryHeaderView.swift */; };
+		1A1550D421E0F2660004BD1C /* CheckTaskHistoryHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A1550D221E0F2660004BD1C /* CheckTaskHistoryHeaderView.xib */; };
 		1A1B88CD20864D9500C5F4D9 /* MolueHomePart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A1B88C320864D9500C5F4D9 /* MolueHomePart.framework */; };
 		1A1B88D220864D9500C5F4D9 /* MolueHomePartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1B88D120864D9500C5F4D9 /* MolueHomePartTests.swift */; };
 		1A1B88D420864D9500C5F4D9 /* MolueHomePart.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A1B88C620864D9500C5F4D9 /* MolueHomePart.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -188,6 +190,8 @@
 		1A0B89E021968D0A000B1EBC /* DailyCheckTaskFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailyCheckTaskFooterView.xib; sourceTree = "<group>"; };
 		1A1084FC20ECF1DD004E365A /* IncreaseAdminiNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncreaseAdminiNavigator.swift; sourceTree = "<group>"; };
 		1A1084FE20ECF1FC004E365A /* IncreaseAdminiDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncreaseAdminiDataManager.swift; sourceTree = "<group>"; };
+		1A1550D121E0F2660004BD1C /* CheckTaskHistoryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTaskHistoryHeaderView.swift; sourceTree = "<group>"; };
+		1A1550D221E0F2660004BD1C /* CheckTaskHistoryHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckTaskHistoryHeaderView.xib; sourceTree = "<group>"; };
 		1A1B88C320864D9500C5F4D9 /* MolueHomePart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MolueHomePart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A1B88C620864D9500C5F4D9 /* MolueHomePart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MolueHomePart.h; sourceTree = "<group>"; };
 		1A1B88C720864D9500C5F4D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -528,6 +532,8 @@
 				1A2F407321AD355F00C436F9 /* CheckTaskHistoryTableViewCell.xib */,
 				1A1CA8D821B50C3F00FDF4E2 /* CheckTaskHistoryCalendarCell.swift */,
 				1A1CA8D921B50C3F00FDF4E2 /* CheckTaskHistoryCalendarCell.xib */,
+				1A1550D121E0F2660004BD1C /* CheckTaskHistoryHeaderView.swift */,
+				1A1550D221E0F2660004BD1C /* CheckTaskHistoryHeaderView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -986,6 +992,7 @@
 				1A65039620DD552B0017F91D /* MolueHome.xcassets in Resources */,
 				1A4F89ED21D0A0DD00B560E1 /* TaskCheckReportTableViewCell.xib in Resources */,
 				1AD3DE8721971720005015A6 /* CheckTaskDetailTableViewCell.xib in Resources */,
+				1A1550D421E0F2660004BD1C /* CheckTaskHistoryHeaderView.xib in Resources */,
 				1AAF7B6720C1970A0051EC18 /* EnterpriseInfoViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1047,6 +1054,7 @@
 				1A346FC721915C0400CB534B /* CheckTaskDetailPageInteractor.swift in Sources */,
 				1A264B9121A1792700F452F9 /* CheckTaskHistoryBuilderRouter.swift in Sources */,
 				1A2F407B21AD394F00C436F9 /* TaskHistoryInfoBuilderRouter.swift in Sources */,
+				1A1550D321E0F2660004BD1C /* CheckTaskHistoryHeaderView.swift in Sources */,
 				1ABDCA9A20C5798B0062DE71 /* SecurityAdminiTableViewCell.swift in Sources */,
 				1AAF7B8520C1971B0051EC18 /* ContactInfoViewController.swift in Sources */,
 				1A24022820E5337A00FC3EBA /* EnterpriseInfoNavigator.swift in Sources */,

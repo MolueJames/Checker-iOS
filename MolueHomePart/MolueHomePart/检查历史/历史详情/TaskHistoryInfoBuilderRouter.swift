@@ -62,7 +62,7 @@ extension TaskHistoryInfoViewableRouter: TaskHistoryInfoViewableRouting {
 
 protocol TaskHistoryInfoInteractListener: class {
     //用于定义其他的Component需要定义的协议方法
-    var taskItem: DangerUnitRiskModel? {get}
+//    var taskItem: DangerUnitRiskModel? {get}
 }
 
 protocol TaskHistoryInfoComponentBuildable: MolueComponentBuildable {
