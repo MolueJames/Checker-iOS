@@ -18,10 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XV3-2L-RwN">
-                                <rect key="frame" x="0.0" y="65" width="375" height="602"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Jt-OJ-F6t" customClass="MLCommonSegementView" customModule="MolueCommon">
                                 <rect key="frame" x="0.0" y="20" width="375" height="45"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -29,27 +25,40 @@
                                     <constraint firstAttribute="height" constant="45" id="c4k-L1-i5W"/>
                                 </constraints>
                             </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W1l-F2-MuU">
+                                <rect key="frame" x="0.0" y="65" width="375" height="602"/>
+                                <connections>
+                                    <segue destination="ssd-Md-Vul" kind="embed" id="NYt-Iy-ff9"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="XV3-2L-RwN" firstAttribute="top" secondItem="4Jt-OJ-F6t" secondAttribute="bottom" id="Bpr-KT-Goi"/>
+                            <constraint firstItem="W1l-F2-MuU" firstAttribute="top" secondItem="4Jt-OJ-F6t" secondAttribute="bottom" id="8bF-E4-uZ2"/>
                             <constraint firstItem="4Jt-OJ-F6t" firstAttribute="leading" secondItem="iz7-I1-D4D" secondAttribute="leading" id="C1x-Jp-w8j"/>
                             <constraint firstItem="4Jt-OJ-F6t" firstAttribute="top" secondItem="iz7-I1-D4D" secondAttribute="top" id="GFP-q5-1Za"/>
+                            <constraint firstItem="iz7-I1-D4D" firstAttribute="bottom" secondItem="W1l-F2-MuU" secondAttribute="bottom" id="Jd3-nI-cf4"/>
                             <constraint firstItem="iz7-I1-D4D" firstAttribute="trailing" secondItem="4Jt-OJ-F6t" secondAttribute="trailing" id="QXn-Lw-FxE"/>
-                            <constraint firstItem="iz7-I1-D4D" firstAttribute="bottom" secondItem="XV3-2L-RwN" secondAttribute="bottom" id="WXu-JH-Iv4"/>
-                            <constraint firstItem="XV3-2L-RwN" firstAttribute="leading" secondItem="iz7-I1-D4D" secondAttribute="leading" id="hmQ-dr-HFI"/>
-                            <constraint firstItem="iz7-I1-D4D" firstAttribute="trailing" secondItem="XV3-2L-RwN" secondAttribute="trailing" id="wK1-ZI-fg5"/>
+                            <constraint firstItem="W1l-F2-MuU" firstAttribute="leading" secondItem="iz7-I1-D4D" secondAttribute="leading" id="qCv-TA-jBL"/>
+                            <constraint firstItem="iz7-I1-D4D" firstAttribute="trailing" secondItem="W1l-F2-MuU" secondAttribute="trailing" id="xjQ-Ub-sYs"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iz7-I1-D4D"/>
                     </view>
                     <connections>
                         <outlet property="segementView" destination="4Jt-OJ-F6t" id="mUd-7g-9bo"/>
-                        <outlet property="tableView" destination="XV3-2L-RwN" id="muJ-ob-z9B"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oGu-rT-Rgg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="64.799999999999997" y="144.3778110944528"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="E0L-jS-4iE">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="ssd-Md-Vul" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eFB-Ho-Vyf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="892" y="144"/>
         </scene>
     </scenes>
 </document>

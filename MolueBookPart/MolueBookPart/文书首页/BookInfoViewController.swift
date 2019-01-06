@@ -8,40 +8,36 @@
 
 import UIKit
 import RxSwift
+import MolueCommon
 import MolueFoundation
 import MolueUtilities
 protocol BookInfoPresentableListener: class {
     // 定义一些当前页面需要的业务逻辑, 比如网络请求.
+    func queryBookDetailsController()
 }
 
 class BookInfoViewController: MLBaseViewController {
     var listener: BookInfoPresentableListener?
     
-    private let disposeBag = DisposeBag()
-    
-    @IBOutlet private weak var selectedView: BookInfoSectionView! {
+    @IBOutlet weak var segementView: MLCommonSegementView! {
         didSet {
-            self.selectedView.selectedCommand.subscribe(onNext: { [unowned self] (index) in
-                self.selectedIndex = index
-            }).disposed(by: disposeBag)
+            segementView.delegate = self
+            let list = ["巡查文书", "执法文书", "其他文书"]
+            segementView.updateSegementList(with: list)
         }
     }
+    
     private var selectedIndex: Int = 0 {
         didSet {
             let list = [self.viewControllers[self.selectedIndex]]
             let isForward = oldValue < selectedIndex ? true : false
             let direction: UIPageViewController.NavigationDirection = isForward ? .forward : .reverse
             self.pageViewController.setViewControllers(list, direction: direction, animated: true)
-            self.selectedView.setSelectedIndex(self.selectedIndex, animated: true)
+            self.segementView.setSelectedItem(at: self.selectedIndex)
         }
     }
     
-    private var viewControllers: [UIViewController] = {
-        var viewControllers = [UIViewController]()
-        viewControllers.append(BookDetailViewController.initializeFromStoryboard())
-        viewControllers.append(BookDetailViewController.initializeFromStoryboard())
-        return viewControllers
-    }()
+    var viewControllers: [UIViewController] = [UIViewController]()
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -74,10 +70,11 @@ extension BookInfoViewController: MLUserInterfaceProtocol {
     }
     
     func updateUserInterfaceElements() {
-        let list = [self.viewControllers[self.selectedIndex]]
-        self.pageViewController.setViewControllers(list, direction: .forward, animated: false)
-        self.selectedView.setSelectedIndex(self.selectedIndex, animated: false)
-        
+        do {
+            let listener = try self.listener.unwrap()
+            listener.queryBookDetailsController()
+        } catch { MolueLogger.UIModule.error(error) }
+
         self.titleLabel.text = "文书列表"
         self.navigationItem.titleView = self.titleLabel
     }
@@ -110,5 +107,16 @@ extension BookInfoViewController: BookInfoPagePresentable {
 }
 
 extension BookInfoViewController: BookInfoViewControllable {
-    
+    func setDetailsControllers(with viewControllers: [UIViewController]) {
+        self.viewControllers = viewControllers
+        let list = [self.viewControllers[self.selectedIndex]]
+        self.pageViewController.setViewControllers(list, direction: .forward, animated: false)
+        self.segementView.setSelectedItem(at: self.selectedIndex)
+    }
+}
+
+extension BookInfoViewController: MLSegementViewDelegate {
+    func segementView(_ segementView: MLCommonSegementView, didSelectItemAt index: Int) {
+        self.selectedIndex = index
+    }
 }

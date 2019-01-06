@@ -18,39 +18,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="btj-BF-W6y" customClass="BookInfoSectionView" customModule="MolueBookPart" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="20" width="375" height="45"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="fH6-KZ-EjS"/>
-                                </constraints>
-                            </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d7u-TP-zUs">
                                 <rect key="frame" x="0.0" y="65" width="375" height="602"/>
                                 <connections>
                                     <segue destination="wF2-Fl-dmN" kind="embed" id="Dln-OI-qS9"/>
                                 </connections>
                             </containerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cc6-g5-rR7" customClass="MLCommonSegementView" customModule="MolueCommon">
+                                <rect key="frame" x="0.0" y="20" width="375" height="45"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="2sK-bL-obx"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="w8w-ey-zH3" firstAttribute="bottom" secondItem="d7u-TP-zUs" secondAttribute="bottom" id="5Yo-eL-wxP"/>
-                            <constraint firstItem="w8w-ey-zH3" firstAttribute="trailing" secondItem="btj-BF-W6y" secondAttribute="trailing" id="hcE-m0-mmF"/>
-                            <constraint firstItem="d7u-TP-zUs" firstAttribute="top" secondItem="btj-BF-W6y" secondAttribute="bottom" id="kkH-Ul-QZZ"/>
+                            <constraint firstItem="w8w-ey-zH3" firstAttribute="trailing" secondItem="Cc6-g5-rR7" secondAttribute="trailing" id="C1t-He-MSg"/>
+                            <constraint firstItem="Cc6-g5-rR7" firstAttribute="leading" secondItem="w8w-ey-zH3" secondAttribute="leading" id="PiX-DH-uCi"/>
+                            <constraint firstItem="d7u-TP-zUs" firstAttribute="top" secondItem="Cc6-g5-rR7" secondAttribute="bottom" id="jYb-dl-YJE"/>
+                            <constraint firstItem="Cc6-g5-rR7" firstAttribute="top" secondItem="w8w-ey-zH3" secondAttribute="top" id="reN-l7-SbJ"/>
                             <constraint firstItem="d7u-TP-zUs" firstAttribute="leading" secondItem="w8w-ey-zH3" secondAttribute="leading" id="rvs-vd-eg0"/>
-                            <constraint firstItem="btj-BF-W6y" firstAttribute="leading" secondItem="w8w-ey-zH3" secondAttribute="leading" id="s6G-7T-1od"/>
                             <constraint firstItem="w8w-ey-zH3" firstAttribute="trailing" secondItem="d7u-TP-zUs" secondAttribute="trailing" id="v89-QO-Eio"/>
-                            <constraint firstItem="btj-BF-W6y" firstAttribute="top" secondItem="w8w-ey-zH3" secondAttribute="top" id="v90-em-BZU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="w8w-ey-zH3"/>
                     </view>
                     <connections>
-                        <outlet property="selectedView" destination="btj-BF-W6y" id="SYK-kS-Wm4"/>
+                        <outlet property="segementView" destination="Cc6-g5-rR7" id="858-A5-tgg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eA9-B6-YuL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="265" y="173"/>
+            <point key="canvasLocation" x="264.80000000000001" y="172.26386806596702"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="jYw-Jm-WEG">

@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Book Detail View Controller-->
+        <!--Book Details View Controller-->
         <scene sceneID="9KZ-dJ-LC4">
             <objects>
-                <viewController storyboardIdentifier="BookDetailViewController" id="ZmN-pj-qwZ" customClass="BookDetailViewController" customModule="MolueBookPart" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BookDetailsViewController" id="ZmN-pj-qwZ" customClass="BookDetailsViewController" customModule="MolueBookPart" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dwo-hY-Wyu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -49,9 +49,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4HA-Gv-gKL"/>
                     </view>
-                    <connections>
-                        <outlet property="tableView" destination="WsK-0Z-5YK" id="7dG-QZ-gcx"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0zw-CR-FsH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

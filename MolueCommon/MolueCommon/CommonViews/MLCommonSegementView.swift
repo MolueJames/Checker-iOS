@@ -94,6 +94,15 @@ public class MLCommonSegementView: UIView {
         self.viewFlowLayout.itemSize = CGSize(width: width, height: height)
         self.configure = configure;
     }
+    
+    public func setSelectedItem(at index: Int) {
+        let indexPath = IndexPath.init(row: index, section: 0)
+        self.collectionView.selectItem(at: indexPath, animated: true, scrollPosition: .bottom)
+        do {
+            let cell = self.collectionView.cellForItem(at: indexPath)
+            try self.doCellSelectedAnimation(with: cell.unwrap())
+        } catch { MolueLogger.UIModule.message(error) }
+    }
 }
 
 extension MLCommonSegementView: UICollectionViewDelegate {

@@ -6,10 +6,12 @@
 //  Copyright © 2018 MolueTech. All rights reserved.
 //
 
+import MolueUtilities
 import MolueMediator
 
 protocol BookInfoViewableRouting: class {
     // 定义一些页面跳转的方法, 比如Push, Presenter等.
+    func createBookDetailsController()
 }
 
 protocol BookInfoPagePresentable: MolueInteractorPresentable {
@@ -36,5 +38,12 @@ extension BookInfoPageInteractor: BookInfoRouterInteractable {
 }
 
 extension BookInfoPageInteractor: BookInfoPresentableListener {
-    
+    func queryBookDetailsController() {
+        do {
+            let router = try self.viewRouter.unwrap()
+            router.createBookDetailsController()
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+    }
 }

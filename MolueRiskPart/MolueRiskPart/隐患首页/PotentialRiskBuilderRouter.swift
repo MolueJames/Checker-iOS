@@ -9,13 +9,14 @@
 import MolueMediator
 import MolueUtilities
 
-protocol PotentialRiskRouterInteractable: RiskDetailInteractListener {
+protocol PotentialRiskRouterInteractable: HiddenPerilListInteractListener {
     var viewRouter: PotentialRiskViewableRouting? { get set }
     var listener: PotentialRiskInteractListener? { get set }
 }
 
 protocol PotentialRiskViewControllable: MolueViewControllable {
     // 定义一些该页面需要的其他commponent的组件, 比如该页面的childViewController等.
+    func setPerilListControllers(with viewControllers: [UIViewController])
 }
 
 final class PotentialRiskViewableRouter: MolueViewableRouting {
@@ -33,16 +34,29 @@ final class PotentialRiskViewableRouter: MolueViewableRouting {
 }
 
 extension PotentialRiskViewableRouter: PotentialRiskViewableRouting {
-    func pushToRiskDetailController() {
+    func createPerilListController() {
         do {
-            let builder: RiskDetailComponentBuildable = RiskDetailComponentBuilder()
-            let controller = try builder.build(listener: self.interactor.unwrap())
-            controller.hidesBottomBarWhenPushed = true
-            let navigator = try self.controller.unwrap()
-            navigator.pushToViewController(controller, animated: true)
-        } catch {
-            MolueLogger.UIModule.error(error)
-        }
+            let controllers = self.generatePerilListControllers()
+            let controller = try self.controller.unwrap()
+            controller.setPerilListControllers(with: controllers)
+        } catch { MolueLogger.UIModule.error(error) }
+    }
+    
+    func generatePerilListControllers() -> [UIViewController] {
+        var controllers = [UIViewController]()
+        controllers.append(self.createPerilList()!)
+        controllers.append(self.createPerilList()!)
+        controllers.append(self.createPerilList()!)
+        controllers.append(self.createPerilList()!)
+        return controllers
+    }
+    
+    func createPerilList() -> UIViewController? {
+        do {
+            let builder = HiddenPerilListComponentBuilder()
+            let listener = try self.interactor.unwrap()
+            return builder.build(listener: listener)
+        } catch { return MolueLogger.UIModule.allowNil(error) }
     }
 }
 
