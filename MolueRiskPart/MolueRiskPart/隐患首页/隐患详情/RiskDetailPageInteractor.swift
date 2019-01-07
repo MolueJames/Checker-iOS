@@ -29,7 +29,7 @@ final class RiskDetailPageInteractor: MoluePresenterInteractable {
     weak var listener: RiskDetailInteractListener?
     
     lazy var riskDetail: PotentialRiskModel? = {
-        return self.listener?.selectedRisk
+        return nil
     }()
     
     lazy var riskDetailImages: [UIImage]? = {

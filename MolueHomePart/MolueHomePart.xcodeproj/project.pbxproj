@@ -141,8 +141,8 @@
 		1ABDCA9720C5721B0062DE71 /* IncreaseAdminiFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1ABDCA9620C5721B0062DE71 /* IncreaseAdminiFooterView.xib */; };
 		1ABDCA9A20C5798B0062DE71 /* SecurityAdminiTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABDCA9820C5798B0062DE71 /* SecurityAdminiTableViewCell.swift */; };
 		1ABDCA9B20C5798B0062DE71 /* SecurityAdminiTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1ABDCA9920C5798B0062DE71 /* SecurityAdminiTableViewCell.xib */; };
-		1AC8A5D021D1231A009CCAC5 /* PotentialRiskTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AC8A5CE21D1231A009CCAC5 /* PotentialRiskTableViewCell.xib */; };
-		1AC8A5D121D1231A009CCAC5 /* PotentialRiskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC8A5CF21D1231A009CCAC5 /* PotentialRiskTableViewCell.swift */; };
+		1AC8A5D021D1231A009CCAC5 /* TaskRiskReportTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AC8A5CE21D1231A009CCAC5 /* TaskRiskReportTableViewCell.xib */; };
+		1AC8A5D121D1231A009CCAC5 /* TaskRiskReportTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC8A5CF21D1231A009CCAC5 /* TaskRiskReportTableViewCell.swift */; };
 		1AD3DE8621971720005015A6 /* CheckTaskDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD3DE8421971720005015A6 /* CheckTaskDetailTableViewCell.swift */; };
 		1AD3DE8721971720005015A6 /* CheckTaskDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AD3DE8521971720005015A6 /* CheckTaskDetailTableViewCell.xib */; };
 		EF01F517C22ED0361C323767 /* Pods_MolueHomePart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 010F6973D5E1725577EE6B03 /* Pods_MolueHomePart.framework */; };
@@ -298,8 +298,8 @@
 		1ABDCA9620C5721B0062DE71 /* IncreaseAdminiFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IncreaseAdminiFooterView.xib; sourceTree = "<group>"; };
 		1ABDCA9820C5798B0062DE71 /* SecurityAdminiTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityAdminiTableViewCell.swift; sourceTree = "<group>"; };
 		1ABDCA9920C5798B0062DE71 /* SecurityAdminiTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecurityAdminiTableViewCell.xib; sourceTree = "<group>"; };
-		1AC8A5CE21D1231A009CCAC5 /* PotentialRiskTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PotentialRiskTableViewCell.xib; sourceTree = "<group>"; };
-		1AC8A5CF21D1231A009CCAC5 /* PotentialRiskTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PotentialRiskTableViewCell.swift; sourceTree = "<group>"; };
+		1AC8A5CE21D1231A009CCAC5 /* TaskRiskReportTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskRiskReportTableViewCell.xib; sourceTree = "<group>"; };
+		1AC8A5CF21D1231A009CCAC5 /* TaskRiskReportTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskRiskReportTableViewCell.swift; sourceTree = "<group>"; };
 		1AD3DE8421971720005015A6 /* CheckTaskDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTaskDetailTableViewCell.swift; sourceTree = "<group>"; };
 		1AD3DE8521971720005015A6 /* CheckTaskDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckTaskDetailTableViewCell.xib; sourceTree = "<group>"; };
 		9468AE17912D4AEEBE6E1EFA /* Pods-MolueHomePart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueHomePart.release.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueHomePart/Pods-MolueHomePart.release.xcconfig"; sourceTree = "<group>"; };
@@ -615,8 +615,8 @@
 		1A4F89DD21D09CE000B560E1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				1AC8A5CF21D1231A009CCAC5 /* PotentialRiskTableViewCell.swift */,
-				1AC8A5CE21D1231A009CCAC5 /* PotentialRiskTableViewCell.xib */,
+				1AC8A5CF21D1231A009CCAC5 /* TaskRiskReportTableViewCell.swift */,
+				1AC8A5CE21D1231A009CCAC5 /* TaskRiskReportTableViewCell.xib */,
 				1A4F89EA21D0A0DD00B560E1 /* TaskCheckReportTableViewCell.swift */,
 				1A4F89EB21D0A0DD00B560E1 /* TaskCheckReportTableViewCell.xib */,
 			);
@@ -947,7 +947,7 @@
 				1AAF7B7F20C1971B0051EC18 /* BasicArchivesViewController.storyboard in Resources */,
 				1A0B89BC21931BBA000B1EBC /* DangerUnitSectionHeaderView.xib in Resources */,
 				1A43BC3020C3CAA60093855B /* EnterpriseInfoTableViewCell.xib in Resources */,
-				1AC8A5D021D1231A009CCAC5 /* PotentialRiskTableViewCell.xib in Resources */,
+				1AC8A5D021D1231A009CCAC5 /* TaskRiskReportTableViewCell.xib in Resources */,
 				1A346FCA21915C2100CB534B /* CheckTaskDetailViewController.storyboard in Resources */,
 				1ABDCA9720C5721B0062DE71 /* IncreaseAdminiFooterView.xib in Resources */,
 				1A522ECA2190357300094A8A /* DailyCheckTaskViewController.storyboard in Resources */,
@@ -1093,7 +1093,7 @@
 				1A24022D20E536A700FC3EBA /* SecurityAdminiDataManager.swift in Sources */,
 				1A522EC72190356100094A8A /* DailyCheckTaskPageInteractor.swift in Sources */,
 				1AAF7B6820C1970A0051EC18 /* EnterpriseInfoViewController.swift in Sources */,
-				1AC8A5D121D1231A009CCAC5 /* PotentialRiskTableViewCell.swift in Sources */,
+				1AC8A5D121D1231A009CCAC5 /* TaskRiskReportTableViewCell.swift in Sources */,
 				1A027C8421D9E8E1002A0099 /* FailureTaskListPageInteractor.swift in Sources */,
 				1A027C9C21DA3648002A0099 /* TaskCheckDetailPageInteractor.swift in Sources */,
 				1A264B8F21A1792700F452F9 /* CheckTaskHistoryViewController.swift in Sources */,

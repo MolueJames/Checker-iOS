@@ -58,7 +58,7 @@ final class CheckTaskHistoryViewController: MLBaseViewController  {
         // Do any additional setup after loading the view.
     }
     
-    func setupNavigationTitle(date: Date) {
+    func setupNavigationTitle(with date: Date) {
         self.title = date.string(withFormat: "yyyy年MM月")
     }
 }
@@ -69,7 +69,9 @@ extension CheckTaskHistoryViewController: MLUserInterfaceProtocol {
     }
     
     func updateUserInterfaceElements() {
-        self.calendarView.scrollToDate(Date(), animateScroll: false)
+        let currentDate: Date = Date()
+        self.calendarView.scrollToDate(currentDate, animateScroll: false)
+        self.calendarView.selectDates([currentDate])
     }
 }
 
@@ -151,7 +153,7 @@ extension CheckTaskHistoryViewController: JTAppleCalendarViewDelegate {
         do {
             let startDate = try visibleDates.monthDates.first.unwrap().date
             let endDate = try visibleDates.monthDates.last.unwrap().date
-            self.setupNavigationTitle(date: startDate)
+            self.setupNavigationTitle(with: startDate)
             let listener = try self.listener.unwrap()
             listener.queryCheckTaskHistory(with: startDate, endDate: endDate)
         } catch {
@@ -163,13 +165,20 @@ extension CheckTaskHistoryViewController: JTAppleCalendarViewDelegate {
         do {
             let listener = try self.listener.unwrap()
             listener.queryDailyTaskHistory(with: date)
+            let cell: CheckTaskHistoryCalendarCell = try cell.unwrap().toTarget()
+            cell.updateSubviews(with: true)
         } catch {
-            MolueLogger.UIModule.error(error)
+            MolueLogger.UIModule.message(error)
         }
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
-        
+        do {
+            let cell: CheckTaskHistoryCalendarCell = try cell.unwrap().toTarget()
+            cell.updateSubviews(with: false)
+        } catch {
+            MolueLogger.UIModule.message(error)
+        }
     }
 }
 

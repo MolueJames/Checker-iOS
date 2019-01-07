@@ -8,6 +8,7 @@
 
 import UIKit
 import RxSwift
+import MolueCommon
 import MolueUtilities
 import MolueMediator
 
@@ -29,6 +30,7 @@ class FailureTaskTableViewCell: UITableViewCell {
             collectionView.register(xibWithCellClass: TaskAttachmentCollectionCell.self)
             self.flowLayout = UICollectionViewFlowLayout()
             collectionView.collectionViewLayout = self.flowLayout
+            collectionView.showsHorizontalScrollIndicator = false
         }
     }
     
@@ -36,10 +38,15 @@ class FailureTaskTableViewCell: UITableViewCell {
         didSet {
             flowLayout.scrollDirection = .horizontal
             flowLayout.minimumInteritemSpacing = 10
-            flowLayout.itemSize = CGSize(width: 80, height: 80)
+            let width: CGFloat = self.itemHeight - 20
+            flowLayout.itemSize = CGSize(width: width, height: width)
             flowLayout.sectionInset = UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20)
         }
     }
+    
+    private var itemHeight: CGFloat = {
+        return (MLConfigure.ScreenWidth - 60) / 3 + 20
+    }()
     
     @IBOutlet weak var taskNameLabel: UILabel!
     
@@ -82,7 +89,7 @@ class FailureTaskTableViewCell: UITableViewCell {
         self.taskNameLabel.text = attachment.content.data()
         self.attachments = attachment.attachments
         let count = attachment.attachments?.count ?? 0
-        let height: CGFloat = count == 0 ? 0 : 100
+        let height: CGFloat = count == 0 ? 0 : self.itemHeight
         self.collectionViewHeight.constant = height
         self.collectionView.reloadData()
     }
@@ -109,5 +116,31 @@ extension FailureTaskTableViewCell: UICollectionViewDataSource {
 }
 
 extension FailureTaskTableViewCell: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.jumpToBrowserController(with: indexPath.row)
+    }
     
+    func jumpToBrowserController(with index: Int) {
+        do {
+            let attachments = try self.attachments.unwrap()
+            let photoURLs = self.createPhotoURLs(with: attachments)
+            SKPhotoBrowserOptions.displayDeleteButton = false
+            let browser = SKPhotoBrowser(photos: photoURLs)
+            browser.initializePageIndex(index)
+            MoluePageNavigator.shared.presentViewController(browser)
+        } catch { MolueLogger.UIModule.message(error) }
+    }
+    
+    private func createPhotoURLs(with attachments: [MLAttachmentDetail]) -> [SKPhoto] {
+        return attachments.compactMap { attachment in
+            do {
+                let urlPath = try attachment.urlPath.unwrap()
+                let photo = SKPhoto.photoWithImageURL(urlPath)
+                photo.shouldCachePhotoURLImage = true
+                return photo
+            } catch {
+                return MolueLogger.UIModule.allowNil(error)
+            }
+        }
+    }
 }

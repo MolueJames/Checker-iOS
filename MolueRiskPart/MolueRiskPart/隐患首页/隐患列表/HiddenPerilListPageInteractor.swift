@@ -6,10 +6,15 @@
 //  Copyright © 2019 MolueTech. All rights reserved.
 //
 
+import MolueUtilities
 import MolueMediator
 
 protocol HiddenPerilListViewableRouting: class {
     // 定义一些页面跳转的方法, 比如Push, Presenter等.
+    func pushToRiskDetailController()
+    func pushToRiskClosedControlelr()
+    func pushToRiskArrangeController()
+    func pushToRiskRectifyController()
 }
 
 protocol HiddenPerilListPagePresentable: MolueInteractorPresentable {
@@ -36,5 +41,14 @@ extension HiddenPerilListPageInteractor: HiddenPerilListRouterInteractable {
 }
 
 extension HiddenPerilListPageInteractor: HiddenPerilListPresentableListener {
+    func numberOfRows(in section: Int) -> Int? {
+        return 10
+    }
     
+    func didSelectRow(at indexPath: IndexPath) {
+        do {
+            let router = try self.viewRouter.unwrap()
+            router.pushToRiskDetailController()
+        } catch { MolueLogger.UIModule.error(error) }
+    }
 }

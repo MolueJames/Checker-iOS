@@ -6,9 +6,10 @@
 //  Copyright © 2019 MolueTech. All rights reserved.
 //
 
+import MolueUtilities
 import MolueMediator
 
-protocol HiddenPerilListRouterInteractable: class {
+protocol HiddenPerilListRouterInteractable: RiskDetailInteractListener, RiskArrangeInteractListener, RiskClosedInteractListener, RiskRectifyInteractListener {
     var viewRouter: HiddenPerilListViewableRouting? { get set }
     var listener: HiddenPerilListInteractListener? { get set }
 }
@@ -32,7 +33,45 @@ final class HiddenPerilListViewableRouter: MolueViewableRouting {
 }
 
 extension HiddenPerilListViewableRouter: HiddenPerilListViewableRouting {
+    func pushToRiskDetailController() {
+        do {
+            let listener = try self.interactor.unwrap()
+            let builder = RiskDetailComponentBuilder()
+            let controller = builder.build(listener: listener)
+            let navigator = try self.controller.unwrap()
+            navigator.pushToViewController(controller, animated: true)
+        } catch { MolueLogger.UIModule.error(error) }
+    }
     
+    func pushToRiskClosedControlelr() {
+        do {
+            let listener = try self.interactor.unwrap()
+            let builder = RiskClosedComponentBuilder()
+            let controller = builder.build(listener: listener)
+            let navigator = try self.controller.unwrap()
+            navigator.pushToViewController(controller, animated: true)
+        } catch { MolueLogger.UIModule.error(error) }
+    }
+    
+    func pushToRiskArrangeController() {
+        do {
+            let listener = try self.interactor.unwrap()
+            let builder = RiskArrangeComponentBuilder()
+            let controller = builder.build(listener: listener)
+            let navigator = try self.controller.unwrap()
+            navigator.pushToViewController(controller, animated: true)
+        } catch { MolueLogger.UIModule.error(error) }
+    }
+    
+    func pushToRiskRectifyController() {
+        do {
+            let listener = try self.interactor.unwrap()
+            let builder = RiskRectifyComponentBuilder()
+            let controller = builder.build(listener: listener)
+            let navigator = try self.controller.unwrap()
+            navigator.pushToViewController(controller, animated: true)
+        } catch { MolueLogger.UIModule.error(error) }
+    }
 }
 
 protocol HiddenPerilListInteractListener: class {

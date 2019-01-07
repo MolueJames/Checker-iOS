@@ -28,7 +28,7 @@ final class TaskCheckReportViewController: MLBaseViewController  {
             tableView.delegate = self
             tableView.allowsMultipleSelectionDuringEditing = true
             tableView.register(xibWithCellClass: TaskCheckReportTableViewCell.self)
-            tableView.register(xibWithCellClass: PotentialRiskTableViewCell.self)
+            tableView.register(xibWithCellClass: TaskRiskReportTableViewCell.self)
         }
     }
     
@@ -91,7 +91,7 @@ extension TaskCheckReportViewController: UITableViewDataSource {
             }
             return cell
         } else {
-            let cell = tableView.dequeueReusableCell(withClass: PotentialRiskTableViewCell.self)
+            let cell = tableView.dequeueReusableCell(withClass: TaskRiskReportTableViewCell.self)
             return cell
         }
     }

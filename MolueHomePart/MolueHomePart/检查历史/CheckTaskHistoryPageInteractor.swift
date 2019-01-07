@@ -8,6 +8,7 @@
 
 import MolueMediator
 import MolueNetwork
+import MolueFoundation
 import MolueUtilities
 
 protocol CheckTaskHistoryViewableRouting: class {
@@ -15,7 +16,7 @@ protocol CheckTaskHistoryViewableRouting: class {
     func pushToCheckTaskReportController()
 }
 
-protocol CheckTaskHistoryPagePresentable: MolueInteractorPresentable {
+protocol CheckTaskHistoryPagePresentable: MolueInteractorPresentable, MLControllerHUDProtocol, MolueActivityDelegate {
     var listener: CheckTaskHistoryPresentableListener? { get set }
     // 定义一些页面需要的方法, 比如刷新页面的显示内容等.
     func reloadCheckTaskHistory()
@@ -97,7 +98,8 @@ extension CheckTaskHistoryPageInteractor: CheckTaskHistoryPresentableListener {
                 try strongSelf.handleSuccessResult(with: item.unwrap())
             } catch { MolueLogger.network.message(error) }
         }
-        MolueRequestManager().doRequestStart(with: request)
+        let requestManager = MolueRequestManager(delegate: self.presenter)
+        requestManager.doRequestStart(with: request)
     }
     
     func handleSuccessResult(with result: MolueListItem<MLCheckTaskHistory>?) {
@@ -117,7 +119,20 @@ extension CheckTaskHistoryPageInteractor: CheckTaskHistoryPresentableListener {
                 try strongSelf.handleSuccessResult(with: item.unwrap())
             } catch { MolueLogger.network.message(error) }
         }
+        request.handleFailureResponse { [weak self] (error) in
+            do {
+                let strongSelf = try self.unwrap()
+                strongSelf.handleFailureQueryTaskHistory(with: error)
+            } catch { MolueLogger.network.message(error) }
+        }
         MolueRequestManager().doRequestStart(with: request)
+    }
+    
+    func handleFailureQueryTaskHistory(with error: Error) {
+        do {
+            let presenter = try self.presenter.unwrap()
+            presenter.showWarningHUD(text: "未能获取该天的历史记录")
+        } catch { MolueLogger.network.message(error) }
     }
     
     func handleSuccessResult(with result: MolueListItem<MLDailyCheckTask>?) {

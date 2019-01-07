@@ -100,8 +100,8 @@ extension DailyCheckTaskPageInteractor: DailyCheckTaskPresentableListener {
             if currentCheckTask.status == "pending" {
                 viewRouter.pushToCheckTaskDetailController()
             } else {
-                viewRouter.pushToCheckTaskReportController()
-//                viewRouter.pushToCheckTaskDetailController()
+//                viewRouter.pushToCheckTaskReportController()
+                viewRouter.pushToCheckTaskDetailController()
             }
         } catch {
             MolueLogger.UIModule.error(error)

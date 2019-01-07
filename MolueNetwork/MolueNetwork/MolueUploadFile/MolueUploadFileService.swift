@@ -16,7 +16,7 @@ public class MolueFileService {
     //TODO: 添加Oauth校验
     public static func uploadPicture(with picture: UIImage, prefix: String = "taskitem.png", success: @escaping (Any?) -> Void, failure: @escaping (Error) -> Void)  {
         let path = HTTPConfigure.baseURL + "/core/upload_picture/"
-        let fileData = picture.compressedData(quality: 0.7)
+        let fileData = picture.compressedData(quality: 0.2)
         let headers = MolueOauthHelper.queryClientInfoHeaders()
         Alamofire.upload(multipartFormData: { (formData) in
             guard let fileData = fileData else {return}

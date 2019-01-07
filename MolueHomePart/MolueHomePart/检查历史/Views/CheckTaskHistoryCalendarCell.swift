@@ -64,4 +64,9 @@ class CheckTaskHistoryCalendarCell: JTAppleCell {
         self.numberLabel.textColor = textColor
         self.statusView.isHidden = !isThisMonth
     }
+    
+    
+    func updateSubviews(with isSelected: Bool) {
+        
+    }
 }
