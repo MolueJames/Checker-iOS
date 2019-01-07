@@ -58,7 +58,7 @@ class DangerUnitTableViewCell: UITableViewCell {
         case "done":
             return "已检查"
         default:
-            return "有隐患"
+            return "有风险"
         }
     }
     

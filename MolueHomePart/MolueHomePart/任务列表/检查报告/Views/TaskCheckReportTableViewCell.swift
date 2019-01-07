@@ -107,13 +107,11 @@ extension TaskCheckReportTableViewCell: UICollectionViewDelegate {
         } catch { MolueLogger.UIModule.message(error) }
     }
     
-    private func createPhotoURLs(with attachments: [MLAttachmentDetail]) -> [SKPhoto] {
+    private func createPhotoURLs(with attachments: [MLAttachmentDetail]) -> [KFPhoto] {
         return attachments.compactMap { attachment in
             do {
                 let urlPath = try attachment.urlPath.unwrap()
-                let photo = SKPhoto.photoWithImageURL(urlPath)
-                photo.shouldCachePhotoURLImage = true
-                return photo
+                return KFPhoto(url: urlPath)
             } catch {
                 return MolueLogger.UIModule.allowNil(error)
             }

@@ -6,9 +6,10 @@
 //  Copyright © 2018 MolueTech. All rights reserved.
 //
 
+import MolueUtilities
 import MolueMediator
 
-protocol FailureTaskListRouterInteractable: class {
+protocol FailureTaskListRouterInteractable: EditRiskInfoInteractListener {
     var viewRouter: FailureTaskListViewableRouting? { get set }
     var listener: FailureTaskListInteractListener? { get set }
 }
@@ -33,7 +34,18 @@ final class FailureTaskListViewableRouter: MolueViewableRouting {
 }
 
 extension FailureTaskListViewableRouter: FailureTaskListViewableRouting {
-    
+    func pushToEditRiskInfoController() {
+        do {
+            let listener = try self.interactor.unwrap()
+            let builderFactory = MolueBuilderFactory<MolueComponent.Risk>(.EditRisk)
+            let builder: EditRiskInfoComponentBuildable? = builderFactory.queryBuilder()
+            let controller = try builder.unwrap().build(listener: listener)
+            let navigator = try self.controller.unwrap()
+            navigator.pushToViewController(controller, animated: true)
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+    }
 }
 
 protocol FailureTaskListInteractListener: class {

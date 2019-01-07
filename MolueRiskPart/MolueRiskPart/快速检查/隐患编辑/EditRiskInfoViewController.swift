@@ -59,6 +59,16 @@ final class EditRiskInfoViewController: MLBaseViewController  {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+//        do {
+//            let listener = try self.listener.unwrap()
+//            listener.jumpToTakePhotoController()
+//        } catch {
+//            MolueLogger.UIModule.error(error)
+//        }
+    }
 }
 
 extension EditRiskInfoViewController: MLUserInterfaceProtocol {
@@ -68,12 +78,7 @@ extension EditRiskInfoViewController: MLUserInterfaceProtocol {
     
     func updateUserInterfaceElements() {
         self.title = "隐患详情"
-        do {
-            let listener = try self.listener.unwrap()
-            listener.jumpToTakePhotoController()
-        } catch {
-            MolueLogger.UIModule.error(error)
-        }
+        
     }
 }
 

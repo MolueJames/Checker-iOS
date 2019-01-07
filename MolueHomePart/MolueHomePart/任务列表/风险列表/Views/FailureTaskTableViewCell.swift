@@ -68,7 +68,6 @@ class FailureTaskTableViewCell: UITableViewCell {
     
     func refreshSubviews(with attachment: MLTaskAttachment, indexPath: IndexPath) {
         self.updateSubviewsLayout(with: attachment)
-        self.riskCommand = PublishSubject<FailureAttachment>()
         self.currentIndexPath = indexPath
         self.taskAttachment = attachment
     }
@@ -131,13 +130,11 @@ extension FailureTaskTableViewCell: UICollectionViewDelegate {
         } catch { MolueLogger.UIModule.message(error) }
     }
     
-    private func createPhotoURLs(with attachments: [MLAttachmentDetail]) -> [SKPhoto] {
+    private func createPhotoURLs(with attachments: [MLAttachmentDetail]) -> [KFPhoto] {
         return attachments.compactMap { attachment in
             do {
                 let urlPath = try attachment.urlPath.unwrap()
-                let photo = SKPhoto.photoWithImageURL(urlPath)
-                photo.shouldCachePhotoURLImage = true
-                return photo
+                return KFPhoto(url: urlPath)
             } catch {
                 return MolueLogger.UIModule.allowNil(error)
             }

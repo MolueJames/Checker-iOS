@@ -13,6 +13,7 @@ import MolueMediator
 
 protocol FailureTaskListViewableRouting: class {
     // 定义一些页面跳转的方法, 比如Push, Presenter等.
+    func pushToEditRiskInfoController()
 }
 
 protocol FailureTaskListPagePresentable: MolueInteractorPresentable {
@@ -54,7 +55,7 @@ final class FailureTaskListPageInteractor: MoluePresenterInteractable {
     
     private var currentIndexPath: IndexPath?
     
-    private var attachment: MLTaskAttachment?
+    private var taskAttachment: MLTaskAttachment?
     
     required init(presenter: FailureTaskListPagePresentable) {
         self.presenter = presenter
@@ -83,8 +84,13 @@ extension FailureTaskListPageInteractor: FailureTaskListPresentableListener {
     
     private func doAddRiskOperation(with attachment: MLTaskAttachment, indexPath: IndexPath) {
         self.currentIndexPath = indexPath
-        self.attachment = attachment
-        
+        self.taskAttachment = attachment
+        do {
+            let router = try self.viewRouter.unwrap()
+            router.pushToEditRiskInfoController()
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
     }
     
     func numberOfRows() -> Int? {

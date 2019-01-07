@@ -76,4 +76,8 @@ extension HiddenPerilListViewController: UITableViewDelegate {
             listener.didSelectRow(at: indexPath)
         } catch { MolueLogger.UIModule.error(error) }
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 140
+    }
 }

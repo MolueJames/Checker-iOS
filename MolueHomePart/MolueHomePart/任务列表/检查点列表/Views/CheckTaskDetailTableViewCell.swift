@@ -53,11 +53,16 @@ class CheckTaskDetailTableViewCell: UITableViewCell {
         }
     }
     
+    private var itemHeight: CGFloat = {
+        return (MLConfigure.ScreenWidth - 80) / 3 + 20
+    }()
+    
     private var flowLayout: UICollectionViewFlowLayout! {
         didSet {
             flowLayout.scrollDirection = .horizontal
             flowLayout.minimumInteritemSpacing = 10
-            flowLayout.itemSize = CGSize(width: 80, height: 80)
+            let width: CGFloat = self.itemHeight - 20
+            flowLayout.itemSize = CGSize(width: width, height: width)
             flowLayout.sectionInset = UIEdgeInsets(top: 10, left: 15, bottom: 10, right: 15)
         }
     }
@@ -155,7 +160,7 @@ class CheckTaskDetailTableViewCell: UITableViewCell {
         self.statusLabel.backgroundColor = color
         self.switchToAddtionView(attachment.result.isSome())
         
-        let constant:CGFloat = numberOfItems() == 0 ? 0 : 100
+        let constant = numberOfItems() == 0 ? 0 : self.itemHeight
         self.collectionHeight.constant = constant
         self.collectionView.reloadData()
         

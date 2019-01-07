@@ -13,32 +13,32 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="KGk-i7-Jjw" customClass="PotentialRiskTableViewCell" customModule="MolueRiskPart" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="132"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="130"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="131.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="129.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="隐患编号:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Z4-d1-JIF">
-                        <rect key="frame" x="15" y="10" width="74" height="18"/>
+                        <rect key="frame" x="15" y="10" width="74" height="17"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="74" id="rMX-Gq-XBT"/>
+                            <constraint firstAttribute="width" constant="74" id="Je2-Ne-mOg"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="暂无数据" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KuB-JU-lYf">
-                        <rect key="frame" x="89" y="10" width="216" height="18"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <rect key="frame" x="89" y="10" width="216" height="17"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U8O-35-PYv">
-                        <rect key="frame" x="0.0" y="38" width="160" height="93.5"/>
+                        <rect key="frame" x="0.0" y="35" width="160" height="94.5"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="隐患状态:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xOK-WW-gZt">
-                                <rect key="frame" x="15" y="5" width="62" height="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="更改人员:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xOK-WW-gZt">
+                                <rect key="frame" x="15" y="5" width="61.5" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -49,7 +49,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="隐患类型:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n9Q-ty-ECr">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="更新时间:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n9Q-ty-ECr">
                                 <rect key="frame" x="15" y="49" width="61.5" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -75,7 +75,7 @@
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="brs-pr-2t8">
-                        <rect key="frame" x="160.5" y="38" width="159.5" height="93.5"/>
+                        <rect key="frame" x="160.5" y="35" width="159.5" height="94.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="检查部位:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kBV-aS-idj">
                                 <rect key="frame" x="15" y="5" width="61.5" height="17"/>
@@ -117,11 +117,11 @@
                 </subviews>
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
+                    <constraint firstItem="KuB-JU-lYf" firstAttribute="top" secondItem="1Z4-d1-JIF" secondAttribute="top" id="4T4-iq-yMX"/>
                     <constraint firstItem="brs-pr-2t8" firstAttribute="leading" secondItem="U8O-35-PYv" secondAttribute="trailing" constant="0.5" id="8RG-0z-bfR"/>
                     <constraint firstAttribute="bottom" secondItem="U8O-35-PYv" secondAttribute="bottom" id="93b-Cd-3LI"/>
-                    <constraint firstItem="KuB-JU-lYf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="DNA-8H-9bV"/>
                     <constraint firstAttribute="trailing" secondItem="KuB-JU-lYf" secondAttribute="trailing" constant="15" id="Doa-AB-jsY"/>
-                    <constraint firstItem="U8O-35-PYv" firstAttribute="top" secondItem="1Z4-d1-JIF" secondAttribute="bottom" constant="10" id="JBU-rY-baz"/>
+                    <constraint firstItem="U8O-35-PYv" firstAttribute="top" secondItem="1Z4-d1-JIF" secondAttribute="bottom" constant="8" id="JBU-rY-baz"/>
                     <constraint firstAttribute="trailing" secondItem="brs-pr-2t8" secondAttribute="trailing" id="KVD-je-bmi"/>
                     <constraint firstItem="brs-pr-2t8" firstAttribute="top" secondItem="U8O-35-PYv" secondAttribute="top" id="OLA-KW-5pK"/>
                     <constraint firstAttribute="bottom" secondItem="brs-pr-2t8" secondAttribute="bottom" id="SU0-lg-Fx8"/>
@@ -140,7 +140,7 @@
                 <outlet property="riskStatusLabel" destination="hml-P3-C9O" id="T7k-uV-rxM"/>
                 <outlet property="riskUnitLabel" destination="8s4-cA-8Xa" id="FhU-q9-W0K"/>
             </connections>
-            <point key="canvasLocation" x="-334" y="11"/>
+            <point key="canvasLocation" x="-334.39999999999998" y="10.794602698650676"/>
         </tableViewCell>
     </objects>
 </document>

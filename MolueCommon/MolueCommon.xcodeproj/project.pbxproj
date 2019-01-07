@@ -73,6 +73,7 @@
 		1ACD0A1421A0094400793AAC /* SKCacheable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACD09FB21A0094400793AAC /* SKCacheable.swift */; };
 		1ACD0A1521A0094400793AAC /* SKPhotoBrowser.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1ACD09FC21A0094400793AAC /* SKPhotoBrowser.bundle */; };
 		1ACD0A1621A0094400793AAC /* SKButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACD09FD21A0094400793AAC /* SKButtons.swift */; };
+		1AD9D65821E39138002A2BCA /* KFPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD9D65721E39138002A2BCA /* KFPhoto.swift */; };
 		1AEB87DB209218D3002230A3 /* MolueCryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEB87DA209218D3002230A3 /* MolueCryption.swift */; };
 		1AFFF39221C3F2E500B639D8 /* MolueMediator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AFFF39121C3F2E500B639D8 /* MolueMediator.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		44CDCBC278886564183928A8 /* Pods_MolueCommonTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCC4653C34129E915BF6180A /* Pods_MolueCommonTests.framework */; };
@@ -170,6 +171,7 @@
 		1ACD09FB21A0094400793AAC /* SKCacheable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKCacheable.swift; sourceTree = "<group>"; };
 		1ACD09FC21A0094400793AAC /* SKPhotoBrowser.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SKPhotoBrowser.bundle; sourceTree = "<group>"; };
 		1ACD09FD21A0094400793AAC /* SKButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKButtons.swift; sourceTree = "<group>"; };
+		1AD9D65721E39138002A2BCA /* KFPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KFPhoto.swift; sourceTree = "<group>"; };
 		1AEB87DA209218D3002230A3 /* MolueCryption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MolueCryption.swift; sourceTree = "<group>"; };
 		1AFFF39121C3F2E500B639D8 /* MolueMediator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueMediator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		35A07F602272B6C2B8044368 /* Pods-MolueCommon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueCommon.release.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueCommon/Pods-MolueCommon.release.xcconfig"; sourceTree = "<group>"; };
@@ -385,6 +387,7 @@
 		1ACD09E421A0094400793AAC /* SKPhotoBrowser */ = {
 			isa = PBXGroup;
 			children = (
+				1AD9D65721E39138002A2BCA /* KFPhoto.swift */,
 				1ACD09E521A0094400793AAC /* SKPhotoBrowser.h */,
 				1ACD09E621A0094400793AAC /* SKPhotoBrowser.swift */,
 				1ACD09E721A0094400793AAC /* SKMesurement.swift */,
@@ -692,6 +695,7 @@
 				1A01B56721BEC0C000F4F3A0 /* CommonWebViewController.swift in Sources */,
 				1A43BC3620C4031D0093855B /* MLCommonInputView.swift in Sources */,
 				1A01B56821BEC0C000F4F3A0 /* CommonWebPageInteractor.swift in Sources */,
+				1AD9D65821E39138002A2BCA /* KFPhoto.swift in Sources */,
 				1AA7823520CCFF3B00088923 /* MLSelectedTableViewCell.swift in Sources */,
 				1AA7825420CE9F3300088923 /* MLDatePickerViewController.swift in Sources */,
 				1ACD0A0721A0094400793AAC /* SKDetectingImageView.swift in Sources */,
