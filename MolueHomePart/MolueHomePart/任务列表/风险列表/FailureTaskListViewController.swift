@@ -83,9 +83,9 @@ extension FailureTaskListViewController: MLUserInterfaceProtocol {
         } catch {
             MolueLogger.UIModule.error(error)
         }
-        let image = UIImage(named: "task_report_close")
-        let item = UIBarButtonItem(image: image, style: .done, target: self, action: #selector(leftBarItemClicked))
-        self.navigationItem.leftBarButtonItem = item
+//        let image = UIImage(named: "task_report_close")
+//        let item = UIBarButtonItem(image: image, style: .done, target: self, action: #selector(leftBarItemClicked))
+//        self.navigationItem.leftBarButtonItem = item
         
         self.view.backgroundColor = .white
     }

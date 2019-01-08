@@ -65,6 +65,7 @@
 		1AD9D65321E24D8A002A2BCA /* HiddenPerilListPageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD9D65021E24D8A002A2BCA /* HiddenPerilListPageInteractor.swift */; };
 		1AD9D65421E24D8A002A2BCA /* HiddenPerilListBuilderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD9D65121E24D8A002A2BCA /* HiddenPerilListBuilderRouter.swift */; };
 		1AD9D65621E24DD9002A2BCA /* HiddenPerilListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AD9D65521E24DD9002A2BCA /* HiddenPerilListViewController.storyboard */; };
+		1AF65C7821E42C6A00813638 /* RiskClosedViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AF65C7721E42C6A00813638 /* RiskClosedViewController.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,6 +139,7 @@
 		1AD9D65021E24D8A002A2BCA /* HiddenPerilListPageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiddenPerilListPageInteractor.swift; sourceTree = "<group>"; };
 		1AD9D65121E24D8A002A2BCA /* HiddenPerilListBuilderRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiddenPerilListBuilderRouter.swift; sourceTree = "<group>"; };
 		1AD9D65521E24DD9002A2BCA /* HiddenPerilListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HiddenPerilListViewController.storyboard; sourceTree = "<group>"; };
+		1AF65C7721E42C6A00813638 /* RiskClosedViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RiskClosedViewController.storyboard; sourceTree = "<group>"; };
 		1F7303D743A6A3BDD8783D8D /* Pods-MolueRiskPart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueRiskPart.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueRiskPart/Pods-MolueRiskPart.debug.xcconfig"; sourceTree = "<group>"; };
 		CF9033C8D71A897E2F825131 /* Pods_MolueRiskPart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MolueRiskPart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3274AE2F9F635301421FE61 /* Pods-MolueRiskPart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueRiskPart.release.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueRiskPart/Pods-MolueRiskPart.release.xcconfig"; sourceTree = "<group>"; };
@@ -349,6 +351,7 @@
 			isa = PBXGroup;
 			children = (
 				1AD2BAD421E2F9FD0091EDF6 /* RiskClosedViewController.swift */,
+				1AF65C7721E42C6A00813638 /* RiskClosedViewController.storyboard */,
 				1AD2BAD521E2F9FD0091EDF6 /* RiskClosedPageInteractor.swift */,
 				1AD2BAD621E2F9FD0091EDF6 /* RiskClosedBuilderRouter.swift */,
 			);
@@ -483,6 +486,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AF65C7821E42C6A00813638 /* RiskClosedViewController.storyboard in Resources */,
 				1A7961ED21A3019F00D556B5 /* EditRiskInfoResuableFooterView.xib in Resources */,
 				1A05CC2F2189E9C4006D637C /* PotentialRiskViewController.storyboard in Resources */,
 				1AD9D65621E24DD9002A2BCA /* HiddenPerilListViewController.storyboard in Resources */,

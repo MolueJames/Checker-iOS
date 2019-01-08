@@ -104,7 +104,7 @@ fileprivate class MolueOauthRequestManager: MolueRequestManager {
         if let currentTask = self.currentTask {
             return currentTask
         }
-        let refreshToken:String? = MolueOauthHelper.queryRefreshToken()
+        let refreshToken = MolueOauthHelper.queryRefreshToken()
         let request = MolueOauthService.doRefreshToken(with: refreshToken)
         self.currentTask = self.doRefreshTokenRequest(with: request)
         return self.currentTask!

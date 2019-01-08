@@ -46,7 +46,7 @@ protocol RiskClosedComponentBuildable: MolueComponentBuildable {
 
 class RiskClosedComponentBuilder: MolueComponentBuilder, RiskClosedComponentBuildable {
     func build(listener: RiskClosedInteractListener) -> UIViewController {
-        let controller = RiskClosedViewController()
+        let controller = RiskClosedViewController.initializeFromStoryboard()
         let interactor = RiskClosedPageInteractor(presenter: controller)
         RiskClosedViewableRouter(interactor: interactor, controller: controller)
         interactor.listener = listener
