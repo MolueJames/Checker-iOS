@@ -236,7 +236,7 @@ extension TaskCheckDetailPageInteractor: TaskCheckDetailPresentableListener {
         do {
             let details = try self.attachmentDetails.unwrap()
             let imageCount: Int = details.count
-            return imageCount > maxImageCount ? maxImageCount : imageCount
+            return imageCount >= maxImageCount ? maxImageCount : imageCount
         } catch {
             return MolueLogger.UIModule.allowNil(error)
         }
@@ -277,7 +277,7 @@ extension TaskCheckDetailPageInteractor: TaskCheckDetailPresentableListener {
         do {
             let details = try self.attachmentDetails.unwrap()
             let imageCount: Int = details.count
-            return imageCount > maxImageCount ? maxImageCount : imageCount + 1
+            return imageCount >= maxImageCount ? maxImageCount : imageCount + 1
         } catch {
             return MolueLogger.UIModule.allowNil(error)
         }

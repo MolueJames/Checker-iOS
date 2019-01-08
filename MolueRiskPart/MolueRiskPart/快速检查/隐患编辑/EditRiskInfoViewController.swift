@@ -81,6 +81,7 @@ extension EditRiskInfoViewController: MLUserInterfaceProtocol {
         self.title = "隐患详情"
         do {
             let listener = try self.listener.unwrap()
+            if listener.attachment.isSome() {return}
             listener.jumpToTakePhotoController()
         } catch { MolueLogger.UIModule.error(error) }
     }
