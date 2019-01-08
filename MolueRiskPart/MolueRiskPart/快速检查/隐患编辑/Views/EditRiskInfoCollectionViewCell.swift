@@ -23,8 +23,12 @@ class EditRiskInfoCollectionViewCell: UICollectionViewCell {
         self.addLayerShadow()
     }
     
-    func refreshSubview(with image: UIImage) {
-        self.imageView.image = image
+    func refreshSubviews(with attachment: MLAttachmentDetail)  {
+        if let path = attachment.urlPath {
+            self.imageView.kf.indicatorType = .activity
+            self.imageView.kf.setImage(with: URL(string: path))
+        } else if let image = attachment.image {
+            self.imageView.image = image
+        }
     }
-    
 }

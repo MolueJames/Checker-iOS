@@ -15,7 +15,7 @@ public class MLCommonClickView: UIView {
         self.addSubview(internalTitleLabel)
         internalTitleLabel.snp.makeConstraints({ (make) in
             make.centerY.equalToSuperview()
-            make.width.equalTo(70)
+            make.width.equalTo(85)
             make.left.equalTo(20)
         })
         return internalTitleLabel

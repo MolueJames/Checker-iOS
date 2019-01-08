@@ -35,6 +35,10 @@ final class QuickCheckRiskPageInteractor: MoluePresenterInteractable {
     
     var selectedCheckTask: String?
     
+    var detailRisk: MLRiskDetailUnit?
+    
+    var attachment: MLTaskAttachment?
+    
     required init(presenter: QuickCheckRiskPagePresentable) {
         self.presenter = presenter
         presenter.listener = self

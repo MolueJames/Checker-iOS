@@ -24,6 +24,7 @@ protocol FailureTaskListPresentableListener: class {
     func queryRiskCommand() -> PublishSubject<FailureAttachment>
     
     func postCheckFinishNotification()
+    
 }
 
 final class FailureTaskListViewController: MLBaseViewController  {
@@ -50,11 +51,13 @@ final class FailureTaskListViewController: MLBaseViewController  {
     }
     
     @IBAction func leftBarItemClicked(item: UIBarButtonItem) {
-        self.dismiss(animated: true, completion: nil)
+        do {
+            let listener = try self.listener.unwrap()
+            listener.postCheckFinishNotification()
+        } catch { MolueLogger.UIModule.error(error) }
     }
     
     @IBAction func submitButtonClicked(_ sender: UIButton) {
-        
         do {
             let listener = try self.listener.unwrap()
             listener.postCheckFinishNotification()
@@ -83,9 +86,9 @@ extension FailureTaskListViewController: MLUserInterfaceProtocol {
         } catch {
             MolueLogger.UIModule.error(error)
         }
-//        let image = UIImage(named: "task_report_close")
-//        let item = UIBarButtonItem(image: image, style: .done, target: self, action: #selector(leftBarItemClicked))
-//        self.navigationItem.leftBarButtonItem = item
+        let image = UIImage(named: "task_report_close")
+        let item = UIBarButtonItem(image: image, style: .done, target: self, action: #selector(leftBarItemClicked))
+        self.navigationItem.leftBarButtonItem = item
         
         self.view.backgroundColor = .white
     }

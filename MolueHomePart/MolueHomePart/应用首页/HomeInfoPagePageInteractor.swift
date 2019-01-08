@@ -39,6 +39,10 @@ final class HomeInfoPagePageInteractor: MoluePresenterInteractable {
     
     var valueList: [String] = ["1","2","3","4"]
     
+    var detailRisk: MLRiskDetailUnit?
+    
+    var attachment: MLTaskAttachment?
+    
     required init(presenter: HomeInfoPagePagePresentable) {
         self.presenter = presenter
         presenter.listener = self
@@ -47,8 +51,9 @@ final class HomeInfoPagePageInteractor: MoluePresenterInteractable {
 }
 
 extension HomeInfoPagePageInteractor: HomeInfoPageRouterInteractable {
+    
     func updateEditRiskInfoModel(with item: PotentialRiskModel) {
-        AppRiskDocument.shared.riskList.append(item)
+//        AppRiskDocument.shared.riskList.append(item)
     }
 }
 

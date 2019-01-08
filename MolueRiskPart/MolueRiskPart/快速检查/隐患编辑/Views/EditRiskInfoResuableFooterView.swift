@@ -57,7 +57,7 @@ class EditRiskInfoResuableFooterView: UICollectionReusableView {
     
     @IBOutlet weak var riskUnitClickView: MLCommonClickView! {
         didSet {
-            riskUnitClickView.defaultValue(title: "风险单元", placeholder: "请选择风险单元")
+            riskUnitClickView.defaultValue(title: "隐患风险点", placeholder: "请选择隐患风险点")
             riskUnitClickView.clickedCommand.subscribe(onNext: { [unowned self] (_) in
                 self.jumpToUnitSelectController()
             }).disposed(by: disposeBag)
@@ -67,7 +67,7 @@ class EditRiskInfoResuableFooterView: UICollectionReusableView {
     private func jumpToUnitSelectController() {
         let riskUnitList: [String] = AppRiskDocument.shared.riskUnitList
         let controller = MLSingleSelectController<String>()
-        controller.updateValues(title: "风险单元", list: riskUnitList)
+        controller.updateValues(title: "隐患风险点", list: riskUnitList)
         controller.selectCommand.subscribe(onNext: { [unowned self] (model) in
             self.riskUnitClickView.update(description: model)
             self.riskInfo.riskUnit = model
@@ -122,25 +122,30 @@ class EditRiskInfoResuableFooterView: UICollectionReusableView {
     }
     
     @IBAction func submitButtonClicked(_ sender: UIButton) {
-        guard let type = self.riskInfo.riskClass, type.isEmpty == false else{
-            self.submitInfoCommand?.onError(riskInfoRrror.typeInvalid)
-            return
-        }
-        guard let unit = self.riskInfo.riskUnit, unit.isEmpty == false else {
-            self.submitInfoCommand?.onError(riskInfoRrror.unitInvalid)
-            return
-        }
-        guard self.riskInfo.level.isSome() else {
-            self.submitInfoCommand?.onError(riskInfoRrror.levelInvalid)
-            return
-        }
-        guard self.reasonRemarkView.remarkText().isEmpty == false else {
-            self.submitInfoCommand?.onError(riskInfoRrror.reasonInvalid)
-            return
-        }
-        let checkedDate = Date().string(withFormat: "yyyy年MM月dd日")
-        self.riskInfo.checkedDate = checkedDate
-        self.riskInfo.riskDetail = self.reasonRemarkView.remarkText()
-        self.submitInfoCommand?.onNext(self.riskInfo)
+//        guard let type = self.riskInfo.riskClass, type.isEmpty == false else{
+//            self.submitInfoCommand?.onError(riskInfoRrror.typeInvalid)
+//            return
+//        }
+//        guard let unit = self.riskInfo.riskUnit, unit.isEmpty == false else {
+//            self.submitInfoCommand?.onError(riskInfoRrror.unitInvalid)
+//            return
+//        }
+//        guard self.riskInfo.level.isSome() else {
+//            self.submitInfoCommand?.onError(riskInfoRrror.levelInvalid)
+//            return
+//        }
+//        guard self.reasonRemarkView.remarkText().isEmpty == false else {
+//            self.submitInfoCommand?.onError(riskInfoRrror.reasonInvalid)
+//            return
+//        }
+//        let checkedDate = Date().string(withFormat: "yyyy年MM月dd日")
+//        self.riskInfo.checkedDate = checkedDate
+//        self.riskInfo.riskDetail = self.reasonRemarkView.remarkText()
+//        self.submitInfoCommand?.onNext(self.riskInfo)
+    }
+    
+    func refreshSubviews(with attachment: MLTaskAttachment, riskUnit: MLRiskDetailUnit) {
+        self.riskUnitClickView.update(description: riskUnit.unitName.data())
+        self.reasonRemarkView.updateRemark(with: attachment.remark.data())
     }
 }

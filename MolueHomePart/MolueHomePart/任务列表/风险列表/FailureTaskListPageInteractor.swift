@@ -53,9 +53,18 @@ final class FailureTaskListPageInteractor: MoluePresenterInteractable {
     
     private let disposeBag = DisposeBag()
     
-    private var currentIndexPath: IndexPath?
+    private var indexPath: IndexPath?
     
-    private var taskAttachment: MLTaskAttachment?
+    lazy var detailRisk: MLRiskDetailUnit? = {
+        do {
+            let currentTask = try self.currentCheckTask.unwrap()
+            return try currentTask.risk.unwrap()
+        } catch {
+            return MolueLogger.UIModule.allowNil(error)
+        }
+    }()
+    
+    var attachment: MLTaskAttachment?
     
     required init(presenter: FailureTaskListPagePresentable) {
         self.presenter = presenter
@@ -65,6 +74,7 @@ final class FailureTaskListPageInteractor: MoluePresenterInteractable {
 }
 
 extension FailureTaskListPageInteractor: FailureTaskListRouterInteractable {
+    
     
 }
 
@@ -83,8 +93,8 @@ extension FailureTaskListPageInteractor: FailureTaskListPresentableListener {
     }
     
     private func doAddRiskOperation(with attachment: MLTaskAttachment, indexPath: IndexPath) {
-        self.currentIndexPath = indexPath
-        self.taskAttachment = attachment
+        self.attachment = attachment
+        self.indexPath = indexPath
         do {
             let router = try self.viewRouter.unwrap()
             router.pushToEditRiskInfoController()

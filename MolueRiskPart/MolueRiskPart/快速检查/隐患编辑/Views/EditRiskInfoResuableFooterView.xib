@@ -77,9 +77,9 @@
             <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
             <connections>
                 <outlet property="reasonRemarkView" destination="imO-VC-ouy" id="auN-Jx-T0T"/>
-                <outlet property="riskLevelClickView" destination="bXh-N3-g8U" id="n7A-gP-JXa"/>
+                <outlet property="riskLevelClickView" destination="lg3-oA-oOi" id="dyy-Uh-Vhb"/>
                 <outlet property="riskTypeClickView" destination="4bO-le-I5f" id="a3f-fC-vMF"/>
-                <outlet property="riskUnitClickView" destination="lg3-oA-oOi" id="F3g-nw-bak"/>
+                <outlet property="riskUnitClickView" destination="bXh-N3-g8U" id="PLo-Q9-HR2"/>
             </connections>
             <point key="canvasLocation" x="-755.20000000000005" y="-62.518740629685162"/>
         </collectionReusableView>

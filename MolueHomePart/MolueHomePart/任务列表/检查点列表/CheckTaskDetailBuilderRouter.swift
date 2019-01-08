@@ -9,7 +9,7 @@ import MolueUtilities
 import MolueFoundation
 import MolueMediator
 
-protocol CheckTaskDetailRouterInteractable: TaskCheckDetailInteractListener, EditRiskInfoInteractListener, FailureTaskListInteractListener {
+protocol CheckTaskDetailRouterInteractable: TaskCheckDetailInteractListener, FailureTaskListInteractListener {
     var viewRouter: CheckTaskDetailViewableRouting? { get set }
     var listener: CheckTaskDetailInteractListener? { get set }
 }

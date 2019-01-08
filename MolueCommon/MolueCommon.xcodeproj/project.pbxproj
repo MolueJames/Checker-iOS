@@ -387,7 +387,6 @@
 		1ACD09E421A0094400793AAC /* SKPhotoBrowser */ = {
 			isa = PBXGroup;
 			children = (
-				1AD9D65721E39138002A2BCA /* KFPhoto.swift */,
 				1ACD09E521A0094400793AAC /* SKPhotoBrowser.h */,
 				1ACD09E621A0094400793AAC /* SKPhotoBrowser.swift */,
 				1ACD09E721A0094400793AAC /* SKMesurement.swift */,
@@ -418,6 +417,7 @@
 		1ACD09F221A0094400793AAC /* extensions */ = {
 			isa = PBXGroup;
 			children = (
+				1AD9D65721E39138002A2BCA /* KFPhoto.swift */,
 				1ACD09F321A0094400793AAC /* UIImage+Rotation.swift */,
 				1ACD09F421A0094400793AAC /* UIView+Radius.swift */,
 			);
