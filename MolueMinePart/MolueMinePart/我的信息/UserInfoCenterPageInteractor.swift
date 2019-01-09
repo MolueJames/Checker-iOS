@@ -94,7 +94,7 @@ extension UserInfoCenterPageInteractor: UserInfoCenterPresentableListener {
     }
     
     func queryUserInfoFromServer () {
-        let request = MolueUserInfoService.queryUserInformation()
+        let request = MolueUserService.queryUserInformation()
         request.handleSuccessResultToObjc { [weak self] (result: MolueUserInfo?) in
             do {
                 let presenter = try self.unwrap().presenter.unwrap()

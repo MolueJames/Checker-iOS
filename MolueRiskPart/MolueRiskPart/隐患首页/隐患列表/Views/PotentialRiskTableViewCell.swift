@@ -38,6 +38,11 @@ class PotentialRiskTableViewCell: UITableViewCell {
         self.riskChannelLabel.text = model.channel?.description ?? "暂无数据"
     }
     
+    public func refreshSubviews(with model: MLHiddenPerilItem) {
+        self.riskNumberLabel.text = model.perilId.data()
+        self.riskUnitLabel.text =
+    }
+    
     override var frame:CGRect{
         didSet {
             var new = self.frame

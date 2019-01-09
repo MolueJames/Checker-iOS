@@ -10,8 +10,8 @@ import Foundation
 import Alamofire
 
 public struct MolueCheckService {
-    public static func queryDailyPlanList(page: Int, pagesize: Int) -> MolueDataRequest {
-        let parameters = ["page": page, "page_size": pagesize]
+    public static func queryDailyPlanList(page: Int, size: Int) -> MolueDataRequest {
+        let parameters = ["page": page, "page_size": size]
         return MolueDataRequest(parameter: parameters, method: .get, path: "api/risk/task/today/")
     }
     

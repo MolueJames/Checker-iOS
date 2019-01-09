@@ -149,11 +149,14 @@ extension CheckTaskDetailPageInteractor: CheckTaskDetailPresentableListener {
     
     func updateCheckTask(with taskId: String, parameters: [String : Any]) {
         let request = MolueCheckService.updateDailyCheckTask(with: taskId, paramaters: parameters)
-        request.handleSuccessResultToObjc { [weak self](result: MLDailyCheckTask?) in
+        request.handleSuccessResultToObjc { [weak self] (result: MLDailyCheckTask?) in
             do {
                 let checkTask = try result.unwrap()
                 try self.unwrap().handleSuccessOpertaion(with: checkTask)
             } catch { MolueLogger.network.message(error) }
+        }
+        request.handleFailureResponse { (error) in
+            MolueLogger.network.message(error)
         }
         let requestManager = MolueRequestManager(delegate: self.presenter)
         requestManager.doRequestStart(with: request)

@@ -74,7 +74,7 @@ extension DangerUnitListPageInteractor: DangerUnitListPresentableListener {
     }
     
     func qureyMoreDailyPlanItem(with page: Int, size: Int) {
-        let request = MolueCheckService.queryDailyPlanList(page: page, pagesize: size)
+        let request = MolueCheckService.queryDailyPlanList(page: page, size: size)
         request.handleSuccessResultToObjc { [weak self] (item: MolueListItem<MLDailyCheckPlan>?) in
             do {
                 try self.unwrap().handleMoreItems(item)
@@ -138,9 +138,8 @@ extension DangerUnitListPageInteractor: DangerUnitListPresentableListener {
     }
     
     func queryDailyCheckDangerUnit() {
-        let pagesize: Int = self.listModel.pagesize
-        let page: Int = self.listModel.next ?? 1
-        let request = MolueCheckService.queryDailyPlanList(page: page, pagesize: pagesize)
+        let size: Int = self.listModel.pagesize
+        let request = MolueCheckService.queryDailyPlanList(page: 1, size: size)
         request.handleSuccessResultToObjc { [weak self] (item: MolueListItem<MLDailyCheckPlan>?) in
             do {
                 try self.unwrap().handleQueryItem(item)

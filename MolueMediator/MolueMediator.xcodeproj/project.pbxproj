@@ -37,6 +37,7 @@
 		1AAB69E921566CF40037EF38 /* MolueBuilderFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAB69E821566CF40037EF38 /* MolueBuilderFactory.swift */; };
 		1AAB69F621566D480037EF38 /* MolueUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AAB69F521566D480037EF38 /* MolueUtilities.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		1ABB8B6A21902529005FB802 /* MolueHomeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABB8B6921902528005FB802 /* MolueHomeProtocols.swift */; };
+		1AD9D65D21E62715002A2BCA /* MLHiddenPerilModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD9D65C21E62715002A2BCA /* MLHiddenPerilModel.swift */; };
 		6344E71DC6FBC95D8F36BC93 /* Pods_MolueMediatorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80AFDD759C0FB45C34F8B6FE /* Pods_MolueMediatorTests.framework */; };
 		CE79835F7A5BF57CA840A80D /* Pods_MolueMediator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA2225FFDFCB629BF0A1F4BE /* Pods_MolueMediator.framework */; };
 /* End PBXBuildFile section */
@@ -91,6 +92,7 @@
 		1AAB69F321566D480037EF38 /* MolueFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AAB69F521566D480037EF38 /* MolueUtilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueUtilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1ABB8B6921902528005FB802 /* MolueHomeProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueHomeProtocols.swift; sourceTree = "<group>"; };
+		1AD9D65C21E62715002A2BCA /* MLHiddenPerilModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLHiddenPerilModel.swift; sourceTree = "<group>"; };
 		48E3D4F05D90428BE523C956 /* Pods-MolueMediatorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueMediatorTests.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueMediatorTests/Pods-MolueMediatorTests.debug.xcconfig"; sourceTree = "<group>"; };
 		80AFDD759C0FB45C34F8B6FE /* Pods_MolueMediatorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MolueMediatorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA2225FFDFCB629BF0A1F4BE /* Pods_MolueMediator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MolueMediator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -238,6 +240,7 @@
 				1A05CC302189EA4D006D637C /* MolueRiskProtocols.swift */,
 				1A24971F21A92E6800937E05 /* MolueRiskModels.swift */,
 				1A50DA2521AD974900D71D12 /* AppRiskDocument.swift */,
+				1AD9D65C21E62715002A2BCA /* MLHiddenPerilModel.swift */,
 			);
 			path = RiskProtocol;
 			sourceTree = "<group>";
@@ -453,6 +456,7 @@
 				1AAB69E921566CF40037EF38 /* MolueBuilderFactory.swift in Sources */,
 				1A5E880821CCC44200BA4DB5 /* MolueUserInfoModel+SQLite.swift in Sources */,
 				1A522EB9219025CB00094A8A /* MolueBookProtocols.swift in Sources */,
+				1AD9D65D21E62715002A2BCA /* MLHiddenPerilModel.swift in Sources */,
 				1A0B898E218EA02C000B1EBC /* MolueMineProtocols.swift in Sources */,
 				1A5E87E521C88DCE00BA4DB5 /* MLDailyCheckTaskModel.swift in Sources */,
 				1AA2814C21625A4900F66915 /* MolueComponentBuilder.swift in Sources */,
