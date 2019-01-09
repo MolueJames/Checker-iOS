@@ -19,8 +19,8 @@ import MolueMediator
 protocol EditRiskInfoViewableRouting: class {
     // 定义一些页面跳转的方法, 比如Push, Presenter等.
     func pushToTakePhotoController(with limit: Int)
-    func pushToPhotoBrowser(with photos: [SKPhoto], controller: UIViewController)
-    func pushToPhotoBrowser(with photos: [SKPhoto], index: Int)
+    func pushToPhotoBrowser(with photos: [SKPhotoProtocol], controller: UIViewController)
+    func pushToPhotoBrowser(with photos: [SKPhotoProtocol], index: Int)
     func popToPreviewController()
 }
 
@@ -134,17 +134,6 @@ extension EditRiskInfoPageInteractor: EditRiskInfoRouterInteractable {
     }
     
     func removePhoto(_ browser: SKPhotoBrowser, index: Int, reload: @escaping (() -> Void)) {
-        func removePhoto(from controller: GalleryController?) {
-            do {
-                let photoController = try controller.unwrap()
-                var images = photoController.cart.images
-                let image = images.remove(at: index)
-                photoController.cart.remove(image)
-                photoController.cart.reload(images)
-            } catch {
-                MolueLogger.UIModule.message(error)
-            }
-        }
         defer { reload() }
         do {
             self.attachmentDetails?.remove(at: index)
@@ -154,7 +143,19 @@ extension EditRiskInfoPageInteractor: EditRiskInfoRouterInteractable {
         } catch {
             MolueLogger.UIModule.message(error)
         }
-        removePhoto(from: self.photoController)
+        self.removePhoto(from: self.photoController, index: index)
+    }
+    
+    func removePhoto(from controller: GalleryController?, index: Int) {
+        do {
+            let photoController = try controller.unwrap()
+            var images = photoController.cart.images
+            let image = images.remove(at: index)
+            photoController.cart.remove(image)
+            photoController.cart.reload(images)
+        } catch {
+            MolueLogger.UIModule.message(error)
+        }
     }
     
     func queryAttactmentDetail(with index: Int) -> MLAttachmentDetail? {
@@ -193,13 +194,7 @@ extension EditRiskInfoPageInteractor: EditRiskInfoRouterInteractable {
     }
     
     func handleSuccessOperation() {
-        do {
-//            let listener = try self.listener.unwrap()
-//            let updatedAttachment = try self.attachment.unwrap()
-//            listener.updateCurrentAttachment(with: updatedAttachment)
-            let router = try self.viewRouter.unwrap()
-            router.popToPreviewController()
-        } catch { MolueLogger.UIModule.error(error) }
+
     }
     
     func handleFailureOperation() {
@@ -289,49 +284,36 @@ extension EditRiskInfoPageInteractor: EditRiskInfoPresentableListener {
         return submitCommand
     }
     
-    func updateEditRiskInfo(with model: PotentialRiskModel) {
-//        do {
-//            let editModel: PotentialRiskModel = model
-//            editModel.checkedRiskPhotos = self.photoImages
-//
-//            let listener = try self.listener.unwrap()
-//            listener.updateEditRiskInfoModel(with: editModel)
-//            self.doUpdateEditRiskInfoPresenter()
-//        } catch {
-//            MolueLogger.UIModule.error(error)
-//        }
-    }
-    
-    func doUpdateEditRiskInfoPresenter() {
+    func jumpToBrowserController(with index: Int) {
         do {
-            let presenter = try self.presenter.unwrap()
-            presenter.showSuccessHUD(text: "隐患添加成功")
-            Async.main(after: 1.5) { [weak self] in
-                do {
-                    let router = try self.unwrap().viewRouter.unwrap()
-                    router.popToPreviewController()
-                } catch {
-                    MolueLogger.UIModule.message(error)
-                }
+            let router = try self.viewRouter.unwrap()
+            let attachments = try self.attachmentDetails.unwrap()
+            let photoImages:[KFPhoto] = attachments.compactMap { [unowned self] attachment in
+                return self.createKFPhoto(with: attachment)
             }
+            router.pushToPhotoBrowser(with: photoImages, index: index)
         } catch {
             MolueLogger.UIModule.error(error)
         }
     }
     
-    func jumpToBrowserController(with index: Int) {
+    func createKFPhoto(with attachment: MLAttachmentDetail) -> KFPhoto? {
+        if let urlPath = attachment.urlPath {
+            return KFPhoto(url: urlPath)
+        }
+        if let image = attachment.image {
+            return KFPhoto(image: image)
+        }
+        return MolueLogger.UIModule.allowNil("")
+    }
+    
+    func jumpToQuickCheckController() {
+        let current = self.attachmentDetails?.count ?? 0
+        let limit = self.maxImageCount - current
+        if self.detailRisk.isSome() || limit == 0 { return }
         do {
-            let router = try self.viewRouter.unwrap()
-            let attachment = try self.attachmentDetails.unwrap()
-            let photoImages:[SKPhoto] = attachment.compactMap { attachment in
-                do {
-                    let image = try attachment.image.unwrap()
-                    return SKPhoto.photoWithImage(image)
-                } catch {
-                    return MolueLogger.UIModule.allowNil(error)
-                }
-            }
-            router.pushToPhotoBrowser(with: photoImages, index: index)
+            let viewRouter = try self.viewRouter.unwrap()
+            viewRouter.pushToTakePhotoController(with: limit)
         } catch {
             MolueLogger.UIModule.error(error)
         }

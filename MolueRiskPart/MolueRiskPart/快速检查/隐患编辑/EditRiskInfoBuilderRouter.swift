@@ -35,6 +35,7 @@ final class EditRiskInfoViewableRouter: MolueViewableRouting {
 }
 
 extension EditRiskInfoViewableRouter: EditRiskInfoViewableRouting {
+    
     func popToPreviewController() {
         do {
             let navigator = try self.controller.unwrap()
@@ -57,7 +58,7 @@ extension EditRiskInfoViewableRouter: EditRiskInfoViewableRouting {
         }
     }
     
-    func pushToPhotoBrowser(with photos: [SKPhoto], index: Int) {
+    func pushToPhotoBrowser(with photos: [SKPhotoProtocol], index: Int) {
         do {
             let navigator = try self.controller.unwrap()
             let browser = SKPhotoBrowser(photos: photos)
@@ -69,7 +70,7 @@ extension EditRiskInfoViewableRouter: EditRiskInfoViewableRouting {
         }
     }
     
-    func pushToPhotoBrowser(with photos: [SKPhoto], controller: UIViewController) {
+    func pushToPhotoBrowser(with photos: [SKPhotoProtocol], controller: UIViewController) {
         let browser = SKPhotoBrowser(photos: photos)
         browser.initializePageIndex(0)
         browser.delegate = self.interactor

@@ -57,7 +57,7 @@ class EditRiskInfoResuableFooterView: UICollectionReusableView {
     
     @IBOutlet weak var riskUnitClickView: MLCommonClickView! {
         didSet {
-            riskUnitClickView.defaultValue(title: "隐患风险点", placeholder: "请选择隐患风险点")
+            riskUnitClickView.defaultValue(title: "隐患位置", placeholder: "请选择隐患位置")
             riskUnitClickView.clickedCommand.subscribe(onNext: { [unowned self] (_) in
                 self.jumpToUnitSelectController()
             }).disposed(by: disposeBag)
@@ -67,7 +67,7 @@ class EditRiskInfoResuableFooterView: UICollectionReusableView {
     private func jumpToUnitSelectController() {
         let riskUnitList: [String] = AppRiskDocument.shared.riskUnitList
         let controller = MLSingleSelectController<String>()
-        controller.updateValues(title: "隐患风险点", list: riskUnitList)
+        controller.updateValues(title: "隐患位置", list: riskUnitList)
         controller.selectCommand.subscribe(onNext: { [unowned self] (model) in
             self.riskUnitClickView.update(description: model)
             self.riskInfo.riskUnit = model

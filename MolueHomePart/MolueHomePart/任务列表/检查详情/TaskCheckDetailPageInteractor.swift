@@ -31,7 +31,7 @@ protocol TaskCheckDetailPagePresentable: MolueInteractorPresentable, MLControlle
 }
 
 final class TaskCheckDetailPageInteractor: MoluePresenterInteractable {
-    internal var maxImageCount: Int = 9
+    internal var maxImageCount: Int = 3
 
     weak var presenter: TaskCheckDetailPagePresentable?
     
@@ -125,17 +125,6 @@ extension TaskCheckDetailPageInteractor: TaskCheckDetailRouterInteractable {
     }
     
     func removePhoto(_ browser: SKPhotoBrowser, index: Int, reload: @escaping (() -> Void)) {
-        func removePhoto(from controller: GalleryController?) {
-            do {
-                let photoController = try controller.unwrap()
-                var images = photoController.cart.images
-                let image = images.remove(at: index)
-                photoController.cart.remove(image)
-                photoController.cart.reload(images)
-            } catch {
-                MolueLogger.UIModule.message(error)
-            }
-        }
         defer { reload() }
         do {
             self.attachmentDetails?.remove(at: index)
@@ -145,7 +134,18 @@ extension TaskCheckDetailPageInteractor: TaskCheckDetailRouterInteractable {
         } catch {
             MolueLogger.UIModule.message(error)
         }
-        removePhoto(from: self.photoController)
+        self.removePhoto(from: self.photoController, index: index)
+    }
+    func removePhoto(from controller: GalleryController?, index: Int) {
+        do {
+            let photoController = try controller.unwrap()
+            var images = photoController.cart.images
+            let image = images.remove(at: index)
+            photoController.cart.remove(image)
+            photoController.cart.reload(images)
+        } catch {
+            MolueLogger.UIModule.message(error)
+        }
     }
     
     func queryAttactmentDetail(with index: Int) -> MLAttachmentDetail? {
@@ -305,8 +305,8 @@ extension TaskCheckDetailPageInteractor: TaskCheckDetailPresentableListener {
     func jumpToBrowserController(with index: Int) {
         do {
             let router = try self.viewRouter.unwrap()
-            let attachment = try self.attachmentDetails.unwrap()
-            let photoImages:[SKPhoto] = attachment.compactMap { attachment in
+            let attachments = try self.attachmentDetails.unwrap()
+            let photoImages:[SKPhoto] = attachments.compactMap { attachment in
                 do {
                     let image = try attachment.image.unwrap()
                     return SKPhoto.photoWithImage(image)
