@@ -66,6 +66,22 @@
 		1AD9D65421E24D8A002A2BCA /* HiddenPerilListBuilderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD9D65121E24D8A002A2BCA /* HiddenPerilListBuilderRouter.swift */; };
 		1AD9D65621E24DD9002A2BCA /* HiddenPerilListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AD9D65521E24DD9002A2BCA /* HiddenPerilListViewController.storyboard */; };
 		1AF65C7821E42C6A00813638 /* RiskClosedViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AF65C7721E42C6A00813638 /* RiskClosedViewController.storyboard */; };
+		1AF7763C21E6D72C0014744E /* RiskClassificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF7763921E6D72C0014744E /* RiskClassificationsViewController.swift */; };
+		1AF7763D21E6D72C0014744E /* RiskClassificationsPageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF7763A21E6D72C0014744E /* RiskClassificationsPageInteractor.swift */; };
+		1AF7763E21E6D72C0014744E /* RiskClassificationsBuilderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF7763B21E6D72C0014744E /* RiskClassificationsBuilderRouter.swift */; };
+		1AF7764221E6D77C0014744E /* RiskUnitPositionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF7763F21E6D77C0014744E /* RiskUnitPositionViewController.swift */; };
+		1AF7764321E6D77C0014744E /* RiskUnitPositionPageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF7764021E6D77C0014744E /* RiskUnitPositionPageInteractor.swift */; };
+		1AF7764421E6D77C0014744E /* RiskUnitPositionBuilderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF7764121E6D77C0014744E /* RiskUnitPositionBuilderRouter.swift */; };
+		1AF7764621E6D7980014744E /* RiskClassificationsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AF7764521E6D7980014744E /* RiskClassificationsViewController.storyboard */; };
+		1AF7764821E6D7BA0014744E /* RiskUnitPositionViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AF7764721E6D7BA0014744E /* RiskUnitPositionViewController.storyboard */; };
+		1AF7765121E6DBAC0014744E /* RiskDetailSelectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF7764F21E6DBAC0014744E /* RiskDetailSelectTableViewCell.swift */; };
+		1AF7765221E6DBAC0014744E /* RiskDetailSelectTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AF7765021E6DBAC0014744E /* RiskDetailSelectTableViewCell.xib */; };
+		1AF7765821E7429A0014744E /* HiddenPerilLevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF7765521E7429A0014744E /* HiddenPerilLevelViewController.swift */; };
+		1AF7765921E7429A0014744E /* HiddenPerilLevelPageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF7765621E7429A0014744E /* HiddenPerilLevelPageInteractor.swift */; };
+		1AF7765A21E7429A0014744E /* HiddenPerilLevelBuilderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF7765721E7429A0014744E /* HiddenPerilLevelBuilderRouter.swift */; };
+		1AF7765C21E742BB0014744E /* HiddenPerilLevelViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AF7765B21E742BB0014744E /* HiddenPerilLevelViewController.storyboard */; };
+		1AF7766021E749DE0014744E /* HiddenPerilListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF7765E21E749DE0014744E /* HiddenPerilListTableViewCell.swift */; };
+		1AF7766121E749DE0014744E /* HiddenPerilListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AF7765F21E749DE0014744E /* HiddenPerilListTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,6 +156,22 @@
 		1AD9D65121E24D8A002A2BCA /* HiddenPerilListBuilderRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiddenPerilListBuilderRouter.swift; sourceTree = "<group>"; };
 		1AD9D65521E24DD9002A2BCA /* HiddenPerilListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HiddenPerilListViewController.storyboard; sourceTree = "<group>"; };
 		1AF65C7721E42C6A00813638 /* RiskClosedViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RiskClosedViewController.storyboard; sourceTree = "<group>"; };
+		1AF7763921E6D72C0014744E /* RiskClassificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskClassificationsViewController.swift; sourceTree = "<group>"; };
+		1AF7763A21E6D72C0014744E /* RiskClassificationsPageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskClassificationsPageInteractor.swift; sourceTree = "<group>"; };
+		1AF7763B21E6D72C0014744E /* RiskClassificationsBuilderRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskClassificationsBuilderRouter.swift; sourceTree = "<group>"; };
+		1AF7763F21E6D77C0014744E /* RiskUnitPositionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskUnitPositionViewController.swift; sourceTree = "<group>"; };
+		1AF7764021E6D77C0014744E /* RiskUnitPositionPageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskUnitPositionPageInteractor.swift; sourceTree = "<group>"; };
+		1AF7764121E6D77C0014744E /* RiskUnitPositionBuilderRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskUnitPositionBuilderRouter.swift; sourceTree = "<group>"; };
+		1AF7764521E6D7980014744E /* RiskClassificationsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RiskClassificationsViewController.storyboard; sourceTree = "<group>"; };
+		1AF7764721E6D7BA0014744E /* RiskUnitPositionViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RiskUnitPositionViewController.storyboard; sourceTree = "<group>"; };
+		1AF7764F21E6DBAC0014744E /* RiskDetailSelectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RiskDetailSelectTableViewCell.swift; path = "../New Group/RiskDetailSelectTableViewCell.swift"; sourceTree = "<group>"; };
+		1AF7765021E6DBAC0014744E /* RiskDetailSelectTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RiskDetailSelectTableViewCell.xib; sourceTree = "<group>"; };
+		1AF7765521E7429A0014744E /* HiddenPerilLevelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiddenPerilLevelViewController.swift; sourceTree = "<group>"; };
+		1AF7765621E7429A0014744E /* HiddenPerilLevelPageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiddenPerilLevelPageInteractor.swift; sourceTree = "<group>"; };
+		1AF7765721E7429A0014744E /* HiddenPerilLevelBuilderRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiddenPerilLevelBuilderRouter.swift; sourceTree = "<group>"; };
+		1AF7765B21E742BB0014744E /* HiddenPerilLevelViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HiddenPerilLevelViewController.storyboard; sourceTree = "<group>"; };
+		1AF7765E21E749DE0014744E /* HiddenPerilListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiddenPerilListTableViewCell.swift; sourceTree = "<group>"; };
+		1AF7765F21E749DE0014744E /* HiddenPerilListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HiddenPerilListTableViewCell.xib; sourceTree = "<group>"; };
 		1F7303D743A6A3BDD8783D8D /* Pods-MolueRiskPart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueRiskPart.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueRiskPart/Pods-MolueRiskPart.debug.xcconfig"; sourceTree = "<group>"; };
 		CF9033C8D71A897E2F825131 /* Pods_MolueRiskPart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MolueRiskPart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3274AE2F9F635301421FE61 /* Pods-MolueRiskPart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MolueRiskPart.release.xcconfig"; path = "../Pods/Target Support Files/Pods-MolueRiskPart/Pods-MolueRiskPart.release.xcconfig"; sourceTree = "<group>"; };
@@ -235,6 +267,7 @@
 		1A602F4620A810DF003AD583 /* MolueRiskPart */ = {
 			isa = PBXGroup;
 			children = (
+				1ACD0A1821A05D8000793AAC /* 隐患编辑 */,
 				1ACD09DB2199C25A00793AAC /* 快速检查 */,
 				1A65039720DD55350017F91D /* MolueRisk.xcassets */,
 				1AA7353E20A9C0D700DF7CD0 /* 隐患首页 */,
@@ -317,7 +350,6 @@
 		1ACD09DB2199C25A00793AAC /* 快速检查 */ = {
 			isa = PBXGroup;
 			children = (
-				1ACD0A1821A05D8000793AAC /* 隐患编辑 */,
 				1ACD09DC2199C27800793AAC /* QuickCheckRiskViewController.swift */,
 				1ACD09E22199C28C00793AAC /* QuickCheckRiskViewController.storyboard */,
 				1ACD09DD2199C27800793AAC /* QuickCheckRiskPageInteractor.swift */,
@@ -329,6 +361,9 @@
 		1ACD0A1821A05D8000793AAC /* 隐患编辑 */ = {
 			isa = PBXGroup;
 			children = (
+				1AF7765421E7423B0014744E /* 隐患级别 */,
+				1AF7763821E6D6DD0014744E /* 隐患位置 */,
+				1AF7763721E6D6D80014744E /* 隐患分类 */,
 				1A7961E921A2FC4500D556B5 /* Views */,
 				1ACD0A1921A05E4000793AAC /* EditRiskInfoViewController.swift */,
 				1ACD0A1F21A05E5D00793AAC /* EditRiskInfoViewController.storyboard */,
@@ -368,6 +403,59 @@
 				1AD9D65121E24D8A002A2BCA /* HiddenPerilListBuilderRouter.swift */,
 			);
 			path = "隐患列表";
+			sourceTree = "<group>";
+		};
+		1AF7763721E6D6D80014744E /* 隐患分类 */ = {
+			isa = PBXGroup;
+			children = (
+				1AF7765321E72E9E0014744E /* Views */,
+				1AF7763921E6D72C0014744E /* RiskClassificationsViewController.swift */,
+				1AF7764521E6D7980014744E /* RiskClassificationsViewController.storyboard */,
+				1AF7763A21E6D72C0014744E /* RiskClassificationsPageInteractor.swift */,
+				1AF7763B21E6D72C0014744E /* RiskClassificationsBuilderRouter.swift */,
+			);
+			path = "隐患分类";
+			sourceTree = "<group>";
+		};
+		1AF7763821E6D6DD0014744E /* 隐患位置 */ = {
+			isa = PBXGroup;
+			children = (
+				1AF7763F21E6D77C0014744E /* RiskUnitPositionViewController.swift */,
+				1AF7764021E6D77C0014744E /* RiskUnitPositionPageInteractor.swift */,
+				1AF7764721E6D7BA0014744E /* RiskUnitPositionViewController.storyboard */,
+				1AF7764121E6D77C0014744E /* RiskUnitPositionBuilderRouter.swift */,
+			);
+			path = "隐患位置";
+			sourceTree = "<group>";
+		};
+		1AF7765321E72E9E0014744E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1AF7764F21E6DBAC0014744E /* RiskDetailSelectTableViewCell.swift */,
+				1AF7765021E6DBAC0014744E /* RiskDetailSelectTableViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1AF7765421E7423B0014744E /* 隐患级别 */ = {
+			isa = PBXGroup;
+			children = (
+				1AF7765D21E749BA0014744E /* Views */,
+				1AF7765521E7429A0014744E /* HiddenPerilLevelViewController.swift */,
+				1AF7765621E7429A0014744E /* HiddenPerilLevelPageInteractor.swift */,
+				1AF7765721E7429A0014744E /* HiddenPerilLevelBuilderRouter.swift */,
+				1AF7765B21E742BB0014744E /* HiddenPerilLevelViewController.storyboard */,
+			);
+			path = "隐患级别";
+			sourceTree = "<group>";
+		};
+		1AF7765D21E749BA0014744E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1AF7765E21E749DE0014744E /* HiddenPerilListTableViewCell.swift */,
+				1AF7765F21E749DE0014744E /* HiddenPerilListTableViewCell.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		646AC1F75E92D0DD827B0A4A /* Frameworks */ = {
@@ -456,7 +544,7 @@
 				TargetAttributes = {
 					1A602F4320A810DF003AD583 = {
 						CreatedOnToolsVersion = 9.3;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1010;
 					};
 					1A602F4C20A810DF003AD583 = {
 						CreatedOnToolsVersion = 9.3;
@@ -486,9 +574,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AF7765C21E742BB0014744E /* HiddenPerilLevelViewController.storyboard in Resources */,
 				1AF65C7821E42C6A00813638 /* RiskClosedViewController.storyboard in Resources */,
 				1A7961ED21A3019F00D556B5 /* EditRiskInfoResuableFooterView.xib in Resources */,
 				1A05CC2F2189E9C4006D637C /* PotentialRiskViewController.storyboard in Resources */,
+				1AF7766121E749DE0014744E /* HiddenPerilListTableViewCell.xib in Resources */,
 				1AD9D65621E24DD9002A2BCA /* HiddenPerilListViewController.storyboard in Resources */,
 				1A15028C21A6A091002CB333 /* RiskDetailCollectionViewCell.xib in Resources */,
 				1A0B89D5219339C5000B1EBC /* RiskDetailViewController.storyboard in Resources */,
@@ -498,10 +588,13 @@
 				1A3465DF2197308200EBA57C /* PotentialRiskCollectionCell.xib in Resources */,
 				1A2698EA21A5B5E0007C37C8 /* InsertPhotosCollectionViewCell.xib in Resources */,
 				1A15029021A6A0DB002CB333 /* RiskDetailReusableHeaderView.xib in Resources */,
+				1AF7764621E6D7980014744E /* RiskClassificationsViewController.storyboard in Resources */,
 				1A3465DB2197281C00EBA57C /* PotentialRiskHeaderView.xib in Resources */,
 				1ACD09E32199C28C00793AAC /* QuickCheckRiskViewController.storyboard in Resources */,
+				1AF7765221E6DBAC0014744E /* RiskDetailSelectTableViewCell.xib in Resources */,
 				1A7961F121A307F000D556B5 /* EditRiskInfoCollectionViewCell.xib in Resources */,
 				1ACD0A2021A05E5D00793AAC /* EditRiskInfoViewController.storyboard in Resources */,
+				1AF7764821E6D7BA0014744E /* RiskUnitPositionViewController.storyboard in Resources */,
 				1A730ADA20E91D33008831BC /* PotentialRiskTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -541,23 +634,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AF7764321E6D77C0014744E /* RiskUnitPositionPageInteractor.swift in Sources */,
 				1A05CC2D2189E9AF006D637C /* PotentialRiskBuilderRouter.swift in Sources */,
 				1AD2BAD721E2F9FD0091EDF6 /* RiskClosedViewController.swift in Sources */,
+				1AF7763C21E6D72C0014744E /* RiskClassificationsViewController.swift in Sources */,
 				1A15028B21A6A091002CB333 /* RiskDetailCollectionViewCell.swift in Sources */,
 				1A3465DE2197308200EBA57C /* PotentialRiskCollectionCell.swift in Sources */,
 				1AD2BAD121E2F9990091EDF6 /* RiskArrangePageInteractor.swift in Sources */,
 				1AD2BAD821E2F9FD0091EDF6 /* RiskClosedPageInteractor.swift in Sources */,
 				1ACD0A1D21A05E4000793AAC /* EditRiskInfoPageInteractor.swift in Sources */,
+				1AF7763E21E6D72C0014744E /* RiskClassificationsBuilderRouter.swift in Sources */,
+				1AF7765A21E7429A0014744E /* HiddenPerilLevelBuilderRouter.swift in Sources */,
 				1A730AD920E91D33008831BC /* PotentialRiskTableViewCell.swift in Sources */,
 				1A3465D92197280F00EBA57C /* PotentialRiskHeaderView.swift in Sources */,
+				1AF7766021E749DE0014744E /* HiddenPerilListTableViewCell.swift in Sources */,
+				1AF7764421E6D77C0014744E /* RiskUnitPositionBuilderRouter.swift in Sources */,
 				1AD9D65421E24D8A002A2BCA /* HiddenPerilListBuilderRouter.swift in Sources */,
 				1A15028F21A6A0DB002CB333 /* RiskDetailReusableHeaderView.swift in Sources */,
 				1AD9D65321E24D8A002A2BCA /* HiddenPerilListPageInteractor.swift in Sources */,
 				1A7961EC21A3019F00D556B5 /* EditRiskInfoResuableFooterView.swift in Sources */,
+				1AF7765121E6DBAC0014744E /* RiskDetailSelectTableViewCell.swift in Sources */,
 				1ACD0A1C21A05E4000793AAC /* EditRiskInfoViewController.swift in Sources */,
 				1A7961F021A307F000D556B5 /* EditRiskInfoCollectionViewCell.swift in Sources */,
 				1AD2BAD021E2F9990091EDF6 /* RiskArrangeViewController.swift in Sources */,
 				1A0B89D3219339B4000B1EBC /* RiskDetailBuilderRouter.swift in Sources */,
+				1AF7765821E7429A0014744E /* HiddenPerilLevelViewController.swift in Sources */,
 				1ACD0A1E21A05E4000793AAC /* EditRiskInfoBuilderRouter.swift in Sources */,
 				1A05CC2B2189E9AF006D637C /* PotentialRiskViewController.swift in Sources */,
 				1AD2BAD921E2F9FD0091EDF6 /* RiskClosedBuilderRouter.swift in Sources */,
@@ -568,8 +669,11 @@
 				1A0B89D1219339B4000B1EBC /* RiskDetailViewController.swift in Sources */,
 				1ACD09E02199C27800793AAC /* QuickCheckRiskPageInteractor.swift in Sources */,
 				1A0B89CA2193391C000B1EBC /* RiskRectifyBuilderRouter.swift in Sources */,
+				1AF7765921E7429A0014744E /* HiddenPerilLevelPageInteractor.swift in Sources */,
+				1AF7763D21E6D72C0014744E /* RiskClassificationsPageInteractor.swift in Sources */,
 				1A05CC2C2189E9AF006D637C /* PotentialRiskPageInteractor.swift in Sources */,
 				1A2698E921A5B5E0007C37C8 /* InsertPhotosCollectionViewCell.swift in Sources */,
+				1AF7764221E6D77C0014744E /* RiskUnitPositionViewController.swift in Sources */,
 				1ACD09E12199C27800793AAC /* QuickCheckRiskBuilderRouter.swift in Sources */,
 				1A0B89D2219339B4000B1EBC /* RiskDetailPageInteractor.swift in Sources */,
 				1A0B89C92193391C000B1EBC /* RiskRectifyPageInteractor.swift in Sources */,

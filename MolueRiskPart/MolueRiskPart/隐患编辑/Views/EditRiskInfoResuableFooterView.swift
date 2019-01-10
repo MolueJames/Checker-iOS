@@ -16,43 +16,38 @@ import JGProgressHUD
 class EditRiskInfoResuableFooterView: UICollectionReusableView {
     private let disposeBag = DisposeBag()
     
-    public var submitInfoCommand: PublishSubject<PotentialRiskModel>?
+    public var submitInfoCommand: PublishSubject<Void>?
     
-    lazy var riskInfo: PotentialRiskModel = {
-        var riskInfo = PotentialRiskModel()
-        riskInfo.channel = .enterprise
-        riskInfo.status = .never
-        riskInfo.personDetail = "张三"
-        return riskInfo
-    }()
+//    lazy var riskInfo: PotentialRiskModel = {
+//        var riskInfo = PotentialRiskModel()
+//        riskInfo.channel = .enterprise
+//        riskInfo.status = .never
+//        riskInfo.personDetail = "张三"
+//        return riskInfo
+//    }()
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
     
-    @IBOutlet weak var riskTypeClickView: MLCommonClickView! {
+    @IBOutlet weak var riskClassClickView: MLCommonClickView! {
         didSet {
-            riskTypeClickView.defaultValue(title: "隐患类别", placeholder: "请选择隐患类别")
-            riskTypeClickView.clickedCommand.subscribe(onNext: { [unowned self] (_) in
-                self.jumpToTypeSelectController()
+            riskClassClickView.defaultValue(title: "隐患类别", placeholder: "请选择隐患类别")
+            riskClassClickView.clickedCommand.subscribe(onNext: { [unowned self] (_) in
+                self.jumpToClassSelectController()
             }).disposed(by: disposeBag)
         }
     }
     
-    private func jumpToTypeSelectController() {
-        let riskClassList: [String] = AppRiskDocument.shared.riskClassList
-        let controller = MLSingleSelectController<String>()
-        controller.updateValues(title: "隐患类别", list: riskClassList)
-        controller.selectCommand.subscribe(onNext: { [unowned self] (model) in
-            self.riskTypeClickView.update(description: model)
-            self.riskInfo.riskClass = model
-        }).disposed(by: self.disposeBag)
+    private func jumpToClassSelectController() {
+        let builder = RiskClassificationsComponentBuilder()
+        let controller = builder.build(listener: self)
         MoluePageNavigator.shared.pushViewController(controller)
     }
     
     public func refreshSubview(with model: PotentialRiskModel?) {
-        self.submitInfoCommand = PublishSubject<PotentialRiskModel>()
+        self.submitInfoCommand = PublishSubject<Void>()
     }
     
     @IBOutlet weak var riskUnitClickView: MLCommonClickView! {
@@ -65,19 +60,14 @@ class EditRiskInfoResuableFooterView: UICollectionReusableView {
     }
     
     private func jumpToUnitSelectController() {
-        let riskUnitList: [String] = AppRiskDocument.shared.riskUnitList
-        let controller = MLSingleSelectController<String>()
-        controller.updateValues(title: "隐患位置", list: riskUnitList)
-        controller.selectCommand.subscribe(onNext: { [unowned self] (model) in
-            self.riskUnitClickView.update(description: model)
-            self.riskInfo.riskUnit = model
-        }).disposed(by: self.disposeBag)
+        let builder = RiskUnitPositionComponentBuilder()
+        let controller = builder.build(listener: self)
         MoluePageNavigator.shared.pushViewController(controller)
     }
     
     @IBOutlet weak var reasonRemarkView: MLCommonRemarkView! {
         didSet {
-            reasonRemarkView.defaultValue(title: "请填写当前的隐患说明", limit: 100)
+            reasonRemarkView.defaultValue(title: "请填写当前的隐患说明", limit: 200)
         }
     }
     
@@ -97,7 +87,7 @@ class EditRiskInfoResuableFooterView: UICollectionReusableView {
         controller.updateValues(title: "隐患级别", list: riskLevelList)
         controller.selectCommand.subscribe(onNext: { [unowned self] (model) in
             self.riskLevelClickView.update(description: model.description)
-            self.riskInfo.level = model
+//            self.riskInfo.level = model
         }).disposed(by: self.disposeBag)
         MoluePageNavigator.shared.pushViewController(controller)
     }
@@ -144,8 +134,20 @@ class EditRiskInfoResuableFooterView: UICollectionReusableView {
 //        self.submitInfoCommand?.onNext(self.riskInfo)
     }
     
-    func refreshSubviews(with attachment: MLTaskAttachment, riskUnit: MLRiskDetailUnit) {
+    func refreshSubviews(with attachment: MLTaskAttachment, riskUnit: MLRiskPointDetail) {
         self.riskUnitClickView.update(description: riskUnit.unitName.data())
         self.reasonRemarkView.updateRemark(with: attachment.remark.data())
+    }
+}
+
+extension EditRiskInfoResuableFooterView: RiskClassificationsInteractListener {
+    func updateClassification(with value: MLRiskClassification) {
+        
+    }
+}
+
+extension EditRiskInfoResuableFooterView: RiskUnitPositionInteractListener {
+    func updateUnitPosition(with value: MLRiskPointDetail) {
+        
     }
 }

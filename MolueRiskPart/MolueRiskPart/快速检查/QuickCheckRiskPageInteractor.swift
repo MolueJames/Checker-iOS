@@ -35,7 +35,7 @@ final class QuickCheckRiskPageInteractor: MoluePresenterInteractable {
     
     var selectedCheckTask: String?
     
-    var detailRisk: MLRiskDetailUnit?
+    var detailRisk: MLRiskPointDetail?
     
     var attachment: MLTaskAttachment?
     

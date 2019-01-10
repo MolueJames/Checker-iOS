@@ -39,7 +39,7 @@ final class HomeInfoPagePageInteractor: MoluePresenterInteractable {
     
     var valueList: [String] = ["1","2","3","4"]
     
-    var detailRisk: MLRiskDetailUnit?
+    var detailRisk: MLRiskPointDetail?
     
     var attachment: MLTaskAttachment?
     

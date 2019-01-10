@@ -32,7 +32,7 @@ class DailyCheckTaskHeaderView: UIView {
     @IBOutlet weak var responseLabel: UILabel!
     @IBOutlet weak var riskClassLabel: UILabel!
     
-    func refreshSubviews(with model: MLRiskDetailUnit) {
+    func refreshSubviews(with model: MLRiskPointDetail) {
         self.dangerReasonLabel.text = model.dangers.data()
         self.dangerReasonLabel.setLineSpacing(5)
         self.dependenceLabel.text = model.standards.data()

@@ -27,7 +27,7 @@ protocol EditRiskInfoPresentableListener: class {
     
     func didSelectItemAt(indexPath: IndexPath)
     
-    var detailRisk: MLRiskDetailUnit? { get }
+    var detailRisk: MLRiskPointDetail? { get }
     
     var attachment: MLTaskAttachment? { get }
     
@@ -107,7 +107,7 @@ extension EditRiskInfoViewController: UICollectionViewDelegate {
             let attachment = try listener.attachment.unwrap()
             let detailRisk = try listener.detailRisk.unwrap()
             view.refreshSubviews(with: attachment, riskUnit: detailRisk)
-            view.submitInfoCommand = listener.querySubmitCommand()
+//            view.submitInfoCommand = listener.querySubmitCommand()
         } catch { MolueLogger.UIModule.message(error) }
         return view
     }

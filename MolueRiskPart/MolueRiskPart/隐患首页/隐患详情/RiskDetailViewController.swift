@@ -103,7 +103,7 @@ extension RiskDetailViewController: UICollectionViewDelegate {
             let model = try listener.riskDetail.unwrap()
             view.refreshSubviews(with: model)
         } catch {
-            MolueLogger.UIModule.error(error)
+            MolueLogger.UIModule.message(error)
         }
         return view
     }
@@ -127,6 +127,6 @@ extension RiskDetailViewController: UICollectionViewDelegateFlowLayout {
             let width: CGFloat = MLConfigure.ScreenWidth - 40
             let height = description.estimateHeight(with: 14, width: width, lineSpacing: 6)
             return CGSize(width: MLConfigure.ScreenWidth, height: height + 405)
-        } catch { return CGSize(width: 0, height: 0)}
+        } catch { return CGSize(width: MLConfigure.ScreenWidth, height: 405)}
     }
 }

@@ -55,7 +55,7 @@ final class FailureTaskListPageInteractor: MoluePresenterInteractable {
     
     private var indexPath: IndexPath?
     
-    lazy var detailRisk: MLRiskDetailUnit? = {
+    lazy var detailRisk: MLRiskPointDetail? = {
         do {
             let currentTask = try self.currentCheckTask.unwrap()
             return try currentTask.risk.unwrap()

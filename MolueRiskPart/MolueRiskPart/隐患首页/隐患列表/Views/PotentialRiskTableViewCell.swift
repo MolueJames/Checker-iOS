@@ -40,7 +40,7 @@ class PotentialRiskTableViewCell: UITableViewCell {
     
     public func refreshSubviews(with model: MLHiddenPerilItem) {
         self.riskNumberLabel.text = model.perilId.data()
-        self.riskUnitLabel.text =
+//        self.riskUnitLabel.text =
     }
     
     override var frame:CGRect{

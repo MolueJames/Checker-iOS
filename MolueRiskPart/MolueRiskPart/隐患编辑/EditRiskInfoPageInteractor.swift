@@ -41,7 +41,7 @@ final class EditRiskInfoPageInteractor: MoluePresenterInteractable {
     
     private weak var photoController: GalleryController?
     
-    lazy var detailRisk: MLRiskDetailUnit? = {
+    lazy var detailRisk: MLRiskPointDetail? = {
         do {
             let listener = try self.listener.unwrap()
             return try listener.detailRisk.unwrap()

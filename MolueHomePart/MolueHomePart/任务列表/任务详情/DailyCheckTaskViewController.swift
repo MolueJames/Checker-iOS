@@ -99,12 +99,12 @@ extension DailyCheckTaskViewController: DailyCheckTaskPagePresentable {
         }
     }
     
-    func updateSubmitButton(with risk: MLRiskDetailUnit) {
+    func updateSubmitButton(with risk: MLRiskPointDetail) {
         let title = risk.status == "pending" ? "开始检查" : "检查详情"
         self.submitButton.setTitle(title, for: .normal)
     }
     
-    func updateHeaderViewLayout(with risk: MLRiskDetailUnit) {
+    func updateHeaderViewLayout(with risk: MLRiskPointDetail) {
         self.headerView.refreshSubviews(with: risk)
         self.headerView.snp.makeConstraints { (make) in
             make.top.bottom.equalToSuperview()
@@ -114,7 +114,7 @@ extension DailyCheckTaskViewController: DailyCheckTaskPagePresentable {
         self.tableView.tableHeaderView = self.headerView
     }
     
-    func updateFooterViewLayout(with risk: MLRiskDetailUnit) {
+    func updateFooterViewLayout(with risk: MLRiskPointDetail) {
         self.footerView.refreshSubviews(with: risk)
         let remark: String = risk.remark.data()
         let width: CGFloat = MLConfigure.ScreenWidth - 30

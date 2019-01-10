@@ -28,39 +28,7 @@ public enum PotentialRiskStatus: CustomStringConvertible {
     }
 }
 
-public enum PotentialRiskChannel: CustomStringConvertible {
-    public var description: String {
-        switch self {
-        case .enterprise:
-            return "企业自查"
-        case .government:
-            return "政府检查"
-        }
-    }
-    
-    case enterprise
-    case government
-}
 
-public enum PotentialRiskLevel: CaseIterable, CustomStringConvertible {
-    public var description: String {
-        switch self {
-        case .serious:
-            return "重大事故隐患"
-        case .general:
-            return "一般事故隐患"
-        case .higher:
-            return "较高事故隐患"
-        case .atLower:
-            return "较低事故隐患"
-        }
-    }
-    
-    case serious
-    case higher
-    case general
-    case atLower
-}
 
 public class PotentialRiskModel {
     public var status: PotentialRiskStatus?

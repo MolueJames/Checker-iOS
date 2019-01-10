@@ -53,11 +53,6 @@ final class HiddenPerilListViewController: MLBaseViewController  {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-    
-    deinit {
-//        self.tableView.es.removeRefreshFooter()
-//        self.tableView.es.removeRefreshHeader()
-    }
 }
 
 extension HiddenPerilListViewController: MLUserInterfaceProtocol {

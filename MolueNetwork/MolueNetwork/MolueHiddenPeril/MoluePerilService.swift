@@ -23,14 +23,15 @@ public struct MoluePerilService {
         return MolueDataRequest(parameter: parameters, method: .put, path: path)
     }
     
-    public static func queryDangerRiskUnit(page: Int, size: Int) -> MolueDataRequest {
+    public static func queryPerilUnitPosition(page: Int, size: Int) -> MolueDataRequest {
         let parameters = ["page": page, "page_size": size]
-        return MolueDataRequest(parameter: parameters, method: .get, path: "api/risk/risk/")
+        let path: String = "api/risk/risk_unit/"
+        return MolueDataRequest(parameter: parameters, method: .get, path: path)
     }
     
     public static func queryRiskClassification(page: Int, size: Int) -> MolueDataRequest {
         let parameters = ["page": page, "page_size": size]
-        let path: String = "/api/classifications/"
+        let path: String = "api/classifications/"
         return MolueDataRequest(parameter: parameters, method: .get, path: path)
     }
 }

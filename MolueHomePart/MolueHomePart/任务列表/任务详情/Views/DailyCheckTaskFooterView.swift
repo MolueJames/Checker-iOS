@@ -24,7 +24,7 @@ class DailyCheckTaskFooterView: UIView {
     
     @IBOutlet weak var headPhoneLabel: UILabel!
     
-    public func refreshSubviews(with model: MLRiskDetailUnit) {
+    public func refreshSubviews(with model: MLRiskPointDetail) {
         self.headPhoneLabel.text = model.contact.data()
         self.riskHeadLabel.text = model.person.data()
         let defaultRemark = "暂无该风险点的其他的说明"

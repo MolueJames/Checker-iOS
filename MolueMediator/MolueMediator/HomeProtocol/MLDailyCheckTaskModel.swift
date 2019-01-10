@@ -53,12 +53,15 @@ public class MLRiskClassification: Mappable {
     public required init?(map: Map) {}
     
     public func mapping(map: Map) {
+        hasChildren <- map["has_children"]
+        children <- map["children"]
         code <- map["code"]
         name <- map["name"]
     }
-    
+    public var children: [MLRiskClassification]?
     public var code: String?
     public var name: String?
+    public var hasChildren: Bool?
 }
 
 //MARK: 用户每日的任务列表
@@ -120,21 +123,10 @@ public class MLDailyCheckTask: Mappable {
         finish <- map["time_of_finish"]
         start <- map["time_of_start"]
         updated <- map["updated"]
-        
-        taskId >>> map["id"]
-        risk >>> map["risk"]
-        status >>> map["status"]
-        created >>> map["created"]
-        enterprise >>> map["enterprise"]
-        items >>> map["items"]
-        expiration >>> map["time_of_expiration"]
-        finish >>> map["time_of_finish"]
-        start >>> map["time_of_start"]
-        updated >>> map["updated"]
     }
     
     public var taskId: String?
-    public var risk: MLRiskDetailUnit?
+    public var risk: MLRiskPointDetail?
     public var status: String?
     public var created: String?
     public var enterprise: Int?
@@ -145,8 +137,34 @@ public class MLDailyCheckTask: Mappable {
     public var start: String?
 }
 
+public class MLRiskUnitDetail: Mappable {
+    public required init?(map: Map) {}
+    
+    public func mapping(map: Map) {
+        unitId <- map["id"]
+        unitCode <- map["unit_code"]
+        unitName <- map["unit_name"]
+        category <- map["category"]
+        risks <- map["risks"]
+        status <- map["status"]
+        created <- map["created"]
+        updated <- map["updated"]
+        enterprise <- map["enterprise"]
+    }
+    
+    public var unitId: Int?
+    public var unitCode: String?
+    public var unitName: String?
+    public var category: MLCheckCategory?
+    public var risks: [MLRiskPointDetail]?
+    public var status: String?
+    public var created: String?
+    public var updated: String?
+    public var enterprise: Int?
+}
+
 //MARK: 用户每日的任务单元
-public class MLRiskDetailUnit: Mappable {
+public class MLRiskPointDetail: Mappable {
     public required init?(map: Map) {}
     
     public func mapping(map: Map) {
@@ -170,27 +188,6 @@ public class MLRiskDetailUnit: Mappable {
         standards <- map["standards"]
         status <- map["status"]
         updated <- map["updated"]
-        
-        unitId >>> map["id"]
-        person >>> map["response_person"]
-        unitCode >>> map["code"]
-        unitName >>> map["name"]
-        level >>> map["level"]
-        accidents >>> map["accidents"]
-        classification >>> map["classification"]
-        contact >>> map["contact_phone"]
-        created >>> map["created"]
-        dangers >>> map["dangers"]
-        aExtension >>> map["extension"]
-        grade >>> map["grade"]
-        calculation >>> map["method_of_calculation"]
-        remark >>> map["remark"]
-        responseUnit >>> map["response_unit"]
-        riskUnit >>> map["risk_unit"]
-        solutions >>> map["solutions"]
-        standards >>> map["standards"]
-        status >>> map["status"]
-        updated >>> map["updated"]
     }
     
     public var unitId: String?
@@ -229,17 +226,6 @@ public class MLTaskAttachment: Mappable {
         score <- map["score"]
         answers <- map["answers"]
         rightAnswer <- map["right_answer"]
-        
-        attachments >>> map["attachments"]
-        committed >>> map["time_committed"]
-        content >>> map["content"]
-        attachmentId >>> map["id"]
-        remark >>> map["remark"]
-        result >>> map["result"]
-        taskId >>> map["task_id"]
-        score >>> map["score"]
-        answers >>> map["answers"]
-        rightAnswer >>> map["right_answer"]
     }
     
     public var attachments: [MLAttachmentDetail]?
@@ -266,11 +252,6 @@ public class MLAttachmentDetail: Mappable {
         screenName <- map["screen_name"]
         type <- map["type"]
         urlPath <- map["url"]
-        
-        detailId >>> map["id"]
-        screenName >>> map["screen_name"]
-        type >>> map["type"]
-        urlPath >>> map["url"]
     }
     
     public var detailId: String?
