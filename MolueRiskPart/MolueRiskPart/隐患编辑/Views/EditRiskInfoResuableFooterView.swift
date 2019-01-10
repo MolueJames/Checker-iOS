@@ -18,13 +18,11 @@ class EditRiskInfoResuableFooterView: UICollectionReusableView {
     
     public var submitInfoCommand: PublishSubject<Void>?
     
-//    lazy var riskInfo: PotentialRiskModel = {
-//        var riskInfo = PotentialRiskModel()
-//        riskInfo.channel = .enterprise
-//        riskInfo.status = .never
-//        riskInfo.personDetail = "张三"
-//        return riskInfo
-//    }()
+    private var riskLevel: PotentialRiskLevel?
+    
+    private var riskClass: MLRiskClassification?
+    
+    private var riskPoint: MLRiskPointDetail?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -36,7 +34,7 @@ class EditRiskInfoResuableFooterView: UICollectionReusableView {
             riskClassClickView.defaultValue(title: "隐患类别", placeholder: "请选择隐患类别")
             riskClassClickView.clickedCommand.subscribe(onNext: { [unowned self] (_) in
                 self.jumpToClassSelectController()
-            }).disposed(by: disposeBag)
+            }).disposed(by: self.disposeBag)
         }
     }
     
@@ -50,12 +48,12 @@ class EditRiskInfoResuableFooterView: UICollectionReusableView {
         self.submitInfoCommand = PublishSubject<Void>()
     }
     
-    @IBOutlet weak var riskUnitClickView: MLCommonClickView! {
+    @IBOutlet weak var riskPointClickView: MLCommonClickView! {
         didSet {
-            riskUnitClickView.defaultValue(title: "隐患位置", placeholder: "请选择隐患位置")
-            riskUnitClickView.clickedCommand.subscribe(onNext: { [unowned self] (_) in
+            riskPointClickView.defaultValue(title: "隐患位置", placeholder: "请选择隐患位置")
+            riskPointClickView.clickedCommand.subscribe(onNext: { [unowned self] (_) in
                 self.jumpToUnitSelectController()
-            }).disposed(by: disposeBag)
+            }).disposed(by: self.disposeBag)
         }
     }
     
@@ -77,20 +75,16 @@ class EditRiskInfoResuableFooterView: UICollectionReusableView {
             riskLevelClickView.defaultValue(title: "隐患级别", placeholder: "请选择隐患级别")
             riskLevelClickView.clickedCommand.subscribe(onNext: { [unowned self] (_) in
                 self.jumpToLevelSelectController()
-            }).disposed(by: disposeBag)
+            }).disposed(by: self.disposeBag)
         }
     }
     
     private func jumpToLevelSelectController() {
-        let riskLevelList: [PotentialRiskLevel] = PotentialRiskLevel.allCases
-        let controller = MLSingleSelectController<PotentialRiskLevel>()
-        controller.updateValues(title: "隐患级别", list: riskLevelList)
-        controller.selectCommand.subscribe(onNext: { [unowned self] (model) in
-            self.riskLevelClickView.update(description: model.description)
-//            self.riskInfo.level = model
-        }).disposed(by: self.disposeBag)
+        let builder = HiddenPerilLevelComponentBuilder()
+        let controller = builder.build(listener: self)
         MoluePageNavigator.shared.pushViewController(controller)
     }
+    
     private enum riskInfoRrror: LocalizedError {
         case typeInvalid
         case unitInvalid
@@ -135,19 +129,28 @@ class EditRiskInfoResuableFooterView: UICollectionReusableView {
     }
     
     func refreshSubviews(with attachment: MLTaskAttachment, riskUnit: MLRiskPointDetail) {
-        self.riskUnitClickView.update(description: riskUnit.unitName.data())
+        self.riskPointClickView.update(description: riskUnit.unitName.data())
         self.reasonRemarkView.updateRemark(with: attachment.remark.data())
     }
 }
 
 extension EditRiskInfoResuableFooterView: RiskClassificationsInteractListener {
-    func updateClassification(with value: MLRiskClassification) {
-        
+    func updateRiskClassification(with value: MLRiskClassification) {
+        self.riskClassClickView.update(description: value.name.data())
+        self.riskClass = value
     }
 }
 
 extension EditRiskInfoResuableFooterView: RiskUnitPositionInteractListener {
-    func updateUnitPosition(with value: MLRiskPointDetail) {
-        
+    func updateRiskPointPosition(with value: MLRiskPointDetail) {
+        self.riskPointClickView.update(description: value.unitName.data())
+        self.riskPoint = value
+    }
+}
+
+extension EditRiskInfoResuableFooterView: HiddenPerilLevelInteractListener {
+    func updatePotentialRiskLevel(with value: PotentialRiskLevel) {
+        self.riskLevelClickView.update(description: value.description)
+        self.riskLevel = value
     }
 }

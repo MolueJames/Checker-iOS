@@ -6,6 +6,7 @@
 //  Copyright © 2019 MolueTech. All rights reserved.
 //
 
+import MolueUtilities
 import MolueMediator
 
 protocol HiddenPerilLevelRouterInteractable: class {
@@ -32,11 +33,19 @@ final class HiddenPerilLevelViewableRouter: MolueViewableRouting {
 }
 
 extension HiddenPerilLevelViewableRouter: HiddenPerilLevelViewableRouting {
-    
+    func popBackToPreviousController() {
+        do {
+            let navigator = try self.controller.unwrap()
+            navigator.doPopBackFromCurrent()
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+    }
 }
 
 protocol HiddenPerilLevelInteractListener: class {
     //用于定义其他的Component需要定义的协议方法
+    func updatePotentialRiskLevel(with value: PotentialRiskLevel)
 }
 
 protocol HiddenPerilLevelComponentBuildable: MolueComponentBuildable {

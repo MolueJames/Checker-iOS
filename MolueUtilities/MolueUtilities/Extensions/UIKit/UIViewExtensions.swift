@@ -538,6 +538,7 @@ public extension UIView {
         let views = bundle.loadNibNamed(nib, owner: nil, options: nil)
         return (views?.last as! T)
     }
+    
     /// 将childView布满self
     ///
     /// - Parameter childView: subView

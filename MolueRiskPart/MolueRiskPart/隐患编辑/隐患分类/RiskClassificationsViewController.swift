@@ -85,7 +85,7 @@ extension RiskClassificationsViewController: MLUserInterfaceProtocol {
         }
         self.tableView.es.startPullToRefresh()
         
-        let rightItem = UIBarButtonItem(title: "提交", style: .plain, target: self, action: #selector(rightItemClicked))
+        let rightItem = UIBarButtonItem(title: "提交", style: .done, target: self, action: #selector(rightItemClicked))
         self.navigationItem.rightBarButtonItem = rightItem
     }
     
@@ -152,11 +152,24 @@ extension RiskClassificationsViewController: UITableViewDataSource {
 
 extension RiskClassificationsViewController: UITableViewDelegate {
 
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 45
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view: RiskDetailSectionHeaderView = RiskDetailSectionHeaderView.createFromXib()
         do {
             let listener = try self.listener.unwrap()
             let item = listener.queryRiskClassification(with: section)
-            return try item.unwrap().name.unwrap()
-        } catch { return "暂无数据" }
+            try view.refreshSubviews(with: item.unwrap())
+        } catch {
+            MolueLogger.UIModule.message(error)
+        }
+        return view
     }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 35
+    }
+    
 }

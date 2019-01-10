@@ -6,6 +6,7 @@
 //  Copyright © 2019 MolueTech. All rights reserved.
 //
 
+import MolueUtilities
 import MolueMediator
 
 protocol RiskUnitPositionRouterInteractable: class {
@@ -32,12 +33,19 @@ final class RiskUnitPositionViewableRouter: MolueViewableRouting {
 }
 
 extension RiskUnitPositionViewableRouter: RiskUnitPositionViewableRouting {
-    
+    func popBackToPreviousController() {
+        do {
+            let navigator = try self.controller.unwrap()
+            navigator.doPopBackFromCurrent()
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+    }
 }
 
 protocol RiskUnitPositionInteractListener: class {
     //用于定义其他的Component需要定义的协议方法
-    func updateUnitPosition(with value: MLRiskPointDetail)
+    func updateRiskPointPosition(with value: MLRiskPointDetail)
 }
 
 protocol RiskUnitPositionComponentBuildable: MolueComponentBuildable {

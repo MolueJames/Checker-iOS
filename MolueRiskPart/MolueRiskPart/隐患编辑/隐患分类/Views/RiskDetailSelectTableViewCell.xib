@@ -25,18 +25,28 @@
                         <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="common_single_select" translatesAutoresizingMaskIntoConstraints="NO" id="67L-FL-AEM">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="67L-FL-AEM">
                         <rect key="frame" x="275" y="17.5" width="25" height="25"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="25" id="0DQ-gI-5vT"/>
                             <constraint firstAttribute="height" constant="25" id="LzT-qY-m3z"/>
                         </constraints>
                     </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n2i-Rh-Xh4">
+                        <rect key="frame" x="20" y="59" width="300" height="0.5"/>
+                        <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="0.5" id="xAN-ys-aDo"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstItem="67L-FL-AEM" firstAttribute="centerY" secondItem="gDp-h7-ntt" secondAttribute="centerY" id="AeR-4w-nwB"/>
                     <constraint firstItem="NqA-dI-T21" firstAttribute="leading" secondItem="gDp-h7-ntt" secondAttribute="leading" constant="20" id="AqL-4Q-ydH"/>
+                    <constraint firstAttribute="trailing" secondItem="n2i-Rh-Xh4" secondAttribute="trailing" id="E1t-tw-mSI"/>
                     <constraint firstAttribute="trailing" secondItem="67L-FL-AEM" secondAttribute="trailing" constant="20" id="K8a-sF-Gix"/>
+                    <constraint firstAttribute="bottom" secondItem="n2i-Rh-Xh4" secondAttribute="bottom" id="PO3-Sx-Vos"/>
+                    <constraint firstItem="n2i-Rh-Xh4" firstAttribute="leading" secondItem="gDp-h7-ntt" secondAttribute="leading" constant="20" id="dtP-vP-hYR"/>
                     <constraint firstItem="67L-FL-AEM" firstAttribute="leading" secondItem="NqA-dI-T21" secondAttribute="trailing" constant="10" id="h2B-1f-VCc"/>
                     <constraint firstItem="NqA-dI-T21" firstAttribute="centerY" secondItem="gDp-h7-ntt" secondAttribute="centerY" id="kFN-3i-NIK"/>
                 </constraints>
@@ -46,9 +56,7 @@
                 <outlet property="selectImageView" destination="67L-FL-AEM" id="EtV-U1-J9s"/>
                 <outlet property="titleLabel" destination="NqA-dI-T21" id="ZGw-fW-SQX"/>
             </connections>
+            <point key="canvasLocation" x="137.59999999999999" y="145.72713643178412"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="common_single_select" width="30" height="30"/>
-    </resources>
 </document>

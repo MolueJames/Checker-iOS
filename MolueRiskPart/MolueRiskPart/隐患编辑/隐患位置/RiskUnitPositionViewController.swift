@@ -84,7 +84,7 @@ extension RiskUnitPositionViewController: MLUserInterfaceProtocol {
         }
         self.tableView.es.startPullToRefresh()
         
-        let rightItem = UIBarButtonItem(title: "提交", style: .plain, target: self, action: #selector(rightItemClicked))
+        let rightItem = UIBarButtonItem(title: "提交", style: .done, target: self, action: #selector(rightItemClicked))
         self.navigationItem.rightBarButtonItem = rightItem
     }
     
@@ -150,12 +150,32 @@ extension RiskUnitPositionViewController: UITableViewDataSource {
 }
 
 extension RiskUnitPositionViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        do {
+//            let listener = try self.listener.unwrap()
+//            let item = listener.queryRiskUnitDetail(with: section)
+//            return try item.unwrap().unitName.unwrap()
+//        } catch { return "暂无数据" }
+//    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 45
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view: RiskDetailSectionHeaderView = RiskDetailSectionHeaderView.createFromXib()
         do {
             let listener = try self.listener.unwrap()
             let item = listener.queryRiskUnitDetail(with: section)
-            return try item.unwrap().unitName.unwrap()
-        } catch { return "暂无数据" }
+            try view.refreshSubviews(with: item.unwrap())
+        } catch {
+            MolueLogger.UIModule.message(error)
+        }
+        return view
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 35
     }
 }
 

@@ -11,6 +11,8 @@ import MolueUtilities
 import ObjectMapper
 
 public class MLHiddenPerilItem: Mappable {
+    public init() {}
+    
     public required init?(map: Map) {}
     
     public func mapping(map: Map) {
@@ -73,6 +75,19 @@ public enum PotentialRiskLevel: CaseIterable, CustomStringConvertible {
             return "较高事故隐患"
         case .atLower:
             return "较低事故隐患"
+        }
+    }
+    
+    public var toService: String {
+        switch self {
+        case .serious:
+            return "large"
+        case .general:
+            return "normal"
+        case .higher:
+            return "high"
+        case .atLower:
+            return "low"
         }
     }
     

@@ -6,6 +6,7 @@
 //  Copyright © 2019 MolueTech. All rights reserved.
 //
 
+import MolueUtilities
 import MolueMediator
 
 protocol RiskClassificationsRouterInteractable: class {
@@ -32,12 +33,19 @@ final class RiskClassificationsViewableRouter: MolueViewableRouting {
 }
 
 extension RiskClassificationsViewableRouter: RiskClassificationsViewableRouting {
-    
+    func popBackToPreviousController() {
+        do {
+            let navigator = try self.controller.unwrap()
+            navigator.doPopBackFromCurrent()
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+    }
 }
 
 protocol RiskClassificationsInteractListener: class {
     //用于定义其他的Component需要定义的协议方法
-    func updateClassification(with value: MLRiskClassification)
+    func updateRiskClassification(with value: MLRiskClassification)
 }
 
 protocol RiskClassificationsComponentBuildable: MolueComponentBuildable {

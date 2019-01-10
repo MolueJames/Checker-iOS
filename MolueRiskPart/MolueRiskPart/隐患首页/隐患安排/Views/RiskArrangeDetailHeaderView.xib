@@ -12,9 +12,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="PotentialRiskHeaderView" customModule="MolueRiskPart" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="RiskArrangeDetailHeaderView" customModule="MolueRiskPart" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="400"/>
-            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="隐患来源:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rou-te-7SC">
                     <rect key="frame" x="15" y="10" width="66" height="18"/>
@@ -71,11 +71,11 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="暂无数据" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iBR-fI-2fF">
-                    <rect key="frame" x="15" y="257" width="345" height="17"/>
+                    <rect key="frame" x="15" y="257" width="345" height="18"/>
                     <constraints>
-                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="17" id="sIH-bH-G9S"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="18" id="sIH-bH-G9S"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -187,7 +187,7 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="eGB-3I-HZb" secondAttribute="trailing" constant="15" id="aP2-Gw-D3h"/>
                 <constraint firstItem="KZz-IQ-9WF" firstAttribute="top" secondItem="Zum-nm-FtY" secondAttribute="bottom" constant="10" id="cHt-cC-muC"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Afk-XH-egI" secondAttribute="trailing" constant="15" id="cTW-PU-jeN"/>
-                <constraint firstItem="KeO-ik-y82" firstAttribute="top" secondItem="iBR-fI-2fF" secondAttribute="bottom" constant="10" id="eO9-Gn-YZc"/>
+                <constraint firstItem="KeO-ik-y82" firstAttribute="top" secondItem="iBR-fI-2fF" secondAttribute="bottom" constant="9" id="eO9-Gn-YZc"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="lVE-Te-FKN" secondAttribute="bottom" constant="10" id="gAL-vE-FEy"/>
                 <constraint firstItem="60c-Vh-bEb" firstAttribute="leading" secondItem="Zum-nm-FtY" secondAttribute="trailing" constant="15" id="h0W-DB-U0Z"/>
                 <constraint firstItem="Shl-7e-Vvd" firstAttribute="leading" secondItem="gHp-q4-lJd" secondAttribute="trailing" constant="15" id="haC-CG-yU0"/>

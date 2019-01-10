@@ -13,6 +13,7 @@ import MolueUtilities
 
 protocol RiskClassificationsViewableRouting: class {
     // 定义一些页面跳转的方法, 比如Push, Presenter等.
+    func popBackToPreviousController()
 }
 
 protocol RiskClassificationsPagePresentable: MolueInteractorPresentable, MLControllerHUDProtocol {
@@ -57,7 +58,32 @@ extension RiskClassificationsPageInteractor: RiskClassificationsPresentableListe
     }
     
     func submitSelectedClassification(with indexPath: IndexPath?) {
-        
+        if let indexPath = indexPath {
+            self.handleSelectedClassification(with: indexPath)
+        } else {
+            self.handleUnselectClassification()
+        }
+    }
+    
+    func handleSelectedClassification(with indexPath: IndexPath) {
+        do {
+            let listener = try self.listener.unwrap()
+            let value = self.queryRiskClassification(with: indexPath)
+            try listener.updateRiskClassification(with: value.unwrap())
+            let viewRouter = try self.viewRouter.unwrap()
+            viewRouter.popBackToPreviousController()
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+    }
+    
+    func handleUnselectClassification() {
+        do {
+            let presenter = try self.presenter.unwrap()
+            presenter.showWarningHUD(text: "请选择隐患类别")
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
     }
 
     func queryRiskClassification() {

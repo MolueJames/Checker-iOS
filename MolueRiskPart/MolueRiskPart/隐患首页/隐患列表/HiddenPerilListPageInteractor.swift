@@ -142,7 +142,7 @@ extension HiddenPerilListPageInteractor: HiddenPerilListPresentableListener {
     func didSelectRow(at indexPath: IndexPath) {
         do {
             let router = try self.viewRouter.unwrap()
-            router.pushToRiskDetailController()
+            router.pushToRiskArrangeController()
         } catch { MolueLogger.UIModule.error(error) }
     }
 }

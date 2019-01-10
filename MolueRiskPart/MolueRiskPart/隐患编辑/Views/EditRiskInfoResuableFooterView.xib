@@ -79,7 +79,7 @@
                 <outlet property="reasonRemarkView" destination="imO-VC-ouy" id="auN-Jx-T0T"/>
                 <outlet property="riskClassClickView" destination="4bO-le-I5f" id="TRk-kC-ZdS"/>
                 <outlet property="riskLevelClickView" destination="lg3-oA-oOi" id="dyy-Uh-Vhb"/>
-                <outlet property="riskUnitClickView" destination="bXh-N3-g8U" id="PLo-Q9-HR2"/>
+                <outlet property="riskPointClickView" destination="bXh-N3-g8U" id="wov-n8-Dax"/>
             </connections>
             <point key="canvasLocation" x="-755.20000000000005" y="-62.518740629685162"/>
         </collectionReusableView>

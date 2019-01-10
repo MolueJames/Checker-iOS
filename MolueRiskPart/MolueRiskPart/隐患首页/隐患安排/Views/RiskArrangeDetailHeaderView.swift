@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PotentialRiskHeaderView: UIView {
+class RiskArrangeDetailHeaderView: UIView {
 
     /*
     // Only override draw() if you perform custom drawing.
@@ -47,7 +47,7 @@ class PotentialRiskHeaderView: UIView {
     }
 }
 
-extension PotentialRiskHeaderView: UICollectionViewDataSource {
+extension RiskArrangeDetailHeaderView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 10
     }
@@ -58,6 +58,6 @@ extension PotentialRiskHeaderView: UICollectionViewDataSource {
     }
 }
 
-extension PotentialRiskHeaderView: UICollectionViewDelegate {
+extension RiskArrangeDetailHeaderView: UICollectionViewDelegate {
     
 }

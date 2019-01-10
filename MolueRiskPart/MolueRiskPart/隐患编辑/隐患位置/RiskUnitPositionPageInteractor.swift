@@ -13,6 +13,7 @@ import MolueUtilities
 
 protocol RiskUnitPositionViewableRouting: class {
     // 定义一些页面跳转的方法, 比如Push, Presenter等.
+    func popBackToPreviousController()
 }
 
 protocol RiskUnitPositionPagePresentable: MolueInteractorPresentable, MLControllerHUDProtocol {
@@ -158,6 +159,31 @@ extension RiskUnitPositionPageInteractor: RiskUnitPositionPresentableListener {
     }
     
     func submitSelectedPointPosition(with indexPath: IndexPath?) {
-        
+        if let indexPath = indexPath {
+            self.handleSelectedPointPosition(with: indexPath)
+        } else {
+            self.handleUnselectPointPosition()
+        }
+    }
+    
+    func handleSelectedPointPosition(with indexPath: IndexPath) {
+        do {
+            let listener = try self.listener.unwrap()
+            let value = self.queryRiskPointDetail(with: indexPath)
+            try listener.updateRiskPointPosition(with: value.unwrap())
+            let viewRouter = try self.viewRouter.unwrap()
+            viewRouter.popBackToPreviousController()
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+    }
+    
+    func handleUnselectPointPosition() {
+        do {
+            let presenter = try self.presenter.unwrap()
+            presenter.showWarningHUD(text: "请选择隐患位置")
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
     }
 }
