@@ -43,19 +43,16 @@ extension PotentialRiskViewableRouter: PotentialRiskViewableRouting {
     }
     
     func generatePerilListControllers() -> [UIViewController] {
-        var controllers = [UIViewController]()
-        controllers.append(self.createPerilList()!)
-        controllers.append(self.createPerilList()!)
-        controllers.append(self.createPerilList()!)
-        controllers.append(self.createPerilList()!)
-        return controllers
+        return PotentialRiskStatus.allCases.compactMap({ (status) in
+            return self.createPerilList(with: status)
+        })
     }
     
-    func createPerilList() -> UIViewController? {
+    func createPerilList(with status: PotentialRiskStatus) -> UIViewController? {
         do {
             let builder = HiddenPerilListComponentBuilder()
             let listener = try self.interactor.unwrap()
-            return builder.build(listener: listener)
+            return builder.build(listener: listener, status: status)
         } catch { return MolueLogger.UIModule.allowNil(error) }
     }
 }

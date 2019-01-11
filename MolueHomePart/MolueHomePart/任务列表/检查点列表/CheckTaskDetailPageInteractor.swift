@@ -137,7 +137,8 @@ extension CheckTaskDetailPageInteractor: CheckTaskDetailPresentableListener {
             let checkTask = try self.selectedCheckTask.unwrap()
             if try self.isAllTaskChecked(with: checkTask.items.unwrap()) {
                 let taskId = try checkTask.taskId.unwrap()
-                self.updateCheckTask(with: taskId, parameters: checkTask.toJSON())
+                let task = self.updateTaskDetailStatus(with: checkTask)
+                self.updateCheckTask(with: taskId, parameters: task.toJSON())
             } else {
                 let presenter = try self.presenter.unwrap()
                 presenter.showWarningHUD(text: "尚有未完成的检查项")
@@ -145,6 +146,17 @@ extension CheckTaskDetailPageInteractor: CheckTaskDetailPresentableListener {
         } catch {
             MolueLogger.UIModule.message(error)
         }
+    }
+    
+    func updateTaskDetailStatus(with task: MLDailyCheckTask) -> MLDailyCheckTask {
+        do {
+            let items = try task.items.unwrap()
+            let failure = items.contains(where: { (item) -> Bool in
+                return item.result != item.rightAnswer
+            })
+            task.status = failure ? "risky" : "done"
+            return task
+        } catch { return task }
     }
     
     func updateCheckTask(with taskId: String, parameters: [String : Any]) {

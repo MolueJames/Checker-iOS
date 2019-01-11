@@ -24,7 +24,10 @@ final class PotentialRiskViewController: MLBaseViewController  {
     @IBOutlet weak var segementView: MLCommonSegementView! {
         didSet {
             segementView.delegate = self
-            let list = ["已发现", "已安排", "已整改", "已验收"]
+            let status = PotentialRiskStatus.allCases
+            let list: [String] = status.map { (status) in
+                return status.description
+            }
             segementView.updateSegementList(with: list)
         }
     }

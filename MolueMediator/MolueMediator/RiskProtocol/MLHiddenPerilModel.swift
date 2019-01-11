@@ -96,3 +96,37 @@ public enum PotentialRiskLevel: CaseIterable, CustomStringConvertible {
     case general
     case atLower
 }
+
+
+public enum PotentialRiskStatus: CaseIterable, CustomStringConvertible {
+    case create //待整改
+    case reform //整改中
+    case finish //已整改
+    case closed //已关闭
+    
+    public var description: String {
+        switch self {
+        case .create:
+            return "已发现"
+        case .reform:
+            return "已安排"
+        case .finish:
+            return "已整改"
+        case .closed:
+            return "已验收"
+        }
+    }
+    
+    public var toService: String {
+        switch self {
+        case .create:
+            return "created"
+        case .reform:
+            return "approved"
+        case .finish:
+            return "done"
+        case .closed:
+            return ""
+        }
+    }
+}

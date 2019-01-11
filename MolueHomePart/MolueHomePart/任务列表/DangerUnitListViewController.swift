@@ -30,6 +30,7 @@ protocol DangerUnitListPresentableListener: class {
     
     func jumpToCheckTaskDetail(with indexPath: IndexPath)
     
+    func reloadCheckTask(with task: MLDailyCheckTask)
 }
 
 final class DangerUnitListViewController: MLBaseViewController  {
@@ -62,6 +63,7 @@ final class DangerUnitListViewController: MLBaseViewController  {
     deinit {
         self.tableView.es.removeRefreshFooter()
         self.tableView.es.removeRefreshHeader()
+        NotificationCenter.default.removeObserver(self)
     }
 }
 
@@ -74,11 +76,18 @@ extension DangerUnitListViewController: MLUserInterfaceProtocol {
     
     @IBAction func checkTaskFinished(_ notification: NSNotification) {
         MolueLogger.database.message(notification.object)
+        do {
+            let listener = try self.listener.unwrap()
+            let task = notification.object as? MLDailyCheckTask
+            try listener.reloadCheckTask(with: task.unwrap())
+        } catch {
+            MolueLogger.UIModule.message(error)
+        }
         self.navigationController?.popToViewController(self, animated: true)
     }
     
     func updateUserInterfaceElements() {
-        self.title = "风险列表"
+        self.title = "定期检查"
         self.tableView.es.addInfiniteScrolling(animator: self.footer) { [weak self] in
             do {
                 let listener = try self.unwrap().listener.unwrap()
@@ -96,6 +105,10 @@ extension DangerUnitListViewController: MLUserInterfaceProtocol {
 }
 
 extension DangerUnitListViewController: DangerUnitListPagePresentable {
+    func reloadTableViewCell(with indexPath: IndexPath) {
+        self.tableView.reloadRows(at: [indexPath], with: .none)
+    }
+    
     func endHeaderRefreshing() {
         self.tableView.es.stopPullToRefresh()
     }
@@ -116,7 +129,6 @@ extension DangerUnitListViewController: DangerUnitListPagePresentable {
         self.tableView.reloadData()
         self.navigationController?.popToViewController(self, animated: true)
     }
-    
 }
 
 extension DangerUnitListViewController: DangerUnitListViewControllable {

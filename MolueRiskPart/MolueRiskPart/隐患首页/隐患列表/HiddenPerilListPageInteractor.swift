@@ -39,6 +39,8 @@ final class HiddenPerilListPageInteractor: MoluePresenterInteractable {
     
     var listModel = MolueListItem<MLHiddenPerilItem>()
     
+    var status: PotentialRiskStatus = .create
+    
     required init(presenter: HiddenPerilListPagePresentable) {
         self.presenter = presenter
         presenter.listener = self
@@ -60,8 +62,9 @@ extension HiddenPerilListPageInteractor: HiddenPerilListPresentableListener {
     }
     
     func queryHiddenPerilHistory() {
+        let status: String = self.status.toService
         let size: Int = self.listModel.pagesize
-        let request = MoluePerilService.queryHiddenPerils(page: 1, size: size)
+        let request = MoluePerilService.queryHiddenPerils(with: status, page: 1, size: size)
         request.handleSuccessResultToObjc { [weak self] (item: MolueListItem<MLHiddenPerilItem>?) in
             do {
                 try self.unwrap().handleQueryItem(item)
@@ -99,14 +102,15 @@ extension HiddenPerilListPageInteractor: HiddenPerilListPresentableListener {
         do {
             let page: Int = try self.listModel.next.unwrap()
             let size: Int = self.listModel.pagesize
-            self.queryMoreHiddenPerilHistory(with: page, size: size)
+            let status: String = self.status.toService
+            self.queryMoreHiddenPerilHistory(with: status, page: page, size: size)
         } catch {
             self.presenter?.endFooterRefreshing(with: false)
         }
     }
     
-    func queryMoreHiddenPerilHistory(with page: Int, size: Int) {
-        let request = MoluePerilService.queryHiddenPerils(page: page, size: size)
+    func queryMoreHiddenPerilHistory(with status: String, page: Int, size: Int) {
+        let request = MoluePerilService.queryHiddenPerils(with: status, page: page, size: size)
         request.handleSuccessResultToObjc { [weak self] (item: MolueListItem<MLHiddenPerilItem>?) in
             do {
                 try self.unwrap().handleMoreItems(item)
@@ -142,7 +146,17 @@ extension HiddenPerilListPageInteractor: HiddenPerilListPresentableListener {
     func didSelectRow(at indexPath: IndexPath) {
         do {
             let router = try self.viewRouter.unwrap()
-            router.pushToRiskArrangeController()
+            switch self.status {
+            case .create:
+                router.pushToRiskDetailController()
+            case .reform:
+                router.pushToRiskArrangeController()
+            case .finish:
+                router.pushToRiskRectifyController()
+            case .closed:
+                router.pushToRiskClosedControlelr()
+            }
+
         } catch { MolueLogger.UIModule.error(error) }
     }
 }

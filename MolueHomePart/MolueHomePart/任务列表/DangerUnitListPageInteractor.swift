@@ -26,6 +26,8 @@ protocol DangerUnitListPagePresentable: MolueInteractorPresentable, MLController
     func endHeaderRefreshing()
     
     func endFooterRefreshing(with hasMore: Bool)
+    
+    func reloadTableViewCell(with indexPath: IndexPath)
 }
 
 final class DangerUnitListPageInteractor: MoluePresenterInteractable {
@@ -37,6 +39,8 @@ final class DangerUnitListPageInteractor: MoluePresenterInteractable {
     weak var listener: DangerUnitListInteractListener?
     
     var selectedCheckTask: String?
+    
+    private var selectedIndexPath: IndexPath?
     
     var listModel = MolueListItem<MLDailyCheckPlan>()
     
@@ -51,6 +55,16 @@ extension DangerUnitListPageInteractor: DangerUnitListRouterInteractable {
 }
 
 extension DangerUnitListPageInteractor: DangerUnitListPresentableListener {
+    func reloadCheckTask(with task: MLDailyCheckTask) {
+        do {
+            let indexPath = try self.selectedIndexPath.unwrap()
+            let presenter = try self.presenter.unwrap()
+            presenter.reloadTableViewCell(with: indexPath)
+        } catch {
+            MolueLogger.database.message(error)
+        }
+    }
+    
     
     func jumpToCheckTaskDetail(with indexPath: IndexPath) {
         do {
@@ -58,6 +72,7 @@ extension DangerUnitListPageInteractor: DangerUnitListPresentableListener {
             self.selectedCheckTask = try checkTask.unwrap().taskId
             let viewRouter = try self.viewRouter.unwrap()
             viewRouter.pushToDailyCheckTaskController()
+            self.selectedIndexPath = indexPath
         } catch {
             MolueLogger.UIModule.error(error)
         }

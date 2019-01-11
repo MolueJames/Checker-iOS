@@ -9,13 +9,9 @@
 import Foundation
 
 public struct MoluePerilService {
-    public static func queryHiddenPerils(page: Int, size: Int) -> MolueDataRequest {
-        let parameters = ["page": page, "page_size": size]
+    public static func queryHiddenPerils(with status: String, page: Int, size: Int) -> MolueDataRequest {
+        let parameters: [String : Any] = ["page": page, "page_size": size, "status" : status]
         return MolueDataRequest(parameter: parameters, method: .get, path: "api/hidden_dangers/")
-    }
-    
-    public static func queryHiddenPerils(with status: String) -> MolueDataRequest {
-        return MolueDataRequest(parameter: nil, method: .get, path: "api/hidden_dangers/")
     }
     
     public static func updateHiddenPeril(with parameters:[String : Any]) -> MolueDataRequest {

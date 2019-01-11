@@ -14,6 +14,8 @@ import MolueUtilities
 protocol CheckTaskHistoryViewableRouting: class {
     // 定义一些页面跳转的方法, 比如Push, Presenter等.
     func pushToCheckTaskReportController()
+    
+    func pushToDailyCheckTaskController()
 }
 
 protocol CheckTaskHistoryPagePresentable: MolueInteractorPresentable, MLControllerHUDProtocol, MolueActivityDelegate {
@@ -38,6 +40,15 @@ final class CheckTaskHistoryPageInteractor: MoluePresenterInteractable {
     
     var currentTask: MLDailyCheckTask?
     
+    lazy var selectedCheckTask: String? = {
+        do {
+            let task = try self.currentTask.unwrap()
+            return try task.taskId.unwrap()
+        } catch {
+            return MolueLogger.UIModule.allowNil(error)
+        }
+    }()
+    
     required init(presenter: CheckTaskHistoryPagePresentable) {
         self.presenter = presenter
         presenter.listener = self
@@ -45,7 +56,7 @@ final class CheckTaskHistoryPageInteractor: MoluePresenterInteractable {
 }
 
 extension CheckTaskHistoryPageInteractor: CheckTaskHistoryRouterInteractable {
-    
+
 }
 
 extension CheckTaskHistoryPageInteractor: CheckTaskHistoryPresentableListener {
@@ -53,7 +64,11 @@ extension CheckTaskHistoryPageInteractor: CheckTaskHistoryPresentableListener {
         do {
             self.currentTask = self.queryDailyTask(with: indexPath)
             let router = try self.viewRouter.unwrap()
-            router.pushToCheckTaskReportController()
+            if try self.currentTask.unwrap().status == "pending" {
+                router.pushToDailyCheckTaskController()
+            } else {
+                router.pushToCheckTaskReportController()
+            }
         } catch {
             MolueLogger.UIModule.error(error)
         }
@@ -80,11 +95,11 @@ extension CheckTaskHistoryPageInteractor: CheckTaskHistoryPresentableListener {
     func queryTaskHistory(with date: Date) -> MLCheckTaskHistory? {
         do {
             let results = try self.listModel.results.unwrap()
-            let historys = results.filter { (history) -> Bool in
+            let histories = results.filter { (history) -> Bool in
                 let matched =  date.string(withFormat: "yyyy-MM-dd")
                 return history.date == matched
             }
-            return try historys.first.unwrap()
+            return try histories.first.unwrap()
         } catch { return nil }
     }
     

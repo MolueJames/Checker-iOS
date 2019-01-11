@@ -80,15 +80,16 @@ protocol HiddenPerilListInteractListener: class {
 
 protocol HiddenPerilListComponentBuildable: MolueComponentBuildable {
     //定义当前的Component的构造方法.
-    func build(listener: HiddenPerilListInteractListener) -> UIViewController
+    func build(listener: HiddenPerilListInteractListener, status: PotentialRiskStatus) -> UIViewController
 }
 
 class HiddenPerilListComponentBuilder: MolueComponentBuilder, HiddenPerilListComponentBuildable {
-    func build(listener: HiddenPerilListInteractListener) -> UIViewController {
+    func build(listener: HiddenPerilListInteractListener, status: PotentialRiskStatus) -> UIViewController {
         let controller = HiddenPerilListViewController.initializeFromStoryboard()
         let interactor = HiddenPerilListPageInteractor(presenter: controller)
         HiddenPerilListViewableRouter(interactor: interactor, controller: controller)
         interactor.listener = listener
+        interactor.status = status
         return controller
     }
 }

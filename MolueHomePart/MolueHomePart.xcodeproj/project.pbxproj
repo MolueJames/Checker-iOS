@@ -449,7 +449,6 @@
 			isa = PBXGroup;
 			children = (
 				1A730AE920EBBBE7008831BC /* 政策详情 */,
-				1A24023120E5390D00FC3EBA /* Models */,
 				1A24023020E5390700FC3EBA /* Views */,
 				1A24022520E530AE00FC3EBA /* PolicyNoticeViewController.storyboard */,
 				1A5E87F221C9DC4B00BA4DB5 /* PolicyNoticeViewController.swift */,
@@ -491,13 +490,6 @@
 				1AB0670620EFB61D00619570 /* PolicyNoticeTableViewCell.xib */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		1A24023120E5390D00FC3EBA /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		1A264B8B21A178EB00F452F9 /* 检查历史 */ = {

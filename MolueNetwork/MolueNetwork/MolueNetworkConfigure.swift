@@ -26,7 +26,7 @@ public struct HTTPConfigure {
         case .debug:
             return "http://www.safety-saas.com"
         case .release:
-            return "https://api.fushuninsurance.com/insurance-guide"
+            return "http://www.safety-saas.com"
         }
     }
 }

@@ -7,26 +7,27 @@
 //
 
 import Foundation
+import MolueUtilities
 import ObjectMapper
 
 public class MolueUserInfo: Mappable, Codable {
     public required init?(map: Map) {}
     
     public func mapping(map: Map) {
+        self.setPermissions(with: map)
         enterpriseId <- map["enterprise_id"]
         adminAreaId  <- map["admin_area_id"]
-        permissions  <- map["permissions"]
         screenName   <- map["screen_name"]
         dateJoined   <- map["date_joined"]
         lastLogin    <- map["last_login"]
         lastName     <- map["last_name"]
         username     <- map["username"]
         position     <- map["position"]
+        profile      <- map["profile"]
         userMobile   <- map["mobile"]
         userOrder    <- map["order"]
         userPhone    <- map["phone"]
         userEmail    <- map["email"]
-        profile      <- map["profile"]
         nameUser     <- map["name"]
         userRole     <- map["role"]
         userID       <- map["id"]
@@ -49,4 +50,18 @@ public class MolueUserInfo: Mappable, Codable {
     public var screenName: String?
     public var username: String?
     public var permissions: String?
+    
+    private func setPermissions(with map: Map) {
+        let value: [String]? = map["permissions"].value()
+        permissions = value?.joined(separator: ",")
+    }
+    
+    private func getPermissions() -> [String]? {
+        do {
+            let permissions = try self.permissions.unwrap()
+            return permissions.components(separatedBy: ",")
+        } catch {
+            return MolueLogger.database.allowNil(error)
+        }
+    }
 }
