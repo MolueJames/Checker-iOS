@@ -27,10 +27,10 @@ public class MLHiddenPerilItem: Mappable {
         perilId <- map["id"]
         status <- map["status"]
         grade <- map["grade"]
-        riskId <- map["risk_id"]
         source <- map["source"]
         updated <- map["updated"]
         perilMemo <- map["memo"]
+        risk <- map["risk"]
     }
     
     public var perilId: String?
@@ -43,7 +43,7 @@ public class MLHiddenPerilItem: Mappable {
     public var rectifyDate: String?
     public var attachments: [MLAttachmentDetail]?
     public var enterpriseId: String?
-    public var riskId: String?
+    public var risk: MLRiskPointDetail?
     public var createdUser: MolueUserInfo?
     public var approvedDate: String?
     public var updated: String?

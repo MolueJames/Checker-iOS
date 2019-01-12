@@ -24,6 +24,8 @@ protocol CheckTaskHistoryPagePresentable: MolueInteractorPresentable, MLControll
     func reloadCheckTaskHistory()
     
     func reloadDailyTaskHistory()
+    
+    func reloadTableViewCell(with indexPath: IndexPath)
 }
 
 final class CheckTaskHistoryPageInteractor: MoluePresenterInteractable {
@@ -36,18 +38,13 @@ final class CheckTaskHistoryPageInteractor: MoluePresenterInteractable {
     
     var listModel = MolueListItem<MLCheckTaskHistory>()
     
-    var selectTaskList = MolueListItem<MLDailyCheckTask>()
+    var taskList = MolueListItem<MLDailyCheckTask>()
     
     var currentTask: MLDailyCheckTask?
     
-    lazy var selectedCheckTask: String? = {
-        do {
-            let task = try self.currentTask.unwrap()
-            return try task.taskId.unwrap()
-        } catch {
-            return MolueLogger.UIModule.allowNil(error)
-        }
-    }()
+    var selectedIndexPath: IndexPath?
+    
+    var selectedCheckTask: String?
     
     required init(presenter: CheckTaskHistoryPagePresentable) {
         self.presenter = presenter
@@ -60,23 +57,48 @@ extension CheckTaskHistoryPageInteractor: CheckTaskHistoryRouterInteractable {
 }
 
 extension CheckTaskHistoryPageInteractor: CheckTaskHistoryPresentableListener {
+    func reloadCheckTask(with task: MLDailyCheckTask) {
+        do {
+            let indexPath = try self.selectedIndexPath.unwrap()
+            self.taskList.replace(with: task, index: indexPath.row)
+            let presenter = try self.presenter.unwrap()
+            presenter.reloadTableViewCell(with: indexPath)
+        } catch {
+            MolueLogger.database.message(error)
+        }
+    }
+    
     func jumpToTaskReportController(with indexPath: IndexPath) {
         do {
-            self.currentTask = self.queryDailyTask(with: indexPath)
+            let task = self.queryDailyTask(with: indexPath)
+            self.currentTask = try task.unwrap()
+            try self.jumpToTaskDetail(with: task.unwrap())
+        } catch {
+            MolueLogger.UIModule.message(error)
+        }
+        self.selectedIndexPath = indexPath
+    }
+    
+
+    func jumpToTaskDetail(with task: MLDailyCheckTask) {
+        self.selectedCheckTask = task.taskId
+        do {
             let router = try self.viewRouter.unwrap()
-            if try self.currentTask.unwrap().status == "pending" {
+            if task.status == "pending" {
                 router.pushToDailyCheckTaskController()
             } else {
                 router.pushToCheckTaskReportController()
             }
+//            router.pushToDailyCheckTaskController()
         } catch {
             MolueLogger.UIModule.error(error)
         }
     }
     
+    
     func numberOfRows(in section: Int) -> Int? {
         do {
-            let results = self.selectTaskList.results
+            let results = self.taskList.results
             return try results.unwrap().count
         } catch {
             return MolueLogger.UIModule.allowNil(error)
@@ -85,7 +107,7 @@ extension CheckTaskHistoryPageInteractor: CheckTaskHistoryPresentableListener {
     
     func queryDailyTask(with indexPath: IndexPath) -> MLDailyCheckTask? {
         do {
-            let results = try self.selectTaskList.results.unwrap()
+            let results = try self.taskList.results.unwrap()
             return try results.item(at: indexPath.row).unwrap()
         } catch {
             return MolueLogger.UIModule.allowNil(error)
@@ -152,7 +174,7 @@ extension CheckTaskHistoryPageInteractor: CheckTaskHistoryPresentableListener {
     
     func handleSuccessResult(with result: MolueListItem<MLDailyCheckTask>?) {
         do {
-            self.selectTaskList = try result.unwrap()
+            self.taskList = try result.unwrap()
             let presenter = try self.presenter.unwrap()
             presenter.reloadDailyTaskHistory()
         } catch { MolueLogger.network.message(error) }

@@ -56,6 +56,12 @@ extension RiskArrangeViewController: MLUserInterfaceProtocol {
     
     func updateUserInterfaceElements() {
         self.title = "隐患安排"
+        
+        let rightItem = UIBarButtonItem(title: "提交", style: .done, target: self, action: #selector(rightItemClicked))
+        self.navigationItem.rightBarButtonItem = rightItem
+    }
+    
+    @IBAction func rightItemClicked(_ sender: UIBarButtonItem) {
     }
 }
 

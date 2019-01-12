@@ -75,7 +75,6 @@ extension DangerUnitListViewController: MLUserInterfaceProtocol {
     }
     
     @IBAction func checkTaskFinished(_ notification: NSNotification) {
-        MolueLogger.database.message(notification.object)
         do {
             let listener = try self.listener.unwrap()
             let task = notification.object as? MLDailyCheckTask

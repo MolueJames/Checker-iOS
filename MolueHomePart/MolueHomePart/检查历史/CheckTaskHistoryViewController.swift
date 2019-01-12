@@ -26,6 +26,8 @@ protocol CheckTaskHistoryPresentableListener: class {
     func queryDailyTask(with indexPath: IndexPath) -> MLDailyCheckTask?
     
     func queryTaskHistory(with date: Date) -> MLCheckTaskHistory?
+    
+    func reloadCheckTask(with task: MLDailyCheckTask)
 }
 
 final class CheckTaskHistoryViewController: MLBaseViewController  {
@@ -61,6 +63,10 @@ final class CheckTaskHistoryViewController: MLBaseViewController  {
     func setupNavigationTitle(with date: Date) {
         self.title = date.string(withFormat: "yyyy年MM月")
     }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
 }
 
 extension CheckTaskHistoryViewController: MLUserInterfaceProtocol {
@@ -71,7 +77,13 @@ extension CheckTaskHistoryViewController: MLUserInterfaceProtocol {
     }
     
     @IBAction func checkTaskFinished(_ notification: NSNotification) {
-        MolueLogger.database.message(notification.object)
+        do {
+            let listener = try self.listener.unwrap()
+            let task = notification.object as? MLDailyCheckTask
+            try listener.reloadCheckTask(with: task.unwrap())
+        } catch {
+            MolueLogger.UIModule.message(error)
+        }
         self.navigationController?.popToViewController(self, animated: true)
     }
     
@@ -83,6 +95,10 @@ extension CheckTaskHistoryViewController: MLUserInterfaceProtocol {
 }
 
 extension CheckTaskHistoryViewController: CheckTaskHistoryPagePresentable {
+    func reloadTableViewCell(with indexPath: IndexPath) {
+        self.tableView.reloadRows(at: [indexPath], with: .none)
+    }
+    
     func reloadDailyTaskHistory() {
         self.tableView.reloadData()
     }

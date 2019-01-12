@@ -190,7 +190,7 @@ public class MLRiskPointDetail: Mappable {
         updated <- map["updated"]
     }
     
-    public var unitId: String?
+    public var unitId: Int?
     public var unitCode: String?
     public var unitName: String?
     public var person: String?

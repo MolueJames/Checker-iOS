@@ -59,20 +59,26 @@ extension DangerUnitListPageInteractor: DangerUnitListPresentableListener {
         do {
             let indexPath = try self.selectedIndexPath.unwrap()
             let presenter = try self.presenter.unwrap()
+            self.updateCheckTask(with: task, at: indexPath)
             presenter.reloadTableViewCell(with: indexPath)
         } catch {
             MolueLogger.database.message(error)
         }
     }
     
+    func updateCheckTask(with task: MLDailyCheckTask, at indexPath: IndexPath) {
+        var tasks = self.listModel.results?[indexPath.section].tasks
+        tasks?[indexPath.row] = task
+        self.listModel.results?[indexPath.section].tasks = tasks
+    }
     
     func jumpToCheckTaskDetail(with indexPath: IndexPath) {
         do {
+            self.selectedIndexPath = indexPath
             let checkTask = self.queryTaskItem(with: indexPath)
             self.selectedCheckTask = try checkTask.unwrap().taskId
             let viewRouter = try self.viewRouter.unwrap()
             viewRouter.pushToDailyCheckTaskController()
-            self.selectedIndexPath = indexPath
         } catch {
             MolueLogger.UIModule.error(error)
         }

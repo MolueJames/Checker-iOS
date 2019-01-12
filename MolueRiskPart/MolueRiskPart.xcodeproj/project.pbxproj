@@ -72,6 +72,8 @@
 		1AD9D66921E79C2A002A2BCA /* RiskArrangeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AD9D66721E79C2A002A2BCA /* RiskArrangeTableViewCell.xib */; };
 		1AD9D66D21E79CB0002A2BCA /* RiskArrangeInsertFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AD9D66C21E79CB0002A2BCA /* RiskArrangeInsertFooterView.xib */; };
 		1AD9D66F21E79DA3002A2BCA /* RiskArrangeInsertFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD9D66E21E79DA3002A2BCA /* RiskArrangeInsertFooterView.swift */; };
+		1AD9D67121E7B002002A2BCA /* RiskArrangeFinishFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD9D67021E7B002002A2BCA /* RiskArrangeFinishFooterView.swift */; };
+		1AD9D67321E7B015002A2BCA /* RiskArrangeFinishFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AD9D67221E7B015002A2BCA /* RiskArrangeFinishFooterView.xib */; };
 		1AF65C7821E42C6A00813638 /* RiskClosedViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AF65C7721E42C6A00813638 /* RiskClosedViewController.storyboard */; };
 		1AF7763C21E6D72C0014744E /* RiskClassificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF7763921E6D72C0014744E /* RiskClassificationsViewController.swift */; };
 		1AF7763D21E6D72C0014744E /* RiskClassificationsPageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF7763A21E6D72C0014744E /* RiskClassificationsPageInteractor.swift */; };
@@ -168,6 +170,8 @@
 		1AD9D66721E79C2A002A2BCA /* RiskArrangeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RiskArrangeTableViewCell.xib; sourceTree = "<group>"; };
 		1AD9D66C21E79CB0002A2BCA /* RiskArrangeInsertFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RiskArrangeInsertFooterView.xib; sourceTree = "<group>"; };
 		1AD9D66E21E79DA3002A2BCA /* RiskArrangeInsertFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskArrangeInsertFooterView.swift; sourceTree = "<group>"; };
+		1AD9D67021E7B002002A2BCA /* RiskArrangeFinishFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskArrangeFinishFooterView.swift; sourceTree = "<group>"; };
+		1AD9D67221E7B015002A2BCA /* RiskArrangeFinishFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RiskArrangeFinishFooterView.xib; sourceTree = "<group>"; };
 		1AF65C7721E42C6A00813638 /* RiskClosedViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RiskClosedViewController.storyboard; sourceTree = "<group>"; };
 		1AF7763921E6D72C0014744E /* RiskClassificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskClassificationsViewController.swift; sourceTree = "<group>"; };
 		1AF7763A21E6D72C0014744E /* RiskClassificationsPageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskClassificationsPageInteractor.swift; sourceTree = "<group>"; };
@@ -425,6 +429,8 @@
 				1AD9D66721E79C2A002A2BCA /* RiskArrangeTableViewCell.xib */,
 				1AD9D66C21E79CB0002A2BCA /* RiskArrangeInsertFooterView.xib */,
 				1AD9D66E21E79DA3002A2BCA /* RiskArrangeInsertFooterView.swift */,
+				1AD9D67021E7B002002A2BCA /* RiskArrangeFinishFooterView.swift */,
+				1AD9D67221E7B015002A2BCA /* RiskArrangeFinishFooterView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -614,6 +620,7 @@
 				1A730AE220EBBB1D008831BC /* RiskArrangeViewController.storyboard in Resources */,
 				1A65039820DD55350017F91D /* MolueRisk.xcassets in Resources */,
 				1A0B89CC2193392D000B1EBC /* RiskRectifyViewController.storyboard in Resources */,
+				1AD9D67321E7B015002A2BCA /* RiskArrangeFinishFooterView.xib in Resources */,
 				1A3465DF2197308200EBA57C /* PotentialRiskCollectionCell.xib in Resources */,
 				1A2698EA21A5B5E0007C37C8 /* InsertPhotosCollectionViewCell.xib in Resources */,
 				1A15029021A6A0DB002CB333 /* RiskDetailReusableHeaderView.xib in Resources */,
@@ -696,6 +703,7 @@
 				1A0B89C82193391C000B1EBC /* RiskRectifyViewController.swift in Sources */,
 				1AD9D65221E24D8A002A2BCA /* HiddenPerilListViewController.swift in Sources */,
 				1AD2BAD221E2F9990091EDF6 /* RiskArrangeBuilderRouter.swift in Sources */,
+				1AD9D67121E7B002002A2BCA /* RiskArrangeFinishFooterView.swift in Sources */,
 				1A0B89D1219339B4000B1EBC /* RiskDetailViewController.swift in Sources */,
 				1ACD09E02199C27800793AAC /* QuickCheckRiskPageInteractor.swift in Sources */,
 				1A0B89CA2193391C000B1EBC /* RiskRectifyBuilderRouter.swift in Sources */,

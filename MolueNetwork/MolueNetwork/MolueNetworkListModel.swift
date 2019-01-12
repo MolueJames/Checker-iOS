@@ -36,6 +36,7 @@ public class MolueListItem<T: Mappable>: Mappable {
             let newItem = try item.unwrap()
             let results = try newItem.results.unwrap()
             self.results?.append(contentsOf: results)
+            self.next = newItem.next
         } catch { throw error }
     }
     

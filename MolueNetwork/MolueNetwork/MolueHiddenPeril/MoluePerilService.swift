@@ -30,4 +30,10 @@ public struct MoluePerilService {
         let path: String = "api/classifications/"
         return MolueDataRequest(parameter: parameters, method: .get, path: path)
     }
+    
+    public static func queryHiddenPeril(with riskId: Int, page: Int, size: Int) -> MolueDataRequest {
+        let parameters = ["risk_id": riskId, "page": page, "page_size": size]
+        let path: String = "api/hidden_dangers/"
+        return MolueDataRequest(parameter: parameters, method: .get, path: path)
+    }
 }
