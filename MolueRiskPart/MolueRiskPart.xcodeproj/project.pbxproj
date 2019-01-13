@@ -284,7 +284,7 @@
 				1ACD0A1821A05D8000793AAC /* 隐患编辑 */,
 				1ACD09DB2199C25A00793AAC /* 快速检查 */,
 				1A65039720DD55350017F91D /* MolueRisk.xcassets */,
-				1AA7353E20A9C0D700DF7CD0 /* 隐患首页 */,
+				1AA7353E20A9C0D700DF7CD0 /* 隐患历史 */,
 				1A602F4720A810DF003AD583 /* MolueRiskPart.h */,
 				1A602F4820A810DF003AD583 /* Info.plist */,
 			);
@@ -344,7 +344,7 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		1AA7353E20A9C0D700DF7CD0 /* 隐患首页 */ = {
+		1AA7353E20A9C0D700DF7CD0 /* 隐患历史 */ = {
 			isa = PBXGroup;
 			children = (
 				1AD2BAD321E2F9E20091EDF6 /* 隐患关闭 */,
@@ -359,7 +359,7 @@
 				1A05CC2A2189E9AF006D637C /* PotentialRiskBuilderRouter.swift */,
 				1A05CC2E2189E9C4006D637C /* PotentialRiskViewController.storyboard */,
 			);
-			path = "隐患首页";
+			path = "隐患历史";
 			sourceTree = "<group>";
 		};
 		1ACD09DB2199C25A00793AAC /* 快速检查 */ = {

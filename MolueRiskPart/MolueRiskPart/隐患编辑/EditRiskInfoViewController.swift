@@ -31,7 +31,7 @@ protocol EditRiskInfoPresentableListener: class {
     
     var attachment: MLTaskAttachment? { get }
     
-    func querySubmitCommand() -> PublishSubject<PotentialRiskModel>
+    func querySubmitCommand() -> PublishSubject<MLHiddenPerilItem>
 }
 
 final class EditRiskInfoViewController: MLBaseViewController  {
@@ -104,10 +104,10 @@ extension EditRiskInfoViewController: UICollectionViewDelegate {
         let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withClass: EditRiskInfoResuableFooterView.self, for: indexPath)
         do {
             let listener = try self.listener.unwrap()
+            view.submitInfoCommand = listener.querySubmitCommand()
             let attachment = try listener.attachment.unwrap()
             let detailRisk = try listener.detailRisk.unwrap()
             view.refreshSubviews(with: attachment, riskUnit: detailRisk)
-//            view.submitInfoCommand = listener.querySubmitCommand()
         } catch { MolueLogger.UIModule.message(error) }
         return view
     }

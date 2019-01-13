@@ -22,8 +22,9 @@ class RiskDetailCollectionViewCell: UICollectionViewCell {
         self.addLayerShadow()
     }
     
-    public func refreshSubviews(with image: UIImage) {
-        self.imageView.image = image
+    public func refreshSubviews(with path: String) {
+        self.imageView.kf.indicatorType = .activity
+        self.imageView.kf.setImage(with: URL(string: path))
     }
 
 }

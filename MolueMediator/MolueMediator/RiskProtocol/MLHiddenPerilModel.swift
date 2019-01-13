@@ -31,13 +31,16 @@ public class MLHiddenPerilItem: Mappable {
         updated <- map["updated"]
         perilMemo <- map["memo"]
         risk <- map["risk"]
+        
+        risk?.unitId >>> map["risk_id"]
+        classification?.code >>> map["classification_id"]
     }
     
     public var perilId: String?
     public var status: String?
     public var grade: String?
     public var classification: MLRiskClassification?
-    public var source: String?
+    public var source: String? = "C"
     public var perilMemo: String?
     public var rectification: Bool?
     public var rectifyDate: String?

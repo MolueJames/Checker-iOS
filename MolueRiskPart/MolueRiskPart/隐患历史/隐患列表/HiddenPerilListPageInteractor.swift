@@ -41,6 +41,8 @@ final class HiddenPerilListPageInteractor: MoluePresenterInteractable {
     
     var status: PotentialRiskStatus = .create
     
+    var hiddenPeril: MLHiddenPerilItem?
+    
     required init(presenter: HiddenPerilListPagePresentable) {
         self.presenter = presenter
         presenter.listener = self
@@ -143,7 +145,8 @@ extension HiddenPerilListPageInteractor: HiddenPerilListPresentableListener {
         }
     }
     
-    func didSelectRow(at indexPath: IndexPath) {
+    func jumpToDetailController(at indexPath: IndexPath) {
+        self.hiddenPeril = self.queryHiddenPeril(with: indexPath)
         do {
             let router = try self.viewRouter.unwrap()
             switch self.status {
@@ -156,7 +159,6 @@ extension HiddenPerilListPageInteractor: HiddenPerilListPresentableListener {
             case .closed:
                 router.pushToRiskClosedControlelr()
             }
-
         } catch { MolueLogger.UIModule.error(error) }
     }
 }

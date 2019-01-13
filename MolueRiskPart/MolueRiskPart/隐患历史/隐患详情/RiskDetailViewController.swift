@@ -15,9 +15,11 @@ protocol RiskDetailPresentableListener: class {
     // 定义一些当前页面需要的业务逻辑, 比如网络请求.
     func jumpToBrowserController(with index: Int)
     
-    var riskDetail: PotentialRiskModel? { get }
+    func numberOfItemsInSection() -> Int?
     
-    var riskDetailImages: [UIImage]? {get}
+    func queryPerielImage(with indexPath: IndexPath) -> String?
+    
+    func queryHiddenPeril() -> MLHiddenPerilItem?
 }
 
 final class RiskDetailViewController: MLBaseViewController  {
@@ -76,8 +78,8 @@ extension RiskDetailViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         do {
             let listener = try self.listener.unwrap()
-            let images = try listener.riskDetailImages.unwrap()
-            return images.count
+            let count = listener.numberOfItemsInSection()
+            return try count.unwrap()
         } catch {return 0}
     }
     
@@ -85,9 +87,8 @@ extension RiskDetailViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withClass: RiskDetailCollectionViewCell.self, for: indexPath)
         do {
             let listener = try self.listener.unwrap()
-            let images = try listener.riskDetailImages.unwrap()
-            let image = try images.item(at: indexPath.row).unwrap()
-            cell.refreshSubviews(with: image)
+            let image = listener.queryPerielImage(with: indexPath)
+            try cell.refreshSubviews(with: image.unwrap())
         } catch {
             MolueLogger.UIModule.error(error)
         }
@@ -100,8 +101,8 @@ extension RiskDetailViewController: UICollectionViewDelegate {
         let view = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withClass: RiskDetailReusableHeaderView.self, for: indexPath)
         do {
             let listener = try self.listener.unwrap()
-            let model = try listener.riskDetail.unwrap()
-            view.refreshSubviews(with: model)
+            let item = listener.queryHiddenPeril()
+            try view.refreshSubviews(with: item.unwrap())
         } catch {
             MolueLogger.UIModule.message(error)
         }
@@ -122,11 +123,11 @@ extension RiskDetailViewController: UICollectionViewDelegateFlowLayout {
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
         do {
             let listener = try self.listener.unwrap()
-            let model = try listener.riskDetail.unwrap()
-            let description = model.riskDetail ?? "暂无数据"
+            let model = listener.queryHiddenPeril()
+            let memo = try model.unwrap().perilMemo.data()
             let width: CGFloat = MLConfigure.ScreenWidth - 40
-            let height = description.estimateHeight(with: 14, width: width, lineSpacing: 6)
-            return CGSize(width: MLConfigure.ScreenWidth, height: height + 405)
-        } catch { return CGSize(width: MLConfigure.ScreenWidth, height: 405)}
+            let height = memo.estimateHeight(with: 14, width: width, lineSpacing: 6)
+            return CGSize(width: MLConfigure.ScreenWidth, height: height + 360)
+        } catch { return CGSize(width: MLConfigure.ScreenWidth, height: 0)}
     }
 }

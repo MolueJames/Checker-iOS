@@ -6,9 +6,10 @@
 //  Copyright © 2018 MolueTech. All rights reserved.
 //
 
+import MolueUtilities
 import MolueMediator
 
-protocol TaskCheckReportRouterInteractable: class {
+protocol TaskCheckReportRouterInteractable: RiskDetailInteractListener {
     var viewRouter: TaskCheckReportViewableRouting? { get set }
     var listener: TaskCheckReportInteractListener? { get set }
 }
@@ -32,7 +33,18 @@ final class TaskCheckReportViewableRouter: MolueViewableRouting {
 }
 
 extension TaskCheckReportViewableRouter: TaskCheckReportViewableRouting {
-    
+    func pushToHiddenPerilController() {
+        do {
+            let listener = try self.interactor.unwrap()
+            let builderFactory = MolueBuilderFactory<MolueComponent.Risk>(.RiskDetail)
+            let builder: RiskDetailComponentBuildable? = builderFactory.queryBuilder()
+            let controller = try builder.unwrap().build(listener: listener)
+            let navigator = try self.controller.unwrap()
+            navigator.pushToViewController(controller, animated: true)
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+    }
 }
 
 protocol TaskCheckReportInteractListener: class {

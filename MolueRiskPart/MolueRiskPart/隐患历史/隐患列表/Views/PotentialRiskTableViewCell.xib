@@ -84,7 +84,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="暂无数据" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8s4-cA-8Xa">
-                                <rect key="frame" x="15" y="27" width="57.5" height="17"/>
+                                <rect key="frame" x="15" y="27" width="139.5" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -106,6 +106,7 @@
                         <constraints>
                             <constraint firstItem="Ieq-3Y-YeP" firstAttribute="top" secondItem="8s4-cA-8Xa" secondAttribute="bottom" constant="5" id="3Mx-jx-Jjq"/>
                             <constraint firstItem="8s4-cA-8Xa" firstAttribute="top" secondItem="kBV-aS-idj" secondAttribute="bottom" constant="5" id="CVw-kO-IsH"/>
+                            <constraint firstAttribute="trailing" secondItem="8s4-cA-8Xa" secondAttribute="trailing" constant="5" id="Ex4-7u-IGR"/>
                             <constraint firstItem="kBV-aS-idj" firstAttribute="top" secondItem="brs-pr-2t8" secondAttribute="top" constant="5" id="Fn8-Px-UTv"/>
                             <constraint firstItem="kBV-aS-idj" firstAttribute="leading" secondItem="brs-pr-2t8" secondAttribute="leading" constant="15" id="Mgj-9X-9Ja"/>
                             <constraint firstItem="8s4-cA-8Xa" firstAttribute="leading" secondItem="brs-pr-2t8" secondAttribute="leading" constant="15" id="QDY-NL-p4T"/>
@@ -134,11 +135,12 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="riskChannelLabel" destination="6mj-NF-rAQ" id="Mzn-wr-4gG"/>
                 <outlet property="riskLevelLabel" destination="d9G-h7-XRL" id="wxM-J9-7zb"/>
                 <outlet property="riskNumberLabel" destination="KuB-JU-lYf" id="RcC-g9-1a6"/>
-                <outlet property="riskStatusLabel" destination="hml-P3-C9O" id="T7k-uV-rxM"/>
                 <outlet property="riskUnitLabel" destination="8s4-cA-8Xa" id="FhU-q9-W0K"/>
+                <outlet property="statusUserLabel" destination="xOK-WW-gZt" id="vaO-eK-yLM"/>
+                <outlet property="updateTimeLabel" destination="6mj-NF-rAQ" id="fSU-hp-tYd"/>
+                <outlet property="usernameLabel" destination="hml-P3-C9O" id="syg-Gs-Nvf"/>
             </connections>
             <point key="canvasLocation" x="-334.39999999999998" y="10.794602698650676"/>
         </tableViewCell>

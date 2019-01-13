@@ -19,7 +19,7 @@ protocol HiddenPerilListPresentableListener: class {
     
     func queryHiddenPeril(with indexPath: IndexPath) -> MLHiddenPerilItem?
     
-    func didSelectRow(at indexPath: IndexPath)
+    func jumpToDetailController(at indexPath: IndexPath)
     
     func queryHiddenPerilHistory()
     
@@ -123,7 +123,7 @@ extension HiddenPerilListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         do {
             let listener = try self.listener.unwrap()
-            listener.didSelectRow(at: indexPath)
+            listener.jumpToDetailController(at: indexPath)
         } catch { MolueLogger.UIModule.error(error) }
     }
     

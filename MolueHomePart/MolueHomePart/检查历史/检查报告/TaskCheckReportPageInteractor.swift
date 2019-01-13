@@ -13,6 +13,7 @@ import MolueMediator
 
 protocol TaskCheckReportViewableRouting: class {
     // 定义一些页面跳转的方法, 比如Push, Presenter等.
+    func pushToHiddenPerilController()
 }
 
 protocol TaskCheckReportPagePresentable: MolueInteractorPresentable, MolueActivityDelegate, MLControllerHUDProtocol {
@@ -54,6 +55,8 @@ final class TaskCheckReportPageInteractor: MoluePresenterInteractable {
         }
     }()
     
+    var hiddenPeril: MLHiddenPerilItem?
+    
     required init(presenter: TaskCheckReportPagePresentable) {
         self.presenter = presenter
         presenter.listener = self
@@ -61,10 +64,21 @@ final class TaskCheckReportPageInteractor: MoluePresenterInteractable {
 }
 
 extension TaskCheckReportPageInteractor: TaskCheckReportRouterInteractable {
-    
+
 }
 
 extension TaskCheckReportPageInteractor: TaskCheckReportPresentableListener {
+    func jumpToHiddenPerilController(with indexPath: IndexPath) {
+        if indexPath.section == 0 { return }
+        self.hiddenPeril = self.queryHiddenPeril(with: indexPath)
+        do {
+            let router = try self.viewRouter.unwrap()
+            router.pushToHiddenPerilController()
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+    }
+    
     func moreRelatedHiddenPerils() {
         do {
             let task = try self.currentCheckTask.unwrap()

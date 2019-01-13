@@ -16,7 +16,7 @@ import JGProgressHUD
 class EditRiskInfoResuableFooterView: UICollectionReusableView {
     private let disposeBag = DisposeBag()
     
-    public var submitInfoCommand: PublishSubject<Void>?
+    public var submitInfoCommand: PublishSubject<MLHiddenPerilItem>?
     
     private var riskLevel: PotentialRiskLevel?
     
@@ -27,6 +27,7 @@ class EditRiskInfoResuableFooterView: UICollectionReusableView {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        self.submitInfoCommand = PublishSubject<MLHiddenPerilItem>()
     }
     
     @IBOutlet weak var riskClassClickView: MLCommonClickView! {
@@ -45,7 +46,7 @@ class EditRiskInfoResuableFooterView: UICollectionReusableView {
     }
     
     public func refreshSubview(with model: PotentialRiskModel?) {
-        self.submitInfoCommand = PublishSubject<Void>()
+        
     }
     
     @IBOutlet weak var riskPointClickView: MLCommonClickView! {
@@ -106,26 +107,38 @@ class EditRiskInfoResuableFooterView: UICollectionReusableView {
     }
     
     @IBAction func submitButtonClicked(_ sender: UIButton) {
-//        guard let type = self.riskInfo.riskClass, type.isEmpty == false else{
-//            self.submitInfoCommand?.onError(riskInfoRrror.typeInvalid)
-//            return
-//        }
-//        guard let unit = self.riskInfo.riskUnit, unit.isEmpty == false else {
-//            self.submitInfoCommand?.onError(riskInfoRrror.unitInvalid)
-//            return
-//        }
-//        guard self.riskInfo.level.isSome() else {
-//            self.submitInfoCommand?.onError(riskInfoRrror.levelInvalid)
-//            return
-//        }
-//        guard self.reasonRemarkView.remarkText().isEmpty == false else {
-//            self.submitInfoCommand?.onError(riskInfoRrror.reasonInvalid)
-//            return
-//        }
-//        let checkedDate = Date().string(withFormat: "yyyy年MM月dd日")
-//        self.riskInfo.checkedDate = checkedDate
-//        self.riskInfo.riskDetail = self.reasonRemarkView.remarkText()
-//        self.submitInfoCommand?.onNext(self.riskInfo)
+        do {
+            let submitInfoCommand = try self.submitInfoCommand.unwrap()
+            guard let classification = self.riskClass else{
+                submitInfoCommand.onError(riskInfoRrror.typeInvalid)
+                return
+            }
+            guard let level = self.riskLevel else {
+                submitInfoCommand.onError(riskInfoRrror.levelInvalid)
+                return
+            }
+            guard let point = self.riskPoint else {
+                submitInfoCommand.onError(riskInfoRrror.unitInvalid)
+                return
+            }
+            let memo = self.reasonRemarkView.remarkText()
+            guard memo.isEmpty == false else {
+                submitInfoCommand.onError(riskInfoRrror.reasonInvalid)
+                return
+            }
+            
+            let hiddenPeril: MLHiddenPerilItem = {
+                let item = MLHiddenPerilItem()
+                item.classification = classification
+                item.grade = level.toService
+                item.perilMemo = memo
+                item.risk = point
+                return item
+            }()
+            submitInfoCommand.onNext(hiddenPeril)
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
     }
     
     func refreshSubviews(with attachment: MLTaskAttachment, riskUnit: MLRiskPointDetail) {

@@ -26,6 +26,8 @@ protocol TaskCheckReportPresentableListener: class {
     func moreRelatedHiddenPerils()
     
     func queryHiddenPeril(with indexPath: IndexPath) -> MLHiddenPerilItem?
+    
+    func jumpToHiddenPerilController(with indexPath: IndexPath)
 }
 
 final class TaskCheckReportViewController: MLBaseViewController  {
@@ -119,20 +121,29 @@ extension TaskCheckReportViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return section == 0 ? 0 : 35
+        do {
+            let listener = try self.listener.unwrap()
+            if section == 1 {
+                let count = listener.numberOfHiddenPeril()
+                return try count.unwrap() > 0 ? 35 : 0
+            } else { return 35}
+        } catch { return 0 }
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView: TaskRiskReportHeaderView = TaskRiskReportHeaderView.createFromXib()
+        let title = section == 0 ? "检查记录" : "相关隐患"
+        headerView.refreshSubviews(with: title)
+        return headerView
+        
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         do {
             let listener = try self.listener.unwrap()
-            let count = listener.numberOfHiddenPeril()
-            if try section == 1 && count.unwrap() > 0 {
-                return TaskRiskReportHeaderView.createFromXib()
-            } else {
-                return MolueLogger.UIModule.allowNil("")
-            }
+            listener.jumpToHiddenPerilController(with: indexPath)
         } catch {
-            return MolueLogger.UIModule.allowNil(error)
+            MolueLogger.UIModule.error(error)
         }
     }
 }

@@ -236,6 +236,38 @@ extension EditRiskInfoPageInteractor: EditRiskInfoRouterInteractable {
 }
 
 extension EditRiskInfoPageInteractor: EditRiskInfoPresentableListener {
+    func querySubmitCommand() -> PublishSubject<MLHiddenPerilItem> {
+        let submitCommand = PublishSubject<MLHiddenPerilItem>()
+        submitCommand.subscribe(onNext: { [unowned self] (item) in
+            self.submitHiddenPerilItem(with: item)
+        }, onError: { [unowned self] (error) in
+            self.submitHiddenPerilItem(with: error)
+        }).disposed(by: self.disposeBag)
+        return submitCommand
+    }
+    
+    func submitHiddenPerilItem(with item: MLHiddenPerilItem) {
+        let request = MoluePerilService.uploadHiddenPeril(with: item.toJSON())
+        request.handleSuccessResponse { (result) in
+            MolueLogger.network.message(result)
+        }
+        request.handleFailureResponse { (error) in
+            MolueLogger.network.message(error)
+        }
+        let manager = MolueRequestManager(delegate: self.presenter)
+        manager.doRequestStart(with: request)
+    }
+    
+    func submitHiddenPerilItem(with error: Error) {
+        do {
+            let presenter = try self.presenter.unwrap()
+            let message = error.localizedDescription
+            presenter.showWarningHUD(text: message)
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+    }
+    
     func numberOfItemsInSection() -> Int? {
         do {
             let details = try self.attachmentDetails.unwrap()
@@ -272,16 +304,6 @@ extension EditRiskInfoPageInteractor: EditRiskInfoPresentableListener {
         } else {
             self.jumpToTakePhotoController()
         }
-    }
-    
-    func querySubmitCommand() -> PublishSubject<PotentialRiskModel> {
-        let submitCommand = PublishSubject<PotentialRiskModel>()
-        submitCommand.subscribe(onNext: { (item) in
-            
-        }, onError: { (error) in
-            
-        }).disposed(by: self.disposeBag)
-        return submitCommand
     }
     
     func jumpToBrowserController(with index: Int) {

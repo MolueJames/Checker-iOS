@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Alamofire
 
 public struct MoluePerilService {
     public static func queryHiddenPerils(with status: String, page: Int, size: Int) -> MolueDataRequest {
@@ -14,9 +15,9 @@ public struct MoluePerilService {
         return MolueDataRequest(parameter: parameters, method: .get, path: "api/hidden_dangers/")
     }
     
-    public static func updateHiddenPeril(with parameters:[String : Any]) -> MolueDataRequest {
+    public static func uploadHiddenPeril(with parameters:[String : Any]) -> MolueDataRequest {
         let path: String = "api/hidden_dangers/"
-        return MolueDataRequest(parameter: parameters, method: .put, path: path)
+        return MolueDataRequest(parameter: parameters, method: .post, path: path, encoding: JSONEncoding.default)
     }
     
     public static func queryPerilUnitPosition(page: Int, size: Int) -> MolueDataRequest {

@@ -23,4 +23,8 @@ class TaskRiskReportHeaderView: UIView {
         super.awakeFromNib()
         self.backgroundColor = MLCommonColor.appDefault
     }
+    
+    func refreshSubviews(with title: String) {
+        self.titleLabel.text = title
+    }
 }

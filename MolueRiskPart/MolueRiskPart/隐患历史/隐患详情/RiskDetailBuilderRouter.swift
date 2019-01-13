@@ -34,7 +34,7 @@ final class RiskDetailViewableRouter: MolueViewableRouting {
 }
 
 extension RiskDetailViewableRouter: RiskDetailViewableRouting {
-    func pushToPhotoBrowser(with photos: [SKPhoto], index: Int) {
+    func pushToPhotoBrowser(with photos: [KFPhoto], index: Int) {
         do {
             let navigator = try self.controller.unwrap()
             let browser = SKPhotoBrowser(photos: photos)
