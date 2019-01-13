@@ -10,9 +10,7 @@ import Foundation
 import ObjectMapper
 
 public class MLPolicyNoticeModel: Mappable {
-    public required init?(map: Map) {}
-    
-    public func mapping(map: Map) {
+    public required init?(map: Map) {
         noticeId <- map["id"]
         notification <- map["notification"]
         enterpriseId <- map["enterprise_id"]
@@ -23,6 +21,10 @@ public class MLPolicyNoticeModel: Mappable {
         readed <- map["read"]
         signed <- map["signed"]
         status <- map["status"]
+    }
+    
+    public func mapping(map: Map) {
+        
     }
     
     public var noticeId: Int?
@@ -38,9 +40,7 @@ public class MLPolicyNoticeModel: Mappable {
 }
 
 public class MoluePolicyNotification: Mappable {
-    public required init?(map: Map) {}
-    
-    public func mapping(map: Map) {
+    public required init?(map: Map) {
         createUser <- map["create_user"]
         published <- map["date_published"]
         needSignature <- map["need_signature"]
@@ -48,6 +48,10 @@ public class MoluePolicyNotification: Mappable {
         content <- map["content"]
         title <- map["title"]
         type <- map["type"]
+    }
+    
+    public func mapping(map: Map) {
+        
     }
     
     public var createUser: MolueUserInfo?

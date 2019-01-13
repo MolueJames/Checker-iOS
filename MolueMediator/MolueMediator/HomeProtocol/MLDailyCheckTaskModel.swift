@@ -11,13 +11,15 @@ import MolueUtilities
 import ObjectMapper
 
 public class MLRiskUnitAccident: Mappable {
-    public required init?(map: Map) {}
-    
-    public func mapping(map: Map) {
+    public required init?(map: Map) {
         code        <- map["code"]
         description <- map["description"]
         accidentId  <- map["id"]
         name        <- map["name"]
+    }
+    
+    public func mapping(map: Map) {
+        
     }
     
     public var code: String?
@@ -27,16 +29,18 @@ public class MLRiskUnitAccident: Mappable {
 }
 
 public class MLRiskUnitSolution: Mappable {
-    public required init?(map: Map) {}
-    
-    public func mapping(map: Map) {
+    public required init?(map: Map) {
+        rightAnswer <- map["right_answer"]
         answers <- map["answers"]
         solutionId <- map["id"]
         order <- map["order"]
-        rightAnswer <- map["right_answer"]
-        risk <- map["risk"]
         score <- map["score"]
         title <- map["title"]
+        risk <- map["risk"]
+    }
+    
+    public func mapping(map: Map) {
+        
     }
     
     public var answers: String?
@@ -50,13 +54,15 @@ public class MLRiskUnitSolution: Mappable {
 
 //MARK:
 public class MLRiskClassification: Mappable {
-    public required init?(map: Map) {}
-    
-    public func mapping(map: Map) {
+    public required init?(map: Map) {
         hasChildren <- map["has_children"]
         children <- map["children"]
         code <- map["code"]
         name <- map["name"]
+    }
+    
+    public func mapping(map: Map) {
+        
     }
     public var children: [MLRiskClassification]?
     public var code: String?
@@ -66,20 +72,22 @@ public class MLRiskClassification: Mappable {
 
 //MARK: 用户每日的任务列表
 public class MLDailyCheckPlan: Mappable {
-    public required init?(map: Map) {}
-    
-    public func mapping(map: Map) {
+    public required init?(map: Map) {
         enterprise <- map["enterprise"]
-        tasks <- map["tasks"]
-        created <- map["created"]
-        updated <- map["updated"]
-        status <- map["status"]
-        planId <- map["id"]
         cycleType <- map["cycle_type"]
-        planCycle <- map["cycle"]
         unitCode <- map["unit_code"]
         unitName <- map["unit_name"]
         category <- map["category"]
+        planCycle <- map["cycle"]
+        created <- map["created"]
+        updated <- map["updated"]
+        status <- map["status"]
+        tasks <- map["tasks"]
+        planId <- map["id"]
+    }
+    
+    public func mapping(map: Map) {
+        
     }
     
     public var enterprise: Int?
@@ -97,11 +105,13 @@ public class MLDailyCheckPlan: Mappable {
 
 //MARK: 用户每日的任务风险单元的类别
 public class MLCheckCategory: Mappable {
-    public required init?(map: Map) {}
-    
-    public func mapping(map: Map) {
+    public required init?(map: Map) {
         categoryId <- map["id"]
         title <- map["title"]
+    }
+    
+    public func mapping(map: Map) {
+        
     }
     
     public var categoryId: Int?
@@ -110,19 +120,27 @@ public class MLCheckCategory: Mappable {
 
 //MARK: 用户每日的任务详情
 public class MLDailyCheckTask: Mappable {
-    public required init?(map: Map) {}
-    
-    public func mapping(map: Map) {
-        taskId <- map["id"]
-        risk <- map["risk"]
-        status <- map["status"]
-        created <- map["created"]
-        enterprise <- map["enterprise"]
-        items <- map["items"]
+    public required init?(map: Map) {
         expiration <- map["time_of_expiration"]
+        enterprise <- map["enterprise"]
         finish <- map["time_of_finish"]
         start <- map["time_of_start"]
         updated <- map["updated"]
+        created <- map["created"]
+        status <- map["status"]
+        items <- map["items"]
+        taskId <- map["id"]
+        risk <- map["risk"]
+    }
+    
+    public func mapping(map: Map) {
+        expiration >>> map["time_of_expiration"]
+        finish >>> map["time_of_finish"]
+        start >>> map["time_of_start"]
+        updated >>> map["updated"]
+        status >>> map["status"]
+        items >>> map["items"]
+        taskId >>> map["id"]
     }
     
     public var taskId: String?
@@ -138,18 +156,20 @@ public class MLDailyCheckTask: Mappable {
 }
 
 public class MLRiskUnitDetail: Mappable {
-    public required init?(map: Map) {}
-    
-    public func mapping(map: Map) {
-        unitId <- map["id"]
+    public required init?(map: Map) {
+        enterprise <- map["enterprise"]
         unitCode <- map["unit_code"]
         unitName <- map["unit_name"]
         category <- map["category"]
-        risks <- map["risks"]
-        status <- map["status"]
         created <- map["created"]
         updated <- map["updated"]
-        enterprise <- map["enterprise"]
+        status <- map["status"]
+        risks <- map["risks"]
+        unitId <- map["id"]
+    }
+    
+    public func mapping(map: Map) {
+        
     }
     
     public var unitId: Int?
@@ -165,29 +185,31 @@ public class MLRiskUnitDetail: Mappable {
 
 //MARK: 用户每日的任务单元
 public class MLRiskPointDetail: Mappable {
-    public required init?(map: Map) {}
-    
-    public func mapping(map: Map) {
-        unitId <- map["id"]
-        person <- map["response_person"]
-        unitCode <- map["code"]
-        unitName <- map["name"]
-        level <- map["level"]
-        accidents <- map["accidents"]
-        classification <- map["classification"]
-        contact <- map["contact_phone"]
-        created <- map["created"]
-        dangers <- map["dangers"]
-        aExtension <- map["extension"]
-        grade <- map["grade"]
+    public required init?(map: Map) {
         calculation <- map["method_of_calculation"]
-        remark <- map["remark"]
+        classification <- map["classification"]
         responseUnit <- map["response_unit"]
-        riskUnit <- map["risk_unit"]
+        person <- map["response_person"]
+        contact <- map["contact_phone"]
+        aExtension <- map["extension"]
+        accidents <- map["accidents"]
         solutions <- map["solutions"]
         standards <- map["standards"]
-        status <- map["status"]
+        riskUnit <- map["risk_unit"]
         updated <- map["updated"]
+        created <- map["created"]
+        dangers <- map["dangers"]
+        unitCode <- map["code"]
+        unitName <- map["name"]
+        remark <- map["remark"]
+        status <- map["status"]
+        level <- map["level"]
+        grade <- map["grade"]
+        unitId <- map["id"]
+    }
+    
+    public func mapping(map: Map) {
+        
     }
     
     public var unitId: Int?
@@ -213,19 +235,25 @@ public class MLRiskPointDetail: Mappable {
 }
 
 public class MLTaskAttachment: Mappable {
-    public required init?(map: Map) {}
-    public required init() {}
-    public func mapping(map: Map) {
-        attachments <- map["attachments"]
+    public required init?(map: Map) {
         committed <- map["time_committed"]
+        rightAnswer <- map["right_answer"]
+        attachments <- map["attachments"]
         content <- map["content"]
         attachmentId <- map["id"]
+        answers <- map["answers"]
+        taskId <- map["task_id"]
         remark <- map["remark"]
         result <- map["result"]
-        taskId <- map["task_id"]
         score <- map["score"]
-        answers <- map["answers"]
-        rightAnswer <- map["right_answer"]
+    }
+    public required init() {
+        
+    }
+    public func mapping(map: Map) {
+        attachments >>> map["attachments"]
+        attachmentId >>> map["id"]
+        result >>> map["result"]
     }
     
     public var attachments: [MLAttachmentDetail]?
@@ -241,17 +269,22 @@ public class MLTaskAttachment: Mappable {
 }
 
 public class MLAttachmentDetail: Mappable {
-    public required init?(map: Map) {}
+    public required init?(map: Map) {
+        screenName <- map["screen_name"]
+        detailId <- map["id"]
+        urlPath <- map["url"]
+        type <- map["type"]
+    }
     
     public init(_ image: UIImage? = nil) {
         self.image = image
     }
     
     public func mapping(map: Map) {
-        detailId <- map["id"]
-        screenName <- map["screen_name"]
-        type <- map["type"]
-        urlPath <- map["url"]
+        screenName >>> map["screen_name"]
+        detailId >>> map["id"]
+        urlPath >>> map["url"]
+        type >>> map["type"]
     }
     
     public var detailId: String?

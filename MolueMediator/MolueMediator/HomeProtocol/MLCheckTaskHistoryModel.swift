@@ -10,11 +10,13 @@ import Foundation
 import ObjectMapper
 
 public class MLCheckTaskHistory: Mappable {
-    public required init?(map: Map) {}
-    
-    public func mapping(map: Map) {
+    public required init?(map: Map) {
         tasks <- map["tasks"]
         date <- map["date"]
+    }
+    
+    public func mapping(map: Map) {
+        
     }
     
     public var tasks: [MLDailyCheckTask]?

@@ -13,27 +13,30 @@ import ObjectMapper
 public class MLHiddenPerilItem: Mappable {
     public init() {}
     
-    public required init?(map: Map) {}
-    
-    public func mapping(map: Map) {
+    public required init?(map: Map) {
         rectification <- map["need_rectification"]
         classification <- map["classification"]
         approvedUser <- map["user_of_approved"]
-        rectifyDate <- map["rectify_date"]
-        attachments <- map["attachments"]
-        enterpriseId <- map["enterprise_id"]
         createdUser <- map["user_of_created"]
         approvedDate <- map["date_approved"]
-        perilId <- map["id"]
-        status <- map["status"]
-        grade <- map["grade"]
-        source <- map["source"]
+        enterpriseId <- map["enterprise_id"]
+        rectifyDate <- map["rectify_date"]
+        attachments <- map["attachments"]
         updated <- map["updated"]
         perilMemo <- map["memo"]
+        status <- map["status"]
+        source <- map["source"]
+        grade <- map["grade"]
+        perilId <- map["id"]
         risk <- map["risk"]
-        
-        risk?.unitId >>> map["risk_id"]
+    }
+    
+    public func mapping(map: Map) {
         classification?.code >>> map["classification_id"]
+        risk?.unitId >>> map["risk_id"]
+        perilMemo >>> map["memo"]
+        source >>> map["source"]
+        grade >>> map["grade"]
     }
     
     public var perilId: String?
