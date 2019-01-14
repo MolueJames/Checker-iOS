@@ -56,7 +56,9 @@ final class HomeInfoPagePageInteractor: MoluePresenterInteractable {
 }
 
 extension HomeInfoPagePageInteractor: HomeInfoPageRouterInteractable {
-
+    func removeSelectedItemAtIndexPath() {
+        
+    }
 }
 
 extension HomeInfoPagePageInteractor: HomeInfoPagePresentableListener {

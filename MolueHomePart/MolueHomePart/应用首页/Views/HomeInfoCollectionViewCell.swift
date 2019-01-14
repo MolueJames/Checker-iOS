@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MolueUtilities
 import MolueMediator
 import Kingfisher
 
@@ -26,7 +27,13 @@ class HomeInfoCollectionViewCell: UICollectionViewCell {
     }
     
     func refreshSubviews(with item: MLAdvertisement) {
-        
+        do {
+            let path = try item.imageUrl.unwrap()
+            self.imageView.kf.indicatorType = .activity
+            self.imageView.kf.setImage(with: URL(string: path))
+        } catch {
+            MolueLogger.UIModule.message(error)
+        }
     }
 
 }

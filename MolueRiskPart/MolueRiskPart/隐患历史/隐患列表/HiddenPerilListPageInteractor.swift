@@ -151,7 +151,7 @@ extension HiddenPerilListPageInteractor: HiddenPerilListPresentableListener {
             let router = try self.viewRouter.unwrap()
             switch self.status {
             case .create:
-                router.pushToRiskDetailController()
+                self.pushToArrangeDetailController()
             case .reform:
                 router.pushToRiskArrangeController()
             case .finish:
@@ -160,5 +160,24 @@ extension HiddenPerilListPageInteractor: HiddenPerilListPresentableListener {
                 router.pushToRiskClosedControlelr()
             }
         } catch { MolueLogger.UIModule.error(error) }
+    }
+    
+    func pushToArrangeDetailController() {
+        do {
+            let router = try self.viewRouter.unwrap()
+            if self.validateCanArrangeWithPermission() {
+                router.pushToRiskArrangeController()
+            } else {
+                router.pushToRiskDetailController()
+            }
+        } catch { MolueLogger.UIModule.error(error) }
+    }
+    
+    func validateCanArrangeWithPermission() -> Bool {
+        do {
+            let userInfo = try MolueUserInfo.queryUserInfo().unwrap()
+            let permissions = try userInfo.getPermissions().unwrap()
+            return permissions.contains("risk.approve_hiddendanger")
+        } catch { return false }
     }
 }

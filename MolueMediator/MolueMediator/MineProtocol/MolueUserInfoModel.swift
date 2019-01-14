@@ -56,7 +56,7 @@ public class MolueUserInfo: Mappable, Codable {
         permissions = value?.joined(separator: ",")
     }
     
-    private func getPermissions() -> [String]? {
+    public func getPermissions() -> [String]? {
         do {
             let permissions = try self.permissions.unwrap()
             return permissions.components(separatedBy: ",")

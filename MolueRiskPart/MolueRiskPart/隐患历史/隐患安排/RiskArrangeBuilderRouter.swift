@@ -37,6 +37,7 @@ extension RiskArrangeViewableRouter: RiskArrangeViewableRouting {
 
 protocol RiskArrangeInteractListener: class {
     //用于定义其他的Component需要定义的协议方法
+    var hiddenPeril: MLHiddenPerilItem? { get }
 }
 
 protocol RiskArrangeComponentBuildable: MolueComponentBuildable {

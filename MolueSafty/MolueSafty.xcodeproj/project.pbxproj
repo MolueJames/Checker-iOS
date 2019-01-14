@@ -21,7 +21,6 @@
 		1A7D9A832084E73500FA997D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7D9A822084E73500FA997D /* AppDelegate.swift */; };
 		1A7D9A982084E73600FA997D /* MolueSaftyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7D9A972084E73600FA997D /* MolueSaftyTests.swift */; };
 		1A7D9AA32084E73600FA997D /* MolueSaftyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7D9AA22084E73600FA997D /* MolueSaftyUITests.swift */; };
-		1A9A6BBC20A1D1BE00A94535 /* MolueUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A6BBB20A1D1BE00A94535 /* MolueUser.swift */; };
 		1A9BC9F72109FB090035FC21 /* MolueLoginPart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9BC9F62109FB090035FC21 /* MolueLoginPart.framework */; };
 		1A9BC9F92109FB1C0035FC21 /* MolueLoginPart.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9BC9F62109FB090035FC21 /* MolueLoginPart.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1A9BC9FC210A02AD0035FC21 /* MolueLoginPart.framework in Resources */ = {isa = PBXBuildFile; fileRef = 1A9BC9F62109FB090035FC21 /* MolueLoginPart.framework */; };
@@ -120,7 +119,6 @@
 		1A7D9A9E2084E73600FA997D /* MolueSaftyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MolueSaftyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A7D9AA22084E73600FA997D /* MolueSaftyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueSaftyUITests.swift; sourceTree = "<group>"; };
 		1A7D9AA42084E73600FA997D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1A9A6BBB20A1D1BE00A94535 /* MolueUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MolueUser.swift; sourceTree = "<group>"; };
 		1A9BC9F62109FB090035FC21 /* MolueLoginPart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueLoginPart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A9BC9FF210A03280035FC21 /* MolueLogin.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = MolueLogin.xcassets; path = ../../MolueLoginPart/MolueLoginPart/MolueLogin.xcassets; sourceTree = "<group>"; };
 		1A9BCA10210A23EA0035FC21 /* JingDianXingShuJian-1.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JingDianXingShuJian-1.ttf"; sourceTree = "<group>"; };
@@ -225,7 +223,6 @@
 			isa = PBXGroup;
 			children = (
 				1A9BCA01210A1A9C0035FC21 /* AddtionalFiles */,
-				1A9A6BBB20A1D1BE00A94535 /* MolueUser.swift */,
 				1A7D9A822084E73500FA997D /* AppDelegate.swift */,
 				1A602F1420A6D660003AD583 /* Appdelegate+Addtional.swift */,
 				1A5014BC2095647B00DB931E /* AppDelegate+ThirdPart.swift */,
@@ -542,7 +539,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AEB87E32092CA94002230A3 /* AppDelegate+UILogic.swift in Sources */,
-				1A9A6BBC20A1D1BE00A94535 /* MolueUser.swift in Sources */,
 				1A5014BD2095647B00DB931E /* AppDelegate+ThirdPart.swift in Sources */,
 				1A7D9A832084E73500FA997D /* AppDelegate.swift in Sources */,
 				1A602F1520A6D660003AD583 /* Appdelegate+Addtional.swift in Sources */,

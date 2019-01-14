@@ -185,9 +185,12 @@ extension EditRiskInfoPageInteractor: EditRiskInfoRouterInteractable {
         for index in 0...attachments.count {
             do {
                 let item = try attachments.item(at: index).unwrap()
-                guard item.detailId.isNone() else { break }
-                let task = uploadPhotoTask(with: item, index: index)
-                try uploadTasks.append(task.unwrap())
+                if item.detailId.isSome() == false {
+                    let task = uploadPhotoTask(with: item, index: index)
+                    try uploadTasks.append(task.unwrap())
+                } else {
+                    MolueLogger.network.message("the item uploaded")
+                }
             } catch { MolueLogger.network.message(error) }
         }
         return uploadTasks
@@ -248,22 +251,32 @@ extension EditRiskInfoPageInteractor: EditRiskInfoPresentableListener {
     }
     
     func uploadHiddenPerilItem(with item: MLHiddenPerilItem) {
-        if let attachment = self.attachment, let taskId = attachment.taskId {
-            self.uploadHiddenPeril(with: item, taskId: taskId)
+        if let attachment = self.attachment {
+            self.uploadHiddenPeril(with: item, task: attachment)
         } else {
             self.uploadHiddenPerilWithoutAttachment(with: item)
         }
     }
     
-    func uploadHiddenPeril(with item: MLHiddenPerilItem, taskId: String) {
-        let request = MoluePerilService.uploadHiddenPeril(with: item.toJSON(), taskId: taskId)
-        request.handleSuccessResponse { [weak self] (result) in
-            do {
-                try self.unwrap().uploadHiddenPerilSuccess()
-            } catch { MolueLogger.UIModule.message(error) }
+    func uploadHiddenPeril(with item: MLHiddenPerilItem, task: MLTaskAttachment) {
+        do {
+            var parameters: [String : Any] = item.toJSON()
+            parameters["item_id"] = try task.attachmentId.unwrap()
+            let taskId = try task.taskId.unwrap()
+            let request = MoluePerilService.uploadHiddenPeril(with: parameters, taskId: taskId)
+            request.handleSuccessResponse { [weak self] (result) in
+                do {
+                    try self.unwrap().uploadHiddenPerilSuccess()
+                } catch { MolueLogger.UIModule.message(error) }
+            }
+            request.handleFailureResponse { (error) in
+                MolueLogger.network.message(error)
+            }
+            let manager = MolueRequestManager(delegate: self.presenter)
+            manager.doRequestStart(with: request)
+        } catch {
+            MolueLogger.network.message(error)
         }
-        let manager = MolueRequestManager(delegate: self.presenter)
-        manager.doRequestStart(with: request)
     }
     
     func uploadHiddenPerilWithoutAttachment(with item: MLHiddenPerilItem) {
@@ -284,6 +297,8 @@ extension EditRiskInfoPageInteractor: EditRiskInfoPresentableListener {
         do {
             let presenter = try self.presenter.unwrap()
             presenter.showSuccessHUD(text: "添加隐患成功")
+            let listener = try self.listener.unwrap()
+            listener.removeSelectedItemAtIndexPath()
             Async.main(after: 1.0) { [weak self] () -> Void in
                 do {
                     try self.unwrap().popToPreviewController()
@@ -315,7 +330,7 @@ extension EditRiskInfoPageInteractor: EditRiskInfoPresentableListener {
     func uploadHiddenPerilWithPhotos(with hiddenPeril: MLHiddenPerilItem) {
         do {
             let attachments = try self.attachmentDetails.unwrap()
-             self.uploadAttachmentPhotos(with: attachments, hiddenPeril: hiddenPeril)
+            self.uploadAttachmentPhotos(with: attachments, hiddenPeril: hiddenPeril)
         } catch {
             MolueLogger.network.message(error)
         }

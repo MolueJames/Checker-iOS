@@ -6,6 +6,9 @@
 //  Copyright © 2018 MolueTech. All rights reserved.
 //
 
+import MolueUtilities
+import MolueMediator
+import Kingfisher
 import UIKit
 
 class PotentialRiskCollectionCell: UICollectionViewCell {
@@ -15,4 +18,15 @@ class PotentialRiskCollectionCell: UICollectionViewCell {
         // Initialization code
     }
 
+    @IBOutlet weak var imageView: UIImageView!
+    
+    func refreshSubviews(with attachment: MLAttachmentDetail) {
+        do {
+            let path = try attachment.urlPath.unwrap()
+            self.imageView.kf.indicatorType = .activity
+            self.imageView.kf.setImage(with: URL(string: path))
+        } catch {
+            MolueLogger.UIModule.message(error)
+        }
+    }
 }

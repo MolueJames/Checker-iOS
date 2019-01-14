@@ -132,6 +132,12 @@ extension HomeInfoTableHeaderView: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withClass: HomeInfoCollectionViewCell.self, for: indexPath)
+        do {
+            let item = self.advertisement.item(at: indexPath.row)
+            try cell.refreshSubviews(with: item.unwrap())
+        } catch {
+            MolueLogger.UIModule.message(error)
+        }
         return cell
     }
 }

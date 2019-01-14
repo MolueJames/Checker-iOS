@@ -45,7 +45,6 @@ final class RiskDetailViewController: MLBaseViewController  {
             flowLayout.sectionInset = UIEdgeInsets(top: 10, left: 15, bottom: 10, right: 15)
             let width: CGFloat = (MLConfigure.ScreenWidth - 56) / 3
             flowLayout.itemSize = CGSize(width: width, height: width)
-            flowLayout.footerReferenceSize = CGSize(width: MLConfigure.ScreenWidth, height: 430)
         }
     }
     
@@ -126,7 +125,7 @@ extension RiskDetailViewController: UICollectionViewDelegateFlowLayout {
             let model = listener.queryHiddenPeril()
             let memo = try model.unwrap().perilMemo.data()
             let width: CGFloat = MLConfigure.ScreenWidth - 40
-            let height = memo.estimateHeight(with: 14, width: width, lineSpacing: 6)
+            let height = memo.estimateHeight(with: 14, width: width, lineSpacing: 8)
             return CGSize(width: MLConfigure.ScreenWidth, height: height + 360)
         } catch { return CGSize(width: MLConfigure.ScreenWidth, height: 0)}
     }

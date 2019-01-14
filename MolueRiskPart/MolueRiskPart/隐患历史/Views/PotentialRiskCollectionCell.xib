@@ -19,7 +19,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="113" height="108"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="molue_default_picture" translatesAutoresizingMaskIntoConstraints="NO" id="ND5-eA-mJS">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="molue_default_picture" translatesAutoresizingMaskIntoConstraints="NO" id="ND5-eA-mJS">
                         <rect key="frame" x="0.0" y="0.0" width="113" height="108"/>
                     </imageView>
                 </subviews>
@@ -33,6 +33,9 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="113" height="108"/>
+            <connections>
+                <outlet property="imageView" destination="ND5-eA-mJS" id="djG-CN-fHK"/>
+            </connections>
             <point key="canvasLocation" x="183.19999999999999" y="180.80959520239881"/>
         </collectionViewCell>
     </objects>

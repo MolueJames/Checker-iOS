@@ -19,6 +19,7 @@ protocol FailureTaskListViewableRouting: class {
 protocol FailureTaskListPagePresentable: MolueInteractorPresentable {
     var listener: FailureTaskListPresentableListener? { get set }
     // 定义一些页面需要的方法, 比如刷新页面的显示内容等.
+    func removeTableViewCell(with indexPath: IndexPath)
 }
 
 final class FailureTaskListPageInteractor: MoluePresenterInteractable {
@@ -29,7 +30,7 @@ final class FailureTaskListPageInteractor: MoluePresenterInteractable {
     
     weak var listener: FailureTaskListInteractListener?
     
-    lazy var currentCheckTask: MLDailyCheckTask? = {
+    lazy var checkTask: MLDailyCheckTask? = {
         do {
             let listener = try self.listener.unwrap()
             return try listener.selectedCheckTask.unwrap()
@@ -40,7 +41,7 @@ final class FailureTaskListPageInteractor: MoluePresenterInteractable {
     
     lazy var failureItems: [MLTaskAttachment]? = {
         do {
-            let checkTask = try self.currentCheckTask.unwrap()
+            let checkTask = try self.checkTask.unwrap()
             let attachments = try checkTask.items.unwrap()
             let result: [MLTaskAttachment] = attachments.filter({ (item) -> Bool in
                 return item.result != item.rightAnswer
@@ -57,7 +58,7 @@ final class FailureTaskListPageInteractor: MoluePresenterInteractable {
     
     lazy var detailRisk: MLRiskPointDetail? = {
         do {
-            let currentTask = try self.currentCheckTask.unwrap()
+            let currentTask = try self.checkTask.unwrap()
             return try currentTask.risk.unwrap()
         } catch {
             return MolueLogger.UIModule.allowNil(error)
@@ -74,14 +75,22 @@ final class FailureTaskListPageInteractor: MoluePresenterInteractable {
 }
 
 extension FailureTaskListPageInteractor: FailureTaskListRouterInteractable {
-    
-    
+    func removeSelectedItemAtIndexPath() {
+        do {
+            let indexPath = try self.indexPath.unwrap()
+            self.failureItems?.remove(at: indexPath.row)
+            let presenter = try self.presenter.unwrap()
+            presenter.removeTableViewCell(with: indexPath)
+        } catch {
+            MolueLogger.UIModule.message(error)
+        }
+    }
 }
 
 extension FailureTaskListPageInteractor: FailureTaskListPresentableListener {
     func postCheckFinishNotification() {
         let name = MolueNotification.check_task_finish.toName()
-        NotificationCenter.default.post(name: name, object: self.currentCheckTask)
+        NotificationCenter.default.post(name: name, object: self.checkTask)
     }
     
     func queryRiskCommand() -> PublishSubject<FailureAttachment> {
@@ -123,7 +132,7 @@ extension FailureTaskListPageInteractor: FailureTaskListPresentableListener {
     
     func queryRiskUnitName() -> String {
         do {
-            let task = try self.currentCheckTask.unwrap()
+            let task = try self.checkTask.unwrap()
             let riskUnit = try task.risk.unwrap()
             return try riskUnit.unitName.unwrap()
         } catch { return "问题检查项列表" }

@@ -6,6 +6,8 @@
 //  Copyright © 2018 MolueTech. All rights reserved.
 //
 
+import MolueMediator
+import MolueUtilities
 import UIKit
 
 class RiskArrangeDetailHeaderView: UIView {
@@ -37,8 +39,15 @@ class RiskArrangeDetailHeaderView: UIView {
         didSet {
             flowLayout.scrollDirection = .horizontal
             flowLayout.minimumInteritemSpacing = 10
-            flowLayout.itemSize = CGSize(width: 78, height: 78)
+            flowLayout.sectionInset = UIEdgeInsets(top: 5, left: 0, bottom: 5, right: 0)
+            flowLayout.itemSize = CGSize(width: 80, height: 80)
         }
+    }
+    private var hiddenPeril: MLHiddenPerilItem?
+    
+    func refreshSubviews(with hiddenPeril: MLHiddenPerilItem)  {
+        self.hiddenPeril = hiddenPeril
+        self.collectionView.reloadData()
     }
     
     override func awakeFromNib() {
@@ -49,11 +58,21 @@ class RiskArrangeDetailHeaderView: UIView {
 
 extension RiskArrangeDetailHeaderView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        do {
+            let hiddenPeril = try self.hiddenPeril.unwrap()
+            let attachments = try hiddenPeril.attachments.unwrap()
+            return attachments.count
+        } catch { return 0 }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withClass: PotentialRiskCollectionCell.self, for: indexPath)
+        do {
+            let hiddenPeril = try self.hiddenPeril.unwrap()
+            let attachments = try hiddenPeril.attachments.unwrap()
+            let item = attachments.item(at: indexPath.row)
+            try cell.refreshSubviews(with: item.unwrap())
+        } catch { MolueLogger.UIModule.message(error) }
         return cell
     }
 }

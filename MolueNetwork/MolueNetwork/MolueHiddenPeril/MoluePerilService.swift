@@ -21,8 +21,6 @@ public struct MoluePerilService {
     }
     
     public static func uploadHiddenPeril(with parameters: [String : Any], taskId: String) -> MolueDataRequest {
-        var parameters: [String : Any] = parameters
-        parameters["item_id"] = taskId
         let path: String = "api/task/\(taskId)/hidden_dangers/"
         return MolueDataRequest(parameter: parameters, method: .post, path: path, encoding: JSONEncoding.default)
     }

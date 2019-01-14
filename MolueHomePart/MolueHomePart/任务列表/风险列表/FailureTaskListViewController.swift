@@ -95,7 +95,9 @@ extension FailureTaskListViewController: MLUserInterfaceProtocol {
 }
 
 extension FailureTaskListViewController: FailureTaskListPagePresentable {
-    
+    func removeTableViewCell(with indexPath: IndexPath) {
+        self.tableView.deleteRows(at: [indexPath], with: .none)
+    }
 }
 
 extension FailureTaskListViewController: FailureTaskListViewControllable {

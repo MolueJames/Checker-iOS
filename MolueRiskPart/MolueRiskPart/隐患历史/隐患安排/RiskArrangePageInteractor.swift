@@ -6,6 +6,7 @@
 //  Copyright © 2019 MolueTech. All rights reserved.
 //
 
+import MolueUtilities
 import MolueMediator
 
 protocol RiskArrangeViewableRouting: class {
@@ -25,6 +26,15 @@ final class RiskArrangePageInteractor: MoluePresenterInteractable {
     
     weak var listener: RiskArrangeInteractListener?
     
+    lazy var hiddenPeril: MLHiddenPerilItem? = {
+        do {
+            let listener = try self.listener.unwrap()
+            return try listener.hiddenPeril.unwrap()
+        } catch {
+            return MolueLogger.UIModule.allowNil(error)
+        }
+    }()
+    
     required init(presenter: RiskArrangePagePresentable) {
         self.presenter = presenter
         presenter.listener = self
@@ -36,5 +46,8 @@ extension RiskArrangePageInteractor: RiskArrangeRouterInteractable {
 }
 
 extension RiskArrangePageInteractor: RiskArrangePresentableListener {
+    func queryHiddenPeril() -> MLHiddenPerilItem? {
+        return self.hiddenPeril
+    }
     
 }

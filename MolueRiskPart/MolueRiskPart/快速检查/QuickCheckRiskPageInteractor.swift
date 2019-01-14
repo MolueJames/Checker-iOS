@@ -46,6 +46,9 @@ final class QuickCheckRiskPageInteractor: MoluePresenterInteractable {
 }
 
 extension QuickCheckRiskPageInteractor: QuickCheckRiskRouterInteractable {
+    func removeSelectedItemAtIndexPath() {
+        
+    }
     
     func didScannedQRCode(with QRCode: String, controller: SWQRCodeViewController) {
         do {
