@@ -10,63 +10,50 @@ import UIKit
 import RxSwift
 import MolueFoundation
 import MolueUtilities
-
+import MolueMediator
 
 protocol HomeInfoPagePresentableListener: class {
     // 定义一些当前页面需要的业务逻辑, 比如网络请求.
+    func queryAdvertisementList()
     
-    func jumpToDailyTaskController()
+    func queryNotificationCommand() -> PublishSubject<Void>
     
-    func jumpToRiskCheckController()
+    func queryLegislationCommand() -> PublishSubject<Void>
     
-    func jumpToNoticationController()
+    func queryRiskHistoryCommand() -> PublishSubject<Void>
     
-    func jumpToLegislationController()
-
-    func jumpToRiskHistoryController()
+    func queryDangerListCommand() -> PublishSubject<Void>
     
-    func jumpToDangerListController()
+    func queryDailyTaskCommand() -> PublishSubject<Void>
     
-    var valueList:[String] {get}
+    func queryRiskCheckCommand() -> PublishSubject<Void>
 }
 
 final class HomeInfoPageViewController: MLBaseViewController  {
     //MARK: View Controller Properties
     var listener: HomeInfoPagePresentableListener?
     
-    private let disposeBag = DisposeBag()
-    
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.register(xibWithCellClass: HomeInfoTableViewCell.self)
-            headerView = HomeInfoTableHeaderView.createFromXib()
-            headerView.frame = CGRect.init(x: 0, y: 0, width: MLConfigure.ScreenWidth, height: 385)
-            tableView.tableHeaderView = headerView
+            tableView.tableHeaderView = self.headerView
         }
     }
     
-    var headerView: HomeInfoTableHeaderView! {
-        didSet {
-            headerView.dailyTaskCommand.subscribe(onNext: { [unowned self] (_) in
-                self.listener?.jumpToDailyTaskController()
-            }).disposed(by: disposeBag)
-            headerView.riskCheckCommand.subscribe(onNext: { [unowned self] (_) in
-                self.listener?.jumpToRiskCheckController()
-            }).disposed(by: disposeBag)
-            headerView.notificationCommand.subscribe(onNext: { [unowned self] (_) in
-                self.listener?.jumpToNoticationController()
-            }).disposed(by: disposeBag)
-            headerView.legislationCommand.subscribe(onNext: { [unowned self] (_) in
-                self.listener?.jumpToLegislationController()
-            }).disposed(by: disposeBag)
-            headerView.riskHistoryCommand.subscribe(onNext: { [unowned self] (_) in
-                self.listener?.jumpToRiskHistoryController()
-            }).disposed(by: disposeBag)
-            headerView.dangerListCommand.subscribe(onNext: { [unowned self] (_) in
-                self.listener?.jumpToDangerListController()
-            }).disposed(by: disposeBag)
-        }
-    }
+    lazy var headerView: HomeInfoTableHeaderView! = {
+        let headerView: HomeInfoTableHeaderView = HomeInfoTableHeaderView.createFromXib()
+        headerView.frame = CGRect(x: 0, y: 0, width: MLConfigure.ScreenWidth, height: 385)
+        do {
+            let listener = try self.listener.unwrap()
+            headerView.notificationCommand = listener.queryNotificationCommand()
+            headerView.legislationCommand = listener.queryLegislationCommand()
+            headerView.riskHistoryCommand = listener.queryRiskHistoryCommand()
+            headerView.dangerListCommand = listener.queryDangerListCommand()
+            headerView.dailyTaskCommand = listener.queryDailyTaskCommand()
+            headerView.riskCheckCommand = listener.queryRiskCheckCommand()
+        } catch { MolueLogger.UIModule.error(error) }
+        return headerView
+    }()
     
     lazy var titleLabel: UILabel! = {
         let label = UILabel.init(frame: CGRect.init(x: 0, y: 0, width: 100, height: 44))
@@ -84,7 +71,12 @@ final class HomeInfoPageViewController: MLBaseViewController  {
 
 extension HomeInfoPageViewController: MLUserInterfaceProtocol {
     func queryInformationWithNetwork() {
-        
+        do {
+            let listener = try self.listener.unwrap()
+            listener.queryAdvertisementList()
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
     }
     
     func updateUserInterfaceElements() {
@@ -103,13 +95,22 @@ extension HomeInfoPageViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 30
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        do {
+            let listener = try self.listener.unwrap()
+            
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+    }
 }
 
 extension HomeInfoPageViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         do {
             let listener = try self.listener.unwrap()
-            return listener.valueList.count
+            return 4
         } catch { return 0 }
     }
     
@@ -120,7 +121,9 @@ extension HomeInfoPageViewController: UITableViewDataSource {
 }
 
 extension HomeInfoPageViewController: HomeInfoPagePagePresentable {
-    
+    func refreshBannerList(with advertisement: [MLAdvertisement]) {
+        
+    }
 }
 
 extension HomeInfoPageViewController: HomeInfoPageViewControllable {

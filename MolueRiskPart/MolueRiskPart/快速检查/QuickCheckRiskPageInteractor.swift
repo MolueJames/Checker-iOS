@@ -47,10 +47,6 @@ final class QuickCheckRiskPageInteractor: MoluePresenterInteractable {
 
 extension QuickCheckRiskPageInteractor: QuickCheckRiskRouterInteractable {
     
-    func updateEditRiskInfoModel(with item: PotentialRiskModel) {
-        AppRiskDocument.shared.riskList.append(item)
-    }
-    
     func didScannedQRCode(with QRCode: String, controller: SWQRCodeViewController) {
         do {
             let navigator = try controller.navigationController.unwrap()

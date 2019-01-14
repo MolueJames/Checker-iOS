@@ -40,9 +40,25 @@ final class UserLoginPagePageInteractor: MoluePresenterInteractable, UserLoginPa
         let filePath = MolueCryption.MD5(username)
         MolueUserLogic.doConnectWithDatabase(path: filePath)
         MolueOauthModel.updateOauthItem(with: item)
-        
+        self.queryUserInfoFromService()
+    }
+    
+    func queryUserInfoFromService() {
+        let request = MolueUserService.queryUserInformation()
+        request.handleSuccessResultToObjc { [weak self] (result: MolueUserInfo?) in
+            do {
+                let strongSelf = try self.unwrap()
+                let userInfo = try result.unwrap()
+                strongSelf.handleUserInfoSuccess(with: userInfo)
+            } catch { MolueLogger.network.message(error) }
+        }
+        MolueRequestManager().doRequestStart(with: request)
+    }
+    
+    func handleUserInfoSuccess(with userInfo: MolueUserInfo) {
+        MolueUserInfo.updateUserInfo(with: userInfo)
         let name = MolueNotification.molue_user_login.toName()
-        NotificationCenter.default.post(name: name, object: nil)
+        NotificationCenter.default.post(name: name, object: userInfo)
     }
     
     func routerToForgetPassword() {
@@ -63,9 +79,5 @@ final class UserLoginPagePageInteractor: MoluePresenterInteractable, UserLoginPa
     required init(presenter: UserLoginPagePagePresentable) {
         self.presenter = presenter
         presenter.listener = self
-    }
-    
-    deinit {
-        MolueLogger.dealloc.message(String(describing: self))
     }
 }

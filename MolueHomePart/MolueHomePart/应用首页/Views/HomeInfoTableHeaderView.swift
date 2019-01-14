@@ -7,10 +7,19 @@
 //
 
 import UIKit
+import MolueUtilities
+import MolueMediator
 import RxSwift
 import SnapKit
-import MolueUtilities
+
 class HomeInfoTableHeaderView: UIView {
+    
+    private var advertisement = [MLAdvertisement]()
+    
+    func refreshBannerList(with advertisement: [MLAdvertisement]) {
+        self.advertisement = advertisement
+        self.collectionView.reloadData()
+    }
 
     @IBOutlet private weak var collectionView: UICollectionView! {
         didSet {
@@ -95,28 +104,30 @@ class HomeInfoTableHeaderView: UIView {
         }
     }
     
-    let selectedCommand = PublishSubject<String>()
+    var selectedCommand = PublishSubject<String>()
     /// 基础信息
-    let dailyTaskCommand = PublishSubject<Void>()
+    var dailyTaskCommand = PublishSubject<Void>()
     /// 隐患自查
-    let riskCheckCommand = PublishSubject<Void>()
+    var riskCheckCommand = PublishSubject<Void>()
     /// 政策通知
-    let notificationCommand = PublishSubject<Void>()
+    var notificationCommand = PublishSubject<Void>()
     /// 法律法规
-    let legislationCommand = PublishSubject<Void>()
+    var legislationCommand = PublishSubject<Void>()
     /// 检查历史
-    let dangerListCommand = PublishSubject<Void>()
+    var dangerListCommand = PublishSubject<Void>()
     /// 隐患历史
-    let riskHistoryCommand = PublishSubject<Void>()
+    var riskHistoryCommand = PublishSubject<Void>()
 }
 
 extension HomeInfoTableHeaderView: UICollectionViewDelegate {
-
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+    }
 }
 
 extension HomeInfoTableHeaderView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return self.advertisement.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

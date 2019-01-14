@@ -142,9 +142,15 @@ class EditRiskInfoResuableFooterView: UICollectionReusableView {
     }
     
     func refreshSubviews(with attachment: MLTaskAttachment, riskUnit: MLRiskPointDetail) {
-        self.riskPointClickView.update(description: riskUnit.unitName.data())
-        self.reasonRemarkView.updateRemark(with: attachment.remark.data())
         self.riskPoint = riskUnit
+        do {
+            let unitName = try riskUnit.unitName.unwrap()
+            self.riskPointClickView.update(description: unitName)
+        } catch { MolueLogger.UIModule.message(error) }
+        do {
+            let remark = try attachment.remark.unwrap()
+            self.reasonRemarkView.updateRemark(with: remark)
+        } catch { MolueLogger.UIModule.message(error) }
     }
 }
 

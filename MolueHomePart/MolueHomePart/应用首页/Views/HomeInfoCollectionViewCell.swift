@@ -7,7 +7,9 @@
 //
 
 import UIKit
+import MolueMediator
 import Kingfisher
+
 class HomeInfoCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var imageView: UIImageView! {
@@ -21,6 +23,10 @@ class HomeInfoCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+    }
+    
+    func refreshSubviews(with item: MLAdvertisement) {
+        
     }
 
 }
