@@ -83,7 +83,7 @@ extension CheckTaskDetailPageInteractor: CheckTaskDetailPresentableListener {
             let item = attachments.item(at: indexPath.row)
             return try item.unwrap()
         } catch {
-            return MolueLogger.UIModule.returnNil(error)
+            return MolueLogger.UIModule.allowNil(error)
         }
     }
     
@@ -220,9 +220,7 @@ extension CheckTaskDetailPageInteractor: CheckTaskDetailPresentableListener {
     func numberOfRows(in section: Int) -> Int? {
         do {
             let currentTask = try self.selectedCheckTask.unwrap()
-            let currentRisk = try currentTask.risk.unwrap()
-            let solutions = try currentRisk.solutions.unwrap()
-            return solutions.count
+            return try currentTask.items.unwrap().count
         } catch {
             return MolueLogger.UIModule.allowNil(error)
         }

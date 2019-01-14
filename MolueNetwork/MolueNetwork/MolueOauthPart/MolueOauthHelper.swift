@@ -25,6 +25,15 @@ public struct MolueOauthHelper {
             return MolueLogger.network.returnNil(error)
         }
     }
+    
+    public static func queryDefaultHeader() -> [String : String] {
+        var headers = [String : String]()
+        headers["iOS-Version"] = MLConfigure.systemVersion
+        headers["Device-Mode"] = MLConfigure.deviceModel
+        headers["App-Version"] = MLConfigure.appVersion
+        headers["Content-Type"] = "application/json"
+        return headers
+    }
 
     public static func queryUserOauthHeaders() -> [String : String]? {
         do {
@@ -32,7 +41,9 @@ public struct MolueOauthHelper {
             let access_token = try item.access_token.unwrap()
             let token_type = try item.token_type.unwrap()
             let authorization = token_type + " " + access_token
-            return ["authorization":authorization, "Content-Type":"application/json"]
+            var headers = self.queryDefaultHeader()
+            headers["authorization"] = authorization
+            return headers
         } catch {
             return MolueLogger.network.allowNil(error)
         }

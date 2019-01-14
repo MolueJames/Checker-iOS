@@ -18,7 +18,7 @@ public protocol MLUserInterfaceProtocol {
 
 typealias MLControllerNetworkProtocol = MLControllerHUDProtocol & MLLoadingIndicatorProtocol
 
-fileprivate let hud_display_duration = 0.5
+fileprivate let hud_display_duration = 1.0
 
 public protocol MLControllerHUDProtocol {
     func showSuccessHUD(text: String)

@@ -261,7 +261,7 @@ public class MLTaskAttachment: Mappable {
     public var attachmentId: String?
     public var remark: String?
     public var result: String?
-    public var taskId: Int?
+    public var taskId: String?
     public var committed: String?
     public var rightAnswer: String?
     public var score: String?

@@ -20,6 +20,11 @@ public struct MoluePerilService {
         return MolueDataRequest(parameter: parameters, method: .post, path: path, encoding: JSONEncoding.default)
     }
     
+    public static func uploadHiddenPeril(with parameters:[String : Any], taskId: String) -> MolueDataRequest {
+        let path: String = "api/task/\(taskId)/hidden_dangers/"
+        return MolueDataRequest(parameter: parameters, method: .post, path: path, encoding: JSONEncoding.default)
+    }
+    
     public static func queryPerilUnitPosition(page: Int, size: Int) -> MolueDataRequest {
         let parameters = ["page": page, "page_size": size]
         let path: String = "api/risk/risk_unit/"
@@ -32,9 +37,10 @@ public struct MoluePerilService {
         return MolueDataRequest(parameter: parameters, method: .get, path: path)
     }
     
-    public static func queryHiddenPeril(with riskId: Int, page: Int, size: Int) -> MolueDataRequest {
-        let parameters = ["risk_id": riskId, "page": page, "page_size": size]
-        let path: String = "api/hidden_dangers/"
-        return MolueDataRequest(parameter: parameters, method: .get, path: path)
+    public static func queryHiddenPeril(with taskId: String) -> MolueDataRequest {
+        let path: String = "api/task/\(taskId)/hidden_dangers/"
+        return MolueDataRequest(parameter: nil, method: .get, path: path)
     }
+    
+    
 }

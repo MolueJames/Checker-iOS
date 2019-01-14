@@ -117,7 +117,7 @@ public extension DataRequest {
     
     private func validateResponse(_ response: HTTPURLResponse?) -> MolueResponseStatus {
         switch response?.statusCode {
-        case 200:
+        case 200, 201:
             return MolueResponseStatus.reponseSuccess(data: self.delegate.data)
         case 401:
             return MolueResponseStatus.authenticateFailure

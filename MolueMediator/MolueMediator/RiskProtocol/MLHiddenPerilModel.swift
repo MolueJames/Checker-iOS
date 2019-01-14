@@ -33,27 +33,28 @@ public class MLHiddenPerilItem: Mappable {
     
     public func mapping(map: Map) {
         classification?.code >>> map["classification_id"]
+        attachments >>> map["attachments"]
         risk?.unitId >>> map["risk_id"]
         perilMemo >>> map["memo"]
         source >>> map["source"]
         grade >>> map["grade"]
     }
     
+    public var classification: MLRiskClassification?
+    public var attachments: [MLAttachmentDetail]?
+    public var approvedUser: MolueUserInfo?
+    public var createdUser: MolueUserInfo?
+    public var risk: MLRiskPointDetail?
+    public var enterpriseId: String?
+    public var approvedDate: String?
+    public var rectification: Bool?
+    public var rectifyDate: String?
+    public var perilMemo: String?
+    public var updated: String?
     public var perilId: String?
     public var status: String?
     public var grade: String?
-    public var classification: MLRiskClassification?
     public var source: String? = "C"
-    public var perilMemo: String?
-    public var rectification: Bool?
-    public var rectifyDate: String?
-    public var attachments: [MLAttachmentDetail]?
-    public var enterpriseId: String?
-    public var risk: MLRiskPointDetail?
-    public var createdUser: MolueUserInfo?
-    public var approvedDate: String?
-    public var updated: String?
-    public var approvedUser: MolueUserInfo?
 }
 
 public enum PotentialRiskChannel: CustomStringConvertible {
@@ -113,11 +114,11 @@ public enum PotentialRiskStatus: CaseIterable, CustomStringConvertible {
     public var description: String {
         switch self {
         case .create:
-            return "已发现"
+            return "已登记"
         case .reform:
             return "已安排"
         case .finish:
-            return "已整改"
+            return "已完成"
         case .closed:
             return "已验收"
         }

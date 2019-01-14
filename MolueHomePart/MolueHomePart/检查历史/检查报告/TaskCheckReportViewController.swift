@@ -23,8 +23,6 @@ protocol TaskCheckReportPresentableListener: class {
     
     func queryRelatedHiddenPerils()
     
-    func moreRelatedHiddenPerils()
-    
     func queryHiddenPeril(with indexPath: IndexPath) -> MLHiddenPerilItem?
     
     func jumpToHiddenPerilController(with indexPath: IndexPath)
@@ -49,10 +47,10 @@ final class TaskCheckReportViewController: MLBaseViewController  {
         return header
     }()
     
-    lazy var footer: ESRefreshFooterAnimator = {
-        let footer = ESRefreshFooterAnimator(frame: CGRect.zero)
-        return footer
-    }()
+//    lazy var footer: ESRefreshFooterAnimator = {
+//        let footer = ESRefreshFooterAnimator(frame: CGRect.zero)
+//        return footer
+//    }()
     //MARK: View Controller Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,29 +58,17 @@ final class TaskCheckReportViewController: MLBaseViewController  {
     }
     
     deinit {
-        self.tableView.es.removeRefreshFooter()
+//        self.tableView.es.removeRefreshFooter()
         self.tableView.es.removeRefreshHeader()
     }
 }
 
 extension TaskCheckReportViewController: MLUserInterfaceProtocol {
     func queryInformationWithNetwork() {
-        do {
-            let listener = try self.listener.unwrap()
-            listener.queryRelatedHiddenPerils()
-        } catch {
-            MolueLogger.UIModule.message(error)
-        }
     }
     
     func updateUserInterfaceElements() {
         self.title = "检查报告"
-        self.tableView.es.addInfiniteScrolling(animator: self.footer) { [weak self] in
-            do {
-                let listener = try self.unwrap().listener.unwrap()
-                listener.moreRelatedHiddenPerils()
-            } catch {MolueLogger.UIModule.message(error)}
-        }
         self.tableView.es.addPullToRefresh(animator: self.header) { [weak self] in
             do {
                 let listener = try self.unwrap().listener.unwrap()
@@ -96,14 +82,6 @@ extension TaskCheckReportViewController: MLUserInterfaceProtocol {
 extension TaskCheckReportViewController: TaskCheckReportPagePresentable {
     func endHeaderRefreshing() {
         self.tableView.es.stopPullToRefresh()
-    }
-    
-    func endFooterRefreshing(with hasMore: Bool) {
-        if hasMore {
-            self.tableView.es.stopLoadingMore()
-        } else {
-            self.tableView.es.noticeNoMoreData()
-        }
     }
     
     func reloadTableViewData() {

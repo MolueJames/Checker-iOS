@@ -150,13 +150,6 @@ extension RiskUnitPositionViewController: UITableViewDataSource {
 }
 
 extension RiskUnitPositionViewController: UITableViewDelegate {
-//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        do {
-//            let listener = try self.listener.unwrap()
-//            let item = listener.queryRiskUnitDetail(with: section)
-//            return try item.unwrap().unitName.unwrap()
-//        } catch { return "暂无数据" }
-//    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 45

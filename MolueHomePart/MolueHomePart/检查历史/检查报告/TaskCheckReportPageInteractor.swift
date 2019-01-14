@@ -23,8 +23,6 @@ protocol TaskCheckReportPagePresentable: MolueInteractorPresentable, MolueActivi
     func reloadTableViewData()
     
     func endHeaderRefreshing()
-    
-    func endFooterRefreshing(with hasMore: Bool)
 }
 
 final class TaskCheckReportPageInteractor: MoluePresenterInteractable {
@@ -35,7 +33,7 @@ final class TaskCheckReportPageInteractor: MoluePresenterInteractable {
     
     weak var listener: TaskCheckReportInteractListener?
     
-    var listModel = MolueListItem<MLHiddenPerilItem>(3)
+    private var hiddenPerils: [MLHiddenPerilItem]?
     
     lazy var currentCheckTask: MLDailyCheckTask? = {
         do {
@@ -79,46 +77,9 @@ extension TaskCheckReportPageInteractor: TaskCheckReportPresentableListener {
         }
     }
     
-    func moreRelatedHiddenPerils() {
-        do {
-            let task = try self.currentCheckTask.unwrap()
-            let riskId = try task.risk.unwrap().unitId.unwrap()
-            let page: Int = try self.listModel.next.unwrap()
-            let size: Int = self.listModel.pagesize
-            self.queryMoreHiddenPeril(with: riskId, page: page, size: size)
-        } catch {
-            self.presenter?.endFooterRefreshing(with: false)
-        }
-    }
-    
-    func queryMoreHiddenPeril(with riskId: Int, page: Int, size: Int) {
-        let request = MoluePerilService.queryHiddenPeril(with: riskId, page: page, size: size)
-        request.handleSuccessResultToObjc { [weak self] (item: MolueListItem<MLHiddenPerilItem>?) in
-            do {
-                try self.unwrap().handleMoreItems(item)
-            } catch { MolueLogger.UIModule.message(error) }
-        }
-        request.handleFailureResponse { [weak self] (error) in
-            do {
-                try self.unwrap().handleHiddenPerils(with: error, isMore: true)
-            } catch { MolueLogger.UIModule.message(error) }
-        }
-        MolueRequestManager().doRequestStart(with: request)
-    }
-    
-    private func handleMoreItems(_ listModel :MolueListItem<MLHiddenPerilItem>?) {
-        do {
-            try self.listModel.append(with: listModel)
-        } catch { MolueLogger.UIModule.message(error)}
-        
-        let hasNext = listModel?.next.isSome() ?? false
-        self.presenter?.endFooterRefreshing(with: hasNext)
-        self.presenter?.reloadTableViewData()
-    }
-    
     func queryHiddenPeril(with indexPath: IndexPath) -> MLHiddenPerilItem? {
         do {
-            let results = try self.listModel.results.unwrap()
+            let results = try self.hiddenPerils.unwrap()
             return try results.item(at: indexPath.row).unwrap()
         } catch {
             return MolueLogger.UIModule.allowNil(error)
@@ -128,10 +89,9 @@ extension TaskCheckReportPageInteractor: TaskCheckReportPresentableListener {
     func queryRelatedHiddenPerils() {
         do {
             let task = try self.currentCheckTask.unwrap()
-            let riskId = try task.risk.unwrap().unitId.unwrap()
-            let size: Int = self.listModel.pagesize
-            let request = MoluePerilService.queryHiddenPeril(with: riskId, page: 1, size: size)
-            request.handleSuccessResultToObjc { [weak self] (result: MolueListItem<MLHiddenPerilItem>?) in
+            let taskId = try task.taskId.unwrap()
+            let request = MoluePerilService.queryHiddenPeril(with: taskId)
+            request.handleSuccessResultToList { [weak self] (result: [MLHiddenPerilItem]?) in
                 do {
                     let strongSelf = try self.unwrap()
                     strongSelf.handleQueryItem(result)
@@ -139,8 +99,8 @@ extension TaskCheckReportPageInteractor: TaskCheckReportPresentableListener {
             }
             request.handleFailureResponse { [weak self] (error) in
                 do {
-                    try self.unwrap().handleHiddenPerils(with: error, isMore: false)
-                } catch { MolueLogger.UIModule.message(error) }
+                    try self.unwrap().handleHiddenPerils(with: error)
+                } catch { MolueLogger.network.message(error) }
             }
             MolueRequestManager().doRequestStart(with: request)
         } catch {
@@ -148,37 +108,40 @@ extension TaskCheckReportPageInteractor: TaskCheckReportPresentableListener {
         }
     }
     
-    private func handleQueryItem(_ listModel: MolueListItem<MLHiddenPerilItem>?) {
+    private func handleQueryItem(_ hiddenPerils: [MLHiddenPerilItem]?) {
         do {
-            try self.listModel = listModel.unwrap()
-        } catch { MolueLogger.network.message(error) }
-        self.presenter?.endHeaderRefreshing()
-        self.presenter?.reloadTableViewData()
+            self.hiddenPerils = hiddenPerils
+            let presenter = try self.presenter.unwrap()
+            presenter.endHeaderRefreshing()
+            presenter.reloadTableViewData()
+        } catch {
+            MolueLogger.network.message(error)
+        }
     }
     
-    private func handleHiddenPerils(with error: Error, isMore: Bool) {
+    private func handleHiddenPerils(with error: Error) {
         do {
             let presenter = try self.presenter.unwrap()
-            if isMore {
-                presenter.endFooterRefreshing(with: true)
-            } else {
-                presenter.endHeaderRefreshing()
-            }
-            presenter.showWarningHUD(text: error.localizedDescription)
-        } catch { MolueLogger.UIModule.error(error) }
+            let message = error.localizedDescription
+            presenter.showWarningHUD(text: message)
+            presenter.endHeaderRefreshing()
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
     }
 
     
     func numberOfRows(in section: Int) -> Int? {
-        let attachmentsCount = self.numberOfAttachments()
-        let hiddenPerilCount = self.numberOfHiddenPeril()
-        return section == 0 ? attachmentsCount : hiddenPerilCount
+        if section == 0 {
+            return self.numberOfAttachments()
+        } else {
+            return self.numberOfHiddenPeril()
+        }
     }
     
     func numberOfHiddenPeril() -> Int? {
         do {
-            let results = self.listModel.results
-            return try results.unwrap().count
+            return try self.hiddenPerils.unwrap().count
         } catch {
             return MolueLogger.UIModule.allowNil(error)
         }

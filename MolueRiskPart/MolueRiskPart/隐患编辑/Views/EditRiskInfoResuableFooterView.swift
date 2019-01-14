@@ -144,6 +144,7 @@ class EditRiskInfoResuableFooterView: UICollectionReusableView {
     func refreshSubviews(with attachment: MLTaskAttachment, riskUnit: MLRiskPointDetail) {
         self.riskPointClickView.update(description: riskUnit.unitName.data())
         self.reasonRemarkView.updateRemark(with: attachment.remark.data())
+        self.riskPoint = riskUnit
     }
 }
 

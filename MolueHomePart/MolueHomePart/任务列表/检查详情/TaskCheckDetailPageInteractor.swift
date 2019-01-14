@@ -206,18 +206,18 @@ extension TaskCheckDetailPageInteractor: TaskCheckDetailRouterInteractable {
             try self.presenter.unwrap().networkActivityStarted()
             let picture = try attachment.image.unwrap()
             MolueFileService.uploadPicture(with: picture, success: { [weak self] result in
-                taskCompletionSource.set(result: result)
                 do {
                     let strongSelf = try self.unwrap()
                     try strongSelf.presenter.unwrap().networkActivitySuccess()
                     strongSelf.update(with: attachment, result: result, index: index)
                 } catch { MolueLogger.network.message(error) }
+                taskCompletionSource.set(result: result)
             }) { [weak self] (error) in
-                taskCompletionSource.set(error: error)
                 do {
                     let presenter = try self.unwrap().presenter.unwrap()
                     presenter.networkActivityFailure(error: error)
                 } catch { MolueLogger.network.message(error) }
+                taskCompletionSource.set(error: error)
             }
             return taskCompletionSource.task
         } catch {

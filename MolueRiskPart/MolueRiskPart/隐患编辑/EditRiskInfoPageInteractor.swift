@@ -167,11 +167,11 @@ extension EditRiskInfoPageInteractor: EditRiskInfoRouterInteractable {
         }
     }
     
-    func uploadAttachmentPhotos(with attachments: [MLAttachmentDetail]) {
+    func uploadAttachmentPhotos(with attachments: [MLAttachmentDetail], hiddenPeril: MLHiddenPerilItem) {
         let uploadTasks = self.createUploadTasks(with: attachments)
         Task.whenAll(uploadTasks).continueOnSuccessWith { [weak self] result in
             do {
-                try self.unwrap().handleSuccessOperation()
+                try self.unwrap().handleSuccessOperation(with: hiddenPeril)
             } catch { MolueLogger.network.message(error) }
         }.continueOnErrorWith { [weak self] (error) in
             do {
@@ -193,8 +193,9 @@ extension EditRiskInfoPageInteractor: EditRiskInfoRouterInteractable {
         return uploadTasks
     }
     
-    func handleSuccessOperation() {
-
+    func handleSuccessOperation(with hiddenPeril: MLHiddenPerilItem) {
+        hiddenPeril.attachments = self.attachmentDetails
+        self.uploadHiddenPerilItem(with: hiddenPeril)
     }
     
     func handleFailureOperation() {
@@ -210,18 +211,18 @@ extension EditRiskInfoPageInteractor: EditRiskInfoRouterInteractable {
             try self.presenter.unwrap().networkActivityStarted()
             let picture = try attachment.image.unwrap()
             MolueFileService.uploadPicture(with: picture, success: { [weak self] result in
-                taskCompletionSource.set(result: result)
                 do {
                     let strongSelf = try self.unwrap()
                     try strongSelf.presenter.unwrap().networkActivitySuccess()
                     strongSelf.update(with: attachment, result: result, index: index)
                 } catch { MolueLogger.network.message(error) }
+                taskCompletionSource.set(result: result)
             }) { [weak self] (error) in
-                taskCompletionSource.set(error: error)
                 do {
                     let presenter = try self.unwrap().presenter.unwrap()
                     presenter.networkActivityFailure(error: error)
                 } catch { MolueLogger.network.message(error) }
+                taskCompletionSource.set(error: error)
             }
             return taskCompletionSource.task
         } catch {
@@ -246,16 +247,78 @@ extension EditRiskInfoPageInteractor: EditRiskInfoPresentableListener {
         return submitCommand
     }
     
-    func submitHiddenPerilItem(with item: MLHiddenPerilItem) {
+    func uploadHiddenPerilItem(with item: MLHiddenPerilItem) {
+        if let attachment = self.attachment, let taskId = attachment.taskId {
+            self.uploadHiddenPeril(with: item, taskId: taskId)
+        } else {
+            self.uploadHiddenPerilWithoutAttachment(with: item)
+        }
+    }
+    
+    func uploadHiddenPeril(with item: MLHiddenPerilItem, taskId: String) {
+        let request = MoluePerilService.uploadHiddenPeril(with: item.toJSON(), taskId: taskId)
+        request.handleSuccessResponse { [weak self] (result) in
+            do {
+                try self.unwrap().uploadHiddenPerilSuccess()
+            } catch { MolueLogger.UIModule.message(error) }
+        }
+        let manager = MolueRequestManager(delegate: self.presenter)
+        manager.doRequestStart(with: request)
+    }
+    
+    func uploadHiddenPerilWithoutAttachment(with item: MLHiddenPerilItem) {
         let request = MoluePerilService.uploadHiddenPeril(with: item.toJSON())
-        request.handleSuccessResponse { (result) in
-            MolueLogger.network.message(result)
+        request.handleSuccessResponse { [weak self] (result) in
+            do {
+                try self.unwrap().uploadHiddenPerilSuccess()
+            } catch { MolueLogger.UIModule.message(error) }
         }
         request.handleFailureResponse { (error) in
             MolueLogger.network.message(error)
         }
         let manager = MolueRequestManager(delegate: self.presenter)
         manager.doRequestStart(with: request)
+    }
+    
+    func uploadHiddenPerilSuccess() {
+        do {
+            let presenter = try self.presenter.unwrap()
+            presenter.showSuccessHUD(text: "添加隐患成功")
+            Async.main(after: 1.0) { [weak self] () -> Void in
+                do {
+                    try self.unwrap().popToPreviewController()
+                } catch { MolueLogger.UIModule.message(error) }
+            }
+        } catch {
+            MolueLogger.network.error(error)
+        }
+    }
+    
+    func popToPreviewController() {
+        do {
+            let router = try self.viewRouter.unwrap()
+            router.popToPreviewController()
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+    }
+    
+    func submitHiddenPerilItem(with hiddenPeril: MLHiddenPerilItem) {
+        let count = self.attachmentDetails?.count ?? 0
+        if count > 0 {
+            self.uploadHiddenPerilWithPhotos(with: hiddenPeril)
+        } else {
+            self.uploadHiddenPerilItem(with: hiddenPeril)
+        }
+    }
+    
+    func uploadHiddenPerilWithPhotos(with hiddenPeril: MLHiddenPerilItem) {
+        do {
+            let attachments = try self.attachmentDetails.unwrap()
+             self.uploadAttachmentPhotos(with: attachments, hiddenPeril: hiddenPeril)
+        } catch {
+            MolueLogger.network.message(error)
+        }
     }
     
     func submitHiddenPerilItem(with error: Error) {

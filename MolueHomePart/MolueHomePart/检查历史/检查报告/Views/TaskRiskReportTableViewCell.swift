@@ -44,11 +44,11 @@ class TaskRiskReportTableViewCell: UITableViewCell {
         do {
             switch try status.unwrap() {
             case "created":
-                return "已发现"
+                return "已登记"
             case "approved":
                 return "已安排"
             case "done":
-                return "已整改"
+                return "已完成"
             default:
                 return "已验收"
             }
