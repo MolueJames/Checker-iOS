@@ -50,7 +50,6 @@ final class HomeInfoPagePageInteractor: MoluePresenterInteractable {
         self.presenter = presenter
         presenter.listener = self
     }
-    var measureItem: RiskMeasureModel?
     
     private let disposeBag = DisposeBag()
 }

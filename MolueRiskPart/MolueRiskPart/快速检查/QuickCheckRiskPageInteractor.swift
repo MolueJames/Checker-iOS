@@ -31,8 +31,6 @@ final class QuickCheckRiskPageInteractor: MoluePresenterInteractable {
     
     weak var listener: QuickCheckRiskInteractListener?
     
-    var measureItem: RiskMeasureModel?
-    
     var selectedCheckTask: String?
     
     var detailRisk: MLRiskPointDetail?

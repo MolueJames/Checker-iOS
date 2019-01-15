@@ -9,7 +9,7 @@
 import Foundation
 import MolueFoundation
 
-public struct EnterpriseInfoDataManager: MLNeedListDataProtocol, EnterpriseInfoDataProtocol {
+public struct EnterpriseInfoDataManager: EnterpriseInfoDataProtocol {
 
     public typealias ItemTarget = EnterpriseInfoModel
     

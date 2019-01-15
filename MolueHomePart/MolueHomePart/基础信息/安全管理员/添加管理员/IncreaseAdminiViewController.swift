@@ -19,7 +19,7 @@ protocol IncreaseAdminiNavigatorProtocol: MLAppNavigatorProtocol {
     func selectController(title: String, list: [MLSelectedTableViewModel]) -> MLSingleSelectController<MLSelectedTableViewModel>
 }
 
-protocol IncreaseAdminiDataProtocol: MLDataManagerProtocol {
+protocol IncreaseAdminiDataProtocol {
     var uploadImageLimit: Int {get}
     var adminiTypeList: [MLSelectedTableViewModel] {get}
     var fullTimeList: [MLSelectedTableViewModel] {get}

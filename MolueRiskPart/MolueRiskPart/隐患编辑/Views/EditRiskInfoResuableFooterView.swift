@@ -45,10 +45,6 @@ class EditRiskInfoResuableFooterView: UICollectionReusableView {
         MoluePageNavigator.shared.pushViewController(controller)
     }
     
-    public func refreshSubview(with model: PotentialRiskModel?) {
-        
-    }
-    
     @IBOutlet weak var riskPointClickView: MLCommonClickView! {
         didSet {
             riskPointClickView.defaultValue(title: "隐患位置", placeholder: "请选择隐患位置")

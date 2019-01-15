@@ -29,10 +29,6 @@ final class PotentialRiskPageInteractor: MoluePresenterInteractable {
     
     weak var listener: PotentialRiskInteractListener?
     
-    var selectedRisk: PotentialRiskModel?
-    
-    var valueList: [PotentialRiskModel] = AppRiskDocument.shared.riskList
-    
     required init(presenter: PotentialRiskPagePresentable) {
         self.presenter = presenter
         presenter.listener = self

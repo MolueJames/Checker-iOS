@@ -107,7 +107,6 @@
 		1A730AED20EBBC2E008831BC /* RegulationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A730AEC20EBBC2E008831BC /* RegulationDetailViewController.swift */; };
 		1A730AEF20EBBC49008831BC /* PolicyDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A730AEE20EBBC49008831BC /* PolicyDetailViewController.storyboard */; };
 		1A730AF120EBBC5E008831BC /* RegulationDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A730AF020EBBC5E008831BC /* RegulationDetailViewController.storyboard */; };
-		1A7D5A3A21AA73D800931B0B /* AppHomeDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7D5A3921AA73D800931B0B /* AppHomeDocument.swift */; };
 		1AAB20D621CA8E8D003FA7F8 /* PolicyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAB20D321CA8E8D003FA7F8 /* PolicyDetailViewController.swift */; };
 		1AAB20D721CA8E8D003FA7F8 /* PolicyDetailPageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAB20D421CA8E8D003FA7F8 /* PolicyDetailPageInteractor.swift */; };
 		1AAB20D821CA8E8D003FA7F8 /* PolicyDetailBuilderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAB20D521CA8E8D003FA7F8 /* PolicyDetailBuilderRouter.swift */; };
@@ -260,7 +259,6 @@
 		1A730AEC20EBBC2E008831BC /* RegulationDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegulationDetailViewController.swift; sourceTree = "<group>"; };
 		1A730AEE20EBBC49008831BC /* PolicyDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PolicyDetailViewController.storyboard; sourceTree = "<group>"; };
 		1A730AF020EBBC5E008831BC /* RegulationDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegulationDetailViewController.storyboard; sourceTree = "<group>"; };
-		1A7D5A3921AA73D800931B0B /* AppHomeDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHomeDocument.swift; sourceTree = "<group>"; };
 		1AAB20D321CA8E8D003FA7F8 /* PolicyDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyDetailViewController.swift; sourceTree = "<group>"; };
 		1AAB20D421CA8E8D003FA7F8 /* PolicyDetailPageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyDetailPageInteractor.swift; sourceTree = "<group>"; };
 		1AAB20D521CA8E8D003FA7F8 /* PolicyDetailBuilderRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyDetailBuilderRouter.swift; sourceTree = "<group>"; };
@@ -402,7 +400,6 @@
 		1A1B88C520864D9500C5F4D9 /* MolueHomePart */ = {
 			isa = PBXGroup;
 			children = (
-				1A7D5A3821AA73AB00931B0B /* 测试数据 */,
 				1A264B8B21A178EB00F452F9 /* 检查历史 */,
 				1A65039520DD552A0017F91D /* MolueHome.xcassets */,
 				1A522ED221912B0100094A8A /* 任务列表 */,
@@ -673,14 +670,6 @@
 				1AAB20D521CA8E8D003FA7F8 /* PolicyDetailBuilderRouter.swift */,
 			);
 			path = "政策详情";
-			sourceTree = "<group>";
-		};
-		1A7D5A3821AA73AB00931B0B /* 测试数据 */ = {
-			isa = PBXGroup;
-			children = (
-				1A7D5A3921AA73D800931B0B /* AppHomeDocument.swift */,
-			);
-			path = "测试数据";
 			sourceTree = "<group>";
 		};
 		1AAF7B6420C1970A0051EC18 /* 基础信息 */ = {
@@ -1029,7 +1018,6 @@
 				1A5E87F721C9DC4B00BA4DB5 /* PolicyNoticeBuilderRouter.swift in Sources */,
 				1AAF7B8720C1971B0051EC18 /* DangerMachineryViewController.swift in Sources */,
 				1A027CA021DA3648002A0099 /* TaskCheckDetailReusableFooterView.swift in Sources */,
-				1A7D5A3A21AA73D800931B0B /* AppHomeDocument.swift in Sources */,
 				1A5E87F621C9DC4B00BA4DB5 /* PolicyNoticePageInteractor.swift in Sources */,
 				1A522EC62190356100094A8A /* DailyCheckTaskViewController.swift in Sources */,
 				1AB0670720EFB61D00619570 /* PolicyNoticeTableViewCell.swift in Sources */,

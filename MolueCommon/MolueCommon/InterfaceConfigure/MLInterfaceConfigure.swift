@@ -44,8 +44,5 @@ public class MLInterfaceConfigure {
         self.navigationBarAppearance()
         self.updateUITabBarAppearance()
         self.setViewsAppearanceConfigure()
-//        DispatchQueue.doOnce {
-//
-//        }
     }
 }
