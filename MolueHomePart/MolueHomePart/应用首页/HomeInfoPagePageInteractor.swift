@@ -15,7 +15,7 @@ protocol HomeInfoPageViewableRouting: class {
     // 定义一些页面跳转的方法, 比如Push, Presenter等.
     func pushToDailyTaskController()
     
-    func pushToRiskCheckController()
+    func pushToMinePerilController()
     
     func pushToNoticationController()
     
@@ -24,6 +24,8 @@ protocol HomeInfoPageViewableRouting: class {
     func pushToRiskHistoryController()
     
     func pushToDangerListController()
+    
+    func pushToAdvertisementController()
 }
 
 protocol HomeInfoPagePagePresentable: MolueInteractorPresentable {
@@ -46,6 +48,8 @@ final class HomeInfoPagePageInteractor: MoluePresenterInteractable {
     
     var bannerList = MolueListItem<MLAdvertisement>()
     
+    var advertisement: MLAdvertiseContent?
+    
     required init(presenter: HomeInfoPagePagePresentable) {
         self.presenter = presenter
         presenter.listener = self
@@ -61,18 +65,26 @@ extension HomeInfoPagePageInteractor: HomeInfoPageRouterInteractable {
 }
 
 extension HomeInfoPagePageInteractor: HomeInfoPagePresentableListener {
-    func queryDailyTaskCommand() -> PublishSubject<Void> {
+    func queryMinePerilCommand() -> PublishSubject<Void> {
         let command = PublishSubject<Void>()
         command.subscribe(onNext: { [unowned self] () in
-            self.jumpToDailyTaskController()
+            self.jumpToMinePerilController()
         }).disposed(by: self.disposeBag)
         return command
     }
     
-    func queryRiskCheckCommand() -> PublishSubject<Void> {
+    func querySelectedCommand() -> PublishSubject<MLAdvertiseContent> {
+        let command = PublishSubject<MLAdvertiseContent>()
+        command.subscribe(onNext: { [unowned self] (advertisement) in
+            self.jumpToAdvertisementController(with: advertisement)
+        }).disposed(by: self.disposeBag)
+        return command
+    }
+    
+    func queryDailyTaskCommand() -> PublishSubject<Void> {
         let command = PublishSubject<Void>()
         command.subscribe(onNext: { [unowned self] () in
-            self.jumpToRiskCheckController()
+            self.jumpToDailyTaskController()
         }).disposed(by: self.disposeBag)
         return command
     }
@@ -135,8 +147,8 @@ extension HomeInfoPagePageInteractor: HomeInfoPagePresentableListener {
     
     func jumpToRiskHistoryController() {
         do {
-            let viewRouter = try self.viewRouter.unwrap()
-            viewRouter.pushToRiskHistoryController()
+            let router = try self.viewRouter.unwrap()
+            router.pushToRiskHistoryController()
         } catch {
             MolueLogger.UIModule.error(error)
         }
@@ -144,8 +156,8 @@ extension HomeInfoPagePageInteractor: HomeInfoPagePresentableListener {
     
     func jumpToDangerListController() {
         do {
-            let viewRouter = try self.viewRouter.unwrap()
-            viewRouter.pushToDangerListController()
+            let router = try self.viewRouter.unwrap()
+            router.pushToDangerListController()
         } catch {
             MolueLogger.UIModule.error(error)
         }
@@ -153,17 +165,17 @@ extension HomeInfoPagePageInteractor: HomeInfoPagePresentableListener {
     
     func jumpToDailyTaskController() {
         do {
-            let viewRouter = try self.viewRouter.unwrap()
-            viewRouter.pushToDailyTaskController()
+            let router = try self.viewRouter.unwrap()
+            router.pushToDailyTaskController()
         } catch {
             MolueLogger.UIModule.error(error)
         }
     }
     
-    func jumpToRiskCheckController() {
+    func jumpToMinePerilController() {
         do {
-            let viewRouter = try self.viewRouter.unwrap()
-            viewRouter.pushToRiskCheckController()
+            let router = try self.viewRouter.unwrap()
+            router.pushToMinePerilController()
         } catch {
             MolueLogger.UIModule.error(error)
         }
@@ -171,8 +183,8 @@ extension HomeInfoPagePageInteractor: HomeInfoPagePresentableListener {
     
     func jumpToNoticationController() {
         do {
-            let viewRouter = try self.viewRouter.unwrap()
-            viewRouter.pushToNoticationController()
+            let router = try self.viewRouter.unwrap()
+            router.pushToNoticationController()
         } catch {
             MolueLogger.UIModule.error(error)
         }
@@ -180,8 +192,18 @@ extension HomeInfoPagePageInteractor: HomeInfoPagePresentableListener {
     
     func jumpToLegislationController() {
         do {
-            let viewRouter = try self.viewRouter.unwrap()
-            viewRouter.pushToLegislationController()
+            let router = try self.viewRouter.unwrap()
+            router.pushToLegislationController()
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+    }
+    
+    func jumpToAdvertisementController(with advertisement: MLAdvertiseContent) {
+        do {
+            self.advertisement = advertisement
+            let router = try self.viewRouter.unwrap()
+            router.pushToAdvertisementController()
         } catch {
             MolueLogger.UIModule.error(error)
         }

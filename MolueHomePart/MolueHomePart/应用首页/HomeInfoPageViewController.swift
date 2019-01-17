@@ -26,7 +26,9 @@ protocol HomeInfoPagePresentableListener: class {
     
     func queryDailyTaskCommand() -> PublishSubject<Void>
     
-    func queryRiskCheckCommand() -> PublishSubject<Void>
+    func queryMinePerilCommand() -> PublishSubject<Void>
+    
+    func querySelectedCommand() -> PublishSubject<MLAdvertiseContent>
 }
 
 final class HomeInfoPageViewController: MLBaseViewController  {
@@ -50,7 +52,8 @@ final class HomeInfoPageViewController: MLBaseViewController  {
             headerView.riskHistoryCommand = listener.queryRiskHistoryCommand()
             headerView.dangerListCommand = listener.queryDangerListCommand()
             headerView.dailyTaskCommand = listener.queryDailyTaskCommand()
-            headerView.riskCheckCommand = listener.queryRiskCheckCommand()
+            headerView.minePerilCommand = listener.queryMinePerilCommand()
+            headerView.selectedCommand = listener.querySelectedCommand()
         } catch { MolueLogger.UIModule.error(error) }
         return headerView
     }()
@@ -122,7 +125,7 @@ extension HomeInfoPageViewController: UITableViewDataSource {
 
 extension HomeInfoPageViewController: HomeInfoPagePagePresentable {
     func refreshBannerList(with advertisement: [MLAdvertisement]) {
-        
+        self.headerView.refreshBannerList(with: advertisement)
     }
 }
 

@@ -8,9 +8,10 @@
 
 import MolueMediator
 import MolueUtilities
+import MolueCommon
 import UIKit
 
-class RiskArrangeDetailHeaderView: UIView {
+class RiskArrangeHeaderView: UIView {
 
     /*
     // Only override draw() if you perform custom drawing.
@@ -19,11 +20,9 @@ class RiskArrangeDetailHeaderView: UIView {
         // Drawing code
     }
     */
-    @IBOutlet weak var riskDescriptionLabel: UILabel!
+    @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     
-    func refreshSubviews(with model: String) {
-        self.riskDescriptionLabel.text = model
-    }
+    @IBOutlet weak var descriptionLabel: UILabel!
     
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
@@ -34,6 +33,7 @@ class RiskArrangeDetailHeaderView: UIView {
             collectionView.collectionViewLayout = self.flowLayout
         }
     }
+    @IBOutlet weak var photoLabel: UILabel!
     
     private var flowLayout: UICollectionViewFlowLayout! {
         didSet {
@@ -46,6 +46,9 @@ class RiskArrangeDetailHeaderView: UIView {
     private var hiddenPeril: MLHiddenPerilItem?
     
     func refreshSubviews(with hiddenPeril: MLHiddenPerilItem)  {
+        let count = hiddenPeril.attachments?.count ?? 0
+        self.heightConstraint.constant = count == 0 ? 0 : 90
+        self.photoLabel.text = count == 0 ? "" : "隐患图片"
         self.hiddenPeril = hiddenPeril
         self.collectionView.reloadData()
     }
@@ -56,7 +59,7 @@ class RiskArrangeDetailHeaderView: UIView {
     }
 }
 
-extension RiskArrangeDetailHeaderView: UICollectionViewDataSource {
+extension RiskArrangeHeaderView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         do {
             let hiddenPeril = try self.hiddenPeril.unwrap()
@@ -77,6 +80,31 @@ extension RiskArrangeDetailHeaderView: UICollectionViewDataSource {
     }
 }
 
-extension RiskArrangeDetailHeaderView: UICollectionViewDelegate {
+extension RiskArrangeHeaderView: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.jumpToBrowserController(with: indexPath.row)
+    }
     
+    func jumpToBrowserController(with index: Int) {
+        do {
+            let hiddenPeril = try self.hiddenPeril.unwrap()
+            let attachments = try hiddenPeril.attachments.unwrap()
+            let photoURLs = self.createPhotoURLs(with: attachments)
+            SKPhotoBrowserOptions.displayDeleteButton = false
+            let browser = SKPhotoBrowser(photos: photoURLs)
+            browser.initializePageIndex(index)
+            MoluePageNavigator.shared.presentViewController(browser)
+        } catch { MolueLogger.UIModule.message(error) }
+    }
+    
+    private func createPhotoURLs(with attachments: [MLAttachmentDetail]) -> [KFPhoto] {
+        return attachments.compactMap { attachment in
+            do {
+                let urlPath = try attachment.urlPath.unwrap()
+                return KFPhoto(url: urlPath)
+            } catch {
+                return MolueLogger.UIModule.allowNil(error)
+            }
+        }
+    }
 }

@@ -24,6 +24,15 @@ public class MLCommonRemarkView: UIView {
         self.updateViewElements()
     }
     
+    override public func becomeFirstResponder() -> Bool {
+        return self.remarkTextView.becomeFirstResponder()
+    }
+    
+    @discardableResult
+    override public func resignFirstResponder() -> Bool {
+        return self.remarkTextView.resignFirstResponder()
+    }
+    
     private func updateViewElements() {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineSpacing = 6

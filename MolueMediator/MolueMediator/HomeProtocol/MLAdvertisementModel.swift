@@ -11,34 +11,53 @@ import ObjectMapper
 
 public class MLAdvertisement: Mappable {
     public required init?(map: Map) {
-        actionValue <- map["action_value"]
-        actionAttr <- map["action_attr"]
         viewCount <- map["view_count"]
-        imageUrl <- map["image_url"]
-        position <- map["position"]
+        cityCode <- map["city_code"]
+        provCode <- map["prov_code"]
         platform <- map["platform"]
-        updated <- map["updated"]
+        position <- map["position"]
+        description <- map["desc"]
+        content <- map["content"]
         created <- map["created"]
+        updated <- map["updated"]
+        advertiseId <- map["id"]
         status <- map["status"]
+    }
+    
+    public func mapping(map: Map) {
+        
+    }
+    public var content: MLAdvertiseContent?
+    public var advertiseId: String?
+    public var description: String?
+    public var platform: String?
+    public var cityCode: String?
+    public var provCode: String?
+    public var position: String?
+    public var created: String?
+    public var updated: String?
+    public var status: String?
+    public var viewCount: Int?
+}
+
+public class MLAdvertiseContent: Mappable {
+    public required init?(map: Map) {
+        attribute <- map["action_attr"]
+        imageUrl <- map["image_url"]
+        value <- map["action_value"]
         action <- map["action"]
         title <- map["title"]
-        itemId <- map["id"]
+        type <- map["type"]
     }
     
     public func mapping(map: Map) {
         
     }
     
-    public var actionValue: String?
-    public var actionAttr: String?
+    public var attribute: String?
     public var imageUrl: String?
-    public var position: String?
-    public var platform: String?
-    public var updated: String?
-    public var created: String?
     public var action: String?
-    public var itemId: String?
-    public var viewCount: Int?
-    public var status: String?
     public var title: String?
+    public var value: String?
+    public var type: String?
 }

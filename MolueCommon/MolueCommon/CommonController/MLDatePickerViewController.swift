@@ -20,9 +20,9 @@ public class MLDatePickerViewController: MLBaseViewController {
     
     private var pickerMode = UIDatePicker.Mode.date
     
-    public let selectDateCommand = PublishSubject<(date: Date, string: String)>()
+    public var selectDateCommand = PublishSubject<(date: Date, string: String)>()
     
-    public func changeDefault(warning: String, format: String, mode: UIDatePicker.Mode) {
+    public func changeDefault(warning: String, format: String = "yyyy年MM月dd日", mode: UIDatePicker.Mode = .date) {
         self.warning = warning
         self.dateFormat = format
         self.pickerMode = mode

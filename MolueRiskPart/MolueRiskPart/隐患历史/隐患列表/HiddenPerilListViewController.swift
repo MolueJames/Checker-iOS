@@ -61,6 +61,7 @@ extension HiddenPerilListViewController: MLUserInterfaceProtocol {
     }
     
     func updateUserInterfaceElements() {
+        self.title = "我的隐患"
         self.tableView.es.addInfiniteScrolling(animator: self.footer) { [weak self] in
             do {
                 let listener = try self.unwrap().listener.unwrap()

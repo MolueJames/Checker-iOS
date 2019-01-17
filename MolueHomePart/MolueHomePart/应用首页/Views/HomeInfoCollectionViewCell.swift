@@ -17,9 +17,9 @@ class HomeInfoCollectionViewCell: UICollectionViewCell {
         didSet {
             imageView.layer.cornerRadius = 8
             imageView.layer.masksToBounds = true
-            imageView.image = UIImage(named: "molue_home_banner")
         }
     }
+    @IBOutlet weak var titleLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,10 +27,17 @@ class HomeInfoCollectionViewCell: UICollectionViewCell {
     }
     
     func refreshSubviews(with item: MLAdvertisement) {
+        guard let content = item.content else { return }
         do {
-            let path = try item.imageUrl.unwrap()
-            self.imageView.kf.indicatorType = .activity
+            let path = try content.imageUrl.unwrap()
             self.imageView.kf.setImage(with: URL(string: path))
+            self.imageView.kf.indicatorType = .activity
+        } catch {
+            MolueLogger.UIModule.message(error)
+        }
+        do {
+            let message = try content.title.unwrap()
+            self.titleLabel.text = message
         } catch {
             MolueLogger.UIModule.message(error)
         }

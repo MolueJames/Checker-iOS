@@ -40,27 +40,12 @@ class HomeInfoTableHeaderView: UIView {
         }
     }
     
-    @IBOutlet private weak var basicInfoView: UIView! {
-        didSet {
-            let control = UIControl.init()
-            basicInfoView.doBespreadOn(control)
-            control.addTarget(self, action: #selector(basicInfoControlClicked), for: .touchUpInside)
-        }
-    }
-    
-    @IBOutlet private weak var riskCheckView: UIView! {
-        didSet {
-            let control = UIControl.init()
-            riskCheckView.doBespreadOn(control)
-            control.addTarget(self, action: #selector(riskCheckControlClicked), for: .touchUpInside)
-        }
-    }
     
     @IBAction private func basicInfoControlClicked(_ sender: Any) {
         self.dailyTaskCommand.onNext(())
     }
-    @IBAction private func riskCheckControlClicked(_ sender: Any) {
-        self.riskCheckCommand.onNext(())
+    @IBAction private func minePerilControlClicked(_ sender: Any) {
+        self.minePerilCommand.onNext(())
     }
     @IBAction private func dangerListControlClicked(_ sender: Any) {
         self.dangerListCommand.onNext(())
@@ -73,6 +58,22 @@ class HomeInfoTableHeaderView: UIView {
     }
     @IBAction private func notificationControlClicked(_ sender: Any) {
         self.notificationCommand.onNext(())
+    }
+    
+    @IBOutlet private weak var basicInfoView: UIView! {
+        didSet {
+            let control = UIControl.init()
+            basicInfoView.doBespreadOn(control)
+            control.addTarget(self, action: #selector(basicInfoControlClicked), for: .touchUpInside)
+        }
+    }
+    
+    @IBOutlet private weak var minePerilView: UIView! {
+        didSet {
+            let control = UIControl.init()
+            minePerilView.doBespreadOn(control)
+            control.addTarget(self, action: #selector(minePerilControlClicked), for: .touchUpInside)
+        }
     }
     
     @IBOutlet private weak var notificationView: UIView! {
@@ -104,11 +105,11 @@ class HomeInfoTableHeaderView: UIView {
         }
     }
     
-    var selectedCommand = PublishSubject<String>()
+    var selectedCommand = PublishSubject<MLAdvertiseContent>()
     /// 基础信息
     var dailyTaskCommand = PublishSubject<Void>()
     /// 隐患自查
-    var riskCheckCommand = PublishSubject<Void>()
+    var minePerilCommand = PublishSubject<Void>()
     /// 政策通知
     var notificationCommand = PublishSubject<Void>()
     /// 法律法规
@@ -121,7 +122,13 @@ class HomeInfoTableHeaderView: UIView {
 
 extension HomeInfoTableHeaderView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        do {
+            let item = self.advertisement.item(at: indexPath.row)
+            let content = try item.unwrap().content
+            try self.selectedCommand.onNext(content.unwrap())
+        } catch {
+            MolueLogger.UIModule.message(error)
+        }
     }
 }
 

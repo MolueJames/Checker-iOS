@@ -168,7 +168,8 @@ extension HiddenPerilListPageInteractor: HiddenPerilListPresentableListener {
             if self.validateCanArrangeWithPermission() {
                 router.pushToRiskArrangeController()
             } else {
-                router.pushToRiskDetailController()
+//                router.pushToRiskDetailController()
+                router.pushToRiskArrangeController()
             }
         } catch { MolueLogger.UIModule.error(error) }
     }

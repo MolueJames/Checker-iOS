@@ -9,7 +9,7 @@
 import MolueMediator
 import MolueUtilities
 
-protocol HomeInfoPageRouterInteractable: CheckTaskHistoryInteractListener, DangerUnitListInteractListener, EditRiskInfoInteractListener, PotentialRiskInteractListener {
+protocol HomeInfoPageRouterInteractable: CheckTaskHistoryInteractListener, DangerUnitListInteractListener, PotentialRiskInteractListener, AdvertiseContentInteractListener, HiddenPerilListInteractListener {
     var viewRouter: HomeInfoPageViewableRouting? { get set }
     var listener: HomeInfoPageInteractListener? { get set }
 }
@@ -33,6 +33,33 @@ final class HomeInfoPageViewableRouter: MolueViewableRouting {
 }
 
 extension HomeInfoPageViewableRouter: HomeInfoPageViewableRouting {
+    func pushToMinePerilController() {
+        do {
+            let listener = try self.interactor.unwrap()
+            let builderFactory = MolueBuilderFactory<MolueComponent.Risk>(.PerilList)
+            let builder: HiddenPerilListComponentBuildable? = builderFactory.queryBuilder()
+            let controller = try builder.unwrap().build(listener: listener, status: .create)
+            controller.hidesBottomBarWhenPushed = true
+            let navigator = try self.controller.unwrap()
+            navigator.pushToViewController(controller, animated: true)
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+    }
+    
+    func pushToAdvertisementController() {
+        do {
+            let listener = try self.interactor.unwrap()
+            let builder = AdvertiseContentComponentBuilder()
+            let controller = builder.build(listener: listener)
+            controller.hidesBottomBarWhenPushed = true
+            let navigator = try self.controller.unwrap()
+            navigator.pushToViewController(controller, animated: true)
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+    }
+    
     func pushToRiskHistoryController() {
         do {
             let listener = try self.interactor.unwrap()
@@ -73,20 +100,6 @@ extension HomeInfoPageViewableRouter: HomeInfoPageViewableRouting {
         }
     }
     
-    func pushToRiskCheckController() {
-        do {
-            let listener = try self.interactor.unwrap()
-            let builderFactory = MolueBuilderFactory<MolueComponent.Risk>(.EditRisk)
-            let builder: EditRiskInfoComponentBuildable? = builderFactory.queryBuilder()
-            let controller = try builder.unwrap().build(listener: listener)
-            controller.hidesBottomBarWhenPushed = true
-            let navigator = try self.controller.unwrap()
-            navigator.pushToViewController(controller, animated: true)
-        } catch {
-            MolueLogger.UIModule.error(error)
-        }
-    }
-    
     func pushToNoticationController() {
         do {
             let navigator = try self.controller.unwrap()
@@ -108,7 +121,6 @@ extension HomeInfoPageViewableRouter: HomeInfoPageViewableRouting {
             MolueLogger.UIModule.error(error)
         }
     }
-
 }
 
 class HomeInfoPageComponentBuilder: MolueComponentBuilder, HomeInfoPageComponentBuildable {

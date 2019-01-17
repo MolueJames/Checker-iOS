@@ -20,11 +20,11 @@ class RiskArrangeTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    override var frame:CGRect{
-        didSet {
-            var new = self.frame
-            new.size.height -= 10
-            super.frame = new
-        }
+
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    func refreshSubviews(with item: String) {
+        self.titleLabel.text = item
+        self.titleLabel.setLineSpacing(5)
     }
 }

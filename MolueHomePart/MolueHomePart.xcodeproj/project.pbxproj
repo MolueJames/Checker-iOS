@@ -104,6 +104,10 @@
 		1A602F8520A87D58003AD583 /* HomeInfoTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A602F8420A87D58003AD583 /* HomeInfoTableHeaderView.swift */; };
 		1A602F8C20A88095003AD583 /* HomeInfoTableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A602F8B20A88095003AD583 /* HomeInfoTableHeaderView.xib */; };
 		1A65039620DD552B0017F91D /* MolueHome.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A65039520DD552A0017F91D /* MolueHome.xcassets */; };
+		1A72051521EE2B38006B75FB /* AdvertiseContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A72051221EE2B38006B75FB /* AdvertiseContentViewController.swift */; };
+		1A72051621EE2B38006B75FB /* AdvertiseContentPageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A72051321EE2B38006B75FB /* AdvertiseContentPageInteractor.swift */; };
+		1A72051721EE2B38006B75FB /* AdvertiseContentBuilderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A72051421EE2B38006B75FB /* AdvertiseContentBuilderRouter.swift */; };
+		1A72051921EE2B4B006B75FB /* AdvertiseContentViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A72051821EE2B4B006B75FB /* AdvertiseContentViewController.storyboard */; };
 		1A730AED20EBBC2E008831BC /* RegulationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A730AEC20EBBC2E008831BC /* RegulationDetailViewController.swift */; };
 		1A730AEF20EBBC49008831BC /* PolicyDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A730AEE20EBBC49008831BC /* PolicyDetailViewController.storyboard */; };
 		1A730AF120EBBC5E008831BC /* RegulationDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A730AF020EBBC5E008831BC /* RegulationDetailViewController.storyboard */; };
@@ -256,6 +260,10 @@
 		1A602F8420A87D58003AD583 /* HomeInfoTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInfoTableHeaderView.swift; sourceTree = "<group>"; };
 		1A602F8B20A88095003AD583 /* HomeInfoTableHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeInfoTableHeaderView.xib; sourceTree = "<group>"; };
 		1A65039520DD552A0017F91D /* MolueHome.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MolueHome.xcassets; sourceTree = "<group>"; };
+		1A72051221EE2B38006B75FB /* AdvertiseContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertiseContentViewController.swift; sourceTree = "<group>"; };
+		1A72051321EE2B38006B75FB /* AdvertiseContentPageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertiseContentPageInteractor.swift; sourceTree = "<group>"; };
+		1A72051421EE2B38006B75FB /* AdvertiseContentBuilderRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertiseContentBuilderRouter.swift; sourceTree = "<group>"; };
+		1A72051821EE2B4B006B75FB /* AdvertiseContentViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AdvertiseContentViewController.storyboard; sourceTree = "<group>"; };
 		1A730AEC20EBBC2E008831BC /* RegulationDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegulationDetailViewController.swift; sourceTree = "<group>"; };
 		1A730AEE20EBBC49008831BC /* PolicyDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PolicyDetailViewController.storyboard; sourceTree = "<group>"; };
 		1A730AF020EBBC5E008831BC /* RegulationDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegulationDetailViewController.storyboard; sourceTree = "<group>"; };
@@ -400,6 +408,7 @@
 		1A1B88C520864D9500C5F4D9 /* MolueHomePart */ = {
 			isa = PBXGroup;
 			children = (
+				1A72051121EE2AE5006B75FB /* 广告详情 */,
 				1A264B8B21A178EB00F452F9 /* 检查历史 */,
 				1A65039520DD552A0017F91D /* MolueHome.xcassets */,
 				1A522ED221912B0100094A8A /* 任务列表 */,
@@ -650,6 +659,17 @@
 				1A43BC2820C3AF2B0093855B /* HomeInfoHeaderView.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		1A72051121EE2AE5006B75FB /* 广告详情 */ = {
+			isa = PBXGroup;
+			children = (
+				1A72051221EE2B38006B75FB /* AdvertiseContentViewController.swift */,
+				1A72051321EE2B38006B75FB /* AdvertiseContentPageInteractor.swift */,
+				1A72051421EE2B38006B75FB /* AdvertiseContentBuilderRouter.swift */,
+				1A72051821EE2B4B006B75FB /* AdvertiseContentViewController.storyboard */,
+			);
+			path = "广告详情";
 			sourceTree = "<group>";
 		};
 		1A730AE820EBBBCD008831BC /* 法规详情 */ = {
@@ -920,6 +940,7 @@
 				1A5D5BF221912C3E003E7039 /* DangerUnitListViewController.storyboard in Resources */,
 				1A027C8C21D9EB85002A0099 /* FailureTaskTableViewCell.xib in Resources */,
 				1A0B89B821931B8F000B1EBC /* DangerUnitTableViewCell.xib in Resources */,
+				1A72051921EE2B4B006B75FB /* AdvertiseContentViewController.storyboard in Resources */,
 				1A522EC121902B0300094A8A /* HomeInfoPageViewController.storyboard in Resources */,
 				1A06557E20A9EE020016CA86 /* HomeInfoTableViewCell.xib in Resources */,
 				1A43BC2520C3AEE70093855B /* HomeInfoCollectionViewCell.xib in Resources */,
@@ -994,6 +1015,7 @@
 				1A43BC2F20C3CAA60093855B /* EnterpriseInfoTableViewCell.swift in Sources */,
 				1A43BC2420C3AEE70093855B /* HomeInfoCollectionViewCell.swift in Sources */,
 				1A027C9B21DA3648002A0099 /* TaskCheckDetailViewController.swift in Sources */,
+				1A72051621EE2B38006B75FB /* AdvertiseContentPageInteractor.swift in Sources */,
 				1A522ED821912BA200094A8A /* DangerUnitListBuilderRouter.swift in Sources */,
 				1A5E87F521C9DC4B00BA4DB5 /* PolicyNoticeViewController.swift in Sources */,
 				1AB0670320EFB06B00619570 /* LawRegulationTableViewCell.swift in Sources */,
@@ -1012,6 +1034,7 @@
 				1AAB20D621CA8E8D003FA7F8 /* PolicyDetailViewController.swift in Sources */,
 				1A027C8521D9E8E1002A0099 /* FailureTaskListBuilderRouter.swift in Sources */,
 				1A4F89F321D3272500B560E1 /* TaskAttachmentCollectionCell.swift in Sources */,
+				1A72051521EE2B38006B75FB /* AdvertiseContentViewController.swift in Sources */,
 				1A522ED621912BA200094A8A /* DangerUnitListViewController.swift in Sources */,
 				1A24022020E52F7800FC3EBA /* LawRegulationViewController.swift in Sources */,
 				1A4F89D921D09CB200B560E1 /* TaskCheckReportPageInteractor.swift in Sources */,
@@ -1026,6 +1049,7 @@
 				1A522ED721912BA200094A8A /* DangerUnitListPageInteractor.swift in Sources */,
 				1A522EC82190356100094A8A /* DailyCheckTaskBuilderRouter.swift in Sources */,
 				1A0B89DF21968CF7000B1EBC /* DailyCheckTaskFooterView.swift in Sources */,
+				1A72051721EE2B38006B75FB /* AdvertiseContentBuilderRouter.swift in Sources */,
 				1AD3DE8621971720005015A6 /* CheckTaskDetailTableViewCell.swift in Sources */,
 				1A522EBF2190261900094A8A /* HomeInfoPageBuilderRouter.swift in Sources */,
 				1A0B89BA21931BAD000B1EBC /* DangerUnitSectionHeaderView.swift in Sources */,

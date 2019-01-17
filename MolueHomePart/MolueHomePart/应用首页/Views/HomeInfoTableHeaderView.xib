@@ -82,7 +82,7 @@
                                         <constraint firstAttribute="height" constant="40" id="hbv-cb-zKe"/>
                                     </constraints>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="隐患自查" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="47F-K9-4AV">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我的隐患" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="47F-K9-4AV">
                                     <rect key="frame" x="20" y="17" width="69.5" height="20.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" red="1" green="0.76470588235294112" blue="0.047058823529411764" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -306,8 +306,8 @@
                 <outlet property="collectionView" destination="XeD-Fp-XTg" id="i5g-jB-dJP"/>
                 <outlet property="dangerListView" destination="AqB-1d-TAR" id="aEs-dc-ver"/>
                 <outlet property="legislationView" destination="Dh4-KF-ecC" id="CVy-pV-LHC"/>
+                <outlet property="minePerilView" destination="myr-GZ-Pip" id="iHR-7e-z2Z"/>
                 <outlet property="notificationView" destination="UFw-KS-2aH" id="zQZ-CW-l7S"/>
-                <outlet property="riskCheckView" destination="myr-GZ-Pip" id="FtN-et-OcY"/>
                 <outlet property="riskHistoryView" destination="2Wo-tu-KSJ" id="fGe-9K-8vy"/>
             </connections>
             <point key="canvasLocation" x="-345" y="50"/>

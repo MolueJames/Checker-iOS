@@ -42,6 +42,7 @@ public class MLCommonClickView: UIView {
         })
         return lineView
     }()
+    
     public var clickedCommand = PublishSubject<Void>()
 
     public override func awakeFromNib() {

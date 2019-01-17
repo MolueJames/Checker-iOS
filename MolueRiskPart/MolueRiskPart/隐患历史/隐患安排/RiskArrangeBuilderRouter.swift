@@ -6,7 +6,10 @@
 //  Copyright © 2019 MolueTech. All rights reserved.
 //
 
+import MolueUtilities
 import MolueMediator
+import MolueCommon
+import RxSwift
 
 protocol RiskArrangeRouterInteractable: class {
     var viewRouter: RiskArrangeViewableRouting? { get set }
@@ -32,7 +35,18 @@ final class RiskArrangeViewableRouter: MolueViewableRouting {
 }
 
 extension RiskArrangeViewableRouter: RiskArrangeViewableRouting {
-    
+
+    func presentDatePicker(with command: PublishSubject<(date: Date, string: String)>) {
+        do {
+            let navigator = try self.controller.unwrap()
+            let controller = MLDatePickerViewController.initializeFromStoryboard()
+            controller.modalPresentationStyle = .overCurrentContext
+            controller.selectDateCommand = command
+            navigator.doPresentController(controller, animated: true, completion: nil)
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+    }
 }
 
 protocol RiskArrangeInteractListener: class {

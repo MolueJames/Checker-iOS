@@ -10,7 +10,7 @@ import Foundation
 
 public struct MolueOtherService {
     public static func queryAdvertisement(with position: String, platform: String) -> MolueDataRequest {
-        let parameters = ["position" : position, "platform" : platform]
+        let parameters = ["platform" : platform]//"position" : position,
         let path = "api/advertisement/advertisements/"
         return MolueDataRequest(parameter: parameters, method: .get, path: path)
     }
