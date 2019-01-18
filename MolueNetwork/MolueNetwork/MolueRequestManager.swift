@@ -29,7 +29,7 @@ open class MolueRequestManager {
     
     @discardableResult
     public func doRequestStart(with request: MolueDataRequest, needOauth: Bool = true) -> Task<Any?> {
-        if (MolueOauthHelper.checkNeedQueryToken(with: needOauth)) {
+        if MolueOauthHelper.checkNeedQueryToken(with: needOauth) {
             return self.queryTokenFromServer(with: request)
         } else {
             return self.queryDataFromServer(with: request)
@@ -83,7 +83,7 @@ private let single = MolueOauthRequestManager()
 
 fileprivate class MolueOauthRequestManager: MolueRequestManager {
     var requestItems = [MolueRequestItem]()
-    var currentTask: Task<Any?>?
+    private var currentTask: Task<Any?>?
     
     fileprivate static var shared: MolueOauthRequestManager {
         return single
@@ -122,7 +122,6 @@ fileprivate class MolueOauthRequestManager: MolueRequestManager {
         })
         return taskCompletionSource.task
     }
-    
 }
 
 extension MolueOauthRequestManager {

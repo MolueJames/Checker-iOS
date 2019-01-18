@@ -27,7 +27,6 @@ public extension DataRequest {
         }
     }
     
-    
     private func handleDefaultError(_ error: Error?, delegate: MolueActivityDelegate?, failure: MolueResultClosure<Error>? = nil, queue: DispatchQueue) -> Bool {
         do {
             let error = try error.unwrap()
