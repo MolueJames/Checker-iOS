@@ -6,9 +6,10 @@
 //  Copyright © 2018 MolueTech. All rights reserved.
 //
 
+import MolueUtilities
 import MolueMediator
 
-protocol RiskRectifyRouterInteractable: class {
+protocol RiskRectifyRouterInteractable: RiskDetailInteractListener {
     var viewRouter: RiskRectifyViewableRouting? { get set }
     var listener: RiskRectifyInteractListener? { get set }
 }
@@ -32,11 +33,20 @@ final class RiskRectifyViewableRouter: MolueViewableRouting {
 }
 
 extension RiskRectifyViewableRouter: RiskRectifyViewableRouting {
-    
+    func pushToRiskDetailController() {
+        do {
+            let listener = try self.interactor.unwrap()
+            let builder = RiskDetailComponentBuilder()
+            let controller = builder.build(listener: listener)
+            let navigator = try self.controller.unwrap()
+            navigator.pushToViewController(controller, animated: true)
+        } catch { MolueLogger.UIModule.error(error) }
+    }
 }
 
 protocol RiskRectifyInteractListener: class {
     //用于定义其他的Component需要定义的协议方法
+    var hiddenPeril: MLHiddenPerilItem? { get }
 }
 
 protocol RiskRectifyComponentBuildable: MolueComponentBuildable {

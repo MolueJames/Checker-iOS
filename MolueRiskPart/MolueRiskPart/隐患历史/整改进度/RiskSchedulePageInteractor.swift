@@ -1,32 +1,32 @@
 //
-//  RiskRectifyPageInteractor.swift
+//  RiskSchedulePageInteractor.swift
 //  MolueRiskPart
 //
-//  Created by MolueJames on 2018/11/7.
-//  Copyright © 2018 MolueTech. All rights reserved.
+//  Created by MolueJames on 2019/1/20.
+//  Copyright © 2019 MolueTech. All rights reserved.
 //
 
 import RxSwift
 import MolueMediator
 import MolueUtilities
 
-protocol RiskRectifyViewableRouting: class {
+protocol RiskScheduleViewableRouting: class {
     // 定义一些页面跳转的方法, 比如Push, Presenter等.
     func pushToRiskDetailController()
 }
 
-protocol RiskRectifyPagePresentable: MolueInteractorPresentable {
-    var listener: RiskRectifyPresentableListener? { get set }
+protocol RiskSchedulePagePresentable: MolueInteractorPresentable {
+    var listener: RiskSchedulePresentableListener? { get set }
     // 定义一些页面需要的方法, 比如刷新页面的显示内容等.
 }
 
-final class RiskRectifyPageInteractor: MoluePresenterInteractable {
+final class RiskSchedulePageInteractor: MoluePresenterInteractable {
     
-    weak var presenter: RiskRectifyPagePresentable?
+    weak var presenter: RiskSchedulePagePresentable?
     
-    var viewRouter: RiskRectifyViewableRouting?
+    var viewRouter: RiskScheduleViewableRouting?
     
-    weak var listener: RiskRectifyInteractListener?
+    weak var listener: RiskScheduleInteractListener?
     
     private var arrangeList = ["1", "2", "3", "4"]//[String]()
     
@@ -41,17 +41,17 @@ final class RiskRectifyPageInteractor: MoluePresenterInteractable {
         }
     }()
     
-    required init(presenter: RiskRectifyPagePresentable) {
+    required init(presenter: RiskSchedulePagePresentable) {
         self.presenter = presenter
         presenter.listener = self
     }
 }
 
-extension RiskRectifyPageInteractor: RiskRectifyRouterInteractable {
+extension RiskSchedulePageInteractor: RiskScheduleRouterInteractable {
     
 }
 
-extension RiskRectifyPageInteractor: RiskRectifyPresentableListener {
+extension RiskSchedulePageInteractor: RiskSchedulePresentableListener {
     var moreCommand: PublishSubject<Void> {
         let moreInfoCommand = PublishSubject<Void>()
         moreInfoCommand.subscribe(onNext: { [unowned self] (_) in

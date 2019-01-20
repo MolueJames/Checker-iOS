@@ -29,6 +29,10 @@ protocol HomeInfoPagePresentableListener: class {
     func queryMinePerilCommand() -> PublishSubject<Void>
     
     func querySelectedCommand() -> PublishSubject<MLAdvertiseContent>
+    
+    func didSelectRow(at indexPath: IndexPath)
+    
+    func numberOfRows(in section: Int) -> Int?
 }
 
 final class HomeInfoPageViewController: MLBaseViewController  {
@@ -102,7 +106,7 @@ extension HomeInfoPageViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         do {
             let listener = try self.listener.unwrap()
-            
+            listener.didSelectRow(at: indexPath)
         } catch {
             MolueLogger.UIModule.error(error)
         }
@@ -113,7 +117,8 @@ extension HomeInfoPageViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         do {
             let listener = try self.listener.unwrap()
-            return 4
+            let count = listener.numberOfRows(in: section)
+            return try count.unwrap()
         } catch { return 0 }
     }
     

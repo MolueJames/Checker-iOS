@@ -15,6 +15,9 @@ protocol RiskArrangeViewableRouting: class {
     // 定义一些页面跳转的方法, 比如Push, Presenter等.
     func presentDatePicker(with command: PublishSubject<(date: Date, string: String)>)
     
+    func presentController(editor: UIAlertAction, delete: UIAlertAction, cancel: UIAlertAction)
+    
+    func pushToRiskDetailController()
 }
 
 protocol RiskArrangePagePresentable: MolueInteractorPresentable {
@@ -23,6 +26,8 @@ protocol RiskArrangePagePresentable: MolueInteractorPresentable {
     func refreshFooterViewSelected(with title: String)
     
     func reloadTableViewCell()
+    
+    func insertTableViewCell()
     
     func displayEditorFooterView()
     
@@ -67,8 +72,48 @@ extension RiskArrangePageInteractor: RiskArrangeRouterInteractable {
 }
 
 extension RiskArrangePageInteractor: RiskArrangePresentableListener {
+    var moreCommand: PublishSubject<Void> {
+        let moreInfoCommand = PublishSubject<Void>()
+        moreInfoCommand.subscribe(onNext: { [unowned self] (_) in
+            self.jumpToRiskDetailController()
+        }).disposed(by: self.disposeBag)
+        return moreInfoCommand
+    }
+    
+    func jumpToRiskDetailController() {
+        do {
+            let router = try self.viewRouter.unwrap()
+            router.pushToRiskDetailController()
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+    }
+    
+    func didSelectRow(at indexPath: IndexPath) {
+        do {
+            let editor = UIAlertAction(title: "编辑步骤", style: .default) { [unowned self] _ in
+                self.editPreviousArrange(at: indexPath)
+            }
+            let delete = UIAlertAction(title: "删除步骤", style: .destructive) { [unowned self] _ in
+                self.deleteEditedArrange(at: indexPath)
+            }
+            let cancel = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+            let router = try self.viewRouter.unwrap()
+            router.presentController(editor: editor, delete: delete, cancel: cancel)
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+    }
+    
     func deleteEditedArrange(at indexPath: IndexPath) {
-        self.arrangeList.remove(at: indexPath.row)
+        do {
+            self.arrangeList.remove(at: indexPath.row)
+            let presenter = try self.presenter.unwrap()
+            presenter.reloadTableViewCell()
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+        
     }
     
     func editPreviousArrange(at indexPath: IndexPath) {
@@ -147,7 +192,7 @@ extension RiskArrangePageInteractor: RiskArrangePresentableListener {
             } else {
                 self.arrangeList.append(arrange)
             }
-            presenter.reloadTableViewCell()
+            presenter.insertTableViewCell()
         } catch {
             MolueLogger.UIModule.error(error)
         }

@@ -40,8 +40,6 @@ extension CheckTaskDetailViewableRouter: CheckTaskDetailViewableRouting {
             let builder = FailureTaskListComponentBuilder()
             let controller = builder.build(listener: listener)
             let navigator = try self.controller.unwrap()
-//            let navigation = MLNavigationController(rootViewController: controller)
-//            navigator.doPresentController(navigation, animated: true, completion: nil)
             navigator.pushToViewController(controller, animated: true)
         } catch {
             MolueLogger.UIModule.error(error)
@@ -58,11 +56,6 @@ extension CheckTaskDetailViewableRouter: CheckTaskDetailViewableRouting {
             MolueLogger.UIModule.error(error)
         }
     }
-    
-    func pushToCheckDetailReport() {
-        
-    }
-    
     
     func pushTaskCheckDetailController() {
         do {

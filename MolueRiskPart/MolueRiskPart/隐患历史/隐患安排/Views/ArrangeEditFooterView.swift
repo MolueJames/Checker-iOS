@@ -55,6 +55,7 @@ class ArrangeEditFooterView: UIView {
     
     @IBAction func submitButtonClicked(_ sender: UIButton) {
         self.submitCommand.onNext(self.remarkView.remarkText())
+        self.remarkView.resignFirstResponder()
         self.remarkView.updateRemark(with: "")
     }
     

@@ -22,7 +22,9 @@ public class MLHiddenPerilItem: Mappable {
         enterpriseId <- map["enterprise_id"]
         rectifyDate <- map["rectify_date"]
         attachments <- map["attachments"]
+        traceNo <- map["source_trace_no"]
         updated <- map["updated"]
+        created <- map["created"]
         perilMemo <- map["memo"]
         status <- map["status"]
         source <- map["source"]
@@ -41,6 +43,7 @@ public class MLHiddenPerilItem: Mappable {
     }
     
     public var classification: MLRiskClassification?
+    
     public var attachments: [MLAttachmentDetail]?
     public var approvedUser: MolueUserInfo?
     public var createdUser: MolueUserInfo?
@@ -51,7 +54,9 @@ public class MLHiddenPerilItem: Mappable {
     public var rectifyDate: String?
     public var perilMemo: String?
     public var updated: String?
+    public var created: String?
     public var perilId: String?
+    public var traceNo: String?
     public var status: String?
     public var grade: String?
     public var source: String? = "C"

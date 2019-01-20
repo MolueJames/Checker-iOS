@@ -11,7 +11,7 @@ import MolueMediator
 import MolueCommon
 import RxSwift
 
-protocol RiskArrangeRouterInteractable: class {
+protocol RiskArrangeRouterInteractable: RiskDetailInteractListener {
     var viewRouter: RiskArrangeViewableRouting? { get set }
     var listener: RiskArrangeInteractListener? { get set }
 }
@@ -35,6 +35,26 @@ final class RiskArrangeViewableRouter: MolueViewableRouting {
 }
 
 extension RiskArrangeViewableRouter: RiskArrangeViewableRouting {
+    func pushToRiskDetailController() {
+        do {
+            let listener = try self.interactor.unwrap()
+            let builder = RiskDetailComponentBuilder()
+            let controller = builder.build(listener: listener)
+            let navigator = try self.controller.unwrap()
+            navigator.pushToViewController(controller, animated: true)
+        } catch { MolueLogger.UIModule.error(error) }
+    }
+    
+    func presentController(editor: UIAlertAction, delete: UIAlertAction, cancel: UIAlertAction) {
+        do {
+            let alert = UIAlertController(title: "请选择对当前步骤操作", message: nil, preferredStyle: .actionSheet)
+            alert.addActions([editor, delete, cancel])
+            let navigator = try self.controller.unwrap()
+            navigator.doPresentController(alert, animated: true, completion: nil)
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+    }
 
     func presentDatePicker(with command: PublishSubject<(date: Date, string: String)>) {
         do {

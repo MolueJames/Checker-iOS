@@ -74,6 +74,7 @@ extension RiskDetailViewController: RiskDetailViewControllable {
 }
 
 extension RiskDetailViewController: UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         do {
             let listener = try self.listener.unwrap()
@@ -89,7 +90,7 @@ extension RiskDetailViewController: UICollectionViewDataSource {
             let image = listener.queryPerielImage(with: indexPath)
             try cell.refreshSubviews(with: image.unwrap())
         } catch {
-            MolueLogger.UIModule.error(error)
+            MolueLogger.UIModule.message(error)
         }
         return cell
     }

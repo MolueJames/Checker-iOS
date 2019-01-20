@@ -7,9 +7,11 @@
 //
 
 import MolueMediator
+import IQKeyboardManagerSwift
 import MolueFoundation
 import MolueUtilities
 import RxSwift
+import SnapKit
 import UIKit
 
 protocol RiskArrangePresentableListener: class {
@@ -28,9 +30,9 @@ protocol RiskArrangePresentableListener: class {
     
     func queryRiskArrange(with indexPath: IndexPath) -> String?
     
-    func editPreviousArrange(at indexPath: IndexPath)
+    func didSelectRow(at indexPath: IndexPath)
     
-    func deleteEditedArrange(at indexPath: IndexPath)
+    var moreCommand: PublishSubject<Void> {get}
 }
 
 final class RiskArrangeViewController: MLBaseViewController  {
@@ -50,34 +52,31 @@ final class RiskArrangeViewController: MLBaseViewController  {
         let footerView: RiskArrangeFooterView = RiskArrangeFooterView.createFromXib()
         let width: CGFloat = MLConfigure.ScreenWidth
         self.view.addSubview(footerView)
-        footerView.snp.makeConstraints({ (maker) in
-            if #available(iOS 11.0, *) {
-                let layout = self.view.safeAreaLayoutGuide
-                let bottom = layout.snp.bottom
-                maker.bottom.equalTo(bottom)
-            } else {
-                maker.bottom.equalToSuperview()
-            }
-            maker.left.right.equalToSuperview()
-            maker.height.equalTo(100)
+        footerView.snp.makeConstraints({ [unowned self] (make) in
+            self.setupLayoutConstraints(with: make)
+            make.height.equalTo(100)
         })
         self.setupFooterViewConfiguration(with: footerView)
         return footerView
     }()
     
+    func setupLayoutConstraints(with make: ConstraintMaker) {
+        if #available(iOS 11.0, *) {
+            let layout = self.view.safeAreaLayoutGuide
+            let bottom = layout.snp.bottom
+            make.bottom.equalTo(bottom)
+        } else {
+            make.bottom.equalToSuperview()
+        }
+        make.left.right.equalToSuperview()
+    }
+    
     lazy var editorView: ArrangeEditFooterView = {
         let editorView: ArrangeEditFooterView = ArrangeEditFooterView.createFromXib()
         self.view.addSubview(editorView)
-        editorView.snp.makeConstraints({ (maker) in
-            if #available(iOS 11.0, *) {
-                let layout = self.view.safeAreaLayoutGuide
-                let bottom = layout.snp.bottom
-                maker.bottom.equalTo(bottom)
-            } else {
-                maker.bottom.equalToSuperview()
-            }
-            maker.left.right.equalToSuperview()
-            maker.top.equalToSuperview()
+        editorView.snp.makeConstraints({ [unowned self] (make) in
+            self.setupLayoutConstraints(with: make)
+            make.top.equalToSuperview()
         })
         self.setupEditorViewConfiguration(with: editorView)
         return editorView
@@ -85,8 +84,6 @@ final class RiskArrangeViewController: MLBaseViewController  {
     
     lazy var headerView: RiskArrangeHeaderView = {
         let headerView: RiskArrangeHeaderView = RiskArrangeHeaderView.createFromXib()
-        let width: CGFloat = MLConfigure.ScreenWidth
-        headerView.frame = CGRect(x: 0, y: 0, width: width, height: 400)
         self.setupHeaderViewConfiguration(with: headerView)
         return headerView
     }()
@@ -105,6 +102,7 @@ final class RiskArrangeViewController: MLBaseViewController  {
             let listener = try self.listener.unwrap()
             let item = try listener.queryHiddenPeril().unwrap()
             headerView.refreshSubviews(with: item)
+            headerView.moreCommand = listener.moreCommand
         } catch { MolueLogger.UIModule.error(error) }
     }
     
@@ -133,11 +131,13 @@ extension RiskArrangeViewController: MLUserInterfaceProtocol {
     }
     
     func updateUserInterfaceElements() {
+        IQKeyboardManager.shared.keyboardDistanceFromTextField = 55.0
         self.navigationItem.rightBarButtonItem = self.rightItem
         self.footerView.isHidden = false
         self.editorView.isHidden = true
         self.updateHeaderViewLayout()
         self.title = "隐患安排"
+        
     }
     
     func updateHeaderViewLayout() {
@@ -171,6 +171,10 @@ extension RiskArrangeViewController: RiskArrangePagePresentable {
     }
     
     func reloadTableViewCell() {
+        self.tableView.reloadData()
+    }
+    
+    func insertTableViewCell() {
         do {
             self.tableView.reloadData()
             let indexPath = try self.tableView.indexPathForLastRow.unwrap()
@@ -209,6 +213,14 @@ extension RiskArrangeViewController: UITableViewDataSource {
 }
 
 extension RiskArrangeViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return RiskArrangeSectionView.createFromXib()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 35
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
@@ -216,31 +228,9 @@ extension RiskArrangeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         do {
             let listener = try self.listener.unwrap()
-            listener.editPreviousArrange(at: indexPath)
+            listener.didSelectRow(at: indexPath)
         } catch {
             MolueLogger.UIModule.error(error)
         }
-    }
-    
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    
-    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-        return .delete
-    }
-    
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        do {
-            let listener = try self.listener.unwrap()
-            listener.deleteEditedArrange(at: indexPath)
-            self.tableView.deleteRows(at: [indexPath], with: .right)
-        } catch {
-            MolueLogger.UIModule.error(error)
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
-        return "删除"
     }
 }

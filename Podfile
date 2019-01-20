@@ -58,6 +58,7 @@ end
 target 'MolueRiskPart' do
     project 'MolueRiskPart/MolueRiskPart.xcodeproj'
         molue_safty_shared_pods
+        pod 'IQKeyboardManagerSwift', '~> 6.1.1'
 end
 
 target 'MolueBookPart' do

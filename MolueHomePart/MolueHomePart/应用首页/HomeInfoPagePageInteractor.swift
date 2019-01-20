@@ -65,6 +65,14 @@ extension HomeInfoPagePageInteractor: HomeInfoPageRouterInteractable {
 }
 
 extension HomeInfoPagePageInteractor: HomeInfoPagePresentableListener {
+    func didSelectRow(at indexPath: IndexPath) {
+        MolueLogger.UIModule.message("")
+    }
+    
+    func numberOfRows(in section: Int) -> Int? {
+        return 2
+    }
+    
     func queryMinePerilCommand() -> PublishSubject<Void> {
         let command = PublishSubject<Void>()
         command.subscribe(onNext: { [unowned self] () in

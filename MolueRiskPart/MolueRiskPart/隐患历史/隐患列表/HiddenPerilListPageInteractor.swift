@@ -152,6 +152,7 @@ extension HiddenPerilListPageInteractor: HiddenPerilListPresentableListener {
             switch self.status {
             case .create:
                 self.pushToArrangeDetailController()
+//                router.pushToRiskRectifyController()
             case .reform:
                 router.pushToRiskArrangeController()
             case .finish:
@@ -167,6 +168,7 @@ extension HiddenPerilListPageInteractor: HiddenPerilListPresentableListener {
             let router = try self.viewRouter.unwrap()
             if self.validateCanArrangeWithPermission() {
                 router.pushToRiskArrangeController()
+//                router.pushToRiskDetailController()
             } else {
 //                router.pushToRiskDetailController()
                 router.pushToRiskArrangeController()

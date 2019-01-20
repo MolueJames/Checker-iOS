@@ -22,11 +22,11 @@ class RiskArrangeFooterView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.layer.masksToBounds = false
-        let color = MLCommonColor.titleLabel.cgColor
-        self.layer.borderColor = color
-        self.layer.shadowOffset = CGSize(width: 0, height: -1)
+        let color = MLCommonColor.commonLine.cgColor
+        self.layer.shadowColor = color
+        self.layer.shadowOffset = CGSize(width: 0, height: -0.5)
         self.layer.shadowRadius = 0.5;
-        self.layer.shadowOpacity = 0.2
+        self.layer.shadowOpacity = 0.7
     }
     
     var submitCommand = PublishSubject<Void>()

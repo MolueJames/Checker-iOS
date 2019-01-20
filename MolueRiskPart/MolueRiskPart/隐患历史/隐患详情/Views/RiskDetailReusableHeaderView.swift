@@ -52,7 +52,7 @@ class RiskDetailReusableHeaderView: UICollectionReusableView {
         let person: String = item.createdUser?.screenName ?? "暂无数据"
         personTitleView.defaultValue(title: "检查人员", placeholder: person)
         
-        let created: String = self.queryCreatedTime(with: item.updated)
+        let created: String = self.queryCreatedTime(with: item.created)
         checkedDateView.defaultValue(title: "检查时间", placeholder: created)
         
         let perilMemo = self.queryPerilMemo(with: item.perilMemo)

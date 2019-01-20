@@ -9,6 +9,7 @@
 import MolueMediator
 import MolueUtilities
 import MolueCommon
+import RxSwift
 import UIKit
 
 class RiskArrangeHeaderView: UIView {
@@ -20,91 +21,90 @@ class RiskArrangeHeaderView: UIView {
         // Drawing code
     }
     */
-    @IBOutlet weak var heightConstraint: NSLayoutConstraint!
+    var moreCommand = PublishSubject<Void>()
     
-    @IBOutlet weak var descriptionLabel: UILabel!
-    
-    @IBOutlet weak var collectionView: UICollectionView! {
-        didSet {
-            collectionView.dataSource = self
-            collectionView.delegate = self
-            collectionView.register(xibWithCellClass: PotentialRiskCollectionCell.self)
-            self.flowLayout = UICollectionViewFlowLayout()
-            collectionView.collectionViewLayout = self.flowLayout
-        }
+    @IBAction func moreButtonClicked(_ sender: UIButton) {
+        self.moreCommand.onNext(())
     }
-    @IBOutlet weak var photoLabel: UILabel!
     
-    private var flowLayout: UICollectionViewFlowLayout! {
-        didSet {
-            flowLayout.scrollDirection = .horizontal
-            flowLayout.minimumInteritemSpacing = 10
-            flowLayout.sectionInset = UIEdgeInsets(top: 5, left: 0, bottom: 5, right: 0)
-            flowLayout.itemSize = CGSize(width: 80, height: 80)
-        }
-    }
-    private var hiddenPeril: MLHiddenPerilItem?
+    @IBOutlet weak var riskNumberLabel: UILabel!
     
-    func refreshSubviews(with hiddenPeril: MLHiddenPerilItem)  {
-        let count = hiddenPeril.attachments?.count ?? 0
-        self.heightConstraint.constant = count == 0 ? 0 : 90
-        self.photoLabel.text = count == 0 ? "" : "隐患图片"
-        self.hiddenPeril = hiddenPeril
-        self.collectionView.reloadData()
-    }
+    @IBOutlet weak var levelTitleView: MLCommonClickView!
+    
+    @IBOutlet weak var classTitleView: MLCommonClickView!
+    
+    @IBOutlet weak var RiskUnitTitleView: MLCommonClickView!
+    
+    @IBOutlet weak var riskDescLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.backgroundColor = UIColor.init(hex: 0x1B82D2)
-    }
-}
-
-extension RiskArrangeHeaderView: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        do {
-            let hiddenPeril = try self.hiddenPeril.unwrap()
-            let attachments = try hiddenPeril.attachments.unwrap()
-            return attachments.count
-        } catch { return 0 }
+        // Initialization code
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withClass: PotentialRiskCollectionCell.self, for: indexPath)
+    func queryPerilMemo(with memo: String?) -> NSAttributedString {
         do {
-            let hiddenPeril = try self.hiddenPeril.unwrap()
-            let attachments = try hiddenPeril.attachments.unwrap()
-            let item = attachments.item(at: indexPath.row)
-            try cell.refreshSubviews(with: item.unwrap())
-        } catch { MolueLogger.UIModule.message(error) }
-        return cell
-    }
-}
-
-extension RiskArrangeHeaderView: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.jumpToBrowserController(with: indexPath.row)
-    }
-    
-    func jumpToBrowserController(with index: Int) {
-        do {
-            let hiddenPeril = try self.hiddenPeril.unwrap()
-            let attachments = try hiddenPeril.attachments.unwrap()
-            let photoURLs = self.createPhotoURLs(with: attachments)
-            SKPhotoBrowserOptions.displayDeleteButton = false
-            let browser = SKPhotoBrowser(photos: photoURLs)
-            browser.initializePageIndex(index)
-            MoluePageNavigator.shared.presentViewController(browser)
-        } catch { MolueLogger.UIModule.message(error) }
-    }
-    
-    private func createPhotoURLs(with attachments: [MLAttachmentDetail]) -> [KFPhoto] {
-        return attachments.compactMap { attachment in
-            do {
-                let urlPath = try attachment.urlPath.unwrap()
-                return KFPhoto(url: urlPath)
-            } catch {
-                return MolueLogger.UIModule.allowNil(error)
-            }
+            let attributedText = try NSMutableAttributedString(string: memo.unwrap())
+            let range = try NSMakeRange(0, memo.unwrap().count)
+            let style = NSMutableParagraphStyle()
+            style.lineSpacing = 6 //大小调整
+            let styleKey = NSAttributedString.Key.paragraphStyle
+            attributedText.addAttribute(styleKey, value: style, range: range)
+            let colorKey = NSAttributedString.Key.foregroundColor
+            let color = MLCommonColor.commonLine
+            attributedText.addAttribute(colorKey, value: color, range: range)
+            return attributedText
+        } catch {
+            return NSAttributedString(string: "暂无隐患")
         }
+    }
+    
+    func queryRiskStatus(with status: String?) -> String {
+        do {
+            switch try status.unwrap() {
+            case "created":
+                return "已登记"
+            case "approved":
+                return "已安排"
+            case "done":
+                return "已完成"
+            default:
+                return "已验收"
+            }
+        } catch {return "暂无数据"}
+    }
+    
+    func queryRiskLevel(with level: String?) -> String {
+        do {
+            switch try level.unwrap() {
+            case "large":
+                return "重大事故隐患"
+            case "normal":
+                return "一般事故隐患"
+            case "high":
+                return "较高事故隐患"
+            default:
+                return "较低事故隐患"
+            }
+        } catch {return "暂无数据"}
+    }
+  
+    private var hiddenPeril: MLHiddenPerilItem?
+    
+    func refreshSubviews(with item: MLHiddenPerilItem)  {
+        let level: String = self.queryRiskLevel(with: item.grade)
+        levelTitleView.defaultValue(title: "隐患级别", placeholder: level)
+        
+        let riskClass: String = item.classification?.name ?? "暂无数据"
+        classTitleView.defaultValue(title: "隐患分类", placeholder: riskClass)
+        
+        let riskUnit: String = item.risk?.unitName ?? "暂无数据"
+        RiskUnitTitleView.defaultValue(title: "隐患部位", placeholder: riskUnit)
+        
+        let perilMemo = self.queryPerilMemo(with: item.perilMemo)
+        self.riskDescLabel.attributedText = perilMemo
+        
+        self.riskNumberLabel.text = item.perilId.data()
+        self.hiddenPeril = item
     }
 }

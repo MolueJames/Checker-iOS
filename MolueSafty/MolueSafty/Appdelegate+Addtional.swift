@@ -14,10 +14,6 @@ import Kingfisher
 import Alamofire
 import MolueUtilities
 
-import MolueMediator
-import BoltsSwift
-import MolueHomePart
-
 extension AppDelegate {
     func setUserInterfaceConfigure() {
         MLInterfaceConfigure.setInterfaceConfigure()
