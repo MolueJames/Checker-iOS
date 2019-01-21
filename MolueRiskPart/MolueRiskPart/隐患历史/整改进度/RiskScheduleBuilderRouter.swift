@@ -56,7 +56,7 @@ protocol RiskScheduleComponentBuildable: MolueComponentBuildable {
 
 class RiskScheduleComponentBuilder: MolueComponentBuilder, RiskScheduleComponentBuildable {
     func build(listener: RiskScheduleInteractListener) -> UIViewController {
-        let controller = RiskScheduleViewController()
+        let controller = RiskScheduleViewController.initializeFromStoryboard()
         let interactor = RiskSchedulePageInteractor(presenter: controller)
         RiskScheduleViewableRouter(interactor: interactor, controller: controller)
         interactor.listener = listener

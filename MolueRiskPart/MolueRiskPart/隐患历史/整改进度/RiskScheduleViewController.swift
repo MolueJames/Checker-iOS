@@ -16,7 +16,7 @@ protocol RiskSchedulePresentableListener: class {
     // 定义一些当前页面需要的业务逻辑, 比如网络请求.
     func queryHiddenPeril() -> MLHiddenPerilItem?
     
-    func queryRiskArrange(with indexPath: IndexPath) -> String?
+    func queryRiskArrange(with indexPath: IndexPath) -> MLPerilRectifyStep?
     
     func numberOfRows(at section: Int) -> Int?
     
@@ -86,6 +86,10 @@ extension RiskScheduleViewController: RiskScheduleViewControllable {
 }
 
 extension RiskScheduleViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         do {
             let listener = try self.listener.unwrap()

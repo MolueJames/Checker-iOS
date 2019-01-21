@@ -15,8 +15,10 @@ protocol HiddenPerilListViewableRouting: class {
     // 定义一些页面跳转的方法, 比如Push, Presenter等.
     func pushToRiskDetailController()
     func pushToRiskClosedControlelr()
+    func pushToRiskPlanedController()
     func pushToRiskArrangeController()
     func pushToRiskRectifyController()
+    func pushToRiskScheduleController()
 }
 
 protocol HiddenPerilListPagePresentable: MolueInteractorPresentable, MLControllerHUDProtocol {
@@ -152,9 +154,8 @@ extension HiddenPerilListPageInteractor: HiddenPerilListPresentableListener {
             switch self.status {
             case .create:
                 self.pushToArrangeDetailController()
-//                router.pushToRiskRectifyController()
             case .reform:
-                router.pushToRiskArrangeController()
+                self.pushToRectifyPlanedController()
             case .finish:
                 router.pushToRiskRectifyController()
             case .closed:
@@ -166,21 +167,40 @@ extension HiddenPerilListPageInteractor: HiddenPerilListPresentableListener {
     func pushToArrangeDetailController() {
         do {
             let router = try self.viewRouter.unwrap()
-            if self.validateCanArrangeWithPermission() {
+            if self.hasArrangePermission() {
                 router.pushToRiskArrangeController()
-//                router.pushToRiskDetailController()
             } else {
-//                router.pushToRiskDetailController()
-                router.pushToRiskArrangeController()
+                router.pushToRiskDetailController()
             }
         } catch { MolueLogger.UIModule.error(error) }
     }
     
-    func validateCanArrangeWithPermission() -> Bool {
+    func pushToRectifyPlanedController() {
+        do {
+            let router = try self.viewRouter.unwrap()
+            if self.hasRectifyPermission() {
+                router.pushToRiskRectifyController()
+            } else {
+                router.pushToRiskPlanedController()
+            }
+        } catch { MolueLogger.UIModule.error(error) }
+    }
+    
+    func hasArrangePermission() -> Bool {
         do {
             let userInfo = try MolueUserInfo.queryUserInfo().unwrap()
             let permissions = try userInfo.getPermissions().unwrap()
             return permissions.contains("risk.approve_hiddendanger")
         } catch { return false }
     }
+    
+    func hasRectifyPermission() -> Bool {
+        do {
+            let userInfo = try MolueUserInfo.queryUserInfo().unwrap()
+            let permissions = try userInfo.getPermissions().unwrap()
+            return permissions.contains("risk._hiddendanger")
+        } catch { return false }
+    }
+    
+    
 }

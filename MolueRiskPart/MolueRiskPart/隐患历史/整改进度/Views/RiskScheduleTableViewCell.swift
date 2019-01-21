@@ -13,6 +13,7 @@ class RiskScheduleTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        self.backgroundColor = .red
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

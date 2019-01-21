@@ -20,9 +20,11 @@ public class MLHiddenPerilItem: Mappable {
         createdUser <- map["user_of_created"]
         approvedDate <- map["date_approved"]
         enterpriseId <- map["enterprise_id"]
+        rectifySteps <- map["rectify_steps"]
         rectifyDate <- map["rectify_date"]
         attachments <- map["attachments"]
         traceNo <- map["source_trace_no"]
+        actions <- map["actions"]
         updated <- map["updated"]
         created <- map["created"]
         perilMemo <- map["memo"]
@@ -43,8 +45,9 @@ public class MLHiddenPerilItem: Mappable {
     }
     
     public var classification: MLRiskClassification?
-    
+    public var rectifySteps: [MLPerilRectifyStep]?
     public var attachments: [MLAttachmentDetail]?
+    public var actions: [MLHiddenPerilAction]?
     public var approvedUser: MolueUserInfo?
     public var createdUser: MolueUserInfo?
     public var risk: MLRiskPointDetail?
@@ -58,8 +61,45 @@ public class MLHiddenPerilItem: Mappable {
     public var perilId: String?
     public var traceNo: String?
     public var status: String?
-    public var grade: String?
     public var source: String? = "C"
+    public var grade: String?
+}
+
+
+public class MLPerilRectifyStep: Mappable {
+    public required init?(map: Map) {
+        orderKey <- map["order_key"]
+        status <- map["status"]
+        title <- map["title"]
+        stepId <- map["id"]
+    }
+    
+    public func mapping(map: Map) {
+        
+    }
+    public var status: String?
+    public var orderKey: Int?
+    public var title: String?
+    public var stepId: Int?
+}
+
+
+public class MLHiddenPerilAction: Mappable {
+    public required init?(map: Map) {
+        actionTime <- map["action_time"]
+        actionUser <- map["action_user"]
+        actionId <- map["id"]
+        action <- map["action"]
+    }
+    
+    public func mapping(map: Map) {
+        
+    }
+    
+    public var actionUser: MolueUserInfo?
+    public var actionTime: String?
+    public var action: String?
+    public var actionId: Int?
 }
 
 public enum PotentialRiskChannel: CustomStringConvertible {

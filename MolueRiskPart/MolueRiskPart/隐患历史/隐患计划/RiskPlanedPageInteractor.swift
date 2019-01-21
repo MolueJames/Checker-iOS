@@ -1,8 +1,8 @@
 //
-//  RiskSchedulePageInteractor.swift
+//  RiskPlanedPageInteractor.swift
 //  MolueRiskPart
 //
-//  Created by MolueJames on 2019/1/20.
+//  Created by JamesCheng on 2019-01-21.
 //  Copyright © 2019 MolueTech. All rights reserved.
 //
 
@@ -10,23 +10,23 @@ import RxSwift
 import MolueMediator
 import MolueUtilities
 
-protocol RiskScheduleViewableRouting: class {
+protocol RiskPlanedViewableRouting: class {
     // 定义一些页面跳转的方法, 比如Push, Presenter等.
     func pushToRiskDetailController()
 }
 
-protocol RiskSchedulePagePresentable: MolueInteractorPresentable {
-    var listener: RiskSchedulePresentableListener? { get set }
+protocol RiskPlanedPagePresentable: MolueInteractorPresentable {
+    var listener: RiskPlanedPresentableListener? { get set }
     // 定义一些页面需要的方法, 比如刷新页面的显示内容等.
 }
 
-final class RiskSchedulePageInteractor: MoluePresenterInteractable {
+final class RiskPlanedPageInteractor: MoluePresenterInteractable {
     
-    weak var presenter: RiskSchedulePagePresentable?
+    weak var presenter: RiskPlanedPagePresentable?
     
-    var viewRouter: RiskScheduleViewableRouting?
+    var viewRouter: RiskPlanedViewableRouting?
     
-    weak var listener: RiskScheduleInteractListener?
+    weak var listener: RiskPlanedInteractListener?
     
     private lazy var arrangeList: [MLPerilRectifyStep]? = {
         do {
@@ -48,17 +48,44 @@ final class RiskSchedulePageInteractor: MoluePresenterInteractable {
         }
     }()
     
-    required init(presenter: RiskSchedulePagePresentable) {
+    required init(presenter: RiskPlanedPagePresentable) {
         self.presenter = presenter
         presenter.listener = self
     }
 }
 
-extension RiskSchedulePageInteractor: RiskScheduleRouterInteractable {
+extension RiskPlanedPageInteractor: RiskPlanedRouterInteractable {
     
 }
 
-extension RiskSchedulePageInteractor: RiskSchedulePresentableListener {
+extension RiskPlanedPageInteractor: RiskPlanedPresentableListener {
+    func queryHiddenPeril() -> MLHiddenPerilItem? {
+        do {
+            return try self.hiddenPeril.unwrap()
+        } catch {
+            return MolueLogger.UIModule.allowNil(error)
+        }
+    }
+    
+    func queryRiskArrange(with indexPath: IndexPath) -> MLPerilRectifyStep? {
+        do {
+            let arrangeList = try self.arrangeList.unwrap()
+            let item = arrangeList.item(at: indexPath.row)
+            return try item.unwrap()
+        } catch {
+            return MolueLogger.UIModule.allowNil(error)
+        }
+    }
+    
+    func numberOfRows(at section: Int) -> Int? {
+        do {
+            let arrangeList = try self.arrangeList.unwrap()
+            return arrangeList.count
+        } catch {
+            return MolueLogger.UIModule.allowNil(error)
+        }
+    }
+    
     var moreCommand: PublishSubject<Void> {
         let moreInfoCommand = PublishSubject<Void>()
         moreInfoCommand.subscribe(onNext: { [unowned self] (_) in
@@ -76,37 +103,4 @@ extension RiskSchedulePageInteractor: RiskSchedulePresentableListener {
         }
     }
     
-    func queryHiddenPeril() -> MLHiddenPerilItem? {
-        do {
-            return try self.hiddenPeril.unwrap()
-        } catch {
-            return MolueLogger.UIModule.allowNil(error)
-        }
-    }
-    
-    func queryRiskArrange(with indexPath: IndexPath) -> MLPerilRectifyStep? {
-        do {
-            let arrangeList = try self.arrangeList.unwrap()
-            let filterList = arrangeList.filter { (item) -> Bool in
-                let filter = indexPath.section == 0 ? "done" : "created"
-                return item.status == filter
-            }
-            let item = filterList.item(at: indexPath.row)
-            return try item.unwrap()
-        } catch {
-            return MolueLogger.UIModule.allowNil(error)
-        }
-    }
-    
-    func numberOfRows(at section: Int) -> Int? {
-        do {
-            let arrangeList = try self.arrangeList.unwrap()
-            return arrangeList.filter { (item) -> Bool in
-                let filter = section == 0 ? "done" : "created"
-                return item.status == filter
-            }.count
-        } catch {
-            return MolueLogger.UIModule.allowNil(error)
-        }
-    }
 }
