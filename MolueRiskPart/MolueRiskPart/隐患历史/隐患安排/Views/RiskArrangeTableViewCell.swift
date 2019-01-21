@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MolueMediator
 
 class RiskArrangeTableViewCell: UITableViewCell {
 
@@ -25,6 +26,11 @@ class RiskArrangeTableViewCell: UITableViewCell {
     
     func refreshSubviews(with item: String) {
         self.titleLabel.text = item
-        self.titleLabel.setLineSpacing(5)
+        self.titleLabel.setLineSpacing(6)
+    }
+    
+    func refreshSubviews(with item: MLPerilRectifyStep) {
+        self.titleLabel.text = item.title.data()
+        self.titleLabel.setLineSpacing(6)
     }
 }

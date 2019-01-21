@@ -7,19 +7,25 @@
 //
 
 import UIKit
+import MolueUtilities
+import MolueMediator
 
 class RiskScheduleTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        self.backgroundColor = .red
     }
 
+    @IBOutlet weak var titleLabel: UILabel!
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
-    
+    func refreshSubviews(with item: MLPerilRectifyStep) {
+        self.titleLabel.text = item.title.data()
+        self.titleLabel.setLineSpacing(6)
+    }
 }

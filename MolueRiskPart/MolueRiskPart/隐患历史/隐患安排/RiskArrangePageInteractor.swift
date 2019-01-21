@@ -6,10 +6,14 @@
 //  Copyright © 2019 MolueTech. All rights reserved.
 //
 
-import MolueUtilities
-import MolueMediator
-import MolueCommon
 import RxSwift
+import MolueCommon
+import MolueNetwork
+import MolueUtilities
+import MolueFoundation
+import MolueMediator
+
+typealias RectifySteps = [[String : String]]
 
 protocol RiskArrangeViewableRouting: class {
     // 定义一些页面跳转的方法, 比如Push, Presenter等.
@@ -20,7 +24,7 @@ protocol RiskArrangeViewableRouting: class {
     func pushToRiskDetailController()
 }
 
-protocol RiskArrangePagePresentable: MolueInteractorPresentable {
+protocol RiskArrangePagePresentable: MolueInteractorPresentable, MLControllerHUDProtocol, MolueActivityDelegate {
     var listener: RiskArrangePresentableListener? { get set }
     // 定义一些页面需要的方法, 比如刷新页面的显示内容等.
     func refreshFooterViewSelected(with title: String)
@@ -52,6 +56,8 @@ final class RiskArrangePageInteractor: MoluePresenterInteractable {
     
     private var arrangeList = [String]()
     
+    private var isNeed: Bool = false
+    
     lazy var hiddenPeril: MLHiddenPerilItem? = {
         do {
             let listener = try self.listener.unwrap()
@@ -72,6 +78,62 @@ extension RiskArrangePageInteractor: RiskArrangeRouterInteractable {
 }
 
 extension RiskArrangePageInteractor: RiskArrangePresentableListener {
+    func uploadHiddenPerilArrange() {
+        do {
+            let parameters = try self.createParameters().unwrap()
+            let hiddenPeril = try self.hiddenPeril.unwrap()
+            let perilId = try hiddenPeril.perilId.unwrap()
+            let request = MoluePerilService.uploadRectifySteps(with: parameters, perilId: perilId)
+            request.handleSuccessResponse { (result) in
+                MolueLogger.network.message(result)
+            }
+            let manager = MolueRequestManager(delegate: self.presenter)
+            manager.doRequestStart(with: request)
+        } catch { MolueLogger.UIModule.message(error) }
+    }
+    
+    func createArrangeList() throws -> RectifySteps {
+        guard self.arrangeList.count > 0 else {
+            throw MolueCommonError(with: "请添加隐患整改步骤")
+        }
+        return self.arrangeList.compactMap { (step) in
+            return ["title" : step]
+        }
+    }
+    
+    func createSelectedDate() throws -> String {
+        if self.isNeed == false { return "" }
+        guard let date = self.selectedDate else {
+            throw MolueCommonError(with: "请选择截止日期")
+        }
+        return date.string(withFormat: "yyyy-MM-dd")
+    }
+    
+    func createParameters() -> [String : Any]? {
+        do {
+            var parameters: [String : Any] = [String : Any]()
+            let rectifySteps = try self.createArrangeList()
+            parameters["rectify_steps"] = rectifySteps
+            parameters["need_rectification"] = self.isNeed
+            let rectifyDate = try self.createSelectedDate()
+            parameters["rectify_date"] = nil
+            return parameters
+        } catch {
+            let message = error.localizedDescription
+            self.showWarningMessage(with: message)
+            return MolueLogger.network.allowNil(error)
+        }
+    }
+    
+    func showWarningMessage(with message: String) {
+        do {
+            let presenter = try self.presenter.unwrap()
+            presenter.showWarningHUD(text: message)
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+    }
+    
     var moreCommand: PublishSubject<Void> {
         let moreInfoCommand = PublishSubject<Void>()
         moreInfoCommand.subscribe(onNext: { [unowned self] (_) in
@@ -113,7 +175,6 @@ extension RiskArrangePageInteractor: RiskArrangePresentableListener {
         } catch {
             MolueLogger.UIModule.error(error)
         }
-        
     }
     
     func editPreviousArrange(at indexPath: IndexPath) {

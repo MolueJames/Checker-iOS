@@ -33,6 +33,8 @@ protocol RiskArrangePresentableListener: class {
     func didSelectRow(at indexPath: IndexPath)
     
     var moreCommand: PublishSubject<Void> {get}
+    
+    func uploadHiddenPerilArrange()
 }
 
 final class RiskArrangeViewController: MLBaseViewController  {
@@ -150,6 +152,12 @@ extension RiskArrangeViewController: MLUserInterfaceProtocol {
     }
     
     @IBAction func rightItemClicked(_ sender: UIBarButtonItem) {
+        do {
+            let listener = try self.listener.unwrap()
+            listener.uploadHiddenPerilArrange()
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
     }
 }
 

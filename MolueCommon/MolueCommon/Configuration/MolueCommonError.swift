@@ -7,3 +7,13 @@
 //
 
 import Foundation
+
+public struct MolueCommonError: LocalizedError {
+    private var message: String
+    public init(with message: String) {
+        self.message = message
+    }
+    public var errorDescription: String? {
+        return message
+    }
+}

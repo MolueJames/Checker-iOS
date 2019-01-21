@@ -9,7 +9,7 @@
 import MolueUtilities
 import MolueMediator
 
-protocol HiddenPerilListRouterInteractable: RiskDetailInteractListener, RiskArrangeInteractListener, RiskClosedInteractListener, RiskRectifyInteractListener, RiskScheduleInteractListener, RiskPlanedInteractListener {
+protocol HiddenPerilListRouterInteractable: RiskDetailInteractListener, RiskArrangeInteractListener, RiskClosedInteractListener, RiskRectifyInteractListener, RiskScheduleInteractListener {
     var viewRouter: HiddenPerilListViewableRouting? { get set }
     var listener: HiddenPerilListInteractListener? { get set }
 }
@@ -33,15 +33,6 @@ final class HiddenPerilListViewableRouter: MolueViewableRouting {
 }
 
 extension HiddenPerilListViewableRouter: HiddenPerilListViewableRouting {
-    func pushToRiskPlanedController() {
-        do {
-            let listener = try self.interactor.unwrap()
-            let builder = RiskPlanedComponentBuilder()
-            let controller = builder.build(listener: listener)
-            let navigator = try self.controller.unwrap()
-            navigator.pushToViewController(controller, animated: true)
-        } catch { MolueLogger.UIModule.error(error) }
-    }
     
     func pushToRiskScheduleController() {
         do {
@@ -92,6 +83,15 @@ extension HiddenPerilListViewableRouter: HiddenPerilListViewableRouting {
             navigator.pushToViewController(controller, animated: true)
         } catch { MolueLogger.UIModule.error(error) }
     }
+}
+
+protocol HiddenPerilListInteractListener: class {
+    //用于定义其他的Component需要定义的协议方法
+}
+
+protocol HiddenPerilListComponentBuildable: MolueComponentBuildable {
+    //定义当前的Component的构造方法.
+    func build(listener: HiddenPerilListInteractListener, status: PotentialRiskStatus) -> UIViewController
 }
 
 class HiddenPerilListComponentBuilder: MolueComponentBuilder, HiddenPerilListComponentBuildable {

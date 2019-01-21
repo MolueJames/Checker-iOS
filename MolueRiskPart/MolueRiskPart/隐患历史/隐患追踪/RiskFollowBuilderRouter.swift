@@ -35,18 +35,9 @@ extension RiskFollowViewableRouter: RiskFollowViewableRouting {
     
 }
 
-protocol RiskFollowInteractListener: class {
-    //用于定义其他的Component需要定义的协议方法
-}
-
-protocol RiskFollowComponentBuildable: MolueComponentBuildable {
-    //定义当前的Component的构造方法.
-    func build(listener: RiskFollowInteractListener) -> UIViewController
-}
-
 class RiskFollowComponentBuilder: MolueComponentBuilder, RiskFollowComponentBuildable {
     func build(listener: RiskFollowInteractListener) -> UIViewController {
-        let controller = RiskFollowViewController()
+        let controller = RiskFollowViewController.initializeFromStoryboard()
         let interactor = RiskFollowPageInteractor(presenter: controller)
         RiskFollowViewableRouter(interactor: interactor, controller: controller)
         interactor.listener = listener

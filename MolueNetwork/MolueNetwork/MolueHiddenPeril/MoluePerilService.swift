@@ -49,6 +49,6 @@ public struct MoluePerilService {
     /// - Returns: 网络请求对象
     public static func uploadRectifySteps(with parameters: [String : Any], perilId: String) -> MolueDataRequest {
         let path: String = "api/hidden_dangers/\(perilId)/approved/"
-        return MolueDataRequest(parameter: parameters, method: .get, path: path)
+        return MolueDataRequest(parameter: parameters, method: .post, path: path, encoding: JSONEncoding.default)
     }
 }

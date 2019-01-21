@@ -64,6 +64,7 @@ extension RiskScheduleViewController: MLUserInterfaceProtocol {
     }
     
     func updateUserInterfaceElements() {
+        self.title = "整改计划"
         self.updateHeaderViewLayout()
     }
 
@@ -103,7 +104,7 @@ extension RiskScheduleViewController: UITableViewDataSource {
         do {
             let listener = try self.listener.unwrap()
             let item = listener.queryRiskArrange(with: indexPath)
-//            try cell.refreshSubviews(with: item.unwrap())
+            try cell.refreshSubviews(with: item.unwrap())
         } catch { MolueLogger.UIModule.error(error) }
         return cell
     }}
@@ -117,7 +118,11 @@ extension RiskScheduleViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 35
+        do {
+            let listener = try self.listener.unwrap()
+            let count = listener.numberOfRows(at: section)
+            return try count.unwrap() > 0 ? 35 : 0
+        } catch { return 0 }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

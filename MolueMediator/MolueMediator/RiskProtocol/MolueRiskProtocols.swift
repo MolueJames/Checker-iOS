@@ -51,11 +51,11 @@ public protocol RiskDetailComponentBuildable: MolueComponentBuildable {
     func build(listener: RiskDetailInteractListener) -> UIViewController
 }
 
-public protocol HiddenPerilListInteractListener: class {
+public protocol RiskFollowInteractListener: class {
     //用于定义其他的Component需要定义的协议方法
 }
 
-public protocol HiddenPerilListComponentBuildable: MolueComponentBuildable {
+public protocol RiskFollowComponentBuildable: MolueComponentBuildable {
     //定义当前的Component的构造方法.
-    func build(listener: HiddenPerilListInteractListener, status: PotentialRiskStatus) -> UIViewController
+    func build(listener: RiskFollowInteractListener) -> UIViewController
 }

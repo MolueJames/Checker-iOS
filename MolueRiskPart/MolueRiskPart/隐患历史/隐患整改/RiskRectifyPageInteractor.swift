@@ -28,7 +28,14 @@ final class RiskRectifyPageInteractor: MoluePresenterInteractable {
     
     weak var listener: RiskRectifyInteractListener?
     
-    private var arrangeList = ["1", "2", "3", "4"]//[String]()
+    lazy var rectifyStep: [MLPerilRectifyStep]? = {
+        do {
+            let hiddenPeril = try self.hiddenPeril.unwrap()
+            return try hiddenPeril.rectifySteps.unwrap()
+        } catch {
+            return MolueLogger.UIModule.allowNil(error)
+        }
+    }()
     
     private let disposeBag = DisposeBag()
     
@@ -77,9 +84,14 @@ extension RiskRectifyPageInteractor: RiskRectifyPresentableListener {
         }
     }
     
-    func queryRiskArrange(with indexPath: IndexPath) -> String? {
+    func queryRiskArrange(with indexPath: IndexPath) -> MLPerilRectifyStep? {
         do {
-            let item = self.arrangeList.item(at: indexPath.row)
+            let arrangeList = try self.rectifyStep.unwrap()
+            let filterList = arrangeList.filter { (item) -> Bool in
+                let filter = indexPath.section == 0 ? "done" : "created"
+                return item.status == filter
+            }
+            let item = filterList.item(at: indexPath.row)
             return try item.unwrap()
         } catch {
             return MolueLogger.UIModule.allowNil(error)
@@ -87,6 +99,14 @@ extension RiskRectifyPageInteractor: RiskRectifyPresentableListener {
     }
     
     func numberOfRows(at section: Int) -> Int? {
-        return self.arrangeList.count
+        do {
+            let arrangeList = try self.rectifyStep.unwrap()
+            return arrangeList.filter { (item) -> Bool in
+                let filter = section == 0 ? "done" : "created"
+                return item.status == filter
+            }.count
+        } catch {
+            return MolueLogger.UIModule.allowNil(error)
+        }
     }
 }

@@ -16,7 +16,7 @@ protocol RiskRectifyPresentableListener: class {
     // 定义一些当前页面需要的业务逻辑, 比如网络请求.
     func queryHiddenPeril() -> MLHiddenPerilItem?
     
-    func queryRiskArrange(with indexPath: IndexPath) -> String?
+    func queryRiskArrange(with indexPath: IndexPath) -> MLPerilRectifyStep?
     
     func numberOfRows(at section: Int) -> Int?
     
@@ -131,7 +131,11 @@ extension RiskRectifyViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 35
+        do {
+            let listener = try self.listener.unwrap()
+            let count = listener.numberOfRows(at: section)
+            return try count.unwrap() > 0 ? 35 : 0
+        } catch { return 0 }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

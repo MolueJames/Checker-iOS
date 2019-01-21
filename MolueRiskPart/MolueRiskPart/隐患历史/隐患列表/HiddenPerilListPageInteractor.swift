@@ -15,7 +15,6 @@ protocol HiddenPerilListViewableRouting: class {
     // 定义一些页面跳转的方法, 比如Push, Presenter等.
     func pushToRiskDetailController()
     func pushToRiskClosedControlelr()
-    func pushToRiskPlanedController()
     func pushToRiskArrangeController()
     func pushToRiskRectifyController()
     func pushToRiskScheduleController()
@@ -181,7 +180,7 @@ extension HiddenPerilListPageInteractor: HiddenPerilListPresentableListener {
             if self.hasRectifyPermission() {
                 router.pushToRiskRectifyController()
             } else {
-                router.pushToRiskPlanedController()
+                router.pushToRiskScheduleController()
             }
         } catch { MolueLogger.UIModule.error(error) }
     }

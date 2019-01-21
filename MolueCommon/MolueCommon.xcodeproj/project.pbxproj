@@ -73,6 +73,7 @@
 		1ACD0A1421A0094400793AAC /* SKCacheable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACD09FB21A0094400793AAC /* SKCacheable.swift */; };
 		1ACD0A1521A0094400793AAC /* SKPhotoBrowser.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1ACD09FC21A0094400793AAC /* SKPhotoBrowser.bundle */; };
 		1ACD0A1621A0094400793AAC /* SKButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACD09FD21A0094400793AAC /* SKButtons.swift */; };
+		1AD36D0D21F6011200AB0CB5 /* MolueCommonError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD36D0C21F6011200AB0CB5 /* MolueCommonError.swift */; };
 		1AD9D65821E39138002A2BCA /* KFPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD9D65721E39138002A2BCA /* KFPhoto.swift */; };
 		1AEB87DB209218D3002230A3 /* MolueCryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEB87DA209218D3002230A3 /* MolueCryption.swift */; };
 		1AFFF39221C3F2E500B639D8 /* MolueMediator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AFFF39121C3F2E500B639D8 /* MolueMediator.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -171,6 +172,7 @@
 		1ACD09FB21A0094400793AAC /* SKCacheable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKCacheable.swift; sourceTree = "<group>"; };
 		1ACD09FC21A0094400793AAC /* SKPhotoBrowser.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SKPhotoBrowser.bundle; sourceTree = "<group>"; };
 		1ACD09FD21A0094400793AAC /* SKButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKButtons.swift; sourceTree = "<group>"; };
+		1AD36D0C21F6011200AB0CB5 /* MolueCommonError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MolueCommonError.swift; sourceTree = "<group>"; };
 		1AD9D65721E39138002A2BCA /* KFPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KFPhoto.swift; sourceTree = "<group>"; };
 		1AEB87DA209218D3002230A3 /* MolueCryption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MolueCryption.swift; sourceTree = "<group>"; };
 		1AFFF39121C3F2E500B639D8 /* MolueMediator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueMediator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -288,6 +290,7 @@
 			children = (
 				1A5014B52094B9BA00DB931E /* MolueCommonColor.swift */,
 				1A9BCA12210A26410035FC21 /* MolueNotificationName.swift */,
+				1AD36D0C21F6011200AB0CB5 /* MolueCommonError.swift */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -681,6 +684,7 @@
 				1A52756520D51F7200CA0D68 /* MLSingleSelectController.swift in Sources */,
 				1A9BCA13210A26410035FC21 /* MolueNotificationName.swift in Sources */,
 				1ACD0A0B21A0094400793AAC /* SKCache.swift in Sources */,
+				1AD36D0D21F6011200AB0CB5 /* MolueCommonError.swift in Sources */,
 				1ACD0A1021A0094400793AAC /* SKPhoto.swift in Sources */,
 				1A2D441B20A07E9900BA947A /* MLRefreshHeaderAnimator.swift in Sources */,
 				1A2C558B21BE98DD0032FEFD /* MLSegementCollectionCell.swift in Sources */,

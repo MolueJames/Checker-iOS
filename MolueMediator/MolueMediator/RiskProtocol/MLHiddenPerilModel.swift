@@ -67,6 +67,7 @@ public class MLHiddenPerilItem: Mappable {
 
 
 public class MLPerilRectifyStep: Mappable {
+    
     public required init?(map: Map) {
         orderKey <- map["order_key"]
         status <- map["status"]

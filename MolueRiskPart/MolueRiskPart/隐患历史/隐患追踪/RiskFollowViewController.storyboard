@@ -1,7 +1,51 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Risk Follow View Controller-->
+        <scene sceneID="2ZC-Lo-IRS">
+            <objects>
+                <viewController storyboardIdentifier="RiskFollowViewController" id="yrx-v2-4Jv" customClass="RiskFollowViewController" customModule="MolueRiskPart" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="x1i-qB-yN6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="3gX-o0-lFo">
+                                <rect key="frame" x="0.0" y="20" width="375" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="d5G-Qg-S5w"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="P6X-R0-kgA">
+                                <rect key="frame" x="0.0" y="75" width="375" height="592"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="3gX-o0-lFo" firstAttribute="top" secondItem="D4S-Qo-rqh" secondAttribute="top" id="IBo-2s-zP8"/>
+                            <constraint firstItem="P6X-R0-kgA" firstAttribute="leading" secondItem="D4S-Qo-rqh" secondAttribute="leading" id="L13-gF-VQJ"/>
+                            <constraint firstItem="D4S-Qo-rqh" firstAttribute="bottom" secondItem="P6X-R0-kgA" secondAttribute="bottom" id="PCv-dC-6QY"/>
+                            <constraint firstItem="P6X-R0-kgA" firstAttribute="top" secondItem="3gX-o0-lFo" secondAttribute="bottom" id="aHC-zX-cVG"/>
+                            <constraint firstItem="3gX-o0-lFo" firstAttribute="leading" secondItem="D4S-Qo-rqh" secondAttribute="leading" id="b6g-hk-JWP"/>
+                            <constraint firstItem="3gX-o0-lFo" firstAttribute="trailing" secondItem="D4S-Qo-rqh" secondAttribute="trailing" id="opx-Pw-wS8"/>
+                            <constraint firstItem="D4S-Qo-rqh" firstAttribute="trailing" secondItem="P6X-R0-kgA" secondAttribute="trailing" id="sY3-b0-07O"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="D4S-Qo-rqh"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z6a-kp-3nZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="183" y="148"/>
+        </scene>
+    </scenes>
 </document>
