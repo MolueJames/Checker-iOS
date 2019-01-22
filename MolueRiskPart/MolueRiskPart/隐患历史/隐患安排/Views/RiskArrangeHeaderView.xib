@@ -38,13 +38,23 @@
                             <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qK1-dO-UBp">
+                            <rect key="frame" x="0.0" y="64.5" width="375" height="0.5"/>
+                            <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="0.5" id="KAQ-r2-yLe"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstAttribute="trailing" secondItem="qK1-dO-UBp" secondAttribute="trailing" id="1Tk-YF-Uqb"/>
+                        <constraint firstItem="qK1-dO-UBp" firstAttribute="leading" secondItem="x4D-OW-NS7" secondAttribute="leading" id="3zX-zh-ADL"/>
                         <constraint firstItem="dp1-Xg-OoF" firstAttribute="leading" secondItem="x4D-OW-NS7" secondAttribute="leading" constant="20" id="4VT-OV-PUg"/>
                         <constraint firstItem="PjX-nq-Y3B" firstAttribute="leading" secondItem="x4D-OW-NS7" secondAttribute="leading" constant="20" id="GLx-22-Jg4"/>
                         <constraint firstItem="PjX-nq-Y3B" firstAttribute="top" secondItem="dp1-Xg-OoF" secondAttribute="bottom" constant="8" id="I7G-dd-Y6e"/>
                         <constraint firstItem="dp1-Xg-OoF" firstAttribute="top" secondItem="x4D-OW-NS7" secondAttribute="top" constant="12" id="Olh-5r-h5W"/>
+                        <constraint firstAttribute="bottom" secondItem="qK1-dO-UBp" secondAttribute="bottom" id="UUC-xg-5AJ"/>
                         <constraint firstAttribute="trailing" secondItem="PjX-nq-Y3B" secondAttribute="trailing" constant="20" id="ZIA-0Y-qJA"/>
                         <constraint firstAttribute="bottom" secondItem="PjX-nq-Y3B" secondAttribute="bottom" constant="9" id="vcl-FO-EuA"/>
                     </constraints>
@@ -129,7 +139,7 @@
                 <outlet property="riskDescLabel" destination="PjX-nq-Y3B" id="ufK-4O-as8"/>
                 <outlet property="riskNumberLabel" destination="8g1-lM-1HI" id="ZRh-nk-Oyt"/>
             </connections>
-            <point key="canvasLocation" x="-391.19999999999999" y="-34.182908545727138"/>
+            <point key="canvasLocation" x="-391.19999999999999" y="-34.632683658170919"/>
         </view>
     </objects>
     <resources>

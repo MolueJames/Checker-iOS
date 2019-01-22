@@ -18,15 +18,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="3gX-o0-lFo">
-                                <rect key="frame" x="0.0" y="20" width="375" height="55"/>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3gX-o0-lFo">
+                                <rect key="frame" x="0.0" y="20" width="375" height="45"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="55" id="d5G-Qg-S5w"/>
+                                    <constraint firstAttribute="height" constant="45" id="d5G-Qg-S5w"/>
                                 </constraints>
-                                <textInputTraits key="textInputTraits"/>
+                                <color key="barTintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="search"/>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="P6X-R0-kgA">
-                                <rect key="frame" x="0.0" y="75" width="375" height="592"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="P6X-R0-kgA">
+                                <rect key="frame" x="0.0" y="65" width="375" height="602"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
@@ -42,6 +43,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="D4S-Qo-rqh"/>
                     </view>
+                    <connections>
+                        <outlet property="searchBar" destination="3gX-o0-lFo" id="bhg-ft-SGr"/>
+                        <outlet property="tableView" destination="P6X-R0-kgA" id="Rnb-Rl-QCU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z6a-kp-3nZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

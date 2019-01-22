@@ -6,9 +6,10 @@
 //  Copyright © 2019 MolueTech. All rights reserved.
 //
 
+import MolueUtilities
 import MolueMediator
 
-protocol RiskFollowRouterInteractable: class {
+protocol RiskFollowRouterInteractable: RiskDetailInteractListener {
     var viewRouter: RiskFollowViewableRouting? { get set }
     var listener: RiskFollowInteractListener? { get set }
 }
@@ -32,7 +33,15 @@ final class RiskFollowViewableRouter: MolueViewableRouting {
 }
 
 extension RiskFollowViewableRouter: RiskFollowViewableRouting {
-    
+    func pushToRiskDetailController() {
+        do {
+            let listener = try self.interactor.unwrap()
+            let builder = RiskDetailComponentBuilder()
+            let controller = builder.build(listener: listener)
+            let navigator = try self.controller.unwrap()
+            navigator.pushToViewController(controller, animated: true)
+        } catch { MolueLogger.UIModule.error(error) }
+    }
 }
 
 class RiskFollowComponentBuilder: MolueComponentBuilder, RiskFollowComponentBuildable {

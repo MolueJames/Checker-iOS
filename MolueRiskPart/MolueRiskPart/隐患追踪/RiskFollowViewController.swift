@@ -1,8 +1,8 @@
 //
-//  RiskScheduleViewController.swift
+//  RiskFollowViewController.swift
 //  MolueRiskPart
 //
-//  Created by MolueJames on 2019/1/20.
+//  Created by MolueJames on 2019/1/21.
 //  Copyright © 2019 MolueTech. All rights reserved.
 //
 
@@ -12,30 +12,37 @@ import MolueMediator
 import MolueFoundation
 import MolueUtilities
 
-protocol RiskSchedulePresentableListener: class {
+protocol RiskFollowPresentableListener: class {
     // 定义一些当前页面需要的业务逻辑, 比如网络请求.
     func queryHiddenPeril() -> MLHiddenPerilItem?
     
-    func queryRiskArrange(with indexPath: IndexPath) -> MLPerilRectifyStep?
+    func numberOfRows(in section: Int) -> Int
     
-    func numberOfRows(at section: Int) -> Int?
+    func jumpToRiskDetailController()
+    
+    func queryPerilAction(with indexPath: IndexPath) -> MLHiddenPerilAction?
     
     var moreCommand: PublishSubject<Void> { get }
 }
 
-final class RiskScheduleViewController: MLBaseViewController  {
+final class RiskFollowViewController: MLBaseViewController  {
     //MARK: View Controller Properties
-    var listener: RiskSchedulePresentableListener?
+    var listener: RiskFollowPresentableListener?
+    @IBOutlet weak var searchBar: UISearchBar! {
+        didSet {
+            searchBar.delegate = self
+        }
+    }
     
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.dataSource = self
             tableView.delegate = self
-            tableView.register(xibWithCellClass: RiskScheduleTableViewCell.self)
+            tableView.register(xibWithCellClass: RiskFollowTableViewCell.self)
             tableView.tableHeaderView = self.headerView
         }
     }
-
+    
     lazy var headerView: RiskArrangeHeaderView = {
         let headerView: RiskArrangeHeaderView = RiskArrangeHeaderView.createFromXib()
         self.setupHeaderViewConfiguration(with: headerView)
@@ -50,7 +57,7 @@ final class RiskScheduleViewController: MLBaseViewController  {
             headerView.moreCommand = listener.moreCommand
         } catch { MolueLogger.UIModule.error(error) }
     }
-
+    
     //MARK: View Controller Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,16 +65,16 @@ final class RiskScheduleViewController: MLBaseViewController  {
     }
 }
 
-extension RiskScheduleViewController: MLUserInterfaceProtocol {
+extension RiskFollowViewController: MLUserInterfaceProtocol {
     func queryInformationWithNetwork() {
         
     }
     
     func updateUserInterfaceElements() {
+        self.title = "隐患追踪"
         self.updateHeaderViewLayout()
-        self.title = "整改计划"
     }
-
+    
     func updateHeaderViewLayout() {
         self.headerView.snp.makeConstraints { (make) in
             make.top.bottom.equalToSuperview()
@@ -78,54 +85,44 @@ extension RiskScheduleViewController: MLUserInterfaceProtocol {
     }
 }
 
-extension RiskScheduleViewController: RiskSchedulePagePresentable {
+extension RiskFollowViewController: RiskFollowPagePresentable {
     
 }
 
-extension RiskScheduleViewController: RiskScheduleViewControllable {
+extension RiskFollowViewController: RiskFollowViewControllable {
     
 }
 
-extension RiskScheduleViewController: UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
-    }
+extension RiskFollowViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         do {
             let listener = try self.listener.unwrap()
-            let count = listener.numberOfRows(at: section)
-            return try count.unwrap()
+            return listener.numberOfRows(in: section)
         } catch { return 0 }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withClass: RiskScheduleTableViewCell.self)
+        let cell = tableView.dequeueReusableCell(withClass: RiskFollowTableViewCell.self)
         do {
             let listener = try self.listener.unwrap()
-            let item = listener.queryRiskArrange(with: indexPath)
-            try cell.refreshSubviews(with: item.unwrap())
-        } catch { MolueLogger.UIModule.error(error) }
+            let count = listener.numberOfRows(in: indexPath.section) - 1
+            let position = RiskFollowPosition.create(with: indexPath.row, max: count)
+            let item = listener.queryPerilAction(with: indexPath)
+            try cell.refreshSubviews(with: item.unwrap(), position: position)
+        } catch {
+            MolueLogger.UIModule.message(error)
+        }
         return cell
-    }}
+    }
+}
 
-extension RiskScheduleViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header: RiskArrangeSectionView = RiskArrangeSectionView.createFromXib()
-        let title = section == 0 ? "隐患步骤(已完成)" : "隐患步骤(未完成)"
-        header.refreshSubviews(with: title)
-        return header
-    }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        do {
-            let listener = try self.listener.unwrap()
-            let count = listener.numberOfRows(at: section)
-            return try count.unwrap() > 0 ? 35 : 0
-        } catch { return 0 }
-    }
-    
+extension RiskFollowViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
+        return 80
     }
+}
+
+extension RiskFollowViewController: UISearchBarDelegate {
+    
 }

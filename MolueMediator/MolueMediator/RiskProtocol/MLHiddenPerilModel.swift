@@ -86,6 +86,8 @@ public class MLPerilRectifyStep: Mappable {
 
 
 public class MLHiddenPerilAction: Mappable {
+    public required init() {}
+    
     public required init?(map: Map) {
         actionTime <- map["action_time"]
         actionUser <- map["action_user"]
@@ -179,7 +181,15 @@ public enum PotentialRiskStatus: CaseIterable, CustomStringConvertible {
         case .finish:
             return "done"
         case .closed:
-            return ""
+            return "verified"
         }
+    }
+    
+    public static func defaultActions() -> [MLHiddenPerilAction] {
+        return self.allCases.compactMap({ status in
+            let perilAction = MLHiddenPerilAction()
+            perilAction.action = status.toService
+            return perilAction
+        })
     }
 }

@@ -56,7 +56,7 @@ final class RiskArrangePageInteractor: MoluePresenterInteractable {
     
     private var arrangeList = [String]()
     
-    private var isNeed: Bool = false
+    private var needRectify: Bool = false
     
     lazy var hiddenPeril: MLHiddenPerilItem? = {
         do {
@@ -101,8 +101,10 @@ extension RiskArrangePageInteractor: RiskArrangePresentableListener {
         }
     }
     
-    func createSelectedDate() throws -> String {
-        if self.isNeed == false { return "" }
+    func createSelectedDate() throws -> String? {
+        guard self.needRectify == true else {
+            return MolueLogger.UIModule.allowNil("")
+        }
         guard let date = self.selectedDate else {
             throw MolueCommonError(with: "请选择截止日期")
         }
@@ -114,9 +116,9 @@ extension RiskArrangePageInteractor: RiskArrangePresentableListener {
             var parameters: [String : Any] = [String : Any]()
             let rectifySteps = try self.createArrangeList()
             parameters["rectify_steps"] = rectifySteps
-            parameters["need_rectification"] = self.isNeed
             let rectifyDate = try self.createSelectedDate()
-            parameters["rectify_date"] = nil
+            parameters["rectify_date"] = rectifyDate
+            parameters["need_rectification"] = self.needRectify
             return parameters
         } catch {
             let message = error.localizedDescription
