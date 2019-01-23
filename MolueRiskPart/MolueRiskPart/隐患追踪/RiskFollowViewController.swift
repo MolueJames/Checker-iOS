@@ -8,6 +8,7 @@
 
 import UIKit
 import RxSwift
+import MolueCommon
 import MolueMediator
 import MolueFoundation
 import MolueUtilities
@@ -20,6 +21,8 @@ protocol RiskFollowPresentableListener: class {
     
     func jumpToRiskDetailController()
     
+    func searchHiddenPeril(with text: String)
+    
     func queryPerilAction(with indexPath: IndexPath) -> MLHiddenPerilAction?
     
     var moreCommand: PublishSubject<Void> { get }
@@ -30,7 +33,13 @@ final class RiskFollowViewController: MLBaseViewController  {
     var listener: RiskFollowPresentableListener?
     @IBOutlet weak var searchBar: UISearchBar! {
         didSet {
+            let color = MLCommonColor.appDefault
+            let size = CGSize(width: 1, height: 1)
+            let image = UIImage(color: color, size: size)
+            searchBar.backgroundImage = image
             searchBar.delegate = self
+            let textColor = MLCommonColor.detailText
+            searchBar.textField!.textColor = textColor
         }
     }
     
@@ -39,24 +48,17 @@ final class RiskFollowViewController: MLBaseViewController  {
             tableView.dataSource = self
             tableView.delegate = self
             tableView.register(xibWithCellClass: RiskFollowTableViewCell.self)
-            tableView.tableHeaderView = self.headerView
         }
     }
     
     lazy var headerView: RiskArrangeHeaderView = {
         let headerView: RiskArrangeHeaderView = RiskArrangeHeaderView.createFromXib()
-        self.setupHeaderViewConfiguration(with: headerView)
-        return headerView
-    }()
-    
-    func setupHeaderViewConfiguration(with headerView: RiskArrangeHeaderView) {
         do {
             let listener = try self.listener.unwrap()
-            let item = try listener.queryHiddenPeril().unwrap()
-            headerView.refreshSubviews(with: item)
             headerView.moreCommand = listener.moreCommand
         } catch { MolueLogger.UIModule.error(error) }
-    }
+        return headerView
+    }()
     
     //MARK: View Controller Life Cycle
     override func viewDidLoad() {
@@ -72,21 +74,36 @@ extension RiskFollowViewController: MLUserInterfaceProtocol {
     
     func updateUserInterfaceElements() {
         self.title = "隐患追踪"
-        self.updateHeaderViewLayout()
     }
     
-    func updateHeaderViewLayout() {
+    func refreshSubviewsWithHiddenPeril() {
         self.headerView.snp.makeConstraints { (make) in
             make.top.bottom.equalToSuperview()
             make.width.equalToSuperview()
         }
         self.tableView.layoutIfNeeded()
         self.tableView.tableHeaderView = self.headerView
+        self.tableView.reloadData()
     }
 }
 
 extension RiskFollowViewController: RiskFollowPagePresentable {
+    func clearTableHeaderView() {
+        self.tableView.tableHeaderView = nil
+        self.tableView.reloadData()
+    }
     
+    func refreshHeaderView(with item: MLHiddenPerilItem) {
+        self.tableView.tableHeaderView = self.headerView
+        do {
+            let listener = try self.listener.unwrap()
+            let item = try listener.queryHiddenPeril().unwrap()
+            self.headerView.refreshSubviews(with: item)
+        } catch {
+            MolueLogger.UIModule.message(error)
+        }
+        self.refreshSubviewsWithHiddenPeril()
+    }
 }
 
 extension RiskFollowViewController: RiskFollowViewControllable {
@@ -124,5 +141,14 @@ extension RiskFollowViewController: UITableViewDelegate {
 }
 
 extension RiskFollowViewController: UISearchBarDelegate {
+    public func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        do {
+            let listener = try self.listener.unwrap()
+            let text = try searchBar.text.unwrap()
+            listener.searchHiddenPeril(with: text)
+        } catch {
+            MolueLogger.UIModule.message(error)
+        }
+    }
     
 }

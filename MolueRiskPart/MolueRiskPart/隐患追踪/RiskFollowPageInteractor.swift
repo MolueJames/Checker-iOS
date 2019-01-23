@@ -7,6 +7,8 @@
 //
 
 import RxSwift
+import MolueNetwork
+import MolueFoundation
 import MolueUtilities
 import MolueMediator
 
@@ -15,9 +17,12 @@ protocol RiskFollowViewableRouting: class {
     func pushToRiskDetailController()
 }
 
-protocol RiskFollowPagePresentable: MolueInteractorPresentable {
+protocol RiskFollowPagePresentable: MolueInteractorPresentable, MLControllerHUDProtocol {
     var listener: RiskFollowPresentableListener? { get set }
     // 定义一些页面需要的方法, 比如刷新页面的显示内容等.
+    func refreshHeaderView(with item: MLHiddenPerilItem)
+    
+    func clearTableHeaderView()
 }
 
 final class RiskFollowPageInteractor: MoluePresenterInteractable {
@@ -56,14 +61,7 @@ final class RiskFollowPageInteractor: MoluePresenterInteractable {
         return defaults
     }
     
-    lazy var hiddenPeril: MLHiddenPerilItem? = {
-        do {
-            let listener = try self.listener.unwrap()
-            return try listener.hiddenPeril.unwrap()
-        } catch {
-            return MolueLogger.UIModule.allowNil(error)
-        }
-    }()
+    var hiddenPeril: MLHiddenPerilItem?
     
     required init(presenter: RiskFollowPagePresentable) {
         self.presenter = presenter
@@ -76,6 +74,69 @@ extension RiskFollowPageInteractor: RiskFollowRouterInteractable {
 }
 
 extension RiskFollowPageInteractor: RiskFollowPresentableListener {
+    func searchHiddenPeril(with text: String) {
+        if text.isEmpty == false {
+            let request = MoluePerilService.queryPerilDetail(with: text)
+            request.handleSuccessResultToObjc { [weak self] (result: MLHiddenPerilItem?) in
+                do {
+                    let strongSelf = try self.unwrap()
+                    strongSelf.handleSuccessResult(with: result)
+                } catch { MolueLogger.network.message(error) }
+            }
+            request.handleFailureResponse { [weak self] (error) in
+                do {
+                    let strongSelf = try self.unwrap()
+                    strongSelf.handleFailureResult(with: error)
+                } catch { MolueLogger.network.message(error) }
+            }
+            MolueRequestManager().doRequestStart(with: request)
+        } else {
+            self.showWarningMessage(with: "请输入隐患编号")
+        }
+    }
+    
+    func showWarningMessage(with message: String) {
+        do {
+            let presenter = try self.presenter.unwrap()
+            presenter.showWarningHUD(text: message)
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+    }
+    
+    func handleFailureResult(with error: Error) {
+        
+        do {
+            let presenter = try self.presenter.unwrap()
+            self.hiddenPeril = nil
+            let message = self.queryErrorMessage(with: error)
+            presenter.showFailureHUD(text: message)
+            presenter.clearTableHeaderView()
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+    }
+    
+    func queryErrorMessage(with error: Error) -> String {
+        switch error {
+        case MolueStatusError.requestIsNotExisted:
+            return "未找到对应的隐患"
+        default:
+            return error.localizedDescription
+        }
+    }
+    
+    func handleSuccessResult(with result: MLHiddenPerilItem?) {
+        do {
+            let presenter = try self.presenter.unwrap()
+            let hiddenPeril = try result.unwrap()
+            self.hiddenPeril = hiddenPeril
+            presenter.refreshHeaderView(with: hiddenPeril)
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+    }
+    
     func numberOfRows(in section: Int) -> Int {
         do {
             let hiddenPeril = try self.hiddenPeril.unwrap()

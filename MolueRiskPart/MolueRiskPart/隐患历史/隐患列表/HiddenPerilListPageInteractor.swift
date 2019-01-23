@@ -18,8 +18,6 @@ protocol HiddenPerilListViewableRouting: class {
     func pushToRiskArrangeController()
     func pushToRiskRectifyController()
     func pushToRiskScheduleController()
-    
-    func pushToRiskFollowController()
 }
 
 protocol HiddenPerilListPagePresentable: MolueInteractorPresentable, MLControllerHUDProtocol {
@@ -157,13 +155,12 @@ extension HiddenPerilListPageInteractor: HiddenPerilListPresentableListener {
                 self.pushToArrangeDetailController()
 //                router.pushToRiskFollowController()
             case .reform:
-                router.pushToRiskFollowController()
-//                self.pushToRectifyPlanedController()
+//                router.pushToRiskFollowController()
+                self.pushToRectifyPlanedController()
             case .finish:
-                router.pushToRiskRectifyController()
+                router.pushToRiskScheduleController()
             case .closed:
-                router.pushToRiskFollowController()
-//                router.pushToRiskClosedControlelr()
+                router.pushToRiskClosedControlelr()
             }
         } catch { MolueLogger.UIModule.error(error) }
     }

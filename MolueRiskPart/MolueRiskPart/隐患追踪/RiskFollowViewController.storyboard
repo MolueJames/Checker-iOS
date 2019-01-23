@@ -18,26 +18,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" searchBarStyle="minimal" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3gX-o0-lFo">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="暂无数据" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hBw-Up-tAf">
+                                <rect key="frame" x="158.5" y="297" width="58" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="molue_risk_nodata" translatesAutoresizingMaskIntoConstraints="NO" id="0hl-bh-Rk8">
+                                <rect key="frame" x="170" y="252" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="hz7-Y6-uEl"/>
+                                    <constraint firstAttribute="width" constant="35" id="oaG-eK-ngB"/>
+                                </constraints>
+                            </imageView>
+                            <searchBar contentMode="scaleToFill" placeholder="请输入隐患编号" translatesAutoresizingMaskIntoConstraints="NO" id="3gX-o0-lFo">
                                 <rect key="frame" x="0.0" y="20" width="375" height="45"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="d5G-Qg-S5w"/>
                                 </constraints>
-                                <color key="barTintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <offsetWrapper key="searchTextPositionAdjustment" horizontal="0.0" vertical="1"/>
+                                <offsetWrapper key="searchFieldBackgroundPositionAdjustment" horizontal="0.0" vertical="0.0"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="0.0" height="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="P6X-R0-kgA">
                                 <rect key="frame" x="0.0" y="65" width="375" height="602"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="3gX-o0-lFo" firstAttribute="top" secondItem="D4S-Qo-rqh" secondAttribute="top" id="IBo-2s-zP8"/>
                             <constraint firstItem="P6X-R0-kgA" firstAttribute="leading" secondItem="D4S-Qo-rqh" secondAttribute="leading" id="L13-gF-VQJ"/>
                             <constraint firstItem="D4S-Qo-rqh" firstAttribute="bottom" secondItem="P6X-R0-kgA" secondAttribute="bottom" id="PCv-dC-6QY"/>
+                            <constraint firstItem="hBw-Up-tAf" firstAttribute="top" secondItem="0hl-bh-Rk8" secondAttribute="bottom" constant="10" id="RHU-vO-ckb"/>
+                            <constraint firstItem="hBw-Up-tAf" firstAttribute="centerX" secondItem="x1i-qB-yN6" secondAttribute="centerX" id="YhE-qu-olO"/>
                             <constraint firstItem="P6X-R0-kgA" firstAttribute="top" secondItem="3gX-o0-lFo" secondAttribute="bottom" id="aHC-zX-cVG"/>
+                            <constraint firstItem="0hl-bh-Rk8" firstAttribute="centerY" secondItem="x1i-qB-yN6" secondAttribute="centerY" constant="-64" id="aoH-Bo-ZTN"/>
                             <constraint firstItem="3gX-o0-lFo" firstAttribute="leading" secondItem="D4S-Qo-rqh" secondAttribute="leading" id="b6g-hk-JWP"/>
+                            <constraint firstItem="0hl-bh-Rk8" firstAttribute="centerX" secondItem="x1i-qB-yN6" secondAttribute="centerX" id="ftb-fF-ZoI"/>
                             <constraint firstItem="3gX-o0-lFo" firstAttribute="trailing" secondItem="D4S-Qo-rqh" secondAttribute="trailing" id="opx-Pw-wS8"/>
                             <constraint firstItem="D4S-Qo-rqh" firstAttribute="trailing" secondItem="P6X-R0-kgA" secondAttribute="trailing" id="sY3-b0-07O"/>
                         </constraints>
@@ -50,7 +75,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z6a-kp-3nZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="183" y="148"/>
+            <point key="canvasLocation" x="181.59999999999999" y="147.97601199400302"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="molue_risk_nodata" width="48" height="48"/>
+    </resources>
 </document>

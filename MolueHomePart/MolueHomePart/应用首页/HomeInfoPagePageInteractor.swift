@@ -59,10 +59,6 @@ final class HomeInfoPagePageInteractor: MoluePresenterInteractable {
 }
 
 extension HomeInfoPagePageInteractor: HomeInfoPageRouterInteractable {
-    var hiddenPeril: MLHiddenPerilItem? {
-        return nil
-    }
-    
     func removeSelectedItemAtIndexPath() {
         
     }

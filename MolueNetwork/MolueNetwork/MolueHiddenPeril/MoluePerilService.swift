@@ -41,14 +41,14 @@ public struct MoluePerilService {
         let path: String = "api/task/\(taskId)/hidden_dangers/"
         return MolueDataRequest(parameter: nil, method: .get, path: path)
     }
-    ///  上传整改步骤计划
-    ///
-    /// - Parameters:
-    ///   - parameters: 隐患步骤, 是否限时, 限定整改时间
-    ///   - perilId: 隐患的Id
-    /// - Returns: 网络请求对象
+    
     public static func uploadRectifySteps(with parameters: [String : Any], perilId: String) -> MolueDataRequest {
         let path: String = "api/hidden_dangers/\(perilId)/approved/"
         return MolueDataRequest(parameter: parameters, method: .post, path: path, encoding: JSONEncoding.default)
+    }
+    
+    public static func queryPerilDetail(with perilId: String) -> MolueDataRequest {
+        let path: String = "api/hidden_dangers/\(perilId)/"
+        return MolueDataRequest(parameter: nil, method: .get, path: path)
     }
 }

@@ -28,7 +28,7 @@ class RiskFollowTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        self.statusView.layer.cornerRadius = 10
+        self.statusView.layer.cornerRadius = 8.5
     }
 
     @IBOutlet weak var upsideView: UIView!
@@ -54,8 +54,13 @@ class RiskFollowTableViewCell: UITableViewCell {
     }
     
     func refreshSubviews(with item: MLHiddenPerilAction, position: RiskFollowPosition) {
+        self.nameLabel.text = item.actionUser?.screenName ?? "暂未执行"
+        self.dateLabel.text = self.queryDate(with: item.actionTime)
         let action = self.queryAction(with: item.action)
         self.statusLabel.text = action
+        let status = self.queryStatus(with: item.action)
+        self.nameTitleLabel.text = "\(status)人员:"
+        self.dateTitleLabel.text = "\(status)时间:"
         self.refreshSubviews(with: position)
         self.updateTextColor(with: item)
     }
@@ -67,6 +72,13 @@ class RiskFollowTableViewCell: UITableViewCell {
         let color = isAction ? actioned : defaults
         self.statusView.backgroundColor = color
         self.statusLabel.textColor = color
+    }
+    
+    func queryDate(with date: String?) -> String {
+        do {
+            let format: String = "yyyy-MM-dd hh:mm:ss"
+            return try date.unwrap().transfer(to: format)
+        } catch { return "暂未执行" }
     }
     
     func refreshSubviews(with position: RiskFollowPosition) {
@@ -98,5 +110,20 @@ class RiskFollowTableViewCell: UITableViewCell {
         } catch {
             return MolueLogger.UIModule.allowNil(error)
         }
+    }
+    
+    func queryStatus(with action: String?) -> String {
+        do {
+            switch try action.unwrap() {
+            case "approved":
+                return "安排"
+            case "done":
+                return "完成"
+            case "verified":
+                return "验收"
+            default:
+                return "登记"
+            }
+        } catch { return "" }
     }
 }

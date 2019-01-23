@@ -53,7 +53,6 @@ public protocol RiskDetailComponentBuildable: MolueComponentBuildable {
 
 public protocol RiskFollowInteractListener: class {
     //用于定义其他的Component需要定义的协议方法
-    var hiddenPeril: MLHiddenPerilItem? { get }
 }
 
 public protocol RiskFollowComponentBuildable: MolueComponentBuildable {
