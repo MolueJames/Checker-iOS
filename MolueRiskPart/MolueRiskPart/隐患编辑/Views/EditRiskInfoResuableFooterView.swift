@@ -16,8 +16,6 @@ import JGProgressHUD
 class EditRiskInfoResuableFooterView: UICollectionReusableView {
     private let disposeBag = DisposeBag()
     
-    public var submitInfoCommand: PublishSubject<MLHiddenPerilItem>?
-    
     private var riskLevel: PotentialRiskLevel?
     
     private var riskClass: MLRiskClassification?
@@ -27,7 +25,7 @@ class EditRiskInfoResuableFooterView: UICollectionReusableView {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        self.submitInfoCommand = PublishSubject<MLHiddenPerilItem>()
+//        self.submitInfoCommand = PublishSubject<MLHiddenPerilItem>()
     }
     
     @IBOutlet weak var riskClassClickView: MLCommonClickView! {
@@ -60,13 +58,6 @@ class EditRiskInfoResuableFooterView: UICollectionReusableView {
         MoluePageNavigator.shared.pushViewController(controller)
     }
     
-    @IBOutlet weak var reasonRemarkView: MLCommonRemarkView! {
-        didSet {
-            reasonRemarkView.defaultValue(title: "请填写当前的隐患说明", limit: 200)
-        }
-    }
-    
-    //TODO: 添加隐患级别
     @IBOutlet weak var riskLevelClickView: MLCommonClickView! {
         didSet {
             riskLevelClickView.defaultValue(title: "隐患级别", placeholder: "请选择隐患级别")
@@ -83,71 +74,68 @@ class EditRiskInfoResuableFooterView: UICollectionReusableView {
     }
     
     private enum riskInfoRrror: LocalizedError {
-        case typeInvalid
-        case unitInvalid
+        case classInvalid
+        case pointInvalid
         case levelInvalid
-        case reasonInvalid
     
         public var errorDescription: String? {
             switch self {
-            case .typeInvalid:
+            case .classInvalid:
                 return "请选择隐患类别"
-            case .unitInvalid:
+            case .pointInvalid:
                 return "请选择风险单元"
             case .levelInvalid:
                 return "请选择隐患级别"
-            case .reasonInvalid:
-                return "请填写当前的隐患说明"
             }
         }
     }
     
-    @IBAction func submitButtonClicked(_ sender: UIButton) {
-        do {
-            let submitInfoCommand = try self.submitInfoCommand.unwrap()
-            guard let classification = self.riskClass else{
-                submitInfoCommand.onError(riskInfoRrror.typeInvalid)
-                return
-            }
-            guard let level = self.riskLevel else {
-                submitInfoCommand.onError(riskInfoRrror.levelInvalid)
-                return
-            }
-            guard let point = self.riskPoint else {
-                submitInfoCommand.onError(riskInfoRrror.unitInvalid)
-                return
-            }
-            let memo = self.reasonRemarkView.remarkText()
-            guard memo.isEmpty == false else {
-                submitInfoCommand.onError(riskInfoRrror.reasonInvalid)
-                return
-            }
-            
-            let hiddenPeril: MLHiddenPerilItem = {
-                let item = MLHiddenPerilItem()
-                item.classification = classification
-                item.grade = level.toService
-                item.perilMemo = memo
-                item.risk = point
-                return item
-            }()
-            submitInfoCommand.onNext(hiddenPeril)
-        } catch {
-            MolueLogger.UIModule.error(error)
-        }
-    }
+//    @IBAction func submitButtonClicked(_ sender: UIButton) {
+//        do {
+//            let submitInfoCommand = try self.submitInfoCommand.unwrap()
+//            guard let classification = self.riskClass else{
+//                submitInfoCommand.onError(riskInfoRrror.typeInvalid)
+//                return
+//            }
+//            guard let level = self.riskLevel else {
+//                submitInfoCommand.onError(riskInfoRrror.levelInvalid)
+//                return
+//            }
+//            guard let point = self.riskPoint else {
+//                submitInfoCommand.onError(riskInfoRrror.unitInvalid)
+//                return
+//            }
+//            let memo = self.reasonRemarkView.remarkText()
+//            guard memo.isEmpty == false else {
+//                submitInfoCommand.onError(riskInfoRrror.reasonInvalid)
+//                return
+//            }
+//
+//            let hiddenPeril: MLHiddenPerilItem = {
+//                let item = MLHiddenPerilItem()
+//                item.classification = classification
+//                item.grade = level.toService
+//                item.perilMemo = memo
+//                item.risk = point
+//                return item
+//            }()
+//            submitInfoCommand.onNext(hiddenPeril)
+//        } catch {
+//            MolueLogger.UIModule.error(error)
+//        }
+//    }
     
-    func refreshSubviews(with attachment: MLTaskAttachment, riskUnit: MLRiskPointDetail) {
-        self.riskPoint = riskUnit
-        do {
-            let unitName = try riskUnit.unitName.unwrap()
-            self.riskPointClickView.update(description: unitName)
-        } catch { MolueLogger.UIModule.message(error) }
-        do {
-            let remark = try attachment.remark.unwrap()
-            self.reasonRemarkView.updateRemark(with: remark)
-        } catch { MolueLogger.UIModule.message(error) }
-    }
+//    func refreshSubviews(with attachment: MLTaskAttachment, riskUnit: MLRiskPointDetail) {
+//        self.riskPoint = riskUnit
+//        do {
+//            let unitName = try riskUnit.unitName.unwrap()
+////            self.riskPointClickView.update(description: unitName)
+//        } catch { MolueLogger.UIModule.message(error) }
+//        do {
+//            let remark = try attachment.remark.unwrap()
+////            self.reasonRemarkView.updateRemark(with: remark)
+//        } catch { MolueLogger.UIModule.message(error) }
+//    }
 }
 
 extension EditRiskInfoResuableFooterView: RiskClassificationsInteractListener {

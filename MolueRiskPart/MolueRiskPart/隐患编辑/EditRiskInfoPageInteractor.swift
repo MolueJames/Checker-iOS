@@ -68,6 +68,8 @@ final class EditRiskInfoPageInteractor: MoluePresenterInteractable {
         }
     }()
     
+    private var problems: [String] = [String]()
+    
     private let disposeBag = DisposeBag()
     
     required init(presenter: EditRiskInfoPagePresentable) {
@@ -240,6 +242,10 @@ extension EditRiskInfoPageInteractor: EditRiskInfoRouterInteractable {
 }
 
 extension EditRiskInfoPageInteractor: EditRiskInfoPresentableListener {
+    func queryFindProblem(with indexPath: IndexPath) -> String? {
+        return "xxxx"
+    }
+    
     func querySubmitCommand() -> PublishSubject<MLHiddenPerilItem> {
         let submitCommand = PublishSubject<MLHiddenPerilItem>()
         submitCommand.subscribe(onNext: { [unowned self] (item) in
@@ -346,7 +352,19 @@ extension EditRiskInfoPageInteractor: EditRiskInfoPresentableListener {
         }
     }
     
-    func numberOfItemsInSection() -> Int? {
+    func numberOfItems(in section: Int) -> Int? {
+        if section == 0 {
+            return self.queryAttachmentCount()
+        } else {
+            return self.queryRiskProblemCount()
+        }
+    }
+    
+    func queryRiskProblemCount() -> Int? {
+        return 1
+    }
+    
+    func queryAttachmentCount() -> Int? {
         do {
             let details = try self.attachmentDetails.unwrap()
             let imageCount: Int = details.count
@@ -376,6 +394,14 @@ extension EditRiskInfoPageInteractor: EditRiskInfoPresentableListener {
     }
     
     func didSelectItemAt(indexPath: IndexPath) {
+        if indexPath.section == 0 {
+            self.jumpToPhotoBrowser(with: indexPath)
+        } else {
+            
+        }
+    }
+    
+    func jumpToPhotoBrowser(with indexPath: IndexPath) {
         let count = self.attachmentDetails?.count ?? 0
         if (indexPath.row < count) {
             self.jumpToBrowserController(with: indexPath.row)

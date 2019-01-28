@@ -15,9 +15,12 @@ import MolueFoundation
 
 protocol EditRiskInfoPresentableListener: class {
     // 定义一些当前页面需要的业务逻辑, 比如网络请求.
-    func numberOfItemsInSection() -> Int?
+//    func numberOfItemsInSection() -> Int?
+    func numberOfItems(in section: Int) -> Int?
     
     func queryAttactment(with indexPath: IndexPath) -> MLAttachmentDetail?
+    
+    func queryFindProblem(with indexPath: IndexPath) -> String?
     
     func jumpToTakePhotoController()
     
@@ -46,6 +49,7 @@ final class EditRiskInfoViewController: MLBaseViewController  {
             collectionView.register(forKind:UICollectionView.elementKindSectionFooter, withNibClass: EditRiskInfoResuableFooterView.self)
             collectionView.register(xibWithCellClass: EditRiskInfoCollectionViewCell.self)
             collectionView.register(xibWithCellClass: InsertPhotosCollectionViewCell.self)
+            collectionView.register(xibWithCellClass: AddProblemCollectionViewCell.self)
             self.flowLayout = UICollectionViewFlowLayout()
             collectionView.collectionViewLayout = self.flowLayout
         }
@@ -57,8 +61,6 @@ final class EditRiskInfoViewController: MLBaseViewController  {
             flowLayout.minimumInteritemSpacing = 10
             flowLayout.minimumInteritemSpacing = 10
             flowLayout.sectionInset = UIEdgeInsets(top: 10, left: 15, bottom: 10, right: 15)
-            let width: CGFloat = (MLConfigure.ScreenWidth - 56) / 3
-            flowLayout.itemSize = CGSize(width: width, height: width)
             flowLayout.footerReferenceSize = CGSize(width: MLConfigure.ScreenWidth, height: 375)
         }
     }
@@ -99,17 +101,26 @@ extension EditRiskInfoViewController: EditRiskInfoViewControllable {
 }
 
 extension EditRiskInfoViewController: UICollectionViewDelegate {
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 2
+    }
+    
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let kind: String = UICollectionView.elementKindSectionFooter
-        let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withClass: EditRiskInfoResuableFooterView.self, for: indexPath)
-        do {
-            let listener = try self.listener.unwrap()
-            view.submitInfoCommand = listener.querySubmitCommand()
-            let attachment = try listener.attachment.unwrap()
-            let detailRisk = try listener.detailRisk.unwrap()
-            view.refreshSubviews(with: attachment, riskUnit: detailRisk)
-        } catch { MolueLogger.UIModule.message(error) }
-        return view
+        if indexPath.section == 0 {
+            let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withClass: EditRiskInfoResuableFooterView.self, for: indexPath)
+            do {
+                let listener = try self.listener.unwrap()
+                let attachment = try listener.attachment.unwrap()
+                let detailRisk = try listener.detailRisk.unwrap()
+                //            view.refreshSubviews(with: attachment, riskUnit: detailRisk)
+            } catch { MolueLogger.UIModule.message(error) }
+            return view
+        } else {
+            let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withClass: EditRiskInfoResuableFooterView.self, for: indexPath)
+            return view
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -127,24 +138,59 @@ extension EditRiskInfoViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         do {
             let listener = try self.listener.unwrap()
-            return try listener.numberOfItemsInSection().unwrap()
+            let count = listener.numberOfItems(in: section)
+            return try count.unwrap()
         } catch { return 1 }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if indexPath.row < self.listener?.queryCurrentImageCount() ?? 0 {
-            return self.queryCollectionCell(with: collectionView, indexPath: indexPath)
+        if indexPath.section == 0 {
+            return self.queryPhotosCollectionCell(with: collectionView, indexPath: indexPath)
+        } else {
+            return self.queryProblemCollectionCell(with: collectionView, indexPath: indexPath)
         }
-        return collectionView.dequeueReusableCell(withClass: InsertPhotosCollectionViewCell.self, for: indexPath)
     }
     
-    func queryCollectionCell(with collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withClass: EditRiskInfoCollectionViewCell.self.self, for: indexPath)
+    func queryProblemCollectionCell(with collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withClass: AddProblemCollectionViewCell.self, for: indexPath)
         do {
             let listener = try self.listener.unwrap()
-            let item = listener.queryAttactment(with: indexPath)
+            let item = listener.queryFindProblem(with: indexPath)
             try cell.refreshSubviews(with: item.unwrap())
         } catch { MolueLogger.UIModule.message(error) }
         return cell
+    }
+    
+    func queryPhotosCollectionCell(with collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
+        if indexPath.row < self.listener?.queryCurrentImageCount() ?? 0 {
+            let cell = collectionView.dequeueReusableCell(withClass: EditRiskInfoCollectionViewCell.self, for: indexPath)
+            do {
+                let listener = try self.listener.unwrap()
+                let item = listener.queryAttactment(with: indexPath)
+                try cell.refreshSubviews(with: item.unwrap())
+            } catch { MolueLogger.UIModule.message(error) }
+            return cell
+        }
+        return collectionView.dequeueReusableCell(withClass: InsertPhotosCollectionViewCell.self, for: indexPath)
+    }
+}
+
+extension EditRiskInfoViewController: UICollectionViewDelegateFlowLayout {
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if indexPath.section == 0 {
+            let width: CGFloat = (MLConfigure.ScreenWidth - 56) / 3
+            return CGSize(width: width, height: width)
+        } else {
+            let width = MLConfigure.ScreenWidth
+            let height = "你好".estimateHeight(with: 15, width: width, lineSpacing: 3)
+            return CGSize(width: width, height: height)
+        }
+    }
+    
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize
+    {
+        let height: CGFloat = section == 0 ? 135 : 200
+        let width = MLConfigure.ScreenWidth
+        return CGSize(width: width, height: height)
     }
 }

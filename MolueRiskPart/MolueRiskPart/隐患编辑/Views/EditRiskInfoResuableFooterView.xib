@@ -13,7 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="EditRiskInfoResuableFooterView" id="U6b-Vx-4bR" customClass="EditRiskInfoResuableFooterView" customModule="MolueRiskPart" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="330"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="135"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4bO-le-I5f" customClass="MLCommonClickView" customModule="MolueCommon">
@@ -30,23 +30,6 @@
                         <constraint firstAttribute="height" constant="45" id="cl3-Q1-Amc"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="imO-VC-ouy" customClass="MLCommonRemarkView" customModule="MolueCommon">
-                    <rect key="frame" x="0.0" y="135" width="320" height="120"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b95-uL-qnp">
-                    <rect key="frame" x="15" y="285" width="290" height="45"/>
-                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="45" id="cxW-Mo-eHI"/>
-                    </constraints>
-                    <state key="normal" title="隐患提交">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </state>
-                    <connections>
-                        <action selector="submitButtonClicked:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="r1P-1B-OLD"/>
-                    </connections>
-                </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bXh-N3-g8U" customClass="MLCommonClickView" customModule="MolueCommon">
                     <rect key="frame" x="0.0" y="90" width="320" height="45"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -58,25 +41,17 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="lg3-oA-oOi" firstAttribute="trailing" secondItem="VXr-Tz-HHm" secondAttribute="trailing" id="585-Do-w6D"/>
-                <constraint firstItem="imO-VC-ouy" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" id="D4R-QP-OUZ"/>
                 <constraint firstItem="bXh-N3-g8U" firstAttribute="top" secondItem="lg3-oA-oOi" secondAttribute="bottom" id="HHZ-NZ-WaJ"/>
                 <constraint firstItem="4bO-le-I5f" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" id="INx-PK-4uk"/>
-                <constraint firstItem="b95-uL-qnp" firstAttribute="bottom" secondItem="VXr-Tz-HHm" secondAttribute="bottom" id="Jan-VM-iA2"/>
-                <constraint firstItem="b95-uL-qnp" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" constant="15" id="KCu-5s-ZeB"/>
-                <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="b95-uL-qnp" secondAttribute="trailing" constant="15" id="KJE-Z6-zIO"/>
                 <constraint firstItem="bXh-N3-g8U" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" id="Ovc-gi-TtZ"/>
                 <constraint firstItem="lg3-oA-oOi" firstAttribute="top" secondItem="4bO-le-I5f" secondAttribute="bottom" id="YAq-3h-ZQv"/>
                 <constraint firstItem="4bO-le-I5f" firstAttribute="trailing" secondItem="VXr-Tz-HHm" secondAttribute="trailing" id="aTC-kK-AdV"/>
                 <constraint firstItem="lg3-oA-oOi" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" id="b9a-1r-pXs"/>
-                <constraint firstItem="imO-VC-ouy" firstAttribute="top" secondItem="bXh-N3-g8U" secondAttribute="bottom" id="gfj-vc-jg5"/>
                 <constraint firstItem="4bO-le-I5f" firstAttribute="top" secondItem="VXr-Tz-HHm" secondAttribute="top" id="hax-7R-4NF"/>
-                <constraint firstItem="b95-uL-qnp" firstAttribute="top" secondItem="imO-VC-ouy" secondAttribute="bottom" constant="30" id="m21-KC-TVe"/>
-                <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="imO-VC-ouy" secondAttribute="trailing" id="u0g-6z-Zpc"/>
                 <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="bXh-N3-g8U" secondAttribute="trailing" id="w4P-ta-e7i"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
             <connections>
-                <outlet property="reasonRemarkView" destination="imO-VC-ouy" id="auN-Jx-T0T"/>
                 <outlet property="riskClassClickView" destination="4bO-le-I5f" id="TRk-kC-ZdS"/>
                 <outlet property="riskLevelClickView" destination="lg3-oA-oOi" id="dyy-Uh-Vhb"/>
                 <outlet property="riskPointClickView" destination="bXh-N3-g8U" id="wov-n8-Dax"/>
