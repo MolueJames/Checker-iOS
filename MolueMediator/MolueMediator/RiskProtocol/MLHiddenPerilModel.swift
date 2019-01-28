@@ -20,10 +20,11 @@ public class MLHiddenPerilItem: Mappable {
         createdUser <- map["user_of_created"]
         approvedDate <- map["date_approved"]
         enterpriseId <- map["enterprise_id"]
-        rectifySteps <- map["rectify_steps"]
+        rectifySteps <- map["rectify_steps"] //TODO : Delete
         rectifyDate <- map["rectify_date"]
         attachments <- map["attachments"]
         traceNo <- map["source_trace_no"]
+        situations <- map["situations"]
         actions <- map["actions"]
         updated <- map["updated"]
         created <- map["created"]
@@ -38,6 +39,7 @@ public class MLHiddenPerilItem: Mappable {
     public func mapping(map: Map) {
         classification?.code >>> map["classification_id"]
         attachments >>> map["attachments"]
+        situations >>> map["situations"]
         risk?.unitId >>> map["risk_id"]
         perilMemo >>> map["memo"]
         source >>> map["source"]
@@ -45,7 +47,8 @@ public class MLHiddenPerilItem: Mappable {
     }
     
     public var classification: MLRiskClassification?
-    public var rectifySteps: [MLPerilRectifyStep]?
+    public var situations: [MLHiddenPerilSituation]?
+    public var rectifySteps: [MLPerilRectifyStep]? //TODO : Delete
     public var attachments: [MLAttachmentDetail]?
     public var actions: [MLHiddenPerilAction]?
     public var approvedUser: MolueUserInfo?
@@ -65,18 +68,39 @@ public class MLHiddenPerilItem: Mappable {
     public var grade: String?
 }
 
-
-public class MLPerilRectifyStep: Mappable {
+public class MLHiddenPerilSituation: Mappable {
+    public required init?(map: Map) {
+        improvement <- map["improvement"]
+        orderKey <- map["order_key"]
+        content <- map["content"]
+        situationId <- map["id"]
+        status <- map["status"]
+    }
     
+    public func mapping(map: Map) {
+        improvement >>> map["improvement"]
+        content >>> map["content"]
+    }
+    
+    public var improvement: String?
+    public var situationId: Int?
+    public var content: String?
+    public var status: String?
+    public var orderKey: Int?
+}
+
+
+public class MLPerilRectifyStep: Mappable { //TODO : Delete
+
     public required init?(map: Map) {
         orderKey <- map["order_key"]
         status <- map["status"]
         title <- map["title"]
         stepId <- map["id"]
     }
-    
+
     public func mapping(map: Map) {
-        
+
     }
     public var status: String?
     public var orderKey: Int?
