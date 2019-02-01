@@ -24,8 +24,11 @@ public class MLCommonRemarkView: UIView {
         self.updateViewElements()
     }
     
+    @discardableResult
     override public func becomeFirstResponder() -> Bool {
-        return self.remarkTextView.becomeFirstResponder()
+        let become = self.remarkTextView.becomeFirstResponder()
+        self.remarkTextView.scrollToBottom()
+        return become
     }
     
     @discardableResult

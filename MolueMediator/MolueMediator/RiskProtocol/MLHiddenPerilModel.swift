@@ -69,6 +69,10 @@ public class MLHiddenPerilItem: Mappable {
 }
 
 public class MLHiddenPerilSituation: Mappable {
+    public init(_ content: String) {
+        self.content = content
+    }
+    
     public required init?(map: Map) {
         improvement <- map["improvement"]
         orderKey <- map["order_key"]

@@ -1038,7 +1038,7 @@ public extension String {
         return NSString(string: self).boundingRect(with: size, options: options, attributes:textFontAttributes, context: nil)
     }
     
-    public func estimateHeight(with fontSize: CGFloat, width: CGFloat, lineSpacing: CGFloat) -> CGFloat {
+    public func estimateHeight(with fontSize: CGFloat, width: CGFloat, lineSpacing: CGFloat = 3) -> CGFloat {
         let frame = self.estimateFrame(with: fontSize, width: width, lineSpacing: lineSpacing)
         return frame.size.height
     }

@@ -87,6 +87,8 @@
 		1AD36D1E21F9EBB200AB0CB5 /* AddProblemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AD36D1C21F9EBB200AB0CB5 /* AddProblemCollectionViewCell.xib */; };
 		1AD36D2121FD7CD900AB0CB5 /* AddProblemResuableFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD36D1F21FD7CD900AB0CB5 /* AddProblemResuableFooterView.swift */; };
 		1AD36D2221FD7CD900AB0CB5 /* AddProblemResuableFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AD36D2021FD7CD900AB0CB5 /* AddProblemResuableFooterView.xib */; };
+		1AD36D2521FF317100AB0CB5 /* EditSituationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD36D2421FF317100AB0CB5 /* EditSituationViewController.swift */; };
+		1AD36D2721FF31E900AB0CB5 /* EditSituationViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AD36D2621FF31E900AB0CB5 /* EditSituationViewController.storyboard */; };
 		1AD9D65221E24D8A002A2BCA /* HiddenPerilListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD9D64F21E24D8A002A2BCA /* HiddenPerilListViewController.swift */; };
 		1AD9D65321E24D8A002A2BCA /* HiddenPerilListPageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD9D65021E24D8A002A2BCA /* HiddenPerilListPageInteractor.swift */; };
 		1AD9D65421E24D8A002A2BCA /* HiddenPerilListBuilderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD9D65121E24D8A002A2BCA /* HiddenPerilListBuilderRouter.swift */; };
@@ -209,6 +211,8 @@
 		1AD36D1C21F9EBB200AB0CB5 /* AddProblemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddProblemCollectionViewCell.xib; sourceTree = "<group>"; };
 		1AD36D1F21FD7CD900AB0CB5 /* AddProblemResuableFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProblemResuableFooterView.swift; sourceTree = "<group>"; };
 		1AD36D2021FD7CD900AB0CB5 /* AddProblemResuableFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddProblemResuableFooterView.xib; sourceTree = "<group>"; };
+		1AD36D2421FF317100AB0CB5 /* EditSituationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSituationViewController.swift; sourceTree = "<group>"; };
+		1AD36D2621FF31E900AB0CB5 /* EditSituationViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditSituationViewController.storyboard; sourceTree = "<group>"; };
 		1AD9D64F21E24D8A002A2BCA /* HiddenPerilListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiddenPerilListViewController.swift; sourceTree = "<group>"; };
 		1AD9D65021E24D8A002A2BCA /* HiddenPerilListPageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiddenPerilListPageInteractor.swift; sourceTree = "<group>"; };
 		1AD9D65121E24D8A002A2BCA /* HiddenPerilListBuilderRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiddenPerilListBuilderRouter.swift; sourceTree = "<group>"; };
@@ -440,6 +444,7 @@
 		1ACD0A1821A05D8000793AAC /* 隐患编辑 */ = {
 			isa = PBXGroup;
 			children = (
+				1AD36D2321FF310900AB0CB5 /* Children */,
 				1AF7765421E7423B0014744E /* 隐患级别 */,
 				1AF7763821E6D6DD0014744E /* 隐患位置 */,
 				1AF7763721E6D6D80014744E /* 隐患分类 */,
@@ -516,6 +521,15 @@
 				1AD36D1121F6118D00AB0CB5 /* RiskFollowBuilderRouter.swift */,
 			);
 			path = "隐患追踪";
+			sourceTree = "<group>";
+		};
+		1AD36D2321FF310900AB0CB5 /* Children */ = {
+			isa = PBXGroup;
+			children = (
+				1AD36D2421FF317100AB0CB5 /* EditSituationViewController.swift */,
+				1AD36D2621FF31E900AB0CB5 /* EditSituationViewController.storyboard */,
+			);
+			path = Children;
 			sourceTree = "<group>";
 		};
 		1AD9D64E21E24388002A2BCA /* 隐患列表 */ = {
@@ -720,6 +734,7 @@
 			files = (
 				1AF7765C21E742BB0014744E /* HiddenPerilLevelViewController.storyboard in Resources */,
 				1AD36D2221FD7CD900AB0CB5 /* AddProblemResuableFooterView.xib in Resources */,
+				1AD36D2721FF31E900AB0CB5 /* EditSituationViewController.storyboard in Resources */,
 				1AF65C7821E42C6A00813638 /* RiskClosedViewController.storyboard in Resources */,
 				1AD36D1621F611A800AB0CB5 /* RiskFollowViewController.storyboard in Resources */,
 				1AD9D66121E777A9002A2BCA /* RiskDetailSectionHeaderView.xib in Resources */,
@@ -814,6 +829,7 @@
 				1A3465D92197280F00EBA57C /* RiskArrangeHeaderView.swift in Sources */,
 				1AF7766021E749DE0014744E /* HiddenPerilListTableViewCell.swift in Sources */,
 				1AF7764421E6D77C0014744E /* RiskUnitPositionBuilderRouter.swift in Sources */,
+				1AD36D2521FF317100AB0CB5 /* EditSituationViewController.swift in Sources */,
 				1AD36CF921F4B1B700AB0CB5 /* RiskScheduleViewController.swift in Sources */,
 				1AD36CFA21F4B1B700AB0CB5 /* RiskSchedulePageInteractor.swift in Sources */,
 				1AD9D65421E24D8A002A2BCA /* HiddenPerilListBuilderRouter.swift in Sources */,
@@ -1011,7 +1027,7 @@
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = MolueRiskPart/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1044,7 +1060,7 @@
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = MolueRiskPart/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

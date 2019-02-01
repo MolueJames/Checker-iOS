@@ -11,7 +11,7 @@ import MolueUtilities
 import MolueCommon
 import Gallery
 
-protocol EditRiskInfoRouterInteractable: GalleryControllerDelegate, SKPhotoBrowserDelegate {
+protocol EditRiskInfoRouterInteractable: GalleryControllerDelegate, SKPhotoBrowserDelegate, EditSituationProtocol {
     var viewRouter: EditRiskInfoViewableRouting? { get set }
     var listener: EditRiskInfoInteractListener? { get set }
 }
@@ -35,6 +35,29 @@ final class EditRiskInfoViewableRouter: MolueViewableRouting {
 }
 
 extension EditRiskInfoViewableRouter: EditRiskInfoViewableRouting {
+    func presentController(editor: UIAlertAction, delete: UIAlertAction, cancel: UIAlertAction) {
+        do {
+            let alert = UIAlertController(title: "请选择对当前步骤操作", message: nil, preferredStyle: .actionSheet)
+            alert.addActions([editor, delete, cancel])
+            let navigator = try self.controller.unwrap()
+            navigator.doPresentController(alert, animated: true, completion: nil)
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+    }
+    
+    func presentToEditSituation(with situation: MLHiddenPerilSituation?) {
+        do {
+            let navigator = try self.controller.unwrap()
+            let controller = EditSituationViewController.initializeFromStoryboard()
+            controller.modalPresentationStyle = .overCurrentContext
+            controller.delegate = self.interactor
+            controller.situation = situation
+            navigator.doPresentController(controller, animated: false, completion: nil)
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+    }
     
     func popToPreviewController() {
         do {

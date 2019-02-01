@@ -15,26 +15,28 @@ import MolueFoundation
 
 protocol EditRiskInfoPresentableListener: class {
     // 定义一些当前页面需要的业务逻辑, 比如网络请求.
-//    func numberOfItemsInSection() -> Int?
     func numberOfItems(in section: Int) -> Int?
     
     func queryAttactment(with indexPath: IndexPath) -> MLAttachmentDetail?
     
+    func submitHiddenPerilItem(with hiddenPeril: MLHiddenPerilItem)
+    
     func queryFindProblem(with indexPath: IndexPath) -> String?
     
-    func jumpToTakePhotoController()
+    func queryInsertCommand() -> PublishSubject<Void>
     
-    func jumpToQuickCheckController()
+    func submitHiddenPerilItem(with error: Error)
     
-    func queryCurrentImageCount() -> Int?
+    func queryDetailRisk() -> MLRiskPointDetail?
     
     func didSelectItemAt(indexPath: IndexPath)
     
-    var detailRisk: MLRiskPointDetail? { get }
+    func queryCurrentImageCount() -> Int?
     
-    var attachment: MLTaskAttachment? { get }
+    func jumpToQuickCheckController()
     
-    func querySubmitCommand() -> PublishSubject<MLHiddenPerilItem>
+    func jumpToTakePhotoController()
+    
 }
 
 final class EditRiskInfoViewController: MLBaseViewController  {
@@ -46,7 +48,9 @@ final class EditRiskInfoViewController: MLBaseViewController  {
         didSet {
             collectionView.dataSource = self
             collectionView.delegate = self
-            collectionView.register(forKind:UICollectionView.elementKindSectionFooter, withNibClass: EditRiskInfoResuableFooterView.self)
+            collectionView.register(forKind:UICollectionView.elementKindSectionFooter, withNibClass:
+                EditRiskInfoResuableFooterView.self)
+            collectionView.register(forKind:UICollectionView.elementKindSectionFooter, withNibClass: AddProblemResuableFooterView.self)
             collectionView.register(xibWithCellClass: EditRiskInfoCollectionViewCell.self)
             collectionView.register(xibWithCellClass: InsertPhotosCollectionViewCell.self)
             collectionView.register(xibWithCellClass: AddProblemCollectionViewCell.self)
@@ -60,19 +64,34 @@ final class EditRiskInfoViewController: MLBaseViewController  {
             flowLayout.scrollDirection = .vertical
             flowLayout.minimumInteritemSpacing = 10
             flowLayout.minimumInteritemSpacing = 10
-            flowLayout.sectionInset = UIEdgeInsets(top: 10, left: 15, bottom: 10, right: 15)
-            flowLayout.footerReferenceSize = CGSize(width: MLConfigure.ScreenWidth, height: 375)
+        }
+    }
+    
+    private var footerView: EditRiskInfoResuableFooterView?
+    
+    lazy var rightBarItem: UIBarButtonItem = {
+        let selector = #selector(rightBarItemClicked)
+        return UIBarButtonItem(title: "提交", style: .plain, target: self, action: selector)
+    }()
+    
+    @IBAction func rightBarItemClicked(sender: UIBarButtonItem) {
+        guard let listener = self.listener else { return }
+        do {
+            let footerView = try self.footerView.unwrap()
+            let perilItem = try footerView.queryHiddenPeril()
+            listener.submitHiddenPerilItem(with: perilItem)
+        } catch  {
+            if let error = error as? EditRiskInfoRrror {
+                listener.submitHiddenPerilItem(with: error)
+            }
+            MolueLogger.UIModule.message(error)
         }
     }
     //MARK: View Controller Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-
+        self.title = "隐患详情"
     }
 }
 
@@ -82,7 +101,7 @@ extension EditRiskInfoViewController: MLUserInterfaceProtocol {
     }
     
     func updateUserInterfaceElements() {
-        self.title = "隐患详情"
+        self.navigationItem.rightBarButtonItem = self.rightBarItem
         do {
             let listener = try self.listener.unwrap()
             listener.jumpToQuickCheckController()
@@ -101,7 +120,6 @@ extension EditRiskInfoViewController: EditRiskInfoViewControllable {
 }
 
 extension EditRiskInfoViewController: UICollectionViewDelegate {
-    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 2
     }
@@ -112,13 +130,17 @@ extension EditRiskInfoViewController: UICollectionViewDelegate {
             let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withClass: EditRiskInfoResuableFooterView.self, for: indexPath)
             do {
                 let listener = try self.listener.unwrap()
-                let attachment = try listener.attachment.unwrap()
-                let detailRisk = try listener.detailRisk.unwrap()
-                //            view.refreshSubviews(with: attachment, riskUnit: detailRisk)
+                let detailRisk = listener.queryDetailRisk()
+                try view.refreshSubviews(with: detailRisk.unwrap())
             } catch { MolueLogger.UIModule.message(error) }
+            self.footerView = view
             return view
         } else {
-            let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withClass: EditRiskInfoResuableFooterView.self, for: indexPath)
+            let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withClass: AddProblemResuableFooterView.self, for: indexPath)
+            do {
+                let listener = try self.listener.unwrap()
+                view.submitCommand = listener.queryInsertCommand()
+            } catch { MolueLogger.UIModule.message(error)}
             return view
         }
     }
@@ -178,19 +200,34 @@ extension EditRiskInfoViewController: UICollectionViewDataSource {
 extension EditRiskInfoViewController: UICollectionViewDelegateFlowLayout {
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if indexPath.section == 0 {
-            let width: CGFloat = (MLConfigure.ScreenWidth - 56) / 3
+            let width = (MLConfigure.ScreenWidth - 56) / 3
             return CGSize(width: width, height: width)
         } else {
-            let width = MLConfigure.ScreenWidth
-            let height = "你好".estimateHeight(with: 15, width: width, lineSpacing: 3)
-            return CGSize(width: width, height: height)
+            return self.querySizeForSituation(with: indexPath)
         }
     }
     
-    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize
-    {
-        let height: CGFloat = section == 0 ? 135 : 200
-        let width = MLConfigure.ScreenWidth
+    public func querySizeForSituation(with indexPath: IndexPath) -> CGSize {
+        let width: CGFloat = MLConfigure.ScreenWidth
+        do {
+            let listener = try self.listener.unwrap()
+            let item = try listener.queryFindProblem(with: indexPath).unwrap()
+            let height = item.estimateHeight(with: 15, width: width - 40)
+            return CGSize(width: width, height: height + 25)
+        } catch { return CGSize(width: width, height: 45) }
+    }
+    
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        let height: CGFloat = section == 0 ? 170 : 45
+        let width: CGFloat = MLConfigure.ScreenWidth
         return CGSize(width: width, height: height)
+    }
+    
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        if section == 0 {
+            return UIEdgeInsets(top: 10, left: 15, bottom: 10, right: 15)
+        } else {
+            return UIEdgeInsets(top: 5, left: 0, bottom: 10, right: 0)
+        }
     }
 }

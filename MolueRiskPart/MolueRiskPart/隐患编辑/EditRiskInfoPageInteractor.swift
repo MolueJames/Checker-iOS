@@ -18,9 +18,11 @@ import MolueMediator
 
 protocol EditRiskInfoViewableRouting: class {
     // 定义一些页面跳转的方法, 比如Push, Presenter等.
-    func pushToTakePhotoController(with limit: Int)
+    func presentController(editor: UIAlertAction, delete: UIAlertAction, cancel: UIAlertAction)
     func pushToPhotoBrowser(with photos: [SKPhotoProtocol], controller: UIViewController)
     func pushToPhotoBrowser(with photos: [SKPhotoProtocol], index: Int)
+    func presentToEditSituation(with situation: MLHiddenPerilSituation?)
+    func pushToTakePhotoController(with limit: Int)
     func popToPreviewController()
 }
 
@@ -41,15 +43,6 @@ final class EditRiskInfoPageInteractor: MoluePresenterInteractable {
     
     private weak var photoController: GalleryController?
     
-    lazy var detailRisk: MLRiskPointDetail? = {
-        do {
-            let listener = try self.listener.unwrap()
-            return try listener.detailRisk.unwrap()
-        } catch {
-            return MolueLogger.UIModule.allowNil(error)
-        }
-    }()
-    
     lazy var attachment: MLTaskAttachment? = {
         do {
             let listener = try self.listener.unwrap()
@@ -68,7 +61,9 @@ final class EditRiskInfoPageInteractor: MoluePresenterInteractable {
         }
     }()
     
-    private var problems: [String] = [String]()
+    private var situations = [MLHiddenPerilSituation]()
+    
+    private var indexPath: IndexPath?
     
     private let disposeBag = DisposeBag()
     
@@ -79,6 +74,30 @@ final class EditRiskInfoPageInteractor: MoluePresenterInteractable {
 }
 
 extension EditRiskInfoPageInteractor: EditRiskInfoRouterInteractable {
+    func insert(with situation: MLHiddenPerilSituation) {
+        self.situations.append(situation)
+        self.reloadSituationCells()
+    }
+    
+    func update(with situation: MLHiddenPerilSituation) {
+        do {
+            let index = try self.indexPath.unwrap().row
+            self.situations[index] = situation
+            self.reloadSituationCells()
+        } catch {
+            MolueLogger.UIModule.message(error)
+        }
+    }
+    
+    func reloadSituationCells() {
+        do {
+            let presenter = try self.presenter.unwrap()
+            presenter.reloadCollectionViewData()
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+    }
+    
     func galleryController(_ controller: GalleryController, didSelectImages images: [Image]) {
         controller.dismiss(animated: true, completion: nil)
         Image.resolve(images: images) { [weak self] images in
@@ -86,9 +105,9 @@ extension EditRiskInfoPageInteractor: EditRiskInfoRouterInteractable {
                 let attachments: [MLAttachmentDetail] = images.compactMap({ image in
                     return MLAttachmentDetail(image)
                 })
-                try self.unwrap().updateAttacments(with: attachments)
-                let presenter = try self.unwrap().presenter.unwrap()
-                presenter.reloadCollectionViewData()
+                let strongSelf = try self.unwrap()
+                strongSelf.updateAttacments(with: attachments)
+                strongSelf.reloadSituationCells()
             } catch {
                 MolueLogger.UIModule.error(error)
             }
@@ -242,18 +261,39 @@ extension EditRiskInfoPageInteractor: EditRiskInfoRouterInteractable {
 }
 
 extension EditRiskInfoPageInteractor: EditRiskInfoPresentableListener {
-    func queryFindProblem(with indexPath: IndexPath) -> String? {
-        return "xxxx"
+    func queryDetailRisk() -> MLRiskPointDetail? {
+        do {
+            let listener = try self.listener.unwrap()
+            return try listener.detailRisk.unwrap()
+        } catch {
+            return MolueLogger.UIModule.allowNil(error)
+        }
     }
     
-    func querySubmitCommand() -> PublishSubject<MLHiddenPerilItem> {
-        let submitCommand = PublishSubject<MLHiddenPerilItem>()
-        submitCommand.subscribe(onNext: { [unowned self] (item) in
-            self.submitHiddenPerilItem(with: item)
-        }, onError: { [unowned self] (error) in
-            self.submitHiddenPerilItem(with: error)
+    func queryInsertCommand() -> PublishSubject<Void> {
+        let insertCommand = PublishSubject<Void>()
+        insertCommand.subscribe(onNext: { [unowned self] (_) in
+            self.jumpToEditSituation()
         }).disposed(by: self.disposeBag)
-        return submitCommand
+        return insertCommand
+    }
+    
+    func jumpToEditSituation(with situation: MLHiddenPerilSituation? = nil) {
+        do {
+            let router = try self.viewRouter.unwrap()
+            router.presentToEditSituation(with: situation)
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+    }
+    
+    func queryFindProblem(with indexPath: IndexPath) -> String? {
+        do {
+            let item = self.situations.item(at: indexPath.row)
+            return try item.unwrap().content.unwrap()
+        } catch {
+            return MolueLogger.UIModule.allowNil(error)
+        }
     }
     
     func uploadHiddenPerilItem(with item: MLHiddenPerilItem) {
@@ -269,20 +309,21 @@ extension EditRiskInfoPageInteractor: EditRiskInfoPresentableListener {
             var parameters: [String : Any] = item.toJSON()
             parameters["item_id"] = try task.attachmentId.unwrap()
             let taskId = try task.taskId.unwrap()
-            let request = MoluePerilService.uploadHiddenPeril(with: parameters, taskId: taskId)
-            request.handleSuccessResponse { [weak self] (result) in
-                do {
-                    try self.unwrap().uploadHiddenPerilSuccess()
-                } catch { MolueLogger.UIModule.message(error) }
-            }
-            request.handleFailureResponse { (error) in
-                MolueLogger.network.message(error)
-            }
-            let manager = MolueRequestManager(delegate: self.presenter)
-            manager.doRequestStart(with: request)
+            self.doUploadHiddenPeril(with: parameters, taskId: taskId)
         } catch {
             MolueLogger.network.message(error)
         }
+    }
+    
+    func doUploadHiddenPeril(with parameters: [String : Any], taskId: String) {
+        let request = MoluePerilService.uploadHiddenPeril(with: parameters, taskId: taskId)
+        request.handleSuccessResponse { [weak self] (result) in
+            do {
+                try self.unwrap().uploadHiddenPerilSuccess()
+            } catch { MolueLogger.UIModule.message(error) }
+        }
+        let manager = MolueRequestManager(delegate: self.presenter)
+        manager.doRequestStart(with: request)
     }
     
     func uploadHiddenPerilWithoutAttachment(with item: MLHiddenPerilItem) {
@@ -326,6 +367,7 @@ extension EditRiskInfoPageInteractor: EditRiskInfoPresentableListener {
     
     func submitHiddenPerilItem(with hiddenPeril: MLHiddenPerilItem) {
         let count = self.attachmentDetails?.count ?? 0
+        hiddenPeril.situations = self.situations
         if count > 0 {
             self.uploadHiddenPerilWithPhotos(with: hiddenPeril)
         } else {
@@ -361,7 +403,7 @@ extension EditRiskInfoPageInteractor: EditRiskInfoPresentableListener {
     }
     
     func queryRiskProblemCount() -> Int? {
-        return 1
+        return self.situations.count
     }
     
     func queryAttachmentCount() -> Int? {
@@ -397,8 +439,35 @@ extension EditRiskInfoPageInteractor: EditRiskInfoPresentableListener {
         if indexPath.section == 0 {
             self.jumpToPhotoBrowser(with: indexPath)
         } else {
-            
+            self.jumpToEditSituation(with: indexPath)
         }
+    }
+    
+    func jumpToEditSituation(with indexPath: IndexPath) {
+        do {
+            let editor = UIAlertAction(title: "编辑描述", style: .default) { [unowned self] _ in
+                self.editPreviousSituation(at: indexPath)
+            }
+            let delete = UIAlertAction(title: "删除描述", style: .destructive) { [unowned self] _ in
+                self.deleteEditedSituation(at: indexPath)
+            }
+            let cancel = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+            let router = try self.viewRouter.unwrap()
+            router.presentController(editor: editor, delete: delete, cancel: cancel)
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+    }
+    
+    func editPreviousSituation(at indexPath: IndexPath) {
+        let situation = self.situations.item(at: indexPath.row)
+        self.jumpToEditSituation(with: situation)
+        self.indexPath = indexPath
+    }
+    
+    func deleteEditedSituation(at indexPath: IndexPath) {
+        self.situations.remove(at: indexPath.row)
+        self.reloadSituationCells()
     }
     
     func jumpToPhotoBrowser(with indexPath: IndexPath) {
@@ -436,7 +505,7 @@ extension EditRiskInfoPageInteractor: EditRiskInfoPresentableListener {
     func jumpToQuickCheckController() {
         let current = self.attachmentDetails?.count ?? 0
         let limit = self.maxImageCount - current
-        if self.detailRisk.isSome() || limit == 0 { return }
+        if self.queryDetailRisk().isSome() || limit == 0 { return }
         do {
             let viewRouter = try self.viewRouter.unwrap()
             viewRouter.pushToTakePhotoController(with: limit)
