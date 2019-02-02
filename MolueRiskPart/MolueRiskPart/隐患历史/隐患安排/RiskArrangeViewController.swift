@@ -139,7 +139,6 @@ extension RiskArrangeViewController: MLUserInterfaceProtocol {
         self.editorView.isHidden = true
         self.updateHeaderViewLayout()
         self.title = "隐患安排"
-        
     }
     
     func updateHeaderViewLayout() {

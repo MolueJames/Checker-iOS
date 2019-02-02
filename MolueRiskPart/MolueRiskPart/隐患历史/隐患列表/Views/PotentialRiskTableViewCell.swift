@@ -57,7 +57,7 @@ class PotentialRiskTableViewCell: UITableViewCell {
             case "created":
                 return self.queryScreenName(with: item.createdUser)
             case "approved":
-                return self.queryScreenName(with: item.approvedUser)
+                return self.queryScreenName(with: item.createdUser)
             case "done":
                 return self.queryScreenName(with: item.createdUser)
             default:

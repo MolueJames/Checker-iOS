@@ -24,8 +24,8 @@ class RiskScheduleTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    func refreshSubviews(with item: MLPerilRectifyStep) {
-        self.titleLabel.text = item.title.data()
+    func refreshSubviews(with item: MLHiddenPerilSituation) {
+        self.titleLabel.text = item.content.data()
         self.titleLabel.setLineSpacing(6)
     }
 }

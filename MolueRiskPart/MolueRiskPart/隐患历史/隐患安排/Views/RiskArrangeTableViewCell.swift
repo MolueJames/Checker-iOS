@@ -29,8 +29,8 @@ class RiskArrangeTableViewCell: UITableViewCell {
         self.titleLabel.setLineSpacing(6)
     }
     
-    func refreshSubviews(with item: MLPerilRectifyStep) {
-        self.titleLabel.text = item.title.data()
+    func refreshSubviews(with item: MLHiddenPerilSituation) {
+        self.titleLabel.text = item.content.data()
         self.titleLabel.setLineSpacing(6)
     }
 }

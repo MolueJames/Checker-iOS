@@ -36,7 +36,6 @@ protocol EditRiskInfoPresentableListener: class {
     func jumpToQuickCheckController()
     
     func jumpToTakePhotoController()
-    
 }
 
 final class EditRiskInfoViewController: MLBaseViewController  {
@@ -62,7 +61,6 @@ final class EditRiskInfoViewController: MLBaseViewController  {
     private var flowLayout: UICollectionViewFlowLayout! {
         didSet {
             flowLayout.scrollDirection = .vertical
-            flowLayout.minimumInteritemSpacing = 10
             flowLayout.minimumInteritemSpacing = 10
         }
     }
@@ -110,7 +108,7 @@ extension EditRiskInfoViewController: MLUserInterfaceProtocol {
 }
 
 extension EditRiskInfoViewController: EditRiskInfoPagePresentable {
-    func reloadCollectionViewData() {
+    func reloadCollectionViewCell() {
         self.collectionView.reloadData()
     }
 }
@@ -227,7 +225,11 @@ extension EditRiskInfoViewController: UICollectionViewDelegateFlowLayout {
         if section == 0 {
             return UIEdgeInsets(top: 10, left: 15, bottom: 10, right: 15)
         } else {
-            return UIEdgeInsets(top: 5, left: 0, bottom: 10, right: 0)
+            return UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0)
         }
+    }
+    
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return section == 0 ? 10 : 0
     }
 }

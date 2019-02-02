@@ -40,28 +40,18 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ThK-OW-0kA">
                     <rect key="frame" x="0.0" y="135" width="320" height="45"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="隐患描述(可以添加多个描述)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="orI-88-M2B">
-                            <rect key="frame" x="20" y="13.5" width="285" height="18"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                            <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="隐患问题描述(可以添加多个描述)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="orI-88-M2B">
+                            <rect key="frame" x="15" y="14" width="290" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eFA-Jm-H4a">
-                            <rect key="frame" x="0.0" y="44.5" width="320" height="0.5"/>
-                            <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="0.5" id="Qqb-w4-jlX"/>
-                            </constraints>
-                        </view>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="eFA-Jm-H4a" secondAttribute="trailing" id="Lcf-9K-AAo"/>
-                        <constraint firstItem="orI-88-M2B" firstAttribute="leading" secondItem="ThK-OW-0kA" secondAttribute="leading" constant="20" id="M4I-Cn-SMS"/>
                         <constraint firstAttribute="trailing" secondItem="orI-88-M2B" secondAttribute="trailing" constant="15" id="h6v-yE-6S1"/>
                         <constraint firstItem="orI-88-M2B" firstAttribute="centerY" secondItem="ThK-OW-0kA" secondAttribute="centerY" id="iUu-g2-CrF"/>
-                        <constraint firstAttribute="bottom" secondItem="eFA-Jm-H4a" secondAttribute="bottom" id="j69-GM-sTW"/>
-                        <constraint firstItem="eFA-Jm-H4a" firstAttribute="leading" secondItem="ThK-OW-0kA" secondAttribute="leading" id="uB8-Tq-WZS"/>
+                        <constraint firstItem="orI-88-M2B" firstAttribute="leading" secondItem="ThK-OW-0kA" secondAttribute="leading" constant="15" id="u4F-Fw-OuX"/>
                     </constraints>
                 </view>
             </subviews>
@@ -87,7 +77,7 @@
                 <outlet property="riskLevelClickView" destination="lg3-oA-oOi" id="dyy-Uh-Vhb"/>
                 <outlet property="riskPointClickView" destination="bXh-N3-g8U" id="wov-n8-Dax"/>
             </connections>
-            <point key="canvasLocation" x="-755.20000000000005" y="-62.968515742128943"/>
+            <point key="canvasLocation" x="-299" y="-53"/>
         </collectionReusableView>
     </objects>
 </document>

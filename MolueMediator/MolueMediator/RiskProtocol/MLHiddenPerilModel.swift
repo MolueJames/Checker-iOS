@@ -14,16 +14,16 @@ public class MLHiddenPerilItem: Mappable {
     public init() {}
     
     public required init?(map: Map) {
-        rectification <- map["need_rectification"]
+        rectifyBudget <- map["rectification_budget"]
+        situationImages <- map["situation_images"]
+        verifiedImages <- map["verified_images"]
+        rectifyCost <- map["rectification_cost"]
         classification <- map["classification"]
-        approvedUser <- map["user_of_approved"]
         createdUser <- map["user_of_created"]
         approvedDate <- map["date_approved"]
         enterpriseId <- map["enterprise_id"]
-        rectifySteps <- map["rectify_steps"] //TODO : Delete
         rectifyDate <- map["rectify_date"]
         attachments <- map["attachments"]
-        traceNo <- map["source_trace_no"]
         situations <- map["situations"]
         actions <- map["actions"]
         updated <- map["updated"]
@@ -46,23 +46,23 @@ public class MLHiddenPerilItem: Mappable {
         grade >>> map["grade"]
     }
     
+    public var situationImages: [MLAttachmentDetail]?
     public var classification: MLRiskClassification?
     public var situations: [MLHiddenPerilSituation]?
-    public var rectifySteps: [MLPerilRectifyStep]? //TODO : Delete
+    public var verifiedImages: [MLAttachmentDetail]?
     public var attachments: [MLAttachmentDetail]?
     public var actions: [MLHiddenPerilAction]?
-    public var approvedUser: MolueUserInfo?
     public var createdUser: MolueUserInfo?
     public var risk: MLRiskPointDetail?
+    public var rectifyBudget: String?
     public var enterpriseId: String?
     public var approvedDate: String?
-    public var rectification: Bool?
     public var rectifyDate: String?
+    public var rectifyCost: String?
     public var perilMemo: String?
     public var updated: String?
     public var created: String?
     public var perilId: String?
-    public var traceNo: String?
     public var status: String?
     public var source: String? = "C"
     public var grade: String?
@@ -92,26 +92,6 @@ public class MLHiddenPerilSituation: Mappable {
     public var status: String?
     public var orderKey: Int?
 }
-
-
-public class MLPerilRectifyStep: Mappable { //TODO : Delete
-
-    public required init?(map: Map) {
-        orderKey <- map["order_key"]
-        status <- map["status"]
-        title <- map["title"]
-        stepId <- map["id"]
-    }
-
-    public func mapping(map: Map) {
-
-    }
-    public var status: String?
-    public var orderKey: Int?
-    public var title: String?
-    public var stepId: Int?
-}
-
 
 public class MLHiddenPerilAction: Mappable {
     public required init() {}

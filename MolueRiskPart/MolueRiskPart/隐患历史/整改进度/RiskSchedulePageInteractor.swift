@@ -28,10 +28,10 @@ final class RiskSchedulePageInteractor: MoluePresenterInteractable {
     
     weak var listener: RiskScheduleInteractListener?
     
-    private lazy var arrangeList: [MLPerilRectifyStep]? = {
+    private lazy var arrangeList: [MLHiddenPerilSituation]? = {
         do {
             let hiddenPeril = try self.hiddenPeril.unwrap()
-            return try hiddenPeril.rectifySteps.unwrap()
+            return try hiddenPeril.situations.unwrap()
         } catch {
             return MolueLogger.database.allowNil(error)
         }
@@ -84,18 +84,18 @@ extension RiskSchedulePageInteractor: RiskSchedulePresentableListener {
         }
     }
     
-    func queryRiskArrange(with indexPath: IndexPath) -> MLPerilRectifyStep? {
-        do {
-            let arrangeList = try self.arrangeList.unwrap()
-            let filterList = arrangeList.filter { (item) -> Bool in
-                let filter = indexPath.section == 0 ? "done" : "created"
-                return item.status == filter
-            }
-            let item = filterList.item(at: indexPath.row)
-            return try item.unwrap()
-        } catch {
-            return MolueLogger.UIModule.allowNil(error)
-        }
+    func queryRiskArrange(with indexPath: IndexPath) -> MLHiddenPerilSituation? {
+//        do {
+//            let arrangeList = try self.arrangeList.unwrap()
+//            let filterList = arrangeList.filter { (item) -> Bool in
+//                let filter = indexPath.section == 0 ? "done" : "created"
+//                return item.status == filter
+//            }
+//            let item = filterList.item(at: indexPath.row)
+//            return try item.unwrap()
+//        } catch {
+            return MolueLogger.UIModule.allowNil("error")
+//        }
     }
     
     func numberOfRows(at section: Int) -> Int? {

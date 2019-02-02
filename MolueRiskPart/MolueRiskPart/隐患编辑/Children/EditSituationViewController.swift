@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 import MolueUtilities
 import MolueFoundation
 import MolueMediator
@@ -35,15 +36,21 @@ class EditSituationViewController: MLBaseViewController {
     }
     
     @IBAction func cancelButtonClicked(_ sender: UIButton) {
+        self.remarkView.resignFirstResponder()
         self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func submitButtonClicked(_ sender: UIButton) {
         let text = self.remarkView.remarkText()
-        let situation = MLHiddenPerilSituation(text)
-        let insert: Bool = self.situation.isNone()
-        self.insertOrUpdate(with: situation, insert: insert)
-        self.dismiss(animated: true, completion: nil)
+        if text.isEmpty == false {
+            let situation = MLHiddenPerilSituation(text)
+            let insert: Bool = self.situation.isNone()
+            self.insertOrUpdate(with: situation, insert: insert)
+            self.remarkView.resignFirstResponder()
+            self.dismiss(animated: true, completion: nil)
+        } else {
+            self.showWarningHUD(text: "请填写隐患问题描述")
+        }
     }
     
     func insertOrUpdate(with situation: MLHiddenPerilSituation, insert: Bool) {
@@ -67,6 +74,7 @@ class EditSituationViewController: MLBaseViewController {
         } catch {MolueLogger.UIModule.message(error)}
         
         self.remarkView.becomeFirstResponder()
+        IQKeyboardManager.shared.keyboardDistanceFromTextField = 55.0
         let color = UIColor.black.withAlphaComponent(0.3)
         self.view.backgroundColor = color
     }

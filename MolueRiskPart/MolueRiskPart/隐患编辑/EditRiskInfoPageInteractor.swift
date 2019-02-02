@@ -29,7 +29,8 @@ protocol EditRiskInfoViewableRouting: class {
 protocol EditRiskInfoPagePresentable: MolueInteractorPresentable, MLControllerHUDProtocol, MolueActivityDelegate  {
     var listener: EditRiskInfoPresentableListener? { get set }
     // 定义一些页面需要的方法, 比如刷新页面的显示内容等.
-    func reloadCollectionViewData()
+    func reloadCollectionViewCell()
+    
 }
 
 final class EditRiskInfoPageInteractor: MoluePresenterInteractable {
@@ -76,23 +77,23 @@ final class EditRiskInfoPageInteractor: MoluePresenterInteractable {
 extension EditRiskInfoPageInteractor: EditRiskInfoRouterInteractable {
     func insert(with situation: MLHiddenPerilSituation) {
         self.situations.append(situation)
-        self.reloadSituationCells()
+        self.reloadSituationCollectionCell()
     }
     
     func update(with situation: MLHiddenPerilSituation) {
         do {
-            let index = try self.indexPath.unwrap().row
-            self.situations[index] = situation
-            self.reloadSituationCells()
+            let indexPath = try self.indexPath.unwrap()
+            self.situations[indexPath.row] = situation
+            self.reloadSituationCollectionCell()
         } catch {
             MolueLogger.UIModule.message(error)
         }
     }
-    
-    func reloadSituationCells() {
+
+    func reloadSituationCollectionCell() {
         do {
             let presenter = try self.presenter.unwrap()
-            presenter.reloadCollectionViewData()
+            presenter.reloadCollectionViewCell()
         } catch {
             MolueLogger.UIModule.error(error)
         }
@@ -107,7 +108,7 @@ extension EditRiskInfoPageInteractor: EditRiskInfoRouterInteractable {
                 })
                 let strongSelf = try self.unwrap()
                 strongSelf.updateAttacments(with: attachments)
-                strongSelf.reloadSituationCells()
+                strongSelf.reloadSituationCollectionCell()
             } catch {
                 MolueLogger.UIModule.error(error)
             }
@@ -160,7 +161,7 @@ extension EditRiskInfoPageInteractor: EditRiskInfoRouterInteractable {
             self.attachmentDetails?.remove(at: index)
             self.updateCurrentAttachment(with: self.attachmentDetails)
             let presenter = try self.presenter.unwrap()
-            presenter.reloadCollectionViewData()
+            presenter.reloadCollectionViewCell()
         } catch {
             MolueLogger.UIModule.message(error)
         }
@@ -366,12 +367,33 @@ extension EditRiskInfoPageInteractor: EditRiskInfoPresentableListener {
     }
     
     func submitHiddenPerilItem(with hiddenPeril: MLHiddenPerilItem) {
-        let count = self.attachmentDetails?.count ?? 0
-        hiddenPeril.situations = self.situations
-        if count > 0 {
-            self.uploadHiddenPerilWithPhotos(with: hiddenPeril)
+        if self.situations.count > 0 {
+            hiddenPeril.situations = self.situations
+            self.doSubmitHiddenPeril(with: hiddenPeril)
         } else {
-            self.uploadHiddenPerilItem(with: hiddenPeril)
+            self.showWarningMessage(with: "xxxx")
+        }
+    }
+    
+    func doSubmitHiddenPeril(with hiddenPeril: MLHiddenPerilItem) {
+        do {
+            let attachments = try self.attachmentDetails.unwrap()
+            if attachments.count > 0 {
+                self.uploadHiddenPerilWithPhotos(with: hiddenPeril)
+            } else {
+                self.uploadHiddenPerilItem(with: hiddenPeril)
+            }
+        } catch {
+            MolueLogger.UIModule.message(error)
+        }
+    }
+    
+    func showWarningMessage(with message: String) {
+        do {
+            let presenter = try self.presenter.unwrap()
+            presenter.showWarningHUD(text: message)
+        } catch {
+            MolueLogger.UIModule.error(error)
         }
     }
     
@@ -467,7 +489,7 @@ extension EditRiskInfoPageInteractor: EditRiskInfoPresentableListener {
     
     func deleteEditedSituation(at indexPath: IndexPath) {
         self.situations.remove(at: indexPath.row)
-        self.reloadSituationCells()
+        self.reloadSituationCollectionCell()
     }
     
     func jumpToPhotoBrowser(with indexPath: IndexPath) {

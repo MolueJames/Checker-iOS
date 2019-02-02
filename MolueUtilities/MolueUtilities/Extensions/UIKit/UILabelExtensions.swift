@@ -40,7 +40,6 @@ public extension UILabel {
             let style = NSAttributedString.Key.paragraphStyle
             attributedText.addAttribute(style, value: paragraphStye, range: range)
             self.attributedText = attributedText
-            self.sizeToFit()
         } catch {
             MolueLogger.UIModule.message(error)
         }

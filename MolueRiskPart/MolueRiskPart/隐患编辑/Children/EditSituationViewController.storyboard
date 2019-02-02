@@ -19,14 +19,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fGf-SZ-gqe">
-                                <rect key="frame" x="25" y="108.5" width="325" height="250"/>
+                                <rect key="frame" x="0.0" y="467" width="375" height="200"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z2h-Be-lKK" customClass="MLCommonRemarkView" customModule="MolueCommon">
-                                        <rect key="frame" x="0.0" y="0.0" width="325" height="205"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="160"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g0h-wB-uHw">
-                                        <rect key="frame" x="0.0" y="205" width="162.5" height="45"/>
+                                        <rect key="frame" x="0.0" y="160" width="187.5" height="40"/>
                                         <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <state key="normal" title="取消">
@@ -37,8 +37,8 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HHO-sz-Oz4">
-                                        <rect key="frame" x="163" y="205" width="162" height="45"/>
-                                        <color key="backgroundColor" red="0.0" green="0.59999999999999998" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <rect key="frame" x="188" y="160" width="187" height="40"/>
+                                        <color key="backgroundColor" red="0.1058823529" green="0.50980392159999999" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <state key="normal" title="提交">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -60,17 +60,17 @@
                                     <constraint firstItem="HHO-sz-Oz4" firstAttribute="width" secondItem="g0h-wB-uHw" secondAttribute="width" id="lVd-8t-uF2"/>
                                     <constraint firstItem="g0h-wB-uHw" firstAttribute="leading" secondItem="fGf-SZ-gqe" secondAttribute="leading" id="oiX-Pb-TBd"/>
                                     <constraint firstItem="z2h-Be-lKK" firstAttribute="top" secondItem="fGf-SZ-gqe" secondAttribute="top" id="qNJ-0j-H71"/>
-                                    <constraint firstAttribute="bottom" secondItem="z2h-Be-lKK" secondAttribute="bottom" constant="45" id="s6q-l8-DUJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="z2h-Be-lKK" secondAttribute="bottom" constant="40" id="s6q-l8-DUJ"/>
                                     <constraint firstAttribute="trailing" secondItem="z2h-Be-lKK" secondAttribute="trailing" id="uFv-uV-c28"/>
-                                    <constraint firstAttribute="height" constant="250" id="w0b-rU-nh0"/>
+                                    <constraint firstAttribute="height" constant="200" id="w0b-rU-nh0"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="fGf-SZ-gqe" firstAttribute="leading" secondItem="5Ek-WH-Ypu" secondAttribute="leading" constant="25" id="MoI-sn-63Y"/>
-                            <constraint firstItem="fGf-SZ-gqe" firstAttribute="centerY" secondItem="zEp-v7-Lzd" secondAttribute="centerY" constant="-100" id="pJU-2H-qcL"/>
-                            <constraint firstItem="5Ek-WH-Ypu" firstAttribute="trailing" secondItem="fGf-SZ-gqe" secondAttribute="trailing" constant="25" id="yAX-vF-a9E"/>
+                            <constraint firstItem="5Ek-WH-Ypu" firstAttribute="bottom" secondItem="fGf-SZ-gqe" secondAttribute="bottom" id="7Nf-3B-g9U"/>
+                            <constraint firstItem="fGf-SZ-gqe" firstAttribute="leading" secondItem="5Ek-WH-Ypu" secondAttribute="leading" id="MoI-sn-63Y"/>
+                            <constraint firstItem="5Ek-WH-Ypu" firstAttribute="trailing" secondItem="fGf-SZ-gqe" secondAttribute="trailing" id="yAX-vF-a9E"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5Ek-WH-Ypu"/>
                     </view>

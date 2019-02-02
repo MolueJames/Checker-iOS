@@ -28,10 +28,10 @@ final class RiskRectifyPageInteractor: MoluePresenterInteractable {
     
     weak var listener: RiskRectifyInteractListener?
     
-    lazy var rectifyStep: [MLPerilRectifyStep]? = {
+    lazy var situations: [MLHiddenPerilSituation]? = {
         do {
             let hiddenPeril = try self.hiddenPeril.unwrap()
-            return try hiddenPeril.rectifySteps.unwrap()
+            return try hiddenPeril.situations.unwrap()
         } catch {
             return MolueLogger.UIModule.allowNil(error)
         }
@@ -84,29 +84,29 @@ extension RiskRectifyPageInteractor: RiskRectifyPresentableListener {
         }
     }
     
-    func queryRiskArrange(with indexPath: IndexPath) -> MLPerilRectifyStep? {
-        do {
-            let arrangeList = try self.rectifyStep.unwrap()
-            let filterList = arrangeList.filter { (item) -> Bool in
-                let filter = indexPath.section == 0 ? "done" : "created"
-                return item.status == filter
-            }
-            let item = filterList.item(at: indexPath.row)
-            return try item.unwrap()
-        } catch {
-            return MolueLogger.UIModule.allowNil(error)
-        }
+    func queryRiskArrange(with indexPath: IndexPath) -> MLHiddenPerilSituation? {
+//        do {
+//            let arrangeList = try self.rectifyStep.unwrap()
+//            let filterList = arrangeList.filter { (item) -> Bool in
+//                let filter = indexPath.section == 0 ? "done" : "created"
+//                return item.status == filter
+//            }
+//            let item = filterList.item(at: indexPath.row)
+//            return try item.unwrap()
+//        } catch {
+            return MolueLogger.UIModule.allowNil("error")
+//        }
     }
     
     func numberOfRows(at section: Int) -> Int? {
-        do {
-            let arrangeList = try self.rectifyStep.unwrap()
-            return arrangeList.filter { (item) -> Bool in
-                let filter = section == 0 ? "done" : "created"
-                return item.status == filter
-            }.count
-        } catch {
-            return MolueLogger.UIModule.allowNil(error)
-        }
+//        do {
+//            let arrangeList = try self.rectifyStep.unwrap()
+//            return arrangeList.filter { (item) -> Bool in
+//                let filter = section == 0 ? "done" : "created"
+//                return item.status == filter
+//            }.count
+//        } catch {
+            return MolueLogger.UIModule.allowNil("error")
+//        }
     }
 }
