@@ -48,7 +48,31 @@ extension RiskDetailPageInteractor: RiskDetailRouterInteractable {
 }
 
 extension RiskDetailPageInteractor: RiskDetailPresentableListener {
-    func queryPerielImage(with indexPath: IndexPath) -> String? {
+    func queryPerilSituation(with indexPath: IndexPath) -> String? {
+        do {
+            let hiddenPeril = try self.hiddenPeril.unwrap()
+            let situations = try hiddenPeril.situations.unwrap()
+            let situation = situations.item(at: indexPath.row)
+            return try situation.unwrap().content.unwrap()
+        } catch {
+            return MolueLogger.UIModule.allowNil(error)
+        }
+    }
+    
+    func numberOfItems(in section: Int) -> Int? {
+        do {
+            let hiddenPeril = try self.hiddenPeril.unwrap()
+            if section == 0 {
+                return try hiddenPeril.attachments.unwrap().count
+            } else {
+                return try hiddenPeril.situations.unwrap().count
+            }
+        } catch {
+            return MolueLogger.UIModule.allowNil(error)
+        }
+    }
+    
+    func queryPerilAttachment(with indexPath: IndexPath) -> String? {
         do {
             let hiddenPeril = try self.hiddenPeril.unwrap()
             let attachments = try hiddenPeril.attachments.unwrap()
@@ -67,30 +91,18 @@ extension RiskDetailPageInteractor: RiskDetailPresentableListener {
         }
     }
     
-    func numberOfItemsInSection() -> Int? {
+    func jumpToBrowserController(with indexPath: IndexPath) {
         do {
-            let hiddenPeril = try self.hiddenPeril.unwrap()
-            let attachments = try hiddenPeril.attachments.unwrap()
-            return attachments.count
-        } catch {
-            return MolueLogger.UIModule.allowNil(error)
-        }
-    }
-    
-    func jumpToBrowserController(with index: Int) {
-        do {
+            guard indexPath.section == 0 else { return }
             let hiddenPeril = try self.hiddenPeril.unwrap()
             let attachments = try hiddenPeril.attachments.unwrap()
             let images: [KFPhoto] = attachments.compactMap { (attachment) in
                 do {
-                    let urlPath = try attachment.urlPath.unwrap()
-                    return KFPhoto(url: urlPath)
-                } catch {
-                    return MolueLogger.UIModule.allowNil(error)
-                }
+                    return try KFPhoto(url: attachment.urlPath.unwrap())
+                } catch {return MolueLogger.UIModule.allowNil(error)}
             }
             let router = try self.viewRouter.unwrap()
-            router.pushToPhotoBrowser(with: images, index: index)
+            router.pushToPhotoBrowser(with: images, index: indexPath.row)
         } catch {
             MolueLogger.UIModule.error(error)
         }

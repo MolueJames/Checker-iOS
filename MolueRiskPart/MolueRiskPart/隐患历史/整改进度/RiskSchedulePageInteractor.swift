@@ -28,7 +28,7 @@ final class RiskSchedulePageInteractor: MoluePresenterInteractable {
     
     weak var listener: RiskScheduleInteractListener?
     
-    private lazy var arrangeList: [MLHiddenPerilSituation]? = {
+    private lazy var arrangeList: [MLPerilSituation]? = {
         do {
             let hiddenPeril = try self.hiddenPeril.unwrap()
             return try hiddenPeril.situations.unwrap()
@@ -84,7 +84,7 @@ extension RiskSchedulePageInteractor: RiskSchedulePresentableListener {
         }
     }
     
-    func queryRiskArrange(with indexPath: IndexPath) -> MLHiddenPerilSituation? {
+    func queryRiskArrange(with indexPath: IndexPath) -> MLPerilSituation? {
 //        do {
 //            let arrangeList = try self.arrangeList.unwrap()
 //            let filterList = arrangeList.filter { (item) -> Bool in

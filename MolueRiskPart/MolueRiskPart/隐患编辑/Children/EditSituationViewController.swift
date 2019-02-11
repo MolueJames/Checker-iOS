@@ -14,13 +14,13 @@ import MolueMediator
 import MolueCommon
 
 public protocol EditSituationProtocol: class {
-    func insert(with situation: MLHiddenPerilSituation)
-    func update(with situation: MLHiddenPerilSituation)
+    func insert(with situation: MLPerilSituation)
+    func update(with situation: MLPerilSituation)
 }
 
 class EditSituationViewController: MLBaseViewController {
     
-    public var situation: MLHiddenPerilSituation?
+    public var situation: MLPerilSituation?
     
     @IBOutlet weak var remarkView: MLCommonRemarkView! {
         didSet {
@@ -43,7 +43,7 @@ class EditSituationViewController: MLBaseViewController {
     @IBAction func submitButtonClicked(_ sender: UIButton) {
         let text = self.remarkView.remarkText()
         if text.isEmpty == false {
-            let situation = MLHiddenPerilSituation(text)
+            let situation = MLPerilSituation(text)
             let insert: Bool = self.situation.isNone()
             self.insertOrUpdate(with: situation, insert: insert)
             self.remarkView.resignFirstResponder()
@@ -53,7 +53,7 @@ class EditSituationViewController: MLBaseViewController {
         }
     }
     
-    func insertOrUpdate(with situation: MLHiddenPerilSituation, insert: Bool) {
+    func insertOrUpdate(with situation: MLPerilSituation, insert: Bool) {
         do {
             let delegate = try self.delegate.unwrap()
             insert ? delegate.insert(with: situation) : delegate.update(with: situation)

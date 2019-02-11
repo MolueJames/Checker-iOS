@@ -20,13 +20,11 @@ class RiskDetailReusableHeaderView: UICollectionReusableView {
     
     @IBOutlet weak var classTitleView: MLCommonClickView!
     
-    @IBOutlet weak var RiskUnitTitleView: MLCommonClickView!
+    @IBOutlet weak var pointTitleView: MLCommonClickView!
     
     @IBOutlet weak var checkedDateView: MLCommonClickView!
     
     @IBOutlet weak var personTitleView: MLCommonClickView!
-    
-    @IBOutlet weak var riskDescLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -43,8 +41,8 @@ class RiskDetailReusableHeaderView: UICollectionReusableView {
         let riskClass: String = item.classification?.name ?? "暂无数据"
         classTitleView.defaultValue(title: "隐患分类", placeholder: riskClass)
         
-        let riskUnit: String = item.risk?.unitName ?? "暂无数据"
-        RiskUnitTitleView.defaultValue(title: "隐患部位", placeholder: riskUnit)
+        let riskPoint: String = item.risk?.unitName ?? "暂无数据"
+        pointTitleView.defaultValue(title: "隐患部位", placeholder: riskPoint)
         
         let riskNumber: String = item.perilId.data()
         riskNumberView.defaultValue(title: "隐患编号", placeholder: riskNumber)
@@ -54,26 +52,6 @@ class RiskDetailReusableHeaderView: UICollectionReusableView {
         
         let created: String = self.queryCreatedTime(with: item.created)
         checkedDateView.defaultValue(title: "检查时间", placeholder: created)
-        
-        let perilMemo = self.queryPerilMemo(with: item.perilMemo)
-        self.riskDescLabel.attributedText = perilMemo
-    }
-    
-    func queryPerilMemo(with memo: String?) -> NSAttributedString {
-        do {
-            let attributedText = try NSMutableAttributedString(string: memo.unwrap())
-            let range = try NSMakeRange(0, memo.unwrap().count)
-            let style = NSMutableParagraphStyle()
-            style.lineSpacing = 6 //大小调整
-            let styleKey = NSAttributedString.Key.paragraphStyle
-            attributedText.addAttribute(styleKey, value: style, range: range)
-            let colorKey = NSAttributedString.Key.foregroundColor
-            let color = MLCommonColor.commonLine
-            attributedText.addAttribute(colorKey, value: color, range: range)
-            return attributedText
-        } catch {
-            return NSAttributedString(string: "暂无隐患")
-        }
     }
     
     func queryRiskStatus(with status: String?) -> String {

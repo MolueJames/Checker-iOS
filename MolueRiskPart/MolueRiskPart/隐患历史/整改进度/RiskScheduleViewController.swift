@@ -16,7 +16,7 @@ protocol RiskSchedulePresentableListener: class {
     // 定义一些当前页面需要的业务逻辑, 比如网络请求.
     func queryHiddenPeril() -> MLHiddenPerilItem?
     
-    func queryRiskArrange(with indexPath: IndexPath) -> MLHiddenPerilSituation?
+    func queryRiskArrange(with indexPath: IndexPath) -> MLPerilSituation?
     
     func numberOfRows(at section: Int) -> Int?
     
@@ -105,7 +105,7 @@ extension RiskScheduleViewController: UITableViewDataSource {
             let listener = try self.listener.unwrap()
             let item = listener.queryRiskArrange(with: indexPath)
             try cell.refreshSubviews(with: item.unwrap())
-        } catch { MolueLogger.UIModule.error(error) }
+        } catch { MolueLogger.UIModule.message(error) }
         return cell
     }}
 

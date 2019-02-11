@@ -18,7 +18,11 @@ public class MLSingleSelectController<Target: MLSingleSelectProtocol>: MLBaseVie
   
     private var list = [Target]()
     
-    public let selectCommand = PublishSubject<Target>()
+    private var selectCommand = PublishSubject<Target>()
+    
+    public func updateSelectCommand(with command: PublishSubject<Target>) {
+        self.selectCommand = command
+    }
     
     private var tableView: UITableView! {
         didSet {
@@ -33,6 +37,7 @@ public class MLSingleSelectController<Target: MLSingleSelectProtocol>: MLBaseVie
         self.title = title
         self.list = list
     }
+    
     open override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.

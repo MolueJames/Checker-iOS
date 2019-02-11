@@ -16,7 +16,7 @@ protocol RiskRectifyPresentableListener: class {
     // 定义一些当前页面需要的业务逻辑, 比如网络请求.
     func queryHiddenPeril() -> MLHiddenPerilItem?
     
-    func queryRiskArrange(with indexPath: IndexPath) -> MLHiddenPerilSituation?
+    func queryRiskArrange(with indexPath: IndexPath) -> MLPerilSituation?
     
     func numberOfRows(at section: Int) -> Int?
     
@@ -34,11 +34,20 @@ final class RiskRectifyViewController: MLBaseViewController  {
             tableView.register(xibWithCellClass: RiskArrangeTableViewCell.self)
             tableView.allowsMultipleSelectionDuringEditing = true
             tableView.tableHeaderView = self.headerView
+            tableView.tableFooterView = self.footerView
         }
     }
     
+    lazy var footerView: RiskRectifyFooterView = {
+        let footerView: RiskRectifyFooterView = RiskRectifyFooterView.createFromXib()
+        footerView.frame = CGRect(x: 0, y: 0, width: MLConfigure.ScreenWidth, height: 155)
+        self.setupFooterViewConfiguration(with: footerView)
+        return footerView
+    }()
+    
     lazy var headerView: RiskArrangeHeaderView = {
         let headerView: RiskArrangeHeaderView = RiskArrangeHeaderView.createFromXib()
+        headerView.frame = CGRect(x: 0, y: 0, width: MLConfigure.ScreenWidth, height: 180)
         self.setupHeaderViewConfiguration(with: headerView)
         return headerView
     }()
@@ -52,9 +61,13 @@ final class RiskRectifyViewController: MLBaseViewController  {
         } catch { MolueLogger.UIModule.error(error) }
     }
     
-    lazy var rightItem: UIBarButtonItem = {
-        return UIBarButtonItem(title: "选择步骤", style: .done, target: self, action: #selector(rightItemClicked))
-    }()
+    func setupFooterViewConfiguration(with footerView: RiskRectifyFooterView) {
+        do {
+            let listener = try self.listener.unwrap()
+            let item = try listener.queryHiddenPeril().unwrap()
+            footerView.refreshSubviews(with: item)
+        } catch { MolueLogger.UIModule.error(error) }
+    }
     
     //MARK: View Controller Life Cycle
     override func viewDidLoad() {
@@ -69,24 +82,7 @@ extension RiskRectifyViewController: MLUserInterfaceProtocol {
     }
     
     func updateUserInterfaceElements() {
-        self.navigationItem.rightBarButtonItem = self.rightItem
-        self.updateHeaderViewLayout()
         self.title = "隐患整改"
-    }
-    
-    @IBAction func rightItemClicked(_ sender: UIBarButtonItem) {
-        let select: Bool = !self.tableView.isEditing
-        self.tableView.setEditing(select, animated: true)
-        sender.title = select ? "取消" : "选择步骤"
-    }
-    
-    func updateHeaderViewLayout() {
-        self.headerView.snp.makeConstraints { (make) in
-            make.top.bottom.equalToSuperview()
-            make.width.equalToSuperview()
-        }
-        self.tableView.layoutIfNeeded()
-        self.tableView.tableHeaderView = self.headerView
     }
 }
 
@@ -99,10 +95,6 @@ extension RiskRectifyViewController: RiskRectifyViewControllable {
 }
 
 extension RiskRectifyViewController: UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         do {
             let listener = try self.listener.unwrap()
@@ -124,25 +116,14 @@ extension RiskRectifyViewController: UITableViewDataSource {
 
 extension RiskRectifyViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header: RiskArrangeSectionView = RiskArrangeSectionView.createFromXib()
-        let title = section == 0 ? "隐患步骤(已完成)" : "隐患步骤(未完成)"
-        header.refreshSubviews(with: title)
-        return header
+        return RiskArrangeSectionView.createFromXib()
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        do {
-            let listener = try self.listener.unwrap()
-            let count = listener.numberOfRows(at: section)
-            return try count.unwrap() > 0 ? 35 : 0
-        } catch { return 0 }
+        return 30
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
-    }
-    
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return indexPath.section == 0 ? false : true
     }
 }

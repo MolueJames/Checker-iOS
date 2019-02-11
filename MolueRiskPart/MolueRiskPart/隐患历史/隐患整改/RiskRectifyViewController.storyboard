@@ -19,30 +19,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="caV-gK-jIN">
-                                <rect key="frame" x="0.0" y="20" width="375" height="602"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zp9-Hy-oPW">
-                                <rect key="frame" x="0.0" y="622" width="375" height="45"/>
-                                <color key="backgroundColor" red="0.1058823529" green="0.50980392159999999" blue="0.82352941180000006" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="pLQ-RE-jGM"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
-                                <state key="normal" title="提交">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="KHc-5f-vCT" firstAttribute="trailing" secondItem="caV-gK-jIN" secondAttribute="trailing" id="4Co-GD-1wX"/>
+                            <constraint firstItem="KHc-5f-vCT" firstAttribute="bottom" secondItem="caV-gK-jIN" secondAttribute="bottom" id="5rd-Rk-oPr"/>
                             <constraint firstItem="caV-gK-jIN" firstAttribute="top" secondItem="KHc-5f-vCT" secondAttribute="top" id="7Zl-pO-C1L"/>
-                            <constraint firstItem="zp9-Hy-oPW" firstAttribute="top" secondItem="caV-gK-jIN" secondAttribute="bottom" id="KPA-7A-m0V"/>
-                            <constraint firstItem="KHc-5f-vCT" firstAttribute="trailing" secondItem="zp9-Hy-oPW" secondAttribute="trailing" id="UIC-aa-JXg"/>
                             <constraint firstItem="caV-gK-jIN" firstAttribute="leading" secondItem="KHc-5f-vCT" secondAttribute="leading" id="ghi-MZ-rH4"/>
-                            <constraint firstItem="zp9-Hy-oPW" firstAttribute="leading" secondItem="KHc-5f-vCT" secondAttribute="leading" id="s6v-78-HpW"/>
-                            <constraint firstItem="KHc-5f-vCT" firstAttribute="bottom" secondItem="zp9-Hy-oPW" secondAttribute="bottom" id="xWu-6u-o4e"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KHc-5f-vCT"/>
                     </view>

@@ -21,7 +21,7 @@ protocol EditRiskInfoViewableRouting: class {
     func presentController(editor: UIAlertAction, delete: UIAlertAction, cancel: UIAlertAction)
     func pushToPhotoBrowser(with photos: [SKPhotoProtocol], controller: UIViewController)
     func pushToPhotoBrowser(with photos: [SKPhotoProtocol], index: Int)
-    func presentToEditSituation(with situation: MLHiddenPerilSituation?)
+    func presentToEditSituation(with situation: MLPerilSituation?)
     func pushToTakePhotoController(with limit: Int)
     func popToPreviewController()
 }
@@ -62,7 +62,7 @@ final class EditRiskInfoPageInteractor: MoluePresenterInteractable {
         }
     }()
     
-    private var situations = [MLHiddenPerilSituation]()
+    private var situations = [MLPerilSituation]()
     
     private var indexPath: IndexPath?
     
@@ -75,12 +75,12 @@ final class EditRiskInfoPageInteractor: MoluePresenterInteractable {
 }
 
 extension EditRiskInfoPageInteractor: EditRiskInfoRouterInteractable {
-    func insert(with situation: MLHiddenPerilSituation) {
+    func insert(with situation: MLPerilSituation) {
         self.situations.append(situation)
         self.reloadSituationCollectionCell()
     }
     
-    func update(with situation: MLHiddenPerilSituation) {
+    func update(with situation: MLPerilSituation) {
         do {
             let indexPath = try self.indexPath.unwrap()
             self.situations[indexPath.row] = situation
@@ -279,7 +279,7 @@ extension EditRiskInfoPageInteractor: EditRiskInfoPresentableListener {
         return insertCommand
     }
     
-    func jumpToEditSituation(with situation: MLHiddenPerilSituation? = nil) {
+    func jumpToEditSituation(with situation: MLPerilSituation? = nil) {
         do {
             let router = try self.viewRouter.unwrap()
             router.presentToEditSituation(with: situation)
@@ -376,15 +376,10 @@ extension EditRiskInfoPageInteractor: EditRiskInfoPresentableListener {
     }
     
     func doSubmitHiddenPeril(with hiddenPeril: MLHiddenPerilItem) {
-        do {
-            let attachments = try self.attachmentDetails.unwrap()
-            if attachments.count > 0 {
-                self.uploadHiddenPerilWithPhotos(with: hiddenPeril)
-            } else {
-                self.uploadHiddenPerilItem(with: hiddenPeril)
-            }
-        } catch {
-            MolueLogger.UIModule.message(error)
+        if self.attachmentDetails?.count ?? 0 > 0 {
+            self.uploadHiddenPerilWithPhotos(with: hiddenPeril)
+        } else {
+            self.uploadHiddenPerilItem(with: hiddenPeril)
         }
     }
     

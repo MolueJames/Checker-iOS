@@ -46,7 +46,7 @@ extension EditRiskInfoViewableRouter: EditRiskInfoViewableRouting {
         }
     }
     
-    func presentToEditSituation(with situation: MLHiddenPerilSituation?) {
+    func presentToEditSituation(with situation: MLPerilSituation?) {
         do {
             let navigator = try self.controller.unwrap()
             let controller = EditSituationViewController.initializeFromStoryboard()

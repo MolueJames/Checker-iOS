@@ -27,36 +27,21 @@ class RiskArrangeHeaderView: UIView {
         self.moreCommand.onNext(())
     }
     
+    func updateDetailCommand(with command: PublishSubject<Void>) {
+        self.moreCommand = command
+    }
+    
     @IBOutlet weak var riskNumberLabel: UILabel!
     
     @IBOutlet weak var levelTitleView: MLCommonClickView!
     
     @IBOutlet weak var classTitleView: MLCommonClickView!
     
-    @IBOutlet weak var RiskUnitTitleView: MLCommonClickView!
-    
-    @IBOutlet weak var riskDescLabel: UILabel!
+    @IBOutlet weak var pointTitleView: MLCommonClickView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-    }
-    
-    func queryPerilMemo(with memo: String?) -> NSAttributedString {
-        do {
-            let attributedText = try NSMutableAttributedString(string: memo.unwrap())
-            let range = try NSMakeRange(0, memo.unwrap().count)
-            let style = NSMutableParagraphStyle()
-            style.lineSpacing = 6 //大小调整
-            let styleKey = NSAttributedString.Key.paragraphStyle
-            attributedText.addAttribute(styleKey, value: style, range: range)
-            let colorKey = NSAttributedString.Key.foregroundColor
-            let color = MLCommonColor.commonLine
-            attributedText.addAttribute(colorKey, value: color, range: range)
-            return attributedText
-        } catch {
-            return NSAttributedString(string: "暂无隐患")
-        }
     }
     
     func queryRiskStatus(with status: String?) -> String {
@@ -88,8 +73,6 @@ class RiskArrangeHeaderView: UIView {
             }
         } catch {return "暂无数据"}
     }
-  
-    private var hiddenPeril: MLHiddenPerilItem?
     
     func refreshSubviews(with item: MLHiddenPerilItem)  {
         let level: String = self.queryRiskLevel(with: item.grade)
@@ -99,12 +82,8 @@ class RiskArrangeHeaderView: UIView {
         classTitleView.defaultValue(title: "隐患分类", placeholder: riskClass)
         
         let riskUnit: String = item.risk?.unitName ?? "暂无数据"
-        RiskUnitTitleView.defaultValue(title: "隐患部位", placeholder: riskUnit)
-        
-        let perilMemo = self.queryPerilMemo(with: item.perilMemo)
-        self.riskDescLabel.attributedText = perilMemo
+        pointTitleView.defaultValue(title: "隐患部位", placeholder: riskUnit)
         
         self.riskNumberLabel.text = item.perilId.data()
-        self.hiddenPeril = item
     }
 }

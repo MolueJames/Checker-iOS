@@ -14,6 +14,7 @@ public class MLHiddenPerilItem: Mappable {
     public init() {}
     
     public required init?(map: Map) {
+        needRectification <- map["need_rectification"]
         rectifyBudget <- map["rectification_budget"]
         situationImages <- map["situation_images"]
         verifiedImages <- map["verified_images"]
@@ -48,15 +49,17 @@ public class MLHiddenPerilItem: Mappable {
     
     public var situationImages: [MLAttachmentDetail]?
     public var classification: MLRiskClassification?
-    public var situations: [MLHiddenPerilSituation]?
     public var verifiedImages: [MLAttachmentDetail]?
     public var attachments: [MLAttachmentDetail]?
+    public var situations: [MLPerilSituation]?
     public var actions: [MLHiddenPerilAction]?
     public var createdUser: MolueUserInfo?
     public var risk: MLRiskPointDetail?
+    public var needRectification: Bool?
     public var rectifyBudget: String?
     public var enterpriseId: String?
     public var approvedDate: String?
+    
     public var rectifyDate: String?
     public var rectifyCost: String?
     public var perilMemo: String?
@@ -68,7 +71,7 @@ public class MLHiddenPerilItem: Mappable {
     public var grade: String?
 }
 
-public class MLHiddenPerilSituation: Mappable {
+public class MLPerilSituation: Mappable {
     public init(_ content: String) {
         self.content = content
     }

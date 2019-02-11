@@ -28,7 +28,7 @@ final class RiskRectifyPageInteractor: MoluePresenterInteractable {
     
     weak var listener: RiskRectifyInteractListener?
     
-    lazy var situations: [MLHiddenPerilSituation]? = {
+    lazy var situations: [MLPerilSituation]? = {
         do {
             let hiddenPeril = try self.hiddenPeril.unwrap()
             return try hiddenPeril.situations.unwrap()
@@ -84,29 +84,22 @@ extension RiskRectifyPageInteractor: RiskRectifyPresentableListener {
         }
     }
     
-    func queryRiskArrange(with indexPath: IndexPath) -> MLHiddenPerilSituation? {
-//        do {
-//            let arrangeList = try self.rectifyStep.unwrap()
-//            let filterList = arrangeList.filter { (item) -> Bool in
-//                let filter = indexPath.section == 0 ? "done" : "created"
-//                return item.status == filter
-//            }
-//            let item = filterList.item(at: indexPath.row)
-//            return try item.unwrap()
-//        } catch {
-            return MolueLogger.UIModule.allowNil("error")
-//        }
+    func queryRiskArrange(with indexPath: IndexPath) -> MLPerilSituation? {
+        do {
+            let hiddenPeril = try self.hiddenPeril.unwrap()
+            let situations = try hiddenPeril.situations.unwrap()
+            return try situations.item(at: indexPath.row).unwrap()
+        } catch {
+            return MolueLogger.UIModule.allowNil(error)
+        }
     }
     
     func numberOfRows(at section: Int) -> Int? {
-//        do {
-//            let arrangeList = try self.rectifyStep.unwrap()
-//            return arrangeList.filter { (item) -> Bool in
-//                let filter = section == 0 ? "done" : "created"
-//                return item.status == filter
-//            }.count
-//        } catch {
-            return MolueLogger.UIModule.allowNil("error")
-//        }
+        do {
+            let hiddenPeril = try self.hiddenPeril.unwrap()
+            return try hiddenPeril.situations.unwrap().count
+        } catch {
+            return MolueLogger.UIModule.allowNil(error)
+        }
     }
 }

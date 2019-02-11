@@ -13,7 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR" customClass="RiskDetailReusableHeaderView" customModule="MolueRiskPart" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="380"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="340"/>
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HJZ-nI-S76" customClass="MLCommonClickView" customModule="MolueCommon">
@@ -65,52 +65,31 @@
                         <constraint firstAttribute="height" constant="45" id="hjf-8j-o2p"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GWY-mt-Z4A">
-                    <rect key="frame" x="0.0" y="315" width="320" height="65"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="隐患描述" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YY9-sS-DSe">
-                            <rect key="frame" x="20" y="12" width="61.5" height="18"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                            <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="暂无数据" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mwa-Zs-kP2">
-                            <rect key="frame" x="20" y="38" width="280" height="18"/>
-                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
-                            <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                    </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstItem="YY9-sS-DSe" firstAttribute="leading" secondItem="GWY-mt-Z4A" secondAttribute="leading" constant="20" id="4Wn-KX-qfY"/>
-                        <constraint firstAttribute="bottom" secondItem="mwa-Zs-kP2" secondAttribute="bottom" constant="9" id="Agm-Aw-bpR"/>
-                        <constraint firstAttribute="trailing" secondItem="mwa-Zs-kP2" secondAttribute="trailing" constant="20" id="EJJ-Ka-W57"/>
-                        <constraint firstItem="YY9-sS-DSe" firstAttribute="top" secondItem="GWY-mt-Z4A" secondAttribute="top" constant="12" id="MGQ-u3-UyC"/>
-                        <constraint firstItem="mwa-Zs-kP2" firstAttribute="leading" secondItem="GWY-mt-Z4A" secondAttribute="leading" constant="20" id="XLp-Hq-x7r"/>
-                        <constraint firstItem="mwa-Zs-kP2" firstAttribute="top" secondItem="YY9-sS-DSe" secondAttribute="bottom" constant="8" id="dph-0M-5U2"/>
-                    </constraints>
-                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="隐患问题描述" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O02-mg-YDJ">
+                    <rect key="frame" x="15" y="315" width="92" height="25"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <constraints>
                 <constraint firstItem="1dV-E1-UhK" firstAttribute="top" secondItem="HJZ-nI-S76" secondAttribute="bottom" id="26n-Bq-PPA"/>
-                <constraint firstItem="GWY-mt-Z4A" firstAttribute="top" secondItem="HqN-PT-ISE" secondAttribute="bottom" id="3d3-VY-kf2"/>
                 <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="HJZ-nI-S76" secondAttribute="trailing" id="5GE-rc-m8b"/>
                 <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="HqN-PT-ISE" secondAttribute="trailing" id="9jz-1j-Cgb"/>
                 <constraint firstItem="VNQ-ml-FSd" firstAttribute="top" secondItem="qNy-xi-CZP" secondAttribute="bottom" id="D30-bU-bNr"/>
                 <constraint firstItem="s2b-kc-8jb" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" id="DEs-KT-Q3L"/>
-                <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="GWY-mt-Z4A" secondAttribute="trailing" id="DQA-Yn-CtP"/>
                 <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="1dV-E1-UhK" secondAttribute="trailing" id="KeS-LY-65Q"/>
                 <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="VNQ-ml-FSd" secondAttribute="trailing" id="N2V-xK-hcH"/>
                 <constraint firstItem="1dV-E1-UhK" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" id="N6U-oA-cRR"/>
                 <constraint firstItem="GF6-kU-7Kf" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" id="ObC-BI-Tzz"/>
                 <constraint firstItem="HqN-PT-ISE" firstAttribute="top" secondItem="s2b-kc-8jb" secondAttribute="bottom" id="WUd-CO-bvi"/>
                 <constraint firstItem="HqN-PT-ISE" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" id="c5f-SP-qsa"/>
-                <constraint firstAttribute="bottom" secondItem="GWY-mt-Z4A" secondAttribute="bottom" id="fTW-c8-1Zs"/>
                 <constraint firstItem="HJZ-nI-S76" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" id="fff-Rc-o7K"/>
-                <constraint firstItem="GWY-mt-Z4A" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" id="lRU-3q-fAA"/>
+                <constraint firstItem="O02-mg-YDJ" firstAttribute="top" secondItem="HqN-PT-ISE" secondAttribute="bottom" id="hfU-CR-KRD"/>
+                <constraint firstItem="O02-mg-YDJ" firstAttribute="bottom" secondItem="VXr-Tz-HHm" secondAttribute="bottom" id="iH2-8N-5xa"/>
                 <constraint firstItem="qNy-xi-CZP" firstAttribute="top" secondItem="GF6-kU-7Kf" secondAttribute="bottom" id="nqx-y3-E5Z"/>
                 <constraint firstItem="GF6-kU-7Kf" firstAttribute="top" secondItem="1dV-E1-UhK" secondAttribute="bottom" id="qUc-Wr-M2I"/>
+                <constraint firstItem="O02-mg-YDJ" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" constant="15" id="qke-2s-ODX"/>
                 <constraint firstItem="qNy-xi-CZP" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" id="rEZ-UH-bD4"/>
                 <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="s2b-kc-8jb" secondAttribute="trailing" id="tX9-qT-iVn"/>
                 <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="GF6-kU-7Kf" secondAttribute="trailing" id="wXp-AQ-6V1"/>
@@ -121,12 +100,11 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
             <connections>
-                <outlet property="RiskUnitTitleView" destination="VNQ-ml-FSd" id="jYe-ui-HzH"/>
                 <outlet property="checkedDateView" destination="s2b-kc-8jb" id="vWc-ZS-YDs"/>
                 <outlet property="classTitleView" destination="qNy-xi-CZP" id="fdc-KJ-AWj"/>
                 <outlet property="levelTitleView" destination="GF6-kU-7Kf" id="Z8B-rI-IqD"/>
                 <outlet property="personTitleView" destination="HqN-PT-ISE" id="oV0-oZ-ydz"/>
-                <outlet property="riskDescLabel" destination="mwa-Zs-kP2" id="6s3-K8-8Jg"/>
+                <outlet property="pointTitleView" destination="VNQ-ml-FSd" id="Xop-xl-XUT"/>
                 <outlet property="riskNumberView" destination="1dV-E1-UhK" id="8VR-83-fqA"/>
                 <outlet property="statusTitleView" destination="HJZ-nI-S76" id="MpS-6E-ivR"/>
             </connections>

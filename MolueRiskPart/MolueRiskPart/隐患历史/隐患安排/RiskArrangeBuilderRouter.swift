@@ -35,6 +35,16 @@ final class RiskArrangeViewableRouter: MolueViewableRouting {
 }
 
 extension RiskArrangeViewableRouter: RiskArrangeViewableRouting {
+    func pushToBudgetFromController(with list: [String], command: PublishSubject<String>) {
+        do {
+            let navigator = try self.controller.unwrap()
+            let controller = MLSingleSelectController<String>()
+            controller.updateValues(title: "资金来源", list: list)
+            controller.updateSelectCommand(with: command)
+            navigator.pushToViewController(controller, animated: true)
+        } catch { MolueLogger.UIModule.error(error) }
+    }
+    
     func pushToRiskDetailController() {
         do {
             let listener = try self.interactor.unwrap()

@@ -13,7 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="RiskArrangeHeaderView" customModule="MolueRiskPart" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="245"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XPT-gQ-bPN" customClass="MLCommonClickView" customModule="MolueCommon">
@@ -21,42 +21,6 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="45" id="1sB-iG-JgC"/>
-                    </constraints>
-                </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x4D-OW-NS7">
-                    <rect key="frame" x="0.0" y="180" width="375" height="65"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="隐患描述" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dp1-Xg-OoF">
-                            <rect key="frame" x="20" y="12" width="61.5" height="18"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                            <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="暂无数据" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PjX-nq-Y3B">
-                            <rect key="frame" x="20" y="38" width="335" height="18"/>
-                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
-                            <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qK1-dO-UBp">
-                            <rect key="frame" x="0.0" y="64.5" width="375" height="0.5"/>
-                            <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="0.5" id="KAQ-r2-yLe"/>
-                            </constraints>
-                        </view>
-                    </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="trailing" secondItem="qK1-dO-UBp" secondAttribute="trailing" id="1Tk-YF-Uqb"/>
-                        <constraint firstItem="qK1-dO-UBp" firstAttribute="leading" secondItem="x4D-OW-NS7" secondAttribute="leading" id="3zX-zh-ADL"/>
-                        <constraint firstItem="dp1-Xg-OoF" firstAttribute="leading" secondItem="x4D-OW-NS7" secondAttribute="leading" constant="20" id="4VT-OV-PUg"/>
-                        <constraint firstItem="PjX-nq-Y3B" firstAttribute="leading" secondItem="x4D-OW-NS7" secondAttribute="leading" constant="20" id="GLx-22-Jg4"/>
-                        <constraint firstItem="PjX-nq-Y3B" firstAttribute="top" secondItem="dp1-Xg-OoF" secondAttribute="bottom" constant="8" id="I7G-dd-Y6e"/>
-                        <constraint firstItem="dp1-Xg-OoF" firstAttribute="top" secondItem="x4D-OW-NS7" secondAttribute="top" constant="12" id="Olh-5r-h5W"/>
-                        <constraint firstAttribute="bottom" secondItem="qK1-dO-UBp" secondAttribute="bottom" id="UUC-xg-5AJ"/>
-                        <constraint firstAttribute="trailing" secondItem="PjX-nq-Y3B" secondAttribute="trailing" constant="20" id="ZIA-0Y-qJA"/>
-                        <constraint firstAttribute="bottom" secondItem="PjX-nq-Y3B" secondAttribute="bottom" constant="9" id="vcl-FO-EuA"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p8m-gN-Z0j" customClass="MLCommonClickView" customModule="MolueCommon">
@@ -116,13 +80,9 @@
                 <constraint firstItem="XPT-gQ-bPN" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="8hq-eV-06t"/>
                 <constraint firstItem="LI8-Iv-UXV" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Abf-aw-pHt"/>
                 <constraint firstItem="p8m-gN-Z0j" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="AkM-xJ-zDa"/>
-                <constraint firstItem="x4D-OW-NS7" firstAttribute="top" secondItem="XPT-gQ-bPN" secondAttribute="bottom" id="BOy-SD-qsd"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="p8m-gN-Z0j" secondAttribute="trailing" id="DE1-v6-7w8"/>
                 <constraint firstItem="XPT-gQ-bPN" firstAttribute="top" secondItem="tyT-nj-yYM" secondAttribute="bottom" id="FqW-Me-juv"/>
                 <constraint firstItem="LI8-Iv-UXV" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="KQh-bg-6Z6"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="x4D-OW-NS7" secondAttribute="trailing" id="QkL-QO-Cx4"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="x4D-OW-NS7" secondAttribute="bottom" id="TaT-fd-1lE"/>
-                <constraint firstItem="x4D-OW-NS7" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="WIf-cB-sEe"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="XPT-gQ-bPN" secondAttribute="trailing" id="WS2-57-jqf"/>
                 <constraint firstItem="tyT-nj-yYM" firstAttribute="top" secondItem="p8m-gN-Z0j" secondAttribute="bottom" id="YrC-zh-q8t"/>
                 <constraint firstItem="tyT-nj-yYM" firstAttribute="top" secondItem="p8m-gN-Z0j" secondAttribute="bottom" id="bw1-kW-H0f"/>
@@ -133,10 +93,9 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
-                <outlet property="RiskUnitTitleView" destination="XPT-gQ-bPN" id="Wyx-nY-4eB"/>
                 <outlet property="classTitleView" destination="tyT-nj-yYM" id="Maa-TX-8BZ"/>
                 <outlet property="levelTitleView" destination="p8m-gN-Z0j" id="tfO-Yy-W2s"/>
-                <outlet property="riskDescLabel" destination="PjX-nq-Y3B" id="ufK-4O-as8"/>
+                <outlet property="pointTitleView" destination="XPT-gQ-bPN" id="mb4-u4-LL8"/>
                 <outlet property="riskNumberLabel" destination="8g1-lM-1HI" id="ZRh-nk-Oyt"/>
             </connections>
             <point key="canvasLocation" x="-391.19999999999999" y="-34.632683658170919"/>

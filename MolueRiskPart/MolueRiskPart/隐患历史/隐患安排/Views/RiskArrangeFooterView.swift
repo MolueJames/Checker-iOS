@@ -29,22 +29,59 @@ class RiskArrangeFooterView: UIView {
         self.layer.shadowOpacity = 0.7
     }
     
-    var submitCommand = PublishSubject<Void>()
+    private var submitCommand = PublishSubject<Void>()
+    private var finishCommand = PublishSubject<Void>()
     
-    @IBOutlet weak var finishDateClickView: MLCommonClickView! {
+    @IBOutlet weak var budgetFromClickView: MLCommonClickView! {
         didSet {
-            finishDateClickView.defaultValue(title: "截止日期: ", placeholder: "请选择截止日期")
+            budgetFromClickView.defaultValue(title: "资金来源: ", placeholder: "请选择资金来源")
         }
     }
+    
+    @IBOutlet weak var budgetRiskInputView: MLCommonInputView! {
+        didSet {
+            budgetRiskInputView.defaultValue(title: "整改资金(元): ", placeholder: "请输入整改资金", keyboardType: .decimalPad)
+        }
+    }
+    
+    @IBAction func finishDateValueChanged(_ sender: UISwitch) {
+        self.finishDateTextField.isHidden = !sender.isOn
+    }
+    
+    @IBOutlet weak var finishDateTextField: UITextField! {
+        didSet {
+            finishDateTextField.delegate = self
+        }
+    }
+    
     func updateFinishCommand(with command: PublishSubject<Void>) {
-        self.finishDateClickView.clickedCommand = command
+        self.finishCommand = command
+    }
+    
+    func updateSubmitCommand(with command: PublishSubject<Void>) {
+        self.submitCommand = command
+    }
+    
+    func updateBudgetCommand(with command: PublishSubject<Void>) {
+        self.budgetFromClickView.clickedCommand = command
     }
     
     func updateFinishDate(with title: String) {
-        self.finishDateClickView.update(description: title)
+        self.finishDateTextField.text = title
+    }
+    
+    func updateBudgetFrom(with title: String) {
+        self.budgetFromClickView.update(description: title)
     }
     
     @IBAction func submitButtonClicked(_ sender: UIButton) {
         self.submitCommand.onNext(())
+    }
+}
+
+extension RiskArrangeFooterView: UITextFieldDelegate {
+    public func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        self.finishCommand.onNext(())
+        return false
     }
 }

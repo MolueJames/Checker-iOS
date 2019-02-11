@@ -119,9 +119,9 @@ class IncreaseAdminiViewController: MLBaseViewController {
     private func pushToSelectController(title: String, list: [MLSelectedTableViewModel]) {
         let list = self.dataManager.fullTimeList
         let controller = self.navigator.selectController(title: "安全员类型", list: list)
-        controller.selectCommand.subscribe(onNext: { [unowned self] (model) in
-            self.fullTimeAdminiClickView.update(description: model.description)
-        }).disposed(by: disposeBag)
+//        controller.selectCommand.subscribe(onNext: { [unowned self] (model) in
+//            self.fullTimeAdminiClickView.update(description: model.description)
+//        }).disposed(by: disposeBag)
         self.navigator.push(controller)
     }
     

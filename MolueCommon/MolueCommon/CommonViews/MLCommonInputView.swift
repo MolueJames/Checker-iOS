@@ -16,7 +16,7 @@ public class MLCommonInputView: UIView {
         self.addSubview(internalTextField)
         internalTextField.snp.makeConstraints({ (make) in
             make.right.equalTo(-15)
-            make.left.equalTo(95)
+            make.left.equalTo(120)
             make.top.bottom.equalToSuperview()
         })
         return internalTextField
@@ -25,7 +25,7 @@ public class MLCommonInputView: UIView {
         let internalTitleLabel = UILabel()
         self.addSubview(internalTitleLabel)
         internalTitleLabel.snp.makeConstraints({ (make) in
-            make.width.equalTo(70)
+            make.width.equalTo(100)
             make.left.equalTo(20)
             make.top.bottom.equalToSuperview()
         })
@@ -66,12 +66,13 @@ public class MLCommonInputView: UIView {
         self.textFiled.addTarget(self, action: #selector(textValueChanged), for: .editingChanged)
         self.updateViewElements()
     }
+    
     private func updateViewElements() {
         self.lineView.backgroundColor = MLCommonColor.commonLine
-        self.textFiled.font = .systemFont(ofSize: 16)
+        self.textFiled.font = .systemFont(ofSize: 15)
         self.textFiled.textColor = MLCommonColor.titleLabel
         self.textFiled.textAlignment = .right
-        self.titleLabel.font = .systemFont(ofSize: 16)
+        self.titleLabel.font = .systemFont(ofSize: 15)
         self.titleLabel.textColor = MLCommonColor.titleLabel
     }
 }
