@@ -1,5 +1,5 @@
 workspace 'MolueSafty.xcworkspace'
-platform :ios, '10.0'
+platform :ios, '9.0'
 use_frameworks!
 inhibit_all_warnings!
 
@@ -41,6 +41,7 @@ target 'MolueSafty' do
         pod 'JGProgressHUD', '~> 1.4'
         pod 'LeakEye', '~> 1.2.0'
         pod 'JTAppleCalendar', '~> 7.1.6'
+        pod 'Bugly', '~> 2.5.0'
         molue_safty_shared_pods
 end
 

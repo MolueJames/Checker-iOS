@@ -11,6 +11,7 @@ import MolueNetwork
 import MolueCommon
 import KeychainAccess
 import Kingfisher
+import Bugly
 import Alamofire
 import MolueUtilities
 
@@ -18,6 +19,7 @@ extension AppDelegate {
     func setUserInterfaceConfigure() {
         MLInterfaceConfigure.setInterfaceConfigure()
         self.setDefaultWebImageConfigure()
+        self.setupTencentBuglyConfigure()
     }
     
     private func setDefaultWebImageConfigure() {
@@ -26,6 +28,15 @@ extension AppDelegate {
         cache.maxDiskCacheSize = 50 * 1024 * 1024
         // 设置硬盘最大保存3天 ， 默认1周
         cache.maxCachePeriodInSecond = 60 * 60 * 24 * 3
+    }
+    
+    private func setupTencentBuglyConfigure() {
+        let configuration = BuglyConfig.init()
+        let isDebug = AppSchemeStatus.base() == .debug
+        configuration.blockMonitorEnable = isDebug
+        configuration.unexpectedTerminatingDetectionEnable = true
+        configuration.reportLogLevel = .warn
+        Bugly.start(withAppId: "7d9e92a2b6", config: configuration)
     }
 }
 
