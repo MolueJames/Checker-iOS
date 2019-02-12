@@ -1,23 +1,23 @@
 //
-//  RiskUnitPositionPageInteractor.swift
-//  MolueRiskPart
+//  RiskUnitListPageInteractor.swift
+//  MolueHomePart
 //
-//  Created by JamesCheng on 2019-01-10.
+//  Created by JamesCheng on 2019-02-12.
 //  Copyright © 2019 MolueTech. All rights reserved.
 //
 
-import MolueMediator
 import MolueNetwork
 import MolueFoundation
 import MolueUtilities
+import MolueMediator
 
-protocol RiskUnitPositionViewableRouting: class {
+protocol RiskUnitListViewableRouting: class {
     // 定义一些页面跳转的方法, 比如Push, Presenter等.
-    func popBackToPreviousController()
+    func pushToRiskPointListController()
 }
 
-protocol RiskUnitPositionPagePresentable: MolueInteractorPresentable, MLControllerHUDProtocol {
-    var listener: RiskUnitPositionPresentableListener? { get set }
+protocol RiskUnitListPagePresentable: MolueInteractorPresentable, MLControllerHUDProtocol {
+    var listener: RiskUnitListPresentableListener? { get set }
     // 定义一些页面需要的方法, 比如刷新页面的显示内容等.
     func reloadTableViewData()
     
@@ -26,28 +26,27 @@ protocol RiskUnitPositionPagePresentable: MolueInteractorPresentable, MLControll
     func endFooterRefreshing(with hasMore: Bool)
 }
 
-final class RiskUnitPositionPageInteractor: MoluePresenterInteractable {
+final class RiskUnitListPageInteractor: MoluePresenterInteractable {
     
-    weak var presenter: RiskUnitPositionPagePresentable?
+    weak var presenter: RiskUnitListPagePresentable?
     
-    var viewRouter: RiskUnitPositionViewableRouting?
+    var viewRouter: RiskUnitListViewableRouting?
     
-    weak var listener: RiskUnitPositionInteractListener?
+    weak var listener: RiskUnitListInteractListener?
     
     var listModel = MolueListItem<MLRiskUnitDetail>()
     
-    required init(presenter: RiskUnitPositionPagePresentable) {
+    required init(presenter: RiskUnitListPagePresentable) {
         self.presenter = presenter
         presenter.listener = self
     }
 }
 
-extension RiskUnitPositionPageInteractor: RiskUnitPositionRouterInteractable {
+extension RiskUnitListPageInteractor: RiskUnitListRouterInteractable {
     
 }
 
-extension RiskUnitPositionPageInteractor: RiskUnitPositionPresentableListener {
-
+extension RiskUnitListPageInteractor: RiskUnitListPresentableListener {
     func queryRiskUnitPosition() {
         let size: Int = self.listModel.pagesize
         let request = MoluePerilService.queryPerilUnitPosition(page: 1, size: size)
@@ -121,16 +120,6 @@ extension RiskUnitPositionPageInteractor: RiskUnitPositionPresentableListener {
     
     func numberOfRows(in section: Int) -> Int? {
         do {
-            let results = try self.listModel.results.unwrap()
-            let item = try results.item(at: section).unwrap()
-            return try item.risks.unwrap().count
-        } catch {
-            return MolueLogger.UIModule.allowNil(error)
-        }
-    }
-    
-    func numberOfSections() -> Int? {
-        do {
             let results = self.listModel.results
             return try results.unwrap().count
         } catch {
@@ -138,52 +127,21 @@ extension RiskUnitPositionPageInteractor: RiskUnitPositionPresentableListener {
         }
     }
     
-    func queryRiskUnitDetail(with section: Int) -> MLRiskUnitDetail? {
+    func queryRiskUnit(with indexPath: IndexPath) -> MLRiskUnitDetail? {
         do {
             let results = try self.listModel.results.unwrap()
-            return try results.item(at: section).unwrap()
+            return try results.item(at: indexPath.row).unwrap()
         } catch {
             return MolueLogger.UIModule.allowNil(error)
         }
     }
     
-    func queryRiskPointDetail(with indexPath: IndexPath) -> MLRiskPointDetail? {
+    func didSelectRow(at indexPath: IndexPath) {
         do {
-            let results = try self.listModel.results.unwrap()
-            let item = try results.item(at: indexPath.section).unwrap()
-            let children = try item.risks.unwrap()
-            return try children.item(at: indexPath.row).unwrap()
+            let router = try self.viewRouter.unwrap()
+            router.pushToRiskPointListController()
         } catch {
-            return MolueLogger.UIModule.allowNil(error)
-        }
-    }
-    
-    func submitSelectedPointPosition(with indexPath: IndexPath?) {
-        if let indexPath = indexPath {
-            self.handleSelectedPointPosition(with: indexPath)
-        } else {
-            self.handleUnselectPointPosition()
-        }
-    }
-    
-    func handleSelectedPointPosition(with indexPath: IndexPath) {
-        do {
-            let listener = try self.listener.unwrap()
-            let value = self.queryRiskPointDetail(with: indexPath)
-            try listener.updateRiskPointPosition(with: value.unwrap())
-            let viewRouter = try self.viewRouter.unwrap()
-            viewRouter.popBackToPreviousController()
-        } catch {
-            MolueLogger.UIModule.error(error)
-        }
-    }
-    
-    func handleUnselectPointPosition() {
-        do {
-            let presenter = try self.presenter.unwrap()
-            presenter.showWarningHUD(text: "请选择隐患位置")
-        } catch {
-            MolueLogger.UIModule.error(error)
+            MolueLogger.UIModule.message(error)
         }
     }
 }

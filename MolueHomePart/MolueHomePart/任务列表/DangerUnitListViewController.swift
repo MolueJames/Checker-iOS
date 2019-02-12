@@ -41,7 +41,7 @@ final class DangerUnitListViewController: MLBaseViewController  {
         didSet {
             tableView.dataSource = self
             tableView.delegate = self
-            tableView.register(xibWithCellClass: DangerUnitTableViewCell.self)
+            tableView.register(xibWithCellClass: DangerPointDetailTableViewCell.self)
         }
     }
     
@@ -191,7 +191,7 @@ extension DangerUnitListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withClass: DangerUnitTableViewCell.self)
+        let cell = tableView.dequeueReusableCell(withClass: DangerPointDetailTableViewCell.self)
         do {
             let listener = try self.listener.unwrap()
             let item = listener.queryTaskItem(with: indexPath)
