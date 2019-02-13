@@ -1,5 +1,5 @@
 //
-//  DangerUnitListPageInteractor.swift
+//  CheckTaskListPageInteractor.swift
 //  MolueHomePart
 //
 //  Created by JamesCheng on 2018-11-06.
@@ -11,13 +11,13 @@ import MolueUtilities
 import MolueFoundation
 import MolueNetwork
 
-protocol DangerUnitListViewableRouting: class {
+protocol CheckTaskListViewableRouting: class {
     // 定义一些页面跳转的方法, 比如Push, Presenter等.
     func pushToDailyCheckTaskController()
 }
 
-protocol DangerUnitListPagePresentable: MolueInteractorPresentable, MLControllerHUDProtocol {
-    var listener: DangerUnitListPresentableListener? { get set }
+protocol CheckTaskListPagePresentable: MolueInteractorPresentable, MLControllerHUDProtocol {
+    var listener: CheckTaskListPresentableListener? { get set }
     // 定义一些页面需要的方法, 比如刷新页面的显示内容等.
     func popBackWhenTaskChecked()
     
@@ -30,13 +30,13 @@ protocol DangerUnitListPagePresentable: MolueInteractorPresentable, MLController
     func reloadTableViewCell(with indexPath: IndexPath)
 }
 
-final class DangerUnitListPageInteractor: MoluePresenterInteractable {
+final class CheckTaskListPageInteractor: MoluePresenterInteractable {
     
-    weak var presenter: DangerUnitListPagePresentable?
+    weak var presenter: CheckTaskListPagePresentable?
     
-    var viewRouter: DangerUnitListViewableRouting?
+    var viewRouter: CheckTaskListViewableRouting?
     
-    weak var listener: DangerUnitListInteractListener?
+    weak var listener: CheckTaskListInteractListener?
     
     var selectedCheckTask: String?
     
@@ -44,17 +44,17 @@ final class DangerUnitListPageInteractor: MoluePresenterInteractable {
     
     var listModel = MolueListItem<MLDailyCheckPlan>()
     
-    required init(presenter: DangerUnitListPagePresentable) {
+    required init(presenter: CheckTaskListPagePresentable) {
         self.presenter = presenter
         presenter.listener = self
     }
 }
 
-extension DangerUnitListPageInteractor: DangerUnitListRouterInteractable {
+extension CheckTaskListPageInteractor: CheckTaskListRouterInteractable {
 
 }
 
-extension DangerUnitListPageInteractor: DangerUnitListPresentableListener {
+extension CheckTaskListPageInteractor: CheckTaskListPresentableListener {
     func reloadCheckTask(with task: MLDailyCheckTask) {
         do {
             let indexPath = try self.selectedIndexPath.unwrap()

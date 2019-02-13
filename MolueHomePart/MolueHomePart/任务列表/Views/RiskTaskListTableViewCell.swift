@@ -10,7 +10,7 @@ import UIKit
 import MolueUtilities
 import MolueMediator
 
-class DangerPointDetailTableViewCell: UITableViewCell {
+class RiskTaskListTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()

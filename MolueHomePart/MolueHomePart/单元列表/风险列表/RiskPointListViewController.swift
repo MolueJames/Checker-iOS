@@ -7,10 +7,15 @@
 //
 
 import UIKit
+import MolueUtilities
 import MolueFoundation
+import MolueMediator
 
 protocol RiskPointListPresentableListener: class {
     // 定义一些当前页面需要的业务逻辑, 比如网络请求.
+    func numberOfRows(in section: Int) -> Int?
+    
+    func queryRiskPoint(at indexPath: IndexPath) -> MLRiskPointDetail?
 }
 
 final class RiskPointListViewController: MLBaseViewController  {
@@ -21,6 +26,7 @@ final class RiskPointListViewController: MLBaseViewController  {
         didSet {
             tableView.dataSource = self
             tableView.delegate = self
+            tableView.register(xibWithCellClass: RiskPointTableViewCell.self)
         }
     }
     
@@ -53,12 +59,19 @@ extension RiskPointListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         do {
             let listener = try self.listener.unwrap()
-            
+            let count = listener.numberOfRows(in: section)
+            return try count.unwrap()
         } catch { return 0}
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withClass: <#T##T.Type#>)
+        let cell = tableView.dequeueReusableCell(withClass: RiskPointTableViewCell.self)
+        do {
+            let listener = try self.listener.unwrap()
+            let item = listener.queryRiskPoint(at: indexPath)
+            try cell.refreshSubviews(with: item.unwrap())
+        } catch { MolueLogger.UIModule.message(error) }
+        return cell
     }
     
     

@@ -9,7 +9,7 @@
 import MolueMediator
 import MolueUtilities
 
-protocol HomeInfoPageRouterInteractable: CheckTaskHistoryInteractListener, DangerUnitListInteractListener, PotentialRiskInteractListener, AdvertiseContentInteractListener, RiskFollowInteractListener {
+protocol HomeInfoPageRouterInteractable: CheckTaskHistoryInteractListener, CheckTaskListInteractListener, PotentialRiskInteractListener, AdvertiseContentInteractListener, RiskFollowInteractListener {
     var viewRouter: HomeInfoPageViewableRouting? { get set }
     var listener: HomeInfoPageInteractListener? { get set }
 }
@@ -90,7 +90,7 @@ extension HomeInfoPageViewableRouter: HomeInfoPageViewableRouting {
     func pushToDailyTaskController() {
         do {
             let listener = try self.interactor.unwrap()
-            let builder = DangerUnitListComponentBuilder()
+            let builder = CheckTaskListComponentBuilder()
             let controller = builder.build(listener: listener)
             controller.hidesBottomBarWhenPushed = true
             let navigator = try self.controller.unwrap()

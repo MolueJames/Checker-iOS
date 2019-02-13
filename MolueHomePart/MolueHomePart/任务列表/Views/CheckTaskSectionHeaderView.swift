@@ -10,7 +10,7 @@ import UIKit
 import MolueMediator
 import MolueUtilities
 
-class DangerUnitSectionHeaderView: UIView {
+class CheckTaskSectionHeaderView: UIView {
 
     /*
     // Only override draw() if you perform custom drawing.

@@ -36,5 +36,11 @@ extension RiskPointListPageInteractor: RiskPointListRouterInteractable {
 }
 
 extension RiskPointListPageInteractor: RiskPointListPresentableListener {
+    func numberOfRows(in section: Int) -> Int? {
+        return 0
+    }
     
+    func queryRiskPoint(at indexPath: IndexPath) -> MLRiskPointDetail? {
+        return nil
+    }
 }

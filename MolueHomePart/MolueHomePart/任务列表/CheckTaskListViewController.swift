@@ -1,5 +1,5 @@
 //
-//  DangerUnitListViewController.swift
+//  CheckTaskListViewController.swift
 //  MolueHomePart
 //
 //  Created by JamesCheng on 2018-11-06.
@@ -14,7 +14,7 @@ import MolueNetwork
 import MolueCommon
 import ESPullToRefresh
 
-protocol DangerUnitListPresentableListener: class {
+protocol CheckTaskListPresentableListener: class {
     // 定义一些当前页面需要的业务逻辑, 比如网络请求.
     func queryDailyCheckDangerUnit()
     
@@ -33,15 +33,15 @@ protocol DangerUnitListPresentableListener: class {
     func reloadCheckTask(with task: MLDailyCheckTask)
 }
 
-final class DangerUnitListViewController: MLBaseViewController  {
+final class CheckTaskListViewController: MLBaseViewController  {
     //MARK: View Controller Properties
-    var listener: DangerUnitListPresentableListener?
+    var listener: CheckTaskListPresentableListener?
     
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.dataSource = self
             tableView.delegate = self
-            tableView.register(xibWithCellClass: DangerPointDetailTableViewCell.self)
+            tableView.register(xibWithCellClass: RiskTaskListTableViewCell.self)
         }
     }
     
@@ -67,7 +67,7 @@ final class DangerUnitListViewController: MLBaseViewController  {
     }
 }
 
-extension DangerUnitListViewController: MLUserInterfaceProtocol {
+extension CheckTaskListViewController: MLUserInterfaceProtocol {
     func queryInformationWithNetwork() {
         let name = MolueNotification.check_task_finish.toName()
         let selector: Selector = #selector(checkTaskFinished)
@@ -103,7 +103,7 @@ extension DangerUnitListViewController: MLUserInterfaceProtocol {
     }
 }
 
-extension DangerUnitListViewController: DangerUnitListPagePresentable {
+extension CheckTaskListViewController: CheckTaskListPagePresentable {
     func reloadTableViewCell(with indexPath: IndexPath) {
         self.tableView.reloadRows(at: [indexPath], with: .none)
     }
@@ -130,13 +130,13 @@ extension DangerUnitListViewController: DangerUnitListPagePresentable {
     }
 }
 
-extension DangerUnitListViewController: DangerUnitListViewControllable {
+extension CheckTaskListViewController: CheckTaskListViewControllable {
     
 }
 
-extension DangerUnitListViewController: UITableViewDelegate {
+extension CheckTaskListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView: DangerUnitSectionHeaderView = DangerUnitSectionHeaderView.createFromXib()
+        let headerView: CheckTaskSectionHeaderView = CheckTaskSectionHeaderView.createFromXib()
         do {
             let listener = try self.listener.unwrap()
             let item = listener.queryPlanItem(with: section)
@@ -175,7 +175,7 @@ extension DangerUnitListViewController: UITableViewDelegate {
     }
 }
 
-extension DangerUnitListViewController: UITableViewDataSource {
+extension CheckTaskListViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         do {
             let listener = try self.listener.unwrap()
@@ -191,7 +191,7 @@ extension DangerUnitListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withClass: DangerPointDetailTableViewCell.self)
+        let cell = tableView.dequeueReusableCell(withClass: RiskTaskListTableViewCell.self)
         do {
             let listener = try self.listener.unwrap()
             let item = listener.queryTaskItem(with: indexPath)

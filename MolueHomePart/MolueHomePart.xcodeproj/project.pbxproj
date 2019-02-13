@@ -25,10 +25,10 @@
 		1A027CA621DA3990002A0099 /* InsertPhotosCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A027CA421DA3990002A0099 /* InsertPhotosCollectionViewCell.xib */; };
 		1A06557D20A9EE020016CA86 /* HomeInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A06557B20A9EE020016CA86 /* HomeInfoTableViewCell.swift */; };
 		1A06557E20A9EE020016CA86 /* HomeInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A06557C20A9EE020016CA86 /* HomeInfoTableViewCell.xib */; };
-		1A0B89B721931B8F000B1EBC /* DangerPointDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0B89B521931B8F000B1EBC /* DangerPointDetailTableViewCell.swift */; };
-		1A0B89B821931B8F000B1EBC /* DangerPointDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A0B89B621931B8F000B1EBC /* DangerPointDetailTableViewCell.xib */; };
-		1A0B89BA21931BAD000B1EBC /* DangerUnitSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0B89B921931BAD000B1EBC /* DangerUnitSectionHeaderView.swift */; };
-		1A0B89BC21931BBA000B1EBC /* DangerUnitSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A0B89BB21931BBA000B1EBC /* DangerUnitSectionHeaderView.xib */; };
+		1A0B89B721931B8F000B1EBC /* RiskTaskListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0B89B521931B8F000B1EBC /* RiskTaskListTableViewCell.swift */; };
+		1A0B89B821931B8F000B1EBC /* RiskTaskListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A0B89B621931B8F000B1EBC /* RiskTaskListTableViewCell.xib */; };
+		1A0B89BA21931BAD000B1EBC /* CheckTaskSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0B89B921931BAD000B1EBC /* CheckTaskSectionHeaderView.swift */; };
+		1A0B89BC21931BBA000B1EBC /* CheckTaskSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A0B89BB21931BBA000B1EBC /* CheckTaskSectionHeaderView.xib */; };
 		1A0B89BE21933045000B1EBC /* DailyCheckTaskHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0B89BD21933045000B1EBC /* DailyCheckTaskHeaderView.swift */; };
 		1A0B89C021933052000B1EBC /* DailyCheckTaskHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A0B89BF21933052000B1EBC /* DailyCheckTaskHeaderView.xib */; };
 		1A0B89DB21968991000B1EBC /* DailyCheckSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0B89DA21968991000B1EBC /* DailyCheckSectionHeaderView.swift */; };
@@ -54,6 +54,8 @@
 		1A264B9021A1792700F452F9 /* CheckTaskHistoryPageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A264B8D21A1792700F452F9 /* CheckTaskHistoryPageInteractor.swift */; };
 		1A264B9121A1792700F452F9 /* CheckTaskHistoryBuilderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A264B8E21A1792700F452F9 /* CheckTaskHistoryBuilderRouter.swift */; };
 		1A264B9321A1794700F452F9 /* CheckTaskHistoryViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A264B9221A1794700F452F9 /* CheckTaskHistoryViewController.storyboard */; };
+		1A2B7C112212F82100C0704A /* RiskPointTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B7C0F2212F82100C0704A /* RiskPointTableViewCell.swift */; };
+		1A2B7C122212F82100C0704A /* RiskPointTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A2B7C102212F82100C0704A /* RiskPointTableViewCell.xib */; };
 		1A2F407421AD355F00C436F9 /* CheckTaskHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2F407221AD355F00C436F9 /* CheckTaskHistoryTableViewCell.swift */; };
 		1A2F407521AD355F00C436F9 /* CheckTaskHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A2F407321AD355F00C436F9 /* CheckTaskHistoryTableViewCell.xib */; };
 		1A3465D521971E3400EBA57C /* CheckTaskDetailFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3465D421971E3400EBA57C /* CheckTaskDetailFooterView.swift */; };
@@ -93,11 +95,11 @@
 		1A522EC72190356100094A8A /* DailyCheckTaskPageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A522EC42190356100094A8A /* DailyCheckTaskPageInteractor.swift */; };
 		1A522EC82190356100094A8A /* DailyCheckTaskBuilderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A522EC52190356100094A8A /* DailyCheckTaskBuilderRouter.swift */; };
 		1A522ECA2190357300094A8A /* DailyCheckTaskViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A522EC92190357300094A8A /* DailyCheckTaskViewController.storyboard */; };
-		1A522ED621912BA200094A8A /* DangerUnitListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A522ED321912BA200094A8A /* DangerUnitListViewController.swift */; };
-		1A522ED721912BA200094A8A /* DangerUnitListPageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A522ED421912BA200094A8A /* DangerUnitListPageInteractor.swift */; };
-		1A522ED821912BA200094A8A /* DangerUnitListBuilderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A522ED521912BA200094A8A /* DangerUnitListBuilderRouter.swift */; };
+		1A522ED621912BA200094A8A /* CheckTaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A522ED321912BA200094A8A /* CheckTaskListViewController.swift */; };
+		1A522ED721912BA200094A8A /* CheckTaskListPageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A522ED421912BA200094A8A /* CheckTaskListPageInteractor.swift */; };
+		1A522ED821912BA200094A8A /* CheckTaskListBuilderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A522ED521912BA200094A8A /* CheckTaskListBuilderRouter.swift */; };
 		1A58263A20B7123E007FBFC7 /* MolueNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A58263920B7123E007FBFC7 /* MolueNetwork.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		1A5D5BF221912C3E003E7039 /* DangerUnitListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A5D5BF121912C3E003E7039 /* DangerUnitListViewController.storyboard */; };
+		1A5D5BF221912C3E003E7039 /* CheckTaskListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A5D5BF121912C3E003E7039 /* CheckTaskListViewController.storyboard */; };
 		1A5E87F521C9DC4B00BA4DB5 /* PolicyNoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5E87F221C9DC4B00BA4DB5 /* PolicyNoticeViewController.swift */; };
 		1A5E87F621C9DC4B00BA4DB5 /* PolicyNoticePageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5E87F321C9DC4B00BA4DB5 /* PolicyNoticePageInteractor.swift */; };
 		1A5E87F721C9DC4B00BA4DB5 /* PolicyNoticeBuilderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5E87F421C9DC4B00BA4DB5 /* PolicyNoticeBuilderRouter.swift */; };
@@ -187,10 +189,10 @@
 		1A027CA421DA3990002A0099 /* InsertPhotosCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InsertPhotosCollectionViewCell.xib; sourceTree = "<group>"; };
 		1A06557B20A9EE020016CA86 /* HomeInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInfoTableViewCell.swift; sourceTree = "<group>"; };
 		1A06557C20A9EE020016CA86 /* HomeInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeInfoTableViewCell.xib; sourceTree = "<group>"; };
-		1A0B89B521931B8F000B1EBC /* DangerPointDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DangerPointDetailTableViewCell.swift; sourceTree = "<group>"; };
-		1A0B89B621931B8F000B1EBC /* DangerPointDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DangerPointDetailTableViewCell.xib; sourceTree = "<group>"; };
-		1A0B89B921931BAD000B1EBC /* DangerUnitSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DangerUnitSectionHeaderView.swift; sourceTree = "<group>"; };
-		1A0B89BB21931BBA000B1EBC /* DangerUnitSectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DangerUnitSectionHeaderView.xib; sourceTree = "<group>"; };
+		1A0B89B521931B8F000B1EBC /* RiskTaskListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskTaskListTableViewCell.swift; sourceTree = "<group>"; };
+		1A0B89B621931B8F000B1EBC /* RiskTaskListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RiskTaskListTableViewCell.xib; sourceTree = "<group>"; };
+		1A0B89B921931BAD000B1EBC /* CheckTaskSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTaskSectionHeaderView.swift; sourceTree = "<group>"; };
+		1A0B89BB21931BBA000B1EBC /* CheckTaskSectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckTaskSectionHeaderView.xib; sourceTree = "<group>"; };
 		1A0B89BD21933045000B1EBC /* DailyCheckTaskHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyCheckTaskHeaderView.swift; sourceTree = "<group>"; };
 		1A0B89BF21933052000B1EBC /* DailyCheckTaskHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailyCheckTaskHeaderView.xib; sourceTree = "<group>"; };
 		1A0B89DA21968991000B1EBC /* DailyCheckSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyCheckSectionHeaderView.swift; sourceTree = "<group>"; };
@@ -219,6 +221,8 @@
 		1A264B8D21A1792700F452F9 /* CheckTaskHistoryPageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTaskHistoryPageInteractor.swift; sourceTree = "<group>"; };
 		1A264B8E21A1792700F452F9 /* CheckTaskHistoryBuilderRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTaskHistoryBuilderRouter.swift; sourceTree = "<group>"; };
 		1A264B9221A1794700F452F9 /* CheckTaskHistoryViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CheckTaskHistoryViewController.storyboard; sourceTree = "<group>"; };
+		1A2B7C0F2212F82100C0704A /* RiskPointTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskPointTableViewCell.swift; sourceTree = "<group>"; };
+		1A2B7C102212F82100C0704A /* RiskPointTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RiskPointTableViewCell.xib; sourceTree = "<group>"; };
 		1A2F407221AD355F00C436F9 /* CheckTaskHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTaskHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		1A2F407321AD355F00C436F9 /* CheckTaskHistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckTaskHistoryTableViewCell.xib; sourceTree = "<group>"; };
 		1A3465D421971E3400EBA57C /* CheckTaskDetailFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTaskDetailFooterView.swift; sourceTree = "<group>"; };
@@ -259,11 +263,11 @@
 		1A522EC42190356100094A8A /* DailyCheckTaskPageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyCheckTaskPageInteractor.swift; sourceTree = "<group>"; };
 		1A522EC52190356100094A8A /* DailyCheckTaskBuilderRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyCheckTaskBuilderRouter.swift; sourceTree = "<group>"; };
 		1A522EC92190357300094A8A /* DailyCheckTaskViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DailyCheckTaskViewController.storyboard; sourceTree = "<group>"; };
-		1A522ED321912BA200094A8A /* DangerUnitListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DangerUnitListViewController.swift; sourceTree = "<group>"; };
-		1A522ED421912BA200094A8A /* DangerUnitListPageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DangerUnitListPageInteractor.swift; sourceTree = "<group>"; };
-		1A522ED521912BA200094A8A /* DangerUnitListBuilderRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DangerUnitListBuilderRouter.swift; sourceTree = "<group>"; };
+		1A522ED321912BA200094A8A /* CheckTaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTaskListViewController.swift; sourceTree = "<group>"; };
+		1A522ED421912BA200094A8A /* CheckTaskListPageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTaskListPageInteractor.swift; sourceTree = "<group>"; };
+		1A522ED521912BA200094A8A /* CheckTaskListBuilderRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTaskListBuilderRouter.swift; sourceTree = "<group>"; };
 		1A58263920B7123E007FBFC7 /* MolueNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MolueNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1A5D5BF121912C3E003E7039 /* DangerUnitListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DangerUnitListViewController.storyboard; sourceTree = "<group>"; };
+		1A5D5BF121912C3E003E7039 /* CheckTaskListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CheckTaskListViewController.storyboard; sourceTree = "<group>"; };
 		1A5E87F221C9DC4B00BA4DB5 /* PolicyNoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyNoticeViewController.swift; sourceTree = "<group>"; };
 		1A5E87F321C9DC4B00BA4DB5 /* PolicyNoticePageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyNoticePageInteractor.swift; sourceTree = "<group>"; };
 		1A5E87F421C9DC4B00BA4DB5 /* PolicyNoticeBuilderRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyNoticeBuilderRouter.swift; sourceTree = "<group>"; };
@@ -350,7 +354,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1A027C7F21D9E89C002A0099 /* 检查问题列表 */ = {
+		1A027C7F21D9E89C002A0099 /* 检查问题 */ = {
 			isa = PBXGroup;
 			children = (
 				1A027C8821D9EB5E002A0099 /* Views */,
@@ -359,7 +363,7 @@
 				1A027C8221D9E8E1002A0099 /* FailureTaskListBuilderRouter.swift */,
 				1A027C8621D9E8F9002A0099 /* FailureTaskListViewController.storyboard */,
 			);
-			path = "检查问题列表";
+			path = "检查问题";
 			sourceTree = "<group>";
 		};
 		1A027C8821D9EB5E002A0099 /* Views */ = {
@@ -371,7 +375,7 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		1A027C8D21DA3648002A0099 /* 检查详情 */ = {
+		1A027C8D21DA3648002A0099 /* 检查项详情 */ = {
 			isa = PBXGroup;
 			children = (
 				1A027C8E21DA3648002A0099 /* TaskCheckDetailViewController.storyboard */,
@@ -380,7 +384,7 @@
 				1A027C9221DA3648002A0099 /* TaskCheckDetailBuilderRouter.swift */,
 				1A027C9321DA3648002A0099 /* Views */,
 			);
-			path = "检查详情";
+			path = "检查项详情";
 			sourceTree = "<group>";
 		};
 		1A027C9321DA3648002A0099 /* Views */ = {
@@ -524,6 +528,15 @@
 			path = "检查历史";
 			sourceTree = "<group>";
 		};
+		1A2B7C0E2212F5AD00C0704A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1A2B7C0F2212F82100C0704A /* RiskPointTableViewCell.swift */,
+				1A2B7C102212F82100C0704A /* RiskPointTableViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		1A2F407121AD30C400C436F9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -537,7 +550,7 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		1A346FC221915BAA00CB534B /* 检查点列表 */ = {
+		1A346FC221915BAA00CB534B /* 检查项列表 */ = {
 			isa = PBXGroup;
 			children = (
 				1AD3DE8821971725005015A6 /* Views */,
@@ -546,7 +559,7 @@
 				1A346FC521915C0400CB534B /* CheckTaskDetailBuilderRouter.swift */,
 				1A346FC921915C2100CB534B /* CheckTaskDetailViewController.storyboard */,
 			);
-			path = "检查点列表";
+			path = "检查项列表";
 			sourceTree = "<group>";
 		};
 		1A346FCB21919A0600CB534B /* Views */ = {
@@ -643,15 +656,15 @@
 		1A522ED221912B0100094A8A /* 任务列表 */ = {
 			isa = PBXGroup;
 			children = (
-				1A027C8D21DA3648002A0099 /* 检查详情 */,
-				1A027C7F21D9E89C002A0099 /* 检查问题列表 */,
-				1A346FC221915BAA00CB534B /* 检查点列表 */,
+				1A027C8D21DA3648002A0099 /* 检查项详情 */,
+				1A027C7F21D9E89C002A0099 /* 检查问题 */,
+				1A346FC221915BAA00CB534B /* 检查项列表 */,
 				1A5D5BF421912E24003E7039 /* Views */,
 				1A522EC22190350A00094A8A /* 任务详情 */,
-				1A522ED321912BA200094A8A /* DangerUnitListViewController.swift */,
-				1A522ED421912BA200094A8A /* DangerUnitListPageInteractor.swift */,
-				1A522ED521912BA200094A8A /* DangerUnitListBuilderRouter.swift */,
-				1A5D5BF121912C3E003E7039 /* DangerUnitListViewController.storyboard */,
+				1A522ED321912BA200094A8A /* CheckTaskListViewController.swift */,
+				1A522ED421912BA200094A8A /* CheckTaskListPageInteractor.swift */,
+				1A522ED521912BA200094A8A /* CheckTaskListBuilderRouter.swift */,
+				1A5D5BF121912C3E003E7039 /* CheckTaskListViewController.storyboard */,
 			);
 			path = "任务列表";
 			sourceTree = "<group>";
@@ -659,10 +672,10 @@
 		1A5D5BF421912E24003E7039 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				1A0B89B521931B8F000B1EBC /* DangerPointDetailTableViewCell.swift */,
-				1A0B89B621931B8F000B1EBC /* DangerPointDetailTableViewCell.xib */,
-				1A0B89B921931BAD000B1EBC /* DangerUnitSectionHeaderView.swift */,
-				1A0B89BB21931BBA000B1EBC /* DangerUnitSectionHeaderView.xib */,
+				1A0B89B521931B8F000B1EBC /* RiskTaskListTableViewCell.swift */,
+				1A0B89B621931B8F000B1EBC /* RiskTaskListTableViewCell.xib */,
+				1A0B89B921931BAD000B1EBC /* CheckTaskSectionHeaderView.swift */,
+				1A0B89BB21931BBA000B1EBC /* CheckTaskSectionHeaderView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -833,6 +846,7 @@
 		1AC06A0422126ED80029F1A6 /* 风险列表 */ = {
 			isa = PBXGroup;
 			children = (
+				1A2B7C0E2212F5AD00C0704A /* Views */,
 				1AC06A0522126EF30029F1A6 /* RiskPointListViewController.swift */,
 				1AC06A0B22126F090029F1A6 /* RiskPointListViewController.storyboard */,
 				1AC06A0622126EF30029F1A6 /* RiskPointListPageInteractor.swift */,
@@ -973,9 +987,10 @@
 			files = (
 				1AAF7B7F20C1971B0051EC18 /* BasicArchivesViewController.storyboard in Resources */,
 				1AC6D25E21E993B0007846B4 /* TaskRiskReportHeaderView.xib in Resources */,
-				1A0B89BC21931BBA000B1EBC /* DangerUnitSectionHeaderView.xib in Resources */,
+				1A0B89BC21931BBA000B1EBC /* CheckTaskSectionHeaderView.xib in Resources */,
 				1A43BC3020C3CAA60093855B /* EnterpriseInfoTableViewCell.xib in Resources */,
 				1AC8A5D021D1231A009CCAC5 /* TaskRiskReportTableViewCell.xib in Resources */,
+				1A2B7C122212F82100C0704A /* RiskPointTableViewCell.xib in Resources */,
 				1A346FCA21915C2100CB534B /* CheckTaskDetailViewController.storyboard in Resources */,
 				1ABDCA9720C5721B0062DE71 /* IncreaseAdminiFooterView.xib in Resources */,
 				1A522ECA2190357300094A8A /* DailyCheckTaskViewController.storyboard in Resources */,
@@ -991,10 +1006,10 @@
 				1A602F8C20A88095003AD583 /* HomeInfoTableHeaderView.xib in Resources */,
 				1A4F89F421D3272500B560E1 /* TaskAttachmentCollectionCell.xib in Resources */,
 				1ABDCA9B20C5798B0062DE71 /* SecurityAdminiTableViewCell.xib in Resources */,
-				1A5D5BF221912C3E003E7039 /* DangerUnitListViewController.storyboard in Resources */,
+				1A5D5BF221912C3E003E7039 /* CheckTaskListViewController.storyboard in Resources */,
 				1A027C8C21D9EB85002A0099 /* FailureTaskTableViewCell.xib in Resources */,
 				1AC06A0222126E900029F1A6 /* RiskUnitTableViewCell.xib in Resources */,
-				1A0B89B821931B8F000B1EBC /* DangerPointDetailTableViewCell.xib in Resources */,
+				1A0B89B821931B8F000B1EBC /* RiskTaskListTableViewCell.xib in Resources */,
 				1A72051921EE2B4B006B75FB /* AdvertiseContentViewController.storyboard in Resources */,
 				1A522EC121902B0300094A8A /* HomeInfoPageViewController.storyboard in Resources */,
 				1A06557E20A9EE020016CA86 /* HomeInfoTableViewCell.xib in Resources */,
@@ -1075,7 +1090,7 @@
 				1A43BC2420C3AEE70093855B /* HomeInfoCollectionViewCell.swift in Sources */,
 				1A027C9B21DA3648002A0099 /* TaskCheckDetailViewController.swift in Sources */,
 				1A72051621EE2B38006B75FB /* AdvertiseContentPageInteractor.swift in Sources */,
-				1A522ED821912BA200094A8A /* DangerUnitListBuilderRouter.swift in Sources */,
+				1A522ED821912BA200094A8A /* CheckTaskListBuilderRouter.swift in Sources */,
 				1A5E87F521C9DC4B00BA4DB5 /* PolicyNoticeViewController.swift in Sources */,
 				1AB0670320EFB06B00619570 /* LawRegulationTableViewCell.swift in Sources */,
 				1A264B9021A1792700F452F9 /* CheckTaskHistoryPageInteractor.swift in Sources */,
@@ -1085,6 +1100,7 @@
 				1A35D7FA20DBC9BF002ED3CB /* EnterpriseInfoDataManager.swift in Sources */,
 				1A346FC721915C0400CB534B /* CheckTaskDetailPageInteractor.swift in Sources */,
 				1A264B9121A1792700F452F9 /* CheckTaskHistoryBuilderRouter.swift in Sources */,
+				1A2B7C112212F82100C0704A /* RiskPointTableViewCell.swift in Sources */,
 				1A1550D321E0F2660004BD1C /* CheckTaskHistoryHeaderView.swift in Sources */,
 				1ABDCA9A20C5798B0062DE71 /* SecurityAdminiTableViewCell.swift in Sources */,
 				1AC06A0922126EF30029F1A6 /* RiskPointListPageInteractor.swift in Sources */,
@@ -1096,7 +1112,7 @@
 				1A027C8521D9E8E1002A0099 /* FailureTaskListBuilderRouter.swift in Sources */,
 				1A4F89F321D3272500B560E1 /* TaskAttachmentCollectionCell.swift in Sources */,
 				1A72051521EE2B38006B75FB /* AdvertiseContentViewController.swift in Sources */,
-				1A522ED621912BA200094A8A /* DangerUnitListViewController.swift in Sources */,
+				1A522ED621912BA200094A8A /* CheckTaskListViewController.swift in Sources */,
 				1AC069FB22126D680029F1A6 /* RiskUnitListPageInteractor.swift in Sources */,
 				1A24022020E52F7800FC3EBA /* LawRegulationViewController.swift in Sources */,
 				1A4F89D921D09CB200B560E1 /* TaskCheckReportPageInteractor.swift in Sources */,
@@ -1108,14 +1124,14 @@
 				1AB0670720EFB61D00619570 /* PolicyNoticeTableViewCell.swift in Sources */,
 				1A3465D521971E3400EBA57C /* CheckTaskDetailFooterView.swift in Sources */,
 				1A027CA521DA3990002A0099 /* InsertPhotosCollectionViewCell.swift in Sources */,
-				1A522ED721912BA200094A8A /* DangerUnitListPageInteractor.swift in Sources */,
+				1A522ED721912BA200094A8A /* CheckTaskListPageInteractor.swift in Sources */,
 				1A522EC82190356100094A8A /* DailyCheckTaskBuilderRouter.swift in Sources */,
 				1A0B89DF21968CF7000B1EBC /* DailyCheckTaskFooterView.swift in Sources */,
 				1A72051721EE2B38006B75FB /* AdvertiseContentBuilderRouter.swift in Sources */,
 				1AC06A0A22126EF30029F1A6 /* RiskPointListBuilderRouter.swift in Sources */,
 				1AD3DE8621971720005015A6 /* CheckTaskDetailTableViewCell.swift in Sources */,
 				1A522EBF2190261900094A8A /* HomeInfoPageBuilderRouter.swift in Sources */,
-				1A0B89BA21931BAD000B1EBC /* DangerUnitSectionHeaderView.swift in Sources */,
+				1A0B89BA21931BAD000B1EBC /* CheckTaskSectionHeaderView.swift in Sources */,
 				1A0B89DB21968991000B1EBC /* DailyCheckSectionHeaderView.swift in Sources */,
 				1A43BC2720C3AF190093855B /* HomeInfoHeaderView.swift in Sources */,
 				1A1084FD20ECF1DD004E365A /* IncreaseAdminiNavigator.swift in Sources */,
@@ -1143,7 +1159,7 @@
 				1A24022B20E5363600FC3EBA /* SecurityAdminiNavigator.swift in Sources */,
 				1ABDCA9520C5720F0062DE71 /* IncreaseAdminiFooterView.swift in Sources */,
 				1A346FCE21919A6C00CB534B /* DailyCheckTaskTableViewCell.swift in Sources */,
-				1A0B89B721931B8F000B1EBC /* DangerPointDetailTableViewCell.swift in Sources */,
+				1A0B89B721931B8F000B1EBC /* RiskTaskListTableViewCell.swift in Sources */,
 				1A522EBD2190261900094A8A /* HomeInfoPageViewController.swift in Sources */,
 				1AAF7B8820C1971B0051EC18 /* EnterpriseRiskViewController.swift in Sources */,
 				1A730AED20EBBC2E008831BC /* RegulationDetailViewController.swift in Sources */,
