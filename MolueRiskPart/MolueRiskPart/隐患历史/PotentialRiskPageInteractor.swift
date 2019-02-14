@@ -13,6 +13,8 @@ import MolueCommon
 protocol PotentialRiskViewableRouting: class {
     // 定义一些页面跳转的方法, 比如Push, Presenter等.
     func createPerilListController()
+    
+    func pushToPerilSearchController()
 }
 
 protocol PotentialRiskPagePresentable: MolueInteractorPresentable {
@@ -40,10 +42,21 @@ extension PotentialRiskPageInteractor: PotentialRiskRouterInteractable {
 }
 
 extension PotentialRiskPageInteractor: PotentialRiskPresentableListener {
+    func jumpToPerilSearchController() {
+        do {
+            let router = try self.viewRouter.unwrap()
+            router.pushToPerilSearchController()
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+    }
+    
     func queryPerilListController() {
         do {
             let router = try self.viewRouter.unwrap()
             router.createPerilListController()
-        } catch { MolueLogger.UIModule.error(error) }
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
     }
 }

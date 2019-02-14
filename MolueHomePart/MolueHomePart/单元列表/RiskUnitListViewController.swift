@@ -79,6 +79,7 @@ extension RiskUnitListViewController: MLUserInterfaceProtocol {
             } catch {MolueLogger.UIModule.message(error)}
         }
         self.tableView.es.startPullToRefresh()
+        self.title = "风险单元"
     }
 }
 

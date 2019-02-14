@@ -15,6 +15,8 @@ import MolueMediator
 protocol PotentialRiskPresentableListener: class {
     // 定义一些当前页面需要的业务逻辑, 比如网络请求.
     func queryPerilListController()
+    
+    func jumpToPerilSearchController()
 }
 
 final class PotentialRiskViewController: MLBaseViewController  {
@@ -56,6 +58,21 @@ final class PotentialRiskViewController: MLBaseViewController  {
         }
     }
     
+    lazy var rightButtonItem: UIBarButtonItem = {
+        let action: Selector = #selector(rightButtonItemClicked)
+        let buttonItem = UIBarButtonItem(title: "隐患追踪", style: .plain, target: self, action: action)
+        return buttonItem
+    }()
+    
+    @IBAction func rightButtonItemClicked(_ sender: UIBarButtonItem) {
+        do {
+            let listener = try self.listener.unwrap()
+            listener.jumpToPerilSearchController()
+        } catch {
+            MolueLogger.UIModule.message(error)
+        }
+    }
+    
     //MARK: View Controller Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,7 +89,10 @@ extension PotentialRiskViewController: MLUserInterfaceProtocol {
         do {
             let listener = try self.listener.unwrap()
             listener.queryPerilListController()
-        } catch { MolueLogger.UIModule.error(error) }
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+        self.navigationItem.rightBarButtonItem = self.rightButtonItem
         self.title = "隐患历史"
     }
 }

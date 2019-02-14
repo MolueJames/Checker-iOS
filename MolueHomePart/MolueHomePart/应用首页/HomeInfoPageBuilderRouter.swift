@@ -9,7 +9,7 @@
 import MolueMediator
 import MolueUtilities
 
-protocol HomeInfoPageRouterInteractable: CheckTaskHistoryInteractListener, CheckTaskListInteractListener, PotentialRiskInteractListener, AdvertiseContentInteractListener, RiskFollowInteractListener {
+protocol HomeInfoPageRouterInteractable: CheckTaskHistoryInteractListener, CheckTaskListInteractListener, PotentialRiskInteractListener, AdvertiseContentInteractListener, RiskUnitListInteractListener {
     var viewRouter: HomeInfoPageViewableRouting? { get set }
     var listener: HomeInfoPageInteractListener? { get set }
 }
@@ -33,12 +33,11 @@ final class HomeInfoPageViewableRouter: MolueViewableRouting {
 }
 
 extension HomeInfoPageViewableRouter: HomeInfoPageViewableRouting {
-    func pushToMinePerilController() {
+    func pushToRiskUnitListController() {
         do {
             let listener = try self.interactor.unwrap()
-            let builderFactory = MolueBuilderFactory<MolueComponent.Risk>(.RiskFollow)
-            let builder: RiskFollowComponentBuildable? = builderFactory.queryBuilder()
-            let controller = try builder.unwrap().build(listener: listener)
+            let builder = RiskUnitListComponentBuilder()
+            let controller = builder.build(listener: listener)
             controller.hidesBottomBarWhenPushed = true
             let navigator = try self.controller.unwrap()
             navigator.pushToViewController(controller, animated: true)

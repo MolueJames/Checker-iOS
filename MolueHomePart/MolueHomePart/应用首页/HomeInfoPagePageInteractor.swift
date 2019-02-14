@@ -15,7 +15,7 @@ protocol HomeInfoPageViewableRouting: class {
     // 定义一些页面跳转的方法, 比如Push, Presenter等.
     func pushToDailyTaskController()
     
-    func pushToMinePerilController()
+    func pushToRiskUnitListController()
     
     func pushToNoticationController()
     
@@ -65,6 +65,7 @@ extension HomeInfoPagePageInteractor: HomeInfoPageRouterInteractable {
 }
 
 extension HomeInfoPagePageInteractor: HomeInfoPagePresentableListener {
+   
     func didSelectRow(at indexPath: IndexPath) {
         MolueLogger.UIModule.message("")
     }
@@ -73,10 +74,10 @@ extension HomeInfoPagePageInteractor: HomeInfoPagePresentableListener {
         return 2
     }
     
-    func queryMinePerilCommand() -> PublishSubject<Void> {
+    func queryRiskUnitListCommand() -> PublishSubject<Void> {
         let command = PublishSubject<Void>()
         command.subscribe(onNext: { [unowned self] () in
-            self.jumpToMinePerilController()
+            self.jumpToRiskUnitListController()
         }).disposed(by: self.disposeBag)
         return command
     }
@@ -121,7 +122,7 @@ extension HomeInfoPagePageInteractor: HomeInfoPagePresentableListener {
         return command
     }
     
-    func queryDangerListCommand() -> PublishSubject<Void> {
+    func queryTaskHistoryCommand() -> PublishSubject<Void> {
         let command = PublishSubject<Void>()
         command.subscribe(onNext: { [unowned self] () in
             self.jumpToDangerListController()
@@ -180,10 +181,10 @@ extension HomeInfoPagePageInteractor: HomeInfoPagePresentableListener {
         }
     }
     
-    func jumpToMinePerilController() {
+    func jumpToRiskUnitListController() {
         do {
             let router = try self.viewRouter.unwrap()
-            router.pushToMinePerilController()
+            router.pushToRiskUnitListController()
         } catch {
             MolueLogger.UIModule.error(error)
         }

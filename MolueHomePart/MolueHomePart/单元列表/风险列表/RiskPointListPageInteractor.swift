@@ -6,6 +6,7 @@
 //  Copyright © 2019 MolueTech. All rights reserved.
 //
 
+import MolueUtilities
 import MolueMediator
 
 protocol RiskPointListViewableRouting: class {
@@ -25,6 +26,25 @@ final class RiskPointListPageInteractor: MoluePresenterInteractable {
     
     weak var listener: RiskPointListInteractListener?
     
+    lazy var riskUnitDetail: MLRiskUnitDetail? = {
+        do {
+            let listener = try self.listener.unwrap()
+            let riskUnitDetail = listener.riskUnitDetail
+            return try riskUnitDetail.unwrap()
+        } catch {
+            return MolueLogger.UIModule.allowNil(error)
+        }
+    }()
+    
+    lazy var riskPointList: [MLRiskPointDetail]? = {
+        do {
+            let riskUnit = try self.riskUnitDetail.unwrap()
+            return try riskUnit.risks.unwrap()
+        } catch {
+            return MolueLogger.UIModule.allowNil(error)
+        }
+    }()
+    
     required init(presenter: RiskPointListPagePresentable) {
         self.presenter = presenter
         presenter.listener = self
@@ -36,11 +56,30 @@ extension RiskPointListPageInteractor: RiskPointListRouterInteractable {
 }
 
 extension RiskPointListPageInteractor: RiskPointListPresentableListener {
+    func queryRiskUnitName() -> String? {
+        do {
+            let riskUnit = try self.riskUnitDetail.unwrap()
+            return try riskUnit.unitName.unwrap()
+        } catch {
+            return MolueLogger.UIModule.allowNil(error)
+        }
+    }
+    
     func numberOfRows(in section: Int) -> Int? {
-        return 0
+        do {
+            return try self.riskPointList.unwrap().count
+        } catch {
+            return MolueLogger.UIModule.allowNil(error)
+        }
     }
     
     func queryRiskPoint(at indexPath: IndexPath) -> MLRiskPointDetail? {
-        return nil
+        do {
+            let pointList = try self.riskPointList.unwrap()
+            let riskPoint = pointList.item(at: indexPath.row)
+            return try riskPoint.unwrap()
+        } catch {
+            return MolueLogger.UIModule.allowNil(error)
+        }
     }
 }

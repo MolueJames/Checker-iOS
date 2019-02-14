@@ -9,7 +9,7 @@
 import MolueMediator
 import MolueUtilities
 
-protocol PotentialRiskRouterInteractable: HiddenPerilListInteractListener {
+protocol PotentialRiskRouterInteractable: HiddenPerilListInteractListener, RiskFollowInteractListener {
     var viewRouter: PotentialRiskViewableRouting? { get set }
     var listener: PotentialRiskInteractListener? { get set }
 }
@@ -34,6 +34,16 @@ final class PotentialRiskViewableRouter: MolueViewableRouting {
 }
 
 extension PotentialRiskViewableRouter: PotentialRiskViewableRouting {
+    func pushToPerilSearchController() {
+        do {
+            let listener = try self.interactor.unwrap()
+            let builder = RiskFollowComponentBuilder()
+            let controller = builder.build(listener: listener)
+            let navigator = try self.controller.unwrap()
+            navigator.pushToViewController(controller, animated: true)
+        } catch { MolueLogger.UIModule.error(error) }
+    }
+    
     func createPerilListController() {
         do {
             let controllers = self.generatePerilListControllers()

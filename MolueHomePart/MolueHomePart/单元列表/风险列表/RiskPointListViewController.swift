@@ -16,6 +16,8 @@ protocol RiskPointListPresentableListener: class {
     func numberOfRows(in section: Int) -> Int?
     
     func queryRiskPoint(at indexPath: IndexPath) -> MLRiskPointDetail?
+    
+    func queryRiskUnitName() -> String?
 }
 
 final class RiskPointListViewController: MLBaseViewController  {
@@ -43,7 +45,12 @@ extension RiskPointListViewController: MLUserInterfaceProtocol {
     }
     
     func updateUserInterfaceElements() {
-        
+        do {
+            let listener = try self.listener.unwrap()
+            self.title = listener.queryRiskUnitName()
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
     }
 }
 

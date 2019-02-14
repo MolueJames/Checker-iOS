@@ -37,6 +37,7 @@ extension RiskPointListViewableRouter: RiskPointListViewableRouting {
 
 protocol RiskPointListInteractListener: class {
     //用于定义其他的Component需要定义的协议方法
+    var riskUnitDetail: MLRiskUnitDetail? {get}
 }
 
 protocol RiskPointListComponentBuildable: MolueComponentBuildable {

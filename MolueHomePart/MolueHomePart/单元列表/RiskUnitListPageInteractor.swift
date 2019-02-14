@@ -36,6 +36,8 @@ final class RiskUnitListPageInteractor: MoluePresenterInteractable {
     
     var listModel = MolueListItem<MLRiskUnitDetail>()
     
+    var riskUnitDetail: MLRiskUnitDetail?
+    
     required init(presenter: RiskUnitListPagePresentable) {
         self.presenter = presenter
         presenter.listener = self
@@ -140,8 +142,7 @@ extension RiskUnitListPageInteractor: RiskUnitListPresentableListener {
         do {
             let router = try self.viewRouter.unwrap()
             router.pushToRiskPointListController()
-        } catch {
-            MolueLogger.UIModule.message(error)
-        }
+        } catch { MolueLogger.UIModule.message(error) }
+        self.riskUnitDetail = self.queryRiskUnit(with: indexPath)
     }
 }

@@ -22,11 +22,11 @@ protocol HomeInfoPagePresentableListener: class {
     
     func queryRiskHistoryCommand() -> PublishSubject<Void>
     
-    func queryDangerListCommand() -> PublishSubject<Void>
+    func queryTaskHistoryCommand() -> PublishSubject<Void>
     
     func queryDailyTaskCommand() -> PublishSubject<Void>
     
-    func queryMinePerilCommand() -> PublishSubject<Void>
+    func queryRiskUnitListCommand() -> PublishSubject<Void>
     
     func querySelectedCommand() -> PublishSubject<MLAdvertiseContent>
     
@@ -51,12 +51,12 @@ final class HomeInfoPageViewController: MLBaseViewController  {
         headerView.frame = CGRect(x: 0, y: 0, width: MLConfigure.ScreenWidth, height: 385)
         do {
             let listener = try self.listener.unwrap()
+            headerView.riskUnitListCommand = listener.queryRiskUnitListCommand()
             headerView.notificationCommand = listener.queryNotificationCommand()
             headerView.legislationCommand = listener.queryLegislationCommand()
             headerView.riskHistoryCommand = listener.queryRiskHistoryCommand()
-            headerView.dangerListCommand = listener.queryDangerListCommand()
+            headerView.taskHistoryCommand = listener.queryTaskHistoryCommand()
             headerView.dailyTaskCommand = listener.queryDailyTaskCommand()
-            headerView.minePerilCommand = listener.queryMinePerilCommand()
             headerView.selectedCommand = listener.querySelectedCommand()
         } catch { MolueLogger.UIModule.error(error) }
         return headerView

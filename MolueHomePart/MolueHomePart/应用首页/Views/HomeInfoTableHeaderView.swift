@@ -41,14 +41,14 @@ class HomeInfoTableHeaderView: UIView {
     }
     
     
-    @IBAction private func basicInfoControlClicked(_ sender: Any) {
+    @IBAction private func riskUnitListControlClicked(_ sender: Any) {
+        self.riskUnitListCommand.onNext(())
+    }
+    @IBAction private func dailyTaskControlClicked(_ sender: Any) {
         self.dailyTaskCommand.onNext(())
     }
-    @IBAction private func minePerilControlClicked(_ sender: Any) {
-        self.minePerilCommand.onNext(())
-    }
-    @IBAction private func dangerListControlClicked(_ sender: Any) {
-        self.dangerListCommand.onNext(())
+    @IBAction private func taskHistoryControlClicked(_ sender: Any) {
+        self.taskHistoryCommand.onNext(())
     }
     @IBAction private func legislationControlClicked(_ sender: Any) {
         self.legislationCommand.onNext(())
@@ -60,19 +60,19 @@ class HomeInfoTableHeaderView: UIView {
         self.notificationCommand.onNext(())
     }
     
-    @IBOutlet private weak var basicInfoView: UIView! {
+    @IBOutlet private weak var riskUnitListView: UIView! {
         didSet {
             let control = UIControl.init()
-            basicInfoView.doBespreadOn(control)
-            control.addTarget(self, action: #selector(basicInfoControlClicked), for: .touchUpInside)
+            riskUnitListView.doBespreadOn(control)
+            control.addTarget(self, action: #selector(riskUnitListControlClicked), for: .touchUpInside)
         }
     }
     
-    @IBOutlet private weak var minePerilView: UIView! {
+    @IBOutlet private weak var dailyTaskView: UIView! {
         didSet {
             let control = UIControl.init()
-            minePerilView.doBespreadOn(control)
-            control.addTarget(self, action: #selector(minePerilControlClicked), for: .touchUpInside)
+            dailyTaskView.doBespreadOn(control)
+            control.addTarget(self, action: #selector(dailyTaskControlClicked), for: .touchUpInside)
         }
     }
     
@@ -97,25 +97,25 @@ class HomeInfoTableHeaderView: UIView {
             control.addTarget(self, action: #selector(legislationControlClicked), for: .touchUpInside)
         }
     }
-    @IBOutlet private weak var dangerListView: UIView! {
+    @IBOutlet private weak var taskHistoryView: UIView! {
         didSet {
             let control = UIControl.init()
-            dangerListView.doBespreadOn(control)
-            control.addTarget(self, action: #selector(dangerListControlClicked), for: .touchUpInside)
+            taskHistoryView.doBespreadOn(control)
+            control.addTarget(self, action: #selector(taskHistoryControlClicked), for: .touchUpInside)
         }
     }
     
     var selectedCommand = PublishSubject<MLAdvertiseContent>()
-    /// 基础信息
+    /// 风险识别
     var dailyTaskCommand = PublishSubject<Void>()
     /// 隐患自查
-    var minePerilCommand = PublishSubject<Void>()
+    var riskUnitListCommand = PublishSubject<Void>()
     /// 政策通知
     var notificationCommand = PublishSubject<Void>()
     /// 法律法规
     var legislationCommand = PublishSubject<Void>()
     /// 检查历史
-    var dangerListCommand = PublishSubject<Void>()
+    var taskHistoryCommand = PublishSubject<Void>()
     /// 隐患历史
     var riskHistoryCommand = PublishSubject<Void>()
 }
