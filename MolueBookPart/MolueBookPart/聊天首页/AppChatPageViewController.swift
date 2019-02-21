@@ -22,6 +22,7 @@ final class AppChatPageViewController: MLBaseViewController  {
         label.font = .boldSystemFont(ofSize: 18)
         label.textAlignment = .center
         label.textColor = UIColor.white
+        label.text = "常用联系人"
         return label
     } ()
     //MARK: View Controller Life Cycle
@@ -37,7 +38,6 @@ extension AppChatPageViewController: MLUserInterfaceProtocol {
     }
     
     func updateUserInterfaceElements() {
-        self.titleLabel.text = "常用联系人"
         self.navigationItem.titleView = self.titleLabel
     }
 }

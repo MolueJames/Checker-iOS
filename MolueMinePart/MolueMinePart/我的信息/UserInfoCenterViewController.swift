@@ -57,6 +57,7 @@ final class UserInfoCenterViewController: MLBaseViewController  {
         label.font = .boldSystemFont(ofSize: 18)
         label.textAlignment = .center
         label.textColor = UIColor.white
+        label.text = "个人信息"
         return label
     } ()
     //MARK: View Controller Life Cycle
@@ -78,15 +79,13 @@ extension UserInfoCenterViewController: MLUserInterfaceProtocol {
     }
     
     func updateUserInterfaceElements() {
-        self.titleLabel.text = "个人信息"
-        self.navigationItem.titleView = self.titleLabel
-        
         do {
             let listener = try self.listener.unwrap()
             listener.bindingTableViewAdapter(with: self.tableView)
         } catch {
             MolueLogger.UIModule.message(error)
         }
+        self.navigationItem.titleView = self.titleLabel
     }
 }
 
@@ -94,8 +93,6 @@ extension UserInfoCenterViewController: UserInfoCenterPagePresentable {
     func refreshHeaderView(with user: MolueUserInfo) {
         self.headerView.refreshSubviews(with: user)
     }
-    
-    
 }
 
 extension UserInfoCenterViewController: UserInfoCenterViewControllable {

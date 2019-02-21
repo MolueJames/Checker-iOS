@@ -61,6 +61,7 @@ class BookInfoViewController: MLBaseViewController {
         label.font = .boldSystemFont(ofSize: 18)
         label.textAlignment = .center
         label.textColor = UIColor.white
+        label.text = "文书列表"
         return label
     } ()
 }
@@ -75,7 +76,6 @@ extension BookInfoViewController: MLUserInterfaceProtocol {
             listener.queryBookDetailsController()
         } catch { MolueLogger.UIModule.error(error) }
 
-        self.titleLabel.text = "文书列表"
         self.navigationItem.titleView = self.titleLabel
     }
 }

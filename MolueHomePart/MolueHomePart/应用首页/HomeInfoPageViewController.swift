@@ -8,9 +8,11 @@
 
 import UIKit
 import RxSwift
-import MolueFoundation
+import ESPullToRefresh
 import MolueUtilities
+import MolueFoundation
 import MolueMediator
+import MolueCommon
 
 protocol HomeInfoPagePresentableListener: class {
     // 定义一些当前页面需要的业务逻辑, 比如网络请求.
@@ -62,11 +64,22 @@ final class HomeInfoPageViewController: MLBaseViewController  {
         return headerView
     }()
     
+    lazy var header: MLRefreshHeaderAnimator = {
+        let header = MLRefreshHeaderAnimator(frame: CGRect.zero)
+        return header
+    }()
+    
+    lazy var footer: ESRefreshFooterAnimator = {
+        let footer = ESRefreshFooterAnimator(frame: CGRect.zero)
+        return footer
+    }()
+    
     lazy var titleLabel: UILabel! = {
         let label = UILabel.init(frame: CGRect.init(x: 0, y: 0, width: 100, height: 44))
         label.font = .boldSystemFont(ofSize: 18)
         label.textAlignment = .center
         label.textColor = .white
+        label.text = "安全助手"
         return label
     } ()
     //MARK: View Controller Life Cycle
@@ -87,8 +100,21 @@ extension HomeInfoPageViewController: MLUserInterfaceProtocol {
     }
     
     func updateUserInterfaceElements() {
-        self.titleLabel.text = "安全助手"
-        self.navigationItem.titleView = titleLabel
+//        self.tableView.es.addInfiniteScrolling(animator: self.footer) { [weak self] in
+//            do {
+//                let listener = try self.unwrap().listener.unwrap()
+//
+//            } catch {MolueLogger.UIModule.message(error)}
+//        }
+//        self.tableView.es.addPullToRefresh(animator: self.header) { [weak self] in
+//            do {
+//                let listener = try self.unwrap().listener.unwrap()
+//
+//            } catch {MolueLogger.UIModule.message(error)}
+//        }
+//        self.tableView.es.startPullToRefresh()
+        
+        self.navigationItem.titleView = self.titleLabel
     }
 }
 

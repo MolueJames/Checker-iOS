@@ -10,6 +10,7 @@ import Foundation
 import MolueUtilities
 import ObjectMapper
 
+/// TODO: 改变部分属性, 和删除部分类
 public class MLRiskUnitAccident: Mappable {
     public required init?(map: Map) {
         code        <- map["code"]

@@ -18,6 +18,8 @@ protocol RiskPointListPresentableListener: class {
     func queryRiskPoint(at indexPath: IndexPath) -> MLRiskPointDetail?
     
     func queryRiskUnitName() -> String?
+    
+    func didSelectRow(at indexPath: IndexPath)
 }
 
 final class RiskPointListViewController: MLBaseViewController  {
@@ -68,7 +70,7 @@ extension RiskPointListViewController: UITableViewDataSource {
             let listener = try self.listener.unwrap()
             let count = listener.numberOfRows(in: section)
             return try count.unwrap()
-        } catch { return 0}
+        } catch { return 0 }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -80,10 +82,19 @@ extension RiskPointListViewController: UITableViewDataSource {
         } catch { MolueLogger.UIModule.message(error) }
         return cell
     }
-    
-    
 }
 
 extension RiskPointListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 140
+    }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        do {
+            let listener = try self.listener.unwrap()
+            listener.didSelectRow(at: indexPath)
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+    }
 }

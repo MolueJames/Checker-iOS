@@ -6,9 +6,10 @@
 //  Copyright © 2019 MolueTech. All rights reserved.
 //
 
+import MolueUtilities
 import MolueMediator
 
-protocol RiskPointListRouterInteractable: class {
+protocol RiskPointListRouterInteractable: DailyCheckTaskInteractListener {
     var viewRouter: RiskPointListViewableRouting? { get set }
     var listener: RiskPointListInteractListener? { get set }
 }
@@ -32,7 +33,17 @@ final class RiskPointListViewableRouter: MolueViewableRouting {
 }
 
 extension RiskPointListViewableRouter: RiskPointListViewableRouting {
-    
+    func pushToDailyCheckTaskController() {
+        do {
+            let listener = try self.interactor.unwrap()
+            let builder = DailyCheckTaskComponentBuilder()
+            let controller = builder.build(listener: listener)
+            let navigator = try self.controller.unwrap()
+            navigator.pushToViewController(controller, animated: true)
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+    }
 }
 
 protocol RiskPointListInteractListener: class {

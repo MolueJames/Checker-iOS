@@ -33,4 +33,19 @@ public struct MolueCheckService {
     public static func queryDailyTaskHistory(with created: String) -> MolueDataRequest {
         return MolueDataRequest(parameter: ["created" : created], method: .get, path: "api/task/")
     }
+    
+    public static func queryInspectionTasks(page: Int, size: Int) -> MolueDataRequest {
+        let parameters = ["page": page, "page_size": size]
+        return MolueDataRequest(parameter: parameters, method: .get, path: "api/inspection/tasks")
+    }
+    
+    public static func queryInspectionTask(with taskId: String?) -> MolueDataRequest {
+        let path: String = "api/inspection/tasks/\(String(describing: taskId))"
+        return MolueDataRequest(parameter: nil, method: .get, path: path)
+    }
+    
+    public static func queryInspectionTaskHistory(with startDate: String, endDate: String) -> MolueDataRequest {
+        let parameter = ["start_date" : startDate, "end_date" : endDate]
+        return MolueDataRequest(parameter: parameter, method: .get, path: "")
+    }
 }

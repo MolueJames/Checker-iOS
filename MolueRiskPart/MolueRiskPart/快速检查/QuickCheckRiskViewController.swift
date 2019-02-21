@@ -39,6 +39,7 @@ final class QuickCheckRiskViewController: MLBaseViewController  {
         label.font = .boldSystemFont(ofSize: 18)
         label.textAlignment = .center
         label.textColor = UIColor.white
+        label.text = "快速检查"
         return label
     } ()
     //MARK: View Controller Life Cycle
@@ -71,7 +72,6 @@ extension QuickCheckRiskViewController: MLUserInterfaceProtocol {
     }
     
     func updateUserInterfaceElements() {
-        self.titleLabel.text = "快速检查"
         self.navigationItem.titleView = self.titleLabel
     }
 }

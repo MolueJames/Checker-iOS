@@ -101,7 +101,7 @@ extension PolicyNoticePageInteractor: PolicyNoticePresentableListener {
         }
         request.handleFailureResponse { [weak self] (error) in
             do {
-                try self.unwrap().handleQueryNotice(with: error, isMore: true)
+                try self.unwrap().handleQueryNotice(with: error, isMore: false)
             } catch { MolueLogger.UIModule.message(error) }
         }
         MolueRequestManager().doRequestStart(with: request)
@@ -134,7 +134,7 @@ extension PolicyNoticePageInteractor: PolicyNoticePresentableListener {
         }
         request.handleFailureResponse { [weak self] (error) in
             do {
-                try self.unwrap().handleQueryNotice(with: error, isMore: false)
+                try self.unwrap().handleQueryNotice(with: error, isMore: true)
             } catch { MolueLogger.UIModule.message(error) }
         }
         MolueRequestManager().doRequestStart(with: request)
@@ -148,8 +148,18 @@ extension PolicyNoticePageInteractor: PolicyNoticePresentableListener {
             } else {
                 presenter.endHeaderRefreshing()
             }
-            presenter.showWarningHUD(text: error.localizedDescription)
+            let message = self.queryErrorMessage(with: error)
+            presenter.showWarningHUD(text: message)
         } catch { MolueLogger.UIModule.error(error) }
+    }
+    
+    func queryErrorMessage(with error: Error) -> String {
+        switch error {
+        case MolueStatusError.requestIsNotExisted:
+            return "未找到相关的政策通知"
+        default:
+            return error.localizedDescription
+        }
     }
     
     private func handleMoreItems(_ listModel :MolueListItem<MLPolicyNoticeModel>?) {

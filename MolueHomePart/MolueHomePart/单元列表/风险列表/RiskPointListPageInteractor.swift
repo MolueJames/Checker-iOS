@@ -11,6 +11,7 @@ import MolueMediator
 
 protocol RiskPointListViewableRouting: class {
     // 定义一些页面跳转的方法, 比如Push, Presenter等.
+    func pushToDailyCheckTaskController()
 }
 
 protocol RiskPointListPagePresentable: MolueInteractorPresentable {
@@ -23,6 +24,8 @@ final class RiskPointListPageInteractor: MoluePresenterInteractable {
     weak var presenter: RiskPointListPagePresentable?
     
     var viewRouter: RiskPointListViewableRouting?
+    
+    var selectedCheckTask: String? = nil
     
     weak var listener: RiskPointListInteractListener?
     
@@ -56,6 +59,15 @@ extension RiskPointListPageInteractor: RiskPointListRouterInteractable {
 }
 
 extension RiskPointListPageInteractor: RiskPointListPresentableListener {
+    func didSelectRow(at indexPath: IndexPath) {
+        do {
+            let router = try self.viewRouter.unwrap()
+            router.pushToDailyCheckTaskController()
+        } catch {
+            MolueLogger.UIModule.error(error)
+        }
+    }
+    
     func queryRiskUnitName() -> String? {
         do {
             let riskUnit = try self.riskUnitDetail.unwrap()

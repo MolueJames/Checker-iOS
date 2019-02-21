@@ -62,7 +62,6 @@ final class PolicyDetailViewController: MLBaseViewController  {
         titleLabel.textAlignment = .center
         titleLabel.textColor = .white
         titleLabel.numberOfLines = 2
-        self.navigationItem.titleView = titleLabel
         return titleLabel
     } ()
     //MARK: View Controller Life Cycle
@@ -92,6 +91,7 @@ extension PolicyDetailViewController: MLUserInterfaceProtocol {
     
     func updateUserInterfaceElements() {
         do {
+            self.navigationItem.titleView = self.titleLabel
             let listener = try self.listener.unwrap()
             let notification = try listener.notificationItem.unwrap()
             self.refreshSubviews(with: notification)
